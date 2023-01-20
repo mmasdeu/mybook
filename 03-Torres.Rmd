@@ -1,0 +1,3 @@
+# Les Torres
+
+L'objectiu és estudiar torres d'extensions, i com es comporta el grau en torres finits. Veurem aplicacions que té aquesta fórmula, com ara el càlcul del grau de la composició d'extensions.

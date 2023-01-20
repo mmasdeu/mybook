@@ -1,8 +1,20 @@
+\usepackage{microtype}
 \usepackage{booktabs}
-\usepackage{amsthm}
+\usepackage{unixode}
+\usepackage[catalan]{babel}
+\usepackage{amsmath,amsthm,amssymb,amsfonts}
+\definecolor{VerbatimBorderColor}{rgb}{0.7,0.7,0.7}
+% from sphinxmanual.cls: put authors on separate lines
+\DeclareRobustCommand{\and}{%
+   \end{tabular}\kern-\tabcolsep\\\begin{tabular}[t]{c}%
+}
+\input{mathsymbols.sty}
+\setlength{\headheight}{15pt}
+
 \makeatletter
 \def\thm@space@setup{%
   \thm@preskip=8pt plus 2pt minus 4pt
   \thm@postskip=\thm@preskip
 }
 \makeatother
+

@@ -3,11 +3,11 @@ bookdown::gitbook:
   config:
     toc:
       before: |
-        <li><a href="./">A Minimal Book Example</a></li>
+        <li><a href="./">Teoria de Galois</a></li>
       after: |
-        <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
-    edit: https://github.com/rstudio/bookdown-demo/edit/master/%s
-    download: ["pdf", "epub"]
+        <li><a href="https://github.com/mmasdeu/mybook" target="blank">Publicat amb bookdown</a></li>
+    edit: https://github.com/mmasdeu/mybook/edit/main/%s
+    download: ["pdf"]
 bookdown::pdf_book:
   includes:
     in_header: preamble.tex

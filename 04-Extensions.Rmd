@@ -1,0 +1,4 @@
+# Extensions algebraiques
+
+Parlarem d'elements algebraics i el seu polinomi mínim. Veurem que el cos
+generat per un element algebraic és isomorf al quocient de l'anell de polinomis pel seu polinomi mínim.  Veurem la relació entre extensions algebraiques i extensions finites.

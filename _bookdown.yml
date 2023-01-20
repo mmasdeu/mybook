@@ -1,5 +1,21 @@
-book_filename: "bookdown-demo"
+book_filename: "teoriadegalois"
 language:
+  label:
+    fig: 'Figura '
+    tab: 'Taula '
+    eq: 'Equació '
+    thm: 'Teorema '
+    lem: 'Lema '
+    cor: 'Corol·lary '
+    prp: 'Proposició '
+    cnj: 'Conjectura '
+    def: 'Definició '
+    exm: 'Exemple '
+    exr: 'Exercici '
+    hyp: 'Hipòtesi '
+    proof: 'Prova. '
+    remark: 'Remarca. '
+    solution: 'Solució. '
   ui:
-    chapter_name: "Chapter "
+    chapter_name: !expr function(i) paste0('Episodi ', i, '. ')
 delete_merged_file: true
