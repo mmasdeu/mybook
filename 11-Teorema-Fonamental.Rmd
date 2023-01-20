@@ -1,0 +1,10 @@
+# El Teorema Fonamental
+
+Enunciem i demostrem el teorema fonamental de la teoria de Galois. Farem
+servir la independència lineal dels caràcters (que tmabé demostrarem). Després veurem
+que si $L / F$ és una extensió finita i $H$ un subgrup de $\Aut(L/F)$, aleshores
+$[L \colon FH] = |H|$. Aquest fet, fonamental, ens permet també caracteritzar
+les extensions de Galois com aquelles que són normals i separables.
+
+Aleshores ja estarem en posició d'enunciar i demostrar el teorema fonamental. Acabarem
+amb diversos exemples concrets d'extensions, il·lustrant la correspondència de Galois.

@@ -1,4 +1,4 @@
-# Vells coneguts: anells i polinomis, extensions de cossos, i subcossos
+# Vells coneguts
 
 Començarem recordant les definicions i resultats bàsics que ja s'han vist a altres
 assignatures, com Fonaments o Estructures algebraiques. Donarem les definicions de cos,

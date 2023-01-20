@@ -1,0 +1,6 @@
+# Regle i compàs
+
+Definirem els nombres construibles amb regla i compàs, i els caracteritzarem.
+
+Aleshores veurem la impossibilitat de la duplicació del cub, la trisecció de l'angle
+i la quadratura del cercle (aquest últim, assumint la transcendència de $\pi$, que no demostrarem).

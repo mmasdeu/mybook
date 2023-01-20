@@ -1,0 +1,8 @@
+# Simetries
+
+Començarem definint els automorfismes d'una extensió. Veurem que formen
+un grup, i que cada subgrup té associat el cos dels elements fixos per aquest. Veurem també
+que els automorfismes envien cada element $\alpha$ a una arrel de $\Irr(\alpha,x)$,
+i demostrarem que en una extensió normal el cardinal del grup d'automorfismes està
+fitat pel grau de l'extensió. Així, podrem definir una extensió de Galois com aquella
+on la fita s'assoleix.

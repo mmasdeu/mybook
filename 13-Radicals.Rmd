@@ -1,0 +1,8 @@
+# Arrels i radicals
+
+Definirem què vol dir que un polinomi sigui resoluble per radicals, i veurem
+que és equivalent a què el seu grup de Galois sigui resoluble. D'aquí en podrem
+deduir que els polinomis generals de grau $\geq 5$ no són resolubles per radicals i,
+per tant, no existeix una fórmula que expressi les arrels d'un polinomi en termes
+dels seus coeficients. També es mostrarà un exemple concret d'un polinomi de grau $5$ sobre $\QQ$
+amb grup de Galois $S_5$: si $f$ és irreductible amb exactament $3$ arrels reals, aleshores la conjugació complexa dona un automorfisme d'ordre $2$. Com que $\Gal(f)$ té ordre divisible per $5$, hi ha algun element $\sigma$ d'ordre $5$ (Teorema de Cauchy). Però a $S_5$ els elements d'ordre $5$ són necessàriament $5$-cicles. Com que $\Gal(f)$ té un $5$-cicle i una transposició, és necessàriament tot $S_5$.

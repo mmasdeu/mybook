@@ -1,0 +1,7 @@
+# És més fàcil dibuixar un 17-gon que un heptàgon?
+
+En aquest apartat estudiem les extensions ciclotòmiques, i veiem que $\Gal(\QQ(\zeta_n))$
+és canònicament isomorf a $(\ZZ/n\ZZ)^\times$. Com a aplicació, veurem com construir
+polígons regulars amb regle i compàs. Veurem que només és possible per polígons regulars
+de $n$ costats quan $\varphi{n}$ és una potència de $2$. Això passa si i només si $n$ és producte
+d'una potència de dos i de primers de Fermat diferents.

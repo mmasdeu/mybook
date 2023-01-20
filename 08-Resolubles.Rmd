@@ -1,0 +1,5 @@
+# Grups simples, grups resolubles
+
+Aquesta sessió no parla de teoria de cossos, sinó de grups. Això ens cal ja que el teorema fonamental ens relaciona les dues teories. Introduïrem
+la noció de resolubilitat d'un grup, parlarem dels grups simples i veurem que el grup alternat $A_n$ no és simple per a tot $n \geq 5$. Això
+implica que $S_n$ no és resoluble per $n\geq 5$.
