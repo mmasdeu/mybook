@@ -1,0 +1,361 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{book}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\usepackage{microtype}
+\usepackage{booktabs}
+\usepackage{unixode}
+\usepackage[catalan]{babel}
+\usepackage{amsmath,amsthm,amssymb,amsfonts}
+\definecolor{VerbatimBorderColor}{rgb}{0.7,0.7,0.7}
+% from sphinxmanual.cls: put authors on separate lines
+\DeclareRobustCommand{\and}{%
+   \end{tabular}\kern-\tabcolsep\\\begin{tabular}[t]{c}%
+}
+\input{mathsymbols.sty}
+\setlength{\headheight}{15pt}
+
+\makeatletter
+\def\thm@space@setup{%
+  \thm@preskip=8pt plus 2pt minus 4pt
+  \thm@postskip=\thm@preskip
+}
+\makeatother
+
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage[]{natbib}
+\bibliographystyle{apalike}
+\nocite{dummit-foote, artin-algebra}
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Teoria de Galois},
+  pdfauthor={Marc Masdeu},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Teoria de Galois}
+\author{Marc Masdeu}
+\date{2023-01-25}
+
+\usepackage{amsthm}
+\newtheorem{theorem}{Teorema}[chapter]
+\newtheorem{lemma}{Lema}[chapter]
+\newtheorem{corollary}{Corol·lary}[chapter]
+\newtheorem{proposition}{Proposició}[chapter]
+\newtheorem{conjecture}{Conjectura}[chapter]
+\theoremstyle{definition}
+\newtheorem{definition}{Definició}[chapter]
+\theoremstyle{definition}
+\newtheorem{example}{Exemple}[chapter]
+\theoremstyle{definition}
+\newtheorem{exercise}{Exercici}[chapter]
+\theoremstyle{definition}
+\newtheorem{hypothesis}{Hipòtesi}[chapter]
+\theoremstyle{remark}
+\newtheorem*{remark}{Remarca}
+\newtheorem*{solution}{Solució}
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+\hypertarget{introducciuxf3}{%
+\chapter*{Introducció}\label{introducciuxf3}}
+\addcontentsline{toc}{chapter}{Introducció}
+
+Aquests són uns apunts de Teoria de Galois, pensats pel curs de 3r del Grau de Matemàtiques de la UAB.
+
+L'assignatura de Teoria de Galois es cursa al primer semestre del tercer curs del Grau de Matemàtiques de la UAB. Consta de 6 crèdits, repartits en:
+
+\begin{itemize}
+\tightlist
+\item
+  Dues hores setmanals de teoria (15 setmanes), que actualment es fan seguides.
+\item
+  Una hora setmanal de problemes (15 setmanes).
+\item
+  Tres seminaris pràctics, de 2h cadascun.
+\end{itemize}
+
+El curs es pot dividir de manera natural en 15 sessions de dues hores. El temps efectiu de cadascuna d'aquestes sessions és de 100 minuts, i es pot pensar com una sèrie de 15 capítols. Seguidament detallem cadascun d'aquests capítols i la seva sinopsi.
+
+Pensem que en un curs com aquest hi ha idees molt importants que cal transmetre el més efectivament possible. També hi ha idees menys importants que poden obfuscar aquestes idees fonamentals, de manera que optaré per fer la teoria amb algunes hipòtesis simplificadores. Les classes de problemes introduiran exercicis amb més generalitat.
+
+Així, assumirem que tots els anells que apareixen són unitaris i commutatius, que tots els anells són dominis d'ideals principals (bàsicament tractarem amb els anells de polinomis sobre un cos). Encara que parlarem d'(in)separabilitat, la majoria d'exemples estaran basats o bé en extensions dels racionals o de cossos finits.
+
+\hypertarget{pilot}{%
+\chapter{Pilot: Galois entre els radicals}\label{pilot}}
+
+Parlem de les equacions polinomials en una variable, la famosa fórmula quadràtica i els monstres de grau tres i quatre.
+
+En aquests casos, les solucions es poden expressar en termes de les quatre operacions bàsiques a més de l'extracció d'arrels.
+
+Seguidament, estudiem el polinomi \(x^3-2\), que té una arrel real i dues de complexes. Les podem dibuixar al pla, formen un triangle equilàter. Aquest triangle té un grup de simetries, que és el grup diedral \(D_{2\times 3}\) que ja s'ha estudiat a l'assignatura Estructures Algebraiques. D'altra banda, podem introduir el subcòs de \(\CC\) anomenat \(\QQ(\alpha,\omega)\) on \(\alpha=\sqrt[3]{2}\) i \(\omega=e^{2\pi i /3}\) és una arrel cúbica primitiva de la unitat. Aquest és el mínim cos que conté totes les arrels del nostre polinomi (exercici). Ara podem definir les ``simetries'' d'aquest cos com el grup dels automorfismes (morfismes de cossos que són invertibles, encara que aquesta segona condició serà bastant supèrflua).
+
+Seguidament, canviem el polinomi d'estudi a \(x^5-2\). Aquí hi ha 10 simetries geomètriques, però en canvi hi ha moltes més ``simetries'' com a cos de les arrels. En aquest cas, en tenim 20 (en general, si \(p\) és un primer, \(x^p-2\) té \(p(p-1)\) simetries en les arrels, però només \(2p\) simetries geomètriques.
+
+L'objectiu de la Teoria de Galois és estudiar aquest nou grup de simetries, que ens dona molta informació sobre les arrels. En particular, aquest grup ens determina la resolubilitat per radicals del polinomi en qüestió.
+
+\hypertarget{vells-coneguts}{%
+\chapter{Vells coneguts}\label{vells-coneguts}}
+
+Començarem recordant les definicions i resultats bàsics que ja s'han vist a altres
+assignatures, com Fonaments o Estructures algebraiques. Donarem les definicions de cos,
+característica, cos primer, i veurem que aquest és o bé \(\FF_p\) per algun primer \(p\), o bé \(\QQ\).
+A continuació introduïrem les extensions de cossos i el grau.
+
+\hypertarget{les-torres}{%
+\chapter{Les Torres}\label{les-torres}}
+
+L'objectiu és estudiar torres d'extensions, i com es comporta el grau en torres finits. Veurem aplicacions que té aquesta fórmula, com ara el càlcul del grau de la composició d'extensions.
+
+\hypertarget{extensions-algebraiques}{%
+\chapter{Extensions algebraiques}\label{extensions-algebraiques}}
+
+Parlarem d'elements algebraics i el seu polinomi mínim. Veurem que el cos
+generat per un element algebraic és isomorf al quocient de l'anell de polinomis pel seu polinomi mínim. Veurem la relació entre extensions algebraiques i extensions finites.
+
+\hypertarget{regle-i-compuxe0s}{%
+\chapter{Regle i compàs}\label{regle-i-compuxe0s}}
+
+Definirem els nombres construibles amb regla i compàs, i els caracteritzarem.
+
+Aleshores veurem la impossibilitat de la duplicació del cub, la trisecció de l'angle
+i la quadratura del cercle (aquest últim, assumint la transcendència de \(\pi\), que no demostrarem).
+
+\hypertarget{la-clausura-algebraica-dun-cos}{%
+\chapter{La clausura algebraica d'un cos}\label{la-clausura-algebraica-dun-cos}}
+
+Definirem la noció de cos algebraicament tancat. Direm que \(\CC\) ho és, encara que deixarem la demostració més endavant (com a aplicació del teorema fonamental de la TG). Definirem la clausura algebraica d'un cos, i en demostrarem l'existència (si acceptem l'axioma de l'elecció) i unicitat.
+
+Així, podrem pensar les extensions algebraiques com a contingudes a una clausura fixada (si cal).
+
+\hypertarget{cossos-de-descomposiciuxf3}{%
+\chapter{Cossos de descomposició}\label{cossos-de-descomposiciuxf3}}
+
+El cos de descomposició d'un polinomi juga un paper destacat al llarg del curs.
+Aquí els definirem, i en demostrarem l'existència i unicitat (llevat d'isomorfisme). També
+enunciarem i demostrarem el teorema de l'extensió, que ens permet estendre isomorfismes de cossos
+a extensions que siguin clausura de Galois d'un polinomi. Aprofitarem per definir
+extensions normals (aquelles que són cos de descomposició d'un conjunt de polinomis).
+
+Com a aplicació, s'introduiran els polinomis i cossos ciclotòmics, i ho lligarem amb la
+demostració de l'existència i unicitat de cossos finits de cardinal potència d'un primer.
+
+\hypertarget{grups-simples-grups-resolubles}{%
+\chapter{Grups simples, grups resolubles}\label{grups-simples-grups-resolubles}}
+
+Aquesta sessió no parla de teoria de cossos, sinó de grups. Això ens cal ja que el teorema fonamental ens relaciona les dues teories. Introduïrem
+la noció de resolubilitat d'un grup, parlarem dels grups simples i veurem que el grup alternat \(A_n\) no és simple per a tot \(n \geq 5\). Això
+implica que \(S_n\) no és resoluble per \(n\geq 5\).
+
+\hypertarget{simetries}{%
+\chapter{Simetries}\label{simetries}}
+
+Començarem definint els automorfismes d'una extensió. Veurem que formen
+un grup, i que cada subgrup té associat el cos dels elements fixos per aquest. Veurem també
+que els automorfismes envien cada element \(\alpha\) a una arrel de \(\Irr(\alpha,x)\),
+i demostrarem que en una extensió normal el cardinal del grup d'automorfismes està
+fitat pel grau de l'extensió. Així, podrem definir una extensió de Galois com aquella
+on la fita s'assoleix.
+
+\hypertarget{la-independuxe8ncia-dels-caruxe0cters}{%
+\chapter{La independència (dels caràcters)}\label{la-independuxe8ncia-dels-caruxe0cters}}
+
+En aquesta secció demostrarem un resultat d'àlgebra lineal necessari per la demostració del teorema fonamental de la TG.
+
+\begin{definition}
+\protect\hypertarget{def:caracter}{}\label{def:caracter}Un \emph{caràcter} \(\chi\) d'un grup \(G\) amb valors en un cos \(L\) és un morfisme de grups
+\[
+\chi \colon G \to L^\times.
+\]
+\end{definition}
+
+Podem pensar un caràcter \(\chi\) com una funció \(G\to L\). Les funcions de \(G\) a \(L\) formen un \(L\)-espai vectorial, de manera òbvia.
+
+\begin{theorem}[Independència lineal dels caràcters]
+\protect\hypertarget{thm:caracters-li}{}\label{thm:caracters-li}Siguin \(\chi_1,\ldots,\chi_n\) caràcters de \(G\) diferents. Aleshores són linealment independents, és a dir, no hi ha
+cap combinació lineal no trivial \(a_1\chi_1+\cdots+a_n\chi_n\) que doni lloc a la funció idènticament zero.
+\end{theorem}
+
+\begin{proof}
+Suposem (reordenant, si cal) que podem escriure
+\[
+a_1\chi_1 + \cdots a_m\chi_m = 0,
+\]
+amb tots els \(a_i\neq 0\) (observem \(m\leq n\)) i amb \(m\) mínim. Obtindrem una relació de dependència amb menys termes, arribant així a contradicció.
+
+Prenem \(g_0\in G\) tal que \(\chi_1(g_0)\neq \chi_m(g_0)\). Aleshores tenim
+\[
+a_1\chi_1(g) + \cdots a_m\chi_m(g) = 0,
+\]
+i
+\[
+a_1\chi_1(g_0g) + \cdots a_m\chi_m(g_0g) = 0.
+\]
+Multiplicant la primera equació per \(\chi_m(g_0)\) i restant-li la segona obtenim, per a tot \(g\),
+\[
+a_1(\chi_m(g_0)-\chi_1(g_0)) \chi_1(g) + \cdots a_{m-1}(\chi_m(g_0)- \chi_{m-1}(g_0)) \chi_{m-1}(g) = 0.
+\]
+Com que el primer coeficient és diferent de zero, tenim una relació no trivial amb \(m-1\) termes, contradicció.
+\end{proof}
+
+Un cas particular que ens interessa aquí prové de consirar un morfisme no trivial de cossos \(\sigma\colon K\to L\),
+que indueix un morfisme de grups entre les unitats \(\sigma\colon K^\times \to L^\times\) (aquesta restricció ja conté
+tota la informació que ens cal de \(\sigma\), perquè ja sabem que \(\sigma(0)=0\)). Aleshores \(\sigma\) esdevé un caràcter
+del grup \(G=K^\times\), i per tant tenim el següent:
+
+\begin{corollary}
+Si \(\sigma_1,\ldots,\sigma_n\) són morfismes diferents de \(K\) a \(L\), aleshores són linealment independents com a funcions de \(K\).
+\end{corollary}
+
+Un cas encara més particular d'aquest corol·lari ens permet demostrar una relació numèrica bàsica entre automorfismes d'un cos
+i els cossos que deixen fixes.
+
+\begin{proposition}
+Sigui \(S\) un subconjunt finit d'automorfismes d'un cos \(K\), i sigui \(F=K^G\) el seu cos fix. Aleshores
+\[
+[K\colon F] \geq |S|.
+\]
+\end{proposition}
+
+\begin{proof}
+TODO
+\end{proof}
+
+\begin{theorem}
+Sigui \(G\) un subgrup finit d'automorfismes d'un cos \(K\), i sigui \(F=K^G\) el seu cos fix. Aleshores
+\[
+[K\colon F] = |G|.
+\]
+\end{theorem}
+
+\begin{proof}
+Només ens cal veure que \([K\colon F] \leq |G|\), ja que l'altra desigualtat ja l'hem demostrat independentment
+del fet que \(G\) sigui un grup.
+
+TODO (llarga)
+\end{proof}
+
+D'aquest resultat se'n desprenen fàcilment conseqüències molt importants que val la pena destacar.
+
+\begin{corollary}
+Si \(K/F\) és una extensió finita, aleshores
+\[
+|\Aut(K/F)| \leq [K\colon F],
+\]
+amb igualtat si i només si \(F\) és el cos fix d'\(\Aut(K/F)\).
+\end{corollary}
+
+Dit d'altra manera, l'extensió \(K/F\) és Galois si i només si \(F=K^{\Aut(K/F)}\).
+
+\begin{proof}
+TODO.
+\end{proof}
+
+\hypertarget{el-teorema-fonamental}{%
+\chapter{El Teorema Fonamental}\label{el-teorema-fonamental}}
+
+Enunciem i demostrem el teorema fonamental de la teoria de Galois. Farem
+servir la independència lineal dels caràcters (que tmabé demostrarem). Després veurem
+que si \(L / F\) és una extensió finita i \(H\) un subgrup de \(\Aut(L/F)\), aleshores
+\([L \colon FH] = |H|\). Aquest fet, fonamental, ens permet també caracteritzar
+les extensions de Galois com aquelles que són normals i separables.
+
+Aleshores ja estarem en posició d'enunciar i demostrar el teorema fonamental. Acabarem
+amb diversos exemples concrets d'extensions, il·lustrant la correspondència de Galois.
+
+\hypertarget{uxe9s-muxe9s-fuxe0cil-dibuixar-un-17-gon-que-un-heptuxe0gon}{%
+\chapter{És més fàcil dibuixar un 17-gon que un heptàgon?}\label{uxe9s-muxe9s-fuxe0cil-dibuixar-un-17-gon-que-un-heptuxe0gon}}
+
+En aquest apartat estudiem les extensions ciclotòmiques, i veiem que \(\Gal(\QQ(\zeta_n))\)
+és canònicament isomorf a \((\ZZ/n\ZZ)^\times\). Com a aplicació, veurem com construir
+polígons regulars amb regle i compàs. Veurem que només és possible per polígons regulars
+de \(n\) costats quan \(\varphi{n}\) és una potència de \(2\). Això passa si i només si \(n\) és producte
+d'una potència de dos i de primers de Fermat diferents.
+
+\hypertarget{arrels-i-radicals}{%
+\chapter{Arrels i radicals}\label{arrels-i-radicals}}
+
+Definirem què vol dir que un polinomi sigui resoluble per radicals, i veurem
+que és equivalent a què el seu grup de Galois sigui resoluble. D'aquí en podrem
+deduir que els polinomis generals de grau \(\geq 5\) no són resolubles per radicals i,
+per tant, no existeix una fórmula que expressi les arrels d'un polinomi en termes
+dels seus coeficients. També es mostrarà un exemple concret d'un polinomi de grau \(5\) sobre \(\QQ\)
+amb grup de Galois \(S_5\): si \(f\) és irreductible amb exactament \(3\) arrels reals, aleshores la conjugació complexa dona un automorfisme d'ordre \(2\). Com que \(\Gal(f)\) té ordre divisible per \(5\), hi ha algun element \(\sigma\) d'ordre \(5\) (Teorema de Cauchy). Però a \(S_5\) els elements d'ordre \(5\) són necessàriament \(5\)-cicles. Com que \(\Gal(f)\) té un \(5\)-cicle i una transposició, és necessàriament tot \(S_5\).
+
+\hypertarget{teoria-de-galois-infinita}{%
+\chapter{Teoria de Galois infinita}\label{teoria-de-galois-infinita}}
+
+Farem un esbós de com cal modificar els enunciats per adaptar el teorema fonamental de la Teoria de Galois
+a extensions infinites.
+
+\nocite{*}
+
+  \bibliography{bibliografia.bib}
+
+\end{document}
