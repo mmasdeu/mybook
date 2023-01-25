@@ -1,7 +1,5 @@
-Notes creades amb R Markdown i **bookdown** (https://github.com/rstudio/bookdown).
+Codi font dels apunts de Teoria de Galois que es poden trobar a:
 
-Per crear un pdf:
-`Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::pdf_book')"`.
+https://mmasdeu.github.io/teoriadegalois
 
-Per crear una web:
-`Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::gitbook')"`.
+Creat amb R Markdown i **bookdown** (https://github.com/rstudio/bookdown).
