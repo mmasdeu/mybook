@@ -28,6 +28,12 @@ jobs:
 
       - uses: r-lib/actions/setup-renv@v2
 
+      - uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          cache-version: 2
+          extra-packages: |
+            any::bookdown
+
       - name: Cache bookdown results
         uses: actions/cache@v3
         with:
@@ -39,7 +45,7 @@ jobs:
         run: bookdown::render_book('index.Rmd', 'bookdown::gitbook')
         shell: Rscript {0}
         
-      - name: Build html site
+      - name: Build pdf
         run: bookdown::render_book('index.Rmd', 'bookdown::pdf_book')
         shell: Rscript {0}
         
