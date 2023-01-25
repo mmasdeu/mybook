@@ -6,7 +6,7 @@ bookdown::gitbook:
         <li><a href="./">Teoria de Galois</a></li>
       after: |
         <li><a href="https://github.com/mmasdeu/mybook" target="blank">Publicat amb bookdown</a></li>
-    edit: https://github.com/mmasdeu/mybook/edit/main/%s
+    edit: https://github.com/mmasdeu/teoriadegalois/edit/main/%s
     download: ["pdf"]
 bookdown::pdf_book:
   includes:
