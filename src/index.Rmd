@@ -7,7 +7,7 @@ documentclass: book
 bibliography: [bibliografia.bib]
 biblio-style: apalike
 link-citations: yes
-github-repo: mmasdeu/mybook
+github-repo: mmasdeu/teoriadegalois
 description: "Apunts d'un curs de Teoria de Galois a la UAB"
 output:
   bookdown::pdf_book:
