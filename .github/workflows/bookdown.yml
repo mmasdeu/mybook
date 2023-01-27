@@ -49,7 +49,10 @@ jobs:
             any::bookdown
 
       - name: Build site
-        run: bash "build.sh"
+        run: |
+          Rscript -e 'install.packages("bookdown")'
+          bash "build.sh"
+
         
       - name: Deploy to GitHub pages 🚀
         if: github.event_name != 'pull_request'
