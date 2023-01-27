@@ -3,4 +3,5 @@ Type: Book
 Title: Teoria de Galois
 Version: 0.0.1
 Imports: bookdown
+Needs: bookdown
 Remotes: rstudio/bookdown
