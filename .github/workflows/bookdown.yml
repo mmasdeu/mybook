@@ -50,7 +50,7 @@ jobs:
 
       - name: Build site
         run: |
-          Rscript -e 'install.packages("bookdown")'
+          R -e 'install.packages("bookdown")'
           bash "build.sh"
 
         
