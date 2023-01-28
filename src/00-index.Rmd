@@ -22,7 +22,7 @@ output:
         toolbar:
           position: static
     includes:
-      in_header: mathjaxheader.html
+      in_header: src/mathjaxheader.html
 
   bookdown::html_book:
     split_by: chapter
@@ -31,12 +31,8 @@ output:
         toolbar:
           position: static
     includes:
-      in_header: mathjaxheader.html
-      
-
+      in_header: src/mathjaxheader.html
 ---
-
-
 # Introducció {-}
 
 Aquests són uns apunts de Teoria de Galois, pensats pel curs de 3r del Grau de Matemàtiques de la UAB.

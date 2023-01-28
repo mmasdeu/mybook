@@ -20,4 +20,4 @@ language:
   ui:
     chapter_name: !expr function(i) paste0('Episodi ', i, '. ')
 delete_merged_file: true
-rmd_subdir : 'src/'
+rmd_subdir: 'src/'
