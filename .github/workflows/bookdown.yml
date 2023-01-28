@@ -28,28 +28,14 @@ jobs:
           use-public-rspm: true
 
       - uses: r-lib/actions/setup-renv@v2
-
-
-      - name: Cache bookdown results
-        uses: actions/cache@v3
-        with:
-          path: src/_bookdown_files
-          key: bookdown-${{ hashFiles('**/*Rmd') }}
-          restore-keys: bookdown-
           
       - name: Install latex mk
         run: sudo apt-get udpate & sudo apt-get install -y -q latexmk texlive-lang-spanish texlive-latex-extra texlive-xetex fonts-freefont-ttf texlive-fonts-recommended texlive-fonts-extra
 
-
-      - uses: r-lib/actions/setup-r-dependencies@v2
-        with:
-          cache : false
-          
-          extra-packages: |
-            any::bookdown
-
       - name: Build site
-        run: bash "build.sh"
+        run: |
+          Rscript -e 'install.packages(c("rmarkdown","bookdown"))'
+          ./build.sh
         
       - name: Deploy to GitHub pages 🚀
         if: github.event_name != 'pull_request'
