@@ -1,5 +1,5 @@
 book_filename: "teoriadegalois"
-output_dir: "../_book"
+output_dir: "_book"
 language:
   label:
     fig: 'Figura '
@@ -20,3 +20,4 @@ language:
   ui:
     chapter_name: !expr function(i) paste0('Episodi ', i, '. ')
 delete_merged_file: true
+rmd_subdir : 'src/'

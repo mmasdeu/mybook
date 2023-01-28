@@ -4,7 +4,7 @@ author: "Marc Masdeu"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
-bibliography: [bibliografia.bib]
+bibliography: ["src/bibliografia.bib"]
 biblio-style: apalike
 link-citations: yes
 github-repo: mmasdeu/teoriadegalois
@@ -12,7 +12,7 @@ description: "Apunts d'un curs de Teoria de Galois a la UAB"
 output:
   bookdown::pdf_book:
     includes:
-      in_header: preamble.tex
+      in_header: src/preamble.tex
     toc: yes
     microtypeoptions:
       - verbose=silent
