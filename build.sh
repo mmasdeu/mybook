@@ -7,7 +7,7 @@ echo -e '<span class="math inline" style="display: none">\n\\(' >> src/mathjaxhe
 cat mathsymbols.sty | sed  's/providecommand/renewcommand/g' >> src/mathjaxheader.html
 echo -e '\\)\n</span>' >> src/mathjaxheader.html
 # Rscript -e "bookdown::render_book('src/index.Rmd', 'bookdown::html_book')"
-Rscript -e "bookdown::render_book('src/00-index.Rmd','bookdown::gitbook')"
-Rscript -e "bookdown::render_book('src/00-index.Rmd','bookdown::pdf_book')"
+Rscript -e "bookdown::render_book('index.Rmd','bookdown::gitbook')"
+Rscript -e "bookdown::render_book('index.Rmd','bookdown::pdf_book')"
 # Rscript -e "bookdown::render_book('src/index.Rmd', 'bookdown::epub_book')"
 
