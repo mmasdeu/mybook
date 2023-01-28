@@ -33,6 +33,7 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
 \usepackage{longtable,booktabs,array}
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
@@ -97,7 +98,7 @@
 
 \title{Teoria de Galois}
 \author{Marc Masdeu}
-\date{2023-01-25}
+\date{2023-01-28}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Teorema}[chapter]
@@ -123,30 +124,6 @@
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
-\hypertarget{introducciuxf3}{%
-\chapter*{Introducció}\label{introducciuxf3}}
-\addcontentsline{toc}{chapter}{Introducció}
-
-Aquests són uns apunts de Teoria de Galois, pensats pel curs de 3r del Grau de Matemàtiques de la UAB.
-
-L'assignatura de Teoria de Galois es cursa al primer semestre del tercer curs del Grau de Matemàtiques de la UAB. Consta de 6 crèdits, repartits en:
-
-\begin{itemize}
-\tightlist
-\item
-  Dues hores setmanals de teoria (15 setmanes), que actualment es fan seguides.
-\item
-  Una hora setmanal de problemes (15 setmanes).
-\item
-  Tres seminaris pràctics, de 2h cadascun.
-\end{itemize}
-
-El curs es pot dividir de manera natural en 15 sessions de dues hores. El temps efectiu de cadascuna d'aquestes sessions és de 100 minuts, i es pot pensar com una sèrie de 15 capítols. Seguidament detallem cadascun d'aquests capítols i la seva sinopsi.
-
-Pensem que en un curs com aquest hi ha idees molt importants que cal transmetre el més efectivament possible. També hi ha idees menys importants que poden obfuscar aquestes idees fonamentals, de manera que optaré per fer la teoria amb algunes hipòtesis simplificadores. Les classes de problemes introduiran exercicis amb més generalitat.
-
-Així, assumirem que tots els anells que apareixen són unitaris i commutatius, que tots els anells són dominis d'ideals principals (bàsicament tractarem amb els anells de polinomis sobre un cos). Encara que parlarem d'(in)separabilitat, la majoria d'exemples estaran basats o bé en extensions dels racionals o de cossos finits.
-
 \hypertarget{pilot}{%
 \chapter{Pilot: Galois entre els radicals}\label{pilot}}
 
@@ -356,6 +333,30 @@ a extensions infinites.
 
 \nocite{*}
 
-  \bibliography{bibliografia.bib}
+\hypertarget{introducciuxf3}{%
+\chapter*{Introducció}\label{introducciuxf3}}
+\addcontentsline{toc}{chapter}{Introducció}
+
+Aquests són uns apunts de Teoria de Galois, pensats pel curs de 3r del Grau de Matemàtiques de la UAB.
+
+L'assignatura de Teoria de Galois es cursa al primer semestre del tercer curs del Grau de Matemàtiques de la UAB. Consta de 6 crèdits, repartits en:
+
+\begin{itemize}
+\tightlist
+\item
+  Dues hores setmanals de teoria (15 setmanes), que actualment es fan seguides.
+\item
+  Una hora setmanal de problemes (15 setmanes).
+\item
+  Tres seminaris pràctics, de 2h cadascun.
+\end{itemize}
+
+El curs es pot dividir de manera natural en 15 sessions de dues hores. El temps efectiu de cadascuna d'aquestes sessions és de 100 minuts, i es pot pensar com una sèrie de 15 capítols. Seguidament detallem cadascun d'aquests capítols i la seva sinopsi.
+
+Pensem que en un curs com aquest hi ha idees molt importants que cal transmetre el més efectivament possible. També hi ha idees menys importants que poden obfuscar aquestes idees fonamentals, de manera que optaré per fer la teoria amb algunes hipòtesis simplificadores. Les classes de problemes introduiran exercicis amb més generalitat.
+
+Així, assumirem que tots els anells que apareixen són unitaris i commutatius, que tots els anells són dominis d'ideals principals (bàsicament tractarem amb els anells de polinomis sobre un cos). Encara que parlarem d'(in)separabilitat, la majoria d'exemples estaran basats o bé en extensions dels racionals o de cossos finits.
+
+  \bibliography{src/bibliografia.bib}
 
 \end{document}
