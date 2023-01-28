@@ -32,6 +32,9 @@ jobs:
       - name: Install latex mk
         run: sudo apt-get udpate & sudo apt-get install -y -q latexmk texlive-lang-spanish texlive-latex-extra texlive-xetex fonts-freefont-ttf texlive-fonts-recommended texlive-fonts-extra
 
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
+
       - name: Build site
         run: |
           Rscript -e 'install.packages(c("rmarkdown","bookdown"))'
