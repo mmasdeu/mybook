@@ -34,8 +34,8 @@ jobs:
 
       - name: Build site
         run: |
-          R -e 'install.packages("bookdown")'
-          bash "build.sh"
+          Rscript -e 'install.packages(c("rmarkdown","bookdown"))'
+          ./build.sh
         
       - name: Deploy to GitHub pages 🚀
         if: github.event_name != 'pull_request'
