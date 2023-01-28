@@ -1,4 +1,4 @@
-# Pilot: Galois entre els radicals {#pilot}
+# Galois entre els radicals {#pilot}
 
 Parlem de les equacions polinomials en una variable, la famosa fórmula quadràtica i els monstres de grau tres i quatre.
 
