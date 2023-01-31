@@ -97,17 +97,19 @@
 
 \renewcommand{\char}{\operatorname{char}}
 \renewcommand{\car}{\operatorname{char}}\)</span>
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  extensions: ["tex2jax.js"],
-  jax: ["input/TeX","output/HTML-CSS"],
-  "HTML-CSS": {
-    styles: {".MathJax_Preview": {visibility: "hidden"}}
-  },
-    tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]},
-  TeX: {extensions: ["AMSmath.js","AMSsymbols.js","https://mmasdeu.github.io/teoriadegalois/xypic.js"]}
-});
+
+<script>
+  MathJax = {
+    loader: {
+      load: ['[custom]/xypic.js'],
+      paths: {custom: 'https://cdn.jsdelivr.net/gh/sonoisa/XyJax-v3@3.0.1/build/'}
+    },
+    tex: {
+      packages: {'[+]': ['xypic']}
+    }
+  };
 </script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.1.4/es5/tex-chtml-full.js"></script>
 
 
 
@@ -302,10 +304,15 @@ conjunt finit format per <span class="math inline">\(\alpha_1,\ldots,\alpha_n\)<
 un <em>element primitiu</em> de l’extensió (que no és únic, en general!).</p>
 <div class="theorem">
 <p><span id="thm:ext-simple" class="theorem"><strong>Teorema 1.3  (extensió simple) </strong></span>Sigui <span class="math inline">\(p(x)\in F[x]\)</span> un polinomi irreductible, i suposem que <span class="math inline">\(K/F\)</span> és una extensió que conté una arrel <span class="math inline">\(\alpha\)</span> de <span class="math inline">\(p(x)\)</span>.
-Aleshores hi ha un isomorfisme <span class="math display">\[F(\alpha) \cong F[x]/(p(x)).\]</span></p>
+Aleshores hi ha un isomorfisme <span class="math display">\[F[x]/(p(x))\cong F(\alpha).\]</span>
+Aquest isomorfisme és únic si demanem que <span class="math inline">\([x]\mapsto \alpha\)</span>.</p>
 </div>
 <div class="proof">
 <p><span id="unlabeled-div-11" class="proof"><em>Prova</em>. </span>TODO</p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-12" class="example"><strong>Exemple 1.5  </strong></span>Expliquem l’exemple de <span class="math inline">\(\QQ(\sqrt{2})\)</span> i la diferència amb <span class="math inline">\(\QQ(\sqrt[3]{2})\)</span>. Aquest darrer cos és un subcòs de <span class="math inline">\(\RR\)</span>, però hi ha
+un altre subcòs de <span class="math inline">\(\CC\)</span> que és isomorf a aquest.</p>
 </div>
 
 </div>
