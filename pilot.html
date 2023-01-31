@@ -105,7 +105,7 @@ MathJax.Hub.Config({
     styles: {".MathJax_Preview": {visibility: "hidden"}}
   },
     tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]},
-  TeX: {extensions: ["AMSmath.js","AMSsymbols.js","https://sonoisa.github.io/xyjax_ext/xypic.js"]}
+  TeX: {extensions: ["AMSmath.js","AMSsymbols.js","https://mmasdeu.github.io/teoriadegalois/xypic.js"]}
 });
 </script>
 
@@ -155,6 +155,7 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="1.1" data-path="pilot.html"><a href="pilot.html#convencions"><i class="fa fa-check"></i><b>1.1</b> Convencions</a></li>
 <li class="chapter" data-level="1.2" data-path="pilot.html"><a href="pilot.html#característica-dun-cos"><i class="fa fa-check"></i><b>1.2</b> Característica d’un cos</a></li>
+<li class="chapter" data-level="1.3" data-path="pilot.html"><a href="pilot.html#extensions"><i class="fa fa-check"></i><b>1.3</b> Extensions</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="les-torres.html"><a href="les-torres.html"><i class="fa fa-check"></i><b>2</b> Les Torres</a></li>
 <li class="chapter" data-level="3" data-path="regle-i-compàs.html"><a href="regle-i-compàs.html"><i class="fa fa-check"></i><b>3</b> Regle i Compàs</a></li>
@@ -237,6 +238,9 @@ necessàriament <span class="math inline">\(a=n\)</span> i <span class="math inl
 <p><span id="def:cos-primer" class="definition"><strong>Definició 1.2  (cos primer) </strong></span>El <em>cos primer</em> d’un cos <span class="math inline">\(F\)</span> és el cos generat per <span class="math inline">\(1_F\)</span>. És o bé <span class="math inline">\(\QQ\)</span> (si <span class="math inline">\(F\)</span> té característica <span class="math inline">\(0\)</span>) o bé el cos <span class="math inline">\(\FF_p\)</span>
 (si <span class="math inline">\(F\)</span> té característica <span class="math inline">\(p\)</span>).</p>
 </div>
+</div>
+<div id="extensions" class="section level2 hasAnchor" number="1.3">
+<h2><span class="header-section-number">1.3</span> Extensions<a href="pilot.html#extensions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Quan <span class="math inline">\(K\)</span> és un cos que conté un altre cos <span class="math inline">\(F\)</span>, direm que <span class="math inline">\(K\)</span> és una <em>extensió</em> de <span class="math inline">\(F\)</span>, i escriurem <span class="math inline">\(K/F\)</span> (no és cap mena de quocient!). Direm també que
 <span class="math inline">\(F\)</span> és el <em>cos base</em> de l’extensió <span class="math inline">\(K/F\)</span>. També farem servir
 el diagrama
@@ -262,6 +266,46 @@ i infinita si no.</p>
 </div>
 <div class="proof">
 <p><span id="unlabeled-div-5" class="proof"><em>Prova</em>. </span>TODO</p>
+</div>
+<p>El següent teorema ens diu que l’extensió donada pel teorema anterior té grau igual al grau del polinomi (per això s’ha triat
+el nom!). De fet, ens dona una base de <span class="math inline">\(K\)</span> com a <span class="math inline">\(F\)</span>-espai vectorial.</p>
+<div class="theorem">
+<p><span id="thm:ext-arrel-base" class="theorem"><strong>Teorema 1.2  </strong></span>Sigui <span class="math inline">\(p(x)\in F[x]\)</span> un polinomi irreductible de grau <span class="math inline">\(n\)</span>, i sigui <span class="math inline">\(K=F[x]/(p(x))\)</span>. Sigui <span class="math inline">\(\alpha\)</span> la classe de <span class="math inline">\(x\)</span> a <span class="math inline">\(K\)</span>.
+Aleshores els elements <span class="math inline">\((1,\alpha,\ldots,\alpha^{n-1})\)</span> formen una <span class="math inline">\(F\)</span>-base de <span class="math inline">\(K\)</span>.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-6" class="proof"><em>Prova</em>. </span>TODO</p>
+</div>
+<p>L’aritmètica a <span class="math inline">\(F[x]/(p(x))\)</span> és molt explícita: els seus elements es poden expressar com a polinomis en <span class="math inline">\(\alpha\)</span> de grau
+menor que <span class="math inline">\(n=\deg(p(x))\)</span>. Donats dos polinomis <span class="math inline">\(a(\alpha)\)</span> per <span class="math inline">\(b(\alpha)\)</span>, podem considerar
+el residu <span class="math inline">\(r(x)\)</span> de dividir <span class="math inline">\(a(x)b(x)\)</span> per <span class="math inline">\(p(x)\)</span>. Aleshores el producte <span class="math inline">\(a(\alpha)b(\alpha)\)</span> ve donat per l’element <span class="math inline">\(r(\alpha)\)</span>.
+Per divir ens cal utilitzar la identitat de Bézout (exercici).</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-7" class="example"><strong>Exemple 1.1  </strong></span>Mostrem <span class="math inline">\(\CC\)</span> com el resultat d’adjuntar una arrel de <span class="math inline">\(x^2+1\)</span> a <span class="math inline">\(\RR\)</span>.</p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-8" class="example"><strong>Exemple 1.2  </strong></span>Podem construir de manera semblant <span class="math inline">\(\QQ(i)\)</span>, o <span class="math inline">\(\QQ(\sqrt{2})\)</span>, i també <span class="math inline">\(\QQ(\sqrt[3]{2})\)</span>. Veurem com es
+poden fer les operacions habituals en algun d’aquests cossos.</p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-9" class="example"><strong>Exemple 1.3  </strong></span>Si considerem <span class="math inline">\(\FF_p\)</span> el cos finit de <span class="math inline">\(p\)</span> elements i un polinomi <span class="math inline">\(f(x)\in \FF_p[x]\)</span> irreductible de grau <span class="math inline">\(n\)</span>
+(suposant que existeixi!), aleshores obtenim un cos <span class="math inline">\(K/\FF_p\)</span> de grau <span class="math inline">\(n\)</span>. Té, per tant, <span class="math inline">\(p^n\)</span> elements.</p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-10" class="example"><strong>Exemple 1.4  </strong></span>També podem fer extensions de cossos més “exòtics”. Per exemple, podem prendre <span class="math inline">\(k(t)\)</span> com el cos de funcions
+racionals sobre un cos fixat <span class="math inline">\(k\)</span>, i “afegir” una arrel quadrada de <span class="math inline">\(t\)</span> (mitjançant el polinomi <span class="math inline">\(x^2-t\)</span>).</p>
+</div>
+<p>Sigui <span class="math inline">\(K/F\)</span> una extensió, i considerem un conjunt <span class="math inline">\(S\subseteq K\)</span>. Aleshores podem considerar el “mínim” subcos <span class="math inline">\(L\subseteq K\)</span>
+que conté <span class="math inline">\(F\)</span> i tots els elements de <span class="math inline">\(S\)</span>. S’anomena el <em>cos generat per <span class="math inline">\(S\)</span> sobre <span class="math inline">\(F\)</span></em>, i escriurem <span class="math inline">\(F(S)\)</span>. Si <span class="math inline">\(S\)</span> és un
+conjunt finit format per <span class="math inline">\(\alpha_1,\ldots,\alpha_n\)</span> aleshores escriurem <span class="math inline">\(F(\alpha_1,\ldots,\alpha_n)\)</span>. Un cas particular
+és quan <span class="math inline">\(S\)</span> conté un sol element: en aquest cas <span class="math inline">\(F(\alpha)\)</span> s’anomena una extensió <em>simple</em>, i l’element <span class="math inline">\(\alpha\)</span> s’anomena
+un <em>element primitiu</em> de l’extensió (que no és únic, en general!).</p>
+<div class="theorem">
+<p><span id="thm:ext-simple" class="theorem"><strong>Teorema 1.3  (extensió simple) </strong></span>Sigui <span class="math inline">\(p(x)\in F[x]\)</span> un polinomi irreductible, i suposem que <span class="math inline">\(K/F\)</span> és una extensió que conté una arrel <span class="math inline">\(\alpha\)</span> de <span class="math inline">\(p(x)\)</span>.
+Aleshores hi ha un isomorfisme <span class="math display">\[F(\alpha) \cong F[x]/(p(x)).\]</span></p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-11" class="proof"><em>Prova</em>. </span>TODO</p>
 </div>
 
 </div>
