@@ -51,6 +51,8 @@ El *cos primer* d'un cos $F$ és el cos generat per $1_F$. És o bé $\QQ$ (si $
 (si $F$ té característica $p$).
 :::
 
+## Extensions
+
 Quan $K$ és un cos que conté un altre cos $F$, direm que $K$ és una *extensió* de $F$, i escriurem $K/F$ (no és cap mena de quocient!). Direm també que
 $F$ és el *cos base* de l'extensió $K/F$. També farem servir
 el diagrama
@@ -77,6 +79,55 @@ i infinita si no.
 
 ::: {.theorem #ext-arrel name="adjunció d'arrels"}
 Sigui $p(x)\in F[x]$ un polinomi irreductible. Aleshores existeix una extensió $K/F$ tal que $K$ té una arrel de $p(x)$.
+:::
+::: {.proof}
+TODO
+:::
+
+El següent teorema ens diu que l'extensió donada pel teorema anterior té grau igual al grau del polinomi (per això s'ha triat
+el nom!). De fet, ens dona una base de $K$ com a $F$-espai vectorial.
+
+::: {.theorem #ext-arrel-base}
+Sigui $p(x)\in F[x]$ un polinomi irreductible de grau $n$, i sigui $K=F[x]/(p(x))$. Sigui $\alpha$ la classe de $x$ a $K$.
+Aleshores els elements $(1,\alpha,\ldots,\alpha^{n-1})$ formen una $F$-base de $K$.
+:::
+::: {.proof}
+TODO
+:::
+
+L'aritmètica a $F[x]/(p(x))$ és molt explícita: els seus elements es poden expressar com a polinomis en $\alpha$ de grau
+menor que $n=\deg(p(x))$. Donats dos polinomis $a(\alpha)$ per $b(\alpha)$, podem considerar
+el residu $r(x)$ de dividir $a(x)b(x)$ per $p(x)$. Aleshores el producte $a(\alpha)b(\alpha)$ ve donat per l'element $r(\alpha)$.
+Per divir ens cal utilitzar la identitat de Bézout (exercici).
+
+::: {.example}
+Mostrem $\CC$ com el resultat d'adjuntar una arrel de $x^2+1$ a $\RR$.
+:::
+
+::: {.example}
+Podem construir de manera semblant $\QQ(i)$, o $\QQ(\sqrt{2})$, i també $\QQ(\sqrt[3]{2})$. Veurem com es
+poden fer les operacions habituals en algun d'aquests cossos.
+:::
+
+::: {.example}
+Si considerem $\FF_p$ el cos finit de $p$ elements i un polinomi $f(x)\in \FF_p[x]$ irreductible de grau $n$
+(suposant que existeixi!), aleshores obtenim un cos $K/\FF_p$ de grau $n$. Té, per tant, $p^n$ elements.
+:::
+
+::: {.example}
+També podem fer extensions de cossos més "exòtics". Per exemple, podem prendre $k(t)$ com el cos de funcions
+racionals sobre un cos fixat $k$, i "afegir" una arrel quadrada de $t$ (mitjançant el polinomi $x^2-t$).
+:::
+
+Sigui $K/F$ una extensió, i considerem un conjunt $S\subseteq K$. Aleshores podem considerar el "mínim" subcos $L\subseteq K$
+que conté $F$ i tots els elements de $S$. S'anomena el *cos generat per $S$ sobre $F$*, i escriurem $F(S)$. Si $S$ és un
+conjunt finit format per $\alpha_1,\ldots,\alpha_n$ aleshores escriurem $F(\alpha_1,\ldots,\alpha_n)$. Un cas particular
+és quan $S$ conté un sol element: en aquest cas $F(\alpha)$ s'anomena una extensió *simple*, i l'element $\alpha$ s'anomena
+un *element primitiu* de l'extensió (que no és únic, en general!).
+
+::: {.theorem #ext-simple name="extensió simple"}
+Sigui $p(x)\in F[x]$ un polinomi irreductible, i suposem que $K/F$ és una extensió que conté una arrel $\alpha$ de $p(x)$.
+Aleshores hi ha un isomorfisme $$F(\alpha) \cong F[x]/(p(x)).$$
 :::
 ::: {.proof}
 TODO
