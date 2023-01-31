@@ -1,4 +1,4 @@
-# Cossos de descomposició
+# Descomposició
 
 El cos de descomposició d'un polinomi juga un paper destacat al llarg del curs.
 Aquí els definirem, i en demostrarem l'existència i unicitat (llevat d'isomorfisme). També

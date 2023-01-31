@@ -1,4 +1,4 @@
-# És més fàcil dibuixar un 17-gon que un heptàgon?
+# Extensions Abelianes i ciclotòmiques
 
 En aquest apartat estudiem les extensions ciclotòmiques, i veiem que $\Gal(\QQ(\zeta_n))$
 és canònicament isomorf a $(\ZZ/n\ZZ)^\times$. Com a aplicació, veurem com construir

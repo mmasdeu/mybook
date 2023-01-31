@@ -1,4 +1,4 @@
-# Regle i compàs
+# Polinomis Inseparables
 
 Definirem els nombres construibles amb regla i compàs, i els caracteritzarem.
 

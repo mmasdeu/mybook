@@ -1,4 +1,0 @@
-# Teoria de Galois infinita
-
-Farem un esbós de com cal modificar els enunciats per adaptar el teorema fonamental de la Teoria de Galois
-a extensions infinites.

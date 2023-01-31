@@ -1,5 +1,4 @@
-
-# La clausura algebraica d'un cos
+# Polinomis Ciclotòmics
 
 Definirem la noció de cos algebraicament tancat. Direm que $\CC$ ho és, encara que deixarem la demostració més endavant (com a aplicació del teorema fonamental de la TG). Definirem la clausura algebraica d'un cos, i en demostrarem l'existència (si acceptem l'axioma de l'elecció) i unicitat.
 
