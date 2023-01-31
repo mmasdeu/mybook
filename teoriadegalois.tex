@@ -133,9 +133,9 @@
 \chapter*{Introducció}\label{introducciuxf3}}
 \addcontentsline{toc}{chapter}{Introducció}
 
-Aquests són uns apunts de Teoria de Galois, pensats pel curs de 3r del Grau de Matemàtiques de la UAB.
+Aquests són uns apunts de \emph{Teoria de Galois}, pensats pel curs de 3r del Grau de Matemàtiques de la UAB.
 
-L'assignatura de Teoria de Galois es cursa al primer semestre del tercer curs del Grau de Matemàtiques de la UAB. Consta de 6 crèdits, repartits en:
+L'assignatura de \emph{Teoria de Galois} es cursa al primer semestre del tercer curs del Grau de Matemàtiques de la UAB. Consta de 6 crèdits, repartits en:
 
 \begin{itemize}
 \tightlist
@@ -149,25 +149,8 @@ L'assignatura de Teoria de Galois es cursa al primer semestre del tercer curs de
 
 El curs es pot dividir de manera natural en 15 sessions de dues hores. El temps efectiu de cadascuna d'aquestes sessions és de 100 minuts, i es pot pensar com una sèrie de 15 capítols. Seguidament detallem cadascun d'aquests capítols i la seva sinopsi.
 
-Pensem que en un curs com aquest hi ha idees molt importants que cal transmetre el més efectivament possible. També hi ha idees menys importants que poden obfuscar aquestes idees fonamentals, de manera que optaré per fer la teoria amb algunes hipòtesis simplificadores. Les classes de problemes introduiran exercicis amb més generalitat.
-
-Així, assumirem que tots els anells que apareixen són unitaris i commutatius, que tots els anells són dominis d'ideals principals (bàsicament tractarem amb els anells de polinomis sobre un cos). Encara que parlarem d'(in)separabilitat, la majoria d'exemples estaran basats o bé en extensions dels racionals o de cossos finits.
-
 \hypertarget{pilot}{%
-\chapter{Galois entre els radicals}\label{pilot}}
-
-Parlem de les equacions polinomials en una variable, la famosa fórmula quadràtica i els monstres de grau tres i quatre.
-
-En aquests casos, les solucions es poden expressar en termes de les quatre operacions bàsiques a més de l'extracció d'arrels.
-
-Seguidament, estudiem el polinomi \(x^3-2\), que té una arrel real i dues de complexes. Les podem dibuixar al pla, formen un triangle equilàter. Aquest triangle té un grup de simetries, que és el grup diedral \(D_{2\times 3}\) que ja s'ha estudiat a l'assignatura Estructures Algebraiques. D'altra banda, podem introduir el subcòs de \(\CC\) anomenat \(\QQ(\alpha,\omega)\) on \(\alpha=\sqrt[3]{2}\) i \(\omega=e^{2\pi i /3}\) és una arrel cúbica primitiva de la unitat. Aquest és el mínim cos que conté totes les arrels del nostre polinomi (exercici). Ara podem definir les ``simetries'' d'aquest cos com el grup dels automorfismes (morfismes de cossos que són invertibles, encara que aquesta segona condició serà bastant supèrflua).
-
-Seguidament, canviem el polinomi d'estudi a \(x^5-2\). Aquí hi ha 10 simetries geomètriques, però en canvi hi ha moltes més ``simetries'' com a cos de les arrels. En aquest cas, en tenim 20 (en general, si \(p\) és un primer, \(x^p-2\) té \(p(p-1)\) simetries en les arrels, però només \(2p\) simetries geomètriques.
-
-L'objectiu de la Teoria de Galois és estudiar aquest nou grup de simetries, que ens dona molta informació sobre les arrels. En particular, aquest grup ens determina la resolubilitat per radicals del polinomi en qüestió.
-
-\hypertarget{vells-coneguts}{%
-\chapter{Vells coneguts}\label{vells-coneguts}}
+\chapter{Vells coneguts}\label{pilot}}
 
 Començarem recordant les definicions i resultats bàsics que ja s'han vist a altres
 assignatures, com Fonaments o Estructures algebraiques. Donarem les definicions de cos,
@@ -179,29 +162,11 @@ A continuació introduïrem les extensions de cossos i el grau.
 
 L'objectiu és estudiar torres d'extensions, i com es comporta el grau en torres finits. Veurem aplicacions que té aquesta fórmula, com ara el càlcul del grau de la composició d'extensions.
 
-\hypertarget{extensions-algebraiques}{%
-\chapter{Extensions algebraiques}\label{extensions-algebraiques}}
-
-Parlarem d'elements algebraics i el seu polinomi mínim. Veurem que el cos
-generat per un element algebraic és isomorf al quocient de l'anell de polinomis pel seu polinomi mínim. Veurem la relació entre extensions algebraiques i extensions finites.
-
 \hypertarget{regle-i-compuxe0s}{%
-\chapter{Regle i compàs}\label{regle-i-compuxe0s}}
+\chapter{Regle i Compàs}\label{regle-i-compuxe0s}}
 
-Definirem els nombres construibles amb regla i compàs, i els caracteritzarem.
-
-Aleshores veurem la impossibilitat de la duplicació del cub, la trisecció de l'angle
-i la quadratura del cercle (aquest últim, assumint la transcendència de \(\pi\), que no demostrarem).
-
-\hypertarget{la-clausura-algebraica-dun-cos}{%
-\chapter{La clausura algebraica d'un cos}\label{la-clausura-algebraica-dun-cos}}
-
-Definirem la noció de cos algebraicament tancat. Direm que \(\CC\) ho és, encara que deixarem la demostració més endavant (com a aplicació del teorema fonamental de la TG). Definirem la clausura algebraica d'un cos, i en demostrarem l'existència (si acceptem l'axioma de l'elecció) i unicitat.
-
-Així, podrem pensar les extensions algebraiques com a contingudes a una clausura fixada (si cal).
-
-\hypertarget{cossos-de-descomposiciuxf3}{%
-\chapter{Cossos de descomposició}\label{cossos-de-descomposiciuxf3}}
+\hypertarget{descomposiciuxf3}{%
+\chapter{Descomposició}\label{descomposiciuxf3}}
 
 El cos de descomposició d'un polinomi juga un paper destacat al llarg del curs.
 Aquí els definirem, i en demostrarem l'existència i unicitat (llevat d'isomorfisme). També
@@ -212,15 +177,27 @@ extensions normals (aquelles que són cos de descomposició d'un conjunt de poli
 Com a aplicació, s'introduiran els polinomis i cossos ciclotòmics, i ho lligarem amb la
 demostració de l'existència i unicitat de cossos finits de cardinal potència d'un primer.
 
-\hypertarget{grups-simples-grups-resolubles}{%
-\chapter{Grups simples, grups resolubles}\label{grups-simples-grups-resolubles}}
+\hypertarget{polinomis-inseparables}{%
+\chapter{Polinomis Inseparables}\label{polinomis-inseparables}}
+
+Definirem els nombres construibles amb regla i compàs, i els caracteritzarem.
+
+Aleshores veurem la impossibilitat de la duplicació del cub, la trisecció de l'angle
+i la quadratura del cercle (aquest últim, assumint la transcendència de \(\pi\), que no demostrarem).
+
+\hypertarget{polinomis-ciclotuxf2mics}{%
+\chapter{Polinomis Ciclotòmics}\label{polinomis-ciclotuxf2mics}}
+
+Definirem la noció de cos algebraicament tancat. Direm que \(\CC\) ho és, encara que deixarem la demostració més endavant (com a aplicació del teorema fonamental de la TG). Definirem la clausura algebraica d'un cos, i en demostrarem l'existència (si acceptem l'axioma de l'elecció) i unicitat.
+
+Així, podrem pensar les extensions algebraiques com a contingudes a una clausura fixada (si cal).
+
+\hypertarget{automorfismes}{%
+\chapter{Automorfismes}\label{automorfismes}}
 
 Aquesta sessió no parla de teoria de cossos, sinó de grups. Això ens cal ja que el teorema fonamental ens relaciona les dues teories. Introduïrem
 la noció de resolubilitat d'un grup, parlarem dels grups simples i veurem que el grup alternat \(A_n\) no és simple per a tot \(n \geq 5\). Això
 implica que \(S_n\) no és resoluble per \(n\geq 5\).
-
-\hypertarget{simetries}{%
-\chapter{Simetries}\label{simetries}}
 
 Començarem definint els automorfismes d'una extensió. Veurem que formen
 un grup, i que cada subgrup té associat el cos dels elements fixos per aquest. Veurem també
@@ -229,8 +206,20 @@ i demostrarem que en una extensió normal el cardinal del grup d'automorfismes e
 fitat pel grau de l'extensió. Així, podrem definir una extensió de Galois com aquella
 on la fita s'assoleix.
 
+\hypertarget{el-teorema-fonamental}{%
+\chapter{El Teorema Fonamental}\label{el-teorema-fonamental}}
+
+Enunciem i demostrem el teorema fonamental de la teoria de Galois. Farem
+servir la independència lineal dels caràcters (que tmabé demostrarem). Després veurem
+que si \(L / F\) és una extensió finita i \(H\) un subgrup de \(\Aut(L/F)\), aleshores
+\([L \colon FH] = |H|\). Aquest fet, fonamental, ens permet també caracteritzar
+les extensions de Galois com aquelles que són normals i separables.
+
+Aleshores ja estarem en posició d'enunciar i demostrar el teorema fonamental. Acabarem
+amb diversos exemples concrets d'extensions, il·lustrant la correspondència de Galois.
+
 \hypertarget{la-independuxe8ncia-dels-caruxe0cters}{%
-\chapter{La independència (dels caràcters)}\label{la-independuxe8ncia-dels-caruxe0cters}}
+\section{La independència (dels caràcters)}\label{la-independuxe8ncia-dels-caruxe0cters}}
 
 En aquesta secció demostrarem un resultat d'àlgebra lineal necessari per la demostració del teorema fonamental de la TG.
 
@@ -323,20 +312,14 @@ Dit d'altra manera, l'extensió \(K/F\) és Galois si i només si \(F=K^{\Aut(K/
 TODO.
 \end{proof}
 
-\hypertarget{el-teorema-fonamental}{%
-\chapter{El Teorema Fonamental}\label{el-teorema-fonamental}}
+\hypertarget{cossos-finits}{%
+\chapter{Cossos Finits}\label{cossos-finits}}
 
-Enunciem i demostrem el teorema fonamental de la teoria de Galois. Farem
-servir la independència lineal dels caràcters (que tmabé demostrarem). Després veurem
-que si \(L / F\) és una extensió finita i \(H\) un subgrup de \(\Aut(L/F)\), aleshores
-\([L \colon FH] = |H|\). Aquest fet, fonamental, ens permet també caracteritzar
-les extensions de Galois com aquelles que són normals i separables.
+\hypertarget{lelement-primitiu}{%
+\chapter{L'element Primitiu}\label{lelement-primitiu}}
 
-Aleshores ja estarem en posició d'enunciar i demostrar el teorema fonamental. Acabarem
-amb diversos exemples concrets d'extensions, il·lustrant la correspondència de Galois.
-
-\hypertarget{uxe9s-muxe9s-fuxe0cil-dibuixar-un-17-gon-que-un-heptuxe0gon}{%
-\chapter{És més fàcil dibuixar un 17-gon que un heptàgon?}\label{uxe9s-muxe9s-fuxe0cil-dibuixar-un-17-gon-que-un-heptuxe0gon}}
+\hypertarget{extensions-abelianes-i-ciclotuxf2miques}{%
+\chapter{Extensions Abelianes i ciclotòmiques}\label{extensions-abelianes-i-ciclotuxf2miques}}
 
 En aquest apartat estudiem les extensions ciclotòmiques, i veiem que \(\Gal(\QQ(\zeta_n))\)
 és canònicament isomorf a \((\ZZ/n\ZZ)^\times\). Com a aplicació, veurem com construir
@@ -354,11 +337,8 @@ per tant, no existeix una fórmula que expressi les arrels d'un polinomi en term
 dels seus coeficients. També es mostrarà un exemple concret d'un polinomi de grau \(5\) sobre \(\QQ\)
 amb grup de Galois \(S_5\): si \(f\) és irreductible amb exactament \(3\) arrels reals, aleshores la conjugació complexa dona un automorfisme d'ordre \(2\). Com que \(\Gal(f)\) té ordre divisible per \(5\), hi ha algun element \(\sigma\) d'ordre \(5\) (Teorema de Cauchy). Però a \(S_5\) els elements d'ordre \(5\) són necessàriament \(5\)-cicles. Com que \(\Gal(f)\) té un \(5\)-cicle i una transposició, és necessàriament tot \(S_5\).
 
-\hypertarget{teoria-de-galois-infinita}{%
-\chapter{Teoria de Galois infinita}\label{teoria-de-galois-infinita}}
-
-Farem un esbós de com cal modificar els enunciats per adaptar el teorema fonamental de la Teoria de Galois
-a extensions infinites.
+\hypertarget{calculem-grups-de-galois}{%
+\chapter{Calculem grups de Galois}\label{calculem-grups-de-galois}}
 
 \nocite{*}
 
