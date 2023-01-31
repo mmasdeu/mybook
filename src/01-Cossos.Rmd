@@ -3,4 +3,61 @@
 Començarem recordant les definicions i resultats bàsics que ja s'han vist a altres
 assignatures, com Fonaments o Estructures algebraiques. Donarem les definicions de cos,
 característica, cos primer, i veurem que aquest és o bé $\FF_p$ per algun primer $p$, o bé $\QQ$.
-A continuació introduïrem les extensions de cossos i el grau.
+A continuació introduïrem les extensions de cossos i el grau. Construirem el cos $F[x]/(p(x))$ associat
+a un polinomi irreductible $p(x)\in F[x]$, i veurem alguns exemples.
+
+## Convencions
+
+En aquest curs, tots els anells seran commutatius, i assumirem sempre que tenen unitat. A més, demanarem
+que un morfisme d'anells enviï l'$1$ a l'$1$.
+
+## Característica d'un cos
+
+::: {.lemma}
+Siguia $A$ un anell qualsevol. Aleshores hi ha un únic morfisme $\ZZ \to A$.
+:::
+
+::: {.proof}
+Considerem el morfisme $\iota\colon \ZZ\to A$ definit com:
+$$
+\iota(n)=\begin{cases}
+1_A+1_A+\cdots+1_A & n \geq 0,\\
+-(1_A+1_A+\cdots+1_A) & n < 0,
+\end{cases}
+$$
+on les sumes tenen $n$ termes. És fàcil comprovar que és un morfisme. La unicitat es demostra per inducció en $\abs{n}$.
+:::
+
+A partir d'ara, qualsevol enter el podem pensar com a element d'un anell donat, i això no ens portarà cap confusió. Com ja sabem, el nucli d'un morfisme d'anells és un ideal. Per tant, el nucli del morfisme $\iota_A\colon \ZZ\to A$ és un ideal de $\ZZ$ de
+la forma $(n)$, amb $n\geq 0$.
+
+::: {.definition name="Característica"}
+La *característica* d'un anell $A$ és l'enter no negatiu $n$ tal que $\iota_A = (n)$, i es denota per $\car(A)$.
+:::
+
+Fixem-nos que si $\car(A)=n$, aleshores $na = 0$ per a tot $a\in A$.
+
+::: {.proposition #car-primer}
+Sigui $F$ un cos. Aleshores la seva característica és $0$ o bé un primer $p$.
+:::
+::: {.proof}
+Suposem que $\car(F)=n>0$, i $n=ab$. Aleshores $(a1_A)(b1_A)=(ab)1_A=0$. Com que $F$ és un cos,
+això vol dir que $a1_A=0$ o $b1_A=0$. Si per exemple $a1_A=0$, això significa que $n \mid a$. Com que $n=ab$,
+necessàriament $a=n$ i $b=1$. Per tant, els únics divisors de $n$ són trivials, i $n$ és primer.
+:::
+
+::: {.definition #cos-primer name="cos primer"}
+El *cos primer* d'un cos $F$ és el cos generat per $1_F$. És o bé $\QQ$ (si $F$ té característica $0$) o bé el cos $\FF_p$
+(si $F$ té característica $p$).
+:::
+
+Quan $K$ és un cos que conté un altre cos $F$, direm que $K$ és una *extensió* de $F$, i escriurem $K/F$. També farem servir
+el diagrama
+$$
+\begin{xy}
+\xymatrix{
+  K\ar@{-}[d]\\
+  F.
+}
+\end{xy}
+$$

@@ -9,6 +9,8 @@ biblio-style: apalike
 link-citations: yes
 github-repo: mmasdeu/teoriadegalois
 description: "Apunts d'un curs de Teoria de Galois a la UAB"
+nocite: | 
+  @dummitfoote, @artinalgebra
 output:
   bookdown::pdf_book:
     includes:

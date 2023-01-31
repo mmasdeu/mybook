@@ -1,6 +1,7 @@
 # Polinomis Inseparables
 
-Definirem els nombres construibles amb regla i compàs, i els caracteritzarem.
+Definim la noció de separabilitat d'un polinomi, i posem algun exemple. Introduïm el morfisme de Frobenius,
+que ens permet definir cossos perfectes. Aprofitem per parlar del grau de separabilitat/inseparabilitat d'una
+extensió, i la factorització d'aquesta.
 
-Aleshores veurem la impossibilitat de la duplicació del cub, la trisecció de l'angle
-i la quadratura del cercle (aquest últim, assumint la transcendència de $\pi$, que no demostrarem).
+Finalment, donem l'existència i unicitat dels cossos finits.

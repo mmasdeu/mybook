@@ -1,6 +1,4 @@
 # Polinomis Ciclotòmics
 
-Definirem la noció de cos algebraicament tancat. Direm que $\CC$ ho és, encara que deixarem la demostració més endavant (com a aplicació del teorema fonamental de la TG). Definirem la clausura algebraica d'un cos, i en demostrarem l'existència (si acceptem l'axioma de l'elecció) i unicitat.
-
-Així, podrem pensar les extensions algebraiques com a contingudes a una clausura fixada (si cal).
-
+L'objectiu principal és demostrar que l'extensió ciclotòmica $\QQ(\zeta_n)$ té grau $\varphi(n)$ (la phi d'Euler). Per això,
+introduïrem els polinomis ciclotòmics, veurem que són irreductibles i mònics i tenen coeficients enters.
