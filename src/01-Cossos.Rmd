@@ -70,3 +70,7 @@ ens permet definir:
 El *grau* de l'extensió $K/F$ és la dimensió de $K$ com a $F$-espai vectorial, que escrivim com $[K\colon F]$. Direm que $K/F$ és finita si té grau finit,
 i infinita si no.
 :::
+
+::: {.theorem #ext-arrel name="adjunció d'arrels"}
+Sigui $p(x)\in F[x]$ un polinomi irreductible. Aleshores existeix una extensió $K/F$ tal que $K$ té una arrel de $p(x)$.
+:::
