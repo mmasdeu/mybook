@@ -1,6 +1,6 @@
 ---
 nocite: |
-  @dummit-foote, @artin-algebra
+  @dummitfoote, @artinalgebra
 ---
 
 \nocite{*}

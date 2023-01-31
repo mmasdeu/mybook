@@ -13,9 +13,11 @@ output:
   bookdown::pdf_book:
     includes:
       in_header: src/preamble.tex
+    extra_dependencies:
+      textcomp: null
+      hyperref: ["unicode=true", "breaklinks=true"]
+      lmodern: null
     toc: yes
-    microtypeoptions:
-      - verbose=silent
   bookdown::gitbook:
     split_by: chapter
     config:
