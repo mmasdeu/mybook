@@ -98,16 +98,16 @@
 \renewcommand{\char}{\operatorname{char}}
 \renewcommand{\car}{\operatorname{char}}\)</span>
 
-<script>
-  MathJax = {
-    loader: {
-      load: ['[custom]/xypic.js'],
-      paths: {custom: 'https://cdn.jsdelivr.net/gh/sonoisa/XyJax-v3@3.0.1/build/'}
-    },
-    tex: {
-      packages: {'[+]': ['xypic']}
-    }
-  };
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+  "HTML-CSS": {
+    styles: {".MathJax_Preview": {visibility: "hidden"}}
+  },
+    tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]},
+  TeX: {extensions: ["AMSmath.js","AMSsymbols.js","https://mmasdeu.github.io/teoriadegalois/xypic.js"]}
+});
 </script>
 
 
@@ -158,7 +158,10 @@ div.csl-indent {
 <li class="chapter" data-level="1.2" data-path="pilot.html"><a href="pilot.html#característica-dun-cos"><i class="fa fa-check"></i><b>1.2</b> Característica d’un cos</a></li>
 <li class="chapter" data-level="1.3" data-path="pilot.html"><a href="pilot.html#extensions"><i class="fa fa-check"></i><b>1.3</b> Extensions</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="les-torres.html"><a href="les-torres.html"><i class="fa fa-check"></i><b>2</b> Les Torres</a></li>
+<li class="chapter" data-level="2" data-path="les-torres.html"><a href="les-torres.html"><i class="fa fa-check"></i><b>2</b> Les Torres</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="les-torres.html"><a href="les-torres.html#section"><i class="fa fa-check"></i><b>2.1</b> </a></li>
+</ul></li>
 <li class="chapter" data-level="3" data-path="regle-i-compàs.html"><a href="regle-i-compàs.html"><i class="fa fa-check"></i><b>3</b> Regle i Compàs</a></li>
 <li class="chapter" data-level="4" data-path="descomposició.html"><a href="descomposició.html"><i class="fa fa-check"></i><b>4</b> Descomposició</a></li>
 <li class="chapter" data-level="5" data-path="polinomis-inseparables.html"><a href="polinomis-inseparables.html"><i class="fa fa-check"></i><b>5</b> Polinomis Inseparables</a></li>
