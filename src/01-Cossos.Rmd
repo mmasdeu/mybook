@@ -139,5 +139,25 @@ un altre subcòs de $\CC$ que és isomorf a aquest.
 
 ::: {.remark name=""}
 En els exemples, hem construit cossos que contenen una de les tres possibles arrels de $x^3-2$. Aquests són isomorfs, tal
-i com hem vist. Tot i 
+i com hem vist. El fet que un sigui subcos de $\RR$ i l'altre de $\CC$ té a veure amb anàlisi, no amb àlgebra. Algebraicament,
+no es poden distingir. 
+:::
+
+Acabem amb un teorema que ens servirà més endavant:
+
+::: {.theorem name="extensió d'isomorfismes"}
+Sigui $\varphi\colon F\to \tilde F$ un isomorfisme de cossos. Sigui $p(x)\in F[x]$ un polinomi irreductible,
+i sigui $\tilde p(x)$ el polinomi resultant d'aplicar $\varphi$ als coeficients de $p(x)$. Sigui $\alpha$ una
+arrel de $p(x)$ en alguna extensió de $K$, i sigui $\beta$ una arrel de $\tilde p(x)$ en una extensió de $\tilde F$.
+Aleshores l'aplicació $\alpha\mapsto \beta$ indueix un isomorfisme de cossos
+$$
+\Phi\colon F(\alpha) \cong \tilde F(\beta)
+$$
+tal que $\Phi_{| F} = \varphi$:
+$$
+\xymatrix{
+  F(\alpha)\ar_{\cong}^{\Phi}[r]\ar@{-}[d] & \tilde F(\beta)\ar@{-}[d]\\
+  F \ar_{\cong}^{\varphi}[r] & \tilde F.
+}
+$$
 :::
