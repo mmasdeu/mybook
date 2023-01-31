@@ -60,9 +60,11 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{5}
-\usepackage{microtype}
+\usepackage{textcomp}
+\usepackage{tgbonum}
 \usepackage{booktabs}
 \usepackage{unixode}
+\usepackage{mathsymbols}
 \usepackage[catalan]{babel}
 \usepackage{amsmath,amsthm,amssymb,amsfonts}
 \definecolor{VerbatimBorderColor}{rgb}{0.7,0.7,0.7}
@@ -70,7 +72,8 @@
 \DeclareRobustCommand{\and}{%
    \end{tabular}\kern-\tabcolsep\\\begin{tabular}[t]{c}%
 }
-\input{mathsymbols.sty}
+
+
 \setlength{\headheight}{15pt}
 
 \makeatletter
@@ -80,12 +83,15 @@
 }
 \makeatother
 
+\usepackage{textcomp}
+\usepackage[unicode=true, breaklinks=true]{hyperref}
+\usepackage{lmodern}
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
 \usepackage[]{natbib}
 \bibliographystyle{apalike}
-\nocite{dummit-foote, artin-algebra}
+\nocite{dummitfoote, artinalgebra}
 \IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same} % disable monospaced font for URLs
@@ -97,7 +103,7 @@
 
 \title{Teoria de Galois}
 \author{Marc Masdeu}
-\date{2023-01-30}
+\date{2023-01-31}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Teorema}[chapter]
