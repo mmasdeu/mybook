@@ -109,7 +109,6 @@
     }
   };
 </script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.1.4/es5/tex-chtml-full.js"></script>
 
 
 
@@ -314,7 +313,25 @@ un altre subcòs de <span class="math inline">\(\CC\)</span> que és isomorf a a
 </div>
 <div class="remark">
 <p><span id="unlabeled-div-13" class="remark"><em>Remarca</em> (). </span>En els exemples, hem construit cossos que contenen una de les tres possibles arrels de <span class="math inline">\(x^3-2\)</span>. Aquests són isomorfs, tal
-i com hem vist. Tot i</p>
+i com hem vist. El fet que un sigui subcos de <span class="math inline">\(\RR\)</span> i l’altre de <span class="math inline">\(\CC\)</span> té a veure amb anàlisi, no amb àlgebra. Algebraicament,
+no es poden distingir.</p>
+</div>
+<p>Acabem amb un teorema que ens servirà més endavant:</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-14" class="theorem"><strong>Teorema 1.4  (extensió d'isomorfismes) </strong></span>Sigui <span class="math inline">\(\varphi\colon F\to \tilde F\)</span> un isomorfisme de cossos. Sigui <span class="math inline">\(p(x)\in F[x]\)</span> un polinomi irreductible,
+i sigui <span class="math inline">\(\tilde p(x)\)</span> el polinomi resultant d’aplicar <span class="math inline">\(\varphi\)</span> als coeficients de <span class="math inline">\(p(x)\)</span>. Sigui <span class="math inline">\(\alpha\)</span> una
+arrel de <span class="math inline">\(p(x)\)</span> en alguna extensió de <span class="math inline">\(K\)</span>, i sigui <span class="math inline">\(\beta\)</span> una arrel de <span class="math inline">\(\tilde p(x)\)</span> en una extensió de <span class="math inline">\(\tilde F\)</span>.
+Aleshores l’aplicació <span class="math inline">\(\alpha\mapsto \beta\)</span> indueix un isomorfisme de cossos
+<span class="math display">\[
+\Phi\colon F(\alpha) \cong \tilde F(\beta)
+\]</span>
+tal que <span class="math inline">\(\Phi_{| F} = \varphi\)</span>:
+<span class="math display">\[
+\xymatrix{
+  F(\alpha)\ar_{\cong}^{\Phi}[r]\ar@{-}[d] &amp; \tilde F(\beta)\ar@{-}[d]\\
+  F \ar_{\cong}^{\varphi}[r] &amp; \tilde F.
+}
+\]</span></p>
 </div>
 
 </div>
