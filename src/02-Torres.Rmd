@@ -1,5 +1,7 @@
 # Les Torres
 
-Parlarem d'extensions simples, i del teorema d'aixecament a anells de polinomis i el teorema de l'extensió.
+Parlarem d'extensions simples, del teorema d'aixecament a anells de polinomis i el teorema de l'extensió.
 També definirem elements algebraics i transcendents i el polinomi mínim d'un element algebraic, amb exemples.
 Enunciarem i demostrarem la fórmula de les torres, i com es comporta el grau en composicions de cossos.
+
+## 
