@@ -51,7 +51,8 @@ El *cos primer* d'un cos $F$ és el cos generat per $1_F$. És o bé $\QQ$ (si $
 (si $F$ té característica $p$).
 :::
 
-Quan $K$ és un cos que conté un altre cos $F$, direm que $K$ és una *extensió* de $F$, i escriurem $K/F$. També farem servir
+Quan $K$ és un cos que conté un altre cos $F$, direm que $K$ és una *extensió* de $F$, i escriurem $K/F$ (no és cap mena de quocient!). Direm també que
+$F$ és el *cos base* de l'extensió $K/F$. També farem servir
 el diagrama
 $$
 \begin{xy}
@@ -61,3 +62,11 @@ $$
 }
 \end{xy}
 $$
+
+L'observació clau és que quan tenim una extensió $K/F$ aleshores $K$ esdevé automàticament un $F$-espai vectorial. Això
+ens permet definir:
+
+::: {.definition #grau-ext name="grau d'una extensió"}
+El *grau* de l'extensió $K/F$ és la dimensió de $K$ com a $F$-espai vectorial, que escrivim com $[K\colon F]$. Direm que $K/F$ és finita si té grau finit,
+i infinita si no.
+:::
