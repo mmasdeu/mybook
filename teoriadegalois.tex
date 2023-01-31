@@ -63,17 +63,19 @@
 \usepackage{textcomp}
 \usepackage{tgbonum}
 \usepackage{booktabs}
+
 \usepackage{unixode}
-\usepackage{mathsymbols}
+
 \usepackage[catalan]{babel}
 \usepackage{amsmath,amsthm,amssymb,amsfonts}
+\usepackage[all]{xy}
 \definecolor{VerbatimBorderColor}{rgb}{0.7,0.7,0.7}
 % from sphinxmanual.cls: put authors on separate lines
 \DeclareRobustCommand{\and}{%
-   \end{tabular}\kern-\tabcolsep\\\begin{tabular}[t]{c}%
+\end{tabular}\kern-\tabcolsep\\\begin{tabular}[t]{c}%
 }
 
-
+\usepackage{mathsymbols}
 \setlength{\headheight}{15pt}
 
 \makeatletter
@@ -82,7 +84,6 @@
   \thm@postskip=\thm@preskip
 }
 \makeatother
-
 \usepackage{textcomp}
 \usepackage[unicode=true, breaklinks=true]{hyperref}
 \usepackage{lmodern}
@@ -155,42 +156,109 @@ El curs es pot dividir de manera natural en 15 sessions de dues hores. El temps 
 Començarem recordant les definicions i resultats bàsics que ja s'han vist a altres
 assignatures, com Fonaments o Estructures algebraiques. Donarem les definicions de cos,
 característica, cos primer, i veurem que aquest és o bé \(\FF_p\) per algun primer \(p\), o bé \(\QQ\).
-A continuació introduïrem les extensions de cossos i el grau.
+A continuació introduïrem les extensions de cossos i el grau. Construirem el cos \(F[x]/(p(x))\) associat
+a un polinomi irreductible \(p(x)\in F[x]\), i veurem alguns exemples.
+
+\hypertarget{convencions}{%
+\section{Convencions}\label{convencions}}
+
+En aquest curs, tots els anells seran commutatius, i assumirem sempre que tenen unitat. A més, demanarem
+que un morfisme d'anells enviï l'\(1\) a l'\(1\).
+
+\hypertarget{caracteruxedstica-dun-cos}{%
+\section{Característica d'un cos}\label{caracteruxedstica-dun-cos}}
+
+\begin{lemma}
+Siguia \(A\) un anell qualsevol. Aleshores hi ha un únic morfisme \(\ZZ \to A\).
+\end{lemma}
+
+\begin{proof}
+Considerem el morfisme \(\iota\colon \ZZ\to A\) definit com:
+\[
+\iota(n)=\begin{cases}
+1_A+1_A+\cdots+1_A & n \geq 0,\\
+-(1_A+1_A+\cdots+1_A) & n < 0,
+\end{cases}
+\]
+on les sumes tenen \(n\) termes. És fàcil comprovar que és un morfisme. La unicitat es demostra per inducció en \(\abs{n}\).
+\end{proof}
+
+A partir d'ara, qualsevol enter el podem pensar com a element d'un anell donat, i això no ens portarà cap confusió. Com ja sabem, el nucli d'un morfisme d'anells és un ideal. Per tant, el nucli del morfisme \(\iota_A\colon \ZZ\to A\) és un ideal de \(\ZZ\) de
+la forma \((n)\), amb \(n\geq 0\).
+
+\begin{definition}[Característica]
+La \emph{característica} d'un anell \(A\) és l'enter no negatiu \(n\) tal que \(\iota_A = (n)\), i es denota per \(\car(A)\).
+\end{definition}
+
+Fixem-nos que si \(\car(A)=n\), aleshores \(na = 0\) per a tot \(a\in A\).
+
+\begin{proposition}
+\protect\hypertarget{prp:car-primer}{}\label{prp:car-primer}Sigui \(F\) un cos. Aleshores la seva característica és \(0\) o bé un primer \(p\).
+\end{proposition}
+
+\begin{proof}
+Suposem que \(\car(F)=n>0\), i \(n=ab\). Aleshores \((a1_A)(b1_A)=(ab)1_A=0\). Com que \(F\) és un cos,
+això vol dir que \(a1_A=0\) o \(b1_A=0\). Si per exemple \(a1_A=0\), això significa que \(n \mid a\). Com que \(n=ab\),
+necessàriament \(a=n\) i \(b=1\). Per tant, els únics divisors de \(n\) són trivials, i \(n\) és primer.
+\end{proof}
+
+\begin{definition}[cos primer]
+\protect\hypertarget{def:cos-primer}{}\label{def:cos-primer}El \emph{cos primer} d'un cos \(F\) és el cos generat per \(1_F\). És o bé \(\QQ\) (si \(F\) té característica \(0\)) o bé el cos \(\FF_p\)
+(si \(F\) té característica \(p\)).
+\end{definition}
+
+Quan \(K\) és un cos que conté un altre cos \(F\), direm que \(K\) és una \emph{extensió} de \(F\), i escriurem \(K/F\). També farem servir
+el diagrama
+\[
+\begin{xy}
+\xymatrix{
+  K\ar@{-}[d]\\
+  F.
+}
+\end{xy}
+\]
 
 \hypertarget{les-torres}{%
 \chapter{Les Torres}\label{les-torres}}
 
-L'objectiu és estudiar torres d'extensions, i com es comporta el grau en torres finits. Veurem aplicacions que té aquesta fórmula, com ara el càlcul del grau de la composició d'extensions.
+Parlarem d'extensions simples, i del teorema d'aixecament a anells de polinomis i el teorema de l'extensió.
+També definirem elements algebraics i transcendents i el polinomi mínim d'un element algebraic, amb exemples.
+Enunciarem i demostrarem la fórmula de les torres, i com es comporta el grau en composicions de cossos.
 
 \hypertarget{regle-i-compuxe0s}{%
 \chapter{Regle i Compàs}\label{regle-i-compuxe0s}}
+
+Parlarem de tres problemes de la grècia clàssica sobre construccions amb regle no marcat i compàs: la quadratura del cercle,
+la trisecció de l'angle i la duplicació del cub. Caracteritzarem els nombres constructibles, i veurem que aquests problemes
+no tenen solució. Veurem també que si el regle és marcat aleshores podem trisecar l'angle i també duplicar el cub.
 
 \hypertarget{descomposiciuxf3}{%
 \chapter{Descomposició}\label{descomposiciuxf3}}
 
 El cos de descomposició d'un polinomi juga un paper destacat al llarg del curs.
-Aquí els definirem, i en demostrarem l'existència i unicitat (llevat d'isomorfisme). També
-enunciarem i demostrarem el teorema de l'extensió, que ens permet estendre isomorfismes de cossos
-a extensions que siguin clausura de Galois d'un polinomi. Aprofitarem per definir
-extensions normals (aquelles que són cos de descomposició d'un conjunt de polinomis).
+Aquí el definirem, i en demostrarem l'existència i unicitat (llevat d'isomorfisme).
+Aprofitarem per definir extensions normals (aquelles que són cos de descomposició d'un conjunt de polinomis).
 
 Com a aplicació, s'introduiran els polinomis i cossos ciclotòmics, i ho lligarem amb la
 demostració de l'existència i unicitat de cossos finits de cardinal potència d'un primer.
 
+També veurem les clausures algebraiques, i una construcció (seguint Artin). Això ens permetrà (assumint el teorema fonamental
+de l'àlgebra, que demostrarem més endavant) pensar els elements algebraics sobre \(\QQ\) dins dels complexos.
+
 \hypertarget{polinomis-inseparables}{%
 \chapter{Polinomis Inseparables}\label{polinomis-inseparables}}
 
-Definirem els nombres construibles amb regla i compàs, i els caracteritzarem.
+Definim la noció de separabilitat d'un polinomi, i posem algun exemple. Introduïm el morfisme de Frobenius,
+que ens permet definir cossos perfectes. Aprofitem per parlar del grau de separabilitat/inseparabilitat d'una
+extensió, i la factorització d'aquesta.
 
-Aleshores veurem la impossibilitat de la duplicació del cub, la trisecció de l'angle
-i la quadratura del cercle (aquest últim, assumint la transcendència de \(\pi\), que no demostrarem).
+Finalment, donem l'existència i unicitat dels cossos finits.
 
 \hypertarget{polinomis-ciclotuxf2mics}{%
 \chapter{Polinomis Ciclotòmics}\label{polinomis-ciclotuxf2mics}}
 
-Definirem la noció de cos algebraicament tancat. Direm que \(\CC\) ho és, encara que deixarem la demostració més endavant (com a aplicació del teorema fonamental de la TG). Definirem la clausura algebraica d'un cos, i en demostrarem l'existència (si acceptem l'axioma de l'elecció) i unicitat.
-
-Així, podrem pensar les extensions algebraiques com a contingudes a una clausura fixada (si cal).
+L'objectiu principal és demostrar que l'extensió ciclotòmica \(\QQ(\zeta_n)\) té grau \(\varphi(n)\) (la phi d'Euler). Per això,
+introduïrem els polinomis ciclotòmics, veurem que són irreductibles i mònics i tenen coeficients enters.
 
 \hypertarget{automorfismes}{%
 \chapter{Automorfismes}\label{automorfismes}}

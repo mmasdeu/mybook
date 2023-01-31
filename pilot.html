@@ -93,7 +93,10 @@
 \renewcommand{\Aut}{\operatorname{Aut}}
 \renewcommand{\Gal}{\operatorname{Gal}}
 \renewcommand{\Mor}{\operatorname{Mor}}
-% \renewcommand{\implies}{\Longrightarrow}\)</span>
+% \renewcommand{\implies}{\Longrightarrow}
+
+\renewcommand{\char}{\operatorname{char}}
+\renewcommand{\car}{\operatorname{char}}\)</span>
 
 
 
@@ -137,7 +140,11 @@ div.csl-indent {
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introducció</a></li>
-<li class="chapter" data-level="1" data-path="pilot.html"><a href="pilot.html"><i class="fa fa-check"></i><b>1</b> Vells coneguts</a></li>
+<li class="chapter" data-level="1" data-path="pilot.html"><a href="pilot.html"><i class="fa fa-check"></i><b>1</b> Vells coneguts</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="pilot.html"><a href="pilot.html#convencions"><i class="fa fa-check"></i><b>1.1</b> Convencions</a></li>
+<li class="chapter" data-level="1.2" data-path="pilot.html"><a href="pilot.html#característica-dun-cos"><i class="fa fa-check"></i><b>1.2</b> Característica d’un cos</a></li>
+</ul></li>
 <li class="chapter" data-level="2" data-path="les-torres.html"><a href="les-torres.html"><i class="fa fa-check"></i><b>2</b> Les Torres</a></li>
 <li class="chapter" data-level="3" data-path="regle-i-compàs.html"><a href="regle-i-compàs.html"><i class="fa fa-check"></i><b>3</b> Regle i Compàs</a></li>
 <li class="chapter" data-level="4" data-path="descomposició.html"><a href="descomposició.html"><i class="fa fa-check"></i><b>4</b> Descomposició</a></li>
@@ -179,8 +186,58 @@ div.csl-indent {
 <p>Començarem recordant les definicions i resultats bàsics que ja s’han vist a altres
 assignatures, com Fonaments o Estructures algebraiques. Donarem les definicions de cos,
 característica, cos primer, i veurem que aquest és o bé <span class="math inline">\(\FF_p\)</span> per algun primer <span class="math inline">\(p\)</span>, o bé <span class="math inline">\(\QQ\)</span>.
-A continuació introduïrem les extensions de cossos i el grau.</p>
+A continuació introduïrem les extensions de cossos i el grau. Construirem el cos <span class="math inline">\(F[x]/(p(x))\)</span> associat
+a un polinomi irreductible <span class="math inline">\(p(x)\in F[x]\)</span>, i veurem alguns exemples.</p>
+<div id="convencions" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> Convencions<a href="pilot.html#convencions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>En aquest curs, tots els anells seran commutatius, i assumirem sempre que tenen unitat. A més, demanarem
+que un morfisme d’anells enviï l’<span class="math inline">\(1\)</span> a l’<span class="math inline">\(1\)</span>.</p>
+</div>
+<div id="característica-dun-cos" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> Característica d’un cos<a href="pilot.html#característica-dun-cos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="lemma">
+<p><span id="lem:unlabeled-div-1" class="lemma"><strong>Lema 1.1  </strong></span>Siguia <span class="math inline">\(A\)</span> un anell qualsevol. Aleshores hi ha un únic morfisme <span class="math inline">\(\ZZ \to A\)</span>.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-2" class="proof"><em>Prova</em>. </span>Considerem el morfisme <span class="math inline">\(\iota\colon \ZZ\to A\)</span> definit com:
+<span class="math display">\[
+\iota(n)=\begin{cases}
+1_A+1_A+\cdots+1_A &amp; n \geq 0,\\
+-(1_A+1_A+\cdots+1_A) &amp; n &lt; 0,
+\end{cases}
+\]</span>
+on les sumes tenen <span class="math inline">\(n\)</span> termes. És fàcil comprovar que és un morfisme. La unicitat es demostra per inducció en <span class="math inline">\(\abs{n}\)</span>.</p>
+</div>
+<p>A partir d’ara, qualsevol enter el podem pensar com a element d’un anell donat, i això no ens portarà cap confusió. Com ja sabem, el nucli d’un morfisme d’anells és un ideal. Per tant, el nucli del morfisme <span class="math inline">\(\iota_A\colon \ZZ\to A\)</span> és un ideal de <span class="math inline">\(\ZZ\)</span> de
+la forma <span class="math inline">\((n)\)</span>, amb <span class="math inline">\(n\geq 0\)</span>.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-3" class="definition"><strong>Definició 1.1  (Característica) </strong></span>La <em>característica</em> d’un anell <span class="math inline">\(A\)</span> és l’enter no negatiu <span class="math inline">\(n\)</span> tal que <span class="math inline">\(\iota_A = (n)\)</span>, i es denota per <span class="math inline">\(\car(A)\)</span>.</p>
+</div>
+<p>Fixem-nos que si <span class="math inline">\(\car(A)=n\)</span>, aleshores <span class="math inline">\(na = 0\)</span> per a tot <span class="math inline">\(a\in A\)</span>.</p>
+<div class="proposition">
+<p><span id="prp:car-primer" class="proposition"><strong>Proposició 1.1  </strong></span>Sigui <span class="math inline">\(F\)</span> un cos. Aleshores la seva característica és <span class="math inline">\(0\)</span> o bé un primer <span class="math inline">\(p\)</span>.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-4" class="proof"><em>Prova</em>. </span>Suposem que <span class="math inline">\(\car(F)=n&gt;0\)</span>, i <span class="math inline">\(n=ab\)</span>. Aleshores <span class="math inline">\((a1_A)(b1_A)=(ab)1_A=0\)</span>. Com que <span class="math inline">\(F\)</span> és un cos,
+això vol dir que <span class="math inline">\(a1_A=0\)</span> o <span class="math inline">\(b1_A=0\)</span>. Si per exemple <span class="math inline">\(a1_A=0\)</span>, això significa que <span class="math inline">\(n \mid a\)</span>. Com que <span class="math inline">\(n=ab\)</span>,
+necessàriament <span class="math inline">\(a=n\)</span> i <span class="math inline">\(b=1\)</span>. Per tant, els únics divisors de <span class="math inline">\(n\)</span> són trivials, i <span class="math inline">\(n\)</span> és primer.</p>
+</div>
+<div class="definition">
+<p><span id="def:cos-primer" class="definition"><strong>Definició 1.2  (cos primer) </strong></span>El <em>cos primer</em> d’un cos <span class="math inline">\(F\)</span> és el cos generat per <span class="math inline">\(1_F\)</span>. És o bé <span class="math inline">\(\QQ\)</span> (si <span class="math inline">\(F\)</span> té característica <span class="math inline">\(0\)</span>) o bé el cos <span class="math inline">\(\FF_p\)</span>
+(si <span class="math inline">\(F\)</span> té característica <span class="math inline">\(p\)</span>).</p>
+</div>
+<p>Quan <span class="math inline">\(K\)</span> és un cos que conté un altre cos <span class="math inline">\(F\)</span>, direm que <span class="math inline">\(K\)</span> és una <em>extensió</em> de <span class="math inline">\(F\)</span>, i escriurem <span class="math inline">\(K/F\)</span>. També farem servir
+el diagrama
+<span class="math display">\[
+\begin{xy}
+\xymatrix{
+  K\ar@{-}[d]\\
+  F.
+}
+\end{xy}
+\]</span></p>
 
+</div>
 </div>
             </section>
 
