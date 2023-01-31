@@ -97,6 +97,19 @@
 
 \renewcommand{\char}{\operatorname{char}}
 \renewcommand{\car}{\operatorname{char}}\)</span>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+  "HTML-CSS": {
+    styles: {".MathJax_Preview": {visibility: "hidden"}}
+  },
+    tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]},
+  TeX: {extensions: ["AMSmath.js","AMSsymbols.js","http://sonoisa.github.io/xyjax_ext/xypic.js"]}
+});
+</script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js">
+</script>
 
 
 
@@ -226,7 +239,8 @@ necessàriament <span class="math inline">\(a=n\)</span> i <span class="math inl
 <p><span id="def:cos-primer" class="definition"><strong>Definició 1.2  (cos primer) </strong></span>El <em>cos primer</em> d’un cos <span class="math inline">\(F\)</span> és el cos generat per <span class="math inline">\(1_F\)</span>. És o bé <span class="math inline">\(\QQ\)</span> (si <span class="math inline">\(F\)</span> té característica <span class="math inline">\(0\)</span>) o bé el cos <span class="math inline">\(\FF_p\)</span>
 (si <span class="math inline">\(F\)</span> té característica <span class="math inline">\(p\)</span>).</p>
 </div>
-<p>Quan <span class="math inline">\(K\)</span> és un cos que conté un altre cos <span class="math inline">\(F\)</span>, direm que <span class="math inline">\(K\)</span> és una <em>extensió</em> de <span class="math inline">\(F\)</span>, i escriurem <span class="math inline">\(K/F\)</span>. També farem servir
+<p>Quan <span class="math inline">\(K\)</span> és un cos que conté un altre cos <span class="math inline">\(F\)</span>, direm que <span class="math inline">\(K\)</span> és una <em>extensió</em> de <span class="math inline">\(F\)</span>, i escriurem <span class="math inline">\(K/F\)</span> (no és cap mena de quocient!). Direm també que
+<span class="math inline">\(F\)</span> és el <em>cos base</em> de l’extensió <span class="math inline">\(K/F\)</span>. També farem servir
 el diagrama
 <span class="math display">\[
 \begin{xy}
@@ -236,6 +250,12 @@ el diagrama
 }
 \end{xy}
 \]</span></p>
+<p>L’observació clau és que quan tenim una extensió <span class="math inline">\(K/F\)</span> aleshores <span class="math inline">\(K\)</span> esdevé automàticament un <span class="math inline">\(F\)</span>-espai vectorial. Això
+ens permet definir:</p>
+<div class="definition">
+<p><span id="def:grau-ext" class="definition"><strong>Definició 1.3  (grau d'una extensió) </strong></span>El <em>grau</em> de l’extensió <span class="math inline">\(K/F\)</span> és la dimensió de <span class="math inline">\(K\)</span> com a <span class="math inline">\(F\)</span>-espai vectorial, que escrivim com <span class="math inline">\([K\colon F]\)</span>. Direm que <span class="math inline">\(K/F\)</span> és finita si té grau finit,
+i infinita si no.</p>
+</div>
 
 </div>
 </div>
