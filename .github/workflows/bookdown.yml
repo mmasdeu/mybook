@@ -34,7 +34,7 @@ jobs:
 
       - name: Build site
         run: |
-          Rscript -e 'install.packages(c("rmarkdown","bookdown"))'
+          Rscript -e 'install.packages(c("rmarkdown","bookdown","magick","pdftools"))'
           ./build.sh
         
       - name: Deploy to GitHub pages 🚀
