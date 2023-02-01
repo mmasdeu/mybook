@@ -79,7 +79,7 @@ TODO (fàcil, però poc elegant)
 :::
 
 ::: {.corollary}
-Si $L/F$ és una extensió finita i $K/F$ és una subextensió (és a dir, K\subseteq L$) aleshores $[K\colon F]$ divideix $[L\colon F]$.
+Si $L/F$ és una extensió finita i $K/F$ és una subextensió (és a dir, $K\subseteq L$) aleshores $[K\colon F]$ divideix $[L\colon F]$.
 :::
 
 Per exemple, el corol·lari anterior ens permet deduïr que $\sqrt{2}$ no pertany a cap extensió de grau senar.
@@ -113,10 +113,38 @@ Si $\alpha$ i $\beta$ són algebraics sobre $F$, aleshores també ho són $\alph
 Si $L/F$ és una extensió qualsevol, aleshores el conjunt $K$ d'elements de $L$ que són algebraics sobre $F$ forma un subcos $L/K/F$.
 :::
 
-Per exemple, podem considerar $\bar\QQ\subseteq\CC$, el conjunt de tots els complexos algebraics, o també $\bar\QQ\cap \RR$, el conjunt
+Per exemple, podem considerar $\bar{\QQ}\subseteq\CC$, el conjunt de tots els complexos algebraics, o també $\bar{\QQ}\cap \RR$, el conjunt
 dels reals algebraics. Aquests cossos són enumerables (tenen un conjunt d'elements enumerable) i per tant són més petits que $\RR$ i que $\CC$.
 D'aquest fet obtenim que hi ha (molts) elements de $\RR$ que no són algebraics. En canvi, sovint és difícil demostrar que
 un real donat (per exemple $\pi$) és transcendent.
 
+::: {.theorem name=""}
+Si $K/F$ és una extensió algebraica i $L/K$ també, aleshores $L/F$ és algebraica.
+:::
+::: {.proof}
+TODO
+:::
+
 ## Compositum de cossos
+
+Recordem que donats dos cossos $K_1$ i $K_2$, el seu *compost* (o *compositum*) $K_1K_2$ és el mínim cos que conté
+tant a $K_1$ com a $K_2$. També es pot pensar com la intersecció de tots els cossos que contenen el conjunt $K_1\cup K_2$.
+
+::: {.proposition name=""}
+Siguin $K_1/F$ i $K_2/F$ dues extensions contingudes a $K$. Aleshores
+$$
+[K_1K_2\colon F] \leq [K_1\colon F] [K_2 \colon F].
+$$
+Gràficament, tenim:
+$$
+\begin{xy}
+\xymatrix{
+  & K_1 K_1 \\
+  K_1\ar@{-}^{\leq m}[ur]\ar@{-}^{n}[dr] &&K_2\ar@{-}[ul]^{\leq n}\ar@{-}[dl]^{m}\\
+  &F
+}
+\end{xy}
+$$
+:::
+
 
