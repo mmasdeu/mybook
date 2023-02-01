@@ -109,6 +109,9 @@ MathJax.Hub.Config({
   TeX: {extensions: ["AMSmath.js","AMSsymbols.js","https://mmasdeu.github.io/teoriadegalois/xypic.js"]}
 });
 </script>
+<script type="text/javascript"
+src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+</script>
 
 
 
@@ -160,7 +163,8 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="2" data-path="les-torres.html"><a href="les-torres.html"><i class="fa fa-check"></i><b>2</b> Les Torres</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="les-torres.html"><a href="les-torres.html#section"><i class="fa fa-check"></i><b>2.1</b> </a></li>
+<li class="chapter" data-level="2.1" data-path="les-torres.html"><a href="les-torres.html#extensions-algebraiquestranscendents"><i class="fa fa-check"></i><b>2.1</b> Extensions algebraiques/transcendents</a></li>
+<li class="chapter" data-level="2.2" data-path="les-torres.html"><a href="les-torres.html#torres-de-cossos"><i class="fa fa-check"></i><b>2.2</b> Torres de cossos</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="regle-i-compàs.html"><a href="regle-i-compàs.html"><i class="fa fa-check"></i><b>3</b> Regle i Compàs</a></li>
 <li class="chapter" data-level="4" data-path="descomposició.html"><a href="descomposició.html"><i class="fa fa-check"></i><b>4</b> Descomposició</a></li>
@@ -202,8 +206,72 @@ div.csl-indent {
 <p>Parlarem d’extensions simples, del teorema d’aixecament a anells de polinomis i el teorema de l’extensió.
 També definirem elements algebraics i transcendents i el polinomi mínim d’un element algebraic, amb exemples.
 Enunciarem i demostrarem la fórmula de les torres, i com es comporta el grau en composicions de cossos.</p>
-<div id="section" class="section level2" number="2.1">
-<h2><span class="header-section-number">2.1</span> </h2>
+<div id="extensions-algebraiquestranscendents" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Extensions algebraiques/transcendents<a href="les-torres.html#extensions-algebraiquestranscendents" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Considerem una extensió <span class="math inline">\(K/F\)</span>.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-15" class="definition"><strong>Definició 2.1  (element algebraic) </strong></span>Diem que un element <span class="math inline">\(\alpha\in K\)</span> és <em>algebraic sobre <span class="math inline">\(F\)</span></em> si <span class="math inline">\(\alpha\)</span> és l’arrel d’un polinomi <span class="math inline">\(f(x)\in F[x]\)</span>.</p>
+<p>Diem que <span class="math inline">\(\alpha\)</span> és <em>transcendent sobre <span class="math inline">\(F\)</span></em> si no és algebraic.</p>
+<p>L’extensió <span class="math inline">\(K/F\)</span> és <em>algebraica</em> si tots els elements <span class="math inline">\(\alpha\in K\)</span> són algebraics sobre <span class="math inline">\(F\)</span>.</p>
+</div>
+<p>Fixem-nos que si <span class="math inline">\(\alpha\)</span> és algebraic sobre <span class="math inline">\(F\)</span> aleshores sabem que hi ha <em>algun</em> polinomi <span class="math inline">\(f(x)\in F[x]\)</span> que té <span class="math inline">\(\alpha\)</span>
+com a arrel. Però n’hi ha molts més, per exemple qualsevol múltiple de <span class="math inline">\(f(x)\)</span>. El següent resultat ens permet assignar un
+polinomi <em>canònic</em> a cada element algebraic.</p>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-16" class="proposition"><strong>Proposició 2.1  </strong></span>Si <span class="math inline">\(\alpha\)</span> és algebraic sobre <span class="math inline">\(F\)</span>, aleshores hi ha un únic polinomi <strong>mònic</strong> i <strong>irreductible</strong> <span class="math inline">\(\Irr_{\alpha,F}(x)\)</span> que
+té <span class="math inline">\(\alpha\)</span> com a arrel. A més, <span class="math inline">\(f(x)\in F[x]\)</span> té <span class="math inline">\(\alpha\)</span> com a arrel si i només si és un múltiple de <span class="math inline">\(\Irr_{\alpha, F}(x)\)</span>.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-17" class="proof"><em>Prova</em>. </span>TODO</p>
+</div>
+<p>Fixem-nos que, si <span class="math inline">\(K/L/F\)</span> és una torre d’extensions i <span class="math inline">\(\alpha\in K\)</span> és algebraic sobre <span class="math inline">\(F\)</span>, aleshores també ho és sobre <span class="math inline">\(L\)</span>,
+i a més <span class="math inline">\(\Irr_{\alpha,L}(x)\)</span> divideix <span class="math inline">\(\Irr_{\alpha,F}(x)\)</span> a <span class="math inline">\(L[x]\)</span>.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-18" class="definition"><strong>Definició 2.2  (polinomi mínim) </strong></span>El polinomi <span class="math inline">\(\Irr_{\alpha,F}(x)\)</span> s’anomena el <em>polinomi mínim d’<span class="math inline">\(\alpha\)</span> sobre <span class="math inline">\(F\)</span></em>, i el seu grau s’anomena el <em>grau d’<span class="math inline">\(\alpha\)</span></em>
+sobre <span class="math inline">\(F\)</span>.</p>
+</div>
+<p>Posant junt tot el què hem vist fins ara, si prenem <span class="math inline">\(\alpha\in K\)</span> aleshores podem considerar a subextensió <span class="math inline">\(F(\alpha)/F\)</span>.
+En aquest cas, <span class="math inline">\(F(\alpha)\cong F[x]/(\Irr_{\alpha,F}(x))\)</span> i per tant <span class="math inline">\([F(\alpha)\colon F] = \deg \alpha\)</span>.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-19" class="example"><strong>Exemple 2.1  </strong></span>Revisitem els exemples anteriors, calculant els seus polinomis mínims.</p>
+</div>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-20" class="proposition"><strong>Proposició 2.2  </strong></span>Si <span class="math inline">\([K\colon F]=n\)</span> i <span class="math inline">\(\alpha\in K\)</span>, aleshores <span class="math inline">\(\deg\alpha\leq n\)</span>. En particular, <span class="math inline">\(K/F\)</span> és algebraica.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-21" class="proof"><em>Prova</em>. </span>TODO</p>
+</div>
+<p>No és cert que tota extensió algebraica sigui finita (en veurem exemples més endavant).</p>
+<p>El següent resultat ens caracteritza com són les extensions quadràtiques d’un cos <span class="math inline">\(F\)</span> de característica <span class="math inline">\(\neq 2\)</span>.</p>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-22" class="proposition"><strong>Proposició 2.3  () </strong></span>Sigui <span class="math inline">\(F\)</span> un cos de característica <span class="math inline">\(\neq 2\)</span>, i sigui <span class="math inline">\(K/F\)</span> una extensió de grau <span class="math inline">\(2\)</span>. Aleshores existeix <span class="math inline">\(\delta\in K\setminus F\)</span>
+tal que <span class="math inline">\(\delta^2=D\in F\)</span> i <span class="math inline">\(K=F(\delta)\)</span>. Escriurem que <span class="math inline">\(K=F(\sqrt{D})\)</span>.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-23" class="proof"><em>Prova</em>. </span>TODO</p>
+</div>
+</div>
+<div id="torres-de-cossos" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Torres de cossos<a href="les-torres.html#torres-de-cossos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>En aquesta secció considerem torres <span class="math inline">\(L/K/F\)</span>. Ens interessa relacionar les dues extensions <span class="math inline">\(L/K\)</span> i <span class="math inline">\(K/F\)</span> amb l’extensió
+total <span class="math inline">\(L/F\)</span>.</p>
+<div class="theorem">
+<p><span id="thm:torres" class="theorem"><strong>Teorema 2.1  (fórmula de les torres) </strong></span>Si <span class="math inline">\(F\subseteq K\subseteq L\)</span>, aleshores
+<span class="math display">\[
+[L\colon F] = [L\colon K][K \colon F].
+\]</span>
+Si un costat de l’equació és infinit, aleshores l’altre també.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-24" class="proof"><em>Prova</em>. </span>TODO (fàcil, però poc elegant)</p>
+</div>
+<div class="corollary">
+<p><span id="cor:unlabeled-div-25" class="corollary"><strong>Corol·lary 2.1  </strong></span>Si <span class="math inline">\(L/F\)</span> és una extensió finita i <span class="math inline">\(K/F\)</span> és una subextensió (és a dir, KL$) aleshores <span class="math inline">\([K\colon F]\)</span> divideix <span class="math inline">\([L\colon F]\)</span>.</p>
+</div>
+<p>Per exemple, el corol·lari anterior ens permet deduïr que <span class="math inline">\(\sqrt{2}\)</span> no pertany a cap extensió de grau senar.</p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-26" class="exercise"><strong>Exercici 2.1  </strong></span>Demostreu que el polomi <span class="math inline">\(x^3-\sqrt{2}\)</span> és irreductible sobre <span class="math inline">\(\QQ(\sqrt{2})\)</span>.</p>
+</div>
 
 </div>
 </div>

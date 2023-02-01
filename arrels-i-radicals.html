@@ -109,6 +109,9 @@ MathJax.Hub.Config({
   TeX: {extensions: ["AMSmath.js","AMSsymbols.js","https://mmasdeu.github.io/teoriadegalois/xypic.js"]}
 });
 </script>
+<script type="text/javascript"
+src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+</script>
 
 
 
@@ -160,7 +163,8 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="2" data-path="les-torres.html"><a href="les-torres.html"><i class="fa fa-check"></i><b>2</b> Les Torres</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="les-torres.html"><a href="les-torres.html#section"><i class="fa fa-check"></i><b>2.1</b> </a></li>
+<li class="chapter" data-level="2.1" data-path="les-torres.html"><a href="les-torres.html#extensions-algebraiquestranscendents"><i class="fa fa-check"></i><b>2.1</b> Extensions algebraiques/transcendents</a></li>
+<li class="chapter" data-level="2.2" data-path="les-torres.html"><a href="les-torres.html#torres-de-cossos"><i class="fa fa-check"></i><b>2.2</b> Torres de cossos</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="regle-i-compàs.html"><a href="regle-i-compàs.html"><i class="fa fa-check"></i><b>3</b> Regle i Compàs</a></li>
 <li class="chapter" data-level="4" data-path="descomposició.html"><a href="descomposició.html"><i class="fa fa-check"></i><b>4</b> Descomposició</a></li>
@@ -204,7 +208,16 @@ que és equivalent a què el seu grup de Galois sigui resoluble. D’aquí en po
 deduir que els polinomis generals de grau <span class="math inline">\(\geq 5\)</span> no són resolubles per radicals i,
 per tant, no existeix una fórmula que expressi les arrels d’un polinomi en termes
 dels seus coeficients. També es mostrarà un exemple concret d’un polinomi de grau <span class="math inline">\(5\)</span> sobre <span class="math inline">\(\QQ\)</span>
-amb grup de Galois <span class="math inline">\(S_5\)</span>: si <span class="math inline">\(f\)</span> és irreductible amb exactament <span class="math inline">\(3\)</span> arrels reals, aleshores la conjugació complexa dona un automorfisme d’ordre <span class="math inline">\(2\)</span>. Com que <span class="math inline">\(\Gal(f)\)</span> té ordre divisible per <span class="math inline">\(5\)</span>, hi ha algun element <span class="math inline">\(\sigma\)</span> d’ordre <span class="math inline">\(5\)</span> (Teorema de Cauchy). Però a <span class="math inline">\(S_5\)</span> els elements d’ordre <span class="math inline">\(5\)</span> són necessàriament <span class="math inline">\(5\)</span>-cicles. Com que <span class="math inline">\(\Gal(f)\)</span> té un <span class="math inline">\(5\)</span>-cicle i una transposició, és necessàriament tot <span class="math inline">\(S_5\)</span>.</p>
+amb grup de Galois <span class="math inline">\(S_5\)</span>.</p>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-35" class="proposition"><strong>Proposició 12.1  () </strong></span>Sigui <span class="math inline">\(f(x)\in \QQ[x]\)</span> un polinomi irreductible de grau <span class="math inline">\(p\)</span> amb exactament <span class="math inline">\(p-2\)</span> arrels reals. Aleshores <span class="math inline">\(\Gal(f)\cong S_p\)</span>.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-36" class="proof"><em>Prova</em>. </span>TODO</p>
+</div>
+<p>Podem aplicar el resultat anterior al polinomi <span class="math inline">\(f(x)=x^5-4x-2\)</span>. Com que és <span class="math inline">\(2\)</span>-Eisenstein, és irreductible. A més, la seva derivada
+és <span class="math inline">\(5x^4-4\)</span>, que té zeros a <span class="math inline">\(x=\pm\frac{\sqrt{2}}{\sqrt[4]{5}}\)</span>. Deduïm que <span class="math inline">\(f(x)\)</span> té exactament tres zeros reals,
+que de fet podem aproximar: <span class="math inline">\(-1.24359639\ldots,-0.50849948\ldots,1.51851215\ldots\)</span>. Per tant, <span class="math inline">\(\Gal(f)\cong S_5\)</span>.</p>
 
 </div>
             </section>
