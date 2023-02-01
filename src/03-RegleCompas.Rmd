@@ -1,5 +1,49 @@
 # Regle i Compàs
 
-Parlarem de tres problemes de la grècia clàssica sobre construccions amb regle no marcat i compàs: la quadratura del cercle,
+Parlarem de tres problemes de la Grècia clàssica sobre construccions amb regle no marcat i compàs: la quadratura del cercle,
 la trisecció de l'angle i la duplicació del cub. Caracteritzarem els nombres constructibles, i veurem que aquests problemes
 no tenen solució. Veurem també que si el regle és marcat aleshores podem trisecar l'angle i també duplicar el cub.
+
+## El problema
+
+Els grecs es van interessar molt per les construccions amb dos instruments molt simples: per una banda, el que habitualment
+s'anomena regle, i que vol dir simplement un regle sense cap mena de marca. Ens permet, donats dos punts del pla, traçar la recta
+que els uneix. El segon instrument és el compàs. Donats dos punts podem fixar l'obertura, i donat un tercer punt (que pot coincidir
+o no amb els anteriors) podem traçar un arc de circumferència amb el radi fixat prèviament, i el centre aquest tercer punt.
+
+Hi ha tres problemes clàssics que ens proposem estudiar:
+
+1. "Duplicació del cub": donat un cub, podem construir-ne un altre de volum exactament el doble?
+2. "Trisecció de l'angle": donat un angle $\theta$, podem construir l'angle $\theta/3$?
+3. "Quadratura del cercle": donat un cercle, podem construir un quadrat d'àrea igual a la del cercle donat?
+
+Donada una longitud inicial (que definirem com a $1$), direm que un nombre real $\alpha$ és *constructible* si
+podem construir un segment de longitud $\alpha$ mitjançant una successió finita d'operacions amb regle i compàs. Tenim els quatre
+tipus d'operacions següents:
+
+1. Unir dos punts per una recta.
+2. Trobar el punt d'intersecció de dues rectes.
+3. Dibuixar un cercle amb centre i radi donats.
+4. Trobar els punts d'intersecció d'una recta amb un cercle, o de dos cercles.
+
+::: {.exercise}
+Vegeu que els nombres constructibles formen un subcos de $\cC\subseteq\RR$. Heu de donar construcions de la suma, resta, producte i divisió
+de nombres ja construïts.
+:::
+
+És fàcil veure que també podem prendre arrels quadrades, com s'indica a la següent figura:
+
+```{r, echo=FALSE, engine='tikz', out.width='10%', fig.ext='png'}
+\begin{tikzpicture}[scale=0.2]
+  \useasboundingbox (0, 0) rectangle (59.5, 84.2);
+  \draw
+    (12.8, 57.6) -- (38.4, 57.6);
+  \draw
+    (12.8, 57.6) arc[start angle=180, end angle=360, x radius=12.8, y radius=-12.8];
+  \draw
+    (16, 66) -- (16, 57.6);
+  \node at (14, 58) {$1$};
+  \node at (25.6, 58.4) {$\alpha$};
+  \node at (16.8, 62.4) {$\sqrt{\alpha}$};
+\end{tikzpicture}
+```

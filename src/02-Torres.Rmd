@@ -147,4 +147,7 @@ $$
 $$
 :::
 
+Fixem-nos que, si $m$ i $n$ són coprimers, aleshores per la fórmula de les torres tenim $[K_1K2\colon K_1]=m$ i $[K_1K_2\colon K_2]=n$.
+En general, però la desigualtat serà estricta.
+
 
