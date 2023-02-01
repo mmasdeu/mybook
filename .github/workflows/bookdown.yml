@@ -28,13 +28,23 @@ jobs:
           use-public-rspm: true
 
       - uses: r-lib/actions/setup-renv@v2
+
+      - uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+            cache-version: 2
+            extra-packages: |
+             any::magick
+             any::pdftools
+            needs: |
+             magick
+             pdftools
           
       - name: Install latex mk
-        run: sudo apt-get udpate & sudo apt-get install -y -q latexmk texlive-lang-spanish texlive-latex-extra texlive-xetex fonts-freefont-ttf texlive-fonts-recommended texlive-fonts-extra
+        run: sudo apt-get udpate & sudo apt-get install -y -q latexmk texlive-lang-spanish texlive-latex-extra texlive-xetex fonts-freefont-ttf texlive-fonts-recommended texlive-fonts-extra imagemagick poppler-utils
 
       - name: Build site
         run: |
-          Rscript -e 'install.packages(c("rmarkdown","bookdown","magick","pdftools"))'
+          Rscript -e 'install.packages(c("rmarkdown","bookdown","pdftools"))'
           ./build.sh
         
       - name: Deploy to GitHub pages 🚀
