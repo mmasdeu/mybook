@@ -4,4 +4,86 @@ Parlarem d'extensions simples, del teorema d'aixecament a anells de polinomis i 
 També definirem elements algebraics i transcendents i el polinomi mínim d'un element algebraic, amb exemples.
 Enunciarem i demostrarem la fórmula de les torres, i com es comporta el grau en composicions de cossos.
 
-## 
+## Extensions algebraiques/transcendents
+
+Considerem una extensió $K/F$.
+
+::: {.definition name="element algebraic"}
+Diem que un element $\alpha\in K$ és *algebraic sobre $F$* si $\alpha$ és l'arrel d'un polinomi $f(x)\in F[x]$.
+
+Diem que $\alpha$ és *transcendent sobre $F$* si no és algebraic.
+
+L'extensió $K/F$ és *algebraica* si tots els elements $\alpha\in K$ són algebraics sobre $F$.
+:::
+
+Fixem-nos que si $\alpha$ és algebraic sobre $F$ aleshores sabem que hi ha *algun* polinomi $f(x)\in F[x]$ que té $\alpha$
+com a arrel. Però n'hi ha molts més, per exemple qualsevol múltiple de $f(x)$. El següent resultat ens permet assignar un
+polinomi *canònic* a cada element algebraic.
+
+::: {.proposition}
+Si $\alpha$ és algebraic sobre $F$, aleshores hi ha un únic polinomi **mònic** i **irreductible** $\Irr_{\alpha,F}(x)$ que
+té $\alpha$ com a arrel. A més, $f(x)\in F[x]$ té $\alpha$ com a arrel si i només si és un múltiple de $\Irr_{\alpha, F}(x)$.
+:::
+::: {.proof}
+TODO
+:::
+
+Fixem-nos que, si $K/L/F$ és una torre d'extensions i $\alpha\in K$ és algebraic sobre $F$, aleshores també ho és sobre $L$,
+i a més $\Irr_{\alpha,L}(x)$ divideix $\Irr_{\alpha,F}(x)$ a $L[x]$.
+
+::: {.definition name="polinomi mínim"}
+El polinomi $\Irr_{\alpha,F}(x)$ s'anomena el *polinomi mínim d'$\alpha$ sobre $F$*, i el seu grau s'anomena el *grau d'$\alpha$*
+sobre $F$.
+:::
+
+Posant junt tot el què hem vist fins ara, si prenem $\alpha\in K$ aleshores podem considerar a subextensió $F(\alpha)/F$.
+En aquest cas, $F(\alpha)\cong F[x]/(\Irr_{\alpha,F}(x))$ i per tant $[F(\alpha)\colon F] = \deg \alpha$.
+
+::: {.example}
+Revisitem els exemples anteriors, calculant els seus polinomis mínims.
+:::
+
+::: {.proposition}
+Si $[K\colon F]=n$ i $\alpha\in K$, aleshores $\deg\alpha\leq n$. En particular, $K/F$ és algebraica.
+:::
+::: {.proof}
+TODO
+:::
+
+No és cert que tota extensió algebraica sigui finita (en veurem exemples més endavant).
+
+El següent resultat ens caracteritza com són les extensions quadràtiques d'un cos $F$ de característica $\neq 2$.
+
+::: {.proposition name=""}
+Sigui $F$ un cos de característica $\neq 2$, i sigui $K/F$ una extensió de grau $2$. Aleshores existeix $\delta\in K\setminus F$
+tal que $\delta^2=D\in F$ i $K=F(\delta)$. Escriurem que $K=F(\sqrt{D})$.
+:::
+::: {.proof}
+TODO
+:::
+
+## Torres de cossos
+
+En aquesta secció considerem torres $L/K/F$. Ens interessa relacionar les dues extensions $L/K$ i $K/F$ amb l'extensió
+total $L/F$.
+
+::: {.theorem #torres name="fórmula de les torres"}
+Si $F\subseteq K\subseteq L$, aleshores
+$$
+[L\colon F] = [L\colon K][K \colon F].
+$$
+Si un costat de l'equació és infinit, aleshores l'altre també.
+:::
+::: {.proof}
+TODO (fàcil, però poc elegant)
+:::
+
+::: {.corollary}
+Si $L/F$ és una extensió finita i $K/F$ és una subextensió (és a dir, K\subseteq L$) aleshores $[K\colon F]$ divideix $[L\colon F]$.
+:::
+
+Per exemple, el corol·lari anterior ens permet deduïr que $\sqrt{2}$ no pertany a cap extensió de grau senar.
+
+::: {.exercise}
+Demostreu que el polomi $x^3-\sqrt{2}$ és irreductible sobre $\QQ(\sqrt{2})$.
+:::

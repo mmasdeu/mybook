@@ -11,6 +11,10 @@ bookdown::gitbook:
 bookdown::pdf_book:
   includes:
     in_header: src/preamble.tex
+  header-includes: 
+    - \usepackage{tikz}
+    - \usepackage{pgfplots}
+    - \usetikzlibrary{positioning}
   latex_engine: xelatex
   citation_package: natbib
   keep_tex: yes

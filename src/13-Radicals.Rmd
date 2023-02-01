@@ -5,4 +5,15 @@ que és equivalent a què el seu grup de Galois sigui resoluble. D'aquí en podr
 deduir que els polinomis generals de grau $\geq 5$ no són resolubles per radicals i,
 per tant, no existeix una fórmula que expressi les arrels d'un polinomi en termes
 dels seus coeficients. També es mostrarà un exemple concret d'un polinomi de grau $5$ sobre $\QQ$
-amb grup de Galois $S_5$: si $f$ és irreductible amb exactament $3$ arrels reals, aleshores la conjugació complexa dona un automorfisme d'ordre $2$. Com que $\Gal(f)$ té ordre divisible per $5$, hi ha algun element $\sigma$ d'ordre $5$ (Teorema de Cauchy). Però a $S_5$ els elements d'ordre $5$ són necessàriament $5$-cicles. Com que $\Gal(f)$ té un $5$-cicle i una transposició, és necessàriament tot $S_5$.
+amb grup de Galois $S_5$.
+
+::: {.proposition name=""}
+Sigui $f(x)\in \QQ[x]$ un polinomi irreductible de grau $p$ amb exactament $p-2$ arrels reals. Aleshores $\Gal(f)\cong S_p$.
+:::
+::: {.proof}
+TODO
+:::
+
+Podem aplicar el resultat anterior al polinomi $f(x)=x^5-4x-2$. Com que és $2$-Eisenstein, és irreductible. A més, la seva derivada
+és $5x^4-4$, que té zeros a $x=\pm\frac{\sqrt{2}}{\sqrt[4]{5}}$. Deduïm que $f(x)$ té exactament tres zeros reals,
+que de fet podem aproximar: $-1.24359639\ldots,-0.50849948\ldots,1.51851215\ldots$. Per tant, $\Gal(f)\cong S_5$.
