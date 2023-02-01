@@ -35,7 +35,7 @@ jobs:
           needs: magick
           
       - name: Install latex mk
-        run: sudo apt-get udpate & sudo apt-get install -y -q latexmk texlive-lang-spanish texlive-latex-extra texlive-xetex fonts-freefont-ttf texlive-fonts-recommended texlive-fonts-extra imagemagick
+        run: sudo apt-get udpate & sudo apt-get install -y -q latexmk texlive-lang-spanish texlive-latex-extra texlive-xetex fonts-freefont-ttf texlive-fonts-recommended texlive-fonts-extra imagemagick poppler-utils
 
       - name: Build site
         run: |
