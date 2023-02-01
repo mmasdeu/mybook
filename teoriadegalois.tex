@@ -281,7 +281,7 @@ racionals sobre un cos fixat \(k\), i ``afegir'' una arrel quadrada de \(t\) (mi
 
 Sigui \(K/F\) una extensió, i considerem un conjunt \(S\subseteq K\). Aleshores podem considerar el ``mínim'' subcos \(L\subseteq K\)
 que conté \(F\) i tots els elements de \(S\). S'anomena el \emph{cos generat per \(S\) sobre \(F\)}, i escriurem \(F(S)\). Si \(S\) és un
-conjunt finit format per \(\alpha_1,\ldots,\alpha_n\) aleshores escriurem \(F(\alpha_1,\ldots,\alpha_n)\). Un cas particular
+conjunt finit format per \(\alpha_1,\ldots,\alpha_n\) aleshores escriurem \(F(\alpha_1,\ldots,\alpha_n)\) i direm que \(F(S)\) és \emph{finitament generada}. Un cas particular
 és quan \(S\) conté un sol element: en aquest cas \(F(\alpha)\) s'anomena una extensió \emph{simple}, i l'element \(\alpha\) s'anomena
 un \emph{element primitiu} de l'extensió (que no és únic, en general!).
 
@@ -415,14 +415,76 @@ TODO (fàcil, però poc elegant)
 \end{proof}
 
 \begin{corollary}
-Si \(L/F\) és una extensió finita i \(K/F\) és una subextensió (és a dir, K\subseteq L\$) aleshores \([K\colon F]\) divideix \([L\colon F]\).
+Si \(L/F\) és una extensió finita i \(K/F\) és una subextensió (és a dir, \(K\subseteq L\)) aleshores \([K\colon F]\) divideix \([L\colon F]\).
 \end{corollary}
 
 Per exemple, el corol·lari anterior ens permet deduïr que \(\sqrt{2}\) no pertany a cap extensió de grau senar.
 
 \begin{exercise}
-Demostreu que el polomi \(x^3-\sqrt{2}\) és irreductible sobre \(\QQ(\sqrt{2})\).
+Demostreu que el polomi \(x^3-\sqrt{2}\) és irreductible sobre \(\QQ(\sqrt{2})\), fent servir la torre \(\QQ(\sqrt[6]{2}) / \QQ(\sqrt{2}) / \QQ\).
 \end{exercise}
+
+El següent lema senzill ens permetrà construir qualsevol extensió finitament generada de manera iterativa:
+
+\begin{lemma}
+Si \(\alpha\) i \(\beta\) són elements de \(K/F\), aleshores \(F(\alpha,\beta)=(F(\alpha)(\beta))\).
+\end{lemma}
+
+\begin{proof}
+TODO
+\end{proof}
+
+\begin{exercise}
+Calculeu el grau de l'extensió \(\QQ(\sqrt{2},\sqrt{3})/\QQ\), i doneu una base.
+\end{exercise}
+
+\begin{theorem}
+L'extensió \(K/F\) és finita si i només si \(K=F(S)\) on \(S\) és un conjunt finit d'elements algebraics.
+\end{theorem}
+
+\begin{corollary}[]
+Si \(\alpha\) i \(\beta\) són algebraics sobre \(F\), aleshores també ho són \(\alpha\pm \beta\), \(\alpha\beta\) i \(\alpha/\beta\) (si \(\beta\neq 0\)).
+\end{corollary}
+
+\begin{corollary}[]
+Si \(L/F\) és una extensió qualsevol, aleshores el conjunt \(K\) d'elements de \(L\) que són algebraics sobre \(F\) forma un subcos \(L/K/F\).
+\end{corollary}
+
+Per exemple, podem considerar \(\bar{\QQ}\subseteq\CC\), el conjunt de tots els complexos algebraics, o també \(\bar{\QQ}\cap \RR\), el conjunt
+dels reals algebraics. Aquests cossos són enumerables (tenen un conjunt d'elements enumerable) i per tant són més petits que \(\RR\) i que \(\CC\).
+D'aquest fet obtenim que hi ha (molts) elements de \(\RR\) que no són algebraics. En canvi, sovint és difícil demostrar que
+un real donat (per exemple \(\pi\)) és transcendent.
+
+\begin{theorem}[]
+Si \(K/F\) és una extensió algebraica i \(L/K\) també, aleshores \(L/F\) és algebraica.
+\end{theorem}
+
+\begin{proof}
+TODO
+\end{proof}
+
+\hypertarget{compositum-de-cossos}{%
+\section{Compositum de cossos}\label{compositum-de-cossos}}
+
+Recordem que donats dos cossos \(K_1\) i \(K_2\), el seu \emph{compost} (o \emph{compositum}) \(K_1K_2\) és el mínim cos que conté
+tant a \(K_1\) com a \(K_2\). També es pot pensar com la intersecció de tots els cossos que contenen el conjunt \(K_1\cup K_2\).
+
+\begin{proposition}[]
+Siguin \(K_1/F\) i \(K_2/F\) dues extensions contingudes a \(K\). Aleshores
+\[
+[K_1K_2\colon F] \leq [K_1\colon F] [K_2 \colon F].
+\]
+Gràficament, tenim:
+\[
+\begin{xy}
+\xymatrix{
+  & K_1 K_1 \\
+  K_1\ar@{-}^{\leq m}[ur]\ar@{-}^{n}[dr] &&K_2\ar@{-}[ul]^{\leq n}\ar@{-}[dl]^{m}\\
+  &F
+}
+\end{xy}
+\]
+\end{proposition}
 
 \hypertarget{regle-i-compuxe0s}{%
 \chapter{Regle i Compàs}\label{regle-i-compuxe0s}}

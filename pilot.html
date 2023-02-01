@@ -109,8 +109,8 @@ MathJax.Hub.Config({
   TeX: {extensions: ["AMSmath.js","AMSsymbols.js","https://mmasdeu.github.io/teoriadegalois/xypic.js"]}
 });
 </script>
-<script type="text/javascript"
-src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/MathJax.js?config=TeX-AMS_HTML">
 </script>
 
 
@@ -165,6 +165,7 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="2.1" data-path="les-torres.html"><a href="les-torres.html#extensions-algebraiquestranscendents"><i class="fa fa-check"></i><b>2.1</b> Extensions algebraiques/transcendents</a></li>
 <li class="chapter" data-level="2.2" data-path="les-torres.html"><a href="les-torres.html#torres-de-cossos"><i class="fa fa-check"></i><b>2.2</b> Torres de cossos</a></li>
+<li class="chapter" data-level="2.3" data-path="les-torres.html"><a href="les-torres.html#compositum-de-cossos"><i class="fa fa-check"></i><b>2.3</b> Compositum de cossos</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="regle-i-compàs.html"><a href="regle-i-compàs.html"><i class="fa fa-check"></i><b>3</b> Regle i Compàs</a></li>
 <li class="chapter" data-level="4" data-path="descomposició.html"><a href="descomposició.html"><i class="fa fa-check"></i><b>4</b> Descomposició</a></li>
@@ -305,7 +306,7 @@ racionals sobre un cos fixat <span class="math inline">\(k\)</span>, i “afegir
 </div>
 <p>Sigui <span class="math inline">\(K/F\)</span> una extensió, i considerem un conjunt <span class="math inline">\(S\subseteq K\)</span>. Aleshores podem considerar el “mínim” subcos <span class="math inline">\(L\subseteq K\)</span>
 que conté <span class="math inline">\(F\)</span> i tots els elements de <span class="math inline">\(S\)</span>. S’anomena el <em>cos generat per <span class="math inline">\(S\)</span> sobre <span class="math inline">\(F\)</span></em>, i escriurem <span class="math inline">\(F(S)\)</span>. Si <span class="math inline">\(S\)</span> és un
-conjunt finit format per <span class="math inline">\(\alpha_1,\ldots,\alpha_n\)</span> aleshores escriurem <span class="math inline">\(F(\alpha_1,\ldots,\alpha_n)\)</span>. Un cas particular
+conjunt finit format per <span class="math inline">\(\alpha_1,\ldots,\alpha_n\)</span> aleshores escriurem <span class="math inline">\(F(\alpha_1,\ldots,\alpha_n)\)</span> i direm que <span class="math inline">\(F(S)\)</span> és <em>finitament generada</em>. Un cas particular
 és quan <span class="math inline">\(S\)</span> conté un sol element: en aquest cas <span class="math inline">\(F(\alpha)\)</span> s’anomena una extensió <em>simple</em>, i l’element <span class="math inline">\(\alpha\)</span> s’anomena
 un <em>element primitiu</em> de l’extensió (que no és únic, en general!).</p>
 <div class="theorem">

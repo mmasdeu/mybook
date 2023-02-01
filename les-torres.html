@@ -109,8 +109,8 @@ MathJax.Hub.Config({
   TeX: {extensions: ["AMSmath.js","AMSsymbols.js","https://mmasdeu.github.io/teoriadegalois/xypic.js"]}
 });
 </script>
-<script type="text/javascript"
-src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/MathJax.js?config=TeX-AMS_HTML">
 </script>
 
 
@@ -165,6 +165,7 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="2.1" data-path="les-torres.html"><a href="les-torres.html#extensions-algebraiquestranscendents"><i class="fa fa-check"></i><b>2.1</b> Extensions algebraiques/transcendents</a></li>
 <li class="chapter" data-level="2.2" data-path="les-torres.html"><a href="les-torres.html#torres-de-cossos"><i class="fa fa-check"></i><b>2.2</b> Torres de cossos</a></li>
+<li class="chapter" data-level="2.3" data-path="les-torres.html"><a href="les-torres.html#compositum-de-cossos"><i class="fa fa-check"></i><b>2.3</b> Compositum de cossos</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="regle-i-compàs.html"><a href="regle-i-compàs.html"><i class="fa fa-check"></i><b>3</b> Regle i Compàs</a></li>
 <li class="chapter" data-level="4" data-path="descomposició.html"><a href="descomposició.html"><i class="fa fa-check"></i><b>4</b> Descomposició</a></li>
@@ -266,11 +267,61 @@ Si un costat de l’equació és infinit, aleshores l’altre també.</p>
 <p><span id="unlabeled-div-24" class="proof"><em>Prova</em>. </span>TODO (fàcil, però poc elegant)</p>
 </div>
 <div class="corollary">
-<p><span id="cor:unlabeled-div-25" class="corollary"><strong>Corol·lary 2.1  </strong></span>Si <span class="math inline">\(L/F\)</span> és una extensió finita i <span class="math inline">\(K/F\)</span> és una subextensió (és a dir, KL$) aleshores <span class="math inline">\([K\colon F]\)</span> divideix <span class="math inline">\([L\colon F]\)</span>.</p>
+<p><span id="cor:unlabeled-div-25" class="corollary"><strong>Corol·lary 2.1  </strong></span>Si <span class="math inline">\(L/F\)</span> és una extensió finita i <span class="math inline">\(K/F\)</span> és una subextensió (és a dir, <span class="math inline">\(K\subseteq L\)</span>) aleshores <span class="math inline">\([K\colon F]\)</span> divideix <span class="math inline">\([L\colon F]\)</span>.</p>
 </div>
 <p>Per exemple, el corol·lari anterior ens permet deduïr que <span class="math inline">\(\sqrt{2}\)</span> no pertany a cap extensió de grau senar.</p>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-26" class="exercise"><strong>Exercici 2.1  </strong></span>Demostreu que el polomi <span class="math inline">\(x^3-\sqrt{2}\)</span> és irreductible sobre <span class="math inline">\(\QQ(\sqrt{2})\)</span>.</p>
+<p><span id="exr:unlabeled-div-26" class="exercise"><strong>Exercici 2.1  </strong></span>Demostreu que el polomi <span class="math inline">\(x^3-\sqrt{2}\)</span> és irreductible sobre <span class="math inline">\(\QQ(\sqrt{2})\)</span>, fent servir la torre <span class="math inline">\(\QQ(\sqrt[6]{2}) / \QQ(\sqrt{2}) / \QQ\)</span>.</p>
+</div>
+<p>El següent lema senzill ens permetrà construir qualsevol extensió finitament generada de manera iterativa:</p>
+<div class="lemma">
+<p><span id="lem:unlabeled-div-27" class="lemma"><strong>Lema 2.1  </strong></span>Si <span class="math inline">\(\alpha\)</span> i <span class="math inline">\(\beta\)</span> són elements de <span class="math inline">\(K/F\)</span>, aleshores <span class="math inline">\(F(\alpha,\beta)=(F(\alpha)(\beta))\)</span>.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-28" class="proof"><em>Prova</em>. </span>TODO</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-29" class="exercise"><strong>Exercici 2.2  </strong></span>Calculeu el grau de l’extensió <span class="math inline">\(\QQ(\sqrt{2},\sqrt{3})/\QQ\)</span>, i doneu una base.</p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-30" class="theorem"><strong>Teorema 2.2  </strong></span>L’extensió <span class="math inline">\(K/F\)</span> és finita si i només si <span class="math inline">\(K=F(S)\)</span> on <span class="math inline">\(S\)</span> és un conjunt finit d’elements algebraics.</p>
+</div>
+<div class="corollary">
+<p><span id="cor:unlabeled-div-31" class="corollary"><strong>Corol·lary 2.2  () </strong></span>Si <span class="math inline">\(\alpha\)</span> i <span class="math inline">\(\beta\)</span> són algebraics sobre <span class="math inline">\(F\)</span>, aleshores també ho són <span class="math inline">\(\alpha\pm \beta\)</span>, <span class="math inline">\(\alpha\beta\)</span> i <span class="math inline">\(\alpha/\beta\)</span> (si <span class="math inline">\(\beta\neq 0\)</span>).</p>
+</div>
+<div class="corollary">
+<p><span id="cor:unlabeled-div-32" class="corollary"><strong>Corol·lary 2.3  () </strong></span>Si <span class="math inline">\(L/F\)</span> és una extensió qualsevol, aleshores el conjunt <span class="math inline">\(K\)</span> d’elements de <span class="math inline">\(L\)</span> que són algebraics sobre <span class="math inline">\(F\)</span> forma un subcos <span class="math inline">\(L/K/F\)</span>.</p>
+</div>
+<p>Per exemple, podem considerar <span class="math inline">\(\bar{\QQ}\subseteq\CC\)</span>, el conjunt de tots els complexos algebraics, o també <span class="math inline">\(\bar{\QQ}\cap \RR\)</span>, el conjunt
+dels reals algebraics. Aquests cossos són enumerables (tenen un conjunt d’elements enumerable) i per tant són més petits que <span class="math inline">\(\RR\)</span> i que <span class="math inline">\(\CC\)</span>.
+D’aquest fet obtenim que hi ha (molts) elements de <span class="math inline">\(\RR\)</span> que no són algebraics. En canvi, sovint és difícil demostrar que
+un real donat (per exemple <span class="math inline">\(\pi\)</span>) és transcendent.</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-33" class="theorem"><strong>Teorema 2.3  () </strong></span>Si <span class="math inline">\(K/F\)</span> és una extensió algebraica i <span class="math inline">\(L/K\)</span> també, aleshores <span class="math inline">\(L/F\)</span> és algebraica.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-34" class="proof"><em>Prova</em>. </span>TODO</p>
+</div>
+</div>
+<div id="compositum-de-cossos" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Compositum de cossos<a href="les-torres.html#compositum-de-cossos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Recordem que donats dos cossos <span class="math inline">\(K_1\)</span> i <span class="math inline">\(K_2\)</span>, el seu <em>compost</em> (o <em>compositum</em>) <span class="math inline">\(K_1K_2\)</span> és el mínim cos que conté
+tant a <span class="math inline">\(K_1\)</span> com a <span class="math inline">\(K_2\)</span>. També es pot pensar com la intersecció de tots els cossos que contenen el conjunt <span class="math inline">\(K_1\cup K_2\)</span>.</p>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-35" class="proposition"><strong>Proposició 2.4  () </strong></span>Siguin <span class="math inline">\(K_1/F\)</span> i <span class="math inline">\(K_2/F\)</span> dues extensions contingudes a <span class="math inline">\(K\)</span>. Aleshores
+<span class="math display">\[
+[K_1K_2\colon F] \leq [K_1\colon F] [K_2 \colon F].
+\]</span>
+Gràficament, tenim:
+<span class="math display">\[
+\begin{xy}
+\xymatrix{
+  &amp; K_1 K_1 \\
+  K_1\ar@{-}^{\leq m}[ur]\ar@{-}^{n}[dr] &amp;&amp;K_2\ar@{-}[ul]^{\leq n}\ar@{-}[dl]^{m}\\
+  &amp;F
+}
+\end{xy}
+\]</span></p>
 </div>
 
 </div>
