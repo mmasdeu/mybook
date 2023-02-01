@@ -61,6 +61,8 @@
 \renewcommand{\CC}{\mathbb{C}}
 \renewcommand{\HH}{\mathbb{H}}
 
+\renewcommand{\cC}{\mathcal{C}}
+
 \renewcommand{\fX}{\mathfrak{X}}
 
 \renewcommand{\SL}{\operatorname{SL}}
@@ -167,7 +169,10 @@ div.csl-indent {
 <li class="chapter" data-level="2.2" data-path="les-torres.html"><a href="les-torres.html#torres-de-cossos"><i class="fa fa-check"></i><b>2.2</b> Torres de cossos</a></li>
 <li class="chapter" data-level="2.3" data-path="les-torres.html"><a href="les-torres.html#compositum-de-cossos"><i class="fa fa-check"></i><b>2.3</b> Compositum de cossos</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="regle-i-compàs.html"><a href="regle-i-compàs.html"><i class="fa fa-check"></i><b>3</b> Regle i Compàs</a></li>
+<li class="chapter" data-level="3" data-path="regle-i-compàs.html"><a href="regle-i-compàs.html"><i class="fa fa-check"></i><b>3</b> Regle i Compàs</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="regle-i-compàs.html"><a href="regle-i-compàs.html#el-problema"><i class="fa fa-check"></i><b>3.1</b> El problema</a></li>
+</ul></li>
 <li class="chapter" data-level="4" data-path="descomposició.html"><a href="descomposició.html"><i class="fa fa-check"></i><b>4</b> Descomposició</a></li>
 <li class="chapter" data-level="5" data-path="polinomis-inseparables.html"><a href="polinomis-inseparables.html"><i class="fa fa-check"></i><b>5</b> Polinomis Inseparables</a></li>
 <li class="chapter" data-level="6" data-path="polinomis-ciclotòmics.html"><a href="polinomis-ciclotòmics.html"><i class="fa fa-check"></i><b>6</b> Polinomis Ciclotòmics</a></li>
@@ -204,10 +209,38 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="regle-i-compàs" class="section level1 hasAnchor" number="3">
 <h1><span class="header-section-number">Episodi 3. </span> Regle i Compàs<a href="regle-i-compàs.html#regle-i-compàs" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Parlarem de tres problemes de la grècia clàssica sobre construccions amb regle no marcat i compàs: la quadratura del cercle,
+<p>Parlarem de tres problemes de la Grècia clàssica sobre construccions amb regle no marcat i compàs: la quadratura del cercle,
 la trisecció de l’angle i la duplicació del cub. Caracteritzarem els nombres constructibles, i veurem que aquests problemes
 no tenen solució. Veurem també que si el regle és marcat aleshores podem trisecar l’angle i també duplicar el cub.</p>
+<div id="el-problema" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> El problema<a href="regle-i-compàs.html#el-problema" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Els grecs es van interessar molt per les construccions amb dos instruments molt simples: per una banda, el que habitualment
+s’anomena regle, i que vol dir simplement un regle sense cap mena de marca. Ens permet, donats dos punts del pla, traçar la recta
+que els uneix. El segon instrument és el compàs. Donats dos punts podem fixar l’obertura, i donat un tercer punt (que pot coincidir
+o no amb els anteriors) podem traçar un arc de circumferència amb el radi fixat prèviament, i el centre aquest tercer punt.</p>
+<p>Hi ha tres problemes clàssics que ens proposem estudiar:</p>
+<ol style="list-style-type: decimal">
+<li>“Duplicació del cub”: donat un cub, podem construir-ne un altre de volum exactament el doble?</li>
+<li>“Trisecció de l’angle”: donat un angle <span class="math inline">\(\theta\)</span>, podem construir l’angle <span class="math inline">\(\theta/3\)</span>?</li>
+<li>“Quadratura del cercle”: donat un cercle, podem construir un quadrat d’àrea igual a la del cercle donat?</li>
+</ol>
+<p>Donada una longitud inicial (que definirem com a <span class="math inline">\(1\)</span>), direm que un nombre real <span class="math inline">\(\alpha\)</span> és <em>constructible</em> si
+podem construir un segment de longitud <span class="math inline">\(\alpha\)</span> mitjançant una successió finita d’operacions amb regle i compàs. Tenim els quatre
+tipus d’operacions següents:</p>
+<ol style="list-style-type: decimal">
+<li>Unir dos punts per una recta.</li>
+<li>Trobar el punt d’intersecció de dues rectes.</li>
+<li>Dibuixar un cercle amb centre i radi donats.</li>
+<li>Trobar els punts d’intersecció d’una recta amb un cercle, o de dos cercles.</li>
+</ol>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-36" class="exercise"><strong>Exercici 3.1  </strong></span>Vegeu que els nombres constructibles formen un subcos de <span class="math inline">\(\cC\subseteq\RR\)</span>. Heu de donar construcions de la suma, resta, producte i divisió
+de nombres ja construïts.</p>
+</div>
+<p>És fàcil veure que també podem prendre arrels quadrades, com s’indica a la següent figura:</p>
+<p><img src="teoriadegalois_files/figure-html/unnamed-chunk-2-1.png" width="10%" /></p>
 
+</div>
 </div>
             </section>
 

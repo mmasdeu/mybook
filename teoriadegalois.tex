@@ -486,12 +486,62 @@ Gràficament, tenim:
 \]
 \end{proposition}
 
+Fixem-nos que, si \(m\) i \(n\) són coprimers, aleshores per la fórmula de les torres tenim \([K_1K2\colon K_1]=m\) i \([K_1K_2\colon K_2]=n\).
+En general, però la desigualtat serà estricta.
+
 \hypertarget{regle-i-compuxe0s}{%
 \chapter{Regle i Compàs}\label{regle-i-compuxe0s}}
 
-Parlarem de tres problemes de la grècia clàssica sobre construccions amb regle no marcat i compàs: la quadratura del cercle,
+Parlarem de tres problemes de la Grècia clàssica sobre construccions amb regle no marcat i compàs: la quadratura del cercle,
 la trisecció de l'angle i la duplicació del cub. Caracteritzarem els nombres constructibles, i veurem que aquests problemes
 no tenen solució. Veurem també que si el regle és marcat aleshores podem trisecar l'angle i també duplicar el cub.
+
+\hypertarget{el-problema}{%
+\section{El problema}\label{el-problema}}
+
+Els grecs es van interessar molt per les construccions amb dos instruments molt simples: per una banda, el que habitualment
+s'anomena regle, i que vol dir simplement un regle sense cap mena de marca. Ens permet, donats dos punts del pla, traçar la recta
+que els uneix. El segon instrument és el compàs. Donats dos punts podem fixar l'obertura, i donat un tercer punt (que pot coincidir
+o no amb els anteriors) podem traçar un arc de circumferència amb el radi fixat prèviament, i el centre aquest tercer punt.
+
+Hi ha tres problemes clàssics que ens proposem estudiar:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  ``Duplicació del cub'': donat un cub, podem construir-ne un altre de volum exactament el doble?
+\item
+  ``Trisecció de l'angle'': donat un angle \(\theta\), podem construir l'angle \(\theta/3\)?
+\item
+  ``Quadratura del cercle'': donat un cercle, podem construir un quadrat d'àrea igual a la del cercle donat?
+\end{enumerate}
+
+Donada una longitud inicial (que definirem com a \(1\)), direm que un nombre real \(\alpha\) és \emph{constructible} si
+podem construir un segment de longitud \(\alpha\) mitjançant una successió finita d'operacions amb regle i compàs. Tenim els quatre
+tipus d'operacions següents:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Unir dos punts per una recta.
+\item
+  Trobar el punt d'intersecció de dues rectes.
+\item
+  Dibuixar un cercle amb centre i radi donats.
+\item
+  Trobar els punts d'intersecció d'una recta amb un cercle, o de dos cercles.
+\end{enumerate}
+
+\begin{exercise}
+Vegeu que els nombres constructibles formen un subcos de \(\cC\subseteq\RR\). Heu de donar construcions de la suma, resta, producte i divisió
+de nombres ja construïts.
+\end{exercise}
+
+És fàcil veure que també podem prendre arrels quadrades, com s'indica a la següent figura:
+
+\includegraphics[width=0.1\linewidth]{teoriadegalois_files/figure-latex/unnamed-chunk-2-1}
 
 \hypertarget{descomposiciuxf3}{%
 \chapter{Descomposició}\label{descomposiciuxf3}}

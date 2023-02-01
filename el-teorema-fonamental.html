@@ -61,6 +61,8 @@
 \renewcommand{\CC}{\mathbb{C}}
 \renewcommand{\HH}{\mathbb{H}}
 
+\renewcommand{\cC}{\mathcal{C}}
+
 \renewcommand{\fX}{\mathfrak{X}}
 
 \renewcommand{\SL}{\operatorname{SL}}
@@ -167,7 +169,10 @@ div.csl-indent {
 <li class="chapter" data-level="2.2" data-path="les-torres.html"><a href="les-torres.html#torres-de-cossos"><i class="fa fa-check"></i><b>2.2</b> Torres de cossos</a></li>
 <li class="chapter" data-level="2.3" data-path="les-torres.html"><a href="les-torres.html#compositum-de-cossos"><i class="fa fa-check"></i><b>2.3</b> Compositum de cossos</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="regle-i-compàs.html"><a href="regle-i-compàs.html"><i class="fa fa-check"></i><b>3</b> Regle i Compàs</a></li>
+<li class="chapter" data-level="3" data-path="regle-i-compàs.html"><a href="regle-i-compàs.html"><i class="fa fa-check"></i><b>3</b> Regle i Compàs</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="regle-i-compàs.html"><a href="regle-i-compàs.html#el-problema"><i class="fa fa-check"></i><b>3.1</b> El problema</a></li>
+</ul></li>
 <li class="chapter" data-level="4" data-path="descomposició.html"><a href="descomposició.html"><i class="fa fa-check"></i><b>4</b> Descomposició</a></li>
 <li class="chapter" data-level="5" data-path="polinomis-inseparables.html"><a href="polinomis-inseparables.html"><i class="fa fa-check"></i><b>5</b> Polinomis Inseparables</a></li>
 <li class="chapter" data-level="6" data-path="polinomis-ciclotòmics.html"><a href="polinomis-ciclotòmics.html"><i class="fa fa-check"></i><b>6</b> Polinomis Ciclotòmics</a></li>
@@ -226,7 +231,7 @@ amb diversos exemples concrets d’extensions, il·lustrant la correspondència 
 cap combinació lineal no trivial <span class="math inline">\(a_1\chi_1+\cdots+a_n\chi_n\)</span> que doni lloc a la funció idènticament zero.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-36" class="proof"><em>Prova</em>. </span>Suposem (reordenant, si cal) que podem escriure
+<p><span id="unlabeled-div-37" class="proof"><em>Prova</em>. </span>Suposem (reordenant, si cal) que podem escriure
 <span class="math display">\[
 a_1\chi_1 + \cdots a_m\chi_m = 0,
 \]</span>
@@ -250,33 +255,33 @@ que indueix un morfisme de grups entre les unitats <span class="math inline">\(\
 tota la informació que ens cal de <span class="math inline">\(\sigma\)</span>, perquè ja sabem que <span class="math inline">\(\sigma(0)=0\)</span>). Aleshores <span class="math inline">\(\sigma\)</span> esdevé un caràcter
 del grup <span class="math inline">\(G=K^\times\)</span>, i per tant tenim el següent:</p>
 <div class="corollary">
-<p><span id="cor:unlabeled-div-37" class="corollary"><strong>Corol·lary 8.1  </strong></span>Si <span class="math inline">\(\sigma_1,\ldots,\sigma_n\)</span> són morfismes diferents de <span class="math inline">\(K\)</span> a <span class="math inline">\(L\)</span>, aleshores són linealment independents com a funcions de <span class="math inline">\(K\)</span>.</p>
+<p><span id="cor:unlabeled-div-38" class="corollary"><strong>Corol·lary 8.1  </strong></span>Si <span class="math inline">\(\sigma_1,\ldots,\sigma_n\)</span> són morfismes diferents de <span class="math inline">\(K\)</span> a <span class="math inline">\(L\)</span>, aleshores són linealment independents com a funcions de <span class="math inline">\(K\)</span>.</p>
 </div>
 <p>Un cas encara més particular d’aquest corol·lari ens permet demostrar una relació numèrica bàsica entre automorfismes d’un cos
 i els cossos que deixen fixes.</p>
 <div class="proposition">
-<p><span id="prp:unlabeled-div-38" class="proposition"><strong>Proposició 8.1  </strong></span>Sigui <span class="math inline">\(S\)</span> un subconjunt finit d’automorfismes d’un cos <span class="math inline">\(K\)</span>, i sigui <span class="math inline">\(F=K^G\)</span> el seu cos fix. Aleshores
+<p><span id="prp:unlabeled-div-39" class="proposition"><strong>Proposició 8.1  </strong></span>Sigui <span class="math inline">\(S\)</span> un subconjunt finit d’automorfismes d’un cos <span class="math inline">\(K\)</span>, i sigui <span class="math inline">\(F=K^G\)</span> el seu cos fix. Aleshores
 <span class="math display">\[
 [K\colon F] \geq |S|.
 \]</span></p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-39" class="proof"><em>Prova</em>. </span>TODO</p>
+<p><span id="unlabeled-div-40" class="proof"><em>Prova</em>. </span>TODO</p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-40" class="theorem"><strong>Teorema 8.2  </strong></span>Sigui <span class="math inline">\(G\)</span> un subgrup finit d’automorfismes d’un cos <span class="math inline">\(K\)</span>, i sigui <span class="math inline">\(F=K^G\)</span> el seu cos fix. Aleshores
+<p><span id="thm:unlabeled-div-41" class="theorem"><strong>Teorema 8.2  </strong></span>Sigui <span class="math inline">\(G\)</span> un subgrup finit d’automorfismes d’un cos <span class="math inline">\(K\)</span>, i sigui <span class="math inline">\(F=K^G\)</span> el seu cos fix. Aleshores
 <span class="math display">\[
 [K\colon F] = |G|.
 \]</span></p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-41" class="proof"><em>Prova</em>. </span>Només ens cal veure que <span class="math inline">\([K\colon F] \leq |G|\)</span>, ja que l’altra desigualtat ja l’hem demostrat independentment
+<p><span id="unlabeled-div-42" class="proof"><em>Prova</em>. </span>Només ens cal veure que <span class="math inline">\([K\colon F] \leq |G|\)</span>, ja que l’altra desigualtat ja l’hem demostrat independentment
 del fet que <span class="math inline">\(G\)</span> sigui un grup.</p>
 <p>TODO (llarga)</p>
 </div>
 <p>D’aquest resultat se’n desprenen fàcilment conseqüències molt importants que val la pena destacar.</p>
 <div class="corollary">
-<p><span id="cor:unlabeled-div-42" class="corollary"><strong>Corol·lary 8.2  </strong></span>Si <span class="math inline">\(K/F\)</span> és una extensió finita, aleshores
+<p><span id="cor:unlabeled-div-43" class="corollary"><strong>Corol·lary 8.2  </strong></span>Si <span class="math inline">\(K/F\)</span> és una extensió finita, aleshores
 <span class="math display">\[
 |\Aut(K/F)| \leq [K\colon F],
 \]</span>
@@ -284,7 +289,7 @@ amb igualtat si i només si <span class="math inline">\(F\)</span> és el cos fi
 </div>
 <p>Dit d’altra manera, l’extensió <span class="math inline">\(K/F\)</span> és Galois si i només si <span class="math inline">\(F=K^{\Aut(K/F)}\)</span>.</p>
 <div class="proof">
-<p><span id="unlabeled-div-43" class="proof"><em>Prova</em>. </span>TODO.</p>
+<p><span id="unlabeled-div-44" class="proof"><em>Prova</em>. </span>TODO.</p>
 </div>
 
 </div>
