@@ -28,10 +28,11 @@ jobs:
           use-public-rspm: true
 
       - uses: r-lib/actions/setup-renv@v2
+      
       - uses: mfinelli/setup-imagemagick@v1 
           
       - name: Install latex mk
-        run: sudo apt-get udpate & sudo apt-get install -y -q latexmk texlive-lang-spanish texlive-latex-extra texlive-xetex fonts-freefont-ttf texlive-fonts-recommended texlive-fonts-extra
+        run: sudo apt-get udpate & sudo apt-get install -y -q latexmk texlive-lang-spanish texlive-latex-extra texlive-xetex fonts-freefont-ttf texlive-fonts-recommended texlive-fonts-extra imagemagick
 
       - name: Build site
         run: |
