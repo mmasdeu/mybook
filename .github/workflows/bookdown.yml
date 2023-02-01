@@ -29,6 +29,11 @@ jobs:
 
       - uses: r-lib/actions/setup-renv@v2
 
+      - uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          extra-packages: any::magick
+          needs: magick
+          
       - name: Install latex mk
         run: sudo apt-get udpate & sudo apt-get install -y -q latexmk texlive-lang-spanish texlive-latex-extra texlive-xetex fonts-freefont-ttf texlive-fonts-recommended texlive-fonts-extra imagemagick
 
