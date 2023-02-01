@@ -1,23 +1,24 @@
 \usepackage{textcomp}
-\usepackage{tgbonum}
+\usepackage{palatino}
 \usepackage{booktabs}
 \usepackage{unixode}
-\usepackage{tikz-cd}
+\usepackage{tikz, tikz-cd}
+\usepackage{pgfplots}
+\usetikzlibrary{positioning}
 \usepackage[catalan]{babel}
+\usepackage[left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm]{geometry}
+\usepackage{csquotes}
+\DeclareQuoteStyle{catalan}{``}{''}{``}{''}
 \usepackage{amsmath,amsthm,amssymb,amsfonts}
 \usepackage[all]{xy}
+\usepackage[left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm]{geometry}
+\usepackage{mathsymbols}
+
+\addto\captionscatalan{\renewcommand{\chaptername}{Episodi}}
+
 \definecolor{VerbatimBorderColor}{rgb}{0.7,0.7,0.7}
 % from sphinxmanual.cls: put authors on separate lines
 \DeclareRobustCommand{\and}{%
 \end{tabular}\kern-\tabcolsep\\\begin{tabular}[t]{c}%
 }
 
-\usepackage{mathsymbols}
-\setlength{\headheight}{15pt}
-
-\makeatletter
-\def\thm@space@setup{%
-  \thm@preskip=8pt plus 2pt minus 4pt
-  \thm@postskip=\thm@preskip
-}
-\makeatother

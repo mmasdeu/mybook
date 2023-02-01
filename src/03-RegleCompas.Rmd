@@ -26,14 +26,18 @@ tipus d'operacions següents:
 3. Dibuixar un cercle amb centre i radi donats.
 4. Trobar els punts d'intersecció d'una recta amb un cercle, o de dos cercles.
 
+## La (no) solució
+
 ::: {.exercise}
 Vegeu que els nombres constructibles formen un subcos de $\cC\subseteq\RR$. Heu de donar construcions de la suma, resta, producte i divisió
 de nombres ja construïts.
 :::
 
-És fàcil veure que també podem prendre arrels quadrades, com s'indica a la següent figura:
+És fàcil veure que també podem prendre arrels quadrades, com s'indica al següent exercici.
 
-```{r, echo=FALSE, engine='tikz', out.width='10%', fig.ext='png'}
+::: {.exercise}
+Demostreu que si el diàmetre de la circumferència és $\alpha+1$, aleshores el segment vertical indicat mesura $\sqrt{\alpha}$.
+```{r, echo=FALSE, engine='tikz', out.width='60%', fig.ext='png'}
 \begin{tikzpicture}[scale=0.2]
   \useasboundingbox (0, 0) rectangle (59.5, 84.2);
   \draw
@@ -42,8 +46,63 @@ de nombres ja construïts.
     (12.8, 57.6) arc[start angle=180, end angle=360, x radius=12.8, y radius=-12.8];
   \draw
     (16, 66) -- (16, 57.6);
-  \node at (14, 58) {$1$};
-  \node at (25.6, 58.4) {$\alpha$};
-  \node at (16.8, 62.4) {$\sqrt{\alpha}$};
+  \node at (14, 59) {$1$};
+  \node at (26, 59) {$\alpha$};
+  \node at (17.5, 62.4) {$\sqrt{\alpha}$};
 \end{tikzpicture}
 ```
+:::
+
+Fent servir l'equació d'un cercle de radi $(x_0,y_0)$ i radi $r$
+$$
+(x-x_0)^2 + (y-y_0)^2 ¡ r^2,
+$$
+podem veure que les coordenades de la intersecció amb una recta (posem amb equació $ax+by=c$) pertanyen al cos
+$\QQ(x_0,y_0,r,a,b,c)$. També podem comprovar-ho pel cas de la intersecció de dos cercles. Resumint si $\alpha$ és
+construcible en $n$ passos a partir de punts en un cos $F$, aleshores hi ha una successió de cossos
+$$
+F=F_0\subseteq F_1\subseteq F_2\subseteq F_n,
+$$
+amb $[F_{i+1}\colon F_i] \leq 2$, tals que $\alpha\in F_n$. En particular, $\alpha$ és un nombre algebraic sobre $F$ de grau una potència de $2$.
+
+D'aquí en deduïm directament el següent teorema (on haurem d'assumir que $\pi$ és transcendent, cosa que no demostrem).
+
+::: {.theorem name=""}
+Els tres problemes clàssics no són resolubles.
+:::
+::: {.proof}
+Per la duplicació d'un cub de costat $1$ ens caldria construir $\sqrt[3]{2}$, que té grau $3$ i, per tant, no és constructible.
+
+Si un angle $\theta$ és constructible, aleshores fàcilment veiem que $\cos(\theta)$ i $\sin(\theta)$ també són constructibles.
+Veurem que $\alpha=2\cos(\pi/9)$ no és constructible. Com que $\cos(\pi/3)=1/2$, a partir de la fórmula de l'angle triple obtenim
+$$
+\alpha^3 - 3\alpha -1 =0.
+$$
+El polinomi $x^3-3x-1$ és irreductible (substituint $x-2$ obtenim un polinomi $3$-Eistenstein) i per tant $\alpha$ té grau $3$ i
+no és constructible.
+
+Finalment, per la quadratura del cercle de radi $1$ hauríem de construïr un quadrat de costat $\sqrt{\pi}$. Però aleshores
+també podríem construir $\pi$, que és transcendent (com hem dit, no ho demostrem).
+:::
+
+Més endavant estudiarem quins angles són constructibles. De fet, tenim el següent:
+
+::: {.theorem name=""}
+Sigui $t$ un enter. L'angle de $t$ graus (no radians!) és constructible si i només si $t$ és un múltiple de $3$.
+:::
+::: {.proof}
+Hi ha construccions molt antigues del pentàgon regular ($72^\circ$), ja que
+$$
+\cos(72^\circ) = \frac{1}{4} \, \sqrt{5} - \frac{1}{4},
+$$
+i encara més del triangle equilàter ($30^\circ$), ja que $\cos(30^\circ)=\sqrt{2}/2$. Com que
+podem bisectar qualsevol angle, també podem construir $18^\circ$ i $15^\circ$. Finalment, com que $3=18-15$ també podem construir
+l'angle de $3^\circ$. És clar que no podem construir ni $2^\circ$ ni $1^\circ$, perquè aleshores podríem construir també qualsevol
+múltiple d'aquests i, per tant, podríem construir $20^\circ$, que ja sabem que no és possible.
+:::
+
+## Construccions amb regle marcat i compas
+
+Aquí veurem que si el regle té dues marques a una distància qualsevol, aleshores podem trisecar l'angle i duplicar el cub.
+
+TODO.

@@ -5,37 +5,39 @@ date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: ["src/bibliografia.bib"]
-biblio-style: apalike
+citation_package: biblatex
 link-citations: yes
 github-repo: mmasdeu/teoriadegalois
 description: "Apunts d'un curs de Teoria de Galois a la UAB"
 nocite: | 
   @dummitfoote, @artinalgebra
 output:
+  bookdown::gitbook:
+    split_by: chapter
+    css: style.css
+    includes:
+      in_header: src/mathjaxheader.html
+    config:
+      toolbar:
+        position: static
+      toc:
+        before: |
+          <li><a href="./">Teoria de Galois</a></li>
+        after: |
+          <li><a href="https://github.com/mmasdeu/teoriadegalois" target="blank">Publicat amb bookdown</a></li>
+      edit: https://github.com/mmasdeu/teoriadegalois/edit/main/%s
+      download: ["pdf"]
   bookdown::pdf_book:
+    toc: yes
     includes:
       in_header: src/preamble.tex
+    latex_engine: xelatex
+    citation_package: biblatex
+    keep_tex: no
     extra_dependencies:
       textcomp: null
       hyperref: ["unicode=true", "breaklinks=true"]
-      lmodern: null
-    toc: yes
-  bookdown::gitbook:
-    split_by: chapter
-    config:
-        toolbar:
-          position: static
-    includes:
-      in_header: src/mathjaxheader.html
 
-  bookdown::html_book:
-    split_by: chapter
-    theme: spacelab
-    config:
-        toolbar:
-          position: static
-    includes:
-      in_header: src/mathjaxheader.html
 ---
 # Introducció {-}
 
