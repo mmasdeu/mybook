@@ -85,5 +85,38 @@ Si $L/F$ és una extensió finita i $K/F$ és una subextensió (és a dir, K\sub
 Per exemple, el corol·lari anterior ens permet deduïr que $\sqrt{2}$ no pertany a cap extensió de grau senar.
 
 ::: {.exercise}
-Demostreu que el polomi $x^3-\sqrt{2}$ és irreductible sobre $\QQ(\sqrt{2})$.
+Demostreu que el polomi $x^3-\sqrt{2}$ és irreductible sobre $\QQ(\sqrt{2})$, fent servir la torre $\QQ(\sqrt[6]{2}) / \QQ(\sqrt{2}) / \QQ$.
 :::
+
+El següent lema senzill ens permetrà construir qualsevol extensió finitament generada de manera iterativa:
+
+::: {.lemma}
+Si $\alpha$ i $\beta$ són elements de $K/F$, aleshores $F(\alpha,\beta)=(F(\alpha)(\beta))$.
+:::
+::: {.proof}
+TODO
+:::
+
+::: {.exercise}
+Calculeu el grau de l'extensió $\QQ(\sqrt{2},\sqrt{3})/\QQ$, i doneu una base.
+:::
+
+::: {.theorem}
+L'extensió $K/F$ és finita si i només si $K=F(S)$ on $S$ és un conjunt finit d'elements algebraics.
+:::
+
+::: {.corollary name=""}
+Si $\alpha$ i $\beta$ són algebraics sobre $F$, aleshores també ho són $\alpha\pm \beta$, $\alpha\beta$ i $\alpha/\beta$ (si $\beta\neq 0$).
+:::
+
+::: {.corollary name=""}
+Si $L/F$ és una extensió qualsevol, aleshores el conjunt $K$ d'elements de $L$ que són algebraics sobre $F$ forma un subcos $L/K/F$.
+:::
+
+Per exemple, podem considerar $\bar\QQ\subseteq\CC$, el conjunt de tots els complexos algebraics, o també $\bar\QQ\cap \RR$, el conjunt
+dels reals algebraics. Aquests cossos són enumerables (tenen un conjunt d'elements enumerable) i per tant són més petits que $\RR$ i que $\CC$.
+D'aquest fet obtenim que hi ha (molts) elements de $\RR$ que no són algebraics. En canvi, sovint és difícil demostrar que
+un real donat (per exemple $\pi$) és transcendent.
+
+## Compositum de cossos
+

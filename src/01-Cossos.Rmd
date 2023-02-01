@@ -121,7 +121,7 @@ racionals sobre un cos fixat $k$, i "afegir" una arrel quadrada de $t$ (mitjanç
 
 Sigui $K/F$ una extensió, i considerem un conjunt $S\subseteq K$. Aleshores podem considerar el "mínim" subcos $L\subseteq K$
 que conté $F$ i tots els elements de $S$. S'anomena el *cos generat per $S$ sobre $F$*, i escriurem $F(S)$. Si $S$ és un
-conjunt finit format per $\alpha_1,\ldots,\alpha_n$ aleshores escriurem $F(\alpha_1,\ldots,\alpha_n)$. Un cas particular
+conjunt finit format per $\alpha_1,\ldots,\alpha_n$ aleshores escriurem $F(\alpha_1,\ldots,\alpha_n)$ i direm que $F(S)$ és *finitament generada*. Un cas particular
 és quan $S$ conté un sol element: en aquest cas $F(\alpha)$ s'anomena una extensió *simple*, i l'element $\alpha$ s'anomena
 un *element primitiu* de l'extensió (que no és únic, en general!).
 
