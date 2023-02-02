@@ -147,7 +147,7 @@ no es poden distingir.
 
 Acabem amb un teorema que ens servirà més endavant:
 
-::: {.theorem name="extensió d'isomorfismes"}
+::: {.theorem #extensio-isos name="extensió d'isomorfismes"}
 Sigui $\varphi\colon F\to \tilde F$ un isomorfisme de cossos. Sigui $p(x)\in F[x]$ un polinomi irreductible,
 i sigui $\tilde p(x)$ el polinomi resultant d'aplicar $\varphi$ als coeficients de $p(x)$. Sigui $\alpha$ una
 arrel de $p(x)$ en alguna extensió de $K$, i sigui $\beta$ una arrel de $\tilde p(x)$ en una extensió de $\tilde F$.

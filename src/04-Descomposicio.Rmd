@@ -10,3 +10,56 @@ demostració de l'existència i unicitat de cossos finits de cardinal potència 
 També veurem les clausures algebraiques, i una construcció (seguint Artin). Això ens permetrà (assumint el teorema fonamental
 de l'àlgebra, que demostrarem més endavant) pensar els elements algebraics sobre $\QQ$ dins dels complexos.
 
+## Cossos de descomposició
+
+Diem que un polinomi $f(x)\in F[x]$ *descomposa completament* en una extensió $K/F$ si es pot escriure com a producte
+de polinomis de grau $1$.
+
+::: {.definition name="cos de descomposició"}
+Una extensió $K/F$ és un *cos de descomposició* del polinomi $f(x)\in F[x]$ si $f(x)$ descomposa completament a $K$ i no ho
+fa en cap subextensió $K/K'/F$.
+:::
+
+::: {.theorem #existencia-splittingfield name="existència del cos de descomposició"}
+Sigui $f(x)\in F[x]$. Aleshores existeix un cos de descomposició $K/F$ de $f(x)$.
+:::
+::: {.proof}
+Fent inducció en el grau d'$f$, veiem primer que hi ha un cos $L/F$ on $f(x)$ descomposa completament. Després podem
+prendre per $K/F$ la intersecció de totes les subextensions $L/K'/F$ on $f(x)$ descomposa completament.
+:::
+
+Fixem-nos que cada vegada que adjuntem una arrel d'un polinomi de grau $n$, aquest polinomi tindrà un cofactor com a molt de grau $n-1$. Així,
+per obtenir un cos de descomposició en el pitjor dels casos haurem de fer una extensió de grau $n(n-1)(n-2)\cdots 2\cdot 1=n!$.
+
+El següent resultat ens dona una forma d'unicitat del cos de descomposició. Demostrarem de fet una mica més (obtenim
+la unicitat del cos de descomposició prenent $\varphi=\id$ al següent enunciat). Compareu (tant l'enunciat com la demostració)
+amb el \@ref(thm:extensio-isos)
+
+::: {.theorem #unicititat-splittingfield name="unicitat del cos de descomposició"}
+Sigui $\varphi\colon F\to \tilde F$ un isomorfisme de cossos. Sigui $f(x)\in F[x]$ i denotem amb $\tilde f(x)\in \tilde F[x]$
+el polinomi obtingut a partir d'aplicar $\varphi$ als coeficients de $f(x)$. Sigui $K/F$ un cos de descomposició de $f(x)$,
+i sigui $\tilde K/\tilde F$ un cos de descomposició de $\tilde f(x)$. Aleshores existeix un isomorfisme $\Psi\colon K \to \tilde K$
+que extén $\varphi$.
+:::
+::: {.proof}
+Es fa per inducció en el grau de $f(x)$. És una mica llarg de fer si es fa amb detall. TODO.
+:::
+
+En comptes de considerar un sol polinomi, podem considerar una col·lecció arbitrària de polinomis. Si $K/F$ és el
+cos de descomposició d'una col·lecció arbitrària de polinomis, direm que $K/F$ és una *extensió normal*. És a dir,
+ser cos de descomposició és el mateix que ser normal, però quan diem *normal* no hem d'especificar els polinomis.
+
+::: {.example }
+Calcularem els cossos de descomposició dels exemples que estem fent servir: $x^2-2$, $(x^2-2)(x^2-3)$, $x^3-2$ i de $x^4+4$, per exemple, ja
+que en aquest cas el cos de descomposició és simplement $\QQ(i)$.
+:::
+
+::: {.example #cossos-ciclotomics name="cossos ciclotòmics"}
+Calculem el cos de descomposició del poinomi $x^n-1$. Les seves arrels s'anomenen *arrels $n$-èssimes de la unitat*. En els complexos
+les arrels són els nombres $e^{\frac{2\pi i}{n}}$, amb $n=0,\ldots,n-1$. Per tant $\CC$ conté el cos de descomposició de $x^n-1$. En general,
+si $K/\QQ$ és un cos de descomposició de $x^n-1$, aleshores podem veure que aquestes formen un grup amb la multiplicació que, de fet, és cíclic.
+
+TODO
+:::
+## Clausura algebraica
+
