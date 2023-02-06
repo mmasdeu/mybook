@@ -5,3 +5,132 @@ que ens permet definir cossos perfectes. Aprofitem per parlar del grau de separa
 extensió, i la factorització d'aquesta.
 
 Finalment, donem l'existència i unicitat dels cossos finits.
+
+## Separabilitat de polinomis
+
+Sigui $F$ un cos.
+
+::: {.definition #separabilitat name="separabilitat"}
+Un polinomi $f(x)\in F[x]$ és *separable* si les seves arrels (en un cos de descomposició) són totes diferents. Si $f(x)$
+no és separable diem que $f(x)$ és *inseparable*.
+:::
+
+Fixem-nos que la definició no depèn del cos de descomposició que ens triem, per unicitat llevat d'isomorfisme. De fet, podem
+caracteritzar la separabilitat de $f(x)$ sense haver de considerar cap cos de descomposició:
+
+::: {.proposition #separabilitat-iff-coprimer-derivada}
+Un polinomi $f(x)$ té una arrel múltiple $\alpha$ si i només si $\alpha$ és una arrel de $f'(x)$. En particular, $f(x)$
+és separable si i només si $\mcd(f(x), f'(x)) = 1$.
+:::
+::: {.proof}
+TODO (fàcil, fet a fonaments).
+:::
+::: {.corollary}
+Si $f(x)\in F[x]$ és irreductible i $F$ té característica $0$, aleshores $f$ és separable. En general,
+un polinomi $f(x)\in F[x]$ és separable si i només si és producte de diferents polinomis irreductibles.
+:::
+::: {.proof}
+TODO (molt fàcil).
+:::
+
+::: {.example}
+El polinomi $x^n-1$ té derivada $nx^{n-1}$ i per tant, si $n\neq 0$ a $F$ aleshores $x^n-1$ és separable, i en aquest cas hi ha $n$
+arrels de la unitat diferents a $F$. En canvi, si $F$ és de característica $p\mid n$, aleshores cada arrel de $x^n-1$ és múltiple.
+:::
+
+Ja hem estudiat el problema de separabilitat en característica $0$, que és molt senzill. Ens centrarem ara en característica $p$, així que
+sigui $F$ un cos de característica finita $p$. Pensem en què pot anar malament per tal que un polinomi irreductible $f(x)\in F[x]$ sigui inseparable. Cal que la seva derivada
+tingui factors en comú amb $f(x)$, i això només pot passar si la derivada és $0$.
+
+::: {.lemma}
+Sigui $f(x)\in F[x]$ amb  $\char(F)=p$. Si $f'(x)=0$, aleshores hi ha un polinomi $f_1[x]\in F[x]$ tal que $f(x)=f_1(x^p)$.
+:::
+
+::: {.proposition}
+Sigui $f(x)\in F[x]$ amb $\char(F)=p$ un polinomi irreductible. Aleshores hi ha un únic $k\geq 0$ i un únic
+polinomi irreductible i separable $g(x)\in F[x]$ tal que
+$$
+f(x)=g(x^{p^k}).
+$$
+:::
+::: {.proof}
+Iterem el procediment del lema anterior fins que el polinomi que obtenim és separable. Seguirà essent
+irreductible, i ja haurem acabat.
+:::
+
+::: {.definition #grau-separabilitat name="grau de separabilitat"}
+Sigui $f(x)\in F[x]$ amb $\char(F)=p$ un polinomi irreductible. El *grau de separabilitat* de $f(x)$
+és el grau de $g(x)$ en la proposició anterior, i el denotem per $\deg_s f(x)$.
+
+El *grau d'inseparabilitat* és l'enter $p^k$ que hi apareix, i el denotem per $\deg_i f(x)$.
+:::
+
+Observem que $\deg f(x) = \deg_s f(x) \deg_i f(x)$.
+
+::: {.proposition #frobenius}
+Sigui $F$ un cos de característica $p$. Aleshores l'aplicació $a \mapsto a^p$ és un morfisme de cossos $F\to F$.
+:::
+::: {.proof}
+Només cal veure que $(a+b)^p = a^p + b^p$ i que $(ab)^p = a^p b^p$. La primera igualtat es veu fent servir que $p$ divideix a $\binomial{p}{i}$
+per a $1\leq i\leq p-1$, i la segona és trivial.
+:::
+
+El morfisme de la proposició anterior s'anomena el *morfisme de Frobenius*. Observem que si $\FF$ és un cos finit, aleshores el morfisme de
+Frobenius és un isomorfisme (només cal comptar), però en general no és cert. Per exemple, la imatge de Frobenius a $F=\FF_p(t)$ és $\FF_p(t^p)$.
+
+::: {.proposition name=""}
+Si $\FF$ és un cos finit, aleshores tot polinomi irreductible sobre $\FF$ és separable.
+:::
+::: {.proof}
+Suposem que $f(x)$ fos inseparable. Aleshores $f(x)=f_1(x^p)$ per algun $f_1(x)\in \FF[x]$. Els coeficients de $f_1$ són potències de $p$, i
+aleshores podem escriure
+$$f_1(x)=a_m^px^m+a_{m-1}^px^{m-1}+\cdots a_1^px + a_0^p.$$
+
+Per tant, tenim
+$$
+f(x)=f_1(x^p) = a_m^px^{pm}+a_{m-1}^px^{p(m-1)}+\cdots a_1^px^p + a_0^p = \left(a_mx^m+a_{m-1}x^{m-1}+\cdots a_1x + a_0\right)^p,
+$$
+que contradiu el fet que $f(x)$ sigui irreductible.
+:::
+
+Aquesta definició ens servirà per unificar els dos casos on la separabilitat no és problemàtica.
+
+::: {.definition #cos-perfecte name="cos perfecte"}
+Un cos $F$ és *perfecte* si té característica $0$ o bé el morfisme de Frobenius és exhaustiu.
+:::
+
+Finalment, podem introduir el concepte d'extensió separable.
+
+::: {.definition #ext-separable name="extensió separable"}
+Una extensió $K/F$ és *separable* si tot element de $K$ és arrel d'un polinomi separable sobre $F$.
+:::
+
+::: {.corollary}
+Tota extensió finita d'un cos perfecte és separable.
+:::
+
+
+## Cossos finits
+
+::: {.proposition name="Existència i unicitat de cossos finits"}
+Per tot primer $p$ i tot $n\geq 1$, hi ha un únic (llevat d'isomorfisme) cos finit d'ordre $p^n$, que
+denotarem per $\FF_{p^n}$. A més, si $\FF$ és un cos finit de característica $p$,
+aleshores és isomorf a $\FF_{p^n}$ per alguna $n \geq 1$.
+:::
+
+::: {.proof}
+Sigui $n\geq 1$, i fixem-nos que el polinomi $f(x)=x^{p^n}-x \in \FF_p[x]$ té derivada $-1$ i, per tant, és separable.
+Si $\alpha$ i $\beta$ són dues arrels qualssevol, aleshores $\alpha\beta$ i $\alpha+\beta$
+també són arrels. Per tant, el conjunt $L$ format per les $p^n$ arrels forma un subcos del cos de
+descomposició de $f(x)$ i, per tant, com que $L$ conté totes les arrels, ha de ser el propi
+cos de descomposició. Com que $L$ té $p^n$ elements, té grau $n$ sobre $\FF_p$, i per tant hem
+vist que hi ha cossos finits de grau $n$ per qualsevol $n\geq 1$.
+
+Sigui ara $\FF$ un cos finit qualsevol de característica $p$. Com que és un espai vectorial sobre el seu
+cos primer $\FF_p$, ha de tenir $p^n$ elements per algun $n\geq 1$. Fixem-nos que $\FF^\times$ és un grup
+d'ordre $p^n-1$ i, per tant $\alpha^{p^n-1} = 1$ per tot $\alpha\in \FF$. Per tant $\alpha$ és una arrel
+de $x^{p^n}-x$ i $\FF$ està contingut al cos de descomposició d'aquest polinomi. Mirant el nombre
+d'elements, veiem que és igual al cos de descomposició.
+:::
+
+## Extensions separables

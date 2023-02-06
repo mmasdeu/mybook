@@ -55,11 +55,164 @@ que en aquest cas el cos de descomposició és simplement $\QQ(i)$.
 :::
 
 ::: {.example #cossos-ciclotomics name="cossos ciclotòmics"}
-Calculem el cos de descomposició del poinomi $x^n-1$. Les seves arrels s'anomenen *arrels $n$-èssimes de la unitat*. En els complexos
-les arrels són els nombres $e^{\frac{2\pi i}{n}}$, amb $n=0,\ldots,n-1$. Per tant $\CC$ conté el cos de descomposició de $x^n-1$. En general,
-si $K/\QQ$ és un cos de descomposició de $x^n-1$, aleshores podem veure que aquestes formen un grup amb la multiplicació que, de fet, és cíclic.
+Calculem el cos de descomposició del poinomi $x^n-1$.
+Les seves arrels s'anomenen *arrels $n$-èssimes de la unitat*. En els complexos
+les arrels són els nombres $e^{\frac{2\pi i}{n}}$, amb $n=0,\ldots,n-1$.
+Per tant $\CC$ conté el cos de descomposició de $x^n-1$. En general,
+si $K/\QQ$ és un cos de descomposició de $x^n-1$, aleshores podem veure que aquestes
+formen un grup amb la multiplicació que, de fet, és cíclic. Diem que una arrel de la unitat
+$\zeta_n$ és *primitiva* si és un generador d'aquest grup. Si en fixem una, les altres primitives
+són de la forma $\zeta_n^a$, amb $a$ coprimer amb $n$. Hi ha, doncs, $\varphi(n)$ arrels primitives.
 
-TODO
+Anomenem *cos ciclotòmic $n$-èssim$ al cos $\QQ(\zeta_n)$, que és el cos de descomposició de $x^n-1$:
+si adjuntem $\zeta_n$, automàticament totes les seves potències pertanyen a aquest cos. A l'episodi
+@chap:ciclotomics aprendrem com calcular el grau d'aquest cos, però --a tall d'espòiler-- podem
+veure fàcilment que quan $n=p$ és primer, aleshores
+$$
+x^p -1 = (x-1)(x^{p-1}+x^{p-1}+\cdots+x+1),
+$$
+i ja hem vist que el polinomi $\Phi_p(x)= x^{p-1}+x^{p-1}+\cdots+x+1$ és irreductible. Per tant, tenim
+$$
+[\QQ(\zeta_p)\colon\QQ]=p-1.
+$$
+
+:::
+
+::: {.example}
+Calcularem ara el cos de descomposició de $x^p-2$, on $p$ és un primer.
+Si anomenem $\alpha$ una arrel d'aquest polinomi,
+aleshores les altres arrels són de la forma $\alpha\zeta$,
+on $\zeta$ és una arrel $p$-èssima de la unitat. Podem veure fàcilment
+que el cos de descomposició és $L = \QQ(\sqrt[p]{2}, \zeta_p)$.
+
+Tenim la torre $L / \QQ(\zeta_p) / \Q$ i $L/\QQ(\zeta_p)$ té grau com a molt $p$,
+ja que està generada per $\sqrt[p]{2}$. Per tant, es té la desigualtat $[L\colon\QQ]\leq p(p-1)$.
+Com que $L$ té subcossos de grau $p$ i de grau $p-1$, aquests dos nombres divideixen el grau de l'extensió total i,
+com que són coprimers, en deduim que el grau és exactament $p(p-1)$. Ho podem il·lustrar amb el diagrama següent:
+$$
+\begin{xy}
+\xymatrix{
+  & \QQ(\sqrt[p]{2},\zeta_p) \\
+  \QQ(\zeta_p)\ar@{-}^{p}[ur]\ar@{-}^{p-1}[dr] &&\QQ(\sqrt[p]{2})\ar@{-}[ul]^{p-1}\ar@{-}[dl]^{p}\\
+  &\QQ
+}
+\end{xy}
+$$
+
 :::
 ## Clausura algebraica
 
+::: {.definition #clausura-algebraica name="clausura algebraica"}
+Diem que $\bar F/F$ és una *clausura algebraica* d'$F$ si $\bar F/F$ és algebraica i tot polinomi $f(x)\in F[x]$
+descomposa completament a $\bar F$.
+:::
+
+::: {.definition #algebraicament-tancat name="algebraicament tancat"}
+Un cos $F$ és *algebraicament tancat* si és una clausura algebraica sobre si mateix. És a dir, si tot
+polinomi $f(x)\in F[x]$ té alguna arrel a $F$.
+:::
+
+Aviat veurem que tot cos té alguna clausura algebraica, i que hi ha cossos algebraicament tancats. Veurem
+primer que les clausures algebraiques són algebraicament tancades.
+
+::: {.proposition #clausura-tancada}
+Sigui $\bar F/F$ una clausura algebraica de $F$. Aleshores $\bar F$ és algebricament tancat.
+:::
+::: {.proof}
+Considerem un polinomi $f(x)\in \bar F[x]$, i considerem l'extensió $\bar F(\alpha)$ obtinguda adjuntant
+una arrel de $f(x)$ a $\bar F$. Aleshores $\bar F(\alpha)/\bar F/ F$ és una torre algebraica, i per tant
+l'extensió total és algebraica. En particular, $\alpha$ és algebraic sobre $F$ i, per tant, $\alpha \in \bar F$,
+com volíem demostrar.
+:::
+
+El següent resultat ens permet trobar una clausura algebraica de qualsevol subcos d'un cos algebraicament tancat.
+
+::: {.proposition #clausura-tecnica name="proposition name"}
+Sigui $K/F$ una extensió, i suposem que $K$ és algebraicament tancada. Aleshores la subextensió $\bar F/F$
+formada pels elements de $K$ que són algebraics sobre $F$ és una clausura algebraica de $F$ .
+:::
+::: {.proof}
+L'extensió $\bar F / F$  és algebraica per definició. Donat un polinomi
+$f(x)\in F[x]$, aquest trencarà completament a $K$ en producte de polinomis de la forma $x-\alpha$. Però
+cadascun dels $\alpha$ és algebraic sobre $F$ i, per tant, és un element de $\bar F$. Per tant $f(x)$ ja trencava
+completament a $\bar F[x]$, i per tant $\bar F$ és una clausura algebraica de $F$.
+:::
+
+Cap al final del curs veurem una demostració del següent teorema, que també es pot demostrar amb mètodes analítics.
+
+::: {.theorem #fta name="Teorema Fonamental de l'Àlgebra"}
+El cos $\CC$ dels nombres complexos és algebraicament tancat
+:::
+
+Com a conseqüència, podrem clausures algebraiques de qualsevol extensió subextensió $\CC/F/\QQ$. En particular,
+el cos $\bar \QQ$ format pels complexos algebraics és una clausura algebraica de $\QQ$.
+
+Donat un cos qualsevol $F$, tenim ara l'objectiu de construir una clausura algebraica $\bar F/F$. Intuitivament almenys,
+la idea és de considerar, per cada polinomi $g(x)\in F[x]$, un cos $F_g$ que contingui totes les arrels de $g$.
+Aleshores hauríem de prendre el compositum de tots aquests cossos. El problema és que per fer el compositum
+hem de prendre una intersecció de molts cossos, i no està clar on viuen aquests cossos (la intersecció
+de conjunts només té sentit quan aquests conjunts són subconjunts d'un conjunt fixat). Fixem-nos que si
+només consideréssim un nombre finit de polinomis $g_1(x),\ldots, g_n(x)$ aleshores podríem prendre
+el cos de descomposició del producte $g_1(x)\cdots g_n(x)$.
+
+::: {.theorem #existencia-clausura-algebraica name="existència de clausura algebraica"}
+Sigui $F$ un cos. Aleshores existeix una clausura algebraica $\bar F/F$.
+:::
+::: {.proof}
+Consideremm un conjunt $\mathcal{U} \supset F$ de cardinal estrictament superior a $\mathcal{N}=\max(\aleph_0, |K|)$.
+
+Sigui
+$$X = \{K\subseteq L \subseteq S ~|~ $L/K$ \text{ és una extensió algebraica de $K$}\},$$
+amb la relació d'ordre
+$$
+K_2 > K_1 \iff \text{$K_2/K_1$ és una extensió algebraica}.
+$$
+Com que tota cadena té un element maximal (prenem la unió de totes les extensions), el lema de Zorn
+ens diu que hi ha un element maximal a $X$, que anomenarem $\bar F$. Només ens cal veure que $\bar F/F$ és
+una clausura algebraica. Sigui $f(x)\in F[x]$ un polinomi no constant, i suposem que no té cap zero a $\bar F$.
+Podem construir una extensió $L / \bar F$ on $f(x)$ tingui un zero. Aleshores $L/F$ és algebraica, i per tant
+$$
+|\bar F| \leq |L| \leq \mathcal{N}.
+$$
+Per tant, $|S\smallsetminus \bar K| = |S| > |L\smallsetminus \bar K|$. Això fa que existeixi
+una aplicació (de conjunts) injectiva $i \colon L \to S$ tal que $i(x)=x$ si $x\in \bar F$. Podem doncs
+transportar l'estructura de cos de $L$ a $i(L)$ i obtenim un nou element maximal $L > \bar F$, contradient
+la maximalitat de $\bar F$.
+:::
+
+::: {.proof}
+Presentem una demostració alternativa que amaga una mica més els problemes amb la teoria de conjunts. Gràcies
+a la Proposició @prop:clausura-algebraica-tecnica, n'hi ha prou amb construir una extensió $K/F$ algebraicament tancada.
+
+Per
+cada polinomi mònic no constant $f=f(x)\in F[x]$, considerem una variable $x_f$. Tenim l'anell de polinomis
+en infinites variables $F[\{x_f\}]$, i hi podem considerar l'ideal $I$ generat pels polinomis $f(x_f)$.
+
+Veurem que $I$ no és el total i que, per tant, està contingut en un ideal maximal $\mathcal{M}$. El quocient
+l'anomenem $K_1$, que és una extensió de $F$ que conté **una arrel** de cada polinomi amb coeficients a $F$. Podem
+iterar el procés (començant amb $K_1$ en comptes de amb $F$) per obtenir $K_2/K_1$, una extensió on tot polinomi
+amb coeficients a $K_1$ té una arrel, i així construim una successió de cossos de la qual en podem
+prendre la seva unió $K$. Donat un polinomi $f(x)\in K[x]$, tots els seus coeficients viuen necessàriament
+a $K_n$ i, per tant, $f(x)$ té alguna arrel a $K_{n+1}$ i, per tant a $K$.
+
+Ens queda per veure que $I$ és un ideal propi. Suposem que no i arribarem a contradicció. Suposem que tenim una
+relació
+$$
+g_1 f_1(x_{f_1}) + g_2 f_2(x_{f_2}) + \cdots + g_k f_k(x_{f_k}) = 1,\quad g_i \in F[\{x_f\}].
+$$
+En total, aquesta relació només involucra un nombre finit de variables. Les hi posem nom: denotem $x_1=x_{f_1}$,
+i així successivament fins a $x_k = x_{f_k}$. Després anomenem $x_{k+1},\ldots, x_r$ la resta de variables
+que apareixen en els polinomis $g_i$, de manera que podem reescriure la relació anterior com
+$$
+g_1(x_1,\ldots, x_r) f_1(x_1) + g_2(x_1,\ldots,x_r) f_2(x_2)+\cdots+g_k(x_1,\ldots x_r) f_k(x_k)=1.
+$$
+Prenem ara una extensió finita $F'/F$ que contingui una arrel $\alpha_i$ de $f_i(x)$ per cada $i$. La relació
+anterior particularitza, si fem $x_i=\alpha_i$ per $i=1,\ldots,k$ i $x_i=0$ per $i>k$, a $0=1$, que és una
+contradicció. Això acaba la demostració.
+:::
+
+La clausura algebraica és única llevat d'isomorfisme, fet que es pot deduir fàcilment de la unicitat de cossos de descomposició.
+
+::: {.proof}
+TODO
+:::

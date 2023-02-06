@@ -127,8 +127,8 @@ TODO
 
 ## Compositum de cossos
 
-Recordem que donats dos cossos $K_1$ i $K_2$, el seu *compost* (o *compositum*) $K_1K_2$ és el mínim cos que conté
-tant a $K_1$ com a $K_2$. També es pot pensar com la intersecció de tots els cossos que contenen el conjunt $K_1\cup K_2$.
+Recordem que donats dos cossos $K_1/F$ i $K_2/F$, el seu *compost* (o *compositum*) $K_1K_2 /F$ és el mínim cos que conté
+tant a $K_1$ com a $K_2$. També es pot pensar com la intersecció de tots els cossos $L/F$ que contenen el conjunt $K_1\cup K_2$.
 
 ::: {.proposition name=""}
 Siguin $K_1/F$ i $K_2/F$ dues extensions contingudes a $K$. Aleshores
@@ -139,7 +139,7 @@ Gràficament, tenim:
 $$
 \begin{xy}
 \xymatrix{
-  & K_1 K_1 \\
+  & K_1 K_2 \\
   K_1\ar@{-}^{\leq m}[ur]\ar@{-}^{n}[dr] &&K_2\ar@{-}[ul]^{\leq n}\ar@{-}[dl]^{m}\\
   &F
 }
