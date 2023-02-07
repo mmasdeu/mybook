@@ -85,7 +85,7 @@ aleshores les altres arrels són de la forma $\alpha\zeta$,
 on $\zeta$ és una arrel $p$-èssima de la unitat. Podem veure fàcilment
 que el cos de descomposició és $L = \QQ(\sqrt[p]{2}, \zeta_p)$.
 
-Tenim la torre $L / \QQ(\zeta_p) / \Q$ i $L/\QQ(\zeta_p)$ té grau com a molt $p$,
+Tenim la torre $L / \QQ(\zeta_p) / \QQ$ i $L/\QQ(\zeta_p)$ té grau com a molt $p$,
 ja que està generada per $\sqrt[p]{2}$. Per tant, es té la desigualtat $[L\colon\QQ]\leq p(p-1)$.
 Com que $L$ té subcossos de grau $p$ i de grau $p-1$, aquests dos nombres divideixen el grau de l'extensió total i,
 com que són coprimers, en deduim que el grau és exactament $p(p-1)$. Ho podem il·lustrar amb el diagrama següent:
@@ -103,8 +103,8 @@ $$
 ## Clausura algebraica
 
 ::: {.definition #clausura-algebraica name="clausura algebraica"}
-Diem que $\bar F/F$ és una *clausura algebraica* d'$F$ si $\bar F/F$ és algebraica i tot polinomi $f(x)\in F[x]$
-descomposa completament a $\bar F$.
+Diem que $\bar{F}/F$ és una *clausura algebraica* d'$F$ si $\bar{F}/F$ és algebraica i tot polinomi $f(x)\in F[x]$
+descomposa completament a $\bar{F}$.
 :::
 
 ::: {.definition #algebraicament-tancat name="algebraicament tancat"}
@@ -116,26 +116,26 @@ Aviat veurem que tot cos té alguna clausura algebraica, i que hi ha cossos alge
 primer que les clausures algebraiques són algebraicament tancades.
 
 ::: {.proposition #clausura-tancada}
-Sigui $\bar F/F$ una clausura algebraica de $F$. Aleshores $\bar F$ és algebricament tancat.
+Sigui $\bar{F}/F$ una clausura algebraica de $F$. Aleshores $\bar{F}$ és algebricament tancat.
 :::
 ::: {.proof}
-Considerem un polinomi $f(x)\in \bar F[x]$, i considerem l'extensió $\bar F(\alpha)$ obtinguda adjuntant
-una arrel de $f(x)$ a $\bar F$. Aleshores $\bar F(\alpha)/\bar F/ F$ és una torre algebraica, i per tant
-l'extensió total és algebraica. En particular, $\alpha$ és algebraic sobre $F$ i, per tant, $\alpha \in \bar F$,
+Considerem un polinomi $f(x)\in \bar{F}[x]$, i considerem l'extensió $\bar{F}(\alpha)$ obtinguda adjuntant
+una arrel de $f(x)$ a $\bar{F}$. Aleshores $\bar{F}(\alpha)/\bar{F}/ F$ és una torre algebraica, i per tant
+l'extensió total és algebraica. En particular, $\alpha$ és algebraic sobre $F$ i, per tant, $\alpha \in \bar{F}$,
 com volíem demostrar.
 :::
 
 El següent resultat ens permet trobar una clausura algebraica de qualsevol subcos d'un cos algebraicament tancat.
 
 ::: {.proposition #clausura-tecnica name="proposition name"}
-Sigui $K/F$ una extensió, i suposem que $K$ és algebraicament tancada. Aleshores la subextensió $\bar F/F$
+Sigui $K/F$ una extensió, i suposem que $K$ és algebraicament tancada. Aleshores la subextensió $\bar{F}/F$
 formada pels elements de $K$ que són algebraics sobre $F$ és una clausura algebraica de $F$ .
 :::
 ::: {.proof}
-L'extensió $\bar F / F$  és algebraica per definició. Donat un polinomi
+L'extensió $\bar{F} / F$  és algebraica per definició. Donat un polinomi
 $f(x)\in F[x]$, aquest trencarà completament a $K$ en producte de polinomis de la forma $x-\alpha$. Però
-cadascun dels $\alpha$ és algebraic sobre $F$ i, per tant, és un element de $\bar F$. Per tant $f(x)$ ja trencava
-completament a $\bar F[x]$, i per tant $\bar F$ és una clausura algebraica de $F$.
+cadascun dels $\alpha$ és algebraic sobre $F$ i, per tant, és un element de $\bar{F}$. Per tant $f(x)$ ja trencava
+completament a $\bar{F}[x]$, i per tant $\bar{F}$ és una clausura algebraica de $F$.
 :::
 
 Cap al final del curs veurem una demostració del següent teorema, que també es pot demostrar amb mètodes analítics.
@@ -145,9 +145,9 @@ El cos $\CC$ dels nombres complexos és algebraicament tancat
 :::
 
 Com a conseqüència, podrem clausures algebraiques de qualsevol extensió subextensió $\CC/F/\QQ$. En particular,
-el cos $\bar \QQ$ format pels complexos algebraics és una clausura algebraica de $\QQ$.
+el cos $\QQbar$ format pels complexos algebraics és una clausura algebraica de $\QQ$.
 
-Donat un cos qualsevol $F$, tenim ara l'objectiu de construir una clausura algebraica $\bar F/F$. Intuitivament almenys,
+Donat un cos qualsevol $F$, tenim ara l'objectiu de construir una clausura algebraica $\bar{F}/F$. Intuitivament almenys,
 la idea és de considerar, per cada polinomi $g(x)\in F[x]$, un cos $F_g$ que contingui totes les arrels de $g$.
 Aleshores hauríem de prendre el compositum de tots aquests cossos. El problema és que per fer el compositum
 hem de prendre una intersecció de molts cossos, i no està clar on viuen aquests cossos (la intersecció
@@ -156,28 +156,28 @@ només consideréssim un nombre finit de polinomis $g_1(x),\ldots, g_n(x)$ alesh
 el cos de descomposició del producte $g_1(x)\cdots g_n(x)$.
 
 ::: {.theorem #existencia-clausura-algebraica name="existència de clausura algebraica"}
-Sigui $F$ un cos. Aleshores existeix una clausura algebraica $\bar F/F$.
+Sigui $F$ un cos. Aleshores existeix una clausura algebraica $\bar{F}/F$.
 :::
 ::: {.proof}
 Consideremm un conjunt $\mathcal{U} \supset F$ de cardinal estrictament superior a $\mathcal{N}=\max(\aleph_0, |K|)$.
 
 Sigui
-$$X = \{K\subseteq L \subseteq S ~|~ $L/K$ \text{ és una extensió algebraica de $K$}\},$$
+$$X = \{K\subseteq L \subseteq S ~|~ L/K \text{ és una extensió algebraica de $K$}\},$$
 amb la relació d'ordre
 $$
 K_2 > K_1 \iff \text{$K_2/K_1$ és una extensió algebraica}.
 $$
 Com que tota cadena té un element maximal (prenem la unió de totes les extensions), el lema de Zorn
-ens diu que hi ha un element maximal a $X$, que anomenarem $\bar F$. Només ens cal veure que $\bar F/F$ és
-una clausura algebraica. Sigui $f(x)\in F[x]$ un polinomi no constant, i suposem que no té cap zero a $\bar F$.
-Podem construir una extensió $L / \bar F$ on $f(x)$ tingui un zero. Aleshores $L/F$ és algebraica, i per tant
+ens diu que hi ha un element maximal a $X$, que anomenarem $\bar{F}$. Només ens cal veure que $\bar{F}/F$ és
+una clausura algebraica. Sigui $f(x)\in F[x]$ un polinomi no constant, i suposem que no té cap zero a $\bar{F}$.
+Podem construir una extensió $L / \bar{F}$ on $f(x)$ tingui un zero. Aleshores $L/F$ és algebraica, i per tant
 $$
-|\bar F| \leq |L| \leq \mathcal{N}.
+|\bar{F}| \leq |L| \leq \mathcal{N}.
 $$
-Per tant, $|S\smallsetminus \bar K| = |S| > |L\smallsetminus \bar K|$. Això fa que existeixi
-una aplicació (de conjunts) injectiva $i \colon L \to S$ tal que $i(x)=x$ si $x\in \bar F$. Podem doncs
-transportar l'estructura de cos de $L$ a $i(L)$ i obtenim un nou element maximal $L > \bar F$, contradient
-la maximalitat de $\bar F$.
+Per tant, $|S\smallsetminus \bar{K}| = |S| > |L\smallsetminus \bar{K}|$. Això fa que existeixi
+una aplicació (de conjunts) injectiva $i \colon L \to S$ tal que $i(x)=x$ si $x\in \bar{F}$. Podem doncs
+transportar l'estructura de cos de $L$ a $i(L)$ i obtenim un nou element maximal $L > \bar{F}$, contradient
+la maximalitat de $\bar{F}$.
 :::
 
 ::: {.proof}

@@ -10,3 +10,68 @@ que els automorfismes envien cada element $\alpha$ a una arrel de $\Irr(\alpha,x
 i demostrarem que en una extensió normal el cardinal del grup d'automorfismes està
 fitat pel grau de l'extensió. Així, podrem definir una extensió de Galois com aquella
 on la fita s'assoleix.
+
+## Automorfismes
+
+Sigui $K$ un cos. Un *automorfisme* de $K$ és simplement un isomorfisme de $K$ a $K$, i el grup d'automorfismes de $K$ (amb la
+composició) s'escriu $\Aut(K)$. Si tenim un subconjunt $S$ de $K$, diem que $\sigma\in\Aut(K)$ *fixa* $S$ si
+$\sigma(x)=x$ per a tot $x\in S$.
+
+Fixem-nos també que tot automorfisme ha fixa el cos primer de $K$. En particular, $\Aut(K)=1$ quan $K=\QQ$ o $K=\FF_p$.
+
+Un cas interessant de subconjunt $S$ es dona quan tenim una extensió de cossos $K/F$. En aquest cas,
+escrivim $\Aut(K/F)$ com el grup d'automorfismes que fixen $F$ (que és un subgrup de $\Aut(K)$):
+
+$$
+\Aut(K/F) =\{\sigma \in \Aut(K) ~|~ \sigma(x)=x\,\forall x \in F\}.
+$$
+
+
+::: {.proposition}
+Sigui $K/F$ una extensió, i sigui $\alpha\in K$ un element algebraic sobre $F$. Aleshores
+per a tot $\sigma\in \Aut(K/F)$ es té $\sigma(\alpha)$ és una arrel de $\Irr(\alpha,F)(x)$.
+:::
+::: {.proof}
+Com que $\Irr(\alpha,F)(x)$ té coeficients a $F$ i $\sigma$ és un morfisme de cossos, tenim
+$$
+\Irr(\alpha,F)(\sigma(\alpha)) = \sigma(\Irr(\alpha,F)(\alpha)) = \sigma(0)=0.
+$$
+:::
+
+::: {.corollary}
+Sigui $f(x)\in F[x]$ un polinomi irreductible. Aleshores, si $K/F$ és una extensió i $\sigma\in\Aut(K/F)$,
+es té que $\sigma$ permuta les arrels de $f(x)$ a $K$.
+:::
+
+Aquests resultats ens permeten descriure el grup d'automorfismes d'extensions algebraiques considerant
+com actuen aquests automorfismes en els elements que generen l'extensió, ja que tot
+automorfisme quedarà únicament determinat per aquesta acció. En particular, quan $K/F$ és finita
+el nombre d'autormorfismes també serà finit.
+
+::: {.example}
+Calculem $\Aut(\QQ(\sqrt{2})/\QQ)=\{1,\sigma\}$ i $\Aut(\QQ(\sqrt[3]{2})/QQ) = 1$.
+:::
+
+## Cossos fixos
+
+Fixem $K$ un cos. Hem vist com associar a cada subcos $F\subseteq K$ un subgrup $\Aut(K/F)$ d'$\Aut(K)$.
+Prenem ara la direcció oposada. Associarem a cada subgrup d'automorfismes una certa extensió. Concretament, si
+$S \subseteq \Aut(K)$ és un subconjunt, podem considerar aquells elements de $K$ que són fixos
+per tots els elements de $S$. És molt fàcil veure que aquest conjunt, que escriurem $K^S$ i anomenarem
+el *cos fix per $S$*, és un subcos de $K$ (exercici). Fixem-nos també que
+$$
+K^S = K^{\langle S\rangle},
+$$
+on $\langle S \rangle$ és el subgrup d'$\Aut(K)$ generat per $S$ (el subgrup més petit que conté $S$). Per
+tant, normalment considerarem només cossos fixos per subgrups d'$\Aut(K)$ i no perdrem generalitat.
+
+::: {.lemma #inc-reversing}
+Sigui $K$ un cos.
+- Si $F1\subseteq F_2\subseteq K$, aleshores $\Aut(K/F_2)\leq \Aut(K/F_1)$.
+- Si $H_1\leq H_2 \leq \Aut(K)$, aleshores $K^{H_2} \subseteq K^{H_1}$.
+:::
+::: {.proof}
+Trivial.
+:::
+
+El teorema que ara ens disposem a demostrar és molt important, però és una mica carregós de notació. 

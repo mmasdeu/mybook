@@ -43,11 +43,11 @@ sigui $F$ un cos de característica finita $p$. Pensem en què pot anar malament
 tingui factors en comú amb $f(x)$, i això només pot passar si la derivada és $0$.
 
 ::: {.lemma}
-Sigui $f(x)\in F[x]$ amb  $\char(F)=p$. Si $f'(x)=0$, aleshores hi ha un polinomi $f_1[x]\in F[x]$ tal que $f(x)=f_1(x^p)$.
+Sigui $f(x)\in F[x]$ amb  $\car(F)=p$. Si $f'(x)=0$, aleshores hi ha un polinomi $f_1[x]\in F[x]$ tal que $f(x)=f_1(x^p)$.
 :::
 
 ::: {.proposition}
-Sigui $f(x)\in F[x]$ amb $\char(F)=p$ un polinomi irreductible. Aleshores hi ha un únic $k\geq 0$ i un únic
+Sigui $f(x)\in F[x]$ amb $\car(F)=p$ un polinomi irreductible. Aleshores hi ha un únic $k\geq 0$ i un únic
 polinomi irreductible i separable $g(x)\in F[x]$ tal que
 $$
 f(x)=g(x^{p^k}).
@@ -59,7 +59,7 @@ irreductible, i ja haurem acabat.
 :::
 
 ::: {.definition #grau-separabilitat name="grau de separabilitat"}
-Sigui $f(x)\in F[x]$ amb $\char(F)=p$ un polinomi irreductible. El *grau de separabilitat* de $f(x)$
+Sigui $f(x)\in F[x]$ amb $\car(F)=p$ un polinomi irreductible. El *grau de separabilitat* de $f(x)$
 és el grau de $g(x)$ en la proposició anterior, i el denotem per $\deg_s f(x)$.
 
 El *grau d'inseparabilitat* és l'enter $p^k$ que hi apareix, i el denotem per $\deg_i f(x)$.
@@ -71,7 +71,7 @@ Observem que $\deg f(x) = \deg_s f(x) \deg_i f(x)$.
 Sigui $F$ un cos de característica $p$. Aleshores l'aplicació $a \mapsto a^p$ és un morfisme de cossos $F\to F$.
 :::
 ::: {.proof}
-Només cal veure que $(a+b)^p = a^p + b^p$ i que $(ab)^p = a^p b^p$. La primera igualtat es veu fent servir que $p$ divideix a $\binomial{p}{i}$
+Només cal veure que $(a+b)^p = a^p + b^p$ i que $(ab)^p = a^p b^p$. La primera igualtat es veu fent servir que $p$ divideix a $\binom{p}{i}$
 per a $1\leq i\leq p-1$, i la segona és trivial.
 :::
 
