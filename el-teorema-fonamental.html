@@ -23,7 +23,7 @@
 <meta name="author" content="Marc Masdeu" />
 
 
-<meta name="date" content="2023-02-01" />
+<meta name="date" content="2023-02-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="automorfismes.html"/>
-<link rel="next" href="cossos-finits.html"/>
+<link rel="next" href="cossos-finits-1.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -60,7 +60,8 @@
 \renewcommand{\FF}{\mathbb{F}}
 \renewcommand{\CC}{\mathbb{C}}
 \renewcommand{\HH}{\mathbb{H}}
-
+\renewcommand{\QQbar}{\bar{\QQ}}
+\renewcommand{\barQQ}{\bar{\QQ}}
 \renewcommand{\cC}{\mathcal{C}}
 
 \renewcommand{\fX}{\mathfrak{X}}
@@ -97,8 +98,11 @@
 \renewcommand{\Mor}{\operatorname{Mor}}
 % \renewcommand{\implies}{\Longrightarrow}
 
-\renewcommand{\char}{\operatorname{char}}
-\renewcommand{\car}{\operatorname{char}}\)</span>
+% \renewcommand{\char}{\operatorname{char}}
+\renewcommand{\car}{\operatorname{char}}
+
+\renewcommand{\mcd}{\operatorname{mcd}}
+\renewcommand{\gcd}{\operatorname{mcd}}\)</span>
 
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -172,16 +176,31 @@ div.csl-indent {
 <li class="chapter" data-level="3" data-path="regle-i-compàs.html"><a href="regle-i-compàs.html"><i class="fa fa-check"></i><b>3</b> Regle i Compàs</a>
 <ul>
 <li class="chapter" data-level="3.1" data-path="regle-i-compàs.html"><a href="regle-i-compàs.html#el-problema"><i class="fa fa-check"></i><b>3.1</b> El problema</a></li>
+<li class="chapter" data-level="3.2" data-path="regle-i-compàs.html"><a href="regle-i-compàs.html#la-no-solució"><i class="fa fa-check"></i><b>3.2</b> La (no) solució</a></li>
+<li class="chapter" data-level="3.3" data-path="regle-i-compàs.html"><a href="regle-i-compàs.html#construccions-amb-regle-marcat-i-compàs"><i class="fa fa-check"></i><b>3.3</b> Construccions amb regle marcat i compàs</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="descomposició.html"><a href="descomposició.html"><i class="fa fa-check"></i><b>4</b> Descomposició</a></li>
-<li class="chapter" data-level="5" data-path="polinomis-inseparables.html"><a href="polinomis-inseparables.html"><i class="fa fa-check"></i><b>5</b> Polinomis Inseparables</a></li>
+<li class="chapter" data-level="4" data-path="descomposició.html"><a href="descomposició.html"><i class="fa fa-check"></i><b>4</b> Descomposició</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="descomposició.html"><a href="descomposició.html#cossos-de-descomposició"><i class="fa fa-check"></i><b>4.1</b> Cossos de descomposició</a></li>
+<li class="chapter" data-level="4.2" data-path="descomposició.html"><a href="descomposició.html#clausura-algebraica"><i class="fa fa-check"></i><b>4.2</b> Clausura algebraica</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="polinomis-inseparables.html"><a href="polinomis-inseparables.html"><i class="fa fa-check"></i><b>5</b> Polinomis Inseparables</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="polinomis-inseparables.html"><a href="polinomis-inseparables.html#separabilitat-de-polinomis"><i class="fa fa-check"></i><b>5.1</b> Separabilitat de polinomis</a></li>
+<li class="chapter" data-level="5.2" data-path="polinomis-inseparables.html"><a href="polinomis-inseparables.html#cossos-finits"><i class="fa fa-check"></i><b>5.2</b> Cossos finits</a></li>
+<li class="chapter" data-level="5.3" data-path="polinomis-inseparables.html"><a href="polinomis-inseparables.html#extensions-separables"><i class="fa fa-check"></i><b>5.3</b> Extensions separables</a></li>
+</ul></li>
 <li class="chapter" data-level="6" data-path="polinomis-ciclotòmics.html"><a href="polinomis-ciclotòmics.html"><i class="fa fa-check"></i><b>6</b> Polinomis Ciclotòmics</a></li>
-<li class="chapter" data-level="7" data-path="automorfismes.html"><a href="automorfismes.html"><i class="fa fa-check"></i><b>7</b> Automorfismes</a></li>
+<li class="chapter" data-level="7" data-path="automorfismes.html"><a href="automorfismes.html"><i class="fa fa-check"></i><b>7</b> Automorfismes</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="automorfismes.html"><a href="automorfismes.html#automorfismes-1"><i class="fa fa-check"></i><b>7.1</b> Automorfismes</a></li>
+<li class="chapter" data-level="7.2" data-path="automorfismes.html"><a href="automorfismes.html#cossos-fixos"><i class="fa fa-check"></i><b>7.2</b> Cossos fixos</a></li>
+</ul></li>
 <li class="chapter" data-level="8" data-path="el-teorema-fonamental.html"><a href="el-teorema-fonamental.html"><i class="fa fa-check"></i><b>8</b> El Teorema Fonamental</a>
 <ul>
 <li class="chapter" data-level="8.1" data-path="el-teorema-fonamental.html"><a href="el-teorema-fonamental.html#la-independència-dels-caràcters"><i class="fa fa-check"></i><b>8.1</b> La independència (dels caràcters)</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="cossos-finits.html"><a href="cossos-finits.html"><i class="fa fa-check"></i><b>9</b> Cossos Finits</a></li>
+<li class="chapter" data-level="9" data-path="cossos-finits-1.html"><a href="cossos-finits-1.html"><i class="fa fa-check"></i><b>9</b> Cossos Finits</a></li>
 <li class="chapter" data-level="10" data-path="lelement-primitiu.html"><a href="lelement-primitiu.html"><i class="fa fa-check"></i><b>10</b> L’element Primitiu</a></li>
 <li class="chapter" data-level="11" data-path="extensions-abelianes-i-ciclotòmiques.html"><a href="extensions-abelianes-i-ciclotòmiques.html"><i class="fa fa-check"></i><b>11</b> Extensions Abelianes i ciclotòmiques</a></li>
 <li class="chapter" data-level="12" data-path="arrels-i-radicals.html"><a href="arrels-i-radicals.html"><i class="fa fa-check"></i><b>12</b> Arrels i radicals</a></li>
@@ -231,7 +250,7 @@ amb diversos exemples concrets d’extensions, il·lustrant la correspondència 
 cap combinació lineal no trivial <span class="math inline">\(a_1\chi_1+\cdots+a_n\chi_n\)</span> que doni lloc a la funció idènticament zero.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-37" class="proof"><em>Prova</em>. </span>Suposem (reordenant, si cal) que podem escriure
+<p><span id="unlabeled-div-73" class="proof"><em>Prova</em>. </span>Suposem (reordenant, si cal) que podem escriure
 <span class="math display">\[
 a_1\chi_1 + \cdots a_m\chi_m = 0,
 \]</span>
@@ -255,33 +274,33 @@ que indueix un morfisme de grups entre les unitats <span class="math inline">\(\
 tota la informació que ens cal de <span class="math inline">\(\sigma\)</span>, perquè ja sabem que <span class="math inline">\(\sigma(0)=0\)</span>). Aleshores <span class="math inline">\(\sigma\)</span> esdevé un caràcter
 del grup <span class="math inline">\(G=K^\times\)</span>, i per tant tenim el següent:</p>
 <div class="corollary">
-<p><span id="cor:unlabeled-div-38" class="corollary"><strong>Corol·lary 8.1  </strong></span>Si <span class="math inline">\(\sigma_1,\ldots,\sigma_n\)</span> són morfismes diferents de <span class="math inline">\(K\)</span> a <span class="math inline">\(L\)</span>, aleshores són linealment independents com a funcions de <span class="math inline">\(K\)</span>.</p>
+<p><span id="cor:unlabeled-div-74" class="corollary"><strong>Corol·lary 8.1  </strong></span>Si <span class="math inline">\(\sigma_1,\ldots,\sigma_n\)</span> són morfismes diferents de <span class="math inline">\(K\)</span> a <span class="math inline">\(L\)</span>, aleshores són linealment independents com a funcions de <span class="math inline">\(K\)</span>.</p>
 </div>
 <p>Un cas encara més particular d’aquest corol·lari ens permet demostrar una relació numèrica bàsica entre automorfismes d’un cos
 i els cossos que deixen fixes.</p>
 <div class="proposition">
-<p><span id="prp:unlabeled-div-39" class="proposition"><strong>Proposició 8.1  </strong></span>Sigui <span class="math inline">\(S\)</span> un subconjunt finit d’automorfismes d’un cos <span class="math inline">\(K\)</span>, i sigui <span class="math inline">\(F=K^G\)</span> el seu cos fix. Aleshores
+<p><span id="prp:unlabeled-div-75" class="proposition"><strong>Proposició 8.1  </strong></span>Sigui <span class="math inline">\(S\)</span> un subconjunt finit d’automorfismes d’un cos <span class="math inline">\(K\)</span>, i sigui <span class="math inline">\(F=K^G\)</span> el seu cos fix. Aleshores
 <span class="math display">\[
 [K\colon F] \geq |S|.
 \]</span></p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-40" class="proof"><em>Prova</em>. </span>TODO</p>
+<p><span id="unlabeled-div-76" class="proof"><em>Prova</em>. </span>TODO</p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-41" class="theorem"><strong>Teorema 8.2  </strong></span>Sigui <span class="math inline">\(G\)</span> un subgrup finit d’automorfismes d’un cos <span class="math inline">\(K\)</span>, i sigui <span class="math inline">\(F=K^G\)</span> el seu cos fix. Aleshores
+<p><span id="thm:unlabeled-div-77" class="theorem"><strong>Teorema 8.2  </strong></span>Sigui <span class="math inline">\(G\)</span> un subgrup finit d’automorfismes d’un cos <span class="math inline">\(K\)</span>, i sigui <span class="math inline">\(F=K^G\)</span> el seu cos fix. Aleshores
 <span class="math display">\[
 [K\colon F] = |G|.
 \]</span></p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-42" class="proof"><em>Prova</em>. </span>Només ens cal veure que <span class="math inline">\([K\colon F] \leq |G|\)</span>, ja que l’altra desigualtat ja l’hem demostrat independentment
+<p><span id="unlabeled-div-78" class="proof"><em>Prova</em>. </span>Només ens cal veure que <span class="math inline">\([K\colon F] \leq |G|\)</span>, ja que l’altra desigualtat ja l’hem demostrat independentment
 del fet que <span class="math inline">\(G\)</span> sigui un grup.</p>
 <p>TODO (llarga)</p>
 </div>
 <p>D’aquest resultat se’n desprenen fàcilment conseqüències molt importants que val la pena destacar.</p>
 <div class="corollary">
-<p><span id="cor:unlabeled-div-43" class="corollary"><strong>Corol·lary 8.2  </strong></span>Si <span class="math inline">\(K/F\)</span> és una extensió finita, aleshores
+<p><span id="cor:unlabeled-div-79" class="corollary"><strong>Corol·lary 8.2  </strong></span>Si <span class="math inline">\(K/F\)</span> és una extensió finita, aleshores
 <span class="math display">\[
 |\Aut(K/F)| \leq [K\colon F],
 \]</span>
@@ -289,7 +308,7 @@ amb igualtat si i només si <span class="math inline">\(F\)</span> és el cos fi
 </div>
 <p>Dit d’altra manera, l’extensió <span class="math inline">\(K/F\)</span> és Galois si i només si <span class="math inline">\(F=K^{\Aut(K/F)}\)</span>.</p>
 <div class="proof">
-<p><span id="unlabeled-div-44" class="proof"><em>Prova</em>. </span>TODO.</p>
+<p><span id="unlabeled-div-80" class="proof"><em>Prova</em>. </span>TODO.</p>
 </div>
 
 </div>
@@ -300,7 +319,7 @@ amb igualtat si i només si <span class="math inline">\(F\)</span> és el cos fi
         </div>
       </div>
 <a href="automorfismes.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="cossos-finits.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="cossos-finits-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
