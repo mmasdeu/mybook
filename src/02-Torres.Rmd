@@ -54,7 +54,7 @@ No és cert que tota extensió algebraica sigui finita (en veurem exemples més 
 
 El següent resultat ens caracteritza com són les extensions quadràtiques d'un cos $F$ de característica $\neq 2$.
 
-::: {.proposition name=""}
+::: {.proposition}
 Sigui $F$ un cos de característica $\neq 2$, i sigui $K/F$ una extensió de grau $2$. Aleshores existeix $\delta\in K\setminus F$
 tal que $\delta^2=D\in F$ i $K=F(\delta)$. Escriurem que $K=F(\sqrt{D})$.
 :::
@@ -105,11 +105,11 @@ Calculeu el grau de l'extensió $\QQ(\sqrt{2},\sqrt{3})/\QQ$, i doneu una base.
 L'extensió $K/F$ és finita si i només si $K=F(S)$ on $S$ és un conjunt finit d'elements algebraics.
 :::
 
-::: {.corollary name=""}
+::: {.corollary}
 Si $\alpha$ i $\beta$ són algebraics sobre $F$, aleshores també ho són $\alpha\pm \beta$, $\alpha\beta$ i $\alpha/\beta$ (si $\beta\neq 0$).
 :::
 
-::: {.corollary name=""}
+::: {.corollary}
 Si $L/F$ és una extensió qualsevol, aleshores el conjunt $K$ d'elements de $L$ que són algebraics sobre $F$ forma un subcos $L/K/F$.
 :::
 
@@ -118,7 +118,7 @@ dels reals algebraics. Aquests cossos són enumerables (tenen un conjunt d'eleme
 D'aquest fet obtenim que hi ha (molts) elements de $\RR$ que no són algebraics. En canvi, sovint és difícil demostrar que
 un real donat (per exemple $\pi$) és transcendent.
 
-::: {.theorem name=""}
+::: {.theorem}
 Si $K/F$ és una extensió algebraica i $L/K$ també, aleshores $L/F$ és algebraica.
 :::
 ::: {.proof}
@@ -130,7 +130,7 @@ TODO
 Recordem que donats dos cossos $K_1/F$ i $K_2/F$, el seu *compost* (o *compositum*) $K_1K_2 /F$ és el mínim cos que conté
 tant a $K_1$ com a $K_2$. També es pot pensar com la intersecció de tots els cossos $L/F$ que contenen el conjunt $K_1\cup K_2$.
 
-::: {.proposition name=""}
+::: {.proposition}
 Siguin $K_1/F$ i $K_2/F$ dues extensions contingudes a $K$. Aleshores
 $$
 [K_1K_2\colon F] \leq [K_1\colon F] [K_2 \colon F].
