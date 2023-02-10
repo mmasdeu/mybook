@@ -76,7 +76,7 @@
 \renewcommand{\dfn}{\ensuremath{:=}}
 \renewcommand{\surjects}{\twoheadrightarrow}
 \renewcommand{\injects}{\hookrightarrow}
-\renewcommand{\id}{\ensuremath \text{Id}}
+\renewcommand{\id}{\operatorname{Id}}
 \renewcommand{\tns}[1][]{\otimes_{\!#1}}
 \renewcommand{\mtx}[4]{\left(\begin{matrix}#1&#2\\#3&#4\end{matrix}\right)}
 \renewcommand{\mat}[1]{\left(\begin{matrix}#1\end{matrix}\right)}
@@ -101,9 +101,9 @@
 
 % \renewcommand{\char}{\operatorname{char}}
 \renewcommand{\car}{\operatorname{char}}
-
 \renewcommand{\mcd}{\operatorname{mcd}}
-\renewcommand{\gcd}{\operatorname{mcd}}\)</span>
+\renewcommand{\gcd}{\operatorname{mcd}}
+\renewcommand{\Eq}{\operatorname{Eq}}\)</span>
 
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -191,11 +191,11 @@ div.csl-indent {
 <li class="chapter" data-level="5.1" data-path="polinomis-inseparables.html"><a href="polinomis-inseparables.html#separabilitat-de-polinomis-i-extensions"><i class="fa fa-check"></i><b>5.1</b> Separabilitat de polinomis i extensions</a></li>
 <li class="chapter" data-level="5.2" data-path="polinomis-inseparables.html"><a href="polinomis-inseparables.html#applicació-cossos-finits"><i class="fa fa-check"></i><b>5.2</b> Applicació : cossos finits</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="polinomis-ciclotòmics.html"><a href="polinomis-ciclotòmics.html"><i class="fa fa-check"></i><b>6</b> Polinomis Ciclotòmics</a>
+<li class="chapter" data-level="6" data-path="ciclotomics.html"><a href="ciclotomics.html"><i class="fa fa-check"></i><b>6</b> Polinomis Ciclotòmics</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="polinomis-ciclotòmics.html"><a href="polinomis-ciclotòmics.html#definició"><i class="fa fa-check"></i><b>6.1</b> Definició</a></li>
-<li class="chapter" data-level="6.2" data-path="polinomis-ciclotòmics.html"><a href="polinomis-ciclotòmics.html#càlcul-recursiu"><i class="fa fa-check"></i><b>6.2</b> Càlcul recursiu</a></li>
-<li class="chapter" data-level="6.3" data-path="polinomis-ciclotòmics.html"><a href="polinomis-ciclotòmics.html#irreductibilitat"><i class="fa fa-check"></i><b>6.3</b> Irreductibilitat</a></li>
+<li class="chapter" data-level="6.1" data-path="ciclotomics.html"><a href="ciclotomics.html#definició"><i class="fa fa-check"></i><b>6.1</b> Definició</a></li>
+<li class="chapter" data-level="6.2" data-path="ciclotomics.html"><a href="ciclotomics.html#càlcul-recursiu"><i class="fa fa-check"></i><b>6.2</b> Càlcul recursiu</a></li>
+<li class="chapter" data-level="6.3" data-path="ciclotomics.html"><a href="ciclotomics.html#irreductibilitat"><i class="fa fa-check"></i><b>6.3</b> Irreductibilitat</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="automorfismes.html"><a href="automorfismes.html"><i class="fa fa-check"></i><b>7</b> Automorfismes</a>
 <ul>
@@ -399,7 +399,7 @@ la maximalitat de <span class="math inline">\(\bar{F}\)</span>.</p>
 </div>
 <div class="proof">
 <p><span id="unlabeled-div-51" class="proof"><em>Prova</em>. </span>Presentem una demostració alternativa que amaga una mica més els problemes amb la teoria de conjunts. Gràcies
-a la Proposició <span class="citation">(<a href="#ref-prop:clausura-algebraica-tecnica" role="doc-biblioref"><strong>prop:clausura-algebraica-tecnica?</strong></a>)</span>, n’hi ha prou amb construir una extensió <span class="math inline">\(K/F\)</span> algebraicament tancada.</p>
+a la Proposició <span class="citation">(<a href="#ref-prop:clausura-tecnica" role="doc-biblioref"><strong>prop:clausura-tecnica?</strong></a>)</span>, n’hi ha prou amb construir una extensió <span class="math inline">\(K/F\)</span> algebraicament tancada.</p>
 <p>Per
 cada polinomi mònic no constant <span class="math inline">\(f=f(x)\in F[x]\)</span>, considerem una variable <span class="math inline">\(x_f\)</span>. Tenim l’anell de polinomis
 en infinites variables <span class="math inline">\(F[\{x_f\}]\)</span>, i hi podem considerar l’ideal <span class="math inline">\(I\)</span> generat pels polinomis <span class="math inline">\(f(x_f)\)</span>.</p>

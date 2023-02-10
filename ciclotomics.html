@@ -76,7 +76,7 @@
 \renewcommand{\dfn}{\ensuremath{:=}}
 \renewcommand{\surjects}{\twoheadrightarrow}
 \renewcommand{\injects}{\hookrightarrow}
-\renewcommand{\id}{\ensuremath \text{Id}}
+\renewcommand{\id}{\operatorname{Id}}
 \renewcommand{\tns}[1][]{\otimes_{\!#1}}
 \renewcommand{\mtx}[4]{\left(\begin{matrix}#1&#2\\#3&#4\end{matrix}\right)}
 \renewcommand{\mat}[1]{\left(\begin{matrix}#1\end{matrix}\right)}
@@ -101,9 +101,9 @@
 
 % \renewcommand{\char}{\operatorname{char}}
 \renewcommand{\car}{\operatorname{char}}
-
 \renewcommand{\mcd}{\operatorname{mcd}}
-\renewcommand{\gcd}{\operatorname{mcd}}\)</span>
+\renewcommand{\gcd}{\operatorname{mcd}}
+\renewcommand{\Eq}{\operatorname{Eq}}\)</span>
 
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -191,11 +191,11 @@ div.csl-indent {
 <li class="chapter" data-level="5.1" data-path="polinomis-inseparables.html"><a href="polinomis-inseparables.html#separabilitat-de-polinomis-i-extensions"><i class="fa fa-check"></i><b>5.1</b> Separabilitat de polinomis i extensions</a></li>
 <li class="chapter" data-level="5.2" data-path="polinomis-inseparables.html"><a href="polinomis-inseparables.html#applicació-cossos-finits"><i class="fa fa-check"></i><b>5.2</b> Applicació : cossos finits</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="polinomis-ciclotòmics.html"><a href="polinomis-ciclotòmics.html"><i class="fa fa-check"></i><b>6</b> Polinomis Ciclotòmics</a>
+<li class="chapter" data-level="6" data-path="ciclotomics.html"><a href="ciclotomics.html"><i class="fa fa-check"></i><b>6</b> Polinomis Ciclotòmics</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="polinomis-ciclotòmics.html"><a href="polinomis-ciclotòmics.html#definició"><i class="fa fa-check"></i><b>6.1</b> Definició</a></li>
-<li class="chapter" data-level="6.2" data-path="polinomis-ciclotòmics.html"><a href="polinomis-ciclotòmics.html#càlcul-recursiu"><i class="fa fa-check"></i><b>6.2</b> Càlcul recursiu</a></li>
-<li class="chapter" data-level="6.3" data-path="polinomis-ciclotòmics.html"><a href="polinomis-ciclotòmics.html#irreductibilitat"><i class="fa fa-check"></i><b>6.3</b> Irreductibilitat</a></li>
+<li class="chapter" data-level="6.1" data-path="ciclotomics.html"><a href="ciclotomics.html#definició"><i class="fa fa-check"></i><b>6.1</b> Definició</a></li>
+<li class="chapter" data-level="6.2" data-path="ciclotomics.html"><a href="ciclotomics.html#càlcul-recursiu"><i class="fa fa-check"></i><b>6.2</b> Càlcul recursiu</a></li>
+<li class="chapter" data-level="6.3" data-path="ciclotomics.html"><a href="ciclotomics.html#irreductibilitat"><i class="fa fa-check"></i><b>6.3</b> Irreductibilitat</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="automorfismes.html"><a href="automorfismes.html"><i class="fa fa-check"></i><b>7</b> Automorfismes</a>
 <ul>
@@ -229,12 +229,12 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="polinomis-ciclotòmics" class="section level1 hasAnchor" number="6">
-<h1><span class="header-section-number">Episodi 6. </span> Polinomis Ciclotòmics<a href="polinomis-ciclotòmics.html#polinomis-ciclotòmics" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="ciclotomics" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">Episodi 6. </span> Polinomis Ciclotòmics<a href="ciclotomics.html#ciclotomics" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>L’objectiu principal és demostrar que l’extensió ciclotòmica <span class="math inline">\(\QQ(\zeta_n)\)</span> té grau <span class="math inline">\(\varphi(n)\)</span> (la phi d’Euler). Per això,
 introduïrem els polinomis ciclotòmics, veurem que són irreductibles i mònics i tenen coeficients enters.</p>
 <div id="definició" class="section level2 hasAnchor" number="6.1">
-<h2><span class="header-section-number">6.1</span> Definició<a href="polinomis-ciclotòmics.html#definició" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<h2><span class="header-section-number">6.1</span> Definició<a href="ciclotomics.html#definició" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Sigui <span class="math inline">\(\mu_n\)</span> el grup de les arrels <span class="math inline">\(n\)</span>-èssimes de la unitat, que podem pensar dins de <span class="math inline">\(\CC\)</span>.
 Com a grup abstracte, és isomorf a <span class="math inline">\(\ZZ/n\ZZ\)</span> (un cop fixem una arrel primitiva <span class="math inline">\(\zeta_n\)</span>):
 <span class="math display">\[
@@ -252,7 +252,7 @@ les arrels primitives de la unitat:
 </div>
 </div>
 <div id="càlcul-recursiu" class="section level2 hasAnchor" number="6.2">
-<h2><span class="header-section-number">6.2</span> Càlcul recursiu<a href="polinomis-ciclotòmics.html#càlcul-recursiu" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<h2><span class="header-section-number">6.2</span> Càlcul recursiu<a href="ciclotomics.html#càlcul-recursiu" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Tenim la factorització
 <span class="math display">\[
 x^n - 1= \prod_{\zeta \in \mu_n} (x-\zeta) = \prod_{d\mid n} \Phi_d(x).
@@ -288,11 +288,11 @@ dividint pels factors coneguts:
 </div>
 <div class="proof">
 <p><span id="unlabeled-div-74" class="proof"><em>Prova</em>. </span>L’únic que ens cal veure és que <span class="math inline">\(\Phi_n(x)\)</span> té coeficients enters. Això es veu fàcilment per inducció en <span class="math inline">\(n\)</span>
-i l’algoritme de divisió, fent servir la fórmula <a href="polinomis-ciclotòmics.html#eq:ciclotomics-recursius">(6.1)</a>.</p>
+i l’algoritme de divisió, fent servir la fórmula <a href="ciclotomics.html#eq:ciclotomics-recursius">(6.1)</a>.</p>
 </div>
 </div>
 <div id="irreductibilitat" class="section level2 hasAnchor" number="6.3">
-<h2><span class="header-section-number">6.3</span> Irreductibilitat<a href="polinomis-ciclotòmics.html#irreductibilitat" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<h2><span class="header-section-number">6.3</span> Irreductibilitat<a href="ciclotomics.html#irreductibilitat" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Amb una mica més de feina podem veure que també són irreductibles.</p>
 <div class="theorem">
 <p><span id="thm:ciclotomics-irreductibles" class="theorem"><strong>Teorema 6.1  </strong></span>Els polinomis <span class="math inline">\(\Phi_n(x)\)</span> són irreductibles.</p>

@@ -76,7 +76,7 @@
 \renewcommand{\dfn}{\ensuremath{:=}}
 \renewcommand{\surjects}{\twoheadrightarrow}
 \renewcommand{\injects}{\hookrightarrow}
-\renewcommand{\id}{\ensuremath \text{Id}}
+\renewcommand{\id}{\operatorname{Id}}
 \renewcommand{\tns}[1][]{\otimes_{\!#1}}
 \renewcommand{\mtx}[4]{\left(\begin{matrix}#1&#2\\#3&#4\end{matrix}\right)}
 \renewcommand{\mat}[1]{\left(\begin{matrix}#1\end{matrix}\right)}
@@ -101,9 +101,9 @@
 
 % \renewcommand{\char}{\operatorname{char}}
 \renewcommand{\car}{\operatorname{char}}
-
 \renewcommand{\mcd}{\operatorname{mcd}}
-\renewcommand{\gcd}{\operatorname{mcd}}\)</span>
+\renewcommand{\gcd}{\operatorname{mcd}}
+\renewcommand{\Eq}{\operatorname{Eq}}\)</span>
 
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -191,11 +191,11 @@ div.csl-indent {
 <li class="chapter" data-level="5.1" data-path="polinomis-inseparables.html"><a href="polinomis-inseparables.html#separabilitat-de-polinomis-i-extensions"><i class="fa fa-check"></i><b>5.1</b> Separabilitat de polinomis i extensions</a></li>
 <li class="chapter" data-level="5.2" data-path="polinomis-inseparables.html"><a href="polinomis-inseparables.html#applicació-cossos-finits"><i class="fa fa-check"></i><b>5.2</b> Applicació : cossos finits</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="polinomis-ciclotòmics.html"><a href="polinomis-ciclotòmics.html"><i class="fa fa-check"></i><b>6</b> Polinomis Ciclotòmics</a>
+<li class="chapter" data-level="6" data-path="ciclotomics.html"><a href="ciclotomics.html"><i class="fa fa-check"></i><b>6</b> Polinomis Ciclotòmics</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="polinomis-ciclotòmics.html"><a href="polinomis-ciclotòmics.html#definició"><i class="fa fa-check"></i><b>6.1</b> Definició</a></li>
-<li class="chapter" data-level="6.2" data-path="polinomis-ciclotòmics.html"><a href="polinomis-ciclotòmics.html#càlcul-recursiu"><i class="fa fa-check"></i><b>6.2</b> Càlcul recursiu</a></li>
-<li class="chapter" data-level="6.3" data-path="polinomis-ciclotòmics.html"><a href="polinomis-ciclotòmics.html#irreductibilitat"><i class="fa fa-check"></i><b>6.3</b> Irreductibilitat</a></li>
+<li class="chapter" data-level="6.1" data-path="ciclotomics.html"><a href="ciclotomics.html#definició"><i class="fa fa-check"></i><b>6.1</b> Definició</a></li>
+<li class="chapter" data-level="6.2" data-path="ciclotomics.html"><a href="ciclotomics.html#càlcul-recursiu"><i class="fa fa-check"></i><b>6.2</b> Càlcul recursiu</a></li>
+<li class="chapter" data-level="6.3" data-path="ciclotomics.html"><a href="ciclotomics.html#irreductibilitat"><i class="fa fa-check"></i><b>6.3</b> Irreductibilitat</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="automorfismes.html"><a href="automorfismes.html"><i class="fa fa-check"></i><b>7</b> Automorfismes</a>
 <ul>
@@ -234,11 +234,11 @@ div.csl-indent {
 <p>Enunciem i demostrem el teorema fonamental de la teoria de Galois. Acabarem
 amb diversos exemples concrets d’extensions, il·lustrant la correspondència de Galois.</p>
 <div class="proposition">
-<p><span id="prp:unlabeled-div-96" class="proposition"><strong>Proposició 8.1  </strong></span>Sigui <span class="math inline">\(K\)</span> una cos qualsevol. Sigui <span class="math inline">\(G\leq\Aut(K)\)</span> un subgrup finit, i sigui <span class="math inline">\(F=K^G\)</span>. Aleshores <span class="math inline">\(K\)</span> és Galois sobre <span class="math inline">\(F\)</span>,
+<p><span id="prp:unlabeled-div-95" class="proposition"><strong>Proposició 8.1  </strong></span>Sigui <span class="math inline">\(K\)</span> una cos qualsevol. Sigui <span class="math inline">\(G\leq\Aut(K)\)</span> un subgrup finit, i sigui <span class="math inline">\(F=K^G\)</span>. Aleshores <span class="math inline">\(K\)</span> és Galois sobre <span class="math inline">\(F\)</span>,
 i <span class="math inline">\(\Gal(K/F) = G\)</span>.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-97" class="proof"><em>Prova</em>. </span>Per definició d’<span class="math inline">\(F\)</span>, tenim <span class="math inline">\(G \leq \Aut(K/F)\)</span>, i només ens cal veure la igualtat. El teorema
+<p><span id="unlabeled-div-96" class="proof"><em>Prova</em>. </span>Per definició d’<span class="math inline">\(F\)</span>, tenim <span class="math inline">\(G \leq \Aut(K/F)\)</span>, i només ens cal veure la igualtat. El teorema
 ens diu que <span class="math inline">\(|G|=[K\colon F]\)</span>, i ja hem vist <span class="math inline">\(|\Aut(K/F)|\leq [K\colon F]\)</span>. Per tant:
 <span class="math display">\[
 [K\colon F] = |G| \leq |\Aut(K/F)| \leq [K\colon F].
@@ -246,19 +246,92 @@ ens diu que <span class="math inline">\(|G|=[K\colon F]\)</span>, i ja hem vist 
 Per tant, totes les desigualtats són igualtats i, en particular <span class="math inline">\(|G| = |\Aut(K/F)|\)</span>.</p>
 </div>
 <div class="corollary">
-<p><span id="cor:unlabeled-div-98" class="corollary"><strong>Corol·lary 8.1  </strong></span>Si <span class="math inline">\(G_1\)</span> i <span class="math inline">\(G_2\)</span> són subgrups diferents d’<span class="math inline">\(\Aut(K)\)</span>, aleshores <span class="math inline">\(K^{G_1} \neq K^{G_2}\)</span>.</p>
+<p><span id="cor:unlabeled-div-97" class="corollary"><strong>Corol·lary 8.1  </strong></span>Si <span class="math inline">\(G_1\)</span> i <span class="math inline">\(G_2\)</span> són subgrups diferents d’<span class="math inline">\(\Aut(K)\)</span>, aleshores <span class="math inline">\(K^{G_1} \neq K^{G_2}\)</span>.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-99" class="proof"><em>Prova</em>. </span>Trivial.</p>
+<p><span id="unlabeled-div-98" class="proof"><em>Prova</em>. </span>Trivial.</p>
 </div>
-<p>El següent resultat ens permet caracteritzar les extensions de Galois d’una altra manera.</p>
+<p>Sigui <span class="math inline">\(K/F\)</span> una extensió finita de Galois. A cada subextensió <span class="math inline">\(K/M\)</span> li podem associar el seu
+grup de Galois, <span class="math inline">\(\Gal(K/M)\)</span>. També podem associar a cada subgrup <span class="math inline">\(H\leq \Gal(K/F)\)</span> el cos fix <span class="math inline">\(K^H\)</span>.
+El següent resultat ens diu que aquestes dues operacions són inverses mútuament.</p>
 <div class="theorem">
-<p><span id="thm:galois-sii-normal-separable" class="theorem"><strong>Teorema 8.1  (caracterització de les extensions de Galois) </strong></span>Una extensió <span class="math inline">\(K/F\)</span> és de Galois si i només si <span class="math inline">\(K\)</span> és el cos de descomposició d’un polinomi separable.</p>
-<p>A més, en aquest cas tot polinomi irreductible <span class="math inline">\(f(x)\in F[x]\)</span> amb una arrel a <span class="math inline">\(K\)</span> descomposa
-completament a <span class="math inline">\(K\)</span> (en particular, <span class="math inline">\(K\)</span> és una extensió separable).</p>
+<p><span id="thm:unlabeled-div-99" class="theorem"><strong>Teorema 8.1  </strong></span>Sigui <span class="math inline">\(K/F\)</span> finita Galois. Aleshores <span class="math inline">\(M\mapsto \Gal(K/M)\)</span> i <span class="math inline">\(H\mapsto K^H\)</span> estableixen una bijecció
+<span class="math display">\[
+\{\text{ subextensions } K/M/F\} \stackrel{1\colon 1}{\longleftrightarrow} \{\text{ subgrups } H \leq \Gal(K/F)\}.
+\]</span>
+A més el grau <span class="math inline">\([M \colon F]\)</span> es correspon amb l’ordre d’<span class="math inline">\(H\)</span>.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-100" class="proof"><em>Prova</em>. </span>TODO</p>
+<p><span id="unlabeled-div-100" class="proof"><em>Prova</em>. </span>Hem de veure:
+1. <span class="math inline">\(K^{\Gal(K/M)}= M\)</span>. Això és automàtic a partir de la proposició i del Corol·lari <span class="citation">(<a href="#ref-ref" role="doc-biblioref"><strong>ref?</strong></a>)</span>(fix-gal-eq).
+2. <span class="math inline">\(\Gal(K / K^H) = H\)</span>. Escrivim <span class="math inline">\(M=K^H\)</span>. Ja sabem que <span class="math inline">\(K/M\)</span> és de Galois, i <span class="math inline">\(|\Gal(K/M)|= [K\colon M]\)</span>.
+A més, per definició tenim <span class="math inline">\(H\leq \Gal(K/M)\)</span>. Hem de demostrar la igualtat: donat <span class="math inline">\(\tau\in \Gal(K/M)\)</span>, veurem
+que <span class="math inline">\(K=\bigcup_{\sigma\in H} \Eq(\sigma,\tau)\)</span>. Pel Lema <span class="citation">(<a href="#ref-ref" role="doc-biblioref"><strong>ref?</strong></a>)</span>(lema-algebra-lineal), algun dels <span class="math inline">\(\Eq(\sigma,\tau)\)</span>
+ha de ser tot <span class="math inline">\(K\)</span>, i això ens diu que <span class="math inline">\(\tau\in H\)</span>. Per tant, només ens cal comprovar que per tot <span class="math inline">\(\alpha\in K\)</span>,
+hi ha algun <span class="math inline">\(\sigma\in H\)</span> tal que <span class="math inline">\(\sigma(\alpha)=\tau(\alpha)\)</span>. Considerem el polinomi
+<span class="math display">\[
+f(x) = \prod_{\sigma \in H} (x - \sigma(\alpha)) \in K[x].
+\]</span>
+Fixem-nos que <span class="math inline">\(\sigma(f)=f\)</span> per tot <span class="math inline">\(\sigma\in H\)</span> i per tant <span class="math inline">\(f(x)\in K^H[x] = M[x]\)</span>. Com que <span class="math inline">\(\tau\)</span> fixa <span class="math inline">\(M\)</span>,
+tenim que <span class="math inline">\(\tau(f)=f\)</span>. Però aleshores <span class="math inline">\(\tau(\alpha)\)</span> ha de ser una arrel de <span class="math inline">\(f\)</span>, és a dir, <span class="math inline">\(\tau(\alpha)=\sigma(\alpha)\)</span>
+per algun <span class="math inline">\(\sigma\in H\)</span>, com volíem.</p>
+</div>
+<p>Hem vist que si <span class="math inline">\(K/M/F\)</span> és Galois aleshores <span class="math inline">\(K/M\)</span> també ho és. Què podem dir de l’extensió <span class="math inline">\(M/F\)</span>?
+::: {.proposition}
+Sigui <span class="math inline">\(K/M/F\)</span> una torre amb <span class="math inline">\(K/F\)</span> Galois, posem <span class="math inline">\(G=\Gal(K/F)\)</span>. Aleshores són equivalents:
+1. <span class="math inline">\(M/F\)</span> és Galois.
+2. <span class="math inline">\(H=\Gal(K/M)\)</span> és un subgrup normal de <span class="math inline">\(G\)</span>.
+3. <span class="math inline">\(\sigma(M)\subseteq M\)</span> per a tot <span class="math inline">\(\sigma\in G\)</span>.</p>
+<p>En aquest cas, <span class="math inline">\(\Gal(M/F) \cong G / H\)</span>.
+:::
+::: {.proof}
+Sigui <span class="math inline">\(H = \Gal(K/M)\)</span>.
+<span class="math inline">\(1 \implies 2\)</span>: Sigui <span class="math inline">\(\sigma\in G\)</span>. Si <span class="math inline">\(\alpha\in M\)</span> té polinomi mínim <span class="math inline">\(f(x)\in F[x]\)</span>, aleshores <span class="math inline">\(\sigma\)</span>
+en permuta les seves arrels i, en particular, $() <span class="math inline">\(M\)</span>. Per tant <span class="math inline">\(\sigma\)</span> restringeix a un
+morfisme de <span class="math inline">\(M\)</span>, que ja hem vist que és un automorfisme. Hem construit doncs una aplicació <span class="math inline">\(G\to H\)</span>,
+i és fàcil comprovar que és un morfisme de grups. El seu nucli és doncs un subgrup normal, format
+per aquells automorfismes <span class="math inline">\(\sigma\in G\)</span> que fixen <span class="math inline">\(M\)</span>, és a dir, és justament <span class="math inline">\(\Gal(K/M)\)</span>.</p>
+<p><span class="math inline">\(2 \implies 3\)</span>: Sigui <span class="math inline">\(\sigma \in G\)</span>. Per definició, <span class="math inline">\(\sigma(M) \in K^{\tilde H}\)</span>, on <span class="math inline">\(\tilde H = \sigma H \sigma^{-1}\)</span>.
+Com que <span class="math inline">\(H\)</span> és normal <span class="math inline">\(\tilde H=H\)</span> i <span class="math inline">\(K^{\tilde H} = K^H = M\)</span>.</p>
+<p><span class="math inline">\(3 \implies 1\)</span>: escrivim <span class="math inline">\(M = F(\alpha_1,\ldots \alpha_n)\)</span>, i considerem
+<span class="math display">\[
+B = \{\sigma(\alpha_i) ~|~ \sigma \in G, i=1,\ldots,n\}.
+\]</span>
+Aleshores <span class="math inline">\(f(x)=\prod_{\beta in B} (x-\beta)\)</span> és un polinomi separable amb coeficients
+a <span class="math inline">\(F\)</span>. La hipòtesi és que <span class="math inline">\(B\subseteq M\)</span> i, per tant, <span class="math inline">\(M\)</span> és el cos de descomposició de <span class="math inline">\(f\)</span>.
+:::</p>
+<p>Per acabar d’entendre bé la correspondència de Galois, relacionem operacions conegudes entre cossos i entre grups.
+::: {.proposition name=““}
+Sigui <span class="math inline">\(K/F\)</span> Galois amb <span class="math inline">\(G = \Gal(K/F)\)</span>. Sigui <span class="math inline">\(M_1\)</span> i <span class="math inline">\(M_2\)</span> dues subextensions, amb <span class="math inline">\(H_i=\Gal(K/M_i)\)</span>. Aleshores:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(\Gal(K/M_1M_2) = H_1 \cap H_2\)</span>, i</li>
+<li><span class="math inline">\(\Gal(K/(M_1\cap M_2)) = \langle H_1, H_2\rangle\)</span>.
+:::
+::: {.proof}
+Directa, per definició.
+:::</li>
+</ol>
+<p>Podem resumir tot l’episodi en un sol resultat:</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-101" class="theorem"><strong>Teorema 8.2  (Teorema fonamental de la teoria de Galois) </strong></span>Sigui <span class="math inline">\(K/F\)</span> una extensió de Galois finita amb grup de Galois <span class="math inline">\(G\)</span>. Hi ha una bijecció entre
+<span class="math display">\[
+\{\text{subcossos $K/M/F$}\} \stackrel{1\colon 1}{\longleftrightarrow} \{subgrups H \leq G\}
+\]</span>
+donada per $M<span class="math inline">\(H = \Gal(K/M)\)</span> i <span class="math inline">\(H\mapsto M = K^H\)</span> que satisfà:</p>
+<ol style="list-style-type: decimal">
+<li>(gira les inclusions) <span class="math inline">\(M_1 \subseteq M_2\)</span> si i només si <span class="math inline">\(H_2\leq H_1\)</span>.</li>
+<li>(preserva els graus) <span class="math inline">\([K\colon M] = |H|\)</span> i <span class="math inline">\([M \colon F] = [G \colon H]\)</span>.</li>
+<li>(preserva normalitat) <span class="math inline">\(M/F\)</span> és Galois si i només si <span class="math inline">\(H\)</span> és normal en <span class="math inline">\(G\)</span>.</li>
+<li>(gira els reticles) <span class="math inline">\(M_1M_2 \leftrightarrow H_1\cap H_2\)</span> i <span class="math inline">\(M_1\cap M_2 \leftrightarrow \langle H_1, H_2\rangle\)</span>.</li>
+</ol>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-102" class="example"><strong>Exemple 8.1  </strong></span>Calculem alguns exemples, com <span class="math inline">\(\QQ(\sqrt{2}, \sqrt{3})\)</span>, el cos de descomposició de <span class="math inline">\(\sqrt[3]{2}\)</span>, <span class="math inline">\(\QQ(\sqrt{2}+\sqrt{3})\)</span>,
+o el cos de descomposició de <span class="math inline">\(\QQ(\sqrt[8]{2}, \zeta_8)\)</span> de <span class="math inline">\(\sqrt[8]{2}\)</span>. És important adonar-se que no n’hi ha prou en assignar valors
+als generadors d’una extensió per definir un automorfisme, ja que hi pot haver relacions amagades entre els
+generadors. Per exemple, si <span class="math inline">\(\theta=\sqrt[8]{2}\)</span>, tenim <span class="math inline">\(\theta^4 = \zeta_8 + \zeta_8^{-1}\)</span> i per tant no totes
+les tries
+<span class="math inline">\(\theta\mapsto \theta\zeta_8^i\)</span> i <span class="math inline">\(\zeta_8\mapsto \theta_8^j\)</span> amb <span class="math inline">\(j\)</span> senar donen lloc a automorfismes.</p>
 </div>
 
 </div>
