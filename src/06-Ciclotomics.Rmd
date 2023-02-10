@@ -1,4 +1,5 @@
-# Polinomis Ciclotòmics
+# Polinomis Ciclotòmics {#ciclotomics}
+
 
 L'objectiu principal és demostrar que l'extensió ciclotòmica $\QQ(\zeta_n)$ té grau $\varphi(n)$ (la phi d'Euler). Per això,
 introduïrem els polinomis ciclotòmics, veurem que són irreductibles i mònics i tenen coeficients enters.

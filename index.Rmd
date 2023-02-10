@@ -10,7 +10,7 @@ link-citations: yes
 github-repo: mmasdeu/teoriadegalois
 description: "Apunts d'un curs de Teoria de Galois a la UAB"
 nocite: | 
-  @dummitfoote, @artinalgebra
+  @geck, @rotman, @weintraub, @zbigniew, @dummitfoote, @artinalgebra
 output:
   bookdown::gitbook:
     split_by: chapter

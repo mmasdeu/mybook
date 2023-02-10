@@ -3,8 +3,6 @@
 Enunciem i demostrem el teorema fonamental de la teoria de Galois. Acabarem
 amb diversos exemples concrets d'extensions, il·lustrant la correspondència de Galois.
 
-
-
 ::: {.proposition}
 Sigui $K$ una cos qualsevol. Sigui $G\leq\Aut(K)$ un subgrup finit, i sigui $F=K^G$. Aleshores $K$ és Galois sobre $F$,
 i $\Gal(K/F) = G$.
@@ -25,14 +23,92 @@ Si $G_1$ i $G_2$ són subgrups diferents d'$\Aut(K)$, aleshores $K^{G_1} \neq K^
 Trivial.
 :::
 
-El següent resultat ens permet caracteritzar les extensions de Galois d'una altra manera.
+Sigui $K/F$ una extensió finita de Galois. A cada subextensió $K/M$ li podem associar el seu
+grup de Galois, $\Gal(K/M)$. També podem associar a cada subgrup $H\leq \Gal(K/F)$ el cos fix $K^H$.
+El següent resultat ens diu que aquestes dues operacions són inverses mútuament.
 
-::: {.theorem #galois-sii-normal-separable name="caracterització de les extensions de Galois"}
-Una extensió $K/F$ és de Galois si i només si $K$ és el cos de descomposició d'un polinomi separable.
-
-A més, en aquest cas tot polinomi irreductible $f(x)\in F[x]$ amb una arrel a $K$ descomposa
-completament a $K$ (en particular, $K$ és una extensió separable).
+::: {.theorem}
+Sigui $K/F$ finita Galois. Aleshores $M\mapsto \Gal(K/M)$ i $H\mapsto K^H$ estableixen una bijecció
+$$
+\{\text{ subextensions } K/M/F\} \stackrel{1\colon 1}{\longleftrightarrow} \{\text{ subgrups } H \leq \Gal(K/F)\}.
+$$
+A més el grau $[M \colon F]$  es correspon amb l'ordre d'$H$.
 :::
 ::: {.proof}
-TODO
+Hem de veure:
+1. $K^{\Gal(K/M)}= M$. Això és automàtic a partir de la proposició i del Corol·lari @ref(fix-gal-eq).
+2. $\Gal(K / K^H) = H$. Escrivim $M=K^H$. Ja sabem que $K/M$ és de Galois, i $|\Gal(K/M)|= [K\colon M]$.
+A més, per definició tenim $H\leq \Gal(K/M)$. Hem de demostrar la igualtat: donat $\tau\in \Gal(K/M)$, veurem
+que $K=\bigcup_{\sigma\in H} \Eq(\sigma,\tau)$. Pel Lema @ref(lema-algebra-lineal), algun dels $\Eq(\sigma,\tau)$
+ha de ser tot $K$, i això ens diu que $\tau\in H$. Per tant, només ens cal comprovar que per tot $\alpha\in K$,
+hi ha algun $\sigma\in H$ tal que $\sigma(\alpha)=\tau(\alpha)$. Considerem el polinomi
+$$
+f(x) = \prod_{\sigma \in H} (x - \sigma(\alpha)) \in K[x].
+$$
+Fixem-nos que $\sigma(f)=f$ per tot $\sigma\in H$ i per tant $f(x)\in K^H[x] = M[x]$. Com que $\tau$ fixa $M$,
+tenim que $\tau(f)=f$. Però aleshores $\tau(\alpha)$ ha de ser una arrel de $f$, és a dir, $\tau(\alpha)=\sigma(\alpha)$
+per algun $\sigma\in H$, com volíem.
+:::
+
+Hem vist que si $K/M/F$ és Galois aleshores $K/M$ també ho és. Què podem dir de l'extensió $M/F$?
+::: {.proposition}
+Sigui $K/M/F$ una torre amb $K/F$ Galois, posem $G=\Gal(K/F)$. Aleshores són equivalents:
+1. $M/F$ és Galois.
+2. $H=\Gal(K/M)$ és un subgrup normal de $G$.
+3. $\sigma(M)\subseteq M$ per a tot $\sigma\in G$.
+
+En aquest cas, $\Gal(M/F) \cong G / H$.
+:::
+::: {.proof}
+Sigui $H = \Gal(K/M)$.
+$1 \implies 2$: Sigui $\sigma\in G$. Si $\alpha\in M$ té polinomi mínim $f(x)\in F[x]$, aleshores $\sigma$
+en permuta les seves arrels i, en particular, $\sigma(\alpha) \in $M$. Per tant $\sigma$ restringeix a un
+morfisme de $M$, que ja hem vist que és un automorfisme. Hem construit doncs una aplicació $G\to H$,
+i és fàcil comprovar que és un morfisme de grups. El seu nucli és doncs un subgrup normal, format
+per aquells automorfismes $\sigma\in G$ que fixen $M$, és a dir, és justament $\Gal(K/M)$.
+
+$2 \implies 3$: Sigui $\sigma \in G$. Per definició, $\sigma(M) \in K^{\tilde H}$, on $\tilde H = \sigma H \sigma^{-1}$.
+Com que $H$ és normal $\tilde H=H$ i $K^{\tilde H} = K^H = M$.
+
+$3 \implies 1$: escrivim $M = F(\alpha_1,\ldots \alpha_n)$, i considerem
+$$
+B = \{\sigma(\alpha_i) ~|~ \sigma \in G, i=1,\ldots,n\}.
+$$
+Aleshores $f(x)=\prod_{\beta in B} (x-\beta)$ és un polinomi separable amb coeficients
+a $F$. La hipòtesi és que $B\subseteq M$ i, per tant, $M$ és el cos de descomposició de $f$.
+:::
+
+Per acabar d'entendre bé la correspondència de Galois, relacionem operacions conegudes entre cossos i entre grups.
+::: {.proposition name=""}
+Sigui $K/F$ Galois amb $G = \Gal(K/F)$. Sigui $M_1$ i $M_2$ dues subextensions, amb $H_i=\Gal(K/M_i)$. Aleshores:
+
+1. $\Gal(K/M_1M_2) = H_1 \cap H_2$, i
+2. $\Gal(K/(M_1\cap M_2)) = \langle H_1, H_2\rangle$.
+:::
+::: {.proof}
+Directa, per definició.
+:::
+
+Podem resumir tot l'episodi en un sol resultat:
+
+::: {.theorem name="Teorema fonamental de la teoria de Galois"}
+Sigui $K/F$ una extensió de Galois finita amb grup de Galois $G$. Hi ha una bijecció entre
+$$
+\{\text{subcossos $K/M/F$}\} \stackrel{1\colon 1}{\longleftrightarrow} \{subgrups H \leq G\}
+$$
+donada per $M\mapsto $H = \Gal(K/M)$ i $H\mapsto M = K^H$ que satisfà:
+
+1. (gira les inclusions) $M_1 \subseteq M_2$ si i només si $H_2\leq H_1$.
+2. (preserva els graus) $[K\colon M] = |H|$ i $[M \colon F] = [G \colon H]$.
+3. (preserva normalitat) $M/F$ és Galois si i només si $H$ és normal en $G$.
+4. (gira els reticles) $M_1M_2 \leftrightarrow H_1\cap H_2$ i $M_1\cap M_2 \leftrightarrow \langle H_1, H_2\rangle$.
+:::
+
+::: {.example}
+Calculem alguns exemples, com $\QQ(\sqrt{2}, \sqrt{3})$, el cos de descomposició de $\sqrt[3]{2}$, $\QQ(\sqrt{2}+\sqrt{3})$,
+o el cos de descomposició de $\QQ(\sqrt[8]{2}, \zeta_8)$ de $\sqrt[8]{2}$. És important adonar-se que no n'hi ha prou en assignar valors
+als generadors d'una extensió per definir un automorfisme, ja que hi pot haver relacions amagades entre els
+generadors. Per exemple, si $\theta=\sqrt[8]{2}$, tenim $\theta^4 = \zeta_8 + \zeta_8^{-1}$ i per tant no totes
+les tries
+$\theta\mapsto \theta\zeta_8^i$ i $\zeta_8\mapsto \theta_8^j$ amb $j$ senar donen lloc a automorfismes.
 :::

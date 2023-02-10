@@ -200,7 +200,7 @@ la maximalitat de $\bar{F}$.
 
 ::: {.proof}
 Presentem una demostració alternativa que amaga una mica més els problemes amb la teoria de conjunts. Gràcies
-a la Proposició @prop:clausura-algebraica-tecnica, n'hi ha prou amb construir una extensió $K/F$ algebraicament tancada.
+a la Proposició @prop:clausura-tecnica, n'hi ha prou amb construir una extensió $K/F$ algebraicament tancada.
 
 Per
 cada polinomi mònic no constant $f=f(x)\in F[x]$, considerem una variable $x_f$. Tenim l'anell de polinomis

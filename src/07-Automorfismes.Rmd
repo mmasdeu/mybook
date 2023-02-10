@@ -102,7 +102,7 @@ Aleshores apliquem inducció als subespais $U\cap V_i$ d'$U$, i obtenim un eleme
 El lema també és cert quan $V$ és de dimensió infinita (exercici), però no ens caldrà per les aplicacions.
 :::
 
-::: {.proposition}
+::: {.proposition #lema-algebra-lineal}
 Sigui $K/F$ una extensió finita, i siguin $K_1,\ldots,K_r$ subextensions diferents de $K$. Aleshores hi ha
 algun element de $K$ que no pertany a cap dels $K_i$.
 :::
@@ -126,10 +126,10 @@ En particular, $\Aut(K/F)$ és un grup finit.
 Suposem que $\Aut(K/F)$ conté $\sigma_1=1,\ldots,\sigma_{n}$ automorfismes
 diferents. Per cada $i\neq j$, considerem el conjunt
 $$
-M_{i,j} = \{x \in K ~|~ \sigma_i(x)=\sigma_j(x)\}.
+\Eq_{\sigma_i,\sigma_j} = \{x \in K ~|~ \sigma_i(x)=\sigma_j(x)\}.
 $$
-És fàcil veure que $M_{i,j}\subsetneq K$ i que $M_{i,j}$ és un cos. Aplicant la proposició anterior,
-hi ha algun $\alpha\in K$ que no està en cap dels $M_{i,j}$. El polinomi mínim d'$\alpha$ sobre $F$
+És fàcil veure que $\Eq_{\sigma_i,\sigma_j}\subsetneq K$ i que $\Eq_{\sigma_i,\sigma_j}$ és un cos. Aplicant la proposició anterior,
+hi ha algun $\alpha\in K$ que no està en cap dels $\Eq_{\sigma_i,\sigma_j}$. El polinomi mínim d'$\alpha$ sobre $F$
 té arrels $\alpha, \sigma_2(\alpha),\ldots,\sigma_{n+1}(\alpha)$, que són totes diferents. Per tant
 $[F(\alpha)\colon F]\geq n$. Però $F(\alpha)$ és una subextensió de $K$ i, per tant $[K\colon F]\geq n$.
 :::
@@ -142,7 +142,7 @@ Sigui $K/F$ una extensió finita. Diem que *$K$ és Galois sobre $F$* (o que $K/
 si $|\Aut(K/F)| = [K \colon F]$. En aquest cas, escriurem $\Gal(K/F) = \Aut(K/F)$.
 :::
 
-::: {.corollary}
+::: {.corollary #fix-gal-eq}
 Sigui $K/F$ una extensió finita i Galois. Aleshores $K^{\Gal(K/F)} = F$.
 :::
 ::: {.proof}
@@ -164,7 +164,7 @@ com volíem.
 Les dues propietats de les extensions de Galois de fet les caracteritzen. Vegem una quarta caracterització
 d'aquestes extensions:
 
-::: {.theorem}
+::: {.theorem name="Caracterització d'extensions de Galois"}
 Sigui $K/F$ una extensió finita i sigui $G=\Aut(K/F)$. Aleshores els següents enunciats són equivalents:
 1. $|G| = [K\colon F]$.
 2. $F = K^G$.
@@ -188,3 +188,12 @@ per a tot $i=1,\ldots, m$ i concloem que $K$ és el cos de descomposició de $f(
 indicat a la Remarca @ref(remark:variacions-aixecament), a cada pas podem prendre per $\alpha$ una arrel del polinomi $f(x)$
 i per tant tindrem la igualtat.
 :::
+
+::: {.remark}
+Suposem que $K/F$ és de Galois, i sigui $\alpha\in K$ una arrel del polinomi $f(x)$ que apareix a la condició $(4)$.
+Aleshores $K=F(\alpha)$. Veiem doncs que tota extensió finita de Galois és primitiva. Més endavant veurem
+que només cal que $K/F$ sigui separable.
+:::
+
+Si $K/F$ és una extensió de Galois i $\alpha\in K$, els elements $\sigma(\alpha)$ (on $\sigma\in\Gal(K/F)$) s'anomenen
+*conjugats de Galois* d'$\alpha$ sobre $F$. Si $K/M/F$ és una subextensió, el cos $\sigma(M)$ s'anomena el conjugat de $M$ per $\sigma$.
