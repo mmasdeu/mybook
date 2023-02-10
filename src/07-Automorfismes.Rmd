@@ -1,9 +1,5 @@
 # Automorfismes
 
-Aquesta sessió no parla de teoria de cossos, sinó de grups. Això ens cal ja que el teorema fonamental ens relaciona les dues teories. Introduïrem
-la noció de resolubilitat d'un grup, parlarem dels grups simples i veurem que el grup alternat $A_n$ no és simple per a tot $n \geq 5$. Això
-implica que $S_n$ no és resoluble per $n\geq 5$.
-
 Començarem definint els automorfismes d'una extensió. Veurem que formen
 un grup, i que cada subgrup té associat el cos dels elements fixos per aquest. Veurem també
 que els automorfismes envien cada element $\alpha$ a una arrel de $\Irr(\alpha,x)$,
@@ -11,16 +7,19 @@ i demostrarem que en una extensió normal el cardinal del grup d'automorfismes e
 fitat pel grau de l'extensió. Així, podrem definir una extensió de Galois com aquella
 on la fita s'assoleix.
 
-## Automorfismes
+## Definició
 
 Sigui $K$ un cos. Un *automorfisme* de $K$ és simplement un isomorfisme de $K$ a $K$, i el grup d'automorfismes de $K$ (amb la
-composició) s'escriu $\Aut(K)$. Si tenim un subconjunt $S$ de $K$, diem que $\sigma\in\Aut(K)$ *fixa* $S$ si
+composició) s'escriu $\Aut(K)$.
+
+Si $\alpha\in K$, diem que $\sigma\in \Aut(K)$ *fixa* $\alpha$ si $\sigma(\alpha)=\alpha$. Més en general,
+si $S$ és un subconjunt de $K$, diem que $\sigma\in\Aut(K)$ *fixa* $S$ si
 $\sigma(x)=x$ per a tot $x\in S$.
 
-Fixem-nos també que tot automorfisme ha fixa el cos primer de $K$. En particular, $\Aut(K)=1$ quan $K=\QQ$ o $K=\FF_p$.
+Fixem-nos també que tot automorfisme fixa el cos primer de $K$ (exercici). En particular, $\Aut(\QQ)=\Aut(\FF_p)=1$.
 
-Un cas interessant de subconjunt $S$ es dona quan tenim una extensió de cossos $K/F$. En aquest cas,
-escrivim $\Aut(K/F)$ com el grup d'automorfismes que fixen $F$ (que és un subgrup de $\Aut(K)$):
+Un cas important de subconjunt $S$ es dona quan tenim una extensió de cossos $K/F$. En aquest cas,
+escrivim $\Aut(K/F)$ com el grup d'automorfismes que fixen $F$ (que és un subgrup d'$\Aut(K)$):
 
 $$
 \Aut(K/F) =\{\sigma \in \Aut(K) ~|~ \sigma(x)=x\,\forall x \in F\}.
@@ -29,7 +28,7 @@ $$
 
 ::: {.proposition}
 Sigui $K/F$ una extensió, i sigui $\alpha\in K$ un element algebraic sobre $F$. Aleshores
-per a tot $\sigma\in \Aut(K/F)$ es té $\sigma(\alpha)$ és una arrel de $\Irr(\alpha,F)(x)$.
+per tot $\sigma\in \Aut(K/F)$ envia $\alpha$ a una arrel $\sigma(\alpha)$ de $\Irr(\alpha,F)(x)$.
 :::
 ::: {.proof}
 Com que $\Irr(\alpha,F)(x)$ té coeficients a $F$ i $\sigma$ és un morfisme de cossos, tenim
@@ -39,14 +38,28 @@ $$
 :::
 
 ::: {.corollary}
-Sigui $f(x)\in F[x]$ un polinomi irreductible. Aleshores, si $K/F$ és una extensió i $\sigma\in\Aut(K/F)$,
-es té que $\sigma$ permuta les arrels de $f(x)$ a $K$.
+Sigui $f(x)\in F[x]$ un polinomi irreductible i $K/F$ és una extensió. Aleshores tot automorfisme
+$\sigma\in\Aut(K/F)$ permuta les arrels de $f(x)$ a $K$.
+:::
+
+::: {.corollary name=""}
+Sigui $K/F$ una extensió algebraica. Aleshores $\Hom_F(K, K) = \Aut(K/F)$.
+:::
+::: {.proof}
+Sigui $\sigma \colon K\to K$ un morfisme que fixa $F$. Ja sabem que és injectiu, però volem veure
+que és exhaustiu. Si $K/F$ és una extensió finita això ja ho sabem (per àlgebra lineal), però aquí
+ho volem veure en general. Sigui $\beta \in K$ qualsevol element. Considerem el conjunt
+$$
+B = \{\text{arrels de } \Irr_{\beta,F}(x) \text{ a } K \}.
+$$
+Aleshores $\sigma$ indueix una aplicació injectiva al conjunt finit $B$ i, per tant, també exhaustiva. Per tant
+hi ha $\alpha\in B\subseteq K$ tal que $\sigma(\alpha)=\beta$.
 :::
 
 Aquests resultats ens permeten descriure el grup d'automorfismes d'extensions algebraiques considerant
 com actuen aquests automorfismes en els elements que generen l'extensió, ja que tot
 automorfisme quedarà únicament determinat per aquesta acció. En particular, quan $K/F$ és finita
-el nombre d'autormorfismes també serà finit.
+el nombre d'automorfismes també serà finit.
 
 ::: {.example}
 Calculem $\Aut(\QQ(\sqrt{2})/\QQ)=\{1,\sigma\}$ i $\Aut(\QQ(\sqrt[3]{2})/QQ) = 1$.
@@ -74,4 +87,104 @@ Sigui $K$ un cos.
 Trivial.
 :::
 
-El teorema que ara ens disposem a demostrar és molt important, però és una mica carregós de notació. 
+::: {.lemma}
+Sigui $F$ un cos infinit, i sigui $V$ un $F$-espai vectorial, i siguin $V_1,\ldots,V_r$ subespais propis.
+Aleshores $V\neq \bigcup V_i$.
+:::
+::: {.proof}
+Fem inducció en la dimensió $n$ de V. El cas $n=1$ és trivial, així que
+podem assumir-ho cert per tot $F$-espai vectorial de dimensió $\leq n-1$ i ho demostrarem per $V$.
+Triem un subespai $U\subset V$ de dimensió $n-1$ diferent de tots els $V_i$ (aquí utilitzem que $F$ és infinit).
+Aleshores apliquem inducció als subespais $U\cap V_i$ d'$U$, i obtenim un element d'$U$ que ja ens serveix. 
+:::
+
+::: {.remark}
+El lema també és cert quan $V$ és de dimensió infinita (exercici), però no ens caldrà per les aplicacions.
+:::
+
+::: {.proposition}
+Sigui $K/F$ una extensió finita, i siguin $K_1,\ldots,K_r$ subextensions diferents de $K$. Aleshores hi ha
+algun element de $K$ que no pertany a cap dels $K_i$.
+:::
+::: {.proof}
+Si $F$ és infinit, ja estem pel lema anterior. Fem doncs el cas on $F$ és finit. En aquest cas $K$ també és finit, posem que té $p^n$ elements. Aleshores
+els $K_i$ també són finits, i tenen $p^i$ elements cadascun. Com que tots són diferents i hi ha un únic
+cos finit de cada cardinal, la unió dels $K_i$ té com a molt
+$$
+\sum_{j=0}^{n-1} p^j = \frac{p^n-1}{p-1}
+$$
+elements, que és menor que $p^n$.
+:::
+
+::: {.theorem #geck}
+Sigui $K/F$ una extensió finita. Aleshores
+$$|\Aut(K/F)| \leq [K\colon F].$$
+
+En particular, $\Aut(K/F)$ és un grup finit.
+:::
+::: {.proof}
+Suposem que $\Aut(K/F)$ conté $\sigma_1=1,\ldots,\sigma_{n}$ automorfismes
+diferents. Per cada $i\neq j$, considerem el conjunt
+$$
+M_{i,j} = \{x \in K ~|~ \sigma_i(x)=\sigma_j(x)\}.
+$$
+És fàcil veure que $M_{i,j}\subsetneq K$ i que $M_{i,j}$ és un cos. Aplicant la proposició anterior,
+hi ha algun $\alpha\in K$ que no està en cap dels $M_{i,j}$. El polinomi mínim d'$\alpha$ sobre $F$
+té arrels $\alpha, \sigma_2(\alpha),\ldots,\sigma_{n+1}(\alpha)$, que són totes diferents. Per tant
+$[F(\alpha)\colon F]\geq n$. Però $F(\alpha)$ és una subextensió de $K$ i, per tant $[K\colon F]\geq n$.
+:::
+
+Donarem un nom doncs a aquelles extensions
+que tinguin el nombre màxim d'automorfismes que permet aquesta fita.
+
+::: {.definition #extensio-galois name="extensió de Galois"}
+Sigui $K/F$ una extensió finita. Diem que *$K$ és Galois sobre $F$* (o que $K/F$ és una *extensió de Galois*)
+si $|\Aut(K/F)| = [K \colon F]$. En aquest cas, escriurem $\Gal(K/F) = \Aut(K/F)$.
+:::
+
+::: {.corollary}
+Sigui $K/F$ una extensió finita i Galois. Aleshores $K^{\Gal(K/F)} = F$.
+:::
+::: {.proof}
+Escrivim $G=\Gal(K/F)$, i sigui $M=K^{G}\supseteq F$. Tenim, per definició, que $G = \Aut(K/M)$.
+Per tant, $[K\colon F] = |G|\leq [K\colon M]$, del que en deduim $F = M$.
+:::
+
+::: {.corollary}
+Sigui $K/F$ una extensió finita i Galois. Aleshores hi ha un polinomi irreductible i separable
+$f(x)\in F[x]$ de grau $[K\colon F]$ que descomposa completament a $K$.
+:::
+::: {.proof}
+Sigui $n=[K\colon F]=|\Gal(K/F)|$. A la demostració del teorema, prenem tots els $n$ automorfismes,
+obtenint $\alpha\in K$ tal que $F(\alpha) = F$. El seu polinomi mínim $f(x)\in F[x]$ és irreductible,
+de grau $n$ i té per arrels $\{\sigma(\alpha) ~|~\sigma\in \Aut(K/F)\}$. Per tant té $n$ arrels totes diferents,
+com volíem.
+:::
+
+Les dues propietats de les extensions de Galois de fet les caracteritzen. Vegem una quarta caracterització
+d'aquestes extensions:
+
+::: {.theorem}
+Sigui $K/F$ una extensió finita i sigui $G=\Aut(K/F)$. Aleshores els següents enunciats són equivalents:
+1. $|G| = [K\colon F]$.
+2. $F = K^G$.
+3. $K/F$ és normal i separable.
+4. Hi ha un polinomi $f(x)\in F[x]$ irreductible i separable de grau $[K\colon F]$ que descomposa completament a $K$.
+:::
+::: {.proof}
+Ja hem vist $1 \implies 2$ i $1 \implies 4$. Fixem-nos també que $4\implies 3$ és obvi.
+- $2 \implies 3$: Suposem que $K=F(\alpha_1,\ldots, \alpha_m)$, i considerem el conjunt finit
+$$
+B = \{\sigma(\alpha_i) ~|~ \sigma \in G, i = 1,\ldots, m\}.
+$$
+Fixem-nos que no sabem quants elements exactament conté $B$. En tot cas, considerem el polinomi separable
+$$
+f(x) = \prod_{\beta \in B} (z - \beta).
+$$
+Observem que $\sigma(f)=f$ per a tot $\sigma\in G$ i, per tant, $f \in K^G[x]=F[x]$. Finalment, $\alpha_i$ és arrel de $f(x)$
+per a tot $i=1,\ldots, m$ i concloem que $K$ és el cos de descomposició de $f(x)$.
+
+- $3 \implies 1$: Suposem que $K/F$ és el cos de descomposició d'un polinomi separable $f(x)\in F[x]$. Com s'ha
+indicat a la Remarca @ref(remark:variacions-aixecament), a cada pas podem prendre per $\alpha$ una arrel del polinomi $f(x)$
+i per tant tindrem la igualtat.
+:::

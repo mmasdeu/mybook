@@ -68,7 +68,7 @@ amb $[F_{i+1}\colon F_i] \leq 2$, tals que $\alpha\in F_n$. En particular, $\alp
 
 D'aquí en deduïm directament el següent teorema (on haurem d'assumir que $\pi$ és transcendent, cosa que no demostrem).
 
-::: {.theorem name=""}
+::: {.theorem}
 Els tres problemes clàssics no són resolubles.
 :::
 ::: {.proof}
@@ -88,7 +88,7 @@ també podríem construir $\pi$, que és transcendent (com hem dit, no ho demost
 
 Més endavant estudiarem quins angles són constructibles. De fet, tenim el següent:
 
-::: {.theorem name=""}
+::: {.theorem}
 Sigui $t$ un enter. L'angle de $t$ graus (no radians!) és constructible si i només si $t$ és un múltiple de $3$.
 :::
 ::: {.proof}

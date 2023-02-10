@@ -125,6 +125,7 @@ Si $K/F$ és una extensió algebraica i $L/K$ també, aleshores $L/F$ és algebr
 TODO
 :::
 
+
 ## Compositum de cossos
 
 Recordem que donats dos cossos $K_1/F$ i $K_2/F$, el seu *compost* (o *compositum*) $K_1K_2 /F$ és el mínim cos que conté
@@ -140,7 +141,7 @@ $$
 \begin{xy}
 \xymatrix{
   & K_1 K_2 \\
-  K_1\ar@{-}^{\leq m}[ur]\ar@{-}^{n}[dr] &&K_2\ar@{-}[ul]^{\leq n}\ar@{-}[dl]^{m}\\
+  K_1\ar@{-}^{\leq m}[ur]\ar@{-}^{n}[dr] &&K_2\ar@{-}[ul]_{\leq n}\ar@{-}[dl]^{m}\\
   &F
 }
 \end{xy}

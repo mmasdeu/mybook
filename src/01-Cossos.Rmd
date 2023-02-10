@@ -77,18 +77,18 @@ El *grau* de l'extensió $K/F$ és la dimensió de $K$ com a $F$-espai vectorial
 i infinita si no.
 :::
 
-::: {.theorem #ext-arrel name="adjunció d'arrels"}
-Sigui $p(x)\in F[x]$ un polinomi irreductible. Aleshores existeix una extensió $K/F$ tal que $K$ té una arrel de $p(x)$.
+::: {.theorem #kronecker name="Kronecker"}
+Sigui $f(x)\in F[x]$ un polinomi. Aleshores existeix una extensió $K/F$ tal que $K$ té una arrel de $f(x)$.
 :::
 ::: {.proof}
 TODO
 :::
 
 El següent teorema ens diu que l'extensió donada pel teorema anterior té grau igual al grau del polinomi (per això s'ha triat
-el nom!). De fet, ens dona una base de $K$ com a $F$-espai vectorial.
+el nom!) quan aquest és irreductible. De fet, ens dona una base de $K$ com a $F$-espai vectorial.
 
 ::: {.theorem #ext-arrel-base}
-Sigui $p(x)\in F[x]$ un polinomi irreductible de grau $n$, i sigui $K=F[x]/(p(x))$. Sigui $\alpha$ la classe de $x$ a $K$.
+Sigui $f(x)\in F[x]$ un polinomi irreductible de grau $n$, i sigui $K=F[x]/(f(x))$. Sigui $\alpha$ la classe de $x$ a $K$.
 Aleshores els elements $(1,\alpha,\ldots,\alpha^{n-1})$ formen una $F$-base de $K$.
 :::
 ::: {.proof}
@@ -126,8 +126,8 @@ conjunt finit format per $\alpha_1,\ldots,\alpha_n$ aleshores escriurem $F(\alph
 un *element primitiu* de l'extensió (que no és únic, en general!).
 
 ::: {.theorem #ext-simple name="extensió simple"}
-Sigui $p(x)\in F[x]$ un polinomi irreductible, i suposem que $K/F$ és una extensió que conté una arrel $\alpha$ de $p(x)$.
-Aleshores hi ha un isomorfisme $$F[x]/(p(x))\cong F(\alpha).$$
+Sigui $f(x)\in F[x]$ un polinomi irreductible, i suposem que $K/F$ és una extensió que conté una arrel $\alpha$ de $f(x)$.
+Aleshores hi ha un isomorfisme $$F[x]/(f(x))\cong F(\alpha).$$
 Aquest isomorfisme és únic si demanem que $[x]\mapsto \alpha$.
 :::
 ::: {.proof}
@@ -139,29 +139,35 @@ Expliquem l'exemple de $\QQ(\sqrt{2})$ i la diferència amb $\QQ(\sqrt[3]{2})$. 
 un altre subcòs de $\CC$ que és isomorf a aquest.
 :::
 
-::: {.remark name=""}
+::: {.remark}
 En els exemples, hem construit cossos que contenen una de les tres possibles arrels de $x^3-2$. Aquests són isomorfs, tal
 i com hem vist. El fet que un sigui subcos de $\RR$ i l'altre de $\CC$ té a veure amb anàlisi, no amb àlgebra. Algebraicament,
 no es poden distingir. 
 :::
 
-Acabem amb un teorema que ens servirà més endavant:
+Acabem amb un teorema que ens servirà més endavant. Ens anirà bé fer servir la notació següent. Si
+$\sigma \colon F \to L$ és un morfisme de cossos i $f(x)\in F[x]$ és un polinomi qualsevol,
+escrivim $\sigma(f)\in L[x]$ per denotar el polinomi obtingut d'$f(x)$ aplicant $\sigma$ als seus
+coeficients.
 
-::: {.theorem #extensio-isos name="extensió d'isomorfismes"}
-Sigui $\varphi\colon F\to \tilde F$ un isomorfisme de cossos. Sigui $p(x)\in F[x]$ un polinomi irreductible,
-i sigui $\tilde p(x)$ el polinomi resultant d'aplicar $\varphi$ als coeficients de $p(x)$. Sigui $\alpha$ una
-arrel de $p(x)$ en alguna extensió de $K$, i sigui $\beta$ una arrel de $\tilde p(x)$ en una extensió de $\tilde F$.
-Aleshores l'aplicació $\alpha\mapsto \beta$ indueix un isomorfisme de cossos
+::: {.theorem #extensio-morfismes name="extensió de morfismes"}
+Sigui $\sigma\colon F\to L$ un morfisme de cossos.
+Sigui $f(x)\in F[x]$ un polinomi irreductible. Aleshores l'aplicació $\varphi \mapsto \varphi(\alpha)$ indueix una bijecció
 $$
-\Phi\colon F(\alpha) \cong \tilde F(\beta)
+\Hom_{\sigma}(F(\alpha), L) \to \{\beta\in L ~|~ \sigma(f)(\beta) = 0 \}.
 $$
-tal que $\Phi_{| F} = \varphi$:
 $$
 \begin{xy}
 \xymatrix{
-  F(\alpha)\ar_{\cong}^{\Phi}[r]\ar@{-}[d] & \tilde F(\beta)\ar@{-}[d]\\
-  F \ar_{\cong}^{\varphi}[r] & \tilde F.
+  F(\alpha)\ar^{\varphi}[r]\ar@{-}[dr] & L\\
+  &F \ar{\sigma}[ur].
 }
 \end{xy}
 $$
+:::
+::: {.proof}
+$$
+\Hom_\sigma (F(\alpha), L) \cong \Hom_{\sigma}(F[x]/(f(x)), L) \cong \{ \sigma \in \Hom_{\sigma}(F[x],L) ~|~ \sigma(f) = 0\},
+$$
+i aquest últim conjunt és precisament $\{\beta \in L ~|~ \sigma(f)(\beta) = 0\}$.
 :::

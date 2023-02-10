@@ -1,4 +1,4 @@
-# Descomposició
+# Normalitat
 
 El cos de descomposició d'un polinomi juga un paper destacat al llarg del curs.
 Aquí el definirem, i en demostrarem l'existència i unicitat (llevat d'isomorfisme).
@@ -7,7 +7,7 @@ Aprofitarem per definir extensions normals (aquelles que són cos de descomposic
 Com a aplicació, s'introduiran els polinomis i cossos ciclotòmics, i ho lligarem amb la
 demostració de l'existència i unicitat de cossos finits de cardinal potència d'un primer.
 
-També veurem les clausures algebraiques, i una construcció (seguint Artin). Això ens permetrà (assumint el teorema fonamental
+També veurem les clausures algebraiques, i una construcció (seguint @artinalgebra i @zbigniew). Això ens permetrà (assumint el teorema fonamental
 de l'àlgebra, que demostrarem més endavant) pensar els elements algebraics sobre $\QQ$ dins dels complexos.
 
 ## Cossos de descomposició
@@ -31,23 +31,40 @@ prendre per $K/F$ la intersecció de totes les subextensions $L/K'/F$ on $f(x)$ 
 Fixem-nos que cada vegada que adjuntem una arrel d'un polinomi de grau $n$, aquest polinomi tindrà un cofactor com a molt de grau $n-1$. Així,
 per obtenir un cos de descomposició en el pitjor dels casos haurem de fer una extensió de grau $n(n-1)(n-2)\cdots 2\cdot 1=n!$.
 
-El següent resultat ens dona una forma d'unicitat del cos de descomposició. Demostrarem de fet una mica més (obtenim
-la unicitat del cos de descomposició prenent $\varphi=\id$ al següent enunciat). Compareu (tant l'enunciat com la demostració)
-amb el \@ref(thm:extensio-isos)
 
-::: {.theorem #unicititat-splittingfield name="unicitat del cos de descomposició"}
-Sigui $\varphi\colon F\to \tilde F$ un isomorfisme de cossos. Sigui $f(x)\in F[x]$ i denotem amb $\tilde f(x)\in \tilde F[x]$
-el polinomi obtingut a partir d'aplicar $\varphi$ als coeficients de $f(x)$. Sigui $K/F$ un cos de descomposició de $f(x)$,
-i sigui $\tilde K/\tilde F$ un cos de descomposició de $\tilde f(x)$. Aleshores existeix un isomorfisme $\Psi\colon K \to \tilde K$
-que extén $\varphi$.
+Podem fer servir la fórmula de les torres per demostrar una versió més forta d'aixecament de morfismes.
+
+::: {.theorem #iso-lifting name="teorema d'aixecament d'isomorfismes"}
+Sigui $K/F$ una extensió finita, i sigui $L/F$ una extensió. Aleshores:
+$$
+|\Hom_{F} (K, L)| \leq [K\colon F].
+$$
 :::
 ::: {.proof}
-Es fa per inducció en el grau de $f(x)$. És una mica llarg de fer si es fa amb detall. TODO.
+Farem inducció en el grau $n=[K\colon F]$. Quan $n=1$, el resultat és trivial. En general, prenem un element $\alpha\in K\setminus F$
+i fem servir la fórmula de les torres i @ref(thm:extensio-morfismes). El cardinal de $\Hom_F(F(\alpha), L)$
+és igual al nombre d'arrels d'$\Irr_{\alpha, F}(x)$ a $L$, que com a molt és $[F(\alpha) \colon F]$. 
+
+En tot cas, si $\tilde\sigma$ és un d'aquests morfismes, com que $[K \colon F(\alpha)]< [K\colon F]$ podem aplicar la hipòtesi
+d'inducció i $\tilde\sigma$ es pot aixecar a com a molt $[K\colon F(\alpha)]$ morfismes a $L$.
 :::
 
-En comptes de considerar un sol polinomi, podem considerar una col·lecció arbitrària de polinomis. Si $K/F$ és el
-cos de descomposició d'una col·lecció arbitrària de polinomis, direm que $K/F$ és una *extensió normal*. És a dir,
-ser cos de descomposició és el mateix que ser normal, però quan diem *normal* no hem d'especificar els polinomis.
+::: {.remark #variacions-aixecament}
+Fixem-nos que pot ser que no hi hagi cap aixecament.
+Això passarà justament quan $\Irr_{\alpha,F}(x)$ no tingui cap arrel a $L$ en algun pas de la demostració.
+
+En l'extrem oposat, per obtenir una igualtat en l'enunciat del teorema ens caldria que cada polinomi irreductible
+que considerem descomposés completament a $L$, amb arrels diferents. Més endavant això serà important.
+:::
+
+::: {.proposition #unicititat-splittingfield name="unicitat del cos de descomposició"}
+Siguin $K/F$ i $K'/F$ dos cossos de descomposició de $f(x)\in F[x]$. Aleshores $K \cong K'$.
+:::
+::: {.proof}
+Prenem $L = K'$ al Teorema @ref(thm:iso-lifting) i en repetim la demostració. A cada pas,
+podem prendre com a $\alpha$ una arrel de $f(x)$ i sempre obtindrem arrels a $K'$ perquè $f(x)$
+hi trenca completament.
+:::
 
 ::: {.example }
 Calcularem els cossos de descomposició dels exemples que estem fent servir: $x^2-2$, $(x^2-2)(x^2-3)$, $x^3-2$ i de $x^4+4$, per exemple, ja
@@ -55,7 +72,7 @@ que en aquest cas el cos de descomposició és simplement $\QQ(i)$.
 :::
 
 ::: {.example #cossos-ciclotomics name="cossos ciclotòmics"}
-Calculem el cos de descomposició del poinomi $x^n-1$.
+Calculem el cos de descomposició del polinomi $x^n-1$.
 Les seves arrels s'anomenen *arrels $n$-èssimes de la unitat*. En els complexos
 les arrels són els nombres $e^{\frac{2\pi i}{n}}$, amb $n=0,\ldots,n-1$.
 Per tant $\CC$ conté el cos de descomposició de $x^n-1$. En general,
@@ -93,14 +110,15 @@ $$
 \begin{xy}
 \xymatrix{
   & \QQ(\sqrt[p]{2},\zeta_p) \\
-  \QQ(\zeta_p)\ar@{-}^{p}[ur]\ar@{-}^{p-1}[dr] &&\QQ(\sqrt[p]{2})\ar@{-}[ul]^{p-1}\ar@{-}[dl]^{p}\\
+  \QQ(\zeta_p)\ar@{-}^{p}[ur]\ar@{-}^{p-1}[dr] &&\QQ(\sqrt[p]{2})\ar@{-}[ul]_{p-1}\ar@{-}[dl]_{p}\\
   &\QQ
 }
 \end{xy}
 $$
 
 :::
-## Clausura algebraica
+
+## La clausura algebraica
 
 ::: {.definition #clausura-algebraica name="clausura algebraica"}
 Diem que $\bar{F}/F$ és una *clausura algebraica* d'$F$ si $\bar{F}/F$ és algebraica i tot polinomi $f(x)\in F[x]$
@@ -159,7 +177,7 @@ el cos de descomposició del producte $g_1(x)\cdots g_n(x)$.
 Sigui $F$ un cos. Aleshores existeix una clausura algebraica $\bar{F}/F$.
 :::
 ::: {.proof}
-Consideremm un conjunt $\mathcal{U} \supset F$ de cardinal estrictament superior a $\mathcal{N}=\max(\aleph_0, |K|)$.
+Considerem un conjunt $\mathcal{U} \supset F$ de cardinal estrictament superior a $\mathcal{N}=\max(\aleph_0, |K|)$.
 
 Sigui
 $$X = \{K\subseteq L \subseteq S ~|~ L/K \text{ és una extensió algebraica de $K$}\},$$
@@ -215,4 +233,39 @@ La clausura algebraica és única llevat d'isomorfisme, fet que es pot deduir f�
 
 ::: {.proof}
 TODO
+:::
+
+## Extensions normals
+
+::: {.definition #ext-normal name="extensió normal"}
+Una extensió algebraica $K/F$ es diu *normal* si tot polinomi irreductible $f(x)\in F[x]$ que té una arrel a $K$ trenca
+completament a $K$.
+:::
+
+Dit d'una altra manera $K/F$ és normal si per tot $\alpha\in K$ el seu polinomi mínim sobre $F$ descomposa completament a $K$. D'entrada,
+sembla difícil demostrar que una extensió donada $K/F$ és normal, ja que cal veure una propietat per possiblement infinits polinomis. Veurem
+ara que les extensions normals tenen una caracterització més senzilla. En particular, el cos de descomposició d'un polinomi
+és sempre una extensió normal.
+
+::: {.proposition }
+Una extensió $K/F$ és normal si i només si $K$ és el cos de descomposició d'un conjunt $S\subset F[x]$ de polinomis de $F$.
+:::
+::: {.proof}
+Suposem que $K/F$ és normal. Per cada element $\alpha\in K$, denotem per $f_\alpha(x)=\Irr_{\alpha,F}(x)$.
+Aleshores $K$ és el cos de descomposició del conjunt $S=\{f_\alpha(x)~|~ \alpha\in K\}$.
+
+Recíprocament, si $K$ és el cos de descomposició d'un conjunt $S$ i $f(x)\in F[x]$ té una arrel $\alpha\in K$,
+aleshores sense perdre generalitat podem suposar que $f(x)$ és irreductible. Considerem el conjunt $\Sigma\subset K$
+d'elements de $K$ que són arrels de polinomis a $S$. Podem trobar un subconjunt finit $S_0$ i el seu corresponent
+conjunt d'arrels $\Sigma_0$ tals que $\alpha\in F(\Sigma_0)$. Però aleshores $F(\Sigma_0)$ és un
+cos de descomposició d'un polinomi (el que s'obté multiplicant tots els polinomis de $S_0$ i extraient-ne la part lliure
+de quadrats). Per tant, $f(x)$ descomposa completament a $F(\Sigma_0)$ i per tant també a $K$.
+:::
+
+::: {.proposition}
+Sigui $L/K/F$ una torre. Si $L/F$ és normal, aleshores $L/K$ també ho és.
+:::
+::: {.proof}
+Trivial: si $L/F$ és el cos de descomposició d'un conjunt de polinomis $S$, també ho és del mateix conjunt pensat
+com a conjunt de polinomis amb coeficients a $K$.
 :::

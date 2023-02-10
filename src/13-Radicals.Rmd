@@ -7,7 +7,7 @@ per tant, no existeix una fórmula que expressi les arrels d'un polinomi en term
 dels seus coeficients. També es mostrarà un exemple concret d'un polinomi de grau $5$ sobre $\QQ$
 amb grup de Galois $S_5$.
 
-::: {.proposition name=""}
+::: {.proposition}
 Sigui $f(x)\in \QQ[x]$ un polinomi irreductible de grau $p$ amb exactament $p-2$ arrels reals. Aleshores $\Gal(f)\cong S_p$.
 :::
 ::: {.proof}

@@ -1,4 +1,4 @@
-# Polinomis Inseparables
+# Polinomis (In)separables
 
 Definim la noció de separabilitat d'un polinomi, i posem algun exemple. Introduïm el morfisme de Frobenius,
 que ens permet definir cossos perfectes. Aprofitem per parlar del grau de separabilitat/inseparabilitat d'una
@@ -6,7 +6,7 @@ extensió, i la factorització d'aquesta.
 
 Finalment, donem l'existència i unicitat dels cossos finits.
 
-## Separabilitat de polinomis
+## Separabilitat de polinomis i extensions
 
 Sigui $F$ un cos.
 
@@ -46,6 +46,8 @@ tingui factors en comú amb $f(x)$, i això només pot passar si la derivada és
 Sigui $f(x)\in F[x]$ amb  $\car(F)=p$. Si $f'(x)=0$, aleshores hi ha un polinomi $f_1[x]\in F[x]$ tal que $f(x)=f_1(x^p)$.
 :::
 
+En particular, observem que si $f(x)\in F[x]$ és inseparable, aleshores el seu grau és un múltiple de $p$.
+
 ::: {.proposition}
 Sigui $f(x)\in F[x]$ amb $\car(F)=p$ un polinomi irreductible. Aleshores hi ha un únic $k\geq 0$ i un únic
 polinomi irreductible i separable $g(x)\in F[x]$ tal que
@@ -76,10 +78,12 @@ per a $1\leq i\leq p-1$, i la segona és trivial.
 :::
 
 El morfisme de la proposició anterior s'anomena el *morfisme de Frobenius*. Observem que si $\FF$ és un cos finit, aleshores el morfisme de
-Frobenius és un isomorfisme (només cal comptar), però en general no és cert. Per exemple, la imatge de Frobenius a $F=\FF_p(t)$ és $\FF_p(t^p)$.
+Frobenius és un isomorfisme (només cal comptar), però en general no és cert.
+Per exemple, la imatge de Frobenius a $F=\FF_p(t)$ és $\FF_p(t^p)$.
 
-::: {.proposition name=""}
-Si $\FF$ és un cos finit, aleshores tot polinomi irreductible sobre $\FF$ és separable.
+::: {.proposition}
+Sigui $\FF$ és un cos de característica $p$ tal que el morfisme
+de Frobenius és exhaustiu. Aleshores tot polinomi irreductible sobre $\FF$ és separable.
 :::
 ::: {.proof}
 Suposem que $f(x)$ fos inseparable. Aleshores $f(x)=f_1(x^p)$ per algun $f_1(x)\in \FF[x]$. Els coeficients de $f_1$ són potències de $p$, i
@@ -99,20 +103,46 @@ Aquesta definició ens servirà per unificar els dos casos on la separabilitat n
 Un cos $F$ és *perfecte* si té característica $0$ o bé el morfisme de Frobenius és exhaustiu.
 :::
 
+::: {.corollary}
+Si $F$ és perfecte, aleshores tot polinomi irreductible a $F[x]$ és separable.
+:::
+
+
 Finalment, podem introduir el concepte d'extensió separable.
 
 ::: {.definition #ext-separable name="extensió separable"}
 Una extensió $K/F$ és *separable* si tot element de $K$ és arrel d'un polinomi separable sobre $F$.
 :::
-
 ::: {.corollary}
-Tota extensió finita d'un cos perfecte és separable.
+Tota extensió finita d'un cos perfecte és separable. En particular, els cossos finits són separables.
 :::
 
+::: {.corollary}
+Sigui $F$ un cos de característica $p$, i sigui $K/F$ una extensió finita tal que $p \nmid [K\colon F]$.
+Aleshores $K/F$ és separable.
+:::
+::: {.proof}
+Sigui $\alpha \in K$, i considerem $\Irr_{\alpha, F}(x)$. Com que el seu grau és un divisor de $[K\colon F]$,
+no pot ser divisible per $p$ i, per tant, és separable.
+:::
 
-## Cossos finits
+Més endavant ens serà útil saber que que la separabilitat es comporta bé en torres.
+::: {.lemma}
+Sigui $L/K/F$ una torre. Si $L/F$ és separable, aleshores $L/K$ i $K/F$ també ho són.
+:::
+::: {.proof}
+Si $L/F$ aleshores $K/F$ és separable, trivialment. Per veure que $L/K$ també ho és, observem
+simplement que per tot $\alpha\in L$, el polinomi $\Irr_{\alpha,K}(x)$ és un divisor (a $K[x]$) del polinomi $\Irr_{\alpha,F}(x)$.
+:::
 
-::: {.proposition name="Existència i unicitat de cossos finits"}
+Més endavant veurem que el recíproc també és cert, però per ara no ens caldrà.
+
+## Applicació : cossos finits
+
+L'objectiu és demostrar l'existència de cossos finits d'ordre qualsevol potència d'un primer, i veure que són únics
+(llevat d'isomorfisme).
+
+::: {.theorem name="Existència i unicitat de cossos finits"}
 Per tot primer $p$ i tot $n\geq 1$, hi ha un únic (llevat d'isomorfisme) cos finit d'ordre $p^n$, que
 denotarem per $\FF_{p^n}$. A més, si $\FF$ és un cos finit de característica $p$,
 aleshores és isomorf a $\FF_{p^n}$ per alguna $n \geq 1$.
@@ -132,5 +162,3 @@ d'ordre $p^n-1$ i, per tant $\alpha^{p^n-1} = 1$ per tot $\alpha\in \FF$. Per ta
 de $x^{p^n}-x$ i $\FF$ està contingut al cos de descomposició d'aquest polinomi. Mirant el nombre
 d'elements, veiem que és igual al cos de descomposició.
 :::
-
-## Extensions separables

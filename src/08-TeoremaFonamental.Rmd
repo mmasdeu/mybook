@@ -1,101 +1,38 @@
 # El Teorema Fonamental
 
-Enunciem i demostrem el teorema fonamental de la teoria de Galois. Farem
-servir la independència lineal dels caràcters (que tmabé demostrarem). Després veurem
-que si $L / F$ és una extensió finita i $H$ un subgrup de $\Aut(L/F)$, aleshores
-$[L \colon FH] = |H|$. Aquest fet, fonamental, ens permet també caracteritzar
-les extensions de Galois com aquelles que són normals i separables.
-
-Aleshores ja estarem en posició d'enunciar i demostrar el teorema fonamental. Acabarem
+Enunciem i demostrem el teorema fonamental de la teoria de Galois. Acabarem
 amb diversos exemples concrets d'extensions, il·lustrant la correspondència de Galois.
 
-## La independència (dels caràcters)
 
-En aquesta secció demostrarem un resultat d'àlgebra lineal necessari per la demostració del teorema fonamental de la TG.
-
-::: {.definition #caracter}
-Un *caràcter* $\chi$ d'un grup $G$ amb valors en un cos $L$ és un morfisme de grups
-$$
-\chi \colon G \to L^\times.
-$$
-:::
-
-Podem pensar un caràcter $\chi$ com una funció $G\to L$. Les funcions de $G$ a $L$ formen un $L$-espai vectorial, de manera òbvia.
-
-::: {.theorem name="Independència lineal dels caràcters" #caracters-li}
-Siguin $\chi_1,\ldots,\chi_n$ caràcters de $G$ diferents. Aleshores són linealment independents, és a dir, no hi ha
-cap combinació lineal no trivial $a_1\chi_1+\cdots+a_n\chi_n$ que doni lloc a la funció idènticament zero.
-:::
-
-::: {.proof}
-Suposem (reordenant, si cal) que podem escriure
-$$
-a_1\chi_1 + \cdots a_m\chi_m = 0,
-$$
-amb tots els $a_i\neq 0$ (observem $m\leq n$) i amb $m$ mínim. Obtindrem una relació de dependència amb menys termes, arribant així a contradicció.
-
-Prenem $g_0\in G$ tal que $\chi_1(g_0)\neq \chi_m(g_0)$. Aleshores tenim
-$$
-a_1\chi_1(g) + \cdots a_m\chi_m(g) = 0,
-$$
-i
-$$
-a_1\chi_1(g_0g) + \cdots a_m\chi_m(g_0g) = 0.
-$$
-Multiplicant la primera equació per $\chi_m(g_0)$ i restant-li la segona obtenim, per a tot $g$,
-$$
-a_1(\chi_m(g_0)-\chi_1(g_0)) \chi_1(g) + \cdots a_{m-1}(\chi_m(g_0)- \chi_{m-1}(g_0)) \chi_{m-1}(g) = 0.
-$$
-Com que el primer coeficient és diferent de zero, tenim una relació no trivial amb $m-1$ termes, contradicció.
-:::
-
-Un cas particular que ens interessa aquí prové de consirar un morfisme no trivial de cossos $\sigma\colon K\to L$,
-que indueix un morfisme de grups entre les unitats $\sigma\colon K^\times \to L^\times$ (aquesta restricció ja conté
-tota la informació que ens cal de $\sigma$, perquè ja sabem que $\sigma(0)=0$). Aleshores $\sigma$ esdevé un caràcter
-del grup $G=K^\times$, i per tant tenim el següent:
-
-::: {.corollary}
-Si $\sigma_1,\ldots,\sigma_n$ són morfismes diferents de $K$ a $L$, aleshores són linealment independents com a funcions de $K$.
-:::
-
-Un cas encara més particular d'aquest corol·lari ens permet demostrar una relació numèrica bàsica entre automorfismes d'un cos
-i els cossos que deixen fixes.
 
 ::: {.proposition}
-Sigui $S$ un subconjunt finit d'automorfismes d'un cos $K$, i sigui $F=K^G$ el seu cos fix. Aleshores
+Sigui $K$ una cos qualsevol. Sigui $G\leq\Aut(K)$ un subgrup finit, i sigui $F=K^G$. Aleshores $K$ és Galois sobre $F$,
+i $\Gal(K/F) = G$.
+:::
+::: {.proof}
+Per definició d'$F$, tenim $G \leq \Aut(K/F)$, i només ens cal veure la igualtat. El teorema
+ens diu que $|G|=[K\colon F]$, i ja hem vist $|\Aut(K/F)|\leq [K\colon F]$. Per tant:
 $$
-[K\colon F] \geq |S|.
+[K\colon F] = |G| \leq |\Aut(K/F)| \leq [K\colon F].
 $$
+Per tant, totes les desigualtats són igualtats i, en particular $|G| = |\Aut(K/F)|$.
+:::
+
+::: {.corollary}
+Si $G_1$ i $G_2$ són subgrups diferents d'$\Aut(K)$, aleshores $K^{G_1} \neq K^{G_2}$.
+:::
+::: {.proof}
+Trivial.
+:::
+
+El següent resultat ens permet caracteritzar les extensions de Galois d'una altra manera.
+
+::: {.theorem #galois-sii-normal-separable name="caracterització de les extensions de Galois"}
+Una extensió $K/F$ és de Galois si i només si $K$ és el cos de descomposició d'un polinomi separable.
+
+A més, en aquest cas tot polinomi irreductible $f(x)\in F[x]$ amb una arrel a $K$ descomposa
+completament a $K$ (en particular, $K$ és una extensió separable).
 :::
 ::: {.proof}
 TODO
-:::
-
-::: {.theorem}
-Sigui $G$ un subgrup finit d'automorfismes d'un cos $K$, i sigui $F=K^G$ el seu cos fix. Aleshores
-$$
-[K\colon F] = |G|.
-$$
-:::
-::: {.proof}
-Només ens cal veure que $[K\colon F] \leq |G|$, ja que l'altra desigualtat ja l'hem demostrat independentment
-del fet que $G$ sigui un grup.
-
-TODO (llarga)
-:::
-
-D'aquest resultat se'n desprenen fàcilment conseqüències molt importants que val la pena destacar.
-
-::: {.corollary}
-Si $K/F$ és una extensió finita, aleshores
-$$
-|\Aut(K/F)| \leq [K\colon F],
-$$
-amb igualtat si i només si $F$ és el cos fix d'$\Aut(K/F)$.
-:::
-
-Dit d'altra manera, l'extensió $K/F$ és Galois si i només si $F=K^{\Aut(K/F)}$.
-
-::: {.proof}
-TODO.
 :::

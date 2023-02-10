@@ -3,6 +3,8 @@
 L'objectiu principal és demostrar que l'extensió ciclotòmica $\QQ(\zeta_n)$ té grau $\varphi(n)$ (la phi d'Euler). Per això,
 introduïrem els polinomis ciclotòmics, veurem que són irreductibles i mònics i tenen coeficients enters.
 
+## Definició
+
 Sigui $\mu_n$ el grup de les arrels $n$-èssimes de la unitat, que podem pensar dins de $\CC$.
 Com a grup abstracte, és isomorf a $\ZZ/n\ZZ$ (un cop fixem una arrel primitiva $\zeta_n$):
 $$
@@ -20,6 +22,8 @@ $$
 $$
 :::
 
+## Càlcul recursiu
+
 Tenim la factorització
 $$
 x^n - 1= \prod_{\zeta \in \mu_n} (x-\zeta) = \prod_{d\mid n} \Phi_d(x).
@@ -28,6 +32,7 @@ En particular, comparant graus tenim la identitat
 $$
 n = \sum_{d \mid n} \varphi(d).
 $$
+
 
 A més, fixem-nos que la fórmula anterior ens permet calcular els polinomis ciclotòmics de manera recursiva,
 dividint pels factors coneguts:
@@ -55,13 +60,15 @@ Els primers valors són, per exemple:
 \Phi_{13}(x) &= x^{12} + x^{11} + x^{10} + x^{9} + x^{8} + x^{7} + x^{6} + x^{5} + x^{4} + x^{3} + x^{2} + x + 1
 \end{align}
 
-::: {.lemma name=""}
+::: {.lemma}
 Els polinomis $\Phi_n(x)$ són mònics de grau $\varphi(n)$ i tenen coeficients enters.
 :::
 ::: {.proof}
 L'únic que ens cal veure és que $\Phi_n(x)$ té coeficients enters. Això es veu fàcilment per inducció en $n$
 i l'algoritme de divisió, fent servir la fórmula \@ref(eq:ciclotomics-recursius).
 :::
+
+## Irreductibilitat
 
 Amb una mica més de feina podem veure que també són irreductibles.
 
