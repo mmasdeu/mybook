@@ -23,7 +23,7 @@
 <meta name="author" content="Marc Masdeu" />
 
 
-<meta name="date" content="2023-02-10" />
+<meta name="date" content="2023-02-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -104,20 +104,32 @@
 \renewcommand{\mcd}{\operatorname{mcd}}
 \renewcommand{\gcd}{\operatorname{mcd}}
 \renewcommand{\Eq}{\operatorname{Eq}}\)</span>
-
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
   extensions: ["tex2jax.js"],
   jax: ["input/TeX","output/HTML-CSS"],
   "HTML-CSS": {
-    styles: {".MathJax_Preview": {visibility: "hidden"}}
+      styles: {".MathJax_Preview": {visibility: "hidden"}},
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
   },
     tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]},
-  TeX: {extensions: ["AMSmath.js","AMSsymbols.js","https://mmasdeu.github.io/teoriadegalois/xypic.js"]}
+    TeX: {extensions: ["AMSmath.js","AMSsymbols.js","https://mmasdeu.github.io/teoriadegalois/xypic.js"],
+    noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },}
 });
 </script>
+<script>
+  MathJax = {
+    loader: {
+      load: ['[custom]/xypic.js'],
+      paths: {custom: '.'}
+    },
+    tex: {
+      packages: {'[+]': ['xypic']}
+    }
+  };
+</script>
 <script type="text/javascript" id="MathJax-script" async
-  src="https://cdn.jsdelivr.net/npm/mathjax/MathJax.js?config=TeX-AMS_HTML">
+src="https://cdn.jsdelivr.net/npm/mathjax/MathJax.js?config=TeX-AMS_HTML">
 </script>
 
 
@@ -203,7 +215,13 @@ div.csl-indent {
 <li class="chapter" data-level="7.2" data-path="automorfismes.html"><a href="automorfismes.html#cossos-fixos"><i class="fa fa-check"></i><b>7.2</b> Cossos fixos</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="el-teorema-fonamental.html"><a href="el-teorema-fonamental.html"><i class="fa fa-check"></i><b>8</b> El Teorema Fonamental</a></li>
-<li class="chapter" data-level="9" data-path="cossos-finits.html"><a href="cossos-finits.html"><i class="fa fa-check"></i><b>9</b> Cossos Finits</a></li>
+<li class="chapter" data-level="9" data-path="cossos-finits.html"><a href="cossos-finits.html"><i class="fa fa-check"></i><b>9</b> Cossos Finits</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="cossos-finits.html"><a href="cossos-finits.html#grup-de-galois"><i class="fa fa-check"></i><b>9.1</b> Grup de Galois</a></li>
+<li class="chapter" data-level="9.2" data-path="cossos-finits.html"><a href="cossos-finits.html#subcossos"><i class="fa fa-check"></i><b>9.2</b> Subcossos</a></li>
+<li class="chapter" data-level="9.3" data-path="cossos-finits.html"><a href="cossos-finits.html#polinomis-irreductibles"><i class="fa fa-check"></i><b>9.3</b> Polinomis irreductibles</a></li>
+<li class="chapter" data-level="9.4" data-path="cossos-finits.html"><a href="cossos-finits.html#la-clausura-algebraica-dff_p"><i class="fa fa-check"></i><b>9.4</b> La clausura algebraica d’<span class="math inline">\(\FF_p\)</span></a></li>
+</ul></li>
 <li class="chapter" data-level="10" data-path="lelement-primitiu.html"><a href="lelement-primitiu.html"><i class="fa fa-check"></i><b>10</b> L’element Primitiu</a></li>
 <li class="chapter" data-level="11" data-path="extensions-abelianes-i-ciclotòmiques.html"><a href="extensions-abelianes-i-ciclotòmiques.html"><i class="fa fa-check"></i><b>11</b> Extensions Abelianes i ciclotòmiques</a></li>
 <li class="chapter" data-level="12" data-path="arrels-i-radicals.html"><a href="arrels-i-radicals.html"><i class="fa fa-check"></i><b>12</b> Arrels i radicals</a></li>
@@ -238,10 +256,10 @@ per tant, no existeix una fórmula que expressi les arrels d’un polinomi en te
 dels seus coeficients. També es mostrarà un exemple concret d’un polinomi de grau <span class="math inline">\(5\)</span> sobre <span class="math inline">\(\QQ\)</span>
 amb grup de Galois <span class="math inline">\(S_5\)</span>.</p>
 <div class="proposition">
-<p><span id="prp:unlabeled-div-103" class="proposition"><strong>Proposició 12.1  </strong></span>Sigui <span class="math inline">\(f(x)\in \QQ[x]\)</span> un polinomi irreductible de grau <span class="math inline">\(p\)</span> amb exactament <span class="math inline">\(p-2\)</span> arrels reals. Aleshores <span class="math inline">\(\Gal(f)\cong S_p\)</span>.</p>
+<p><span id="prp:unlabeled-div-112" class="proposition"><strong>Proposició 12.1  </strong></span>Sigui <span class="math inline">\(f(x)\in \QQ[x]\)</span> un polinomi irreductible de grau <span class="math inline">\(p\)</span> amb exactament <span class="math inline">\(p-2\)</span> arrels reals. Aleshores <span class="math inline">\(\Gal(f)\cong S_p\)</span>.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-104" class="proof"><em>Prova</em>. </span>TODO</p>
+<p><span id="unlabeled-div-113" class="proof"><em>Prova</em>. </span>TODO</p>
 </div>
 <p>Podem aplicar el resultat anterior al polinomi <span class="math inline">\(f(x)=x^5-4x-2\)</span>. Com que és <span class="math inline">\(2\)</span>-Eisenstein, és irreductible. A més, la seva derivada
 és <span class="math inline">\(5x^4-4\)</span>, que té zeros a <span class="math inline">\(x=\pm\frac{\sqrt{2}}{\sqrt[4]{5}}\)</span>. Deduïm que <span class="math inline">\(f(x)\)</span> té exactament tres zeros reals,

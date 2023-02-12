@@ -23,7 +23,7 @@
 <meta name="author" content="Marc Masdeu" />
 
 
-<meta name="date" content="2023-02-10" />
+<meta name="date" content="2023-02-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -104,20 +104,32 @@
 \renewcommand{\mcd}{\operatorname{mcd}}
 \renewcommand{\gcd}{\operatorname{mcd}}
 \renewcommand{\Eq}{\operatorname{Eq}}\)</span>
-
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
   extensions: ["tex2jax.js"],
   jax: ["input/TeX","output/HTML-CSS"],
   "HTML-CSS": {
-    styles: {".MathJax_Preview": {visibility: "hidden"}}
+      styles: {".MathJax_Preview": {visibility: "hidden"}},
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
   },
     tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]},
-  TeX: {extensions: ["AMSmath.js","AMSsymbols.js","https://mmasdeu.github.io/teoriadegalois/xypic.js"]}
+    TeX: {extensions: ["AMSmath.js","AMSsymbols.js","https://mmasdeu.github.io/teoriadegalois/xypic.js"],
+    noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },}
 });
 </script>
+<script>
+  MathJax = {
+    loader: {
+      load: ['[custom]/xypic.js'],
+      paths: {custom: '.'}
+    },
+    tex: {
+      packages: {'[+]': ['xypic']}
+    }
+  };
+</script>
 <script type="text/javascript" id="MathJax-script" async
-  src="https://cdn.jsdelivr.net/npm/mathjax/MathJax.js?config=TeX-AMS_HTML">
+src="https://cdn.jsdelivr.net/npm/mathjax/MathJax.js?config=TeX-AMS_HTML">
 </script>
 
 
@@ -203,7 +215,13 @@ div.csl-indent {
 <li class="chapter" data-level="7.2" data-path="automorfismes.html"><a href="automorfismes.html#cossos-fixos"><i class="fa fa-check"></i><b>7.2</b> Cossos fixos</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="el-teorema-fonamental.html"><a href="el-teorema-fonamental.html"><i class="fa fa-check"></i><b>8</b> El Teorema Fonamental</a></li>
-<li class="chapter" data-level="9" data-path="cossos-finits.html"><a href="cossos-finits.html"><i class="fa fa-check"></i><b>9</b> Cossos Finits</a></li>
+<li class="chapter" data-level="9" data-path="cossos-finits.html"><a href="cossos-finits.html"><i class="fa fa-check"></i><b>9</b> Cossos Finits</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="cossos-finits.html"><a href="cossos-finits.html#grup-de-galois"><i class="fa fa-check"></i><b>9.1</b> Grup de Galois</a></li>
+<li class="chapter" data-level="9.2" data-path="cossos-finits.html"><a href="cossos-finits.html#subcossos"><i class="fa fa-check"></i><b>9.2</b> Subcossos</a></li>
+<li class="chapter" data-level="9.3" data-path="cossos-finits.html"><a href="cossos-finits.html#polinomis-irreductibles"><i class="fa fa-check"></i><b>9.3</b> Polinomis irreductibles</a></li>
+<li class="chapter" data-level="9.4" data-path="cossos-finits.html"><a href="cossos-finits.html#la-clausura-algebraica-dff_p"><i class="fa fa-check"></i><b>9.4</b> La clausura algebraica d’<span class="math inline">\(\FF_p\)</span></a></li>
+</ul></li>
 <li class="chapter" data-level="10" data-path="lelement-primitiu.html"><a href="lelement-primitiu.html"><i class="fa fa-check"></i><b>10</b> L’element Primitiu</a></li>
 <li class="chapter" data-level="11" data-path="extensions-abelianes-i-ciclotòmiques.html"><a href="extensions-abelianes-i-ciclotòmiques.html"><i class="fa fa-check"></i><b>11</b> Extensions Abelianes i ciclotòmiques</a></li>
 <li class="chapter" data-level="12" data-path="arrels-i-radicals.html"><a href="arrels-i-radicals.html"><i class="fa fa-check"></i><b>12</b> Arrels i radicals</a></li>
@@ -383,17 +401,17 @@ d’aquestes extensions:</p>
 <p><span id="unlabeled-div-93" class="proof"><em>Prova</em>. </span>Ja hem vist <span class="math inline">\(1 \implies 2\)</span> i <span class="math inline">\(1 \implies 4\)</span>. Fixem-nos també que <span class="math inline">\(4\implies 3\)</span> és obvi.
 - <span class="math inline">\(2 \implies 3\)</span>: Suposem que <span class="math inline">\(K=F(\alpha_1,\ldots, \alpha_m)\)</span>, i considerem el conjunt finit
 <span class="math display">\[
-B = \{\sigma(\alpha_i) ~|~ \sigma \in G, i = 1,\ldots, m\}.
-\]</span>
+  B = \{\sigma(\alpha_i) ~|~ \sigma \in G, i = 1,\ldots, m\}.
+  \]</span>
 Fixem-nos que no sabem quants elements exactament conté <span class="math inline">\(B\)</span>. En tot cas, considerem el polinomi separable
 <span class="math display">\[
-f(x) = \prod_{\beta \in B} (z - \beta).
-\]</span>
+  f(x) = \prod_{\beta \in B} (z - \beta).
+  \]</span>
 Observem que <span class="math inline">\(\sigma(f)=f\)</span> per a tot <span class="math inline">\(\sigma\in G\)</span> i, per tant, <span class="math inline">\(f \in K^G[x]=F[x]\)</span>. Finalment, <span class="math inline">\(\alpha_i\)</span> és arrel de <span class="math inline">\(f(x)\)</span>
 per a tot <span class="math inline">\(i=1,\ldots, m\)</span> i concloem que <span class="math inline">\(K\)</span> és el cos de descomposició de <span class="math inline">\(f(x)\)</span>.</p>
 <ul>
 <li><span class="math inline">\(3 \implies 1\)</span>: Suposem que <span class="math inline">\(K/F\)</span> és el cos de descomposició d’un polinomi separable <span class="math inline">\(f(x)\in F[x]\)</span>. Com s’ha
-indicat a la Remarca <span class="citation">(<a href="#ref-ref" role="doc-biblioref"><strong>ref?</strong></a>)</span>(remark:variacions-aixecament), a cada pas podem prendre per <span class="math inline">\(\alpha\)</span> una arrel del polinomi <span class="math inline">\(f(x)\)</span>
+indicat al Corol·lari <a href="#cor:variacion-aixecament-2"><strong>??</strong></a>, a cada pas podem prendre per <span class="math inline">\(\alpha\)</span> una arrel del polinomi <span class="math inline">\(f(x)\)</span>
 i per tant tindrem la igualtat.</li>
 </ul>
 </div>
@@ -402,8 +420,9 @@ i per tant tindrem la igualtat.</li>
 Aleshores <span class="math inline">\(K=F(\alpha)\)</span>. Veiem doncs que tota extensió finita de Galois és primitiva. Més endavant veurem
 que només cal que <span class="math inline">\(K/F\)</span> sigui separable.</p>
 </div>
-<p>Si <span class="math inline">\(K/F\)</span> és una extensió de Galois i <span class="math inline">\(\alpha\in K\)</span>, els elements <span class="math inline">\(\sigma(\alpha)\)</span> (on <span class="math inline">\(\sigma\in\Gal(K/F)\)</span>) s’anomenen
-<em>conjugats de Galois</em> d’<span class="math inline">\(\alpha\)</span> sobre <span class="math inline">\(F\)</span>. Si <span class="math inline">\(K/M/F\)</span> és una subextensió, el cos <span class="math inline">\(\sigma(M)\)</span> s’anomena el conjugat de <span class="math inline">\(M\)</span> per <span class="math inline">\(\sigma\)</span>.</p>
+<p>Si <span class="math inline">\(K/F\)</span> és una extensió de Galois i <span class="math inline">\(\alpha\in K\)</span>, els elements <span class="math inline">\(\sigma(\alpha)\)</span> (on <span class="math inline">\(\sigma\in\Gal(K/F)\)</span>)
+s’anomenen <em>conjugats de Galois</em> d’<span class="math inline">\(\alpha\)</span> sobre <span class="math inline">\(F\)</span>. Si <span class="math inline">\(K/M/F\)</span> és una subextensió,
+el cos <span class="math inline">\(\sigma(M)\)</span> s’anomena el conjugat de <span class="math inline">\(M\)</span> per <span class="math inline">\(\sigma\)</span>.</p>
 
 </div>
 </div>
