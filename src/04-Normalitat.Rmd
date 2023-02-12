@@ -42,26 +42,33 @@ $$
 :::
 ::: {.proof}
 Farem inducció en el grau $n=[K\colon F]$. Quan $n=1$, el resultat és trivial. En general, prenem un element $\alpha\in K\setminus F$
-i fem servir la fórmula de les torres i @ref(thm:extensio-morfismes). El cardinal de $\Hom_F(F(\alpha), L)$
+i fem servir la fórmula de les torres i \@ref(thm:extensio-morfismes). El cardinal de $\Hom_F(F(\alpha), L)$
 és igual al nombre d'arrels d'$\Irr_{\alpha, F}(x)$ a $L$, que com a molt és $[F(\alpha) \colon F]$. 
 
 En tot cas, si $\tilde\sigma$ és un d'aquests morfismes, com que $[K \colon F(\alpha)]< [K\colon F]$ podem aplicar la hipòtesi
 d'inducció i $\tilde\sigma$ es pot aixecar a com a molt $[K\colon F(\alpha)]$ morfismes a $L$.
 :::
 
-::: {.remark #variacions-aixecament}
-Fixem-nos que pot ser que no hi hagi cap aixecament.
-Això passarà justament quan $\Irr_{\alpha,F}(x)$ no tingui cap arrel a $L$ en algun pas de la demostració.
+Revisant la demostració anterior, obtenim els dos següent corol·laris.
 
-En l'extrem oposat, per obtenir una igualtat en l'enunciat del teorema ens caldria que cada polinomi irreductible
-que considerem descomposés completament a $L$, amb arrels diferents. Més endavant això serà important.
+::: {.corollary #variacio-aixecament-1}
+Siguin $K/F$ i $L/F$ extensions d'un cos $F$. Si existeix $\alpha\in K$ tal que $\Irr_{\alpha,F}(x)$
+no té cap arrel a $L$, aleshores no existeix cap $F$-morfisme $K\to L$.
 :::
+
+::: {.corollary #variacio-aixecament-2}
+Suposem que tot polinomi irreductible a $F$ amb una arrel a $K$ descomposa completament a $L$. Aleshores
+$$
+|\Hom_{F} (K, L)| = [K\colon F].
+$$
+:::
+
 
 ::: {.proposition #unicititat-splittingfield name="unicitat del cos de descomposició"}
 Siguin $K/F$ i $K'/F$ dos cossos de descomposició de $f(x)\in F[x]$. Aleshores $K \cong K'$.
 :::
 ::: {.proof}
-Prenem $L = K'$ al Teorema @ref(thm:iso-lifting) i en repetim la demostració. A cada pas,
+Prenem $L = K'$ al Teorema \@ref(thm:iso-lifting) i en repetim la demostració. A cada pas,
 podem prendre com a $\alpha$ una arrel de $f(x)$ i sempre obtindrem arrels a $K'$ perquè $f(x)$
 hi trenca completament.
 :::
@@ -83,7 +90,7 @@ són de la forma $\zeta_n^a$, amb $a$ coprimer amb $n$. Hi ha, doncs, $\varphi(n
 
 Anomenem *cos ciclotòmic $n$-èssim$ al cos $\QQ(\zeta_n)$, que és el cos de descomposició de $x^n-1$:
 si adjuntem $\zeta_n$, automàticament totes les seves potències pertanyen a aquest cos. A l'episodi
-@chap:ciclotomics aprendrem com calcular el grau d'aquest cos, però --a tall d'espòiler-- podem
+\@ref(ciclotomics) aprendrem com calcular el grau d'aquest cos, però --a tall d'espòiler-- podem
 veure fàcilment que quan $n=p$ és primer, aleshores
 $$
 x^p -1 = (x-1)(x^{p-1}+x^{p-1}+\cdots+x+1),
@@ -200,7 +207,7 @@ la maximalitat de $\bar{F}$.
 
 ::: {.proof}
 Presentem una demostració alternativa que amaga una mica més els problemes amb la teoria de conjunts. Gràcies
-a la Proposició @prop:clausura-tecnica, n'hi ha prou amb construir una extensió $K/F$ algebraicament tancada.
+a la Proposició \@ref(prp:clausura-tecnica), n'hi ha prou amb construir una extensió $K/F$ algebraicament tancada.
 
 Per
 cada polinomi mònic no constant $f=f(x)\in F[x]$, considerem una variable $x_f$. Tenim l'anell de polinomis

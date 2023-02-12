@@ -1,2 +1,104 @@
 # Cossos Finits
 
+Aplicarem el teorema fonamental de la teoria de Galois a l'estudi complet des cossos finits i les
+seves extensions. Sabem que per cada potència de primer $p^n$ hi ha un únic cos amb $p^n$ elements,
+que anomenem $\FF_{p^n}$.
+
+## Grup de Galois
+
+Ja vam definir $\FF_{p^n}$ com el cos de descomposició del polinomi $x^{p^n}-x\in\FF_p[x]$. Per tant,
+l'extensió $\FF_{p^n} / \FF_p$ és de Galois.
+
+::: {.lemma}
+El grup $\Gal(\FF_{p^n}/ \FF_p)$ és cíclic d'ordre $n$, generat per l'automorfisme de Frobenius
+$$
+\sigma \colon \FF_{p^n}\to\FF_{p^n},\quad \alpha\mapsto \sigma(\alpha)=\alpha^p.
+$$
+:::
+
+::: {.proof}
+Fixem-nos que $\sigma$ és un automorfisme, perquè és un endomorfisme injectiu d'un grup finit. També tenim
+$\sigma^i(x) = x^{p^i}$, i per tant $\sigma$ té ordre $n$ a $\Gal(\FF_{p^n}/\FF_p)$. Com que l'ordre
+d'aquest grup és $n=[\FF_{p^n}\colon \FF_p]$, obtenim el resultat.
+:::
+
+## Subcossos
+
+El teorema fonamental ens diu que els subcossos de $\FF_{p^n}$ estan en correspondència amb els subgrups
+de $\Gal(\FF_{p^n}/\FF_p)=\langle\sigma\rangle$. Sabem de teoria de grups que per cada divisor $d\mid n$
+hi ha exactament un subgrup d'índex $d$, que és el generat per $\sigma^{d}$. A més, tots els subgrups
+són normals (perquè és un grup abelià). Per tant, tenim:
+
+::: {.proposition}
+Si $d\mid n$, aleshores $\FF_{p^d}$ és un subcos de $\FF_{p^n}$. Recíprocament, si
+$\FF\subseteq\FF_{p^n}$ és un subcos, és de Galois, i  $\FF\cong \FF_{p^d}$ amb $d\mid n$.
+:::
+
+Vegem una aplicació fàcil d'aquest resultat:
+::: {.corollary}
+El polinomi irreductible $\Phi_8(x)=x^4+1\in\ZZ[x]$ és reductible mòdul qualsevol primer $p$.
+:::
+::: {.proof}
+Per $p=2$, tenim $x^4+1 = (x+1)^4$. Suposem ara $p$ senar. Com que $8\mid p^2-1$ (mirem els quadrats senars
+mòdul $8$), tenim que $x^8-1=(x^4-1)(x^4+1)$ divideix a $x^{p^2-1}-1$ a $\ZZ[x]$. Per tant, $x^4+1$ divideix
+també a $x^{p^2}-x$. Això vol dir que les arrels de $x^4+1$ viuen totes a $\FF_{p^2}$. Però si fos irreductible,
+generaria una extensió de grau $4$, contradicció.
+:::
+
+## Polinomis irreductibles
+
+Ja hem vist que tota extensió de Galois és simple. Obtenim,
+per tant:
+
+::: {.proposition}
+L'extensió $\FF_{p^n}/\FF_p$ és simple. Equivalentment, per cada $n\geq 1$
+existeix un polinomi $f(x)\in \FF_p[x]$ irreductible de grau $n$.
+:::
+
+::: {.proposition}
+El polinomi $x^{p^n}-x$ és el producte de tots els polinomis irreductibles
+de grau $d$, per tots els $d\mid n$.
+:::
+::: {.proof}
+Sigui $f(x)$ un polinomi irreductible de grau $d\mid n$. Aleshores l'extensió
+generada per $f$ és de grau $d$ sobre $\FF_p$ i per tant és $\FF_{p^d}$. Per tant,
+$f(x)$ és un divisor de $x^{p^d}-x$, que al seu torn divideix $x^{p^n}-x$.
+
+Recíprocament, suposem que $f(x)$ és un factor irreductible de $x^{p^n}-x$, podem de grau $d$. Aleshores
+l'extensió que genera és un subcos de $\FF_{p^n}$ i, per tant, té grau $d\mid n$.
+:::
+
+::: {.corollary}
+El nombre de polinomis irreductibles de grau $n$ a $\FF_p[x]$ és:
+$$
+\Psi(n) = \frac{1}{n} \sum_{d \mid n} \mu(d)p^{n/d},
+$$
+on $\mu$ és la funció de Möbius.
+:::
+::: {.proof}
+Comptant els graus dels polinomis de la proposició anterior, obtenim
+$$
+p^n = \sum_{d\mid n} d \Psi(d).
+$$
+El resultat s'obté aplicant la fórmula d'inversió de Möbius.
+:::
+
+La proposició anterior també ens permet de trobar polinomis irreductibles de manera recursiva. D'entrada,
+podem dividir pels polinomis irreductibles de graus $d\mid n$ amb $d\le n$ per quedar-nos
+amb el producte dels polinomis irreductibles de grau $n$. Ens caldrà factoritzar-los per
+obtenir els factors irreductibles.
+
+TODO: explicar l'algoritme de factorització de Berlekamp.
+
+## La clausura algebraica d'$\FF_p$
+
+Ja hem vist que $\FF_{p^d}\subseteq \FF_{p^n}$ si i només si $d \mid n$. Per tant, donades dues extensions
+d'$\FF_p$ com ara $\FF_{p^{n}}$ i $\FF_{p^m}$, podem pensar-les dins de $\FF_{p^{nm}}$. Així, podem
+prendre la unió de totes elles i obtenir la clausura algebraica de manera explícita:
+
+::: {.proposition}
+Tenim
+$$
+\overline{\FF}_p = \bigcup_{n\geq 1} \FF_{p^n}.
+$$
+:::

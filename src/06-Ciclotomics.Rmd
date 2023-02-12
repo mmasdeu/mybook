@@ -45,7 +45,7 @@ dividint pels factors coneguts:
 
 Els primers valors són, per exemple:
 
-\begin{align}
+\begin{align*}
 \Phi_1(x) &= x-1\\
 \Phi_2(x) &= x+1\\
 \Phi_{3}(x) &= x^{2} + x + 1 \\
@@ -59,7 +59,7 @@ Els primers valors són, per exemple:
 \Phi_{11}(x) &= x^{10} + x^{9} + x^{8} + x^{7} + x^{6} + x^{5} + x^{4} + x^{3} + x^{2} + x + 1 \\
 \Phi_{12}(x) &= x^{4} - x^{2} + 1 \\
 \Phi_{13}(x) &= x^{12} + x^{11} + x^{10} + x^{9} + x^{8} + x^{7} + x^{6} + x^{5} + x^{4} + x^{3} + x^{2} + x + 1
-\end{align}
+\end{align*}
 
 ::: {.lemma}
 Els polinomis $\Phi_n(x)$ són mònics de grau $\varphi(n)$ i tenen coeficients enters.

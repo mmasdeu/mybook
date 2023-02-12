@@ -30,21 +30,20 @@ output:
   bookdown::pdf_book:
     toc: yes
     includes:
-      in_header: src/preamble.tex
+      in_header: ["src/preamble.tex"]
     latex_engine: xelatex
     citation_package: biblatex
     keep_tex: no
     extra_dependencies:
       textcomp: null
-      hyperref: ["unicode=true", "breaklinks=true"]
-
 ---
+
 # Introducció {-}
 
 
 ```{r, echo=FALSE, engine='tikz', out.width='70%', fig.ext='png'}
 \begin{tikzpicture}[node distance=1.5cm]
-\title{Untergruppenverband der $A_4$}
+\title{Reticle de subgrups del grup $A_4$}
 \node(A4)                           {$A_4$};
 \node(V4)       [below right of=A4] {$V_4$};
 \node(C31)      [below left of=A4]  {$C_3$};
@@ -54,8 +53,8 @@ output:
 \node(C22)      [below of=V4]       {$C_2$};
 \node(C21)      [left of=C22]       {$C_2$};
 \node(C23)      [right of=C22]      {$C_2$};
-
 \node(1)            [below left of=C21]     {$\left\{1\right\}$};
+
 \draw(A4)       -- (V4);
 \draw(A4)       -- (C31);
 \draw(A4)       -- (C32);

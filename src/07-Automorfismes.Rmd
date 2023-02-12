@@ -174,19 +174,19 @@ Sigui $K/F$ una extensió finita i sigui $G=\Aut(K/F)$. Aleshores els següents 
 ::: {.proof}
 Ja hem vist $1 \implies 2$ i $1 \implies 4$. Fixem-nos també que $4\implies 3$ és obvi.
 - $2 \implies 3$: Suposem que $K=F(\alpha_1,\ldots, \alpha_m)$, i considerem el conjunt finit
-$$
-B = \{\sigma(\alpha_i) ~|~ \sigma \in G, i = 1,\ldots, m\}.
-$$
-Fixem-nos que no sabem quants elements exactament conté $B$. En tot cas, considerem el polinomi separable
-$$
-f(x) = \prod_{\beta \in B} (z - \beta).
-$$
-Observem que $\sigma(f)=f$ per a tot $\sigma\in G$ i, per tant, $f \in K^G[x]=F[x]$. Finalment, $\alpha_i$ és arrel de $f(x)$
-per a tot $i=1,\ldots, m$ i concloem que $K$ és el cos de descomposició de $f(x)$.
+  $$
+  B = \{\sigma(\alpha_i) ~|~ \sigma \in G, i = 1,\ldots, m\}.
+  $$
+  Fixem-nos que no sabem quants elements exactament conté $B$. En tot cas, considerem el polinomi separable
+  $$
+  f(x) = \prod_{\beta \in B} (z - \beta).
+  $$
+  Observem que $\sigma(f)=f$ per a tot $\sigma\in G$ i, per tant, $f \in K^G[x]=F[x]$. Finalment, $\alpha_i$ és arrel de $f(x)$
+  per a tot $i=1,\ldots, m$ i concloem que $K$ és el cos de descomposició de $f(x)$.
 
 - $3 \implies 1$: Suposem que $K/F$ és el cos de descomposició d'un polinomi separable $f(x)\in F[x]$. Com s'ha
-indicat a la Remarca @ref(remark:variacions-aixecament), a cada pas podem prendre per $\alpha$ una arrel del polinomi $f(x)$
-i per tant tindrem la igualtat.
+  indicat al Corol·lari \@ref(cor:variacion-aixecament-2), a cada pas podem prendre per $\alpha$ una arrel del polinomi $f(x)$
+  i per tant tindrem la igualtat.
 :::
 
 ::: {.remark}
@@ -195,5 +195,6 @@ Aleshores $K=F(\alpha)$. Veiem doncs que tota extensió finita de Galois és pri
 que només cal que $K/F$ sigui separable.
 :::
 
-Si $K/F$ és una extensió de Galois i $\alpha\in K$, els elements $\sigma(\alpha)$ (on $\sigma\in\Gal(K/F)$) s'anomenen
-*conjugats de Galois* d'$\alpha$ sobre $F$. Si $K/M/F$ és una subextensió, el cos $\sigma(M)$ s'anomena el conjugat de $M$ per $\sigma$.
+Si $K/F$ és una extensió de Galois i $\alpha\in K$, els elements $\sigma(\alpha)$ (on $\sigma\in\Gal(K/F)$)
+s'anomenen *conjugats de Galois* d'$\alpha$ sobre $F$. Si $K/M/F$ és una subextensió,
+el cos $\sigma(M)$ s'anomena el conjugat de $M$ per $\sigma$.
