@@ -1,7 +1,156 @@
 # Extensions Abelianes i ciclotòmiques
 
-En aquest apartat estudiem les extensions ciclotòmiques, i veiem que $\Gal(\QQ(\zeta_n))$
+En aquest apartat estudiem les extensions ciclotòmiques, i veiem que $\Gal(\QQ(\zeta_n)/\QQ)$
 és canònicament isomorf a $(\ZZ/n\ZZ)^\times$. Com a aplicació, veurem com construir
 polígons regulars amb regle i compàs. Veurem que només és possible per polígons regulars
 de $n$ costats quan $\varphi{n}$ és una potència de $2$. Això passa si i només si $n$ és producte
 d'una potència de dos i de primers de Fermat diferents.
+
+## Grup de Galois dels cossos ciclotòmics
+
+Sigui $n\geq 2$ i considerem el cos ciclotòmic $\QQ(\zeta_n)$. Volem estudiar $\Gal(\QQ(\zeta_n)/\QQ)$.
+Per cada $a\in\ZZ$ coprimer amb $n$, definim l'aplicació
+$$
+\sigma_a \colon \QQ(\zeta_n)\to \QQ(\zeta_n),\quad \zeta_n\mapsto \zeta_n^a.
+$$
+
+::: {.theorem}
+L'aplicació $a \mapsto \sigma_a$ indueix un isomorfisme
+$$
+\psi \colon (\ZZ/n\ZZ)^\times \to \Gal(\QQ(\zeta_n)/\QQ).
+$$
+:::
+::: {.proof}
+Ja sabem que $\Gal(\QQ(\zeta_n)/\QQ)$ té exactament $\varphi(n)$ elements. Si $\sigma$ és un
+d'aquests automorfismes, sabem que ve determinat per on envia $\zeta_n$, que és una arrel
+del polinomi ciclotòmic $\Phi_n(x)$. Per tant, $\sigma(\zeta_n)$ és una arrel $n$-èssima primitiva
+de la unitat i doncs ha de ser $\zeta_n^a$ per alguna $a$ coprimera amb $n$. Així veiem que
+$\sigma_a\in \Gal(\QQ(\zeta_n)/\QQ)$ i $\psi$ és una aplicació ben definida i a més exhaustiva, per
+tant bijectiva. A més, $\psi$ és un morfisme de grups, ja que
+$$
+(\sigma_a\sigma_b)(\zeta_n) = \sigma_a(\zeta_n^b) = (\zeta_n^b)^a = \zeta_n^{ab} = \sigma_{ab}(\zeta_n).
+$$
+:::
+
+Fixem-nos que en particular tenim exemples d'extensions cícliques de grau $p-1$ per qualsevol primer $p$.
+També tenim una versió més conceptual del teorema xinès dels residus, que escrivim en el cas de dos factors
+per estalviar notació.
+
+::: {.proposition}
+Si $n$ i $m$ són coprimers, aleshores $\QQ(\zeta_n) \cap \QQ(\zeta_m) = \QQ$, $\QQ(\zeta_n,\zeta_m) = \QQ(\zeta_{nm})$, i
+$$
+\Gal(\QQ(\zeta_{nm})/\QQ) \cong \Gal(\QQ(\zeta_n)/\QQ) \times \Gal(\QQ(\zeta_m)/\QQ).
+$$
+:::
+::: {.proof}
+TODO
+:::
+
+El següent lema ens permet trobar generadors dels subcossos de $\QQ(\zeta_p)$.
+
+::: {.lemma}
+Sigui $p$ un primer, i sigui $H\leq \Gal(\QQ(\zeta_p)/\QQ)$ un subgrup. Aleshores
+$$
+\theta_H=\sum_{\sigma \in H} \sigma(\zeta_p)
+$$
+és un generador del cos fix d'$H$. L'element $\theta_H$ s'anomena un *període* de $\zeta_p$.
+:::
+
+::: {.example}
+Calcularem el reticle de subcossos de $\QQ(\zeta_{13})$, fent servir el lema anterior.
+TODO
+:::
+
+
+## Extensions abelianes
+
+Podem fer servir el què hem vist per demostrar el següent resultat.
+
+::: {.theorem name="realització de grups abelians"}
+Sigui $G$ un grup finit abelià. Aleshores hi ha una extensió $K/\QQ$ continguda dins d'un cos ciclotòmic
+tal que $\Gal(K/\QQ) \cong G$.
+:::
+::: {.proof}
+Tot grup abelià és producte de cíclics:
+$$
+G \cong C_{n_1}\times C_{n_2}\times\cdots\times C_{n_k}.
+$$
+Existeixen primers diferents $p_1$, $p_2$, \ldots $p_k$ tals que $p_i\equiv 1\pmod{n_i}$. Aquest fet
+es dedueix del fet que hi ha infinits primers $\equiv 1\pmod{m}$ per qualsevol $m$ (TODO).
+
+Considerem $n=p_1p_2\cdots p_k$. Aleshores, tenim
+$$
+\Gal(\QQ(\zeta_n)/\QQ)\cong (\ZZ/(p_1-1))^\times \times (\ZZ/(p_2-1))^\times \times \cdots \times (\ZZ/(p_k-1))^\times.
+$$
+Com que $n_i$ divideix $p_i-1$, hi ha un subgrup $H_i\leq C_{p_i-1}$ d'índex $n_i$ per cada $i$, i el quocient
+per $H_1\times H_2\times\cdots\times H_k$ és isomorf a $G$. Per la correspondència de Galois, hi ha un subcos
+de $\QQ(\zeta_n)$ que realitza $G$.
+:::
+
+Els cossos ciclotòmics són exemples d'extensions de Galois amb grup abelià. En general, una
+extensió $K/F$ es diu que té la propietat $P$ si és de Galois i el seu grup de Galois té la propietat $P$.
+Per exemple, tenim la següent definició:
+
+::: {.definition name="extensió abeliana"}
+Una extensió $K/F$ és *abeliana* si $K/F$ és de Galois i $\Gal(K/F)$ és un grup abelià.
+:::
+
+El resultat anterior té un recíproc que no podem demostrar aquí:
+
+::: {.theorem name="Kronecker-Weber"}
+Sigui $K/\QQ$ una extensió finita abeliana. Aleshores $K$ està contingut en una extensió ciclotòmica.
+:::
+
+En general, és avui un problema obert el determinar quins grups apareixen quan com a grups de Galois d'extensions
+$K/\QQ$. Ja hem vist que tots els grups abelians apareixen, però hi ha grups (per exemple $\PSL_2(\FF_{125})$) pels
+quals no s'ha demostrat encara que hi apareguin. Aquest problema s'anomena el **problema invers de la teoria de Galois**.
+
+## Constructibilitat de polígons regulars
+
+Com a aplicació dels cossos ciclotòmics, estudiarem quins polígons regulars es poden construir amb regle i compàs.
+Ja hem vist que un nombre real $\alpha$ és construible si i només si $\QQ(\alpha)$ està contingut en un cos $K$
+obtingut a partir de $\QQ$ a partir d'un nombre finit d'extensions quadràtiques.
+
+Construir un polígon de $n$ costats és equivalent a construir les arrels $n$-èssimes de la unitat $\zeta_n$, que al
+seu torn és equivalent a construir la seva part real $x=\frac{1}{2}(\zeta_n+\zeta_n^{-1})$. Com que
+$\zeta_n^2 - 2 x \zeta_n + 1=0$, el cos $\QQ(zeta_n)$ és una extensió de grau $2$ sobre $\QQ(x)$ (aquesta última és real,
+mentre que $\QQ(\zeta_n)$ no). Per tant, si volem que el cos $\QQ(x)$ estigui dins de $K$ ens cal en particular que
+el seu ordre $\varphi(n)/2$ sigui potència de $2$, és a dir, que $\varphi(n)$ sigui potència de $2$.
+
+Recíprocament, si $\varphi(n)$ és una potència de $2$, aleshores $\QQ(x)$ té ordre una potència de $2$. Prenent
+successivament subgrups d'índex $2$ i fent servir la correspondència de Galois, obtenim una successió
+$$
+\QQ = K_0 \subset K_1\subset\cdots\subset K_m = \QQ(x),\quad [K_i \colon K_{i-1}] = 2,
+$$
+i per tant $x$ és constructible. D'aquí tenim la següent caracterització. Recordem que un primer $p$ es
+diu *primer de Fermat* si $p-1$ és una potència de $2$.
+
+::: {.theorem name="construcció de polígons regulars"}
+Sigui $n$ un enter positiu. Aleshores el polígon regular de $n$ costats és constructible
+amb regle i compàs si i només si $n$ és de la forma
+$$
+n = 2^k p_1 \cdots p_r,
+$$
+on $k\geq 0$ i $p_i$ són primers de Fermat diferents.
+:::
+::: {.proof}
+Escrivim $n$ com a producte de potències de primers diferents
+$$
+n=2^{k}q_1^{e_1} q_2^{e_2}\cdots q_r^{e_r}, \quad q_i \text{ senar.}
+$$
+Aleshores tenim la fórmula coneguda
+$$
+\varphi(n) = 2^{k-1} \prod_{i=1}^r (q_i-1)q_i^{e_i-1}.
+$$
+Ja veiem que cal que $e_i=1$ per tot $i$ si volem que $\varphi(n)$ sigui potència de $2$. A més, cal
+que $q_i-1$ sigui potència de $2$ per a tot $i$, és a dir que $q_i$ sigui un primer de Fermat.
+:::
+
+Només es coneixen cinc primers de Fermat: $F_0=3$, $F_1=5$, $F_2=17$, $F_3=257$, $F_4=65537$. En general,
+si $p$ és un primer de Fermat aleshores $p=2^{2^i}+1$ per algun $i\geq 0$. Els nombres $F_i=2^{2^i} +1$ s'anomenen
+*nombres de Fermat*. Sembla poc probable que hi hagi infinits primers de Fermat, però és encara un problema obert.
+
+La següent expressió dona (en principi) una manera de construir un $17$-gon regular amb regle i compàs.
+$$
+\cos\frac{2\pi}{17} = \frac{1}{16}\left(\sqrt{17}-1+\sqrt{34-2\sqrt{17}}\right)+ \frac{1}{8}\left(\sqrt{17+3\sqrt{17}-\sqrt{34-2\sqrt{17}}-2\sqrt{34+2\sqrt{17}}} \right).
+$$

@@ -1,2 +1,172 @@
-# L'element Primitiu
+# Element Primitiu
 
+El primer objectiu és demostrar el teorema de l'element primitiu. Recordem que una
+extensió $K/F$ és simple si hi ha algun $\alpha\in K$ tal que $K=F(\alpha)$.
+
+::: {.theorem #simple-caracteritzacio name="caracterització d'extensions simples"}
+Una extensió $K/F$ és simple si i només si hi ha finites subextensions $K/M/F$.
+:::
+::: {.proof}
+Suposem que $K=F(\alpha)F$ és simple, i sigui $f(x)=\Irr_{\alpha,F}(x)$. Considerem una subextensió $K/M/F$.
+Aleshores $g(x)=\Irr_{\alpha,M}(x)$ és un divisor de $f(x)$ pensats a $K[x]$. Sigui $M'\subseteq M$ l'extensió generada
+sobre $F$ pels coeficients de $g(x)$.  Com que $\Irr_{\alpha,M}(x)=\Irr_{\alpha,M'}(x)$, tenim $[K\colon M]=[K \colon M']$
+i per tant $M=M'$. En conclusió, els subcossos $M$ estan generats per coeficients dels factors irreductibles
+de $f(x)$ pensat com a polinomi a $K[x]$ i, per tant, n'hi ha un nombre finit.
+
+Recíprocament, suposem que $K/F$ té un nombre finit de subcossos. Gràcies a la Proposicó \@ref(prp:lema-algebra-lineal),
+hi ha algun $\alpha\in K$ que no pertany a cap dels subcossos de $K$. Per tant, $F(\alpha)=K$.
+:::
+
+## El teorema de l'element primitiu
+
+Amb aquesta caracterització i tot el què sabem fins ara podem demostrar fàcilment el teorema de l'element primitiu.
+
+::: {.theorem #element-primitiu name="Element Primitiu"}
+Si una extensió $K/F$ és finita i separable, aleshores existeix $\gamma\in K$ tal que $K=F(\gamma)$.
+:::
+::: {.proof}
+Sigui $L/K$ una extensió tal que $L/F$ sigui Galois. Per exemple, podem prendre el compositum de tots els
+cossos de descomposició dels polinomis mínims d'un conjunt de generadors de $K/F$. Aleshores $L/F$ és
+primitiva i, pel criteri anterior, hi ha un nombre finit de subcossos de $L$. En particular, hi ha un
+nombre finit de subcossos de $K$ i, un altre cop pel criteri anterior, l'extensió $K/F$ és primitiva.
+:::
+
+Podem generalitzar una mica aquest teorema:
+
+::: {.theorem name=""}
+Suposem que $K=F(\alpha,\beta)$ i $\beta$ és separable sobre $F$.
+Aleshores existeix $\gamma\in K$ tal que $K=F(\gamma)$.
+:::
+::: {.proof}
+Si $F$ és un cos finit, aleshores $F(\alpha,\beta)$ també és un cos finit i per tant sabem que és simple. Suposem
+doncs que $F$ és infinit, i escrivim $f(x)$ i $g(x)$ pels polinomis mínims d'$\alpha$ i $\beta$, respectivament.
+Sigui $L/F(\alpha,\beta)$ un cos de descomposició per $f(x)g(x)$, i escrivim $\alpha=\alpha_1, \alpha_2,\ldots \alpha_r$
+per les arrels de $f(x)$ a $L$ i $\beta=\beta_1,\beta_2,\ldots,\beta_s$ per les arrels de $g(x)$ a $L$. Per cada $i$
+i per cada $j\neq 1$, l'equació
+$$
+\alpha_i + X \beta_j = \alpha + X \beta_j
+$$
+només té la solució $X=\frac{\alpha_i-\alpha}{\beta-\beta_j}$ (el denominador no és zero perquè $g(x)$ és separable).
+Per tant, com que $F$ és infinit podem prendre $t\in F$ que no sigui cap de les solucions anteriors, i definim
+$\gamma=\alpha+t\beta$. Veurem que $F(\alpha,\beta)=F(\gamma)$. N'hi ha prou amb veure que $\beta\in F(\gamma)$,
+perquè aleshores $\alpha=\gamma-t\beta$ també hi serà. Considerem els polinomis a $g(x)$ i $h(x)=f(\gamma - tx)$
+a $F(\gamma)$. Observem que $g(\beta)=0$ i $h(\beta)=f(\gamma-t\beta) = f(\alpha)=0$. Però les altres arrels
+de $g(x)$ són les $\beta_j$ amb $j>1$, i $h(\beta_j)\neq 0$ en aquest cas. Per tant, $\mcd(g(x),h(x))=(x-\beta)$
+i en deduim que $\beta\in F(\gamma)$, com volíem.
+:::
+
+## Galois i compositum d'extensions
+
+Estudiem ara com es comporta la propietat de ser Galois quan prenem compositums.
+
+Suposem que tenim extensions $K/F$ i $F'/F$.
+
+::: {.proposition}
+Si $K/F$ és de Galois, aleshores $KF'$ és de Galois sobre $F'$ i la restricció indueix
+un isomorfisme $\Gal(KF'/F') \cong \Gal(K/K\cap F')$:
+$$
+\xymatrix{
+  & KF'\\
+K \ar@{-}[ur]^{G}& & F' \ar@{-}[ul]_{G}\\
+& K\cap F'\ar@{-}[ul]\ar@{-}[ur]\\
+& F\ar@{-}[u].
+}
+$$
+En particular, si $F'/F$ és finita, aleshores
+$$
+[KF': F] = \frac{[K\colon F] [F' \colon F]}{[K\cap F' \colon F]}.
+$$
+:::
+::: {.proof}
+Sabem que $K$ és el cos de descomposició d'un polinomi separable $f(x)\in F[x]$.
+Aleshores, $KF'$ és el cos de descomposició del mateix polinomi $f(x)$ ara
+pensat com a polinomi a $F'[x]$.
+Considerem ara el morfisme restricció
+$$
+\varphi \colon \Gal(KF'/F') \to \Gal(K/F).
+$$
+Està ben definit: donat $\sigma\in\Gal(KF'/F')$, com que $F$ és
+un subcos de $F'$ també fixa els elements de $F$, i per tant la seva
+restricció a $K$ dona lloc a un element de $\Gal(K/F)$. Calcularem
+el nucli i la imatge de $\varphi$.
+
+Si $\sigma\in\Gal(KF'/F')$, i suposem que $\sigma|_K=1$, vol dir
+que $\sigma$ fixa $K$. Com que també fixava $F'$,
+fixa tot $KF'$ i per tant és la identitat a $\Gal(KF'/F')$. Així doncs, $\varphi$
+és injectiva.
+
+Sigui $H=\operatorname{Im}(\varphi)\leq \Gal(K/F)$ la imatge, i sigui $M=K^H$ el seu subcos fix.
+Volem veure que $M=K\cap F'$, i això ens donarà el resultat gràcies a la correspondència
+de Galois. Si $\sigma\in H$, aleshores $\sigma$ fixa $F'$. Per tant, $K\cap F'\subseteq M$.
+D'altra banda, el compositum $M F'$ és fix per tot $\sigma\in \Gal(KF'/F')$, ja que aquest
+$\sigma$ fixa els elements de $F'$ i en els elements de $K$ hi actua via la restricció. Pel
+teorema fonamental, $MF'= F'$ i, per tant $M\subseteq F'$, d'on en traiem $K \cap F'=M$.
+
+La fórmula final s'obté comptant graus d'extensions.
+:::
+
+::: {.remark}
+Considerem $F=\QQ$, $K=\QQ(\sqrt[3]{2})$ (el nostre prototipus d'extensió no normal)
+i $F'=\QQ(\zeta_3\sqrt[3]{2})$, on $\zeta_3$ és una arrel
+cúbica primitiva de la unitat. Tenim $[K\colon F]=[F'\colon F]=3$, i $KF'=\QQ(\zeta_3,\sqrt[3]{2})$ té grau $6$,
+per tant la igualtat no és certa si cap de les extensions inicials és de Galois.
+:::
+
+Estudiem ara el cas on les dues extensions inicials són de Galois.
+
+::: {.proposition name=""}
+Siguin $K_1/F$ i $K_2/F$ dues extensions de Galois amb grups $G_1$ i $G_2$.
+Aleshores $K_1K_2/F$ i $K_1\cap K_2 /F$ són Galois, i la restricció a $K_1$ i a $K_2$
+indueix un isomorfisme
+$$
+\Gal(K_1K_2 / F) \cong H = \{(\sigma,\tau) \in G_1\times G_2 ~|~ \sigma|_{K_1\cap K_2} = \tau|_{K_1\cap K_2}\}.
+$$
+
+En particular, si $K_1\cap K_2 = F$, aleshores
+$$
+\Gal(K_1K_2 / F)\cong G_1\times G_2.
+$$
+:::
+::: {.proof}
+Suposem que $K_i$ és el cos de descomposició del polinomi separable $f_i(x)\in F[x]$. Aleshores $K_1K_2$
+és el cos de descomposició de la part lliure de quadrats de $f_1(x)f_2(x)$ i per tant $K_1K_2$ és Galois
+sobre $F$. Sigui ara $f(x)$ un polinomi irreductible a $F[x]$ amb una arrel a $K_1\cap K_2$. Aleshores totes
+les arrels de $f(x)$ són a $K_1$ i també a $K_2$ i, per tant, a $K_1\cap K_2$. Per tant, $K_1\cap K_2$ és Galois.
+
+Considerem ara l'aplicació
+$$
+\varphi\colon \Gal(K_1K_2 / F) \to G_1\times G_2,\quad \sigma\mapsto (\sigma|_{K_1}, \sigma|_{K_2}).
+$$
+És clarament injectiva, i per tant només ens cal estudiar la imatge. Clarament està continguda dins d'$H$,
+i per tant n'hi ha prou amb calcular els ordres. Pel primer teorema d'isomorfisme,
+$$
+|\operatorname{Im}(\varphi)| = |\Gal(K_1K_2/F)| = [K_1K_2 \colon F].
+$$
+D'altra banda, fixem-nos que per cada $\sigma\in \Gal(K_1/F)$ hi ha $|\Gal(K_2/K_1\cap K_2)|$ elements $\tau\in \Gal(K_2/K_1\cap K_2)$
+que satisfan $(\sigma,\tau)\in H$. Per tant:
+$$
+|H| = |G_1| |\Gal(K_2/ K_1\cap K_2)| = |G_1| \frac{|G_2|}{\Gal(K_1\cap K_2 / F)}
+$$
+i la fórmula de la proposició anterior ens demostra $|H| = |\operatorname{Im}(\varphi)|$.
+:::
+
+Podem demostrar un cert recíproc:
+::: {.proposition}
+Suposem que $K/F$ és una extensió de Galois, i $G=\Gal(K/F) = G_1\times G_2$. Aleshores $K$ és el
+compositum de dues extensions de Galois $K_1/F$ i $K_2/F$ amb $K_1\cap K_2=F$ i grups de Galois $G_1$ i $G_2$, respectivament.
+:::
+::: {.proof}
+Definim $K_1=K^{G_1}$ i $K_2=K^{G_2}$. Aleshores $K_1\cap K_2$ correspon a $\langle G_1,G_2\rangle=G$, per tant
+$K_1\cap K_2=F$. El compositum correspon amb $G_1\cap G_2=1$, i per tant $K_1K_2=K$.
+:::
+
+::: {.corollary name="clausura de Galois"}
+Sigui $K/F$ una extensió finita separable. Aleshores hi ha una extensió $E/K/F$ tal que $E/F$ és Galois$,
+i és mínima en el sentit que si $E'/K$ és una extensió amb $E'/F$ Galois, tenim $E \subseteq E'$. Aquesta
+extensió s'anomena la *clausura de Galois* de $K/F$.
+:::
+::: {.proof}
+Ja sabem que hi ha extensions de $K$ que són Galois (prenem el cos de descomposició dels polinomis mínims
+d'un conjunt de generadors de $K$). El cos $E$ buscat és llavors la intersecció de totes les extensions $E'/K$ tals
+que $E'/F$ és Galois. Hem vist que aquesta intersecció serà Galois.
+:::

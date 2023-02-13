@@ -114,13 +114,11 @@ ja que està generada per $\sqrt[p]{2}$. Per tant, es té la desigualtat $[L\col
 Com que $L$ té subcossos de grau $p$ i de grau $p-1$, aquests dos nombres divideixen el grau de l'extensió total i,
 com que són coprimers, en deduim que el grau és exactament $p(p-1)$. Ho podem il·lustrar amb el diagrama següent:
 $$
-\begin{xy}
 \xymatrix{
   & \QQ(\sqrt[p]{2},\zeta_p) \\
   \QQ(\zeta_p)\ar@{-}^{p}[ur]\ar@{-}^{p-1}[dr] &&\QQ(\sqrt[p]{2})\ar@{-}[ul]_{p-1}\ar@{-}[dl]_{p}\\
   &\QQ
 }
-\end{xy}
 $$
 
 :::
@@ -152,7 +150,7 @@ com volíem demostrar.
 
 El següent resultat ens permet trobar una clausura algebraica de qualsevol subcos d'un cos algebraicament tancat.
 
-::: {.proposition #clausura-tecnica name="proposition name"}
+::: {.proposition #clausura-tecnica}
 Sigui $K/F$ una extensió, i suposem que $K$ és algebraicament tancada. Aleshores la subextensió $\bar{F}/F$
 formada pels elements de $K$ que són algebraics sobre $F$ és una clausura algebraica de $F$ .
 :::
@@ -205,6 +203,7 @@ transportar l'estructura de cos de $L$ a $i(L)$ i obtenim un nou element maximal
 la maximalitat de $\bar{F}$.
 :::
 
+Una demostració alternativa:
 ::: {.proof}
 Presentem una demostració alternativa que amaga una mica més els problemes amb la teoria de conjunts. Gràcies
 a la Proposició \@ref(prp:clausura-tecnica), n'hi ha prou amb construir una extensió $K/F$ algebraicament tancada.
@@ -217,7 +216,7 @@ Veurem que $I$ no és el total i que, per tant, està contingut en un ideal maxi
 l'anomenem $K_1$, que és una extensió de $F$ que conté **una arrel** de cada polinomi amb coeficients a $F$. Podem
 iterar el procés (començant amb $K_1$ en comptes de amb $F$) per obtenir $K_2/K_1$, una extensió on tot polinomi
 amb coeficients a $K_1$ té una arrel, i així construim una successió de cossos de la qual en podem
-prendre la seva unió $K$. Donat un polinomi $f(x)\in K[x]$, tots els seus coeficients viuen necessàriament
+prendre la seva "unió" $K$. Donat un polinomi $f(x)\in K[x]$, tots els seus coeficients viuen necessàriament
 a $K_n$ i, per tant, $f(x)$ té alguna arrel a $K_{n+1}$ i, per tant a $K$.
 
 Ens queda per veure que $I$ és un ideal propi. Suposem que no i arribarem a contradicció. Suposem que tenim una
@@ -240,6 +239,16 @@ La clausura algebraica és única llevat d'isomorfisme, fet que es pot deduir f�
 
 ::: {.proof}
 TODO
+:::
+
+::: {.remark}
+L'existència i unicitat de clausures algebraiques fou demostrada per Steinitz el 1910, i la demostració era molt
+més llarga i complicada (unes 20 pàgines).
+
+També es pot demostrar (però ens cal teoria que veurem una mica més endavant) que el cos $K_1$
+que apareix a la demostració anterior ja és algebraicament tancat, així que no caldria fer tots
+els altres infinits passos. La demostració d'aquest fet no és senzilla, fa servir el teorema de l'element
+primitiu (vegeu \@ref(element-primitiu)), i separa els casos de característica $0$ i característica $p$.
 :::
 
 ## Extensions normals

@@ -57,12 +57,10 @@ Quan $K$ és un cos que conté un altre cos $F$, direm que $K$ és una *extensi�
 $F$ és el *cos base* de l'extensió $K/F$. També farem servir
 el diagrama
 $$
-\begin{xy}
 \xymatrix{
   K\ar@{-}[d]\\
   F.
 }
-\end{xy}
 $$
 
 Com que un cos no té ideals propis, un morfisme de cossos $\iota\colon F\to K$ és sempre injectiu i, per tant, la
@@ -157,12 +155,10 @@ $$
 \Hom_{\sigma}(F(\alpha), L) \to \{\beta\in L ~|~ \sigma(f)(\beta) = 0 \}.
 $$
 $$
-\begin{xy}
 \xymatrix{
   F(\alpha)\ar^{\varphi}[r]\ar@{-}[dr] & L\\
   &F \ar{\sigma}[ur].
 }
-\end{xy}
 $$
 :::
 ::: {.proof}

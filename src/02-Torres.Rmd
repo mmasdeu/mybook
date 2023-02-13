@@ -1,7 +1,6 @@
 # Les Torres
 
-Parlarem d'extensions simples, del teorema d'aixecament a anells de polinomis i el teorema de l'extensió.
-També definirem elements algebraics i transcendents i el polinomi mínim d'un element algebraic, amb exemples.
+Definirem elements algebraics i transcendents i el polinomi mínim d'un element algebraic, amb exemples.
 Enunciarem i demostrarem la fórmula de les torres, i com es comporta el grau en composicions de cossos.
 
 ## Extensions algebraiques/transcendents
@@ -36,7 +35,8 @@ El polinomi $\Irr_{\alpha,F}(x)$ s'anomena el *polinomi mínim d'$\alpha$ sobre 
 sobre $F$.
 :::
 
-Posant junt tot el què hem vist fins ara, si prenem $\alpha\in K$ aleshores podem considerar a subextensió $F(\alpha)/F$.
+Posant junt tot el què hem vist fins ara, si prenem $\alpha\in K$ aleshores podem considerar la subextensió
+$F(\alpha)/F$.
 En aquest cas, $F(\alpha)\cong F[x]/(\Irr_{\alpha,F}(x))$ i per tant $[F(\alpha)\colon F] = \deg \alpha$.
 
 ::: {.example}
@@ -70,7 +70,7 @@ total $L/F$.
 ::: {.theorem #torres name="fórmula de les torres"}
 Si $F\subseteq K\subseteq L$, aleshores
 $$
-[L\colon F] = [L\colon K][K \colon F].
+[L\colon F] = [L \colon K] [K \colon F].
 $$
 Si un costat de l'equació és infinit, aleshores l'altre també.
 :::
@@ -136,19 +136,23 @@ Siguin $K_1/F$ i $K_2/F$ dues extensions contingudes a $K$. Aleshores
 $$
 [K_1K_2\colon F] \leq [K_1\colon F] [K_2 \colon F].
 $$
-Gràficament, tenim:
+La igualtat es dona si i només si una base de $K_1/F$ segueix essent linealment independent sobre $K_2$ (o a
+l'inrevés). A més, tenim:
 $$
-\begin{xy}
 \xymatrix{
   & K_1 K_2 \\
   K_1\ar@{-}^{\leq m}[ur]\ar@{-}^{n}[dr] &&K_2\ar@{-}[ul]_{\leq n}\ar@{-}[dl]^{m}\\
   &F
 }
-\end{xy}
 $$
+:::
+::: {.proof}
+Cal veure que els productes $\alpha\beta$ on $\alpha$ i $\beta$ recorren bases respectives de $K_1/F$ i de $K_2/F$
+generen $K_1K_2/F$. N'hi ha prou amb veure que les combinacions lineal d'aquests elements formen un cos, que és
+una observació senzilla.
 :::
 
 Fixem-nos que, si $m$ i $n$ són coprimers, aleshores per la fórmula de les torres tenim $[K_1K2\colon K_1]=m$ i $[K_1K_2\colon K_2]=n$.
-En general, però la desigualtat serà estricta.
+En general, però les desigualtats del diagrama anterior seran estrictes.
 
 
