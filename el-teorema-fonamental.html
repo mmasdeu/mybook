@@ -23,7 +23,7 @@
 <meta name="author" content="Marc Masdeu" />
 
 
-<meta name="date" content="2023-02-12" />
+<meta name="date" content="2023-02-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -62,6 +62,7 @@
 \renewcommand{\HH}{\mathbb{H}}
 \renewcommand{\QQbar}{\bar{\QQ}}
 \renewcommand{\barQQ}{\bar{\QQ}}
+\renewcommand{\Fpbar}{\bar{\FF}_p}
 \renewcommand{\cC}{\mathcal{C}}
 
 \renewcommand{\fX}{\mathfrak{X}}
@@ -103,7 +104,11 @@
 \renewcommand{\car}{\operatorname{char}}
 \renewcommand{\mcd}{\operatorname{mcd}}
 \renewcommand{\gcd}{\operatorname{mcd}}
-\renewcommand{\Eq}{\operatorname{Eq}}\)</span>
+\renewcommand{\Eq}{\operatorname{Eq}}
+\renewcommand{\res}{\operatorname{res}}\)</span>
+<link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
+<script src="https://tikzjax.com/v1/tikzjax.js"></script>
+
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
   extensions: ["tex2jax.js"],
@@ -222,8 +227,17 @@ div.csl-indent {
 <li class="chapter" data-level="9.3" data-path="cossos-finits.html"><a href="cossos-finits.html#polinomis-irreductibles"><i class="fa fa-check"></i><b>9.3</b> Polinomis irreductibles</a></li>
 <li class="chapter" data-level="9.4" data-path="cossos-finits.html"><a href="cossos-finits.html#la-clausura-algebraica-dff_p"><i class="fa fa-check"></i><b>9.4</b> La clausura algebraica d’<span class="math inline">\(\FF_p\)</span></a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="lelement-primitiu.html"><a href="lelement-primitiu.html"><i class="fa fa-check"></i><b>10</b> L’element Primitiu</a></li>
-<li class="chapter" data-level="11" data-path="extensions-abelianes-i-ciclotòmiques.html"><a href="extensions-abelianes-i-ciclotòmiques.html"><i class="fa fa-check"></i><b>11</b> Extensions Abelianes i ciclotòmiques</a></li>
+<li class="chapter" data-level="10" data-path="element-primitiu.html"><a href="element-primitiu.html"><i class="fa fa-check"></i><b>10</b> Element Primitiu</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="element-primitiu.html"><a href="element-primitiu.html#el-teorema-de-lelement-primitiu"><i class="fa fa-check"></i><b>10.1</b> El teorema de l’element primitiu</a></li>
+<li class="chapter" data-level="10.2" data-path="element-primitiu.html"><a href="element-primitiu.html#galois-i-compositum-dextensions"><i class="fa fa-check"></i><b>10.2</b> Galois i compositum d’extensions</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="extensions-abelianes-i-ciclotòmiques.html"><a href="extensions-abelianes-i-ciclotòmiques.html"><i class="fa fa-check"></i><b>11</b> Extensions Abelianes i ciclotòmiques</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="extensions-abelianes-i-ciclotòmiques.html"><a href="extensions-abelianes-i-ciclotòmiques.html#grup-de-galois-dels-cossos-ciclotòmics"><i class="fa fa-check"></i><b>11.1</b> Grup de Galois dels cossos ciclotòmics</a></li>
+<li class="chapter" data-level="11.2" data-path="extensions-abelianes-i-ciclotòmiques.html"><a href="extensions-abelianes-i-ciclotòmiques.html#extensions-abelianes"><i class="fa fa-check"></i><b>11.2</b> Extensions abelianes</a></li>
+<li class="chapter" data-level="11.3" data-path="extensions-abelianes-i-ciclotòmiques.html"><a href="extensions-abelianes-i-ciclotòmiques.html#constructibilitat-de-polígons-regulars"><i class="fa fa-check"></i><b>11.3</b> Constructibilitat de polígons regulars</a></li>
+</ul></li>
 <li class="chapter" data-level="12" data-path="arrels-i-radicals.html"><a href="arrels-i-radicals.html"><i class="fa fa-check"></i><b>12</b> Arrels i radicals</a></li>
 <li class="chapter" data-level="13" data-path="calculem-grups-de-galois.html"><a href="calculem-grups-de-galois.html"><i class="fa fa-check"></i><b>13</b> Calculem grups de Galois</a></li>
 <li class="chapter" data-level="" data-path="bibliografia.html"><a href="bibliografia.html"><i class="fa fa-check"></i>Bibliografia</a></li>
@@ -252,11 +266,11 @@ div.csl-indent {
 <p>Enunciem i demostrem el teorema fonamental de la teoria de Galois. Acabarem
 amb diversos exemples concrets d’extensions, il·lustrant la correspondència de Galois.</p>
 <div class="proposition">
-<p><span id="prp:unlabeled-div-95" class="proposition"><strong>Proposició 8.1  </strong></span>Sigui <span class="math inline">\(K\)</span> una cos qualsevol. Sigui <span class="math inline">\(G\leq\Aut(K)\)</span> un subgrup finit, i sigui <span class="math inline">\(F=K^G\)</span>. Aleshores <span class="math inline">\(K\)</span> és Galois sobre <span class="math inline">\(F\)</span>,
+<p><span id="prp:unlabeled-div-96" class="proposition"><strong>Proposició 8.1  </strong></span>Sigui <span class="math inline">\(K\)</span> una cos qualsevol. Sigui <span class="math inline">\(G\leq\Aut(K)\)</span> un subgrup finit, i sigui <span class="math inline">\(F=K^G\)</span>. Aleshores <span class="math inline">\(K\)</span> és Galois sobre <span class="math inline">\(F\)</span>,
 i <span class="math inline">\(\Gal(K/F) = G\)</span>.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-96" class="proof"><em>Prova</em>. </span>Per definició d’<span class="math inline">\(F\)</span>, tenim <span class="math inline">\(G \leq \Aut(K/F)\)</span>, i només ens cal veure la igualtat. El teorema
+<p><span id="unlabeled-div-97" class="proof"><em>Prova</em>. </span>Per definició d’<span class="math inline">\(F\)</span>, tenim <span class="math inline">\(G \leq \Aut(K/F)\)</span>, i només ens cal veure la igualtat. El teorema
 ens diu que <span class="math inline">\(|G|=[K\colon F]\)</span>, i ja hem vist <span class="math inline">\(|\Aut(K/F)|\leq [K\colon F]\)</span>. Per tant:
 <span class="math display">\[
 [K\colon F] = |G| \leq |\Aut(K/F)| \leq [K\colon F].
@@ -264,23 +278,23 @@ ens diu que <span class="math inline">\(|G|=[K\colon F]\)</span>, i ja hem vist 
 Per tant, totes les desigualtats són igualtats i, en particular <span class="math inline">\(|G| = |\Aut(K/F)|\)</span>.</p>
 </div>
 <div class="corollary">
-<p><span id="cor:unlabeled-div-97" class="corollary"><strong>Corol·lary 8.1  </strong></span>Si <span class="math inline">\(G_1\)</span> i <span class="math inline">\(G_2\)</span> són subgrups diferents d’<span class="math inline">\(\Aut(K)\)</span>, aleshores <span class="math inline">\(K^{G_1} \neq K^{G_2}\)</span>.</p>
+<p><span id="cor:unlabeled-div-98" class="corollary"><strong>Corol·lary 8.1  </strong></span>Si <span class="math inline">\(G_1\)</span> i <span class="math inline">\(G_2\)</span> són subgrups diferents d’<span class="math inline">\(\Aut(K)\)</span>, aleshores <span class="math inline">\(K^{G_1} \neq K^{G_2}\)</span>.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-98" class="proof"><em>Prova</em>. </span>Trivial.</p>
+<p><span id="unlabeled-div-99" class="proof"><em>Prova</em>. </span>Trivial.</p>
 </div>
 <p>Sigui <span class="math inline">\(K/F\)</span> una extensió finita de Galois. A cada subextensió <span class="math inline">\(K/M\)</span> li podem associar el seu
 grup de Galois, <span class="math inline">\(\Gal(K/M)\)</span>. També podem associar a cada subgrup <span class="math inline">\(H\leq \Gal(K/F)\)</span> el cos fix <span class="math inline">\(K^H\)</span>.
 El següent resultat ens diu que aquestes dues operacions són inverses mútuament.</p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-99" class="theorem"><strong>Teorema 8.1  </strong></span>Sigui <span class="math inline">\(K/F\)</span> finita Galois. Aleshores <span class="math inline">\(M\mapsto \Gal(K/M)\)</span> i <span class="math inline">\(H\mapsto K^H\)</span> estableixen una bijecció
+<p><span id="thm:unlabeled-div-100" class="theorem"><strong>Teorema 8.1  </strong></span>Sigui <span class="math inline">\(K/F\)</span> finita Galois. Aleshores <span class="math inline">\(M\mapsto \Gal(K/M)\)</span> i <span class="math inline">\(H\mapsto K^H\)</span> estableixen una bijecció
 <span class="math display">\[
 \{\text{ subextensions } K/M/F\} \stackrel{1\colon 1}{\longleftrightarrow} \{\text{ subgrups } H \leq \Gal(K/F)\}.
 \]</span>
 A més el grau <span class="math inline">\([M \colon F]\)</span> es correspon amb l’ordre d’<span class="math inline">\(H\)</span>.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-100" class="proof"><em>Prova</em>. </span>Hem de veure:
+<p><span id="unlabeled-div-101" class="proof"><em>Prova</em>. </span>Hem de veure:
 1. <span class="math inline">\(K^{\Gal(K/M)}= M\)</span>. Això és automàtic a partir de la proposició i del Corol·lari <a href="automorfismes.html#cor:fix-gal-eq">7.3</a>.
 2. <span class="math inline">\(\Gal(K / K^H) = H\)</span>. Escrivim <span class="math inline">\(M=K^H\)</span>. Ja sabem que <span class="math inline">\(K/M\)</span> és de Galois, i <span class="math inline">\(|\Gal(K/M)|= [K\colon M]\)</span>.
 A més, per definició tenim <span class="math inline">\(H\leq \Gal(K/M)\)</span>. Hem de demostrar la igualtat: donat <span class="math inline">\(\tau\in \Gal(K/M)\)</span>, veurem
@@ -331,7 +345,7 @@ Directa, per definició.
 </ol>
 <p>Podem resumir tot l’episodi en un sol resultat:</p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-101" class="theorem"><strong>Teorema 8.2  (Teorema fonamental de la teoria de Galois) </strong></span>Sigui <span class="math inline">\(K/F\)</span> una extensió de Galois finita amb grup de Galois <span class="math inline">\(G\)</span>. Hi ha una bijecció entre
+<p><span id="thm:unlabeled-div-102" class="theorem"><strong>Teorema 8.2  (Teorema fonamental de la teoria de Galois) </strong></span>Sigui <span class="math inline">\(K/F\)</span> una extensió de Galois finita amb grup de Galois <span class="math inline">\(G\)</span>. Hi ha una bijecció entre
 <span class="math display">\[
 \{\text{subcossos $K/M/F$}\} \stackrel{1\colon 1}{\longleftrightarrow} \{subgrups H \leq G\}
 \]</span>
@@ -344,7 +358,7 @@ donada per $M<span class="math inline">\(H = \Gal(K/M)\)</span> i <span class="m
 </ol>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-102" class="example"><strong>Exemple 8.1  </strong></span>Calculem alguns exemples, com <span class="math inline">\(\QQ(\sqrt{2}, \sqrt{3})\)</span>, el cos de descomposició de <span class="math inline">\(\sqrt[3]{2}\)</span>, <span class="math inline">\(\QQ(\sqrt{2}+\sqrt{3})\)</span>,
+<p><span id="exm:unlabeled-div-103" class="example"><strong>Exemple 8.1  </strong></span>Calculem alguns exemples, com <span class="math inline">\(\QQ(\sqrt{2}, \sqrt{3})\)</span>, el cos de descomposició de <span class="math inline">\(\sqrt[3]{2}\)</span>, <span class="math inline">\(\QQ(\sqrt{2}+\sqrt{3})\)</span>,
 o el cos de descomposició de <span class="math inline">\(\QQ(\sqrt[8]{2}, \zeta_8)\)</span> de <span class="math inline">\(\sqrt[8]{2}\)</span>. És important adonar-se que no n’hi ha prou en assignar valors
 als generadors d’una extensió per definir un automorfisme, ja que hi pot haver relacions amagades entre els
 generadors. Per exemple, si <span class="math inline">\(\theta=\sqrt[8]{2}\)</span>, tenim <span class="math inline">\(\theta^4 = \zeta_8 + \zeta_8^{-1}\)</span> i per tant no totes

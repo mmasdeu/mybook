@@ -23,14 +23,14 @@
 <meta name="author" content="Marc Masdeu" />
 
 
-<meta name="date" content="2023-02-12" />
+<meta name="date" content="2023-02-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="lelement-primitiu.html"/>
+<link rel="prev" href="element-primitiu.html"/>
 <link rel="next" href="arrels-i-radicals.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -62,6 +62,7 @@
 \renewcommand{\HH}{\mathbb{H}}
 \renewcommand{\QQbar}{\bar{\QQ}}
 \renewcommand{\barQQ}{\bar{\QQ}}
+\renewcommand{\Fpbar}{\bar{\FF}_p}
 \renewcommand{\cC}{\mathcal{C}}
 
 \renewcommand{\fX}{\mathfrak{X}}
@@ -103,7 +104,11 @@
 \renewcommand{\car}{\operatorname{char}}
 \renewcommand{\mcd}{\operatorname{mcd}}
 \renewcommand{\gcd}{\operatorname{mcd}}
-\renewcommand{\Eq}{\operatorname{Eq}}\)</span>
+\renewcommand{\Eq}{\operatorname{Eq}}
+\renewcommand{\res}{\operatorname{res}}\)</span>
+<link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
+<script src="https://tikzjax.com/v1/tikzjax.js"></script>
+
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
   extensions: ["tex2jax.js"],
@@ -222,8 +227,17 @@ div.csl-indent {
 <li class="chapter" data-level="9.3" data-path="cossos-finits.html"><a href="cossos-finits.html#polinomis-irreductibles"><i class="fa fa-check"></i><b>9.3</b> Polinomis irreductibles</a></li>
 <li class="chapter" data-level="9.4" data-path="cossos-finits.html"><a href="cossos-finits.html#la-clausura-algebraica-dff_p"><i class="fa fa-check"></i><b>9.4</b> La clausura algebraica d’<span class="math inline">\(\FF_p\)</span></a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="lelement-primitiu.html"><a href="lelement-primitiu.html"><i class="fa fa-check"></i><b>10</b> L’element Primitiu</a></li>
-<li class="chapter" data-level="11" data-path="extensions-abelianes-i-ciclotòmiques.html"><a href="extensions-abelianes-i-ciclotòmiques.html"><i class="fa fa-check"></i><b>11</b> Extensions Abelianes i ciclotòmiques</a></li>
+<li class="chapter" data-level="10" data-path="element-primitiu.html"><a href="element-primitiu.html"><i class="fa fa-check"></i><b>10</b> Element Primitiu</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="element-primitiu.html"><a href="element-primitiu.html#el-teorema-de-lelement-primitiu"><i class="fa fa-check"></i><b>10.1</b> El teorema de l’element primitiu</a></li>
+<li class="chapter" data-level="10.2" data-path="element-primitiu.html"><a href="element-primitiu.html#galois-i-compositum-dextensions"><i class="fa fa-check"></i><b>10.2</b> Galois i compositum d’extensions</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="extensions-abelianes-i-ciclotòmiques.html"><a href="extensions-abelianes-i-ciclotòmiques.html"><i class="fa fa-check"></i><b>11</b> Extensions Abelianes i ciclotòmiques</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="extensions-abelianes-i-ciclotòmiques.html"><a href="extensions-abelianes-i-ciclotòmiques.html#grup-de-galois-dels-cossos-ciclotòmics"><i class="fa fa-check"></i><b>11.1</b> Grup de Galois dels cossos ciclotòmics</a></li>
+<li class="chapter" data-level="11.2" data-path="extensions-abelianes-i-ciclotòmiques.html"><a href="extensions-abelianes-i-ciclotòmiques.html#extensions-abelianes"><i class="fa fa-check"></i><b>11.2</b> Extensions abelianes</a></li>
+<li class="chapter" data-level="11.3" data-path="extensions-abelianes-i-ciclotòmiques.html"><a href="extensions-abelianes-i-ciclotòmiques.html#constructibilitat-de-polígons-regulars"><i class="fa fa-check"></i><b>11.3</b> Constructibilitat de polígons regulars</a></li>
+</ul></li>
 <li class="chapter" data-level="12" data-path="arrels-i-radicals.html"><a href="arrels-i-radicals.html"><i class="fa fa-check"></i><b>12</b> Arrels i radicals</a></li>
 <li class="chapter" data-level="13" data-path="calculem-grups-de-galois.html"><a href="calculem-grups-de-galois.html"><i class="fa fa-check"></i><b>13</b> Calculem grups de Galois</a></li>
 <li class="chapter" data-level="" data-path="bibliografia.html"><a href="bibliografia.html"><i class="fa fa-check"></i>Bibliografia</a></li>
@@ -249,19 +263,149 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="extensions-abelianes-i-ciclotòmiques" class="section level1 hasAnchor" number="11">
 <h1><span class="header-section-number">Episodi 11. </span> Extensions Abelianes i ciclotòmiques<a href="extensions-abelianes-i-ciclotòmiques.html#extensions-abelianes-i-ciclotòmiques" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>En aquest apartat estudiem les extensions ciclotòmiques, i veiem que <span class="math inline">\(\Gal(\QQ(\zeta_n))\)</span>
+<p>En aquest apartat estudiem les extensions ciclotòmiques, i veiem que <span class="math inline">\(\Gal(\QQ(\zeta_n)/\QQ)\)</span>
 és canònicament isomorf a <span class="math inline">\((\ZZ/n\ZZ)^\times\)</span>. Com a aplicació, veurem com construir
 polígons regulars amb regle i compàs. Veurem que només és possible per polígons regulars
 de <span class="math inline">\(n\)</span> costats quan <span class="math inline">\(\varphi{n}\)</span> és una potència de <span class="math inline">\(2\)</span>. Això passa si i només si <span class="math inline">\(n\)</span> és producte
 d’una potència de dos i de primers de Fermat diferents.</p>
+<div id="grup-de-galois-dels-cossos-ciclotòmics" class="section level2 hasAnchor" number="11.1">
+<h2><span class="header-section-number">11.1</span> Grup de Galois dels cossos ciclotòmics<a href="extensions-abelianes-i-ciclotòmiques.html#grup-de-galois-dels-cossos-ciclotòmics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Sigui <span class="math inline">\(n\geq 2\)</span> i considerem el cos ciclotòmic <span class="math inline">\(\QQ(\zeta_n)\)</span>. Volem estudiar <span class="math inline">\(\Gal(\QQ(\zeta_n)/\QQ)\)</span>.
+Per cada <span class="math inline">\(a\in\ZZ\)</span> coprimer amb <span class="math inline">\(n\)</span>, definim l’aplicació
+<span class="math display">\[
+\sigma_a \colon \QQ(\zeta_n)\to \QQ(\zeta_n),\quad \zeta_n\mapsto \zeta_n^a.
+\]</span></p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-124" class="theorem"><strong>Teorema 11.1  </strong></span>L’aplicació <span class="math inline">\(a \mapsto \sigma_a\)</span> indueix un isomorfisme
+<span class="math display">\[
+\psi \colon (\ZZ/n\ZZ)^\times \to \Gal(\QQ(\zeta_n)/\QQ).
+\]</span></p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-125" class="proof"><em>Prova</em>. </span>Ja sabem que <span class="math inline">\(\Gal(\QQ(\zeta_n)/\QQ)\)</span> té exactament <span class="math inline">\(\varphi(n)\)</span> elements. Si <span class="math inline">\(\sigma\)</span> és un
+d’aquests automorfismes, sabem que ve determinat per on envia <span class="math inline">\(\zeta_n\)</span>, que és una arrel
+del polinomi ciclotòmic <span class="math inline">\(\Phi_n(x)\)</span>. Per tant, <span class="math inline">\(\sigma(\zeta_n)\)</span> és una arrel <span class="math inline">\(n\)</span>-èssima primitiva
+de la unitat i doncs ha de ser <span class="math inline">\(\zeta_n^a\)</span> per alguna <span class="math inline">\(a\)</span> coprimera amb <span class="math inline">\(n\)</span>. Així veiem que
+<span class="math inline">\(\sigma_a\in \Gal(\QQ(\zeta_n)/\QQ)\)</span> i <span class="math inline">\(\psi\)</span> és una aplicació ben definida i a més exhaustiva, per
+tant bijectiva. A més, <span class="math inline">\(\psi\)</span> és un morfisme de grups, ja que
+<span class="math display">\[
+(\sigma_a\sigma_b)(\zeta_n) = \sigma_a(\zeta_n^b) = (\zeta_n^b)^a = \zeta_n^{ab} = \sigma_{ab}(\zeta_n).
+\]</span></p>
+</div>
+<p>Fixem-nos que en particular tenim exemples d’extensions cícliques de grau <span class="math inline">\(p-1\)</span> per qualsevol primer <span class="math inline">\(p\)</span>.
+També tenim una versió més conceptual del teorema xinès dels residus, que escrivim en el cas de dos factors
+per estalviar notació.</p>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-126" class="proposition"><strong>Proposició 11.1  </strong></span>Si <span class="math inline">\(n\)</span> i <span class="math inline">\(m\)</span> són coprimers, aleshores <span class="math inline">\(\QQ(\zeta_n) \cap \QQ(\zeta_m) = \QQ\)</span>, <span class="math inline">\(\QQ(\zeta_n,\zeta_m) = \QQ(\zeta_{nm})\)</span>, i
+<span class="math display">\[
+\Gal(\QQ(\zeta_{nm})/\QQ) \cong \Gal(\QQ(\zeta_n)/\QQ) \times \Gal(\QQ(\zeta_m)/\QQ).
+\]</span></p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-127" class="proof"><em>Prova</em>. </span>TODO</p>
+</div>
+<p>El següent lema ens permet trobar generadors dels subcossos de <span class="math inline">\(\QQ(\zeta_p)\)</span>.</p>
+<div class="lemma">
+<p><span id="lem:unlabeled-div-128" class="lemma"><strong>Lema 11.1  </strong></span>Sigui <span class="math inline">\(p\)</span> un primer, i sigui <span class="math inline">\(H\leq \Gal(\QQ(\zeta_p)/\QQ)\)</span> un subgrup. Aleshores
+<span class="math display">\[
+\theta_H=\sum_{\sigma \in H} \sigma(\zeta_p)
+\]</span>
+és un generador del cos fix d’<span class="math inline">\(H\)</span>. L’element <span class="math inline">\(\theta_H\)</span> s’anomena un <em>període</em> de <span class="math inline">\(\zeta_p\)</span>.</p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-129" class="example"><strong>Exemple 11.1  </strong></span>Calcularem el reticle de subcossos de <span class="math inline">\(\QQ(\zeta_{13})\)</span>, fent servir el lema anterior.
+TODO</p>
+</div>
+</div>
+<div id="extensions-abelianes" class="section level2 hasAnchor" number="11.2">
+<h2><span class="header-section-number">11.2</span> Extensions abelianes<a href="extensions-abelianes-i-ciclotòmiques.html#extensions-abelianes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Podem fer servir el què hem vist per demostrar el següent resultat.</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-130" class="theorem"><strong>Teorema 11.2  (realització de grups abelians) </strong></span>Sigui <span class="math inline">\(G\)</span> un grup finit abelià. Aleshores hi ha una extensió <span class="math inline">\(K/\QQ\)</span> continguda dins d’un cos ciclotòmic
+tal que <span class="math inline">\(\Gal(K/\QQ) \cong G\)</span>.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-131" class="proof"><em>Prova</em>. </span>Tot grup abelià és producte de cíclics:
+<span class="math display">\[
+G \cong C_{n_1}\times C_{n_2}\times\cdots\times C_{n_k}.
+\]</span>
+Existeixen primers diferents <span class="math inline">\(p_1\)</span>, <span class="math inline">\(p_2\)</span>, <span class="math inline">\(p_k\)</span> tals que <span class="math inline">\(p_i\equiv 1\pmod{n_i}\)</span>. Aquest fet
+es dedueix del fet que hi ha infinits primers <span class="math inline">\(\equiv 1\pmod{m}\)</span> per qualsevol <span class="math inline">\(m\)</span> (TODO).</p>
+<p>Considerem <span class="math inline">\(n=p_1p_2\cdots p_k\)</span>. Aleshores, tenim
+<span class="math display">\[
+\Gal(\QQ(\zeta_n)/\QQ)\cong (\ZZ/(p_1-1))^\times \times (\ZZ/(p_2-1))^\times \times \cdots \times (\ZZ/(p_k-1))^\times.
+\]</span>
+Com que <span class="math inline">\(n_i\)</span> divideix <span class="math inline">\(p_i-1\)</span>, hi ha un subgrup <span class="math inline">\(H_i\leq C_{p_i-1}\)</span> d’índex <span class="math inline">\(n_i\)</span> per cada <span class="math inline">\(i\)</span>, i el quocient
+per <span class="math inline">\(H_1\times H_2\times\cdots\times H_k\)</span> és isomorf a <span class="math inline">\(G\)</span>. Per la correspondència de Galois, hi ha un subcos
+de <span class="math inline">\(\QQ(\zeta_n)\)</span> que realitza <span class="math inline">\(G\)</span>.</p>
+</div>
+<p>Els cossos ciclotòmics són exemples d’extensions de Galois amb grup abelià. En general, una
+extensió <span class="math inline">\(K/F\)</span> es diu que té la propietat <span class="math inline">\(P\)</span> si és de Galois i el seu grup de Galois té la propietat <span class="math inline">\(P\)</span>.
+Per exemple, tenim la següent definició:</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-132" class="definition"><strong>Definició 11.1  (extensió abeliana) </strong></span>Una extensió <span class="math inline">\(K/F\)</span> és <em>abeliana</em> si <span class="math inline">\(K/F\)</span> és de Galois i <span class="math inline">\(\Gal(K/F)\)</span> és un grup abelià.</p>
+</div>
+<p>El resultat anterior té un recíproc que no podem demostrar aquí:</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-133" class="theorem"><strong>Teorema 11.3  (Kronecker-Weber) </strong></span>Sigui <span class="math inline">\(K/\QQ\)</span> una extensió finita abeliana. Aleshores <span class="math inline">\(K\)</span> està contingut en una extensió ciclotòmica.</p>
+</div>
+<p>En general, és avui un problema obert el determinar quins grups apareixen quan com a grups de Galois d’extensions
+<span class="math inline">\(K/\QQ\)</span>. Ja hem vist que tots els grups abelians apareixen, però hi ha grups (per exemple <span class="math inline">\(\PSL_2(\FF_{125})\)</span>) pels
+quals no s’ha demostrat encara que hi apareguin. Aquest problema s’anomena el <strong>problema invers de la teoria de Galois</strong>.</p>
+</div>
+<div id="constructibilitat-de-polígons-regulars" class="section level2 hasAnchor" number="11.3">
+<h2><span class="header-section-number">11.3</span> Constructibilitat de polígons regulars<a href="extensions-abelianes-i-ciclotòmiques.html#constructibilitat-de-polígons-regulars" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Com a aplicació dels cossos ciclotòmics, estudiarem quins polígons regulars es poden construir amb regle i compàs.
+Ja hem vist que un nombre real <span class="math inline">\(\alpha\)</span> és construible si i només si <span class="math inline">\(\QQ(\alpha)\)</span> està contingut en un cos <span class="math inline">\(K\)</span>
+obtingut a partir de <span class="math inline">\(\QQ\)</span> a partir d’un nombre finit d’extensions quadràtiques.</p>
+<p>Construir un polígon de <span class="math inline">\(n\)</span> costats és equivalent a construir les arrels <span class="math inline">\(n\)</span>-èssimes de la unitat <span class="math inline">\(\zeta_n\)</span>, que al
+seu torn és equivalent a construir la seva part real <span class="math inline">\(x=\frac{1}{2}(\zeta_n+\zeta_n^{-1})\)</span>. Com que
+<span class="math inline">\(\zeta_n^2 - 2 x \zeta_n + 1=0\)</span>, el cos <span class="math inline">\(\QQ(zeta_n)\)</span> és una extensió de grau <span class="math inline">\(2\)</span> sobre <span class="math inline">\(\QQ(x)\)</span> (aquesta última és real,
+mentre que <span class="math inline">\(\QQ(\zeta_n)\)</span> no). Per tant, si volem que el cos <span class="math inline">\(\QQ(x)\)</span> estigui dins de <span class="math inline">\(K\)</span> ens cal en particular que
+el seu ordre <span class="math inline">\(\varphi(n)/2\)</span> sigui potència de <span class="math inline">\(2\)</span>, és a dir, que <span class="math inline">\(\varphi(n)\)</span> sigui potència de <span class="math inline">\(2\)</span>.</p>
+<p>Recíprocament, si <span class="math inline">\(\varphi(n)\)</span> és una potència de <span class="math inline">\(2\)</span>, aleshores <span class="math inline">\(\QQ(x)\)</span> té ordre una potència de <span class="math inline">\(2\)</span>. Prenent
+successivament subgrups d’índex <span class="math inline">\(2\)</span> i fent servir la correspondència de Galois, obtenim una successió
+<span class="math display">\[
+\QQ = K_0 \subset K_1\subset\cdots\subset K_m = \QQ(x),\quad [K_i \colon K_{i-1}] = 2,
+\]</span>
+i per tant <span class="math inline">\(x\)</span> és constructible. D’aquí tenim la següent caracterització. Recordem que un primer <span class="math inline">\(p\)</span> es
+diu <em>primer de Fermat</em> si <span class="math inline">\(p-1\)</span> és una potència de <span class="math inline">\(2\)</span>.</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-134" class="theorem"><strong>Teorema 11.4  (construcció de polígons regulars) </strong></span>Sigui <span class="math inline">\(n\)</span> un enter positiu. Aleshores el polígon regular de <span class="math inline">\(n\)</span> costats és constructible
+amb regle i compàs si i només si <span class="math inline">\(n\)</span> és de la forma
+<span class="math display">\[
+n = 2^k p_1 \cdots p_r,
+\]</span>
+on <span class="math inline">\(k\geq 0\)</span> i <span class="math inline">\(p_i\)</span> són primers de Fermat diferents.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-135" class="proof"><em>Prova</em>. </span>Escrivim <span class="math inline">\(n\)</span> com a producte de potències de primers diferents
+<span class="math display">\[
+n=2^{k}q_1^{e_1} q_2^{e_2}\cdots q_r^{e_r}, \quad q_i \text{ senar.}
+\]</span>
+Aleshores tenim la fórmula coneguda
+<span class="math display">\[
+\varphi(n) = 2^{k-1} \prod_{i=1}^r (q_i-1)q_i^{e_i-1}.
+\]</span>
+Ja veiem que cal que <span class="math inline">\(e_i=1\)</span> per tot <span class="math inline">\(i\)</span> si volem que <span class="math inline">\(\varphi(n)\)</span> sigui potència de <span class="math inline">\(2\)</span>. A més, cal
+que <span class="math inline">\(q_i-1\)</span> sigui potència de <span class="math inline">\(2\)</span> per a tot <span class="math inline">\(i\)</span>, és a dir que <span class="math inline">\(q_i\)</span> sigui un primer de Fermat.</p>
+</div>
+<p>Només es coneixen cinc primers de Fermat: <span class="math inline">\(F_0=3\)</span>, <span class="math inline">\(F_1=5\)</span>, <span class="math inline">\(F_2=17\)</span>, <span class="math inline">\(F_3=257\)</span>, <span class="math inline">\(F_4=65537\)</span>. En general,
+si <span class="math inline">\(p\)</span> és un primer de Fermat aleshores <span class="math inline">\(p=2^{2^i}+1\)</span> per algun <span class="math inline">\(i\geq 0\)</span>. Els nombres <span class="math inline">\(F_i=2^{2^i} +1\)</span> s’anomenen
+<em>nombres de Fermat</em>. Sembla poc probable que hi hagi infinits primers de Fermat, però és encara un problema obert.</p>
+<p>La següent expressió dona (en principi) una manera de construir un <span class="math inline">\(17\)</span>-gon regular amb regle i compàs.
+<span class="math display">\[
+\cos\frac{2\pi}{17} = \frac{1}{16}\left(\sqrt{17}-1+\sqrt{34-2\sqrt{17}}\right)+ \frac{1}{8}\left(\sqrt{17+3\sqrt{17}-\sqrt{34-2\sqrt{17}}-2\sqrt{34+2\sqrt{17}}} \right).
+\]</span></p>
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="lelement-primitiu.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="element-primitiu.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="arrels-i-radicals.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
