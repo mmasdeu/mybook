@@ -1,2 +1,41 @@
 # Calculem grups de Galois
 
+Hem vist com calcular el grup de Galois de polinomis
+de la forma $x^n-a$. En general, però, calcular el grup de Galois d'un polinomi donat és una tasca difícil.
+Primer veurem com calcular el grup de Galois de polinomis de graus $3$ i $4$. També
+veurem una tècnica que ens dona molta informació sobre el grup de Galois, i que a vegades és
+suficient per determinar-lo.
+
+## Cúbics
+
+Trobarem la solució de la cúbica fent servir el què hem après fins ara. Primer determinarem el seu grup
+de Galois. Assumirem que  la característica de $F$
+no és $2$. Això ens cal perquè en general per un polinomi separable $f(x)$ de grau $n$ tenim $\Gal(f)\leq A_n$ si i només si $\sqrt{\disc(f)}\in F$.
+
+Sigui doncs $f(x)\in F[x]$ un polinomi separable de grau $3$. Resulta que el discriminant ja determina el grup de Galois.
+
+::: {.theorem}
+Si $\disc(f(x))$ és un quadrat a $F$, aleshores $\Gal(f)$ és $A_3$. Si no, aleshores $\Gal(f)=S_3$.
+:::
+::: {.proof}
+Els únics subgrups transitius de $S_3$ són $S_3$ i $A_3$, i ja sabem que $\sqrt{\disc(f)}\in F$ si i només si $\Gal(f)\leq A_3$.
+:::
+
+::: {.remark}
+Si $f(x)\in Q[x]$ té $\Gal(f)=A_3$ aleshores totes les seves arrels generen el mateix cos cúbic. Com que com a mínim
+una de les arrels és real, totes ho han de ser. Però el recíproc no és cert. Per exemple, el polinomi $x^3-4x-1$ té
+tres arrels reals, però el seu grup de Galois és $S_3$ perquè té discriminant $229$, que no és un quadrat perfecte.
+Les seves tres arrels generen tres subcossos diferents de $\RR$.
+:::
+
+::: {.remark}
+La condició que $f$ és irreductible és important! El polinomi $x^3-2x+1=(x-1)(x^2+x-1)$ té discriminant $5$ però grup de Galois $A_3$,
+mentre que el polinomi $x^3-7*x-6=(x+1)(x+2)(x-3)$ té discrimiant $20^2$ i grup de Galois $S_3$.
+:::
+
+## Quàrtics
+
+TODO. Fer servir material de la secció anterior, també
+
+##
+

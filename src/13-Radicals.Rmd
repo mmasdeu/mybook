@@ -7,13 +7,164 @@ per tant, no existeix una fórmula que expressi les arrels d'un polinomi en term
 dels seus coeficients. També es mostrarà un exemple concret d'un polinomi de grau $5$ sobre $\QQ$
 amb grup de Galois $S_5$.
 
+
+## Extensions cícliques
+
+::: {.definition #ext-ciclica name="extensió cíclica"}
+Una extensió $K/F$ és *cíclica* si és Galois amb grup de galois cíclic.
+:::
+
+Escriurem $\mu_n$ pel grup de les arrels $n$-èssimes de la unitat (en una clausura algebraica),
+i també escriurem $\sqrt[n]{a}$ per una arrel del polinomi $x^n-a$.
+
 ::: {.proposition}
-Sigui $f(x)\in \QQ[x]$ un polinomi irreductible de grau $p$ amb exactament $p-2$ arrels reals. Aleshores $\Gal(f)\cong S_p$.
+Sigui $F$ és un cos de característica no divisora de $n$ que conté $\mu_n$. Aleshores si $a\in F$ l'extensió $F(\sqrt[n]{a})$
+és cíclica de grau un divisor de $n$.
 :::
 ::: {.proof}
-TODO
+Escrivim $K=F(\sqrt[n]{a})$. Com que $\mu_n\subseteq F$, $K$ és el cos de descomposició de $x^n-a$ i per tant
+és Galois. Sigui $\alpha=\sqrt[n]{a}$ una arrel fixada. Aleshores tot $\sigma\in\Gal(K/F)$ porta $\alpha$ a $\alpha\zeta_\sigma$,
+on $\zeta_\sigma\in\mu_n$ és una arrel $n$-èssima de la unitat que depèn de $\sigma$. Obtenim així una aplicació
+$$
+\chi_a\colon \Gal(K/F)\to \mu_n,\quad \sigma\mapsto \zeta_\sigma=\frac{\sigma(\alpha)}{\alpha}.
+$$
+Fixem-nos que $\chi_a$ no depèn de quina arrel $\alpha$ hem triat de $x^n-a$. Qualsevol altra arrel seria de la
+forma $\alpha\zeta$, i $\sigma(\alpha\zeta)/(\alpha\zeta) = \sigma(\alpha)/\alpha$ perquè $\sigma$ fixa
+les arrels de la unitat. Fent servir això, és fàcil veure que aquesta aplicació és un morfisme de grups
+(és a dir, que $\zeta_{\sigma\tau} = \zeta_\sigma\zeta_\tau$),
+i el seu nucli està format per aquelles $\sigma$ que fixen $\sqrt[n]{a}$, és a dir per la identitat. Per tant,
+$\Gal(K/F)$ és isomorf a un subgrup del grup cíclic $\mu_n$, com volíem veure.
+:::
+
+El recíproc resulta ser cert.
+
+::: {.proposition}
+Sigui $F$ és un cos de característica no divisora de $n$ que conté $\mu_n$, i sigui $K/F$ una extensió cíclica de
+grau $n$. Aleshores $K=F(\sqrt[n]{a})$ per algun $a\in F$.
+:::
+::: {.proof}
+Escrivim $G=\langle\sigma\rangle$. Donat $\alpha\in K$ i $\zeta\in\mu_n$, definim la *resolvent de Lagrange* com
+$$
+[\alpha,\zeta] = \sum_{i=0}^{n-1} \zeta^i \sigma^i(\alpha).
+$$
+Fixem-nos que, com que $\sigma$ fixa $\zeta$, tenim:
+\begin{align*}
+\sigma([\alpha,\zeta]) &= \sum_{i=0}^{n-1} \zeta^i \sigma^{i+1}(\alpha)\\
+&= \zeta^{-1} [\alpha,\zeta],
+\end{align*}
+i repetint el procés tenim $\sigma^i([\alpha,\zeta]) = \zeta^{-i} [\alpha,\zeta]$. També
+tenim que $\sigma([\alpha,\zeta]^n) = \zeta^{-n} [\alpha,\zeta]^n = [\alpha,\zeta]^n$. Per tant $[\alpha,\zeta]^n$
+és un element de $F$. Si fixem una arrel primitiva $\zeta$ i fem servir que els automorfismes $1,\sigma,\ldots,\sigma^{n-1}$
+són linealment independents (vegis el Corol·lari \@ref(automorfismes-li)), veiem que hi ha un element $\alpha\in K$ tal que
+[\alpha,\zeta]\neq 0$. Com que $\sigma^i([\alpha,\zeta]) = \zeta^{-i}[\alpha,\zeta]$, aquest element no pot viure
+en cap subcos propi de $K$. Per tant, $K = F([\alpha,\zeta])$. A més, $[\alpha,\zeta]^n \in F$, per tant $K=F(\sqrt[n]{a})$
+per algun $a\in F$, com volíem veure.
+:::
+
+
+## Solubilitat per radicals
+
+Considerarem només cossos de característica zero, encara que n'hi hauria prou amb evitar les característiques
+que divideixin el grau de les extensions que prendrem.
+
+::: {.definition #element-per-radicals name="element resoluble per radicals"}
+Un element $\alpha$ algebraic sobre $F$ es diu que *es pot expressar amb radicals*, o *resoluble per radicals*,
+si $\alpha \in K$ on $K$ es pot obtenir mitjançant una cadena d'extensions
+$$
+F=K_0\subset K_1\subset\cdots\subset K_r = K, \quad K_{i+1} = K_i(\sqrt[n_i]{a_i}).
+$$
+Direm que $K$ és una *extensió radical* d'$F$.
+:::
+
+::: {.definition #polinomi-resoluble-radicals name="polinomi resoluble per radicals"}
+Diem que un polinomi $f(x)\in F[x]$ és *resoluble per radicals* si totes les seves arrels són
+resolubles per radicals.
+:::
+
+Com que afegir les arrels de la unitat dona lloc a una extensió radical, podem assumir sempre
+que $F$ té les arrels de la unitat que vulguem. Per tant, podrem identificar extensions radicals
+amb extensions cícliques.
+
+::: {.lemma}
+El compositum d'un nombre finit d'extensions radicals és una extensió radical.
+:::
+::: {.proof}
+TODO (fàcil).
+:::
+
+::: {.lemma}
+Si $\alpha$ pertany a una extensió radical $K/F$, aleshores $\alpha$ pertany a una extensió radical $K'/F$
+on les extensions successives són cícliques.
+:::
+::: {.proof}
+Prenem la clausura de Galois $L/K/F$ i considerem, per cada $\sigma\in \Gal(L/F)$, la cadena
+$$
+F=\sigma(K_0)\subset \sigma(K_1)\subset\cdots\subset \sigma(K_r)=\sigma(K).
+$$
+Les extensions intermitges també són simples radicals, generades per $\sigma(\sqrt[n_i]{a_i})$, que és una arrel
+polinomi $x^{n_i} - \sigma(a_i)$ amb coeficients a $\sigma(K_i)$. El compositum dels $\sigma(K)$ és $L$, i pel lema
+anterior $L/F$ és radical.
+
+Finalment, hem d'adjuntar totes les arrels $n_i$-èssimes que apareguin a la cadena radical per $L/F$, obtenint
+un nou cos $F'$. Composant amb la cadena per $L/F$ obtenim:
+$$
+F \subseteq F'=F'L_0 \subseteq F'L_1\subseteq\cdots\subseteq F'L_r = F'L.
+$$
+El primer sant és abelià i per tant es pot trencar en una cadena cíclica. Els altres salts són radicals simples
+però ara tenim les arrels del a unitat disponibles, i per tant sabem que són cícliques, i hem acabat.
+:::
+
+Recordem que un grup finit $G$ és *resoluble* si hi ha una cadena de subgrups
+$$
+1 = G_r \leq G_{r-1} \leq\cdots \leq G_0=G,\quad G_i/G_{i-1} \text{ cíclic.}
+$$
+(es pot canviar cíclic per abelià, ja que donat un grup abelià sempre es pot trobar una cadena cíclica). També
+cal recordar que si $N \normaleq G$ aleshores $G$ és resoluble si i només si $N$ i $G/N$ ho són.
+
+::: {.theorem name="Galois"}
+El polinomi $f(x)$ és resoluble per radicals si i només si $\Gal(f)$ és un grup resoluble.
+:::
+::: {.proof}
+Suposem que $f(x)$ és resoluble per radicals. Cada arrel és resoluble i per tant està continguda en una
+extensió radical. El compositum de totes aquestes extensions, posem $K/F$, també és radical. Si prenem els subgrups
+de Galois $G_i=\Gal(K_i/F)$ de cadascun dels cossos de la cadena, com que $\Gal(K_{i+1}/K_i) = G_i/G_{i+1}$
+és cíclic per tot $i$, en deduïm que $\Gal(K/F)$ és resoluble.
+
+Recíprocament, suposem que $f(x)$ té cos de descomposició $K/F$, i que $G = \Gal(f)=\Gal(K/F)$ és resoluble. Els
+cossos fixos d'una cadena demostrant la resolubilitat de $G$ donen lloc a una cadena d'extensions cícliques. Podem
+obtenir una nova cadena de cossos composant-la amb una extensió $F'/F$ on s'adjuntin totes les arrels de la unitat
+necessàries. Aleshores les noves extensions intermitges són radicals simples, i per tant les arrels d'$f(x)$
+estan contingudes en una extensió radical $F'K$.
+:::
+
+::: {.corollary}
+El polinomi general de grau $n$ no és resoluble per radicals, per cap $n\geq 5$.
+:::
+::: {.proof}
+Cal saber que $S_n$ no és resoluble per $n\geq 5$.
+:::
+
+Aquest teorema diu que no podem trobar una fórmula general només fent servir radicals per les arrels
+d'una equació de grau $n\geq 5$. Però això no vol dir que no hi hagi polinomis pels quals no es pugui fer!
+Per exemple, $x^n-a$ és resoluble per radicals per qualsevol $a$, trivialment. Veurem ara com podem
+trobar polinomis de grau primer amb grup de Galois $S_p$.
+
+::: {.proposition}
+Sigui $f(x)\in \QQ[x]$ un polinomi irreductible de grau $p$ amb exactament $p-2$ arrels reals.
+Aleshores $\Gal(f)\cong S_p$.
+:::
+::: {.proof}
+Sigui $G = \Gal(f)$, que el pensem com a subgrup de $S_p$. Siguin $\alpha$ i $\bar{\alpha}$ les dues arrels complexes de $f$. Com que $f$ és
+irreductible de grau $p$, el cos de descomposició $K$ té grau múltiple de $p$. Per tant, $|G|$ és divisible
+per $p$. Els únics elements de $S_p$ d'ordre $p$ són els $p$-cicles, així que $G$ conté un $p$-cicle.
+
+D'altra banda, la conjugació complexa restringeix a un element de $G$ que fixa les arrels reals i intercanvia
+les dues arrels complexes. Per tant $G$ conté una transposició. És un senzill exercici de permutacions
+demostrar que un $p$-cicle i una transposició qualsevol generen $S_p$ quan $p$ és primer.
 :::
 
 Podem aplicar el resultat anterior al polinomi $f(x)=x^5-4x-2$. Com que és $2$-Eisenstein, és irreductible. A més, la seva derivada
 és $5x^4-4$, que té zeros a $x=\pm\frac{\sqrt{2}}{\sqrt[4]{5}}$. Deduïm que $f(x)$ té exactament tres zeros reals,
 que de fet podem aproximar: $-1.24359639\ldots,-0.50849948\ldots,1.51851215\ldots$. Per tant, $\Gal(f)\cong S_5$.
+Per tant, no hi ha una fórmula per les arrels de $x^5-4x-2$ que només faci servir arrels $n$-èssimes.
+

@@ -38,9 +38,8 @@ de nombres ja construïts.
 ::: {.exercise}
 Demostreu que si el diàmetre de la circumferència és $\alpha+1$, aleshores el segment vertical indicat mesura $\sqrt{\alpha}$.
 
-```{r, echo=FALSE, engine='tikz', out.width='60%', fig.ext='png'}
+```{r, echo=FALSE, engine='tikz', out.width='50%', fig.ext='png'}
 \begin{tikzpicture}[scale=0.2]
-  \useasboundingbox (0, 0) rectangle (59.5, 84.2);
   \draw
     (12.8, 57.6) -- (38.4, 57.6);
   \draw

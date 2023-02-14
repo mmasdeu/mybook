@@ -3,6 +3,8 @@
 Enunciem i demostrem el teorema fonamental de la teoria de Galois. Acabarem
 amb diversos exemples concrets d'extensions, il·lustrant la correspondència de Galois.
 
+## Preliminars
+
 ::: {.proposition}
 Sigui $K$ una cos qualsevol. Sigui $G\leq\Aut(K)$ un subgrup finit, i sigui $F=K^G$. Aleshores $K$ és Galois sobre $F$,
 i $\Gal(K/F) = G$.
@@ -22,6 +24,8 @@ Si $G_1$ i $G_2$ són subgrups diferents d'$\Aut(K)$, aleshores $K^{G_1} \neq K^
 ::: {.proof}
 Trivial.
 :::
+
+## La correspondència de Galois
 
 Sigui $K/F$ una extensió finita de Galois. A cada subextensió $K/M$ li podem associar el seu
 grup de Galois, $\Gal(K/M)$. També podem associar a cada subgrup $H\leq \Gal(K/F)$ el cos fix $K^H$.
@@ -51,14 +55,17 @@ per algun $\sigma\in H$, com volíem.
 :::
 
 Hem vist que si $K/M/F$ és Galois aleshores $K/M$ també ho és. Què podem dir de l'extensió $M/F$?
+
 ::: {.proposition}
 Sigui $K/M/F$ una torre amb $K/F$ Galois, posem $G=\Gal(K/F)$. Aleshores són equivalents:
+
 1. $M/F$ és Galois.
 2. $H=\Gal(K/M)$ és un subgrup normal de $G$.
 3. $\sigma(M)\subseteq M$ per a tot $\sigma\in G$.
 
 En aquest cas, $\Gal(M/F) \cong G / H$.
 :::
+
 ::: {.proof}
 Sigui $H = \Gal(K/M)$.
 $1 \implies 2$: Sigui $\sigma\in G$. Si $\alpha\in M$ té polinomi mínim $f(x)\in F[x]$, aleshores $\sigma$
@@ -78,6 +85,8 @@ Aleshores $f(x)=\prod_{\beta in B} (x-\beta)$ és un polinomi separable amb coef
 a $F$. La hipòtesi és que $B\subseteq M$ i, per tant, $M$ és el cos de descomposició de $f$.
 :::
 
+## Operacions de reticle
+
 Per acabar d'entendre bé la correspondència de Galois, relacionem operacions conegudes entre cossos i entre grups.
 ::: {.proposition name=""}
 Sigui $K/F$ Galois amb $G = \Gal(K/F)$. Sigui $M_1$ i $M_2$ dues subextensions, amb $H_i=\Gal(K/M_i)$. Aleshores:
@@ -88,6 +97,7 @@ Sigui $K/F$ Galois amb $G = \Gal(K/F)$. Sigui $M_1$ i $M_2$ dues subextensions, 
 ::: {.proof}
 Directa, per definició.
 :::
+
 
 Podem resumir tot l'episodi en un sol resultat:
 
@@ -104,11 +114,13 @@ donada per $M\mapsto $H = \Gal(K/M)$ i $H\mapsto M = K^H$ que satisfà:
 4. (gira els reticles) $M_1M_2 \leftrightarrow H_1\cap H_2$ i $M_1\cap M_2 \leftrightarrow \langle H_1, H_2\rangle$.
 :::
 
-::: {.example}
+## Examples
+
 Calculem alguns exemples, com $\QQ(\sqrt{2}, \sqrt{3})$, el cos de descomposició de $\sqrt[3]{2}$, $\QQ(\sqrt{2}+\sqrt{3})$,
-o el cos de descomposició de $\QQ(\sqrt[8]{2}, \zeta_8)$ de $\sqrt[8]{2}$. És important adonar-se que no n'hi ha prou en assignar valors
+o el cos de descomposició de $\QQ(\sqrt[8]{2}, \zeta_8)$ de $\sqrt[8]{2}$.
+
+És important adonar-se que no n'hi ha prou en assignar valors
 als generadors d'una extensió per definir un automorfisme, ja que hi pot haver relacions amagades entre els
 generadors. Per exemple, si $\theta=\sqrt[8]{2}$, tenim $\theta^4 = \zeta_8 + \zeta_8^{-1}$ i per tant no totes
 les tries
 $\theta\mapsto \theta\zeta_8^i$ i $\zeta_8\mapsto \theta_8^j$ amb $j$ senar donen lloc a automorfismes.
-:::

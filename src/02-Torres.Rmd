@@ -24,7 +24,15 @@ Si $\alpha$ és algebraic sobre $F$, aleshores hi ha un únic polinomi **mònic*
 té $\alpha$ com a arrel. A més, $f(x)\in F[x]$ té $\alpha$ com a arrel si i només si és un múltiple de $\Irr_{\alpha, F}(x)$.
 :::
 ::: {.proof}
-TODO
+Sigui $g(x)\in F[x]$ un polinomi mònic amb $\alpha$ com a arrel, i amb grau mínim entre tots ells. Si es pogués
+trencar com $g(x)=g_1(x)g_2(x)$, aleshores $\alpha$ seria una arrel d'un dels $g_i(x)$, contradient la minimalitat
+del grau de $g(x)$.
+
+Suposem que $f(x)$ satisfà $f(\alpha)=0$. Dividint per $\Irr_{\alpha,F}(x)$, tenim
+$$
+f(x)=\Irr_{\alpha,F}(x) q(x)+r(x),
+$$
+i substituint a $x=\alpha$ tindrem $r(\alpha)=0$. Per minimalitat, deduïm que $r(x)=0$, com volíem.
 :::
 
 Fixem-nos que, si $K/L/F$ és una torre d'extensions i $\alpha\in K$ és algebraic sobre $F$, aleshores també ho és sobre $L$,
@@ -44,10 +52,11 @@ Revisitem els exemples anteriors, calculant els seus polinomis mínims.
 :::
 
 ::: {.proposition}
-Si $[K\colon F]=n$ i $\alpha\in K$, aleshores $\deg\alpha\leq n$. En particular, $K/F$ és algebraica.
+Si $[K\colon F]=n$ i $\alpha\in K$, aleshores $\deg\alpha\leq n$. En particular, tota extensió finita $K/F$ és algebraica.
 :::
 ::: {.proof}
-TODO
+Considerem els elements $1, \alpha, \alpha^2,\ldots, \alpha^{n-1}, \alpha^{n}$. Com que n'hi ha $n+1$, hi ha
+d'haver una relació de dependència lineal entre ells, i això ens dona un polinomi $f(x)\in F[x]$ de grau $\leq n$ tal que $f(\alpha)=0$.
 :::
 
 No és cert que tota extensió algebraica sigui finita (en veurem exemples més endavant).
@@ -59,13 +68,27 @@ Sigui $F$ un cos de característica $\neq 2$, i sigui $K/F$ una extensió de gra
 tal que $\delta^2=D\in F$ i $K=F(\delta)$. Escriurem que $K=F(\sqrt{D})$.
 :::
 ::: {.proof}
-TODO
+Prenem $\alpha\in K\smallsetminus F$. Per tant, $\alpha$ satisfà un polinomi de grau dos, que podem suposar
+mònic, posem $f(x)=x^2 + bx+c$ amb $b,c\in F$. Observem que $F(\alpha)=K$, ja que $F(\alpha)$ és una extensió
+de grau $2$ dins de $K$. Sigui $\delta=\alpha+b/2$. Aleshores és fàcil veure que $\delta$ és una arrel del
+polinomi $g(x)=x^2-D$, on $D=b^2-4c$. Per tant, $F(\alpha)=F(\delta)=F(\sqrt{D})$.
 :::
 
 ## Torres de cossos
 
 En aquesta secció considerem torres $L/K/F$. Ens interessa relacionar les dues extensions $L/K$ i $K/F$ amb l'extensió
 total $L/F$.
+
+::: {.proposition}
+Sigui $K/F$ una extensió, i sigui $V$ un $K$-espai vectorial. Aleshores
+$$
+\dim_F V = [K\colon F] \dim_K V.
+$$
+:::
+::: {.proof}
+Sigui $\{v_i\}_{i\in I}$ una $K$-base de $V$, i sigui $\{\alpha_j\}_{j\in J}$ una base de $K$ sobre $F$.
+Aleshores és fàcil comprovar que el conjunt $\{\alpha_j v_i\}_{i\in I, j \in J}$ forma una $F$-base de $V$.
+:::
 
 ::: {.theorem #torres name="fórmula de les torres"}
 Si $F\subseteq K\subseteq L$, aleshores
@@ -75,7 +98,7 @@ $$
 Si un costat de l'equació és infinit, aleshores l'altre també.
 :::
 ::: {.proof}
-TODO (fàcil, però poc elegant)
+Es dedueix directament del lema anterior.
 :::
 
 ::: {.corollary}
@@ -91,10 +114,14 @@ Demostreu que el polomi $x^3-\sqrt{2}$ és irreductible sobre $\QQ(\sqrt{2})$, f
 El següent lema senzill ens permetrà construir qualsevol extensió finitament generada de manera iterativa:
 
 ::: {.lemma}
-Si $\alpha$ i $\beta$ són elements de $K/F$, aleshores $F(\alpha,\beta)=(F(\alpha)(\beta))$.
+Si $\alpha$ i $\beta$ són elements de $K/F$, aleshores $F(\alpha,\beta)=(F(\alpha))(\beta)$.
 :::
 ::: {.proof}
-TODO
+El cos $F(\alpha,\beta)$ conté $F(\alpha)$. Com que també conté $\beta$, tenim $F(\alpha)(\beta)\subseteq F(\alpha,\beta)$
+per minimalitat de $F(\alpha)(\beta)$.
+
+Recíprocament, com que el cos $F(\alpha)(\beta)$ conté a $F$, a $\alpha$ i a $\beta$, aleshores per minimalitat de $F(\alpha,\beta)$
+tenim que $F(\alpha,\beta)\subseteq F(\alpha)(\beta)$.
 :::
 
 ::: {.exercise}
@@ -103,6 +130,15 @@ Calculeu el grau de l'extensió $\QQ(\sqrt{2},\sqrt{3})/\QQ$, i doneu una base.
 
 ::: {.theorem}
 L'extensió $K/F$ és finita si i només si $K=F(S)$ on $S$ és un conjunt finit d'elements algebraics.
+:::
+::: {.proof}
+Suposem $K/F$ finita de grau $n$, i sigui $S$ el conjunt (finit) format per una base de $K$ sobre $F$. Aleshores
+$K=F(S)$, i els
+elements $\alpha\in S$ són tots algebraics, ja que $[F(\alpha)\colon F]$ divideix $n$ i en particular el grau
+és finit.
+
+Recíprocament, si $K=F(S)$ amb $S$ un conjunt finit d'elements algebraics, aleshores podem obtenir $K$ adjuntant
+successivament els elements de $S$, i cada extensió és finita.
 :::
 
 ::: {.corollary}
@@ -122,7 +158,15 @@ un real donat (per exemple $\pi$) és transcendent.
 Si $K/F$ és una extensió algebraica i $L/K$ també, aleshores $L/F$ és algebraica.
 :::
 ::: {.proof}
-TODO
+Sigui $\alpha\in L$. Per tant, $\alpha$ satisfà un polinomi $f(x)\in K[x]$. Sigui $S$ el conjunt (finit)
+format pels coeficients de $f(x)$. Com que $K/F$ és algebraica, els elements de $S$ són tots algebraics
+i per tant l'extensió $F(S)/F$ és finita. Considerem el cos $F(\alpha,S)$. Tenim:
+$$
+[F(\alpha,S)\colon F] = [F(\alpha,S)\colon F(S)] [F(S) \colon F].
+$$
+El primer terme és menor o igual que el grau del polinomi $f(x)$, ja que podem pensar $f(x)\in F(S)$ i
+$\alpha$ n'és una arrel. El segon terme és finit, com hem dit. Per tant $F(\alpha,S)$ és una extensió
+finita, i això vol dir que $\alpha$ és algebraic sobre $F$.
 :::
 
 
