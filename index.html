@@ -105,7 +105,9 @@
 \renewcommand{\mcd}{\operatorname{mcd}}
 \renewcommand{\gcd}{\operatorname{mcd}}
 \renewcommand{\Eq}{\operatorname{Eq}}
-\renewcommand{\res}{\operatorname{res}}\)</span>
+\renewcommand{\res}{\operatorname{res}}
+\renewcommand{\normaleq}{\trianglelefteq}
+\renewcommand{\disc}{\operatorname{disc}}\)</span>
 <link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
 <script src="https://tikzjax.com/v1/tikzjax.js"></script>
 
@@ -118,7 +120,7 @@ MathJax.Hub.Config({
       EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
   },
     tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]},
-    TeX: {extensions: ["AMSmath.js","AMSsymbols.js","https://mmasdeu.github.io/teoriadegalois/xypic.js"],
+    TeX: {extensions: ["AMSmath.js","AMSsymbols.js","https://mat.uab.cat/~masdeu/xypic.js"],
     noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },}
 });
 </script>
@@ -219,7 +221,13 @@ div.csl-indent {
 <li class="chapter" data-level="7.1" data-path="automorfismes.html"><a href="automorfismes.html#definició-1"><i class="fa fa-check"></i><b>7.1</b> Definició</a></li>
 <li class="chapter" data-level="7.2" data-path="automorfismes.html"><a href="automorfismes.html#cossos-fixos"><i class="fa fa-check"></i><b>7.2</b> Cossos fixos</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="el-teorema-fonamental.html"><a href="el-teorema-fonamental.html"><i class="fa fa-check"></i><b>8</b> El Teorema Fonamental</a></li>
+<li class="chapter" data-level="8" data-path="el-teorema-fonamental.html"><a href="el-teorema-fonamental.html"><i class="fa fa-check"></i><b>8</b> El Teorema Fonamental</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="el-teorema-fonamental.html"><a href="el-teorema-fonamental.html#preliminars"><i class="fa fa-check"></i><b>8.1</b> Preliminars</a></li>
+<li class="chapter" data-level="8.2" data-path="el-teorema-fonamental.html"><a href="el-teorema-fonamental.html#la-correspondència-de-galois"><i class="fa fa-check"></i><b>8.2</b> La correspondència de Galois</a></li>
+<li class="chapter" data-level="8.3" data-path="el-teorema-fonamental.html"><a href="el-teorema-fonamental.html#operacions-de-reticle"><i class="fa fa-check"></i><b>8.3</b> Operacions de reticle</a></li>
+<li class="chapter" data-level="8.4" data-path="el-teorema-fonamental.html"><a href="el-teorema-fonamental.html#examples"><i class="fa fa-check"></i><b>8.4</b> Examples</a></li>
+</ul></li>
 <li class="chapter" data-level="9" data-path="cossos-finits.html"><a href="cossos-finits.html"><i class="fa fa-check"></i><b>9</b> Cossos Finits</a>
 <ul>
 <li class="chapter" data-level="9.1" data-path="cossos-finits.html"><a href="cossos-finits.html#grup-de-galois"><i class="fa fa-check"></i><b>9.1</b> Grup de Galois</a></li>
@@ -238,8 +246,17 @@ div.csl-indent {
 <li class="chapter" data-level="11.2" data-path="extensions-abelianes-i-ciclotòmiques.html"><a href="extensions-abelianes-i-ciclotòmiques.html#extensions-abelianes"><i class="fa fa-check"></i><b>11.2</b> Extensions abelianes</a></li>
 <li class="chapter" data-level="11.3" data-path="extensions-abelianes-i-ciclotòmiques.html"><a href="extensions-abelianes-i-ciclotòmiques.html#constructibilitat-de-polígons-regulars"><i class="fa fa-check"></i><b>11.3</b> Constructibilitat de polígons regulars</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="arrels-i-radicals.html"><a href="arrels-i-radicals.html"><i class="fa fa-check"></i><b>12</b> Arrels i radicals</a></li>
-<li class="chapter" data-level="13" data-path="calculem-grups-de-galois.html"><a href="calculem-grups-de-galois.html"><i class="fa fa-check"></i><b>13</b> Calculem grups de Galois</a></li>
+<li class="chapter" data-level="12" data-path="arrels-i-radicals.html"><a href="arrels-i-radicals.html"><i class="fa fa-check"></i><b>12</b> Arrels i radicals</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="arrels-i-radicals.html"><a href="arrels-i-radicals.html#extensions-cícliques"><i class="fa fa-check"></i><b>12.1</b> Extensions cícliques</a></li>
+<li class="chapter" data-level="12.2" data-path="arrels-i-radicals.html"><a href="arrels-i-radicals.html#solubilitat-per-radicals"><i class="fa fa-check"></i><b>12.2</b> Solubilitat per radicals</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="calculem-grups-de-galois.html"><a href="calculem-grups-de-galois.html"><i class="fa fa-check"></i><b>13</b> Calculem grups de Galois</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="calculem-grups-de-galois.html"><a href="calculem-grups-de-galois.html#cúbics"><i class="fa fa-check"></i><b>13.1</b> Cúbics</a></li>
+<li class="chapter" data-level="13.2" data-path="calculem-grups-de-galois.html"><a href="calculem-grups-de-galois.html#quàrtics"><i class="fa fa-check"></i><b>13.2</b> Quàrtics</a></li>
+<li class="chapter" data-level="13.3" data-path="calculem-grups-de-galois.html"><a href="calculem-grups-de-galois.html#section"><i class="fa fa-check"></i><b>13.3</b> </a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="bibliografia.html"><a href="bibliografia.html"><i class="fa fa-check"></i>Bibliografia</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/mmasdeu/teoriadegalois" target="blank">Publicat amb bookdown</a></li>

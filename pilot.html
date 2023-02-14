@@ -105,7 +105,9 @@
 \renewcommand{\mcd}{\operatorname{mcd}}
 \renewcommand{\gcd}{\operatorname{mcd}}
 \renewcommand{\Eq}{\operatorname{Eq}}
-\renewcommand{\res}{\operatorname{res}}\)</span>
+\renewcommand{\res}{\operatorname{res}}
+\renewcommand{\normaleq}{\trianglelefteq}
+\renewcommand{\disc}{\operatorname{disc}}\)</span>
 <link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
 <script src="https://tikzjax.com/v1/tikzjax.js"></script>
 
@@ -118,7 +120,7 @@ MathJax.Hub.Config({
       EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
   },
     tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]},
-    TeX: {extensions: ["AMSmath.js","AMSsymbols.js","https://mmasdeu.github.io/teoriadegalois/xypic.js"],
+    TeX: {extensions: ["AMSmath.js","AMSsymbols.js","https://mat.uab.cat/~masdeu/xypic.js"],
     noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },}
 });
 </script>
@@ -219,7 +221,13 @@ div.csl-indent {
 <li class="chapter" data-level="7.1" data-path="automorfismes.html"><a href="automorfismes.html#definició-1"><i class="fa fa-check"></i><b>7.1</b> Definició</a></li>
 <li class="chapter" data-level="7.2" data-path="automorfismes.html"><a href="automorfismes.html#cossos-fixos"><i class="fa fa-check"></i><b>7.2</b> Cossos fixos</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="el-teorema-fonamental.html"><a href="el-teorema-fonamental.html"><i class="fa fa-check"></i><b>8</b> El Teorema Fonamental</a></li>
+<li class="chapter" data-level="8" data-path="el-teorema-fonamental.html"><a href="el-teorema-fonamental.html"><i class="fa fa-check"></i><b>8</b> El Teorema Fonamental</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="el-teorema-fonamental.html"><a href="el-teorema-fonamental.html#preliminars"><i class="fa fa-check"></i><b>8.1</b> Preliminars</a></li>
+<li class="chapter" data-level="8.2" data-path="el-teorema-fonamental.html"><a href="el-teorema-fonamental.html#la-correspondència-de-galois"><i class="fa fa-check"></i><b>8.2</b> La correspondència de Galois</a></li>
+<li class="chapter" data-level="8.3" data-path="el-teorema-fonamental.html"><a href="el-teorema-fonamental.html#operacions-de-reticle"><i class="fa fa-check"></i><b>8.3</b> Operacions de reticle</a></li>
+<li class="chapter" data-level="8.4" data-path="el-teorema-fonamental.html"><a href="el-teorema-fonamental.html#examples"><i class="fa fa-check"></i><b>8.4</b> Examples</a></li>
+</ul></li>
 <li class="chapter" data-level="9" data-path="cossos-finits.html"><a href="cossos-finits.html"><i class="fa fa-check"></i><b>9</b> Cossos Finits</a>
 <ul>
 <li class="chapter" data-level="9.1" data-path="cossos-finits.html"><a href="cossos-finits.html#grup-de-galois"><i class="fa fa-check"></i><b>9.1</b> Grup de Galois</a></li>
@@ -238,8 +246,17 @@ div.csl-indent {
 <li class="chapter" data-level="11.2" data-path="extensions-abelianes-i-ciclotòmiques.html"><a href="extensions-abelianes-i-ciclotòmiques.html#extensions-abelianes"><i class="fa fa-check"></i><b>11.2</b> Extensions abelianes</a></li>
 <li class="chapter" data-level="11.3" data-path="extensions-abelianes-i-ciclotòmiques.html"><a href="extensions-abelianes-i-ciclotòmiques.html#constructibilitat-de-polígons-regulars"><i class="fa fa-check"></i><b>11.3</b> Constructibilitat de polígons regulars</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="arrels-i-radicals.html"><a href="arrels-i-radicals.html"><i class="fa fa-check"></i><b>12</b> Arrels i radicals</a></li>
-<li class="chapter" data-level="13" data-path="calculem-grups-de-galois.html"><a href="calculem-grups-de-galois.html"><i class="fa fa-check"></i><b>13</b> Calculem grups de Galois</a></li>
+<li class="chapter" data-level="12" data-path="arrels-i-radicals.html"><a href="arrels-i-radicals.html"><i class="fa fa-check"></i><b>12</b> Arrels i radicals</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="arrels-i-radicals.html"><a href="arrels-i-radicals.html#extensions-cícliques"><i class="fa fa-check"></i><b>12.1</b> Extensions cícliques</a></li>
+<li class="chapter" data-level="12.2" data-path="arrels-i-radicals.html"><a href="arrels-i-radicals.html#solubilitat-per-radicals"><i class="fa fa-check"></i><b>12.2</b> Solubilitat per radicals</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="calculem-grups-de-galois.html"><a href="calculem-grups-de-galois.html"><i class="fa fa-check"></i><b>13</b> Calculem grups de Galois</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="calculem-grups-de-galois.html"><a href="calculem-grups-de-galois.html#cúbics"><i class="fa fa-check"></i><b>13.1</b> Cúbics</a></li>
+<li class="chapter" data-level="13.2" data-path="calculem-grups-de-galois.html"><a href="calculem-grups-de-galois.html#quàrtics"><i class="fa fa-check"></i><b>13.2</b> Quàrtics</a></li>
+<li class="chapter" data-level="13.3" data-path="calculem-grups-de-galois.html"><a href="calculem-grups-de-galois.html#section"><i class="fa fa-check"></i><b>13.3</b> </a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="bibliografia.html"><a href="bibliografia.html"><i class="fa fa-check"></i>Bibliografia</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/mmasdeu/teoriadegalois" target="blank">Publicat amb bookdown</a></li>
@@ -331,16 +348,22 @@ i infinita si no.</p>
 <p><span id="thm:kronecker" class="theorem"><strong>Teorema 1.1  (Kronecker) </strong></span>Sigui <span class="math inline">\(f(x)\in F[x]\)</span> un polinomi. Aleshores existeix una extensió <span class="math inline">\(K/F\)</span> tal que <span class="math inline">\(K\)</span> té una arrel de <span class="math inline">\(f(x)\)</span>.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-5" class="proof"><em>Prova</em>. </span>TODO</p>
+<p><span id="unlabeled-div-5" class="proof"><em>Prova</em>. </span>Considerem <span class="math inline">\(K = F[x] / (g(x))\)</span>, on <span class="math inline">\(g(x)\)</span> és un factor irreductible qualsevol de <span class="math inline">\(f(x)\)</span>. Sigui <span class="math inline">\(\alpha\)</span> la classe de <span class="math inline">\(x\)</span> a <span class="math inline">\(K\)</span>. Aleshores <span class="math inline">\(g(\alpha)=0\)</span>
+i per tant <span class="math inline">\(f(\alpha)=0\)</span>.</p>
 </div>
 <p>El següent teorema ens diu que l’extensió donada pel teorema anterior té grau igual al grau del polinomi (per això s’ha triat
 el nom!) quan aquest és irreductible. De fet, ens dona una base de <span class="math inline">\(K\)</span> com a <span class="math inline">\(F\)</span>-espai vectorial.</p>
 <div class="theorem">
 <p><span id="thm:ext-arrel-base" class="theorem"><strong>Teorema 1.2  </strong></span>Sigui <span class="math inline">\(f(x)\in F[x]\)</span> un polinomi irreductible de grau <span class="math inline">\(n\)</span>, i sigui <span class="math inline">\(K=F[x]/(f(x))\)</span>. Sigui <span class="math inline">\(\alpha\)</span> la classe de <span class="math inline">\(x\)</span> a <span class="math inline">\(K\)</span>.
-Aleshores els elements <span class="math inline">\((1,\alpha,\ldots,\alpha^{n-1})\)</span> formen una <span class="math inline">\(F\)</span>-base de <span class="math inline">\(K\)</span>.</p>
+Aleshores els elements <span class="math inline">\(\{1,\alpha,\ldots,\alpha^{n-1}\}\)</span> formen una <span class="math inline">\(F\)</span>-base de <span class="math inline">\(K\)</span>.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-6" class="proof"><em>Prova</em>. </span>TODO</p>
+<p><span id="unlabeled-div-6" class="proof"><em>Prova</em>. </span>Tot element de <span class="math inline">\(K\)</span> té un representant de la forma <span class="math inline">\(h(x)\in F[x]\)</span>. Dividint per <span class="math inline">\(f(x)\)</span>, podem trobar un
+representant equivalent però de grau <span class="math inline">\(&lt; n\)</span>. Per tant, els elements <span class="math inline">\(\{1,\alpha,\ldots,\alpha^{n-1}\}\)</span>
+generen <span class="math inline">\(K\)</span> com a <span class="math inline">\(F\)</span>-espai vectorial. Cal veure que són linealment independents. Si hi hagués una
+relació de dependència lineal, voldria dir que hi hauria un polinomi <span class="math inline">\(g(x)\in F[x]\)</span> de grau <span class="math inline">\(&lt; n\)</span>
+tal que <span class="math inline">\(g(\alpha)=0\)</span>. Però aleshores <span class="math inline">\(g(x)\)</span> hauria de ser un divisor de <span class="math inline">\(f(x)\)</span>, que és impossible
+ja que <span class="math inline">\(f(x)\)</span> és irreductible.</p>
 </div>
 <p>L’aritmètica a <span class="math inline">\(F[x]/(p(x))\)</span> és molt explícita: els seus elements es poden expressar com a polinomis en <span class="math inline">\(\alpha\)</span> de grau
 menor que <span class="math inline">\(n=\deg(p(x))\)</span>. Donats dos polinomis <span class="math inline">\(a(\alpha)\)</span> per <span class="math inline">\(b(\alpha)\)</span>, podem considerar
@@ -367,12 +390,18 @@ conjunt finit format per <span class="math inline">\(\alpha_1,\ldots,\alpha_n\)<
 és quan <span class="math inline">\(S\)</span> conté un sol element: en aquest cas <span class="math inline">\(F(\alpha)\)</span> s’anomena una extensió <em>simple</em>, i l’element <span class="math inline">\(\alpha\)</span> s’anomena
 un <em>element primitiu</em> de l’extensió (que no és únic, en general!).</p>
 <div class="theorem">
-<p><span id="thm:ext-simple" class="theorem"><strong>Teorema 1.3  (extensió simple) </strong></span>Sigui <span class="math inline">\(f(x)\in F[x]\)</span> un polinomi irreductible, i suposem que <span class="math inline">\(K/F\)</span> és una extensió que conté una arrel <span class="math inline">\(\alpha\)</span> de <span class="math inline">\(f(x)\)</span>.
+<p><span id="thm:ext-simple" class="theorem"><strong>Teorema 1.3  (extensió simple) </strong></span>Sigui <span class="math inline">\(f(x)\in F[x]\)</span> un polinomi irreductible, i suposem que <span class="math inline">\(K/F\)</span> és una extensió
+que conté una arrel <span class="math inline">\(\alpha\)</span> de <span class="math inline">\(f(x)\)</span>.
 Aleshores hi ha un isomorfisme <span class="math display">\[F[x]/(f(x))\cong F(\alpha).\]</span>
 Aquest isomorfisme és únic si demanem que <span class="math inline">\([x]\mapsto \alpha\)</span>.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-11" class="proof"><em>Prova</em>. </span>TODO</p>
+<p><span id="unlabeled-div-11" class="proof"><em>Prova</em>. </span>Tenim
+<span class="math display">\[\begin{align*}
+\Hom_F(F[x]/(f(x)), F(\alpha)) &amp;\cong \{ \varphi \in \Hom_{F}(F[x], F(\alpha)) ~|~ \varphi(f) = 0\}\\
+&amp; \cong \{\beta\in F(\alpha) ~|~ f(\beta)=0\}\neq\emptyset.
+\end{align*}\]</span>
+Donat un morfisme <span class="math inline">\(\varphi\)</span>, és automàticament un isomorfisme, fet que comprovem calculant graus de les extensions.</p>
 </div>
 <div class="example">
 <p><span id="exm:unlabeled-div-12" class="example"><strong>Exemple 1.5  </strong></span>Expliquem l’exemple de <span class="math inline">\(\QQ(\sqrt{2})\)</span> i la diferència amb <span class="math inline">\(\QQ(\sqrt[3]{2})\)</span>. Aquest darrer cos és un subcòs de <span class="math inline">\(\RR\)</span>, però hi ha
@@ -402,7 +431,7 @@ Sigui <span class="math inline">\(f(x)\in F[x]\)</span> un polinomi irreductible
 </div>
 <div class="proof">
 <p><span id="unlabeled-div-14" class="proof"><em>Prova</em>. </span><span class="math display">\[
-\Hom_\sigma (F(\alpha), L) \cong \Hom_{\sigma}(F[x]/(f(x)), L) \cong \{ \sigma \in \Hom_{\sigma}(F[x],L) ~|~ \sigma(f) = 0\},
+\Hom_\sigma (F(\alpha), L) \cong \Hom_{\sigma}(F[x]/(f(x)), L) \cong \{ \varphi \in \Hom_{\sigma}(F[x],L) ~|~ \varphi(f) = 0\},
 \]</span>
 i aquest últim conjunt és precisament <span class="math inline">\(\{\beta \in L ~|~ \sigma(f)(\beta) = 0\}\)</span>.</p>
 </div>

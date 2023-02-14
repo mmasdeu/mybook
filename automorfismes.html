@@ -105,7 +105,9 @@
 \renewcommand{\mcd}{\operatorname{mcd}}
 \renewcommand{\gcd}{\operatorname{mcd}}
 \renewcommand{\Eq}{\operatorname{Eq}}
-\renewcommand{\res}{\operatorname{res}}\)</span>
+\renewcommand{\res}{\operatorname{res}}
+\renewcommand{\normaleq}{\trianglelefteq}
+\renewcommand{\disc}{\operatorname{disc}}\)</span>
 <link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
 <script src="https://tikzjax.com/v1/tikzjax.js"></script>
 
@@ -118,7 +120,7 @@ MathJax.Hub.Config({
       EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
   },
     tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]},
-    TeX: {extensions: ["AMSmath.js","AMSsymbols.js","https://mmasdeu.github.io/teoriadegalois/xypic.js"],
+    TeX: {extensions: ["AMSmath.js","AMSsymbols.js","https://mat.uab.cat/~masdeu/xypic.js"],
     noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },}
 });
 </script>
@@ -219,7 +221,13 @@ div.csl-indent {
 <li class="chapter" data-level="7.1" data-path="automorfismes.html"><a href="automorfismes.html#definició-1"><i class="fa fa-check"></i><b>7.1</b> Definició</a></li>
 <li class="chapter" data-level="7.2" data-path="automorfismes.html"><a href="automorfismes.html#cossos-fixos"><i class="fa fa-check"></i><b>7.2</b> Cossos fixos</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="el-teorema-fonamental.html"><a href="el-teorema-fonamental.html"><i class="fa fa-check"></i><b>8</b> El Teorema Fonamental</a></li>
+<li class="chapter" data-level="8" data-path="el-teorema-fonamental.html"><a href="el-teorema-fonamental.html"><i class="fa fa-check"></i><b>8</b> El Teorema Fonamental</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="el-teorema-fonamental.html"><a href="el-teorema-fonamental.html#preliminars"><i class="fa fa-check"></i><b>8.1</b> Preliminars</a></li>
+<li class="chapter" data-level="8.2" data-path="el-teorema-fonamental.html"><a href="el-teorema-fonamental.html#la-correspondència-de-galois"><i class="fa fa-check"></i><b>8.2</b> La correspondència de Galois</a></li>
+<li class="chapter" data-level="8.3" data-path="el-teorema-fonamental.html"><a href="el-teorema-fonamental.html#operacions-de-reticle"><i class="fa fa-check"></i><b>8.3</b> Operacions de reticle</a></li>
+<li class="chapter" data-level="8.4" data-path="el-teorema-fonamental.html"><a href="el-teorema-fonamental.html#examples"><i class="fa fa-check"></i><b>8.4</b> Examples</a></li>
+</ul></li>
 <li class="chapter" data-level="9" data-path="cossos-finits.html"><a href="cossos-finits.html"><i class="fa fa-check"></i><b>9</b> Cossos Finits</a>
 <ul>
 <li class="chapter" data-level="9.1" data-path="cossos-finits.html"><a href="cossos-finits.html#grup-de-galois"><i class="fa fa-check"></i><b>9.1</b> Grup de Galois</a></li>
@@ -238,8 +246,17 @@ div.csl-indent {
 <li class="chapter" data-level="11.2" data-path="extensions-abelianes-i-ciclotòmiques.html"><a href="extensions-abelianes-i-ciclotòmiques.html#extensions-abelianes"><i class="fa fa-check"></i><b>11.2</b> Extensions abelianes</a></li>
 <li class="chapter" data-level="11.3" data-path="extensions-abelianes-i-ciclotòmiques.html"><a href="extensions-abelianes-i-ciclotòmiques.html#constructibilitat-de-polígons-regulars"><i class="fa fa-check"></i><b>11.3</b> Constructibilitat de polígons regulars</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="arrels-i-radicals.html"><a href="arrels-i-radicals.html"><i class="fa fa-check"></i><b>12</b> Arrels i radicals</a></li>
-<li class="chapter" data-level="13" data-path="calculem-grups-de-galois.html"><a href="calculem-grups-de-galois.html"><i class="fa fa-check"></i><b>13</b> Calculem grups de Galois</a></li>
+<li class="chapter" data-level="12" data-path="arrels-i-radicals.html"><a href="arrels-i-radicals.html"><i class="fa fa-check"></i><b>12</b> Arrels i radicals</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="arrels-i-radicals.html"><a href="arrels-i-radicals.html#extensions-cícliques"><i class="fa fa-check"></i><b>12.1</b> Extensions cícliques</a></li>
+<li class="chapter" data-level="12.2" data-path="arrels-i-radicals.html"><a href="arrels-i-radicals.html#solubilitat-per-radicals"><i class="fa fa-check"></i><b>12.2</b> Solubilitat per radicals</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="calculem-grups-de-galois.html"><a href="calculem-grups-de-galois.html"><i class="fa fa-check"></i><b>13</b> Calculem grups de Galois</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="calculem-grups-de-galois.html"><a href="calculem-grups-de-galois.html#cúbics"><i class="fa fa-check"></i><b>13.1</b> Cúbics</a></li>
+<li class="chapter" data-level="13.2" data-path="calculem-grups-de-galois.html"><a href="calculem-grups-de-galois.html#quàrtics"><i class="fa fa-check"></i><b>13.2</b> Quàrtics</a></li>
+<li class="chapter" data-level="13.3" data-path="calculem-grups-de-galois.html"><a href="calculem-grups-de-galois.html#section"><i class="fa fa-check"></i><b>13.3</b> </a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="bibliografia.html"><a href="bibliografia.html"><i class="fa fa-check"></i>Bibliografia</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/mmasdeu/teoriadegalois" target="blank">Publicat amb bookdown</a></li>
@@ -283,24 +300,24 @@ escrivim <span class="math inline">\(\Aut(K/F)\)</span> com el grup d’automorf
 \Aut(K/F) =\{\sigma \in \Aut(K) ~|~ \sigma(x)=x\,\forall x \in F\}.
 \]</span></p>
 <div class="proposition">
-<p><span id="prp:unlabeled-div-78" class="proposition"><strong>Proposició 7.1  </strong></span>Sigui <span class="math inline">\(K/F\)</span> una extensió, i sigui <span class="math inline">\(\alpha\in K\)</span> un element algebraic sobre <span class="math inline">\(F\)</span>. Aleshores
+<p><span id="prp:unlabeled-div-81" class="proposition"><strong>Proposició 7.1  </strong></span>Sigui <span class="math inline">\(K/F\)</span> una extensió, i sigui <span class="math inline">\(\alpha\in K\)</span> un element algebraic sobre <span class="math inline">\(F\)</span>. Aleshores
 per tot <span class="math inline">\(\sigma\in \Aut(K/F)\)</span> envia <span class="math inline">\(\alpha\)</span> a una arrel <span class="math inline">\(\sigma(\alpha)\)</span> de <span class="math inline">\(\Irr(\alpha,F)(x)\)</span>.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-79" class="proof"><em>Prova</em>. </span>Com que <span class="math inline">\(\Irr(\alpha,F)(x)\)</span> té coeficients a <span class="math inline">\(F\)</span> i <span class="math inline">\(\sigma\)</span> és un morfisme de cossos, tenim
+<p><span id="unlabeled-div-82" class="proof"><em>Prova</em>. </span>Com que <span class="math inline">\(\Irr(\alpha,F)(x)\)</span> té coeficients a <span class="math inline">\(F\)</span> i <span class="math inline">\(\sigma\)</span> és un morfisme de cossos, tenim
 <span class="math display">\[
 \Irr(\alpha,F)(\sigma(\alpha)) = \sigma(\Irr(\alpha,F)(\alpha)) = \sigma(0)=0.
 \]</span></p>
 </div>
 <div class="corollary">
-<p><span id="cor:unlabeled-div-80" class="corollary"><strong>Corol·lary 7.1  </strong></span>Sigui <span class="math inline">\(f(x)\in F[x]\)</span> un polinomi irreductible i <span class="math inline">\(K/F\)</span> és una extensió. Aleshores tot automorfisme
+<p><span id="cor:unlabeled-div-83" class="corollary"><strong>Corol·lary 7.1  </strong></span>Sigui <span class="math inline">\(f(x)\in F[x]\)</span> un polinomi irreductible i <span class="math inline">\(K/F\)</span> és una extensió. Aleshores tot automorfisme
 <span class="math inline">\(\sigma\in\Aut(K/F)\)</span> permuta les arrels de <span class="math inline">\(f(x)\)</span> a <span class="math inline">\(K\)</span>.</p>
 </div>
 <div class="corollary">
-<p><span id="cor:unlabeled-div-81" class="corollary"><strong>Corol·lary 7.2  () </strong></span>Sigui <span class="math inline">\(K/F\)</span> una extensió algebraica. Aleshores <span class="math inline">\(\Hom_F(K, K) = \Aut(K/F)\)</span>.</p>
+<p><span id="cor:unlabeled-div-84" class="corollary"><strong>Corol·lary 7.2  () </strong></span>Sigui <span class="math inline">\(K/F\)</span> una extensió algebraica. Aleshores <span class="math inline">\(\Hom_F(K, K) = \Aut(K/F)\)</span>.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-82" class="proof"><em>Prova</em>. </span>Sigui <span class="math inline">\(\sigma \colon K\to K\)</span> un morfisme que fixa <span class="math inline">\(F\)</span>. Ja sabem que és injectiu, però volem veure
+<p><span id="unlabeled-div-85" class="proof"><em>Prova</em>. </span>Sigui <span class="math inline">\(\sigma \colon K\to K\)</span> un morfisme que fixa <span class="math inline">\(F\)</span>. Ja sabem que és injectiu, però volem veure
 que és exhaustiu. Si <span class="math inline">\(K/F\)</span> és una extensió finita això ja ho sabem (per àlgebra lineal), però aquí
 ho volem veure en general. Sigui <span class="math inline">\(\beta \in K\)</span> qualsevol element. Considerem el conjunt
 <span class="math display">\[
@@ -314,7 +331,7 @@ com actuen aquests automorfismes en els elements que generen l’extensió, ja q
 automorfisme quedarà únicament determinat per aquesta acció. En particular, quan <span class="math inline">\(K/F\)</span> és finita
 el nombre d’automorfismes també serà finit.</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-83" class="example"><strong>Exemple 7.1  </strong></span>Calculem <span class="math inline">\(\Aut(\QQ(\sqrt{2})/\QQ)=\{1,\sigma\}\)</span> i <span class="math inline">\(\Aut(\QQ(\sqrt[3]{2})/QQ) = 1\)</span>.</p>
+<p><span id="exm:unlabeled-div-86" class="example"><strong>Exemple 7.1  </strong></span>Calculem <span class="math inline">\(\Aut(\QQ(\sqrt{2})/\QQ)=\{1,\sigma\}\)</span> i <span class="math inline">\(\Aut(\QQ(\sqrt[3]{2})/QQ) = 1\)</span>.</p>
 </div>
 </div>
 <div id="cossos-fixos" class="section level2 hasAnchor" number="7.2">
@@ -335,27 +352,27 @@ tant, normalment considerarem només cossos fixos per subgrups d’<span class="
 - Si <span class="math inline">\(H_1\leq H_2 \leq \Aut(K)\)</span>, aleshores <span class="math inline">\(K^{H_2} \subseteq K^{H_1}\)</span>.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-84" class="proof"><em>Prova</em>. </span>Trivial.</p>
+<p><span id="unlabeled-div-87" class="proof"><em>Prova</em>. </span>Trivial.</p>
 </div>
 <div class="lemma">
-<p><span id="lem:unlabeled-div-85" class="lemma"><strong>Lema 7.2  </strong></span>Sigui <span class="math inline">\(F\)</span> un cos infinit, i sigui <span class="math inline">\(V\)</span> un <span class="math inline">\(F\)</span>-espai vectorial, i siguin <span class="math inline">\(V_1,\ldots,V_r\)</span> subespais propis.
+<p><span id="lem:unlabeled-div-88" class="lemma"><strong>Lema 7.2  </strong></span>Sigui <span class="math inline">\(F\)</span> un cos infinit, i sigui <span class="math inline">\(V\)</span> un <span class="math inline">\(F\)</span>-espai vectorial, i siguin <span class="math inline">\(V_1,\ldots,V_r\)</span> subespais propis.
 Aleshores <span class="math inline">\(V\neq \bigcup V_i\)</span>.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-86" class="proof"><em>Prova</em>. </span>Fem inducció en la dimensió <span class="math inline">\(n\)</span> de V. El cas <span class="math inline">\(n=1\)</span> és trivial, així que
+<p><span id="unlabeled-div-89" class="proof"><em>Prova</em>. </span>Fem inducció en la dimensió <span class="math inline">\(n\)</span> de V. El cas <span class="math inline">\(n=1\)</span> és trivial, així que
 podem assumir-ho cert per tot <span class="math inline">\(F\)</span>-espai vectorial de dimensió <span class="math inline">\(\leq n-1\)</span> i ho demostrarem per <span class="math inline">\(V\)</span>.
 Triem un subespai <span class="math inline">\(U\subset V\)</span> de dimensió <span class="math inline">\(n-1\)</span> diferent de tots els <span class="math inline">\(V_i\)</span> (aquí utilitzem que <span class="math inline">\(F\)</span> és infinit).
 Aleshores apliquem inducció als subespais <span class="math inline">\(U\cap V_i\)</span> d’<span class="math inline">\(U\)</span>, i obtenim un element d’<span class="math inline">\(U\)</span> que ja ens serveix.</p>
 </div>
 <div class="remark">
-<p><span id="unlabeled-div-87" class="remark"><em>Remarca</em>. </span>El lema també és cert quan <span class="math inline">\(V\)</span> és de dimensió infinita (exercici), però no ens caldrà per les aplicacions.</p>
+<p><span id="unlabeled-div-90" class="remark"><em>Remarca</em>. </span>El lema també és cert quan <span class="math inline">\(V\)</span> és de dimensió infinita (exercici), però no ens caldrà per les aplicacions.</p>
 </div>
 <div class="proposition">
 <p><span id="prp:lema-algebra-lineal" class="proposition"><strong>Proposició 7.2  </strong></span>Sigui <span class="math inline">\(K/F\)</span> una extensió finita, i siguin <span class="math inline">\(K_1,\ldots,K_r\)</span> subextensions diferents de <span class="math inline">\(K\)</span>. Aleshores hi ha
 algun element de <span class="math inline">\(K\)</span> que no pertany a cap dels <span class="math inline">\(K_i\)</span>.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-88" class="proof"><em>Prova</em>. </span>Si <span class="math inline">\(F\)</span> és infinit, ja estem pel lema anterior. Fem doncs el cas on <span class="math inline">\(F\)</span> és finit. En aquest cas <span class="math inline">\(K\)</span> també és finit, posem que té <span class="math inline">\(p^n\)</span> elements. Aleshores
+<p><span id="unlabeled-div-91" class="proof"><em>Prova</em>. </span>Si <span class="math inline">\(F\)</span> és infinit, ja estem pel lema anterior. Fem doncs el cas on <span class="math inline">\(F\)</span> és finit. En aquest cas <span class="math inline">\(K\)</span> també és finit, posem que té <span class="math inline">\(p^n\)</span> elements. Aleshores
 els <span class="math inline">\(K_i\)</span> també són finits, i tenen <span class="math inline">\(p^i\)</span> elements cadascun. Com que tots són diferents i hi ha un únic
 cos finit de cada cardinal, la unió dels <span class="math inline">\(K_i\)</span> té com a molt
 <span class="math display">\[
@@ -369,7 +386,7 @@ elements, que és menor que <span class="math inline">\(p^n\)</span>.</p>
 <p>En particular, <span class="math inline">\(\Aut(K/F)\)</span> és un grup finit.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-89" class="proof"><em>Prova</em>. </span>Suposem que <span class="math inline">\(\Aut(K/F)\)</span> conté <span class="math inline">\(\sigma_1=1,\ldots,\sigma_{n}\)</span> automorfismes
+<p><span id="unlabeled-div-92" class="proof"><em>Prova</em>. </span>Suposem que <span class="math inline">\(\Aut(K/F)\)</span> conté <span class="math inline">\(\sigma_1=1,\ldots,\sigma_{n}\)</span> automorfismes
 diferents. Per cada <span class="math inline">\(i\neq j\)</span>, considerem el conjunt
 <span class="math display">\[
 \Eq_{\sigma_i,\sigma_j} = \{x \in K ~|~ \sigma_i(x)=\sigma_j(x)\}.
@@ -389,15 +406,15 @@ si <span class="math inline">\(|\Aut(K/F)| = [K \colon F]\)</span>. En aquest ca
 <p><span id="cor:fix-gal-eq" class="corollary"><strong>Corol·lary 7.3  </strong></span>Sigui <span class="math inline">\(K/F\)</span> una extensió finita i Galois. Aleshores <span class="math inline">\(K^{\Gal(K/F)} = F\)</span>.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-90" class="proof"><em>Prova</em>. </span>Escrivim <span class="math inline">\(G=\Gal(K/F)\)</span>, i sigui <span class="math inline">\(M=K^{G}\supseteq F\)</span>. Tenim, per definició, que <span class="math inline">\(G = \Aut(K/M)\)</span>.
+<p><span id="unlabeled-div-93" class="proof"><em>Prova</em>. </span>Escrivim <span class="math inline">\(G=\Gal(K/F)\)</span>, i sigui <span class="math inline">\(M=K^{G}\supseteq F\)</span>. Tenim, per definició, que <span class="math inline">\(G = \Aut(K/M)\)</span>.
 Per tant, <span class="math inline">\([K\colon F] = |G|\leq [K\colon M]\)</span>, del que en deduim <span class="math inline">\(F = M\)</span>.</p>
 </div>
 <div class="corollary">
-<p><span id="cor:unlabeled-div-91" class="corollary"><strong>Corol·lary 7.4  </strong></span>Sigui <span class="math inline">\(K/F\)</span> una extensió finita i Galois. Aleshores hi ha un polinomi irreductible i separable
+<p><span id="cor:unlabeled-div-94" class="corollary"><strong>Corol·lary 7.4  </strong></span>Sigui <span class="math inline">\(K/F\)</span> una extensió finita i Galois. Aleshores hi ha un polinomi irreductible i separable
 <span class="math inline">\(f(x)\in F[x]\)</span> de grau <span class="math inline">\([K\colon F]\)</span> que descomposa completament a <span class="math inline">\(K\)</span>.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-92" class="proof"><em>Prova</em>. </span>Sigui <span class="math inline">\(n=[K\colon F]=|\Gal(K/F)|\)</span>. A la demostració del teorema, prenem tots els <span class="math inline">\(n\)</span> automorfismes,
+<p><span id="unlabeled-div-95" class="proof"><em>Prova</em>. </span>Sigui <span class="math inline">\(n=[K\colon F]=|\Gal(K/F)|\)</span>. A la demostració del teorema, prenem tots els <span class="math inline">\(n\)</span> automorfismes,
 obtenint <span class="math inline">\(\alpha\in K\)</span> tal que <span class="math inline">\(F(\alpha) = F\)</span>. El seu polinomi mínim <span class="math inline">\(f(x)\in F[x]\)</span> és irreductible,
 de grau <span class="math inline">\(n\)</span> i té per arrels <span class="math inline">\(\{\sigma(\alpha) ~|~\sigma\in \Aut(K/F)\}\)</span>. Per tant té <span class="math inline">\(n\)</span> arrels totes diferents,
 com volíem.</p>
@@ -405,14 +422,14 @@ com volíem.</p>
 <p>Les dues propietats de les extensions de Galois de fet les caracteritzen. Vegem una quarta caracterització
 d’aquestes extensions:</p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-93" class="theorem"><strong>Teorema 7.2  (Caracterització d'extensions de Galois) </strong></span>Sigui <span class="math inline">\(K/F\)</span> una extensió finita i sigui <span class="math inline">\(G=\Aut(K/F)\)</span>. Aleshores els següents enunciats són equivalents:
+<p><span id="thm:unlabeled-div-96" class="theorem"><strong>Teorema 7.2  (Caracterització d'extensions de Galois) </strong></span>Sigui <span class="math inline">\(K/F\)</span> una extensió finita i sigui <span class="math inline">\(G=\Aut(K/F)\)</span>. Aleshores els següents enunciats són equivalents:
 1. <span class="math inline">\(|G| = [K\colon F]\)</span>.
 2. <span class="math inline">\(F = K^G\)</span>.
 3. <span class="math inline">\(K/F\)</span> és normal i separable.
 4. Hi ha un polinomi <span class="math inline">\(f(x)\in F[x]\)</span> irreductible i separable de grau <span class="math inline">\([K\colon F]\)</span> que descomposa completament a <span class="math inline">\(K\)</span>.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-94" class="proof"><em>Prova</em>. </span>Ja hem vist <span class="math inline">\(1 \implies 2\)</span> i <span class="math inline">\(1 \implies 4\)</span>. Fixem-nos també que <span class="math inline">\(4\implies 3\)</span> és obvi.
+<p><span id="unlabeled-div-97" class="proof"><em>Prova</em>. </span>Ja hem vist <span class="math inline">\(1 \implies 2\)</span> i <span class="math inline">\(1 \implies 4\)</span>. Fixem-nos també que <span class="math inline">\(4\implies 3\)</span> és obvi.
 - <span class="math inline">\(2 \implies 3\)</span>: Suposem que <span class="math inline">\(K=F(\alpha_1,\ldots, \alpha_m)\)</span>, i considerem el conjunt finit
 <span class="math display">\[
   B = \{\sigma(\alpha_i) ~|~ \sigma \in G, i = 1,\ldots, m\}.
@@ -430,7 +447,7 @@ i per tant tindrem la igualtat.</li>
 </ul>
 </div>
 <div class="remark">
-<p><span id="unlabeled-div-95" class="remark"><em>Remarca</em>. </span>Suposem que <span class="math inline">\(K/F\)</span> és de Galois, i sigui <span class="math inline">\(\alpha\in K\)</span> una arrel del polinomi <span class="math inline">\(f(x)\)</span> que apareix a la condició <span class="math inline">\((4)\)</span>.
+<p><span id="unlabeled-div-98" class="remark"><em>Remarca</em>. </span>Suposem que <span class="math inline">\(K/F\)</span> és de Galois, i sigui <span class="math inline">\(\alpha\in K\)</span> una arrel del polinomi <span class="math inline">\(f(x)\)</span> que apareix a la condició <span class="math inline">\((4)\)</span>.
 Aleshores <span class="math inline">\(K=F(\alpha)\)</span>. Veiem doncs que tota extensió finita de Galois és primitiva. Més endavant veurem
 que només cal que <span class="math inline">\(K/F\)</span> sigui separable.</p>
 </div>

@@ -105,7 +105,9 @@
 \renewcommand{\mcd}{\operatorname{mcd}}
 \renewcommand{\gcd}{\operatorname{mcd}}
 \renewcommand{\Eq}{\operatorname{Eq}}
-\renewcommand{\res}{\operatorname{res}}\)</span>
+\renewcommand{\res}{\operatorname{res}}
+\renewcommand{\normaleq}{\trianglelefteq}
+\renewcommand{\disc}{\operatorname{disc}}\)</span>
 <link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
 <script src="https://tikzjax.com/v1/tikzjax.js"></script>
 
@@ -118,7 +120,7 @@ MathJax.Hub.Config({
       EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
   },
     tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]},
-    TeX: {extensions: ["AMSmath.js","AMSsymbols.js","https://mmasdeu.github.io/teoriadegalois/xypic.js"],
+    TeX: {extensions: ["AMSmath.js","AMSsymbols.js","https://mat.uab.cat/~masdeu/xypic.js"],
     noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },}
 });
 </script>
@@ -219,7 +221,13 @@ div.csl-indent {
 <li class="chapter" data-level="7.1" data-path="automorfismes.html"><a href="automorfismes.html#definició-1"><i class="fa fa-check"></i><b>7.1</b> Definició</a></li>
 <li class="chapter" data-level="7.2" data-path="automorfismes.html"><a href="automorfismes.html#cossos-fixos"><i class="fa fa-check"></i><b>7.2</b> Cossos fixos</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="el-teorema-fonamental.html"><a href="el-teorema-fonamental.html"><i class="fa fa-check"></i><b>8</b> El Teorema Fonamental</a></li>
+<li class="chapter" data-level="8" data-path="el-teorema-fonamental.html"><a href="el-teorema-fonamental.html"><i class="fa fa-check"></i><b>8</b> El Teorema Fonamental</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="el-teorema-fonamental.html"><a href="el-teorema-fonamental.html#preliminars"><i class="fa fa-check"></i><b>8.1</b> Preliminars</a></li>
+<li class="chapter" data-level="8.2" data-path="el-teorema-fonamental.html"><a href="el-teorema-fonamental.html#la-correspondència-de-galois"><i class="fa fa-check"></i><b>8.2</b> La correspondència de Galois</a></li>
+<li class="chapter" data-level="8.3" data-path="el-teorema-fonamental.html"><a href="el-teorema-fonamental.html#operacions-de-reticle"><i class="fa fa-check"></i><b>8.3</b> Operacions de reticle</a></li>
+<li class="chapter" data-level="8.4" data-path="el-teorema-fonamental.html"><a href="el-teorema-fonamental.html#examples"><i class="fa fa-check"></i><b>8.4</b> Examples</a></li>
+</ul></li>
 <li class="chapter" data-level="9" data-path="cossos-finits.html"><a href="cossos-finits.html"><i class="fa fa-check"></i><b>9</b> Cossos Finits</a>
 <ul>
 <li class="chapter" data-level="9.1" data-path="cossos-finits.html"><a href="cossos-finits.html#grup-de-galois"><i class="fa fa-check"></i><b>9.1</b> Grup de Galois</a></li>
@@ -238,8 +246,17 @@ div.csl-indent {
 <li class="chapter" data-level="11.2" data-path="extensions-abelianes-i-ciclotòmiques.html"><a href="extensions-abelianes-i-ciclotòmiques.html#extensions-abelianes"><i class="fa fa-check"></i><b>11.2</b> Extensions abelianes</a></li>
 <li class="chapter" data-level="11.3" data-path="extensions-abelianes-i-ciclotòmiques.html"><a href="extensions-abelianes-i-ciclotòmiques.html#constructibilitat-de-polígons-regulars"><i class="fa fa-check"></i><b>11.3</b> Constructibilitat de polígons regulars</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="arrels-i-radicals.html"><a href="arrels-i-radicals.html"><i class="fa fa-check"></i><b>12</b> Arrels i radicals</a></li>
-<li class="chapter" data-level="13" data-path="calculem-grups-de-galois.html"><a href="calculem-grups-de-galois.html"><i class="fa fa-check"></i><b>13</b> Calculem grups de Galois</a></li>
+<li class="chapter" data-level="12" data-path="arrels-i-radicals.html"><a href="arrels-i-radicals.html"><i class="fa fa-check"></i><b>12</b> Arrels i radicals</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="arrels-i-radicals.html"><a href="arrels-i-radicals.html#extensions-cícliques"><i class="fa fa-check"></i><b>12.1</b> Extensions cícliques</a></li>
+<li class="chapter" data-level="12.2" data-path="arrels-i-radicals.html"><a href="arrels-i-radicals.html#solubilitat-per-radicals"><i class="fa fa-check"></i><b>12.2</b> Solubilitat per radicals</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="calculem-grups-de-galois.html"><a href="calculem-grups-de-galois.html"><i class="fa fa-check"></i><b>13</b> Calculem grups de Galois</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="calculem-grups-de-galois.html"><a href="calculem-grups-de-galois.html#cúbics"><i class="fa fa-check"></i><b>13.1</b> Cúbics</a></li>
+<li class="chapter" data-level="13.2" data-path="calculem-grups-de-galois.html"><a href="calculem-grups-de-galois.html#quàrtics"><i class="fa fa-check"></i><b>13.2</b> Quàrtics</a></li>
+<li class="chapter" data-level="13.3" data-path="calculem-grups-de-galois.html"><a href="calculem-grups-de-galois.html#section"><i class="fa fa-check"></i><b>13.3</b> </a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="bibliografia.html"><a href="bibliografia.html"><i class="fa fa-check"></i>Bibliografia</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/mmasdeu/teoriadegalois" target="blank">Publicat amb bookdown</a></li>
@@ -281,7 +298,14 @@ polinomi <em>canònic</em> a cada element algebraic.</p>
 té <span class="math inline">\(\alpha\)</span> com a arrel. A més, <span class="math inline">\(f(x)\in F[x]\)</span> té <span class="math inline">\(\alpha\)</span> com a arrel si i només si és un múltiple de <span class="math inline">\(\Irr_{\alpha, F}(x)\)</span>.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-17" class="proof"><em>Prova</em>. </span>TODO</p>
+<p><span id="unlabeled-div-17" class="proof"><em>Prova</em>. </span>Sigui <span class="math inline">\(g(x)\in F[x]\)</span> un polinomi mònic amb <span class="math inline">\(\alpha\)</span> com a arrel, i amb grau mínim entre tots ells. Si es pogués
+trencar com <span class="math inline">\(g(x)=g_1(x)g_2(x)\)</span>, aleshores <span class="math inline">\(\alpha\)</span> seria una arrel d’un dels <span class="math inline">\(g_i(x)\)</span>, contradient la minimalitat
+del grau de <span class="math inline">\(g(x)\)</span>.</p>
+<p>Suposem que <span class="math inline">\(f(x)\)</span> satisfà <span class="math inline">\(f(\alpha)=0\)</span>. Dividint per <span class="math inline">\(\Irr_{\alpha,F}(x)\)</span>, tenim
+<span class="math display">\[
+f(x)=\Irr_{\alpha,F}(x) q(x)+r(x),
+\]</span>
+i substituint a <span class="math inline">\(x=\alpha\)</span> tindrem <span class="math inline">\(r(\alpha)=0\)</span>. Per minimalitat, deduïm que <span class="math inline">\(r(x)=0\)</span>, com volíem.</p>
 </div>
 <p>Fixem-nos que, si <span class="math inline">\(K/L/F\)</span> és una torre d’extensions i <span class="math inline">\(\alpha\in K\)</span> és algebraic sobre <span class="math inline">\(F\)</span>, aleshores també ho és sobre <span class="math inline">\(L\)</span>,
 i a més <span class="math inline">\(\Irr_{\alpha,L}(x)\)</span> divideix <span class="math inline">\(\Irr_{\alpha,F}(x)\)</span> a <span class="math inline">\(L[x]\)</span>.</p>
@@ -296,10 +320,11 @@ En aquest cas, <span class="math inline">\(F(\alpha)\cong F[x]/(\Irr_{\alpha,F}(
 <p><span id="exm:unlabeled-div-19" class="example"><strong>Exemple 2.1  </strong></span>Revisitem els exemples anteriors, calculant els seus polinomis mínims.</p>
 </div>
 <div class="proposition">
-<p><span id="prp:unlabeled-div-20" class="proposition"><strong>Proposició 2.2  </strong></span>Si <span class="math inline">\([K\colon F]=n\)</span> i <span class="math inline">\(\alpha\in K\)</span>, aleshores <span class="math inline">\(\deg\alpha\leq n\)</span>. En particular, <span class="math inline">\(K/F\)</span> és algebraica.</p>
+<p><span id="prp:unlabeled-div-20" class="proposition"><strong>Proposició 2.2  </strong></span>Si <span class="math inline">\([K\colon F]=n\)</span> i <span class="math inline">\(\alpha\in K\)</span>, aleshores <span class="math inline">\(\deg\alpha\leq n\)</span>. En particular, tota extensió finita <span class="math inline">\(K/F\)</span> és algebraica.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-21" class="proof"><em>Prova</em>. </span>TODO</p>
+<p><span id="unlabeled-div-21" class="proof"><em>Prova</em>. </span>Considerem els elements <span class="math inline">\(1, \alpha, \alpha^2,\ldots, \alpha^{n-1}, \alpha^{n}\)</span>. Com que n’hi ha <span class="math inline">\(n+1\)</span>, hi ha
+d’haver una relació de dependència lineal entre ells, i això ens dona un polinomi <span class="math inline">\(f(x)\in F[x]\)</span> de grau <span class="math inline">\(\leq n\)</span> tal que <span class="math inline">\(f(\alpha)=0\)</span>.</p>
 </div>
 <p>No és cert que tota extensió algebraica sigui finita (en veurem exemples més endavant).</p>
 <p>El següent resultat ens caracteritza com són les extensions quadràtiques d’un cos <span class="math inline">\(F\)</span> de característica <span class="math inline">\(\neq 2\)</span>.</p>
@@ -308,13 +333,26 @@ En aquest cas, <span class="math inline">\(F(\alpha)\cong F[x]/(\Irr_{\alpha,F}(
 tal que <span class="math inline">\(\delta^2=D\in F\)</span> i <span class="math inline">\(K=F(\delta)\)</span>. Escriurem que <span class="math inline">\(K=F(\sqrt{D})\)</span>.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-23" class="proof"><em>Prova</em>. </span>TODO</p>
+<p><span id="unlabeled-div-23" class="proof"><em>Prova</em>. </span>Prenem <span class="math inline">\(\alpha\in K\smallsetminus F\)</span>. Per tant, <span class="math inline">\(\alpha\)</span> satisfà un polinomi de grau dos, que podem suposar
+mònic, posem <span class="math inline">\(f(x)=x^2 + bx+c\)</span> amb <span class="math inline">\(b,c\in F\)</span>. Observem que <span class="math inline">\(F(\alpha)=K\)</span>, ja que <span class="math inline">\(F(\alpha)\)</span> és una extensió
+de grau <span class="math inline">\(2\)</span> dins de <span class="math inline">\(K\)</span>. Sigui <span class="math inline">\(\delta=\alpha+b/2\)</span>. Aleshores és fàcil veure que <span class="math inline">\(\delta\)</span> és una arrel del
+polinomi <span class="math inline">\(g(x)=x^2-D\)</span>, on <span class="math inline">\(D=b^2-4c\)</span>. Per tant, <span class="math inline">\(F(\alpha)=F(\delta)=F(\sqrt{D})\)</span>.</p>
 </div>
 </div>
 <div id="torres-de-cossos" class="section level2 hasAnchor" number="2.2">
 <h2><span class="header-section-number">2.2</span> Torres de cossos<a href="les-torres.html#torres-de-cossos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>En aquesta secció considerem torres <span class="math inline">\(L/K/F\)</span>. Ens interessa relacionar les dues extensions <span class="math inline">\(L/K\)</span> i <span class="math inline">\(K/F\)</span> amb l’extensió
 total <span class="math inline">\(L/F\)</span>.</p>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-24" class="proposition"><strong>Proposició 2.4  </strong></span>Sigui <span class="math inline">\(K/F\)</span> una extensió, i sigui <span class="math inline">\(V\)</span> un <span class="math inline">\(K\)</span>-espai vectorial. Aleshores
+<span class="math display">\[
+\dim_F V = [K\colon F] \dim_K V.
+\]</span></p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-25" class="proof"><em>Prova</em>. </span>Sigui <span class="math inline">\(\{v_i\}_{i\in I}\)</span> una <span class="math inline">\(K\)</span>-base de <span class="math inline">\(V\)</span>, i sigui <span class="math inline">\(\{\alpha_j\}_{j\in J}\)</span> una base de <span class="math inline">\(K\)</span> sobre <span class="math inline">\(F\)</span>.
+Aleshores és fàcil comprovar que el conjunt <span class="math inline">\(\{\alpha_j v_i\}_{i\in I, j \in J}\)</span> forma una <span class="math inline">\(F\)</span>-base de <span class="math inline">\(V\)</span>.</p>
+</div>
 <div class="theorem">
 <p><span id="thm:torres" class="theorem"><strong>Teorema 2.1  (fórmula de les torres) </strong></span>Si <span class="math inline">\(F\subseteq K\subseteq L\)</span>, aleshores
 <span class="math display">\[
@@ -323,43 +361,62 @@ total <span class="math inline">\(L/F\)</span>.</p>
 Si un costat de l’equació és infinit, aleshores l’altre també.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-24" class="proof"><em>Prova</em>. </span>TODO (fàcil, però poc elegant)</p>
+<p><span id="unlabeled-div-26" class="proof"><em>Prova</em>. </span>Es dedueix directament del lema anterior.</p>
 </div>
 <div class="corollary">
-<p><span id="cor:unlabeled-div-25" class="corollary"><strong>Corol·lary 2.1  </strong></span>Si <span class="math inline">\(L/F\)</span> és una extensió finita i <span class="math inline">\(K/F\)</span> és una subextensió (és a dir, <span class="math inline">\(K\subseteq L\)</span>) aleshores <span class="math inline">\([K\colon F]\)</span> divideix <span class="math inline">\([L\colon F]\)</span>.</p>
+<p><span id="cor:unlabeled-div-27" class="corollary"><strong>Corol·lary 2.1  </strong></span>Si <span class="math inline">\(L/F\)</span> és una extensió finita i <span class="math inline">\(K/F\)</span> és una subextensió (és a dir, <span class="math inline">\(K\subseteq L\)</span>) aleshores <span class="math inline">\([K\colon F]\)</span> divideix <span class="math inline">\([L\colon F]\)</span>.</p>
 </div>
 <p>Per exemple, el corol·lari anterior ens permet deduïr que <span class="math inline">\(\sqrt{2}\)</span> no pertany a cap extensió de grau senar.</p>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-26" class="exercise"><strong>Exercici 2.1  </strong></span>Demostreu que el polomi <span class="math inline">\(x^3-\sqrt{2}\)</span> és irreductible sobre <span class="math inline">\(\QQ(\sqrt{2})\)</span>, fent servir la torre <span class="math inline">\(\QQ(\sqrt[6]{2}) / \QQ(\sqrt{2}) / \QQ\)</span>.</p>
+<p><span id="exr:unlabeled-div-28" class="exercise"><strong>Exercici 2.1  </strong></span>Demostreu que el polomi <span class="math inline">\(x^3-\sqrt{2}\)</span> és irreductible sobre <span class="math inline">\(\QQ(\sqrt{2})\)</span>, fent servir la torre <span class="math inline">\(\QQ(\sqrt[6]{2}) / \QQ(\sqrt{2}) / \QQ\)</span>.</p>
 </div>
 <p>El següent lema senzill ens permetrà construir qualsevol extensió finitament generada de manera iterativa:</p>
 <div class="lemma">
-<p><span id="lem:unlabeled-div-27" class="lemma"><strong>Lema 2.1  </strong></span>Si <span class="math inline">\(\alpha\)</span> i <span class="math inline">\(\beta\)</span> són elements de <span class="math inline">\(K/F\)</span>, aleshores <span class="math inline">\(F(\alpha,\beta)=(F(\alpha)(\beta))\)</span>.</p>
+<p><span id="lem:unlabeled-div-29" class="lemma"><strong>Lema 2.1  </strong></span>Si <span class="math inline">\(\alpha\)</span> i <span class="math inline">\(\beta\)</span> són elements de <span class="math inline">\(K/F\)</span>, aleshores <span class="math inline">\(F(\alpha,\beta)=(F(\alpha))(\beta)\)</span>.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-28" class="proof"><em>Prova</em>. </span>TODO</p>
+<p><span id="unlabeled-div-30" class="proof"><em>Prova</em>. </span>El cos <span class="math inline">\(F(\alpha,\beta)\)</span> conté <span class="math inline">\(F(\alpha)\)</span>. Com que també conté <span class="math inline">\(\beta\)</span>, tenim <span class="math inline">\(F(\alpha)(\beta)\subseteq F(\alpha,\beta)\)</span>
+per minimalitat de <span class="math inline">\(F(\alpha)(\beta)\)</span>.</p>
+<p>Recíprocament, com que el cos <span class="math inline">\(F(\alpha)(\beta)\)</span> conté a <span class="math inline">\(F\)</span>, a <span class="math inline">\(\alpha\)</span> i a <span class="math inline">\(\beta\)</span>, aleshores per minimalitat de <span class="math inline">\(F(\alpha,\beta)\)</span>
+tenim que <span class="math inline">\(F(\alpha,\beta)\subseteq F(\alpha)(\beta)\)</span>.</p>
 </div>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-29" class="exercise"><strong>Exercici 2.2  </strong></span>Calculeu el grau de l’extensió <span class="math inline">\(\QQ(\sqrt{2},\sqrt{3})/\QQ\)</span>, i doneu una base.</p>
+<p><span id="exr:unlabeled-div-31" class="exercise"><strong>Exercici 2.2  </strong></span>Calculeu el grau de l’extensió <span class="math inline">\(\QQ(\sqrt{2},\sqrt{3})/\QQ\)</span>, i doneu una base.</p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-30" class="theorem"><strong>Teorema 2.2  </strong></span>L’extensió <span class="math inline">\(K/F\)</span> és finita si i només si <span class="math inline">\(K=F(S)\)</span> on <span class="math inline">\(S\)</span> és un conjunt finit d’elements algebraics.</p>
+<p><span id="thm:unlabeled-div-32" class="theorem"><strong>Teorema 2.2  </strong></span>L’extensió <span class="math inline">\(K/F\)</span> és finita si i només si <span class="math inline">\(K=F(S)\)</span> on <span class="math inline">\(S\)</span> és un conjunt finit d’elements algebraics.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-33" class="proof"><em>Prova</em>. </span>Suposem <span class="math inline">\(K/F\)</span> finita de grau <span class="math inline">\(n\)</span>, i sigui <span class="math inline">\(S\)</span> el conjunt (finit) format per una base de <span class="math inline">\(K\)</span> sobre <span class="math inline">\(F\)</span>. Aleshores
+<span class="math inline">\(K=F(S)\)</span>, i els
+elements <span class="math inline">\(\alpha\in S\)</span> són tots algebraics, ja que <span class="math inline">\([F(\alpha)\colon F]\)</span> divideix <span class="math inline">\(n\)</span> i en particular el grau
+és finit.</p>
+<p>Recíprocament, si <span class="math inline">\(K=F(S)\)</span> amb <span class="math inline">\(S\)</span> un conjunt finit d’elements algebraics, aleshores podem obtenir <span class="math inline">\(K\)</span> adjuntant
+successivament els elements de <span class="math inline">\(S\)</span>, i cada extensió és finita.</p>
 </div>
 <div class="corollary">
-<p><span id="cor:unlabeled-div-31" class="corollary"><strong>Corol·lary 2.2  </strong></span>Si <span class="math inline">\(\alpha\)</span> i <span class="math inline">\(\beta\)</span> són algebraics sobre <span class="math inline">\(F\)</span>, aleshores també ho són <span class="math inline">\(\alpha\pm \beta\)</span>, <span class="math inline">\(\alpha\beta\)</span> i <span class="math inline">\(\alpha/\beta\)</span> (si <span class="math inline">\(\beta\neq 0\)</span>).</p>
+<p><span id="cor:unlabeled-div-34" class="corollary"><strong>Corol·lary 2.2  </strong></span>Si <span class="math inline">\(\alpha\)</span> i <span class="math inline">\(\beta\)</span> són algebraics sobre <span class="math inline">\(F\)</span>, aleshores també ho són <span class="math inline">\(\alpha\pm \beta\)</span>, <span class="math inline">\(\alpha\beta\)</span> i <span class="math inline">\(\alpha/\beta\)</span> (si <span class="math inline">\(\beta\neq 0\)</span>).</p>
 </div>
 <div class="corollary">
-<p><span id="cor:unlabeled-div-32" class="corollary"><strong>Corol·lary 2.3  </strong></span>Si <span class="math inline">\(L/F\)</span> és una extensió qualsevol, aleshores el conjunt <span class="math inline">\(K\)</span> d’elements de <span class="math inline">\(L\)</span> que són algebraics sobre <span class="math inline">\(F\)</span> forma un subcos <span class="math inline">\(L/K/F\)</span>.</p>
+<p><span id="cor:unlabeled-div-35" class="corollary"><strong>Corol·lary 2.3  </strong></span>Si <span class="math inline">\(L/F\)</span> és una extensió qualsevol, aleshores el conjunt <span class="math inline">\(K\)</span> d’elements de <span class="math inline">\(L\)</span> que són algebraics sobre <span class="math inline">\(F\)</span> forma un subcos <span class="math inline">\(L/K/F\)</span>.</p>
 </div>
 <p>Per exemple, podem considerar <span class="math inline">\(\bar{\QQ}\subseteq\CC\)</span>, el conjunt de tots els complexos algebraics, o també <span class="math inline">\(\bar{\QQ}\cap \RR\)</span>, el conjunt
 dels reals algebraics. Aquests cossos són enumerables (tenen un conjunt d’elements enumerable) i per tant són més petits que <span class="math inline">\(\RR\)</span> i que <span class="math inline">\(\CC\)</span>.
 D’aquest fet obtenim que hi ha (molts) elements de <span class="math inline">\(\RR\)</span> que no són algebraics. En canvi, sovint és difícil demostrar que
 un real donat (per exemple <span class="math inline">\(\pi\)</span>) és transcendent.</p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-33" class="theorem"><strong>Teorema 2.3  </strong></span>Si <span class="math inline">\(K/F\)</span> és una extensió algebraica i <span class="math inline">\(L/K\)</span> també, aleshores <span class="math inline">\(L/F\)</span> és algebraica.</p>
+<p><span id="thm:unlabeled-div-36" class="theorem"><strong>Teorema 2.3  </strong></span>Si <span class="math inline">\(K/F\)</span> és una extensió algebraica i <span class="math inline">\(L/K\)</span> també, aleshores <span class="math inline">\(L/F\)</span> és algebraica.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-34" class="proof"><em>Prova</em>. </span>TODO</p>
+<p><span id="unlabeled-div-37" class="proof"><em>Prova</em>. </span>Sigui <span class="math inline">\(\alpha\in L\)</span>. Per tant, <span class="math inline">\(\alpha\)</span> satisfà un polinomi <span class="math inline">\(f(x)\in K[x]\)</span>. Sigui <span class="math inline">\(S\)</span> el conjunt (finit)
+format pels coeficients de <span class="math inline">\(f(x)\)</span>. Com que <span class="math inline">\(K/F\)</span> és algebraica, els elements de <span class="math inline">\(S\)</span> són tots algebraics
+i per tant l’extensió <span class="math inline">\(F(S)/F\)</span> és finita. Considerem el cos <span class="math inline">\(F(\alpha,S)\)</span>. Tenim:
+<span class="math display">\[
+[F(\alpha,S)\colon F] = [F(\alpha,S)\colon F(S)] [F(S) \colon F].
+\]</span>
+El primer terme és menor o igual que el grau del polinomi <span class="math inline">\(f(x)\)</span>, ja que podem pensar <span class="math inline">\(f(x)\in F(S)\)</span> i
+<span class="math inline">\(\alpha\)</span> n’és una arrel. El segon terme és finit, com hem dit. Per tant <span class="math inline">\(F(\alpha,S)\)</span> és una extensió
+finita, i això vol dir que <span class="math inline">\(\alpha\)</span> és algebraic sobre <span class="math inline">\(F\)</span>.</p>
 </div>
 </div>
 <div id="compositum-de-cossos" class="section level2 hasAnchor" number="2.3">
@@ -367,7 +424,7 @@ un real donat (per exemple <span class="math inline">\(\pi\)</span>) és transce
 <p>Recordem que donats dos cossos <span class="math inline">\(K_1/F\)</span> i <span class="math inline">\(K_2/F\)</span>, el seu <em>compost</em> (o <em>compositum</em>) <span class="math inline">\(K_1K_2 /F\)</span> és el mínim cos que conté
 tant a <span class="math inline">\(K_1\)</span> com a <span class="math inline">\(K_2\)</span>. També es pot pensar com la intersecció de tots els cossos <span class="math inline">\(L/F\)</span> que contenen el conjunt <span class="math inline">\(K_1\cup K_2\)</span>.</p>
 <div class="proposition">
-<p><span id="prp:unlabeled-div-35" class="proposition"><strong>Proposició 2.4  </strong></span>Siguin <span class="math inline">\(K_1/F\)</span> i <span class="math inline">\(K_2/F\)</span> dues extensions contingudes a <span class="math inline">\(K\)</span>. Aleshores
+<p><span id="prp:unlabeled-div-38" class="proposition"><strong>Proposició 2.5  </strong></span>Siguin <span class="math inline">\(K_1/F\)</span> i <span class="math inline">\(K_2/F\)</span> dues extensions contingudes a <span class="math inline">\(K\)</span>. Aleshores
 <span class="math display">\[
 [K_1K_2\colon F] \leq [K_1\colon F] [K_2 \colon F].
 \]</span>
@@ -382,7 +439,7 @@ l’inrevés). A més, tenim:
 \]</span></p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-36" class="proof"><em>Prova</em>. </span>Cal veure que els productes <span class="math inline">\(\alpha\beta\)</span> on <span class="math inline">\(\alpha\)</span> i <span class="math inline">\(\beta\)</span> recorren bases respectives de <span class="math inline">\(K_1/F\)</span> i de <span class="math inline">\(K_2/F\)</span>
+<p><span id="unlabeled-div-39" class="proof"><em>Prova</em>. </span>Cal veure que els productes <span class="math inline">\(\alpha\beta\)</span> on <span class="math inline">\(\alpha\)</span> i <span class="math inline">\(\beta\)</span> recorren bases respectives de <span class="math inline">\(K_1/F\)</span> i de <span class="math inline">\(K_2/F\)</span>
 generen <span class="math inline">\(K_1K_2/F\)</span>. N’hi ha prou amb veure que les combinacions lineal d’aquests elements formen un cos, que és
 una observació senzilla.</p>
 </div>

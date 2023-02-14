@@ -16644,7 +16644,7 @@ MathJax.Hub.Register.StartupHook("SVG Xy-pic Require",function () {
       
       var bbox = { h:xypic.oneem, d:0, w:xypic.oneem, lw:0, rw:xypic.oneem };
       var H = bbox.h, D = bbox.d, W = bbox.w;
-      var color = "inherit";
+      var color = "black";
       var xypicSVG = xypic.Graphics.createSVG(H, D, W, t, color, {
         viewBox:[0, -xypic.em2px(H + D), xypic.em2px(W), xypic.em2px(H + D)].join(" "),
         overflow:"visible"
@@ -16716,7 +16716,7 @@ MathJax.Hub.Register.StartupHook("SVG Xy-pic Require",function () {
       
       var bbox = { h:xypic.oneem, d:0, w:xypic.oneem, lw:0, rw:xypic.oneem };
       var H = bbox.h, D = bbox.d, W = bbox.w;
-      var color = "inherit";
+      var color = "black";
       var xypicSVG = xypic.Graphics.createSVG(H, D, W, t, color, {
         viewBox:[0, -xypic.em2px(H + D), xypic.em2px(W), xypic.em2px(H + D)].join(" "),
         overflow:"visible"
@@ -16769,4 +16769,4 @@ MathJax.Hub.Register.StartupHook("SVG Xy-pic Require",function () {
   MathJax.Hub.Startup.signal.Post("SVG Xy-pic Ready");
 });
 
-MathJax.Ajax.loadComplete("https://mmasdeu.github.io/teoriadegalois/xypic.js");
+MathJax.Ajax.loadComplete("https://mat.uab.cat/~masdeu/xypic.js");
