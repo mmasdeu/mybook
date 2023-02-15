@@ -16287,7 +16287,7 @@ MathJax.Hub.Register.StartupHook("HTML-CSS Xy-pic Require",function () {
           var p = xypic.length2em("0.1em");
           var mathSpan = HTMLCSS.Element("span", {
             className:"MathJax", 
-            style:{ "text-align":"center", "role":"textbox", "aria-readonly":"true", "position":"absolute", color:svg.getCurrentColor() /*, "border":"0.1px dashed" */ }
+              style:{ "text-align":"center", "role":"textbox", "aria-readonly":"true", "position":"absolute", "stroke":svg.getCurrentColor(), color:svg.getCurrentColor() /*, "border":"0.1px dashed" */ }
           });
           
           svgStack.appendChild(mathSpan);

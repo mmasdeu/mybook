@@ -13,11 +13,7 @@ que un morfisme d'anells enviï l'$1$ a l'$1$.
 
 ## Característica d'un cos
 
-::: {.lemma}
-Siguia $A$ un anell qualsevol. Aleshores hi ha un únic morfisme $\ZZ \to A$.
-:::
-
-::: {.proof}
+Siguia $A$ un anell qualsevol. 
 Considerem el morfisme $\iota\colon \ZZ\to A$ definit com:
 $$
 \iota(n)=\begin{cases}
@@ -25,10 +21,12 @@ $$
 -(1_A+1_A+\cdots+1_A) & n < 0,
 \end{cases}
 $$
-on les sumes tenen $n$ termes. És fàcil comprovar que és un morfisme. La unicitat es demostra per inducció en $\abs{n}$.
-:::
+on les sumes tenen $n$ termes. És fàcil comprovar que és un morfisme. A més, fent
+inducció en $\abs{n}$ es demostra fàcilment que $\iota$ és l'únic morfisme $\ZZ\to A$.
+Per tant, a partir d'ara, qualsevol enter el podem pensar com a element d'un anell donat, i això no ens portarà
+cap confusió.
 
-A partir d'ara, qualsevol enter el podem pensar com a element d'un anell donat, i això no ens portarà cap confusió. Com ja sabem, el nucli d'un morfisme d'anells és un ideal. Per tant, el nucli del morfisme $\iota_A\colon \ZZ\to A$ és un ideal de $\ZZ$ de
+Com ja sabem, el nucli d'un morfisme d'anells és un ideal. Per tant, el nucli del morfisme $\iota_A\colon \ZZ\to A$ és un ideal de $\ZZ$ de
 la forma $(n)$, amb $n\geq 0$.
 
 ::: {.definition name="Característica"}

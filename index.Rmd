@@ -53,10 +53,10 @@ El curs es pot dividir de manera natural en 15 sessions de dues hores. El temps 
 
 
 `r if (knitr:::is_html_output())"
-**Important:** Si aquí sota no hi veieu un $OK$, heu d'activar l'opció HTML-CSS de *MathJax* al vostre navegador:
+**Important:** Si aquí sota no hi veieu un $O--K$, heu d'activar l'opció HTML-CSS de *MathJax* al vostre navegador:
 $$
 \\begin{xy}
-\\xymatrix{O \ar@{-}[r]&K}
+\\xymatrix{O \\ar@{-}[r]&K}
 \\end{xy}
 $$
 "`

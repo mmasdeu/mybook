@@ -42,17 +42,19 @@
 %----------------------------------------------------------------------------------------
 
 \usepackage[]{fontspec}
-\setromanfont{Times New Roman}
+%\setromanfont{Latin Modern Math}
+\setmathfont{Latin Modern Math}
 \setsansfont{Bitstream Vera Sans}
 \setmonofont{Bitstream Vera Sans Mono}
+
 %\usepackage{palatino}
 %\usepackage{avant} % Use the Avantgarde font for headings
-% \usepackage{times} % Use the Times font for headings
+%\usepackage{times} % Use the Times font for headings
 % \usepackage{mathptmx} % Use the Adobe Times Roman as the default text font together with math symbols from the Sym­bol, Chancery and Com­puter Modern fonts
 % \usepackage{libertine}
 % \usepackage{noto}
 
-% \usepackage{microtype} % Slightly tweak font spacing for aesthetics
+\usepackage{microtype} % Slightly tweak font spacing for aesthetics
 % \usepackage[utf8]{inputenc} % Required for including letters with accents
 % \usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
 
@@ -251,8 +253,8 @@
 \newtheorem{definitionT}{Definició}[section]
 \newtheorem{corollaryT}[dummy]{Corol·lari}
 \theoremstyle{ocrenum}
-\newtheorem{proposition}[dummy]{Proposició}
-\newtheorem{lemma}[dummy]{Lema}
+\newtheorem{propositionT}[dummy]{Proposició}
+\newtheorem{lemmaT}[dummy]{Lema}
 
 %----------------------------------------------------------------------------------------
 %	DEFINITION OF COLORED BOXES
@@ -271,6 +273,19 @@ innertopmargin=5pt,
 leftmargin=0cm,
 rightmargin=0cm,
 innerbottommargin=5pt]{tBox}
+
+% Proposition box
+\newmdenv[skipabove=7pt,
+skipbelow=7pt,
+backgroundcolor=black!2,
+linecolor=ocre,
+innerleftmargin=5pt,
+innerrightmargin=5pt,
+innertopmargin=5pt,
+leftmargin=0cm,
+rightmargin=0cm,
+innerbottommargin=5pt]{pBox}
+
 
 % Exercise box	  
 \newmdenv[skipabove=7pt,
@@ -324,6 +339,8 @@ innerbottommargin=5pt]{cBox}
 
 % Creates an environment for each type of theorem and assigns it a theorem text style from the "Theorem Styles" section above and a colored box from above
 \renewenvironment{theorem}{\begin{tBox}\begin{theoremeT}}{\end{theoremeT}\end{tBox}}
+\newenvironment{proposition}{\begin{pBox}\begin{propositionT}}{\end{propositionT}\end{pBox}}
+\newenvironment{lemma}{\begin{pBox}\begin{lemmaT}}{\end{lemmaT}\end{pBox}}
 \newenvironment{exercise}{\begin{eBox}\begin{exerciseT}}{\hfill{\color{ocre}\tiny\ensuremath{\blacksquare}}\end{exerciseT}\end{eBox}}				  
 \newenvironment{definition}{\begin{dBox}\begin{definitionT}}{\end{definitionT}\end{dBox}}	
 \newenvironment{example}{\begin{exampleT}}{\hfill{\tiny\ensuremath{\blacksquare}}\end{exampleT}}		
