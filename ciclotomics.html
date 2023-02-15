@@ -327,24 +327,16 @@ n = \sum_{d \mid n} \varphi(d).
 <p>A més, fixem-nos que la fórmula anterior ens permet calcular els polinomis ciclotòmics de manera recursiva,
 dividint pels factors coneguts:
 <span class="math display" id="eq:ciclotomics-recursius">\[\begin{equation}
-\Phi_n(x) = \frac{x^n - 1}{\prod_{\substack{d \mid n\\d &lt; n}} \Phi_d(x)}.
+\Phi_n(x) = \frac{x^n - 1}{\displaystyle\prod_{\substack{d \mid n\\d &lt; n}} \Phi_d(x)}.
 \tag{6.1}
 \end{equation}\]</span></p>
 <p>Els primers valors són, per exemple:</p>
 <p><span class="math display">\[\begin{align*}
-\Phi_1(x) &amp;= x-1\\
-\Phi_2(x) &amp;= x+1\\
-\Phi_{3}(x) &amp;= x^{2} + x + 1 \\
-\Phi_{4}(x) &amp;= x^{2} + 1 \\
-\Phi_{5}(x) &amp;= x^{4} + x^{3} + x^{2} + x + 1 \\
-\Phi_{6}(x) &amp;= x^{2} - x + 1 \\
-\Phi_{7}(x) &amp;= x^{6} + x^{5} + x^{4} + x^{3} + x^{2} + x + 1 \\
-\Phi_{8}(x) &amp;= x^{4} + 1 \\
-\Phi_{9}(x) &amp;= x^{6} + x^{3} + 1 \\
-\Phi_{10}(x) &amp;= x^{4} - x^{3} + x^{2} - x + 1 \\
-\Phi_{11}(x) &amp;= x^{10} + x^{9} + x^{8} + x^{7} + x^{6} + x^{5} + x^{4} + x^{3} + x^{2} + x + 1 \\
-\Phi_{12}(x) &amp;= x^{4} - x^{2} + 1 \\
-\Phi_{13}(x) &amp;= x^{12} + x^{11} + x^{10} + x^{9} + x^{8} + x^{7} + x^{6} + x^{5} + x^{4} + x^{3} + x^{2} + x + 1
+\Phi_1(x) &amp;= x-1&amp;\Phi_2(x) &amp;= x+1\\
+\Phi_{3}(x) &amp;= x^{2} + x + 1 &amp;\Phi_{4}(x) &amp;= x^{2} + 1 \\
+\Phi_{5}(x) &amp;= x^{4} + x^{3} + x^{2} + x + 1 &amp;\Phi_{6}(x) &amp;= x^{2} - x + 1 \\
+\Phi_{7}(x) &amp;= x^{6} + x^{5} + x^{4} + x^{3} + x^{2} + x + 1 &amp; \Phi_{8}(x) &amp;= x^{4} + 1 \\
+\Phi_{9}(x) &amp;= x^{6} + x^{3} + 1 &amp; \Phi_{10}(x) &amp;= x^{4} - x^{3} + x^{2} - x + 1
 \end{align*}\]</span></p>
 <div class="lemma">
 <p><span id="lem:unlabeled-div-76" class="lemma"><strong>Lema 6.1  </strong></span>Els polinomis <span class="math inline">\(\Phi_n(x)\)</span> són mònics de grau <span class="math inline">\(\varphi(n)\)</span> i tenen coeficients enters.</p>
