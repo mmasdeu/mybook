@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Episodi 1. Vells coneguts | Teoria de Galois</title>
+  <title>Episodi 1. Vells coneguts | teoriadegalois.knit</title>
   <meta name="description" content="Apunts d’un curs de Teoria de Galois a la UAB" />
   <meta name="generator" content="bookdown 0.32.1 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Episodi 1. Vells coneguts | Teoria de Galois" />
+  <meta property="og:title" content="Episodi 1. Vells coneguts | teoriadegalois.knit" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Apunts d’un curs de Teoria de Galois a la UAB" />
   <meta name="github-repo" content="mmasdeu/teoriadegalois" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Episodi 1. Vells coneguts | Teoria de Galois" />
+  <meta name="twitter:title" content="Episodi 1. Vells coneguts | teoriadegalois.knit" />
   
   <meta name="twitter:description" content="Apunts d’un curs de Teoria de Galois a la UAB" />
   
@@ -23,7 +23,7 @@
 <meta name="author" content="Marc Masdeu" />
 
 
-<meta name="date" content="2023-02-14" />
+<meta name="date" content="2023-02-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -116,7 +116,8 @@ MathJax.Hub.Config({
   extensions: ["tex2jax.js"],
   jax: ["input/TeX","output/HTML-CSS"],
   "HTML-CSS": {
-      styles: {".MathJax_Preview": {visibility: "hidden"}},
+      styles: {".MathJax_Preview": {visibility: "hidden"},
+	       ".MathJax_Display" : {stroke: "currentColor"}},
       EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
   },
     tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]},
@@ -133,6 +134,7 @@ MathJax.Hub.Config({
     tex: {
       packages: {'[+]': ['xypic']}
     }
+    
   };
 </script>
 <script type="text/javascript" id="MathJax-script" async
@@ -246,16 +248,28 @@ div.csl-indent {
 <li class="chapter" data-level="11.2" data-path="extensions-abelianes-i-ciclotòmiques.html"><a href="extensions-abelianes-i-ciclotòmiques.html#extensions-abelianes"><i class="fa fa-check"></i><b>11.2</b> Extensions abelianes</a></li>
 <li class="chapter" data-level="11.3" data-path="extensions-abelianes-i-ciclotòmiques.html"><a href="extensions-abelianes-i-ciclotòmiques.html#constructibilitat-de-polígons-regulars"><i class="fa fa-check"></i><b>11.3</b> Constructibilitat de polígons regulars</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="arrels-i-radicals.html"><a href="arrels-i-radicals.html"><i class="fa fa-check"></i><b>12</b> Arrels i radicals</a>
+<li class="chapter" data-level="12" data-path="grups-de-polinomis.html"><a href="grups-de-polinomis.html"><i class="fa fa-check"></i><b>12</b> Grups de Polinomis</a>
 <ul>
-<li class="chapter" data-level="12.1" data-path="arrels-i-radicals.html"><a href="arrels-i-radicals.html#extensions-cícliques"><i class="fa fa-check"></i><b>12.1</b> Extensions cícliques</a></li>
-<li class="chapter" data-level="12.2" data-path="arrels-i-radicals.html"><a href="arrels-i-radicals.html#solubilitat-per-radicals"><i class="fa fa-check"></i><b>12.2</b> Solubilitat per radicals</a></li>
+<li class="chapter" data-level="12.1" data-path="grups-de-polinomis.html"><a href="grups-de-polinomis.html#el-grup-de-galois-del-polinomi-genèric"><i class="fa fa-check"></i><b>12.1</b> El grup de Galois del polinomi genèric</a></li>
+<li class="chapter" data-level="12.2" data-path="grups-de-polinomis.html"><a href="grups-de-polinomis.html#el-teorema-fonamental-de-làlgebra"><i class="fa fa-check"></i><b>12.2</b> El teorema fonamental de l’àlgebra</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="calculem-grups-de-galois.html"><a href="calculem-grups-de-galois.html"><i class="fa fa-check"></i><b>13</b> Calculem grups de Galois</a>
+<li class="chapter" data-level="13" data-path="arrels-i-radicals.html"><a href="arrels-i-radicals.html"><i class="fa fa-check"></i><b>13</b> Arrels i radicals</a>
 <ul>
-<li class="chapter" data-level="13.1" data-path="calculem-grups-de-galois.html"><a href="calculem-grups-de-galois.html#cúbics"><i class="fa fa-check"></i><b>13.1</b> Cúbics</a></li>
-<li class="chapter" data-level="13.2" data-path="calculem-grups-de-galois.html"><a href="calculem-grups-de-galois.html#quàrtics"><i class="fa fa-check"></i><b>13.2</b> Quàrtics</a></li>
-<li class="chapter" data-level="13.3" data-path="calculem-grups-de-galois.html"><a href="calculem-grups-de-galois.html#section"><i class="fa fa-check"></i><b>13.3</b> </a></li>
+<li class="chapter" data-level="13.1" data-path="arrels-i-radicals.html"><a href="arrels-i-radicals.html#caràcters"><i class="fa fa-check"></i><b>13.1</b> Caràcters</a></li>
+<li class="chapter" data-level="13.2" data-path="arrels-i-radicals.html"><a href="arrels-i-radicals.html#extensions-cícliques"><i class="fa fa-check"></i><b>13.2</b> Extensions cícliques</a></li>
+<li class="chapter" data-level="13.3" data-path="arrels-i-radicals.html"><a href="arrels-i-radicals.html#solubilitat-per-radicals"><i class="fa fa-check"></i><b>13.3</b> Solubilitat per radicals</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="càlcul-explícit-de-grups-de-galois.html"><a href="càlcul-explícit-de-grups-de-galois.html"><i class="fa fa-check"></i><b>14</b> Càlcul explícit de grups de Galois</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="càlcul-explícit-de-grups-de-galois.html"><a href="càlcul-explícit-de-grups-de-galois.html#polinomis-cúbics"><i class="fa fa-check"></i><b>14.1</b> Polinomis cúbics</a></li>
+<li class="chapter" data-level="14.2" data-path="càlcul-explícit-de-grups-de-galois.html"><a href="càlcul-explícit-de-grups-de-galois.html#polinomis-quàrtics"><i class="fa fa-check"></i><b>14.2</b> Polinomis quàrtics</a></li>
+<li class="chapter" data-level="14.3" data-path="càlcul-explícit-de-grups-de-galois.html"><a href="càlcul-explícit-de-grups-de-galois.html#mètode-local"><i class="fa fa-check"></i><b>14.3</b> Mètode local</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="teoria-de-galois-infinita.html"><a href="teoria-de-galois-infinita.html"><i class="fa fa-check"></i><b>15</b> Teoria de Galois infinita</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="teoria-de-galois-infinita.html"><a href="teoria-de-galois-infinita.html#definicions"><i class="fa fa-check"></i><b>15.1</b> Definicions</a></li>
+<li class="chapter" data-level="15.2" data-path="teoria-de-galois-infinita.html"><a href="teoria-de-galois-infinita.html#la-topologia-de-krull"><i class="fa fa-check"></i><b>15.2</b> La topologia de Krull</a></li>
+<li class="chapter" data-level="15.3" data-path="teoria-de-galois-infinita.html"><a href="teoria-de-galois-infinita.html#el-teorema"><i class="fa fa-check"></i><b>15.3</b> El teorema</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="bibliografia.html"><a href="bibliografia.html"><i class="fa fa-check"></i>Bibliografia</a></li>
 <li class="divider"></li>
@@ -270,7 +284,7 @@ div.csl-indent {
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Teoria de Galois</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
           </h1>
         </div>
 
@@ -292,30 +306,29 @@ que un morfisme d’anells enviï l’<span class="math inline">\(1\)</span> a l
 </div>
 <div id="característica-dun-cos" class="section level2 hasAnchor" number="1.2">
 <h2><span class="header-section-number">1.2</span> Característica d’un cos<a href="pilot.html#característica-dun-cos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="lemma">
-<p><span id="lem:unlabeled-div-1" class="lemma"><strong>Lema 1.1  </strong></span>Siguia <span class="math inline">\(A\)</span> un anell qualsevol. Aleshores hi ha un únic morfisme <span class="math inline">\(\ZZ \to A\)</span>.</p>
-</div>
-<div class="proof">
-<p><span id="unlabeled-div-2" class="proof"><em>Prova</em>. </span>Considerem el morfisme <span class="math inline">\(\iota\colon \ZZ\to A\)</span> definit com:
+<p>Siguia <span class="math inline">\(A\)</span> un anell qualsevol.
+Considerem el morfisme <span class="math inline">\(\iota\colon \ZZ\to A\)</span> definit com:
 <span class="math display">\[
 \iota(n)=\begin{cases}
 1_A+1_A+\cdots+1_A &amp; n \geq 0,\\
 -(1_A+1_A+\cdots+1_A) &amp; n &lt; 0,
 \end{cases}
 \]</span>
-on les sumes tenen <span class="math inline">\(n\)</span> termes. És fàcil comprovar que és un morfisme. La unicitat es demostra per inducció en <span class="math inline">\(\abs{n}\)</span>.</p>
-</div>
-<p>A partir d’ara, qualsevol enter el podem pensar com a element d’un anell donat, i això no ens portarà cap confusió. Com ja sabem, el nucli d’un morfisme d’anells és un ideal. Per tant, el nucli del morfisme <span class="math inline">\(\iota_A\colon \ZZ\to A\)</span> és un ideal de <span class="math inline">\(\ZZ\)</span> de
+on les sumes tenen <span class="math inline">\(n\)</span> termes. És fàcil comprovar que és un morfisme. A més, fent
+inducció en <span class="math inline">\(\abs{n}\)</span> es demostra fàcilment que <span class="math inline">\(\iota\)</span> és l’únic morfisme <span class="math inline">\(\ZZ\to A\)</span>.
+Per tant, a partir d’ara, qualsevol enter el podem pensar com a element d’un anell donat, i això no ens portarà
+cap confusió.</p>
+<p>Com ja sabem, el nucli d’un morfisme d’anells és un ideal. Per tant, el nucli del morfisme <span class="math inline">\(\iota_A\colon \ZZ\to A\)</span> és un ideal de <span class="math inline">\(\ZZ\)</span> de
 la forma <span class="math inline">\((n)\)</span>, amb <span class="math inline">\(n\geq 0\)</span>.</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-3" class="definition"><strong>Definició 1.1  (Característica) </strong></span>La <em>característica</em> d’un anell <span class="math inline">\(A\)</span> és l’enter no negatiu <span class="math inline">\(n\)</span> tal que <span class="math inline">\(\iota_A = (n)\)</span>, i es denota per <span class="math inline">\(\car(A)\)</span>.</p>
+<p><span id="def:unlabeled-div-1" class="definition"><strong>Definició 1.1  (Característica) </strong></span>La <em>característica</em> d’un anell <span class="math inline">\(A\)</span> és l’enter no negatiu <span class="math inline">\(n\)</span> tal que <span class="math inline">\(\iota_A = (n)\)</span>, i es denota per <span class="math inline">\(\car(A)\)</span>.</p>
 </div>
 <p>Fixem-nos que si <span class="math inline">\(\car(A)=n\)</span>, aleshores <span class="math inline">\(na = 0\)</span> per a tot <span class="math inline">\(a\in A\)</span>.</p>
 <div class="proposition">
 <p><span id="prp:car-primer" class="proposition"><strong>Proposició 1.1  </strong></span>Sigui <span class="math inline">\(F\)</span> un cos. Aleshores la seva característica és <span class="math inline">\(0\)</span> o bé un primer <span class="math inline">\(p\)</span>.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-4" class="proof"><em>Prova</em>. </span>Suposem que <span class="math inline">\(\car(F)=n&gt;0\)</span>, i <span class="math inline">\(n=ab\)</span>. Aleshores <span class="math inline">\((a1_A)(b1_A)=(ab)1_A=0\)</span>. Com que <span class="math inline">\(F\)</span> és un cos,
+<p><span id="unlabeled-div-2" class="proof"><em>Prova</em>. </span>Suposem que <span class="math inline">\(\car(F)=n&gt;0\)</span>, i <span class="math inline">\(n=ab\)</span>. Aleshores <span class="math inline">\((a1_A)(b1_A)=(ab)1_A=0\)</span>. Com que <span class="math inline">\(F\)</span> és un cos,
 això vol dir que <span class="math inline">\(a1_A=0\)</span> o <span class="math inline">\(b1_A=0\)</span>. Si per exemple <span class="math inline">\(a1_A=0\)</span>, això significa que <span class="math inline">\(n \mid a\)</span>. Com que <span class="math inline">\(n=ab\)</span>,
 necessàriament <span class="math inline">\(a=n\)</span> i <span class="math inline">\(b=1\)</span>. Per tant, els únics divisors de <span class="math inline">\(n\)</span> són trivials, i <span class="math inline">\(n\)</span> és primer.</p>
 </div>
@@ -348,7 +361,7 @@ i infinita si no.</p>
 <p><span id="thm:kronecker" class="theorem"><strong>Teorema 1.1  (Kronecker) </strong></span>Sigui <span class="math inline">\(f(x)\in F[x]\)</span> un polinomi. Aleshores existeix una extensió <span class="math inline">\(K/F\)</span> tal que <span class="math inline">\(K\)</span> té una arrel de <span class="math inline">\(f(x)\)</span>.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-5" class="proof"><em>Prova</em>. </span>Considerem <span class="math inline">\(K = F[x] / (g(x))\)</span>, on <span class="math inline">\(g(x)\)</span> és un factor irreductible qualsevol de <span class="math inline">\(f(x)\)</span>. Sigui <span class="math inline">\(\alpha\)</span> la classe de <span class="math inline">\(x\)</span> a <span class="math inline">\(K\)</span>. Aleshores <span class="math inline">\(g(\alpha)=0\)</span>
+<p><span id="unlabeled-div-3" class="proof"><em>Prova</em>. </span>Considerem <span class="math inline">\(K = F[x] / (g(x))\)</span>, on <span class="math inline">\(g(x)\)</span> és un factor irreductible qualsevol de <span class="math inline">\(f(x)\)</span>. Sigui <span class="math inline">\(\alpha\)</span> la classe de <span class="math inline">\(x\)</span> a <span class="math inline">\(K\)</span>. Aleshores <span class="math inline">\(g(\alpha)=0\)</span>
 i per tant <span class="math inline">\(f(\alpha)=0\)</span>.</p>
 </div>
 <p>El següent teorema ens diu que l’extensió donada pel teorema anterior té grau igual al grau del polinomi (per això s’ha triat
@@ -358,7 +371,7 @@ el nom!) quan aquest és irreductible. De fet, ens dona una base de <span class=
 Aleshores els elements <span class="math inline">\(\{1,\alpha,\ldots,\alpha^{n-1}\}\)</span> formen una <span class="math inline">\(F\)</span>-base de <span class="math inline">\(K\)</span>.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-6" class="proof"><em>Prova</em>. </span>Tot element de <span class="math inline">\(K\)</span> té un representant de la forma <span class="math inline">\(h(x)\in F[x]\)</span>. Dividint per <span class="math inline">\(f(x)\)</span>, podem trobar un
+<p><span id="unlabeled-div-4" class="proof"><em>Prova</em>. </span>Tot element de <span class="math inline">\(K\)</span> té un representant de la forma <span class="math inline">\(h(x)\in F[x]\)</span>. Dividint per <span class="math inline">\(f(x)\)</span>, podem trobar un
 representant equivalent però de grau <span class="math inline">\(&lt; n\)</span>. Per tant, els elements <span class="math inline">\(\{1,\alpha,\ldots,\alpha^{n-1}\}\)</span>
 generen <span class="math inline">\(K\)</span> com a <span class="math inline">\(F\)</span>-espai vectorial. Cal veure que són linealment independents. Si hi hagués una
 relació de dependència lineal, voldria dir que hi hauria un polinomi <span class="math inline">\(g(x)\in F[x]\)</span> de grau <span class="math inline">\(&lt; n\)</span>
@@ -370,18 +383,18 @@ menor que <span class="math inline">\(n=\deg(p(x))\)</span>. Donats dos polinomi
 el residu <span class="math inline">\(r(x)\)</span> de dividir <span class="math inline">\(a(x)b(x)\)</span> per <span class="math inline">\(p(x)\)</span>. Aleshores el producte <span class="math inline">\(a(\alpha)b(\alpha)\)</span> ve donat per l’element <span class="math inline">\(r(\alpha)\)</span>.
 Per divir ens cal utilitzar la identitat de Bézout (exercici).</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-7" class="example"><strong>Exemple 1.1  </strong></span>Mostrem <span class="math inline">\(\CC\)</span> com el resultat d’adjuntar una arrel de <span class="math inline">\(x^2+1\)</span> a <span class="math inline">\(\RR\)</span>.</p>
+<p><span id="exm:unlabeled-div-5" class="example"><strong>Exemple 1.1  </strong></span>Mostrem <span class="math inline">\(\CC\)</span> com el resultat d’adjuntar una arrel de <span class="math inline">\(x^2+1\)</span> a <span class="math inline">\(\RR\)</span>.</p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-8" class="example"><strong>Exemple 1.2  </strong></span>Podem construir de manera semblant <span class="math inline">\(\QQ(i)\)</span>, o <span class="math inline">\(\QQ(\sqrt{2})\)</span>, i també <span class="math inline">\(\QQ(\sqrt[3]{2})\)</span>. Veurem com es
+<p><span id="exm:unlabeled-div-6" class="example"><strong>Exemple 1.2  </strong></span>Podem construir de manera semblant <span class="math inline">\(\QQ(i)\)</span>, o <span class="math inline">\(\QQ(\sqrt{2})\)</span>, i també <span class="math inline">\(\QQ(\sqrt[3]{2})\)</span>. Veurem com es
 poden fer les operacions habituals en algun d’aquests cossos.</p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-9" class="example"><strong>Exemple 1.3  </strong></span>Si considerem <span class="math inline">\(\FF_p\)</span> el cos finit de <span class="math inline">\(p\)</span> elements i un polinomi <span class="math inline">\(f(x)\in \FF_p[x]\)</span> irreductible de grau <span class="math inline">\(n\)</span>
+<p><span id="exm:unlabeled-div-7" class="example"><strong>Exemple 1.3  </strong></span>Si considerem <span class="math inline">\(\FF_p\)</span> el cos finit de <span class="math inline">\(p\)</span> elements i un polinomi <span class="math inline">\(f(x)\in \FF_p[x]\)</span> irreductible de grau <span class="math inline">\(n\)</span>
 (suposant que existeixi!), aleshores obtenim un cos <span class="math inline">\(K/\FF_p\)</span> de grau <span class="math inline">\(n\)</span>. Té, per tant, <span class="math inline">\(p^n\)</span> elements.</p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-10" class="example"><strong>Exemple 1.4  </strong></span>També podem fer extensions de cossos més “exòtics”. Per exemple, podem prendre <span class="math inline">\(k(t)\)</span> com el cos de funcions
+<p><span id="exm:unlabeled-div-8" class="example"><strong>Exemple 1.4  </strong></span>També podem fer extensions de cossos més “exòtics”. Per exemple, podem prendre <span class="math inline">\(k(t)\)</span> com el cos de funcions
 racionals sobre un cos fixat <span class="math inline">\(k\)</span>, i “afegir” una arrel quadrada de <span class="math inline">\(t\)</span> (mitjançant el polinomi <span class="math inline">\(x^2-t\)</span>).</p>
 </div>
 <p>Sigui <span class="math inline">\(K/F\)</span> una extensió, i considerem un conjunt <span class="math inline">\(S\subseteq K\)</span>. Aleshores podem considerar el “mínim” subcos <span class="math inline">\(L\subseteq K\)</span>
@@ -396,7 +409,7 @@ Aleshores hi ha un isomorfisme <span class="math display">\[F[x]/(f(x))\cong F(\
 Aquest isomorfisme és únic si demanem que <span class="math inline">\([x]\mapsto \alpha\)</span>.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-11" class="proof"><em>Prova</em>. </span>Tenim
+<p><span id="unlabeled-div-9" class="proof"><em>Prova</em>. </span>Tenim
 <span class="math display">\[\begin{align*}
 \Hom_F(F[x]/(f(x)), F(\alpha)) &amp;\cong \{ \varphi \in \Hom_{F}(F[x], F(\alpha)) ~|~ \varphi(f) = 0\}\\
 &amp; \cong \{\beta\in F(\alpha) ~|~ f(\beta)=0\}\neq\emptyset.
@@ -404,11 +417,11 @@ Aquest isomorfisme és únic si demanem que <span class="math inline">\([x]\maps
 Donat un morfisme <span class="math inline">\(\varphi\)</span>, és automàticament un isomorfisme, fet que comprovem calculant graus de les extensions.</p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-12" class="example"><strong>Exemple 1.5  </strong></span>Expliquem l’exemple de <span class="math inline">\(\QQ(\sqrt{2})\)</span> i la diferència amb <span class="math inline">\(\QQ(\sqrt[3]{2})\)</span>. Aquest darrer cos és un subcòs de <span class="math inline">\(\RR\)</span>, però hi ha
+<p><span id="exm:unlabeled-div-10" class="example"><strong>Exemple 1.5  </strong></span>Expliquem l’exemple de <span class="math inline">\(\QQ(\sqrt{2})\)</span> i la diferència amb <span class="math inline">\(\QQ(\sqrt[3]{2})\)</span>. Aquest darrer cos és un subcòs de <span class="math inline">\(\RR\)</span>, però hi ha
 un altre subcòs de <span class="math inline">\(\CC\)</span> que és isomorf a aquest.</p>
 </div>
 <div class="remark">
-<p><span id="unlabeled-div-13" class="remark"><em>Remarca</em>. </span>En els exemples, hem construit cossos que contenen una de les tres possibles arrels de <span class="math inline">\(x^3-2\)</span>. Aquests són isomorfs, tal
+<p><span id="unlabeled-div-11" class="remark"><em>Remarca</em>. </span>En els exemples, hem construit cossos que contenen una de les tres possibles arrels de <span class="math inline">\(x^3-2\)</span>. Aquests són isomorfs, tal
 i com hem vist. El fet que un sigui subcos de <span class="math inline">\(\RR\)</span> i l’altre de <span class="math inline">\(\CC\)</span> té a veure amb anàlisi, no amb àlgebra. Algebraicament,
 no es poden distingir.</p>
 </div>
@@ -420,17 +433,17 @@ coeficients.</p>
 <p><span id="thm:extensio-morfismes" class="theorem"><strong>Teorema 1.4  (extensió de morfismes) </strong></span>Sigui <span class="math inline">\(\sigma\colon F\to L\)</span> un morfisme de cossos.
 Sigui <span class="math inline">\(f(x)\in F[x]\)</span> un polinomi irreductible. Aleshores l’aplicació <span class="math inline">\(\varphi \mapsto \varphi(\alpha)\)</span> indueix una bijecció
 <span class="math display">\[
-\Hom_{\sigma}(F(\alpha), L) \to \{\beta\in L ~|~ \sigma(f)(\beta) = 0 \}.
+\Hom_{\sigma}(F(\alpha), L) \stackrel{\cong}{\to} \{\beta\in L ~|~ \sigma(f)(\beta) = 0 \}.
 \]</span>
 <span class="math display">\[
 \xymatrix{
-  F(\alpha)\ar^{\varphi}[r]\ar@{-}[dr] &amp; L\\
-  &amp;F \ar{\sigma}[ur].
+  F(\alpha)\ar@{--&gt;}^{\varphi}[r]\ar@{-}[d] &amp; L\\
+  F\ar^{\sigma}[ur].
 }
 \]</span></p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-14" class="proof"><em>Prova</em>. </span><span class="math display">\[
+<p><span id="unlabeled-div-12" class="proof"><em>Prova</em>. </span><span class="math display">\[
 \Hom_\sigma (F(\alpha), L) \cong \Hom_{\sigma}(F[x]/(f(x)), L) \cong \{ \varphi \in \Hom_{\sigma}(F[x],L) ~|~ \varphi(f) = 0\},
 \]</span>
 i aquest últim conjunt és precisament <span class="math inline">\(\{\beta \in L ~|~ \sigma(f)(\beta) = 0\}\)</span>.</p>

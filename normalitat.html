@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Episodi 4. Normalitat | Teoria de Galois</title>
+  <title>Episodi 4. Normalitat | teoriadegalois.knit</title>
   <meta name="description" content="Apunts d’un curs de Teoria de Galois a la UAB" />
   <meta name="generator" content="bookdown 0.32.1 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Episodi 4. Normalitat | Teoria de Galois" />
+  <meta property="og:title" content="Episodi 4. Normalitat | teoriadegalois.knit" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Apunts d’un curs de Teoria de Galois a la UAB" />
   <meta name="github-repo" content="mmasdeu/teoriadegalois" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Episodi 4. Normalitat | Teoria de Galois" />
+  <meta name="twitter:title" content="Episodi 4. Normalitat | teoriadegalois.knit" />
   
   <meta name="twitter:description" content="Apunts d’un curs de Teoria de Galois a la UAB" />
   
@@ -23,7 +23,7 @@
 <meta name="author" content="Marc Masdeu" />
 
 
-<meta name="date" content="2023-02-14" />
+<meta name="date" content="2023-02-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -116,7 +116,8 @@ MathJax.Hub.Config({
   extensions: ["tex2jax.js"],
   jax: ["input/TeX","output/HTML-CSS"],
   "HTML-CSS": {
-      styles: {".MathJax_Preview": {visibility: "hidden"}},
+      styles: {".MathJax_Preview": {visibility: "hidden"},
+	       ".MathJax_Display" : {stroke: "currentColor"}},
       EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
   },
     tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]},
@@ -133,6 +134,7 @@ MathJax.Hub.Config({
     tex: {
       packages: {'[+]': ['xypic']}
     }
+    
   };
 </script>
 <script type="text/javascript" id="MathJax-script" async
@@ -246,16 +248,28 @@ div.csl-indent {
 <li class="chapter" data-level="11.2" data-path="extensions-abelianes-i-ciclotòmiques.html"><a href="extensions-abelianes-i-ciclotòmiques.html#extensions-abelianes"><i class="fa fa-check"></i><b>11.2</b> Extensions abelianes</a></li>
 <li class="chapter" data-level="11.3" data-path="extensions-abelianes-i-ciclotòmiques.html"><a href="extensions-abelianes-i-ciclotòmiques.html#constructibilitat-de-polígons-regulars"><i class="fa fa-check"></i><b>11.3</b> Constructibilitat de polígons regulars</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="arrels-i-radicals.html"><a href="arrels-i-radicals.html"><i class="fa fa-check"></i><b>12</b> Arrels i radicals</a>
+<li class="chapter" data-level="12" data-path="grups-de-polinomis.html"><a href="grups-de-polinomis.html"><i class="fa fa-check"></i><b>12</b> Grups de Polinomis</a>
 <ul>
-<li class="chapter" data-level="12.1" data-path="arrels-i-radicals.html"><a href="arrels-i-radicals.html#extensions-cícliques"><i class="fa fa-check"></i><b>12.1</b> Extensions cícliques</a></li>
-<li class="chapter" data-level="12.2" data-path="arrels-i-radicals.html"><a href="arrels-i-radicals.html#solubilitat-per-radicals"><i class="fa fa-check"></i><b>12.2</b> Solubilitat per radicals</a></li>
+<li class="chapter" data-level="12.1" data-path="grups-de-polinomis.html"><a href="grups-de-polinomis.html#el-grup-de-galois-del-polinomi-genèric"><i class="fa fa-check"></i><b>12.1</b> El grup de Galois del polinomi genèric</a></li>
+<li class="chapter" data-level="12.2" data-path="grups-de-polinomis.html"><a href="grups-de-polinomis.html#el-teorema-fonamental-de-làlgebra"><i class="fa fa-check"></i><b>12.2</b> El teorema fonamental de l’àlgebra</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="calculem-grups-de-galois.html"><a href="calculem-grups-de-galois.html"><i class="fa fa-check"></i><b>13</b> Calculem grups de Galois</a>
+<li class="chapter" data-level="13" data-path="arrels-i-radicals.html"><a href="arrels-i-radicals.html"><i class="fa fa-check"></i><b>13</b> Arrels i radicals</a>
 <ul>
-<li class="chapter" data-level="13.1" data-path="calculem-grups-de-galois.html"><a href="calculem-grups-de-galois.html#cúbics"><i class="fa fa-check"></i><b>13.1</b> Cúbics</a></li>
-<li class="chapter" data-level="13.2" data-path="calculem-grups-de-galois.html"><a href="calculem-grups-de-galois.html#quàrtics"><i class="fa fa-check"></i><b>13.2</b> Quàrtics</a></li>
-<li class="chapter" data-level="13.3" data-path="calculem-grups-de-galois.html"><a href="calculem-grups-de-galois.html#section"><i class="fa fa-check"></i><b>13.3</b> </a></li>
+<li class="chapter" data-level="13.1" data-path="arrels-i-radicals.html"><a href="arrels-i-radicals.html#caràcters"><i class="fa fa-check"></i><b>13.1</b> Caràcters</a></li>
+<li class="chapter" data-level="13.2" data-path="arrels-i-radicals.html"><a href="arrels-i-radicals.html#extensions-cícliques"><i class="fa fa-check"></i><b>13.2</b> Extensions cícliques</a></li>
+<li class="chapter" data-level="13.3" data-path="arrels-i-radicals.html"><a href="arrels-i-radicals.html#solubilitat-per-radicals"><i class="fa fa-check"></i><b>13.3</b> Solubilitat per radicals</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="càlcul-explícit-de-grups-de-galois.html"><a href="càlcul-explícit-de-grups-de-galois.html"><i class="fa fa-check"></i><b>14</b> Càlcul explícit de grups de Galois</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="càlcul-explícit-de-grups-de-galois.html"><a href="càlcul-explícit-de-grups-de-galois.html#polinomis-cúbics"><i class="fa fa-check"></i><b>14.1</b> Polinomis cúbics</a></li>
+<li class="chapter" data-level="14.2" data-path="càlcul-explícit-de-grups-de-galois.html"><a href="càlcul-explícit-de-grups-de-galois.html#polinomis-quàrtics"><i class="fa fa-check"></i><b>14.2</b> Polinomis quàrtics</a></li>
+<li class="chapter" data-level="14.3" data-path="càlcul-explícit-de-grups-de-galois.html"><a href="càlcul-explícit-de-grups-de-galois.html#mètode-local"><i class="fa fa-check"></i><b>14.3</b> Mètode local</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="teoria-de-galois-infinita.html"><a href="teoria-de-galois-infinita.html"><i class="fa fa-check"></i><b>15</b> Teoria de Galois infinita</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="teoria-de-galois-infinita.html"><a href="teoria-de-galois-infinita.html#definicions"><i class="fa fa-check"></i><b>15.1</b> Definicions</a></li>
+<li class="chapter" data-level="15.2" data-path="teoria-de-galois-infinita.html"><a href="teoria-de-galois-infinita.html#la-topologia-de-krull"><i class="fa fa-check"></i><b>15.2</b> La topologia de Krull</a></li>
+<li class="chapter" data-level="15.3" data-path="teoria-de-galois-infinita.html"><a href="teoria-de-galois-infinita.html#el-teorema"><i class="fa fa-check"></i><b>15.3</b> El teorema</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="bibliografia.html"><a href="bibliografia.html"><i class="fa fa-check"></i>Bibliografia</a></li>
 <li class="divider"></li>
@@ -270,7 +284,7 @@ div.csl-indent {
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Teoria de Galois</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
           </h1>
         </div>
 
@@ -292,14 +306,14 @@ de l’àlgebra, que demostrarem més endavant) pensar els elements algebraics s
 <p>Diem que un polinomi <span class="math inline">\(f(x)\in F[x]\)</span> <em>descomposa completament</em> en una extensió <span class="math inline">\(K/F\)</span> si es pot escriure com a producte
 de polinomis de grau <span class="math inline">\(1\)</span>.</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-46" class="definition"><strong>Definició 4.1  (cos de descomposició) </strong></span>Una extensió <span class="math inline">\(K/F\)</span> és un <em>cos de descomposició</em> del polinomi <span class="math inline">\(f(x)\in F[x]\)</span> si <span class="math inline">\(f(x)\)</span> descomposa completament a <span class="math inline">\(K\)</span> i no ho
+<p><span id="def:unlabeled-div-45" class="definition"><strong>Definició 4.1  (cos de descomposició) </strong></span>Una extensió <span class="math inline">\(K/F\)</span> és un <em>cos de descomposició</em> del polinomi <span class="math inline">\(f(x)\in F[x]\)</span> si <span class="math inline">\(f(x)\)</span> descomposa completament a <span class="math inline">\(K\)</span> i no ho
 fa en cap subextensió <span class="math inline">\(K/K&#39;/F\)</span>.</p>
 </div>
 <div class="theorem">
 <p><span id="thm:existencia-splittingfield" class="theorem"><strong>Teorema 4.1  (existència del cos de descomposició) </strong></span>Sigui <span class="math inline">\(f(x)\in F[x]\)</span>. Aleshores existeix un cos de descomposició <span class="math inline">\(K/F\)</span> de <span class="math inline">\(f(x)\)</span>.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-47" class="proof"><em>Prova</em>. </span>Fent inducció en el grau d’<span class="math inline">\(f\)</span>, veiem primer que hi ha un cos <span class="math inline">\(L/F\)</span> on <span class="math inline">\(f(x)\)</span> descomposa completament. Després podem
+<p><span id="unlabeled-div-46" class="proof"><em>Prova</em>. </span>Fent inducció en el grau d’<span class="math inline">\(f\)</span>, veiem primer que hi ha un cos <span class="math inline">\(L/F\)</span> on <span class="math inline">\(f(x)\)</span> descomposa completament. Després podem
 prendre per <span class="math inline">\(K/F\)</span> la intersecció de totes les subextensions <span class="math inline">\(L/K&#39;/F\)</span> on <span class="math inline">\(f(x)\)</span> descomposa completament.</p>
 </div>
 <p>Fixem-nos que cada vegada que adjuntem una arrel d’un polinomi de grau <span class="math inline">\(n\)</span>, aquest polinomi tindrà un cofactor com a molt de grau <span class="math inline">\(n-1\)</span>. Així,
@@ -312,7 +326,7 @@ per obtenir un cos de descomposició en el pitjor dels casos haurem de fer una e
 \]</span></p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-48" class="proof"><em>Prova</em>. </span>Farem inducció en el grau <span class="math inline">\(n=[K\colon F]\)</span>. Quan <span class="math inline">\(n=1\)</span>, el resultat és trivial. En general, prenem un element <span class="math inline">\(\alpha\in K\setminus F\)</span>
+<p><span id="unlabeled-div-47" class="proof"><em>Prova</em>. </span>Farem inducció en el grau <span class="math inline">\(n=[K\colon F]\)</span>. Quan <span class="math inline">\(n=1\)</span>, el resultat és trivial. En general, prenem un element <span class="math inline">\(\alpha\in K\setminus F\)</span>
 i fem servir la fórmula de les torres i <a href="pilot.html#thm:extensio-morfismes">1.4</a>. El cardinal de <span class="math inline">\(\Hom_F(F(\alpha), L)\)</span>
 és igual al nombre d’arrels d’<span class="math inline">\(\Irr_{\alpha, F}(x)\)</span> a <span class="math inline">\(L\)</span>, que com a molt és <span class="math inline">\([F(\alpha) \colon F]\)</span>.</p>
 <p>En tot cas, si <span class="math inline">\(\tilde\sigma\)</span> és un d’aquests morfismes, com que <span class="math inline">\([K \colon F(\alpha)]&lt; [K\colon F]\)</span> podem aplicar la hipòtesi
@@ -333,12 +347,12 @@ no té cap arrel a <span class="math inline">\(L\)</span>, aleshores no existeix
 <p><span id="prp:unicititat-splittingfield" class="proposition"><strong>Proposició 4.1  (unicitat del cos de descomposició) </strong></span>Siguin <span class="math inline">\(K/F\)</span> i <span class="math inline">\(K&#39;/F\)</span> dos cossos de descomposició de <span class="math inline">\(f(x)\in F[x]\)</span>. Aleshores <span class="math inline">\(K \cong K&#39;\)</span>.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-49" class="proof"><em>Prova</em>. </span>Prenem <span class="math inline">\(L = K&#39;\)</span> al Teorema <a href="normalitat.html#thm:iso-lifting">4.2</a> i en repetim la demostració. A cada pas,
+<p><span id="unlabeled-div-48" class="proof"><em>Prova</em>. </span>Prenem <span class="math inline">\(L = K&#39;\)</span> al Teorema <a href="normalitat.html#thm:iso-lifting">4.2</a> i en repetim la demostració. A cada pas,
 podem prendre com a <span class="math inline">\(\alpha\)</span> una arrel de <span class="math inline">\(f(x)\)</span> i sempre obtindrem arrels a <span class="math inline">\(K&#39;\)</span> perquè <span class="math inline">\(f(x)\)</span>
 hi trenca completament.</p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-50" class="example"><strong>Exemple 4.1  </strong></span>Calcularem els cossos de descomposició dels exemples que estem fent servir: <span class="math inline">\(x^2-2\)</span>, <span class="math inline">\((x^2-2)(x^2-3)\)</span>, <span class="math inline">\(x^3-2\)</span> i de <span class="math inline">\(x^4+4\)</span>, per exemple, ja
+<p><span id="exm:unlabeled-div-49" class="example"><strong>Exemple 4.1  </strong></span>Calcularem els cossos de descomposició dels exemples que estem fent servir: <span class="math inline">\(x^2-2\)</span>, <span class="math inline">\((x^2-2)(x^2-3)\)</span>, <span class="math inline">\(x^3-2\)</span> i de <span class="math inline">\(x^4+4\)</span>, per exemple, ja
 que en aquest cas el cos de descomposició és simplement <span class="math inline">\(\QQ(i)\)</span>.</p>
 </div>
 <div class="example">
@@ -363,7 +377,7 @@ i ja hem vist que el polinomi <span class="math inline">\(\Phi_p(x)= x^{p-1}+x^{
 \]</span></p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-51" class="example"><strong>Exemple 4.3  </strong></span>Calcularem ara el cos de descomposició de <span class="math inline">\(x^p-2\)</span>, on <span class="math inline">\(p\)</span> és un primer.
+<p><span id="exm:unlabeled-div-50" class="example"><strong>Exemple 4.3  </strong></span>Calcularem ara el cos de descomposició de <span class="math inline">\(x^p-2\)</span>, on <span class="math inline">\(p\)</span> és un primer.
 Si anomenem <span class="math inline">\(\alpha\)</span> una arrel d’aquest polinomi,
 aleshores les altres arrels són de la forma <span class="math inline">\(\alpha\zeta\)</span>,
 on <span class="math inline">\(\zeta\)</span> és una arrel <span class="math inline">\(p\)</span>-èssima de la unitat. Podem veure fàcilment
@@ -397,7 +411,7 @@ primer que les clausures algebraiques són algebraicament tancades.</p>
 <p><span id="prp:clausura-tancada" class="proposition"><strong>Proposició 4.2  </strong></span>Sigui <span class="math inline">\(\bar{F}/F\)</span> una clausura algebraica de <span class="math inline">\(F\)</span>. Aleshores <span class="math inline">\(\bar{F}\)</span> és algebricament tancat.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-52" class="proof"><em>Prova</em>. </span>Considerem un polinomi <span class="math inline">\(f(x)\in \bar{F}[x]\)</span>, i considerem l’extensió <span class="math inline">\(\bar{F}(\alpha)\)</span> obtinguda adjuntant
+<p><span id="unlabeled-div-51" class="proof"><em>Prova</em>. </span>Considerem un polinomi <span class="math inline">\(f(x)\in \bar{F}[x]\)</span>, i considerem l’extensió <span class="math inline">\(\bar{F}(\alpha)\)</span> obtinguda adjuntant
 una arrel de <span class="math inline">\(f(x)\)</span> a <span class="math inline">\(\bar{F}\)</span>. Aleshores <span class="math inline">\(\bar{F}(\alpha)/\bar{F}/ F\)</span> és una torre algebraica, i per tant
 l’extensió total és algebraica. En particular, <span class="math inline">\(\alpha\)</span> és algebraic sobre <span class="math inline">\(F\)</span> i, per tant, <span class="math inline">\(\alpha \in \bar{F}\)</span>,
 com volíem demostrar.</p>
@@ -408,7 +422,7 @@ com volíem demostrar.</p>
 formada pels elements de <span class="math inline">\(K\)</span> que són algebraics sobre <span class="math inline">\(F\)</span> és una clausura algebraica de <span class="math inline">\(F\)</span> .</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-53" class="proof"><em>Prova</em>. </span>L’extensió <span class="math inline">\(\bar{F} / F\)</span> és algebraica per definició. Donat un polinomi
+<p><span id="unlabeled-div-52" class="proof"><em>Prova</em>. </span>L’extensió <span class="math inline">\(\bar{F} / F\)</span> és algebraica per definició. Donat un polinomi
 <span class="math inline">\(f(x)\in F[x]\)</span>, aquest trencarà completament a <span class="math inline">\(K\)</span> en producte de polinomis de la forma <span class="math inline">\(x-\alpha\)</span>. Però
 cadascun dels <span class="math inline">\(\alpha\)</span> és algebraic sobre <span class="math inline">\(F\)</span> i, per tant, és un element de <span class="math inline">\(\bar{F}\)</span>. Per tant <span class="math inline">\(f(x)\)</span> ja trencava
 completament a <span class="math inline">\(\bar{F}[x]\)</span>, i per tant <span class="math inline">\(\bar{F}\)</span> és una clausura algebraica de <span class="math inline">\(F\)</span>.</p>
@@ -430,7 +444,7 @@ el cos de descomposició del producte <span class="math inline">\(g_1(x)\cdots g
 <p><span id="thm:existencia-clausura-algebraica" class="theorem"><strong>Teorema 4.4  (existència de clausura algebraica) </strong></span>Sigui <span class="math inline">\(F\)</span> un cos. Aleshores existeix una clausura algebraica <span class="math inline">\(\bar{F}/F\)</span>.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-54" class="proof"><em>Prova</em>. </span>Considerem un conjunt <span class="math inline">\(\mathcal{U} \supset F\)</span> de cardinal estrictament superior a <span class="math inline">\(\mathcal{N}=\max(\aleph_0, |K|)\)</span>.</p>
+<p><span id="unlabeled-div-53" class="proof"><em>Prova</em>. </span>Considerem un conjunt <span class="math inline">\(\mathcal{U} \supset F\)</span> de cardinal estrictament superior a <span class="math inline">\(\mathcal{N}=\max(\aleph_0, |K|)\)</span>.</p>
 <p>Sigui
 <span class="math display">\[X = \{K\subseteq L \subseteq S ~|~ L/K \text{ és una extensió algebraica de $K$}\},\]</span>
 amb la relació d’ordre
@@ -479,10 +493,10 @@ contradicció. Això acaba la demostració.
 :::</p>
 <p>La clausura algebraica és única llevat d’isomorfisme, fet que es pot deduir fàcilment de la unicitat de cossos de descomposició.</p>
 <div class="proof">
-<p><span id="unlabeled-div-55" class="proof"><em>Prova</em>. </span>TODO</p>
+<p><span id="unlabeled-div-54" class="proof"><em>Prova</em>. </span>TODO</p>
 </div>
 <div class="remark">
-<p><span id="unlabeled-div-56" class="remark"><em>Remarca</em>. </span>L’existència i unicitat de clausures algebraiques fou demostrada per Steinitz el 1910, i la demostració era molt
+<p><span id="unlabeled-div-55" class="remark"><em>Remarca</em>. </span>L’existència i unicitat de clausures algebraiques fou demostrada per Steinitz el 1910, i la demostració era molt
 més llarga i complicada (unes 20 pàgines).</p>
 <p>També es pot demostrar (però ens cal teoria que veurem una mica més endavant) que el cos <span class="math inline">\(K_1\)</span>
 que apareix a la demostració anterior ja és algebraicament tancat, així que no caldria fer tots
@@ -501,10 +515,10 @@ sembla difícil demostrar que una extensió donada <span class="math inline">\(K
 ara que les extensions normals tenen una caracterització més senzilla. En particular, el cos de descomposició d’un polinomi
 és sempre una extensió normal.</p>
 <div class="proposition">
-<p><span id="prp:unlabeled-div-57" class="proposition"><strong>Proposició 4.4  </strong></span>Una extensió <span class="math inline">\(K/F\)</span> és normal si i només si <span class="math inline">\(K\)</span> és el cos de descomposició d’un conjunt <span class="math inline">\(S\subset F[x]\)</span> de polinomis de <span class="math inline">\(F\)</span>.</p>
+<p><span id="prp:unlabeled-div-56" class="proposition"><strong>Proposició 4.4  </strong></span>Una extensió <span class="math inline">\(K/F\)</span> és normal si i només si <span class="math inline">\(K\)</span> és el cos de descomposició d’un conjunt <span class="math inline">\(S\subset F[x]\)</span> de polinomis de <span class="math inline">\(F\)</span>.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-58" class="proof"><em>Prova</em>. </span>Suposem que <span class="math inline">\(K/F\)</span> és normal. Per cada element <span class="math inline">\(\alpha\in K\)</span>, denotem per <span class="math inline">\(f_\alpha(x)=\Irr_{\alpha,F}(x)\)</span>.
+<p><span id="unlabeled-div-57" class="proof"><em>Prova</em>. </span>Suposem que <span class="math inline">\(K/F\)</span> és normal. Per cada element <span class="math inline">\(\alpha\in K\)</span>, denotem per <span class="math inline">\(f_\alpha(x)=\Irr_{\alpha,F}(x)\)</span>.
 Aleshores <span class="math inline">\(K\)</span> és el cos de descomposició del conjunt <span class="math inline">\(S=\{f_\alpha(x)~|~ \alpha\in K\}\)</span>.</p>
 <p>Recíprocament, si <span class="math inline">\(K\)</span> és el cos de descomposició d’un conjunt <span class="math inline">\(S\)</span> i <span class="math inline">\(f(x)\in F[x]\)</span> té una arrel <span class="math inline">\(\alpha\in K\)</span>,
 aleshores sense perdre generalitat podem suposar que <span class="math inline">\(f(x)\)</span> és irreductible. Considerem el conjunt <span class="math inline">\(\Sigma\subset K\)</span>
@@ -514,10 +528,10 @@ cos de descomposició d’un polinomi (el que s’obté multiplicant tots els po
 de quadrats). Per tant, <span class="math inline">\(f(x)\)</span> descomposa completament a <span class="math inline">\(F(\Sigma_0)\)</span> i per tant també a <span class="math inline">\(K\)</span>.</p>
 </div>
 <div class="proposition">
-<p><span id="prp:unlabeled-div-59" class="proposition"><strong>Proposició 4.5  </strong></span>Sigui <span class="math inline">\(L/K/F\)</span> una torre. Si <span class="math inline">\(L/F\)</span> és normal, aleshores <span class="math inline">\(L/K\)</span> també ho és.</p>
+<p><span id="prp:unlabeled-div-58" class="proposition"><strong>Proposició 4.5  </strong></span>Sigui <span class="math inline">\(L/K/F\)</span> una torre. Si <span class="math inline">\(L/F\)</span> és normal, aleshores <span class="math inline">\(L/K\)</span> també ho és.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-60" class="proof"><em>Prova</em>. </span>Trivial: si <span class="math inline">\(L/F\)</span> és el cos de descomposició d’un conjunt de polinomis <span class="math inline">\(S\)</span>, també ho és del mateix conjunt pensat
+<p><span id="unlabeled-div-59" class="proof"><em>Prova</em>. </span>Trivial: si <span class="math inline">\(L/F\)</span> és el cos de descomposició d’un conjunt de polinomis <span class="math inline">\(S\)</span>, també ho és del mateix conjunt pensat
 com a conjunt de polinomis amb coeficients a <span class="math inline">\(K\)</span>.</p>
 </div>
 

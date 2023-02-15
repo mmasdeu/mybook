@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Episodi 6. Polinomis Ciclotòmics | Teoria de Galois</title>
+  <title>Episodi 6. Polinomis Ciclotòmics | teoriadegalois.knit</title>
   <meta name="description" content="Apunts d’un curs de Teoria de Galois a la UAB" />
   <meta name="generator" content="bookdown 0.32.1 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Episodi 6. Polinomis Ciclotòmics | Teoria de Galois" />
+  <meta property="og:title" content="Episodi 6. Polinomis Ciclotòmics | teoriadegalois.knit" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Apunts d’un curs de Teoria de Galois a la UAB" />
   <meta name="github-repo" content="mmasdeu/teoriadegalois" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Episodi 6. Polinomis Ciclotòmics | Teoria de Galois" />
+  <meta name="twitter:title" content="Episodi 6. Polinomis Ciclotòmics | teoriadegalois.knit" />
   
   <meta name="twitter:description" content="Apunts d’un curs de Teoria de Galois a la UAB" />
   
@@ -23,7 +23,7 @@
 <meta name="author" content="Marc Masdeu" />
 
 
-<meta name="date" content="2023-02-14" />
+<meta name="date" content="2023-02-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -116,7 +116,8 @@ MathJax.Hub.Config({
   extensions: ["tex2jax.js"],
   jax: ["input/TeX","output/HTML-CSS"],
   "HTML-CSS": {
-      styles: {".MathJax_Preview": {visibility: "hidden"}},
+      styles: {".MathJax_Preview": {visibility: "hidden"},
+	       ".MathJax_Display" : {stroke: "currentColor"}},
       EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
   },
     tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]},
@@ -133,6 +134,7 @@ MathJax.Hub.Config({
     tex: {
       packages: {'[+]': ['xypic']}
     }
+    
   };
 </script>
 <script type="text/javascript" id="MathJax-script" async
@@ -246,16 +248,28 @@ div.csl-indent {
 <li class="chapter" data-level="11.2" data-path="extensions-abelianes-i-ciclotòmiques.html"><a href="extensions-abelianes-i-ciclotòmiques.html#extensions-abelianes"><i class="fa fa-check"></i><b>11.2</b> Extensions abelianes</a></li>
 <li class="chapter" data-level="11.3" data-path="extensions-abelianes-i-ciclotòmiques.html"><a href="extensions-abelianes-i-ciclotòmiques.html#constructibilitat-de-polígons-regulars"><i class="fa fa-check"></i><b>11.3</b> Constructibilitat de polígons regulars</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="arrels-i-radicals.html"><a href="arrels-i-radicals.html"><i class="fa fa-check"></i><b>12</b> Arrels i radicals</a>
+<li class="chapter" data-level="12" data-path="grups-de-polinomis.html"><a href="grups-de-polinomis.html"><i class="fa fa-check"></i><b>12</b> Grups de Polinomis</a>
 <ul>
-<li class="chapter" data-level="12.1" data-path="arrels-i-radicals.html"><a href="arrels-i-radicals.html#extensions-cícliques"><i class="fa fa-check"></i><b>12.1</b> Extensions cícliques</a></li>
-<li class="chapter" data-level="12.2" data-path="arrels-i-radicals.html"><a href="arrels-i-radicals.html#solubilitat-per-radicals"><i class="fa fa-check"></i><b>12.2</b> Solubilitat per radicals</a></li>
+<li class="chapter" data-level="12.1" data-path="grups-de-polinomis.html"><a href="grups-de-polinomis.html#el-grup-de-galois-del-polinomi-genèric"><i class="fa fa-check"></i><b>12.1</b> El grup de Galois del polinomi genèric</a></li>
+<li class="chapter" data-level="12.2" data-path="grups-de-polinomis.html"><a href="grups-de-polinomis.html#el-teorema-fonamental-de-làlgebra"><i class="fa fa-check"></i><b>12.2</b> El teorema fonamental de l’àlgebra</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="calculem-grups-de-galois.html"><a href="calculem-grups-de-galois.html"><i class="fa fa-check"></i><b>13</b> Calculem grups de Galois</a>
+<li class="chapter" data-level="13" data-path="arrels-i-radicals.html"><a href="arrels-i-radicals.html"><i class="fa fa-check"></i><b>13</b> Arrels i radicals</a>
 <ul>
-<li class="chapter" data-level="13.1" data-path="calculem-grups-de-galois.html"><a href="calculem-grups-de-galois.html#cúbics"><i class="fa fa-check"></i><b>13.1</b> Cúbics</a></li>
-<li class="chapter" data-level="13.2" data-path="calculem-grups-de-galois.html"><a href="calculem-grups-de-galois.html#quàrtics"><i class="fa fa-check"></i><b>13.2</b> Quàrtics</a></li>
-<li class="chapter" data-level="13.3" data-path="calculem-grups-de-galois.html"><a href="calculem-grups-de-galois.html#section"><i class="fa fa-check"></i><b>13.3</b> </a></li>
+<li class="chapter" data-level="13.1" data-path="arrels-i-radicals.html"><a href="arrels-i-radicals.html#caràcters"><i class="fa fa-check"></i><b>13.1</b> Caràcters</a></li>
+<li class="chapter" data-level="13.2" data-path="arrels-i-radicals.html"><a href="arrels-i-radicals.html#extensions-cícliques"><i class="fa fa-check"></i><b>13.2</b> Extensions cícliques</a></li>
+<li class="chapter" data-level="13.3" data-path="arrels-i-radicals.html"><a href="arrels-i-radicals.html#solubilitat-per-radicals"><i class="fa fa-check"></i><b>13.3</b> Solubilitat per radicals</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="càlcul-explícit-de-grups-de-galois.html"><a href="càlcul-explícit-de-grups-de-galois.html"><i class="fa fa-check"></i><b>14</b> Càlcul explícit de grups de Galois</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="càlcul-explícit-de-grups-de-galois.html"><a href="càlcul-explícit-de-grups-de-galois.html#polinomis-cúbics"><i class="fa fa-check"></i><b>14.1</b> Polinomis cúbics</a></li>
+<li class="chapter" data-level="14.2" data-path="càlcul-explícit-de-grups-de-galois.html"><a href="càlcul-explícit-de-grups-de-galois.html#polinomis-quàrtics"><i class="fa fa-check"></i><b>14.2</b> Polinomis quàrtics</a></li>
+<li class="chapter" data-level="14.3" data-path="càlcul-explícit-de-grups-de-galois.html"><a href="càlcul-explícit-de-grups-de-galois.html#mètode-local"><i class="fa fa-check"></i><b>14.3</b> Mètode local</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="teoria-de-galois-infinita.html"><a href="teoria-de-galois-infinita.html"><i class="fa fa-check"></i><b>15</b> Teoria de Galois infinita</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="teoria-de-galois-infinita.html"><a href="teoria-de-galois-infinita.html#definicions"><i class="fa fa-check"></i><b>15.1</b> Definicions</a></li>
+<li class="chapter" data-level="15.2" data-path="teoria-de-galois-infinita.html"><a href="teoria-de-galois-infinita.html#la-topologia-de-krull"><i class="fa fa-check"></i><b>15.2</b> La topologia de Krull</a></li>
+<li class="chapter" data-level="15.3" data-path="teoria-de-galois-infinita.html"><a href="teoria-de-galois-infinita.html#el-teorema"><i class="fa fa-check"></i><b>15.3</b> El teorema</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="bibliografia.html"><a href="bibliografia.html"><i class="fa fa-check"></i>Bibliografia</a></li>
 <li class="divider"></li>
@@ -270,7 +284,7 @@ div.csl-indent {
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Teoria de Galois</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
           </h1>
         </div>
 
@@ -333,10 +347,10 @@ dividint pels factors coneguts:
 \Phi_{13}(x) &amp;= x^{12} + x^{11} + x^{10} + x^{9} + x^{8} + x^{7} + x^{6} + x^{5} + x^{4} + x^{3} + x^{2} + x + 1
 \end{align*}\]</span></p>
 <div class="lemma">
-<p><span id="lem:unlabeled-div-77" class="lemma"><strong>Lema 6.1  </strong></span>Els polinomis <span class="math inline">\(\Phi_n(x)\)</span> són mònics de grau <span class="math inline">\(\varphi(n)\)</span> i tenen coeficients enters.</p>
+<p><span id="lem:unlabeled-div-76" class="lemma"><strong>Lema 6.1  </strong></span>Els polinomis <span class="math inline">\(\Phi_n(x)\)</span> són mònics de grau <span class="math inline">\(\varphi(n)\)</span> i tenen coeficients enters.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-78" class="proof"><em>Prova</em>. </span>L’únic que ens cal veure és que <span class="math inline">\(\Phi_n(x)\)</span> té coeficients enters. Això es veu fàcilment per inducció en <span class="math inline">\(n\)</span>
+<p><span id="unlabeled-div-77" class="proof"><em>Prova</em>. </span>L’únic que ens cal veure és que <span class="math inline">\(\Phi_n(x)\)</span> té coeficients enters. Això es veu fàcilment per inducció en <span class="math inline">\(n\)</span>
 i l’algoritme de divisió, fent servir la fórmula <a href="ciclotomics.html#eq:ciclotomics-recursius">(6.1)</a>.</p>
 </div>
 </div>
@@ -347,14 +361,14 @@ i l’algoritme de divisió, fent servir la fórmula <a href="ciclotomics.html#e
 <p><span id="thm:ciclotomics-irreductibles" class="theorem"><strong>Teorema 6.1  </strong></span>Els polinomis <span class="math inline">\(\Phi_n(x)\)</span> són irreductibles.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-79" class="proof"><em>Prova</em>. </span>Prenem <span class="math inline">\(n\geq 3\)</span>, i escrivim una factorització <span class="math inline">\(\Phi_n(x)=f(x)g(x)\)</span> amb <span class="math inline">\(f(x)\)</span> i <span class="math inline">\(g(x)\)</span> mònics a <span class="math inline">\(\ZZ[x]\)</span>, i amb <span class="math inline">\(f(x)\)</span>
+<p><span id="unlabeled-div-78" class="proof"><em>Prova</em>. </span>Prenem <span class="math inline">\(n\geq 3\)</span>, i escrivim una factorització <span class="math inline">\(\Phi_n(x)=f(x)g(x)\)</span> amb <span class="math inline">\(f(x)\)</span> i <span class="math inline">\(g(x)\)</span> mònics a <span class="math inline">\(\ZZ[x]\)</span>, i amb <span class="math inline">\(f(x)\)</span>
 irreductible de grau com a mínim <span class="math inline">\(2\)</span>. L’objectiu és demostrar que <span class="math inline">\(f(x)=\Phi_n(x)\)</span>, és a dir, que tota arrel primitiva <span class="math inline">\(n\)</span>-èssima
 és arrel de <span class="math inline">\(f(x)\)</span>. Sigui doncs <span class="math inline">\(\zeta\)</span> una arrel <span class="math inline">\(n\)</span>-èssima primitiva que sigui arrel de <span class="math inline">\(f(x)\)</span>, i veurem
 que <span class="math inline">\(\zeta^a\)</span> també és arrel de <span class="math inline">\(f(x)\)</span> per a tot <span class="math inline">\(a\)</span> coprimer amb <span class="math inline">\(n\)</span>.</p>
 <p>TODO</p>
 </div>
 <div class="corollary">
-<p><span id="cor:unlabeled-div-80" class="corollary"><strong>Corol·lary 6.1  </strong></span>El cos ciclotòmic <span class="math inline">\(\QQ(\zeta_n)\)</span> té grau <span class="math inline">\(\varphi(n)\)</span> sobre <span class="math inline">\(\QQ\)</span>.</p>
+<p><span id="cor:unlabeled-div-79" class="corollary"><strong>Corol·lary 6.1  </strong></span>El cos ciclotòmic <span class="math inline">\(\QQ(\zeta_n)\)</span> té grau <span class="math inline">\(\varphi(n)\)</span> sobre <span class="math inline">\(\QQ\)</span>.</p>
 </div>
 
 </div>

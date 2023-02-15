@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Episodi 3. Regle i Compàs | Teoria de Galois</title>
+  <title>Episodi 3. Regle i Compàs | teoriadegalois.knit</title>
   <meta name="description" content="Apunts d’un curs de Teoria de Galois a la UAB" />
   <meta name="generator" content="bookdown 0.32.1 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Episodi 3. Regle i Compàs | Teoria de Galois" />
+  <meta property="og:title" content="Episodi 3. Regle i Compàs | teoriadegalois.knit" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Apunts d’un curs de Teoria de Galois a la UAB" />
   <meta name="github-repo" content="mmasdeu/teoriadegalois" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Episodi 3. Regle i Compàs | Teoria de Galois" />
+  <meta name="twitter:title" content="Episodi 3. Regle i Compàs | teoriadegalois.knit" />
   
   <meta name="twitter:description" content="Apunts d’un curs de Teoria de Galois a la UAB" />
   
@@ -23,7 +23,7 @@
 <meta name="author" content="Marc Masdeu" />
 
 
-<meta name="date" content="2023-02-14" />
+<meta name="date" content="2023-02-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -116,7 +116,8 @@ MathJax.Hub.Config({
   extensions: ["tex2jax.js"],
   jax: ["input/TeX","output/HTML-CSS"],
   "HTML-CSS": {
-      styles: {".MathJax_Preview": {visibility: "hidden"}},
+      styles: {".MathJax_Preview": {visibility: "hidden"},
+	       ".MathJax_Display" : {stroke: "currentColor"}},
       EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
   },
     tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]},
@@ -133,6 +134,7 @@ MathJax.Hub.Config({
     tex: {
       packages: {'[+]': ['xypic']}
     }
+    
   };
 </script>
 <script type="text/javascript" id="MathJax-script" async
@@ -246,16 +248,28 @@ div.csl-indent {
 <li class="chapter" data-level="11.2" data-path="extensions-abelianes-i-ciclotòmiques.html"><a href="extensions-abelianes-i-ciclotòmiques.html#extensions-abelianes"><i class="fa fa-check"></i><b>11.2</b> Extensions abelianes</a></li>
 <li class="chapter" data-level="11.3" data-path="extensions-abelianes-i-ciclotòmiques.html"><a href="extensions-abelianes-i-ciclotòmiques.html#constructibilitat-de-polígons-regulars"><i class="fa fa-check"></i><b>11.3</b> Constructibilitat de polígons regulars</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="arrels-i-radicals.html"><a href="arrels-i-radicals.html"><i class="fa fa-check"></i><b>12</b> Arrels i radicals</a>
+<li class="chapter" data-level="12" data-path="grups-de-polinomis.html"><a href="grups-de-polinomis.html"><i class="fa fa-check"></i><b>12</b> Grups de Polinomis</a>
 <ul>
-<li class="chapter" data-level="12.1" data-path="arrels-i-radicals.html"><a href="arrels-i-radicals.html#extensions-cícliques"><i class="fa fa-check"></i><b>12.1</b> Extensions cícliques</a></li>
-<li class="chapter" data-level="12.2" data-path="arrels-i-radicals.html"><a href="arrels-i-radicals.html#solubilitat-per-radicals"><i class="fa fa-check"></i><b>12.2</b> Solubilitat per radicals</a></li>
+<li class="chapter" data-level="12.1" data-path="grups-de-polinomis.html"><a href="grups-de-polinomis.html#el-grup-de-galois-del-polinomi-genèric"><i class="fa fa-check"></i><b>12.1</b> El grup de Galois del polinomi genèric</a></li>
+<li class="chapter" data-level="12.2" data-path="grups-de-polinomis.html"><a href="grups-de-polinomis.html#el-teorema-fonamental-de-làlgebra"><i class="fa fa-check"></i><b>12.2</b> El teorema fonamental de l’àlgebra</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="calculem-grups-de-galois.html"><a href="calculem-grups-de-galois.html"><i class="fa fa-check"></i><b>13</b> Calculem grups de Galois</a>
+<li class="chapter" data-level="13" data-path="arrels-i-radicals.html"><a href="arrels-i-radicals.html"><i class="fa fa-check"></i><b>13</b> Arrels i radicals</a>
 <ul>
-<li class="chapter" data-level="13.1" data-path="calculem-grups-de-galois.html"><a href="calculem-grups-de-galois.html#cúbics"><i class="fa fa-check"></i><b>13.1</b> Cúbics</a></li>
-<li class="chapter" data-level="13.2" data-path="calculem-grups-de-galois.html"><a href="calculem-grups-de-galois.html#quàrtics"><i class="fa fa-check"></i><b>13.2</b> Quàrtics</a></li>
-<li class="chapter" data-level="13.3" data-path="calculem-grups-de-galois.html"><a href="calculem-grups-de-galois.html#section"><i class="fa fa-check"></i><b>13.3</b> </a></li>
+<li class="chapter" data-level="13.1" data-path="arrels-i-radicals.html"><a href="arrels-i-radicals.html#caràcters"><i class="fa fa-check"></i><b>13.1</b> Caràcters</a></li>
+<li class="chapter" data-level="13.2" data-path="arrels-i-radicals.html"><a href="arrels-i-radicals.html#extensions-cícliques"><i class="fa fa-check"></i><b>13.2</b> Extensions cícliques</a></li>
+<li class="chapter" data-level="13.3" data-path="arrels-i-radicals.html"><a href="arrels-i-radicals.html#solubilitat-per-radicals"><i class="fa fa-check"></i><b>13.3</b> Solubilitat per radicals</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="càlcul-explícit-de-grups-de-galois.html"><a href="càlcul-explícit-de-grups-de-galois.html"><i class="fa fa-check"></i><b>14</b> Càlcul explícit de grups de Galois</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="càlcul-explícit-de-grups-de-galois.html"><a href="càlcul-explícit-de-grups-de-galois.html#polinomis-cúbics"><i class="fa fa-check"></i><b>14.1</b> Polinomis cúbics</a></li>
+<li class="chapter" data-level="14.2" data-path="càlcul-explícit-de-grups-de-galois.html"><a href="càlcul-explícit-de-grups-de-galois.html#polinomis-quàrtics"><i class="fa fa-check"></i><b>14.2</b> Polinomis quàrtics</a></li>
+<li class="chapter" data-level="14.3" data-path="càlcul-explícit-de-grups-de-galois.html"><a href="càlcul-explícit-de-grups-de-galois.html#mètode-local"><i class="fa fa-check"></i><b>14.3</b> Mètode local</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="teoria-de-galois-infinita.html"><a href="teoria-de-galois-infinita.html"><i class="fa fa-check"></i><b>15</b> Teoria de Galois infinita</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="teoria-de-galois-infinita.html"><a href="teoria-de-galois-infinita.html#definicions"><i class="fa fa-check"></i><b>15.1</b> Definicions</a></li>
+<li class="chapter" data-level="15.2" data-path="teoria-de-galois-infinita.html"><a href="teoria-de-galois-infinita.html#la-topologia-de-krull"><i class="fa fa-check"></i><b>15.2</b> La topologia de Krull</a></li>
+<li class="chapter" data-level="15.3" data-path="teoria-de-galois-infinita.html"><a href="teoria-de-galois-infinita.html#el-teorema"><i class="fa fa-check"></i><b>15.3</b> El teorema</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="bibliografia.html"><a href="bibliografia.html"><i class="fa fa-check"></i>Bibliografia</a></li>
 <li class="divider"></li>
@@ -270,7 +284,7 @@ div.csl-indent {
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Teoria de Galois</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
           </h1>
         </div>
 
@@ -307,14 +321,18 @@ tipus d’operacions següents:</p>
 </div>
 <div id="la-no-solució" class="section level2 hasAnchor" number="3.2">
 <h2><span class="header-section-number">3.2</span> La (no) solució<a href="regle-i-compàs.html#la-no-solució" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="exercise">
-<p><span id="exr:unlabeled-div-40" class="exercise"><strong>Exercici 3.1  </strong></span>Vegeu que els nombres constructibles formen un subcos de <span class="math inline">\(\cC\subseteq\RR\)</span>. Heu de donar construcions de la suma, resta, producte i divisió
+<p>Comencem veient que els nombres constructibles són un cos.</p>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-38" class="proposition"><strong>Proposició 3.1  </strong></span>Els nombres constructibles formen un subcos de <span class="math inline">\(\cC\subseteq\RR\)</span>.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-39" class="proof"><em>Prova</em>. </span>TODO. Cal donar construcions de la suma, resta, producte i divisió
 de nombres ja construïts.</p>
 </div>
 <p>És fàcil veure que també podem prendre arrels quadrades, com s’indica al següent exercici.</p>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-41" class="exercise"><strong>Exercici 3.2  </strong></span>Demostreu que si el diàmetre de la circumferència és <span class="math inline">\(\alpha+1\)</span>, aleshores el segment vertical indicat mesura <span class="math inline">\(\sqrt{\alpha}\)</span>.</p>
-<p><img src="teoriadegalois_files/figure-html/unnamed-chunk-2-1.png" width="50%" /></p>
+<p><span id="exr:unlabeled-div-40" class="exercise"><strong>Exercici 3.1  </strong></span>Demostreu que si el diàmetre de la circumferència és <span class="math inline">\(\alpha+1\)</span>, aleshores el segment vertical indicat mesura <span class="math inline">\(\sqrt{\alpha}\)</span>.</p>
+<p><img src="teoriadegalois_files/figure-html/unnamed-chunk-1-1.png" width="50%" /></p>
 </div>
 <p>Fent servir l’equació d’un cercle de radi <span class="math inline">\((x_0,y_0)\)</span> i radi <span class="math inline">\(r\)</span>
 <span class="math display">\[
@@ -329,10 +347,10 @@ F=F_0\subseteq F_1\subseteq F_2\subseteq F_n,
 amb <span class="math inline">\([F_{i+1}\colon F_i] \leq 2\)</span>, tals que <span class="math inline">\(\alpha\in F_n\)</span>. En particular, <span class="math inline">\(\alpha\)</span> és un nombre algebraic sobre <span class="math inline">\(F\)</span> de grau una potència de <span class="math inline">\(2\)</span>.</p>
 <p>D’aquí en deduïm directament el següent teorema (on haurem d’assumir que <span class="math inline">\(\pi\)</span> és transcendent, cosa que no demostrem).</p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-42" class="theorem"><strong>Teorema 3.1  </strong></span>Els tres problemes clàssics no són resolubles.</p>
+<p><span id="thm:unlabeled-div-41" class="theorem"><strong>Teorema 3.1  </strong></span>Els tres problemes clàssics no són resolubles.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-43" class="proof"><em>Prova</em>. </span>Per la duplicació d’un cub de costat <span class="math inline">\(1\)</span> ens caldria construir <span class="math inline">\(\sqrt[3]{2}\)</span>, que té grau <span class="math inline">\(3\)</span> i, per tant, no és constructible.</p>
+<p><span id="unlabeled-div-42" class="proof"><em>Prova</em>. </span>Per la duplicació d’un cub de costat <span class="math inline">\(1\)</span> ens caldria construir <span class="math inline">\(\sqrt[3]{2}\)</span>, que té grau <span class="math inline">\(3\)</span> i, per tant, no és constructible.</p>
 <p>Si un angle <span class="math inline">\(\theta\)</span> és constructible, aleshores fàcilment veiem que <span class="math inline">\(\cos(\theta)\)</span> i <span class="math inline">\(\sin(\theta)\)</span> també són constructibles.
 Veurem que <span class="math inline">\(\alpha=2\cos(\pi/9)\)</span> no és constructible. Com que <span class="math inline">\(\cos(\pi/3)=1/2\)</span>, a partir de la fórmula de l’angle triple obtenim
 <span class="math display">\[
@@ -345,10 +363,10 @@ també podríem construir <span class="math inline">\(\pi\)</span>, que és tran
 </div>
 <p>Més endavant estudiarem quins angles són constructibles. De fet, tenim el següent:</p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-44" class="theorem"><strong>Teorema 3.2  </strong></span>Sigui <span class="math inline">\(t\)</span> un enter. L’angle de <span class="math inline">\(t\)</span> graus (no radians!) és constructible si i només si <span class="math inline">\(t\)</span> és un múltiple de <span class="math inline">\(3\)</span>.</p>
+<p><span id="thm:unlabeled-div-43" class="theorem"><strong>Teorema 3.2  </strong></span>Sigui <span class="math inline">\(t\)</span> un enter. L’angle de <span class="math inline">\(t\)</span> graus (no radians!) és constructible si i només si <span class="math inline">\(t\)</span> és un múltiple de <span class="math inline">\(3\)</span>.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-45" class="proof"><em>Prova</em>. </span>Hi ha construccions molt antigues del pentàgon regular (<span class="math inline">\(72^\circ\)</span>), ja que
+<p><span id="unlabeled-div-44" class="proof"><em>Prova</em>. </span>Hi ha construccions molt antigues del pentàgon regular (<span class="math inline">\(72^\circ\)</span>), ja que
 <span class="math display">\[
 \cos(72^\circ) = \frac{1}{4} \, \sqrt{5} - \frac{1}{4},
 \]</span>

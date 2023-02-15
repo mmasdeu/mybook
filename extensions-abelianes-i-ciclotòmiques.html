@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Episodi 11. Extensions Abelianes i ciclotòmiques | Teoria de Galois</title>
+  <title>Episodi 11. Extensions Abelianes i ciclotòmiques | teoriadegalois.knit</title>
   <meta name="description" content="Apunts d’un curs de Teoria de Galois a la UAB" />
   <meta name="generator" content="bookdown 0.32.1 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Episodi 11. Extensions Abelianes i ciclotòmiques | Teoria de Galois" />
+  <meta property="og:title" content="Episodi 11. Extensions Abelianes i ciclotòmiques | teoriadegalois.knit" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Apunts d’un curs de Teoria de Galois a la UAB" />
   <meta name="github-repo" content="mmasdeu/teoriadegalois" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Episodi 11. Extensions Abelianes i ciclotòmiques | Teoria de Galois" />
+  <meta name="twitter:title" content="Episodi 11. Extensions Abelianes i ciclotòmiques | teoriadegalois.knit" />
   
   <meta name="twitter:description" content="Apunts d’un curs de Teoria de Galois a la UAB" />
   
@@ -23,7 +23,7 @@
 <meta name="author" content="Marc Masdeu" />
 
 
-<meta name="date" content="2023-02-14" />
+<meta name="date" content="2023-02-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="element-primitiu.html"/>
-<link rel="next" href="arrels-i-radicals.html"/>
+<link rel="next" href="grups-de-polinomis.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -116,7 +116,8 @@ MathJax.Hub.Config({
   extensions: ["tex2jax.js"],
   jax: ["input/TeX","output/HTML-CSS"],
   "HTML-CSS": {
-      styles: {".MathJax_Preview": {visibility: "hidden"}},
+      styles: {".MathJax_Preview": {visibility: "hidden"},
+	       ".MathJax_Display" : {stroke: "currentColor"}},
       EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
   },
     tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]},
@@ -133,6 +134,7 @@ MathJax.Hub.Config({
     tex: {
       packages: {'[+]': ['xypic']}
     }
+    
   };
 </script>
 <script type="text/javascript" id="MathJax-script" async
@@ -246,16 +248,28 @@ div.csl-indent {
 <li class="chapter" data-level="11.2" data-path="extensions-abelianes-i-ciclotòmiques.html"><a href="extensions-abelianes-i-ciclotòmiques.html#extensions-abelianes"><i class="fa fa-check"></i><b>11.2</b> Extensions abelianes</a></li>
 <li class="chapter" data-level="11.3" data-path="extensions-abelianes-i-ciclotòmiques.html"><a href="extensions-abelianes-i-ciclotòmiques.html#constructibilitat-de-polígons-regulars"><i class="fa fa-check"></i><b>11.3</b> Constructibilitat de polígons regulars</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="arrels-i-radicals.html"><a href="arrels-i-radicals.html"><i class="fa fa-check"></i><b>12</b> Arrels i radicals</a>
+<li class="chapter" data-level="12" data-path="grups-de-polinomis.html"><a href="grups-de-polinomis.html"><i class="fa fa-check"></i><b>12</b> Grups de Polinomis</a>
 <ul>
-<li class="chapter" data-level="12.1" data-path="arrels-i-radicals.html"><a href="arrels-i-radicals.html#extensions-cícliques"><i class="fa fa-check"></i><b>12.1</b> Extensions cícliques</a></li>
-<li class="chapter" data-level="12.2" data-path="arrels-i-radicals.html"><a href="arrels-i-radicals.html#solubilitat-per-radicals"><i class="fa fa-check"></i><b>12.2</b> Solubilitat per radicals</a></li>
+<li class="chapter" data-level="12.1" data-path="grups-de-polinomis.html"><a href="grups-de-polinomis.html#el-grup-de-galois-del-polinomi-genèric"><i class="fa fa-check"></i><b>12.1</b> El grup de Galois del polinomi genèric</a></li>
+<li class="chapter" data-level="12.2" data-path="grups-de-polinomis.html"><a href="grups-de-polinomis.html#el-teorema-fonamental-de-làlgebra"><i class="fa fa-check"></i><b>12.2</b> El teorema fonamental de l’àlgebra</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="calculem-grups-de-galois.html"><a href="calculem-grups-de-galois.html"><i class="fa fa-check"></i><b>13</b> Calculem grups de Galois</a>
+<li class="chapter" data-level="13" data-path="arrels-i-radicals.html"><a href="arrels-i-radicals.html"><i class="fa fa-check"></i><b>13</b> Arrels i radicals</a>
 <ul>
-<li class="chapter" data-level="13.1" data-path="calculem-grups-de-galois.html"><a href="calculem-grups-de-galois.html#cúbics"><i class="fa fa-check"></i><b>13.1</b> Cúbics</a></li>
-<li class="chapter" data-level="13.2" data-path="calculem-grups-de-galois.html"><a href="calculem-grups-de-galois.html#quàrtics"><i class="fa fa-check"></i><b>13.2</b> Quàrtics</a></li>
-<li class="chapter" data-level="13.3" data-path="calculem-grups-de-galois.html"><a href="calculem-grups-de-galois.html#section"><i class="fa fa-check"></i><b>13.3</b> </a></li>
+<li class="chapter" data-level="13.1" data-path="arrels-i-radicals.html"><a href="arrels-i-radicals.html#caràcters"><i class="fa fa-check"></i><b>13.1</b> Caràcters</a></li>
+<li class="chapter" data-level="13.2" data-path="arrels-i-radicals.html"><a href="arrels-i-radicals.html#extensions-cícliques"><i class="fa fa-check"></i><b>13.2</b> Extensions cícliques</a></li>
+<li class="chapter" data-level="13.3" data-path="arrels-i-radicals.html"><a href="arrels-i-radicals.html#solubilitat-per-radicals"><i class="fa fa-check"></i><b>13.3</b> Solubilitat per radicals</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="càlcul-explícit-de-grups-de-galois.html"><a href="càlcul-explícit-de-grups-de-galois.html"><i class="fa fa-check"></i><b>14</b> Càlcul explícit de grups de Galois</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="càlcul-explícit-de-grups-de-galois.html"><a href="càlcul-explícit-de-grups-de-galois.html#polinomis-cúbics"><i class="fa fa-check"></i><b>14.1</b> Polinomis cúbics</a></li>
+<li class="chapter" data-level="14.2" data-path="càlcul-explícit-de-grups-de-galois.html"><a href="càlcul-explícit-de-grups-de-galois.html#polinomis-quàrtics"><i class="fa fa-check"></i><b>14.2</b> Polinomis quàrtics</a></li>
+<li class="chapter" data-level="14.3" data-path="càlcul-explícit-de-grups-de-galois.html"><a href="càlcul-explícit-de-grups-de-galois.html#mètode-local"><i class="fa fa-check"></i><b>14.3</b> Mètode local</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="teoria-de-galois-infinita.html"><a href="teoria-de-galois-infinita.html"><i class="fa fa-check"></i><b>15</b> Teoria de Galois infinita</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="teoria-de-galois-infinita.html"><a href="teoria-de-galois-infinita.html#definicions"><i class="fa fa-check"></i><b>15.1</b> Definicions</a></li>
+<li class="chapter" data-level="15.2" data-path="teoria-de-galois-infinita.html"><a href="teoria-de-galois-infinita.html#la-topologia-de-krull"><i class="fa fa-check"></i><b>15.2</b> La topologia de Krull</a></li>
+<li class="chapter" data-level="15.3" data-path="teoria-de-galois-infinita.html"><a href="teoria-de-galois-infinita.html#el-teorema"><i class="fa fa-check"></i><b>15.3</b> El teorema</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="bibliografia.html"><a href="bibliografia.html"><i class="fa fa-check"></i>Bibliografia</a></li>
 <li class="divider"></li>
@@ -270,7 +284,7 @@ div.csl-indent {
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Teoria de Galois</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
           </h1>
         </div>
 
@@ -293,13 +307,13 @@ Per cada <span class="math inline">\(a\in\ZZ\)</span> coprimer amb <span class="
 \sigma_a \colon \QQ(\zeta_n)\to \QQ(\zeta_n),\quad \zeta_n\mapsto \zeta_n^a.
 \]</span></p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-128" class="theorem"><strong>Teorema 11.1  </strong></span>L’aplicació <span class="math inline">\(a \mapsto \sigma_a\)</span> indueix un isomorfisme
+<p><span id="thm:unlabeled-div-127" class="theorem"><strong>Teorema 11.1  </strong></span>L’aplicació <span class="math inline">\(a \mapsto \sigma_a\)</span> indueix un isomorfisme
 <span class="math display">\[
 \psi \colon (\ZZ/n\ZZ)^\times \to \Gal(\QQ(\zeta_n)/\QQ).
 \]</span></p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-129" class="proof"><em>Prova</em>. </span>Ja sabem que <span class="math inline">\(\Gal(\QQ(\zeta_n)/\QQ)\)</span> té exactament <span class="math inline">\(\varphi(n)\)</span> elements. Si <span class="math inline">\(\sigma\)</span> és un
+<p><span id="unlabeled-div-128" class="proof"><em>Prova</em>. </span>Ja sabem que <span class="math inline">\(\Gal(\QQ(\zeta_n)/\QQ)\)</span> té exactament <span class="math inline">\(\varphi(n)\)</span> elements. Si <span class="math inline">\(\sigma\)</span> és un
 d’aquests automorfismes, sabem que ve determinat per on envia <span class="math inline">\(\zeta_n\)</span>, que és una arrel
 del polinomi ciclotòmic <span class="math inline">\(\Phi_n(x)\)</span>. Per tant, <span class="math inline">\(\sigma(\zeta_n)\)</span> és una arrel <span class="math inline">\(n\)</span>-èssima primitiva
 de la unitat i doncs ha de ser <span class="math inline">\(\zeta_n^a\)</span> per alguna <span class="math inline">\(a\)</span> coprimera amb <span class="math inline">\(n\)</span>. Així veiem que
@@ -313,24 +327,24 @@ tant bijectiva. A més, <span class="math inline">\(\psi\)</span> és un morfism
 També tenim una versió més conceptual del teorema xinès dels residus, que escrivim en el cas de dos factors
 per estalviar notació.</p>
 <div class="proposition">
-<p><span id="prp:unlabeled-div-130" class="proposition"><strong>Proposició 11.1  </strong></span>Si <span class="math inline">\(n\)</span> i <span class="math inline">\(m\)</span> són coprimers, aleshores <span class="math inline">\(\QQ(\zeta_n) \cap \QQ(\zeta_m) = \QQ\)</span>, <span class="math inline">\(\QQ(\zeta_n,\zeta_m) = \QQ(\zeta_{nm})\)</span>, i
+<p><span id="prp:unlabeled-div-129" class="proposition"><strong>Proposició 11.1  </strong></span>Si <span class="math inline">\(n\)</span> i <span class="math inline">\(m\)</span> són coprimers, aleshores <span class="math inline">\(\QQ(\zeta_n) \cap \QQ(\zeta_m) = \QQ\)</span>, <span class="math inline">\(\QQ(\zeta_n,\zeta_m) = \QQ(\zeta_{nm})\)</span>, i
 <span class="math display">\[
 \Gal(\QQ(\zeta_{nm})/\QQ) \cong \Gal(\QQ(\zeta_n)/\QQ) \times \Gal(\QQ(\zeta_m)/\QQ).
 \]</span></p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-131" class="proof"><em>Prova</em>. </span>TODO</p>
+<p><span id="unlabeled-div-130" class="proof"><em>Prova</em>. </span>TODO</p>
 </div>
 <p>El següent lema ens permet trobar generadors dels subcossos de <span class="math inline">\(\QQ(\zeta_p)\)</span>.</p>
 <div class="lemma">
-<p><span id="lem:unlabeled-div-132" class="lemma"><strong>Lema 11.1  </strong></span>Sigui <span class="math inline">\(p\)</span> un primer, i sigui <span class="math inline">\(H\leq \Gal(\QQ(\zeta_p)/\QQ)\)</span> un subgrup. Aleshores
+<p><span id="lem:unlabeled-div-131" class="lemma"><strong>Lema 11.1  </strong></span>Sigui <span class="math inline">\(p\)</span> un primer, i sigui <span class="math inline">\(H\leq \Gal(\QQ(\zeta_p)/\QQ)\)</span> un subgrup. Aleshores
 <span class="math display">\[
 \theta_H=\sum_{\sigma \in H} \sigma(\zeta_p)
 \]</span>
 és un generador del cos fix d’<span class="math inline">\(H\)</span>. L’element <span class="math inline">\(\theta_H\)</span> s’anomena un <em>període</em> de <span class="math inline">\(\zeta_p\)</span>.</p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-133" class="example"><strong>Exemple 11.1  </strong></span>Calcularem el reticle de subcossos de <span class="math inline">\(\QQ(\zeta_{13})\)</span>, fent servir el lema anterior.
+<p><span id="exm:unlabeled-div-132" class="example"><strong>Exemple 11.1  </strong></span>Calcularem el reticle de subcossos de <span class="math inline">\(\QQ(\zeta_{13})\)</span>, fent servir el lema anterior.
 TODO</p>
 </div>
 </div>
@@ -338,11 +352,11 @@ TODO</p>
 <h2><span class="header-section-number">11.2</span> Extensions abelianes<a href="extensions-abelianes-i-ciclotòmiques.html#extensions-abelianes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Podem fer servir el què hem vist per demostrar el següent resultat.</p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-134" class="theorem"><strong>Teorema 11.2  (realització de grups abelians) </strong></span>Sigui <span class="math inline">\(G\)</span> un grup finit abelià. Aleshores hi ha una extensió <span class="math inline">\(K/\QQ\)</span> continguda dins d’un cos ciclotòmic
+<p><span id="thm:unlabeled-div-133" class="theorem"><strong>Teorema 11.2  (realització de grups abelians) </strong></span>Sigui <span class="math inline">\(G\)</span> un grup finit abelià. Aleshores hi ha una extensió <span class="math inline">\(K/\QQ\)</span> continguda dins d’un cos ciclotòmic
 tal que <span class="math inline">\(\Gal(K/\QQ) \cong G\)</span>.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-135" class="proof"><em>Prova</em>. </span>Tot grup abelià és producte de cíclics:
+<p><span id="unlabeled-div-134" class="proof"><em>Prova</em>. </span>Tot grup abelià és producte de cíclics:
 <span class="math display">\[
 G \cong C_{n_1}\times C_{n_2}\times\cdots\times C_{n_k}.
 \]</span>
@@ -360,11 +374,11 @@ de <span class="math inline">\(\QQ(\zeta_n)\)</span> que realitza <span class="m
 extensió <span class="math inline">\(K/F\)</span> es diu que té la propietat <span class="math inline">\(P\)</span> si és de Galois i el seu grup de Galois té la propietat <span class="math inline">\(P\)</span>.
 Per exemple, tenim la següent definició:</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-136" class="definition"><strong>Definició 11.1  (extensió abeliana) </strong></span>Una extensió <span class="math inline">\(K/F\)</span> és <em>abeliana</em> si <span class="math inline">\(K/F\)</span> és de Galois i <span class="math inline">\(\Gal(K/F)\)</span> és un grup abelià.</p>
+<p><span id="def:unlabeled-div-135" class="definition"><strong>Definició 11.1  (extensió abeliana) </strong></span>Una extensió <span class="math inline">\(K/F\)</span> és <em>abeliana</em> si <span class="math inline">\(K/F\)</span> és de Galois i <span class="math inline">\(\Gal(K/F)\)</span> és un grup abelià.</p>
 </div>
 <p>El resultat anterior té un recíproc que no podem demostrar aquí:</p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-137" class="theorem"><strong>Teorema 11.3  (Kronecker-Weber) </strong></span>Sigui <span class="math inline">\(K/\QQ\)</span> una extensió finita abeliana. Aleshores <span class="math inline">\(K\)</span> està contingut en una extensió ciclotòmica.</p>
+<p><span id="thm:unlabeled-div-136" class="theorem"><strong>Teorema 11.3  (Kronecker-Weber) </strong></span>Sigui <span class="math inline">\(K/\QQ\)</span> una extensió finita abeliana. Aleshores <span class="math inline">\(K\)</span> està contingut en una extensió ciclotòmica.</p>
 </div>
 <p>En general, és avui un problema obert el determinar quins grups apareixen quan com a grups de Galois d’extensions
 <span class="math inline">\(K/\QQ\)</span>. Ja hem vist que tots els grups abelians apareixen, però hi ha grups (per exemple <span class="math inline">\(\PSL_2(\FF_{125})\)</span>) pels
@@ -388,7 +402,7 @@ successivament subgrups d’índex <span class="math inline">\(2\)</span> i fent
 i per tant <span class="math inline">\(x\)</span> és constructible. D’aquí tenim la següent caracterització. Recordem que un primer <span class="math inline">\(p\)</span> es
 diu <em>primer de Fermat</em> si <span class="math inline">\(p-1\)</span> és una potència de <span class="math inline">\(2\)</span>.</p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-138" class="theorem"><strong>Teorema 11.4  (construcció de polígons regulars) </strong></span>Sigui <span class="math inline">\(n\)</span> un enter positiu. Aleshores el polígon regular de <span class="math inline">\(n\)</span> costats és constructible
+<p><span id="thm:unlabeled-div-137" class="theorem"><strong>Teorema 11.4  (construcció de polígons regulars) </strong></span>Sigui <span class="math inline">\(n\)</span> un enter positiu. Aleshores el polígon regular de <span class="math inline">\(n\)</span> costats és constructible
 amb regle i compàs si i només si <span class="math inline">\(n\)</span> és de la forma
 <span class="math display">\[
 n = 2^k p_1 \cdots p_r,
@@ -396,7 +410,7 @@ n = 2^k p_1 \cdots p_r,
 on <span class="math inline">\(k\geq 0\)</span> i <span class="math inline">\(p_i\)</span> són primers de Fermat diferents.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-139" class="proof"><em>Prova</em>. </span>Escrivim <span class="math inline">\(n\)</span> com a producte de potències de primers diferents
+<p><span id="unlabeled-div-138" class="proof"><em>Prova</em>. </span>Escrivim <span class="math inline">\(n\)</span> com a producte de potències de primers diferents
 <span class="math display">\[
 n=2^{k}q_1^{e_1} q_2^{e_2}\cdots q_r^{e_r}, \quad q_i \text{ senar.}
 \]</span>
@@ -423,7 +437,7 @@ si <span class="math inline">\(p\)</span> és un primer de Fermat aleshores <spa
         </div>
       </div>
 <a href="element-primitiu.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="arrels-i-radicals.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="grups-de-polinomis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
