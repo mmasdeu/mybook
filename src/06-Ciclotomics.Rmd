@@ -38,7 +38,7 @@ $$
 A més, fixem-nos que la fórmula anterior ens permet calcular els polinomis ciclotòmics de manera recursiva,
 dividint pels factors coneguts:
 \begin{equation}
-\Phi_n(x) = \frac{x^n - 1}{\prod_{\substack{d \mid n\\d < n}} \Phi_d(x)}.
+\Phi_n(x) = \frac{x^n - 1}{\displaystyle\prod_{\substack{d \mid n\\d < n}} \Phi_d(x)}.
 (\#eq:ciclotomics-recursius)
 \end{equation}
 
@@ -46,19 +46,11 @@ dividint pels factors coneguts:
 Els primers valors són, per exemple:
 
 \begin{align*}
-\Phi_1(x) &= x-1\\
-\Phi_2(x) &= x+1\\
-\Phi_{3}(x) &= x^{2} + x + 1 \\
-\Phi_{4}(x) &= x^{2} + 1 \\
-\Phi_{5}(x) &= x^{4} + x^{3} + x^{2} + x + 1 \\
-\Phi_{6}(x) &= x^{2} - x + 1 \\
-\Phi_{7}(x) &= x^{6} + x^{5} + x^{4} + x^{3} + x^{2} + x + 1 \\
-\Phi_{8}(x) &= x^{4} + 1 \\
-\Phi_{9}(x) &= x^{6} + x^{3} + 1 \\
-\Phi_{10}(x) &= x^{4} - x^{3} + x^{2} - x + 1 \\
-\Phi_{11}(x) &= x^{10} + x^{9} + x^{8} + x^{7} + x^{6} + x^{5} + x^{4} + x^{3} + x^{2} + x + 1 \\
-\Phi_{12}(x) &= x^{4} - x^{2} + 1 \\
-\Phi_{13}(x) &= x^{12} + x^{11} + x^{10} + x^{9} + x^{8} + x^{7} + x^{6} + x^{5} + x^{4} + x^{3} + x^{2} + x + 1
+\Phi_1(x) &= x-1&\Phi_2(x) &= x+1\\
+\Phi_{3}(x) &= x^{2} + x + 1 &\Phi_{4}(x) &= x^{2} + 1 \\
+\Phi_{5}(x) &= x^{4} + x^{3} + x^{2} + x + 1 &\Phi_{6}(x) &= x^{2} - x + 1 \\
+\Phi_{7}(x) &= x^{6} + x^{5} + x^{4} + x^{3} + x^{2} + x + 1 & \Phi_{8}(x) &= x^{4} + 1 \\
+\Phi_{9}(x) &= x^{6} + x^{3} + 1 & \Phi_{10}(x) &= x^{4} - x^{3} + x^{2} - x + 1
 \end{align*}
 
 ::: {.lemma}
