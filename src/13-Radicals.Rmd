@@ -7,6 +7,57 @@ per tant, no existeix una fórmula que expressi les arrels d'un polinomi en term
 dels seus coeficients. També es mostrarà un exemple concret d'un polinomi de grau $5$ sobre $\QQ$
 amb grup de Galois $S_5$.
 
+## Caràcters
+
+En aquesta secció demostrarem un resultat d'àlgebra lineal que ens caldrà més endavant.
+
+::: {.definition #caracter}
+Un *caràcter* $\chi$ d'un grup $G$ amb valors en un cos $L$ és un morfisme de grups
+$$
+\chi \colon G \to L^\times.
+$$
+:::
+
+Podem pensar un caràcter $\chi$ com una funció $G\to L$.
+Les funcions de $G$ a $L$ formen un $L$-espai vectorial, de manera òbvia.
+El següent resultat és degut a Dedekind.
+
+::: {.theorem name="Independència lineal dels caràcters" #caracters-li}
+Siguin $\chi_1,\ldots,\chi_n$ caràcters de $G$ diferents. Aleshores són linealment independents, és a dir, no hi ha
+cap combinació lineal no trivial $a_1\chi_1+\cdots+a_n\chi_n$ que doni lloc a la funció idènticament zero.
+:::
+
+::: {.proof}
+Suposem (reordenant, si cal) que podem escriure
+$$
+a_1\chi_1 + \cdots a_m\chi_m = 0,
+$$
+amb tots els $a_i\neq 0$ (observem $m\leq n$) i amb $m$ mínim. Obtindrem una relació de dependència amb menys termes, arribant així a contradicció.
+
+Prenem $g_0\in G$ tal que $\chi_1(g_0)\neq \chi_m(g_0)$. Aleshores tenim
+$$
+a_1\chi_1(g) + \cdots a_m\chi_m(g) = 0,
+$$
+i
+$$
+a_1\chi_1(g_0g) + \cdots a_m\chi_m(g_0g) = 0.
+$$
+Multiplicant la primera equació per $\chi_m(g_0)$ i restant-li la segona obtenim, per a tot $g$,
+$$
+a_1(\chi_m(g_0)-\chi_1(g_0)) \chi_1(g) + \cdots a_{m-1}(\chi_m(g_0)- \chi_{m-1}(g_0)) \chi_{m-1}(g) = 0.
+$$
+Com que el primer coeficient és diferent de zero, tenim una relació no trivial amb $m-1$ termes, contradicció.
+:::
+
+Un cas particular que ens interessa aquí prové de considerar un morfisme no trivial de cossos $\sigma\colon K\to L$,
+que indueix un morfisme de grups entre les unitats $\sigma\colon K^\times \to L^\times$ (aquesta restricció ja conté
+tota la informació que ens cal de $\sigma$, perquè ja sabem que $\sigma(0)=0$). Aleshores $\sigma$ esdevé un caràcter
+del grup $G=K^\times$, i per tant tenim el següent:
+
+::: {.corollary #automorfismes-li}
+Si $\sigma_1,\ldots,\sigma_n$ són morfismes diferents de $K$ a $L$, aleshores són linealment independents com a funcions de $K$.
+:::
+
 
 ## Extensions cícliques
 

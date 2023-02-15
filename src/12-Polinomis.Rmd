@@ -1,0 +1,129 @@
+# Grups de Polinomis
+
+En aquest episodi estudiem els grups de Galois de polinomis separables.
+
+::: {.definition name="grup de Galois d'un polinomi"}
+Sigui $f(x)\in F[x]$ un polinomi separable amb coeficients a un cos $F$. El *grup de Galois d'$f(x)$*
+és el grup de Galois del cos de descomposició de $f(x)$, que escriurem $\Gal(f)$.
+:::
+
+Sigui $K/F$ una extensió de Galois. Aleshores $K$ és el cos de descomposició d'un polinomi separable $f(x)\in F[x]$.
+Com que les arrels de $f(x)$ generen $K/F$, tot element de $\Gal(K/F)$ ve determinat per on envia cadascuna
+de les arrels de $f(x)$, que necessàriament és una altra arrel. Així, si etiquetem les arrels de $f(x)$ com
+$\alpha_1,\ldots,\alpha_n$, obtenim un morfisme de grups injectiu
+$$
+\Gal(K/F)\injects S_n,
+$$
+que ens permet pensar $\Gal(K/F)$ com un subgrup de $S_n$. De fet, si $f(x)$ no és irreductible i factoritza com
+$$
+f(x) = f_1(x)\cdots f_k(x),
+$$
+possiblement amb repetició, i $\deg(f_i(x)) = n_i$, aleshores
+$$
+\Gal(K/F)\injects S_{n_1}\times \cdots S_{n_k},
+$$
+ja que els elements de $\Gal(K/F)$ permuten les arrels de cadascun dels $f_i(x)$ per separat.
+
+::: {.remark name=""}
+Suposem que $f(x)$ és irreductible. Aleshores el subgrup de $G\leq S_n$ que obtenim com a imatge de $\Gal(K/F)$ és *transitiu*: donats $i,j$,
+hi ha un element $g\in G$ tal que $g(i)=j$. Així, no tots els subgrups de $S_n$ són possibles grups de Galois.
+:::
+
+::: {.example}
+Calculem els grups de Galois $\Gal(\QQ(\sqrt{2}, \sqrt{3}) / \QQ)$ i  $\Gal(\QQ(\sqrt[3]{2})/\QQ)$ com a
+subgrups de $S_4$ i $S_3$, respectivament.
+:::
+
+## El grup de Galois del polinomi genèric
+
+Fixem un cos $F$, i considerem el cos $F(s_1,\ldots,s_n)$, on $s_i$ són indeterminades. Els elements
+d'aquest cos són quocients de polinomis en les variables $s_i$ (s'anomenen funcions racionals).
+Considerem el polinomi
+$$
+f(x) = x^n-s_1x^{n-1} + s_2x^{n-2} + \cdots + (-1)^n s_n \in F(s_1,\ldots, x_n),
+$$
+que té arrels $x_1,\ldots,x_n$ que satisfan
+\begin{align*}
+s_1&=x_1+x_2+\cdots+x_n\\
+s_2&=x_1x_2 + x_1x_3 + \cdots x_{n-1}x_n\\
+&\cdots\\
+s_n&=x_1x_2\cdots x_n.
+\end{align*}
+El polinomi $f(x)$ s'anomena el *polinomi general de grau $n$*.
+
+::: {.theorem}
+El polinomi general de grau $n$ és separable sobre $F(s_1,\ldots,s_n)$,
+amb grup de Galois $S_n$.
+:::
+::: {.proof}
+El cos de descomposició del polinomi general de grau $n$ $f(x)$ és justament
+$F(x_1,\ldots,x_n)$. Suposem que $p(t_1,\ldots,t_n)$ fos un polinomi en $n$ variables
+i coeficients a $F$ tal que $p(x_1,\ldots,x_n)=0$. Aleshores podem prendre el producte
+de $p(x_{\sigma(1)}, x_{\sigma(2)}, \ldots,x_{\sigma(n)})$ amb $\sigma$ variant per tot
+$S_n$, i obtenim un polinomi simètric $\tilde p$ tal que $\tilde p(x_1,\ldots,x_n)=0$.
+Però això donaria una relació no trivial entre $s_1,\ldots,s_n$, contradicció.
+:::
+
+Aquest resultat es pot interpretar com que un polinomi "genèric" de grau $n$ tindrà grup de Galois $S_n$.
+Tot i així, cal anar amb compte amb el significat de "genèric": per exemple, els grups de Galois d'un
+polinomi irreductible sobre un cos finit sempre és cíclic, així que no serà $S_n$ si $n > 3$. Sí que és
+cert però que la "majoria" de polinomis sobre $\QQ$ tenen grup de Galois $S_n$ (en un cert sentit de "majoria").
+
+::: {.definition #discriminant name="discriminant"}
+El *discriminant* d'un polinomi de grau $n$ amb arrels $x_1,\ldots,x_n$ és
+$$
+\disc(f(x)) = \prod_{i < j} (x_i-x_j)^2.
+$$
+:::
+Com que el discriminant és un polinomi simètric en les arrels de $f(x)$, es pot expressar
+en termes dels seus coeficients. En particular, el discrimiant del polinomi general és un
+element $D\in F(s_1,\ldots,s_n)$.
+
+::: {.theorem}
+Sigui $f(x)\in F[x]$. Aleshores $\Gal(f)$ és un subgrup del grup alternat $A_n$ si i
+només si $\disc(f(x))$ és el quadrat d'un element de $F$.
+:::
+::: {.proof}
+Siguin $x_1,\ldots,x_n$ les arrels de $f(x)$, i sigui $D=\disc(f(x))$. Aleshores $\sqrt{D}=\prod_{i < j} (x_i - x_j)$
+és un element del cos de descomposició de $f(x)$. Un element $\sigma\in S_n$ té signe parell
+si i només si preserva $\sqrt{D}$ (per definició del signe). Per tant, $\sqrt{D}$ és un element de $F$
+si i només si tot element de $\Gal(f)$ té signe parell, si i només si $\Gal(f)$ és un subgrup d'$A_n$.
+:::
+
+
+## El teorema fonamental de l'àlgebra
+
+Demostrarem que $\CC=\RR(i)$ és algebraicament tancat, fent servir aquest fet bàsic sobre $\RR$, que
+es demostra amb el teorema del valor mig:
+
+::: {.proposition #arrels-real-senar}
+No hi ha cap extensió de $\RR$ finita de grau senar $>1$.
+:::
+::: {.proof}
+És equivalent a veure que tot polinomi de grau senar amb coeficients reals té una arrel real.
+:::
+
+::: {.lemma #no-quadratic-complex}
+No hi ha cap extensió de grau $2$ de $\CC$.
+:::
+::: {.proof}
+Hem de veure que l'arrel quadrada d'un nombre complex també és complex. Això és un exercici senzill. Per
+exemple, si $\alpha=a+bi$, aleshores una arrel quadrada és de la forma
+$$
+\sqrt{\frac{a + \sqrt{a^2+b^2}}{2}} \pm i\sqrt{\frac{-a+\sqrt{a^2+b^2}}{2}}.
+$$
+:::
+
+::: {.theorem name="Teorema Fonamental de l'Àlgebra"}
+Sigui $K/\RR$ una extensió finita. Aleshores $[K \colon \RR] \leq 2$.
+:::
+::: {.proof}
+Podem suposar (prenent la clausura de Galois) que $K/\RR$ és finita Galois.
+Sigui $G=\Gal(K/\RR)$, i sigui $H\leq G$ un subgrup
+de $2$-Sylow. Pel TFTG, el grau $[K^H\colon \RR]$ és senar. Per tant, $K^H=\RR$ i
+això vol dir que $H=G$, és a dir, que $G$ és un $2$-grup (té ordre una potència de $2$).
+
+Suposem doncs que $|G|\geq 4$, i arribarem a una contradicció. En aquest cas, hi ha subgrups $H_2\leq H_1\leq G$
+amb $[G\colon H_i] = 2^i$. En termes de cossos fixos, hi ha una extensió de grau $2$ de $K^{H_1}=\CC$, que
+contradiu el lema anterior.
+:::

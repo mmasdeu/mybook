@@ -1,5 +1,4 @@
 ---
-title: "Teoria de Galois"
 author: "Marc Masdeu"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
@@ -28,50 +27,19 @@ output:
       edit: https://github.com/mmasdeu/teoriadegalois/edit/main/%s
       download: ["pdf"]
   bookdown::pdf_book:
-    toc: yes
+    toc: no
     includes:
       in_header: ["src/preamble.tex"]
+      before_body: ["src/body.tex"]
     latex_engine: xelatex
     citation_package: biblatex
-    keep_tex: no
+    keep_tex: yes
     extra_dependencies:
       textcomp: null
+
 ---
 
 # Introducció {-}
-
-
-```{r, echo=FALSE, engine='tikz', out.width='70%', fig.ext='png'}
-\begin{tikzpicture}[node distance=1.5cm]
-\title{Reticle de subgrups del grup $A_4$}
-\node(A4)                           {$A_4$};
-\node(V4)       [below right of=A4] {$V_4$};
-\node(C31)      [below left of=A4]  {$C_3$};
-\node(C32)      [left of=C31]       {$C_3$};
-\node(C33)      [left of=C32]       {$C_3$};
-\node(C34)      [left of=C33]       {$C_3$};
-\node(C22)      [below of=V4]       {$C_2$};
-\node(C21)      [left of=C22]       {$C_2$};
-\node(C23)      [right of=C22]      {$C_2$};
-\node(1)            [below left of=C21]     {$\left\{1\right\}$};
-
-\draw(A4)       -- (V4);
-\draw(A4)       -- (C31);
-\draw(A4)       -- (C32);
-\draw(A4)       -- (C33);
-\draw(A4)       -- (C34);
-\draw(C31)      --  (1);
-\draw(C32)      --  (1);
-\draw(C33)      --  (1);
-\draw(C34)      --  (1);
-\draw(V4)       -- (C21);
-\draw(V4)       -- (C22);
-\draw(V4)       -- (C23);
-\draw(C21)      --  (1);
-\draw(C22)      --  (1);
-\draw(C23)      --  (1);
-\end{tikzpicture}
-```
 
 Aquests són uns apunts de *Teoria de Galois*, pensats pel curs de 3r del Grau de Matemàtiques de la UAB.
 
@@ -88,7 +56,7 @@ El curs es pot dividir de manera natural en 15 sessions de dues hores. El temps 
 **Important:** Si aquí sota no hi veieu un $OK$, heu d'activar l'opció HTML-CSS de *MathJax* al vostre navegador:
 $$
 \\begin{xy}
-\\xymatrix{OK}
+\\xymatrix{O \ar@{-}[r]&K}
 \\end{xy}
 $$
 "`

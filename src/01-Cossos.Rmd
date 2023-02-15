@@ -164,12 +164,12 @@ coeficients.
 Sigui $\sigma\colon F\to L$ un morfisme de cossos.
 Sigui $f(x)\in F[x]$ un polinomi irreductible. Aleshores l'aplicació $\varphi \mapsto \varphi(\alpha)$ indueix una bijecció
 $$
-\Hom_{\sigma}(F(\alpha), L) \to \{\beta\in L ~|~ \sigma(f)(\beta) = 0 \}.
+\Hom_{\sigma}(F(\alpha), L) \stackrel{\cong}{\to} \{\beta\in L ~|~ \sigma(f)(\beta) = 0 \}.
 $$
 $$
 \xymatrix{
-  F(\alpha)\ar^{\varphi}[r]\ar@{-}[dr] & L\\
-  &F \ar{\sigma}[ur].
+  F(\alpha)\ar@{-->}^{\varphi}[r]\ar@{-}[d] & L\\
+  F\ar^{\sigma}[ur].
 }
 $$
 :::

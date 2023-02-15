@@ -1,4 +1,4 @@
-# Calculem grups de Galois
+# Càlcul explícit de grups de Galois
 
 Hem vist com calcular el grup de Galois de polinomis
 de la forma $x^n-a$. En general, però, calcular el grup de Galois d'un polinomi donat és una tasca difícil.
@@ -6,7 +6,7 @@ Primer veurem com calcular el grup de Galois de polinomis de graus $3$ i $4$. Ta
 veurem una tècnica que ens dona molta informació sobre el grup de Galois, i que a vegades és
 suficient per determinar-lo.
 
-## Cúbics
+## Polinomis cúbics
 
 Trobarem la solució de la cúbica fent servir el què hem après fins ara. Primer determinarem el seu grup
 de Galois. Assumirem que  la característica de $F$
@@ -33,9 +33,10 @@ La condició que $f$ és irreductible és important! El polinomi $x^3-2x+1=(x-1)
 mentre que el polinomi $x^3-7*x-6=(x+1)(x+2)(x-3)$ té discrimiant $20^2$ i grup de Galois $S_3$.
 :::
 
-## Quàrtics
+## Polinomis quàrtics
 
 TODO. Fer servir material de la secció anterior, també
 
-##
+## Mètode local
 
+TODO

@@ -28,8 +28,13 @@ tipus d'operacions següents:
 
 ## La (no) solució
 
-::: {.exercise}
-Vegeu que els nombres constructibles formen un subcos de $\cC\subseteq\RR$. Heu de donar construcions de la suma, resta, producte i divisió
+Comencem veient que els nombres constructibles són un cos.
+
+::: {.proposition}
+Els nombres constructibles formen un subcos de $\cC\subseteq\RR$.
+:::
+::: {.proof}
+TODO. Cal donar construcions de la suma, resta, producte i divisió
 de nombres ja construïts.
 :::
 

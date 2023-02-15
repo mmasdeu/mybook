@@ -1,0 +1,189 @@
+# Teoria de Galois infinita
+
+Farem un esbós de com cal modificar els enunciats per adaptar el teorema fonamental de la Teoria de Galois
+a extensions infinites.
+
+## Definicions
+
+Sigui $K/F$ una extensió algebraica arbitraria. Per definir què vol dir *Galois*, no ens anirà
+bé mirar el cardinal d'$\Aut(K/F)$, perquè en general serà un grup infinita. En canvi,
+una de les caracteritzacions que hem trobat sí que generalitza bé.
+
+::: {.definition}
+L'extensió $K/F$ és una *extensió de Galois* si és normal i separable. És a dir, si per tot $\alpha\in K$
+el polinomi $\Irr_{\alpha,F}(x)$ descomposa completament a $K$ en factors simples.
+:::
+
+::: {.example}
+Podem donar els exemples de $\bar{\QQ} / \QQ$, de $\QQ(\zeta_{p^\infty})$ i de $\bar{\FF}_p / \FF_p$.
+:::
+
+::: {.definition name="grup de Galois"}
+Si $K/F$ és de Galois, alhores el seu *grup de Galois* és el grup $\Gal(K/F)$ format
+pels automorfismes de $K$ que fixen $F$.
+:::
+
+Suposem a partir d'ara que $L/K$ és un extensió de Galois (que pot ser infinita).
+
+::: {.lemma}
+Sigui $E/F$ una subextensió de $L/K$. Aleshores $L/E$ també és de Galois.
+:::
+::: {.proof}
+Sigui $\alpha \in L$. Aleshores $\Irr_{\alpha,E}(x)$ és un divisor de $\Irr_{\alpha,F}(x)$. Per tant,
+és separable i té totes les arrels a $L$.
+:::
+
+Necessitem el següent resultat tècnic.
+::: {.proposition}
+Sigui $K/M/F$ una subextensió, i sigui $\tilde\sigma\colon M\to K$ un $F$-morfisme. Aleshores
+existeix $\sigma\in\Gal(K/F)$ tal que $\sigma|_M = \tilde\sigma$.
+:::
+::: {.proof}
+Fem servir el Lema de Zorn. Donada una cadena d'extensions, podem prendre prendre com a element
+maximal la unió d'aquestes, i $\tilde\sigma$ hi extén. Si $\sigma'\colon L'\to L$ és l'element maximal donat per Zorn,
+volem veure que $L'=L$. Si no ho fos, prenem $\alpha\in L\smallsetminus L'$ i extenem (ho podem fer perquè estem en el
+cas finit), cosa que és una contradicció.
+
+Veiem que l'extensió $\sigma$ és exhaustiva fent servir que permuta les arrels del polinomi mínim de qualsevol element.
+:::
+
+::: {.lemma}
+Sigui $E/F$ una subextensió finita i Galois de $K$. Aleshores la restricció indueix un morfisme de grups
+$$
+\res\colon \Gal(K/F)\to \Gal(E/F)
+$$
+que és exhaustiu.
+:::
+::: {.proof}
+Només cal observar que si $\sigma\in\Gal(K/F)$ aleshores $\sigma(E)=E$, ja que $\sigma$ permuta les arrels
+del polinomi mínim de qualsevol element d'$E$, i aquestes viuen totes a $E$. La proposició anterior
+ens dona l'exhaustivitat.
+:::
+
+Donat un subgrup $H\leq \Gal(K/F)$, podem considerar el cos fix $K^H$. També donat una subcos $K/M/F$, podem
+considerar el subgrup $\Gal(K/M)\leq \Gal(K/F)$.
+
+::: {.example}
+Considerem l'extensió de Galois infinita $\Fpbar/\FF_p$, i l'automorfisme $\pi \colon\bar{\FF}_p\to\bar{\FF}_p$,
+que envia $x\mapsto x^p$. El cos fix per $\pi$ és $\FF_p$. Veurem que $\FF_p$ no està generat per $\pi$ i per
+tant el teorema fonamental de la teoria de Galois no pot ser cert en aquest context.
+
+Construirem un element de $\sigma \in \Gal(\Fpbar/\FF_p)$ tal que $\sigma\neq \pi^n$ per cap $n$. Considerem
+l'extensió $M=\bigcup_{n\geq 1} \FF_{p^{2n+1}}$, que és infinita i no conté $\FF_{p^2}$, per tant no és tot $\bar{\FF}_p$.
+Prenem $\alpha\in\Fpbar\smallsetminus M$ i considerem una arrel $\beta$ conjugada d'$\alpha$ sobre $M$. Hi ha
+un element de $\Gal(M'/M)$ que envia $\alpha\mapsto \beta$ ($M'$ el cos de descomposició de $\Irr_{\alpha,M}(x)$)
+i per tant, pel l'exhaustivitat de la restricció, trobem $\sigma\in\Gal(\Fpbar / M)$ que envia $\alpha\mapsto\beta$.
+El cos fix per $\sigma$ conté $M$, que és un cos infinit. En canvi, per cada $n$ el cos fix per $\pi^n$ és el cos
+finit de $p^n$ elements. Per tant $\sigma\neq \pi^n$.
+:::
+
+En l'apartat següent veurem com corregir aquest problema, que és que hi ha massa subgrups de subgrups, i no tots
+es poden correspondre a subextensions. Per tant, la solució consistirà en restringir els possibles subgrups
+que considerem.
+
+## La topologia de Krull
+
+Ajuntant tots els morfismes restricció de l'apartat anterior, obtenim una aplicació
+$$
+\iota \colon \Gal(K/F) \to \prod_{E / F\text{ finita Galois}} \Gal(E/F).
+$$
+Aquest morfisme de grups és injectiu, ja que tot $\alpha\in K$ viu en una extensió finita i Galois (per exemple,
+la clausura de Galois de $F(\alpha)/F$). La imatge de $\iota$ està formada per aquells elements $(\sigma_E)_E$
+del producte cartesià tals que $(\sigma_E)|_{E'} = \sigma_{E'}$ per
+a tota parella de subextensions finites Galois $E'\subset E$.
+
+Els grups que apareixen a la dreta són tots finits, i podem considerar
+la topologia discreta en cadascun d'ells. Aleshores podem posar la topologia del producte en el producte (infinit),
+i com que $\Gal(K/F)$ s'identifica amb un subconjunt, li podem donar la topologia del subespai.
+
+::: {.definition #topologia-krull name="topologia de Krull"}
+La *topologia de Krull* a $\Gal(K/F)$ és la topologia obtinguda amb el procediment anterior.
+:::
+
+::: {.proposition}
+Els conjunts
+$$
+U_{\sigma, E} = \{\tau \in \Gal(K/F) ~|~ \tau|_E = \sigma|_E\},
+$$
+on $E$ es mou per les extensions finites Galois $K/E/F$ formen una base d'entorns de $\sigma$.
+:::
+::: {.proof}
+TODO
+:::
+
+::: {.proposition}
+El grup $\Gal(K/F)$ és tancat a $\prod_{E/F} \Gal(E/F)$.
+:::
+::: {.proof}
+Sigui $(\sigma_E)_E$ un element del producte que no ve de $\Gal(K/F)$. Això vol dir que hi ha
+extensions finites $E_0\subseteq E_1$ tals que $(\sigma_{E_1})|_{E_0}\neq \sigma_{E_0}$. Aleshores el conjunt
+$$
+\{\sigma_{E_0}\} \times \{\sigma_{E_1}\} \times \prod_{E \neq E_0, E_1} \Gal(E/K)
+$$
+és un obert que conté $(\sigma_E)_E$ i no interseca la imatge de $\Gal(K/F)$.
+:::
+::: {.corollary}
+El grup $\Gal(K/F)$ és compacte.
+:::
+::: {.proof}
+Pel teorema de Tychonoff, el producte infinit és compacte, i un subespai tancat d'un compacte és compacte.
+:::
+
+Això ens permet donar una condició necessària per ser grup de Galois d'una subextensió:
+
+::: {.proposition}
+Sigui $M/F$ una subextensió de $L/K$. Aleshores $\Gal(K/M)$ és tancat a $\Gal(K/F)$.
+:::
+::: {.proof}
+Veurem que el complementari és obert. Sigui $\sigma\in \Gal(K/F)\smallsetminus \Gal(K/M)$.
+Per tant, existeix $\alpha\in M\smallsetminus F$ tal que $\sigma(\alpha)\neq \alpha$. Sigui $E/F$
+una extensió finita Galois que contingui $\alpha$. Aleshores
+$$
+U_{\sigma, E} \subseteq \Gal(K/F)\smallsetminus \Gal(K/M).
+$$
+En efecte, si $\tau\in U_{\sigma, E}$, vol dir que $\tau(\alpha)\neq \alpha$, i per tant $\tau\not\in\Gal(K/M)$.
+:::
+
+A l'apartat següent veurem que aquesta condició també és suficient.
+
+## El teorema
+
+::: {.theorem name="teorema fonamental de la teoria de Galois infinita"}
+Sigui $K/F$ una extensió de Galois. La correspondència de Galois estableix una bijecció entre els subcossos
+$K/M/F$ i els subgrups *tancats* de $\Gal(K/F)$.
+:::
+::: {.proof}
+L'únic que no és obvi és el fet, donat un subgrup tancat $H$, si definim $M=K^H$ aleshores
+$\Gal(K/M) = H$. De fet, la inclusió $\supseteq$ és trivial, i només cal veure $\subseteq$.
+
+Sigui $\sigma \in \Gal(K/M)$. Veurem que $U_{\sigma, E} \cap H \neq \emptyset$ per tota extensió
+finita Galois $E/F$. Això voldrà dir que $\sigma \in \overline H$ i, com que $H$ és tancat, $\sigma\in H$.
+
+Per veure que $U_{\sigma, E} \cap H \neq \emptyset$, considerem el cos $E'=EM$,
+que és una extensió finita Galois de $M$. N'hi haurà prou amb veure $U_{\sigma, E'}\cap H \neq \emptyset$, ja que $U_{\sigma,E'}\subseteq U_{\sigma,E}$.
+En aquest cas, la restricció $H \to \Gal(E'/M)$ és exhaustiva. Per tant tenim $\res(H)=\res(\Gal(K/M))$. És a dir,
+per tot $\sigma\in\Gal(K/M)$, hi ha $\tau\in H$ tal que $\sigma|_{E'} = \tau|_{E'}$. Per tant, $\tau\in U_{\sigma, E'}\cap H$.
+:::
+
+La correspondència de Galois gira els reticles, i a més satisfà les següents propietats:
+
+::: {.proposition}
+1. Un subgrup tancat $H\leq \Gal(K/F)$ és obert si i només si té índex finit, i aleshores
+$$
+[\Gal(K/F) \colon H] = [K^H \colon F].
+$$
+2. Un subgrup tancat $H\leq \Gal(K/F)$ és normal si i només si $K^H / F$ és Galois, i aleshores
+$$
+\Gal(K^H/ F) \cong \Gal(L/K) / H.
+$$
+:::
+::: {.proof}
+TODO
+:::
+
+::: {.example}
+Calculem el grups de Galois de
+$\Gal(\QQ(\zeta_{p^\infty})/\QQ)\cong \ZZ_p^\times$ i $\Gal(\Fpbar / \FF_p)\cong \hat{\ZZ}$.
+
+TODO.
+:::
