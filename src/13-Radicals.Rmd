@@ -107,7 +107,7 @@ i repetint el procés tenim $\sigma^i([\alpha,\zeta]) = \zeta^{-i} [\alpha,\zeta
 tenim que $\sigma([\alpha,\zeta]^n) = \zeta^{-n} [\alpha,\zeta]^n = [\alpha,\zeta]^n$. Per tant $[\alpha,\zeta]^n$
 és un element de $F$. Si fixem una arrel primitiva $\zeta$ i fem servir que els automorfismes $1,\sigma,\ldots,\sigma^{n-1}$
 són linealment independents (vegis el Corol·lari \@ref(automorfismes-li)), veiem que hi ha un element $\alpha\in K$ tal que
-[\alpha,\zeta]\neq 0$. Com que $\sigma^i([\alpha,\zeta]) = \zeta^{-i}[\alpha,\zeta]$, aquest element no pot viure
+$[\alpha,\zeta]\neq 0$. Com que $\sigma^i([\alpha,\zeta]) = \zeta^{-i}[\alpha,\zeta]$, aquest element no pot viure
 en cap subcos propi de $K$. Per tant, $K = F([\alpha,\zeta])$. A més, $[\alpha,\zeta]^n \in F$, per tant $K=F(\sqrt[n]{a})$
 per algun $a\in F$, com volíem veure.
 :::

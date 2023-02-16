@@ -5,10 +5,11 @@ site: bookdown::bookdown_site
 documentclass: book
 bibliography: ["src/bibliografia.bib"]
 citation_package: biblatex
+bibtlatexoptions: [style=alphabetic,citestyle=numeric,sorting=nyt,sortcites=true,autopunct=true,autolang=hyphen,hyperref=true,abbreviate=false,backref=true,backend=biber,defernumbers=true]
 link-citations: yes
 github-repo: mmasdeu/teoriadegalois
 description: "Apunts d'un curs de Teoria de Galois a la UAB"
-nocite: | 
+nocite: |
   @geck, @rotman, @weintraub, @zbigniew, @dummitfoote, @artinalgebra
 output:
   bookdown::gitbook:
@@ -31,11 +32,15 @@ output:
     includes:
       in_header: ["src/preamble.tex"]
       before_body: ["src/body.tex"]
-    latex_engine: xelatex
-    citation_package: biblatex
+    latex_engine: pdflatex
     keep_tex: yes
     extra_dependencies:
       textcomp: null
+    mainfont: Latin Modern Math
+    sansfont: Bitstream Vera Sans
+    monofont: Bitstream Vera Sans Mono
+    mathfont: Latin Modern Math
+
 
 ---
 

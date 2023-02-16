@@ -69,7 +69,7 @@ En aquest cas, $\Gal(M/F) \cong G / H$.
 ::: {.proof}
 Sigui $H = \Gal(K/M)$.
 $1 \implies 2$: Sigui $\sigma\in G$. Si $\alpha\in M$ té polinomi mínim $f(x)\in F[x]$, aleshores $\sigma$
-en permuta les seves arrels i, en particular, $\sigma(\alpha) \in $M$. Per tant $\sigma$ restringeix a un
+en permuta les seves arrels i, en particular, $\sigma(\alpha) \in M$. Per tant $\sigma$ restringeix a un
 morfisme de $M$, que ja hem vist que és un automorfisme. Hem construit doncs una aplicació $G\to H$,
 i és fàcil comprovar que és un morfisme de grups. El seu nucli és doncs un subgrup normal, format
 per aquells automorfismes $\sigma\in G$ que fixen $M$, és a dir, és justament $\Gal(K/M)$.
@@ -106,7 +106,7 @@ Sigui $K/F$ una extensió de Galois finita amb grup de Galois $G$. Hi ha una bij
 $$
 \{\text{subcossos $K/M/F$}\} \stackrel{1\colon 1}{\longleftrightarrow} \{subgrups H \leq G\}
 $$
-donada per $M\mapsto $H = \Gal(K/M)$ i $H\mapsto M = K^H$ que satisfà:
+donada per $M\mapsto H = \Gal(K/M)$ i $H\mapsto M = K^H$ que satisfà:
 
 1. (gira les inclusions) $M_1 \subseteq M_2$ si i només si $H_2\leq H_1$.
 2. (preserva els graus) $[K\colon M] = |H|$ i $[M \colon F] = [G \colon H]$.
