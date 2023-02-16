@@ -60,10 +60,33 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{5}
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newlength{\cslentryspacingunit} % times entry-spacing
+\setlength{\cslentryspacingunit}{\parskip}
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+  \let\oldpar\par
+  \def\par{\hangindent=\cslhangindent\oldpar}
+  \fi
+  % set entry spacing
+  \setlength{\parskip}{#2\cslentryspacingunit}
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 \usepackage{textcomp}
 % \usepackage{palatino}
 \usepackage{booktabs}
-\usepackage{unixode}
+%\usepackage{unixode}
 \usepackage{tikz, tikz-cd}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
@@ -99,33 +122,13 @@
 \usepackage{xcolor} % Required for specifying colors by name
 \definecolor{maincolor}{RGB}{25,50,243} % Define the color used for highlighting throughout the book
 
-%----------------------------------------------------------------------------------------
-%	FONTS
-%----------------------------------------------------------------------------------------
-
-\usepackage[]{fontspec}
-%\setromanfont{Latin Modern Math}
-\setmathfont{Latin Modern Math}
-\setsansfont{Bitstream Vera Sans}
-\setmonofont{Bitstream Vera Sans Mono}
-
-%\usepackage{palatino}
-%\usepackage{avant} % Use the Avantgarde font for headings
-%\usepackage{times} % Use the Times font for headings
-% \usepackage{mathptmx} % Use the Adobe Times Roman as the default text font together with math symbols from the Sym­bol, Chancery and Com­puter Modern fonts
-% \usepackage{libertine}
-% \usepackage{noto}
-
-\usepackage{microtype} % Slightly tweak font spacing for aesthetics
-% \usepackage[utf8]{inputenc} % Required for including letters with accents
-% \usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
 
 %----------------------------------------------------------------------------------------
 %	BIBLIOGRAPHY AND INDEX
 %----------------------------------------------------------------------------------------
 
 % \usepackage{csquotes}
-\usepackage[style=alphabetic,citestyle=numeric,sorting=nyt,sortcites=true,autopunct=true,autolang=hyphen,hyperref=true,abbreviate=false,backref=true,backend=biber,defernumbers=true]{biblatex}
+% \usepackage[style=alphabetic,citestyle=numeric,sorting=nyt,sortcites=true,autopunct=true,autolang=hyphen,hyperref=true,abbreviate=false,backref=true,backend=biber,defernumbers=true]{biblatex}
 % \addbibresource{bibliografia.bib} % BibTeX bibliography file
 % \defbibheading{bibempty}{}
 
@@ -575,13 +578,11 @@ addtohook={%
 \fi
 }
 }
+
 \usepackage{textcomp}
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
-\usepackage[]{biblatex}
-\addbibresource{src/bibliografia.bib}
-\nocite{geck, rotman, weintraub, zbigniew, dummitfoote, artinalgebra}
 \IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same} % disable monospaced font for URLs
@@ -1211,7 +1212,7 @@ Aprofitarem per definir extensions normals (aquelles que són cos de descomposic
 Com a aplicació, s'introduiran els polinomis i cossos ciclotòmics, i ho lligarem amb la
 demostració de l'existència i unicitat de cossos finits de cardinal potència d'un primer.
 
-També veurem les clausures algebraiques, i una construcció (seguint \textcite{artinalgebra} i \textcite{zbigniew}). Això ens permetrà (assumint el teorema fonamental
+També veurem les clausures algebraiques, i una construcció (seguint Artin (\protect\hyperlink{ref-artinalgebra}{2014}) i Jelonek (\protect\hyperlink{ref-zbigniew}{1993})). Això ens permetrà (assumint el teorema fonamental
 de l'àlgebra, que demostrarem més endavant) pensar els elements algebraics sobre \(\QQ\) dins dels complexos.
 
 \hypertarget{cossos-de-descomposiciuxf3}{%
@@ -2060,7 +2061,7 @@ En aquest cas, \(\Gal(M/F) \cong G / H\).
 \begin{proof}
 Sigui \(H = \Gal(K/M)\).
 \(1 \implies 2\): Sigui \(\sigma\in G\). Si \(\alpha\in M\) té polinomi mínim \(f(x)\in F[x]\), aleshores \(\sigma\)
-en permuta les seves arrels i, en particular, \$\sigma(\alpha) \in \(M\). Per tant \(\sigma\) restringeix a un
+en permuta les seves arrels i, en particular, \(\sigma(\alpha) \in M\). Per tant \(\sigma\) restringeix a un
 morfisme de \(M\), que ja hem vist que és un automorfisme. Hem construit doncs una aplicació \(G\to H\),
 i és fàcil comprovar que és un morfisme de grups. El seu nucli és doncs un subgrup normal, format
 per aquells automorfismes \(\sigma\in G\) que fixen \(M\), és a dir, és justament \(\Gal(K/M)\).
@@ -2104,7 +2105,7 @@ Sigui \(K/F\) una extensió de Galois finita amb grup de Galois \(G\). Hi ha una
 \[
 \{\text{subcossos $K/M/F$}\} \stackrel{1\colon 1}{\longleftrightarrow} \{subgrups H \leq G\}
 \]
-donada per \$M\mapsto \(H = \Gal(K/M)\) i \(H\mapsto M = K^H\) que satisfà:
+donada per \(M\mapsto H = \Gal(K/M)\) i \(H\mapsto M = K^H\) que satisfà:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -2844,7 +2845,7 @@ i repetint el procés tenim \(\sigma^i([\alpha,\zeta]) = \zeta^{-i} [\alpha,\zet
 tenim que \(\sigma([\alpha,\zeta]^n) = \zeta^{-n} [\alpha,\zeta]^n = [\alpha,\zeta]^n\). Per tant \([\alpha,\zeta]^n\)
 és un element de \(F\). Si fixem una arrel primitiva \(\zeta\) i fem servir que els automorfismes \(1,\sigma,\ldots,\sigma^{n-1}\)
 són linealment independents (vegis el Corol·lari \ref{automorfismes-li}), veiem que hi ha un element \(\alpha\in K\) tal que
-{[}\alpha,\zeta{]}\neq 0\$. Com que \(\sigma^i([\alpha,\zeta]) = \zeta^{-i}[\alpha,\zeta]\), aquest element no pot viure
+\([\alpha,\zeta]\neq 0\). Com que \(\sigma^i([\alpha,\zeta]) = \zeta^{-i}[\alpha,\zeta]\), aquest element no pot viure
 en cap subcos propi de \(K\). Per tant, \(K = F([\alpha,\zeta])\). A més, \([\alpha,\zeta]^n \in F\), per tant \(K=F(\sqrt[n]{a})\)
 per algun \(a\in F\), com volíem veure.
 \end{proof}
@@ -3223,6 +3224,26 @@ TODO.
 
 \nocite{*}
 
-\printbibliography
+\hypertarget{refs}{}
+\begin{CSLReferences}{1}{0}
+\leavevmode\vadjust pre{\hypertarget{ref-artinalgebra}{}}%
+Artin, Michael. 2014. \emph{Algebra / Michael Artin.} 2nd ed., new international ed. Edinbourgh Gate, Harlow, Essex: Pearson.
+
+\leavevmode\vadjust pre{\hypertarget{ref-dummitfoote}{}}%
+Dummit, David S., and Richard M. Foote. 2004. \emph{Abstract Algebra}. 3rd ed. New York: Wiley.
+
+\leavevmode\vadjust pre{\hypertarget{ref-geck}{}}%
+Geck, Meinolf. 2014. {``On the Characterization of {G}alois Extensions.''} \emph{Amer. Math. Monthly} 121 (7): 637--39. \url{https://doi.org/10.4169/amer.math.monthly.121.07.637}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-zbigniew}{}}%
+Jelonek, Zbigniew. 1993. {``A Simple Proof of the Existence of the Algebraic Closure of a Field.''} \emph{Univ. Iagel. Acta Math.}, no. 30: 131--32.
+
+\leavevmode\vadjust pre{\hypertarget{ref-rotman}{}}%
+Rotman, Joseph J. 2015. \emph{Advanced Modern Algebra. {P}art 1}. Third. Vol. 165. Graduate Studies in Mathematics. American Mathematical Society, Providence, RI. \url{https://doi.org/10.1090/gsm/165}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-weintraub}{}}%
+Weintraub, Steven H. 2021. {``The Theorem of the Primitive Element.''} \emph{Amer. Math. Monthly} 128 (8): 753--54. \url{https://doi.org/10.1080/00029890.2021.1944757}.
+
+\end{CSLReferences}
 
 \end{document}
