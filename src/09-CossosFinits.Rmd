@@ -50,10 +50,13 @@ generaria una extensió de grau $4$, contradicció.
 Ja hem vist que tota extensió de Galois és simple. Obtenim,
 per tant:
 
-::: {.proposition}
+::: {.proposition #existencia-polis-irred-Fp}
 L'extensió $\FF_{p^n}/\FF_p$ és simple. Equivalentment, per cada $n\geq 1$
 existeix un polinomi $f(x)\in \FF_p[x]$ irreductible de grau $n$.
 :::
+
+Podem trobar una fórmula explícita pel nombre de polinomis irreductibles de grau $n$. Ens
+caldrar primer demostrar un resultat útil sobre la factorització de $x^{p^n} -x\in\FF_p[x]$.
 
 ::: {.proposition}
 El polinomi $x^{p^n}-x$ és el producte de tots els polinomis irreductibles
@@ -83,12 +86,6 @@ $$
 El resultat s'obté aplicant la fórmula d'inversió de Möbius.
 :::
 
-La proposició anterior també ens permet de trobar polinomis irreductibles de manera recursiva. D'entrada,
-podem dividir pels polinomis irreductibles de graus $d\mid n$ amb $d\le n$ per quedar-nos
-amb el producte dels polinomis irreductibles de grau $n$. Ens caldrà factoritzar-los per
-obtenir els factors irreductibles.
-
-TODO: explicar l'algoritme de factorització de Berlekamp.
 
 ## La clausura algebraica d'$\FF_p$
 

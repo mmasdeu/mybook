@@ -73,12 +73,27 @@ El *grau* de l'extensió $K/F$ és la dimensió de $K$ com a $F$-espai vectorial
 i infinita si no.
 :::
 
+En un diagrama de cossos, sovint indicarem que l'extensió té grau $n$ així:
+$$
+\xymatrix{
+  K\ar@{-}[d]_{n}\\
+  F.
+}
+$$
+
 ::: {.theorem #kronecker name="Kronecker"}
 Sigui $f(x)\in F[x]$ un polinomi. Aleshores existeix una extensió $K/F$ tal que $K$ té una arrel de $f(x)$.
 :::
 ::: {.proof}
 Considerem $K = F[x] / (g(x))$, on $g(x)$ és un factor irreductible qualsevol de $f(x)$. Sigui $\alpha$ la classe de $x$ a $K$. Aleshores $g(\alpha)=0$
-i per tant $f(\alpha)=0$.
+i per tant $f(\alpha)=0$. Els elements de $K$ venen representats per $h(\alpha)$ on $h(x)\in F[x]$ són polinomis, que sempre
+podem pensar de grau menor al grau de $g(x)$ (per la divisió euclídea). D'altra banda, el fet que $g(x)$ sigui irreductible
+fa que $K$ sigui un cos. En efecte, si $h(\alpha)\neq 0$, tenim que $g(x) \nmid h(x)$ i per tant $g(x)$ i $h(x)$ són coprimers. Per la
+identitat de Bézout, existeixen polinomis $a(x)$ i $b(x)$ tals que
+$$
+a(x)g(x)+b(x)h(x)=1,
+$$
+i per tant $b(\alpha)h(\alpha)=1$. És a dir, $h(\alpha)$ és invertible, amb invers $b(\alpha)$.
 :::
 
 El següent teorema ens diu que l'extensió donada pel teorema anterior té grau igual al grau del polinomi (per això s'ha triat
@@ -103,27 +118,37 @@ el residu $r(x)$ de dividir $a(x)b(x)$ per $p(x)$. Aleshores el producte $a(\alp
 Per divir ens cal utilitzar la identitat de Bézout (exercici).
 
 ::: {.example}
-Mostrem $\CC$ com el resultat d'adjuntar una arrel de $x^2+1$ a $\RR$.
-:::
+Potser l'exemple més conegut és el que s'obté de considerar el polinomi $x^2+1 \in \RR[x]$, que és irreductible perquè no té arrels. El
+cos obtingut s'escriu $\CC$, i la classe de $x$ a $\RR[x]/(x^2+1)$ s'escriu $i$. Com que $i^2+1=0$, tenim $i^2=-1$ i recuperem les fórmules
+habituals per treballar amb els nombres complexos.
 
-::: {.example}
-Podem construir de manera semblant $\QQ(i)$, o $\QQ(\sqrt{2})$, i també $\QQ(\sqrt[3]{2})$. Veurem com es
-poden fer les operacions habituals en algun d'aquests cossos.
+De manera semblant, podem definir $\QQ[x]/(x^2+1)$ (adjuntem una arrel de $-1$ als racionals),  $\QQ[x]/(x^2-2)$ (adjuntem un element $\alpha$ amb $\alpha^2=2$),
+o també $\QQ[x]/(x^3-2)$. Es poden fer les operacions habituals (suma, resta, multplicació, divisió) en algun d'aquests cossos de manera molt
+explícita. Per exemple, $\QQ[x]/(x^2-2)$ està format,
+com a conjunt, per tots els elements de la forma $a+b\alpha$, amb $a,b\in\QQ$. La multiplicació ve donada pel fet que $\alpha^2=2$.
+
+De manera semblant, $\QQ[x]/(x^3-2) = \{a + b\beta + c\beta^2 ~|~ a,b,c\in\QQ \}$, i hem de recordar que $\beta^3=2$ per simplificar
+el resultat de les multiplicacions.
 :::
 
 ::: {.example}
 Si considerem $\FF_p$ el cos finit de $p$ elements i un polinomi $f(x)\in \FF_p[x]$ irreductible de grau $n$
-(suposant que existeixi!), aleshores obtenim un cos $K/\FF_p$ de grau $n$. Té, per tant, $p^n$ elements.
+(suposant que existeixi!), aleshores obtenim un cos $K/\FF_p$ de grau $n$. Té, per tant, $p^n$ elements. Més endavant
+veurem, d'una manera bastant indirecta, que per qualsevol primer $p$ i qualsevol enter $n\geq 1$ existeix un polinomi a $\FF_p[x]$
+irreductible de grau $n$ (Teorema \@ref(prp:existencia-polis-irred-Fp))
 :::
 
 ::: {.example}
 També podem fer extensions de cossos més "exòtics". Per exemple, podem prendre $k(t)$ com el cos de funcions
-racionals sobre un cos fixat $k$, i "afegir" una arrel quadrada de $t$ (mitjançant el polinomi $x^2-t$).
+racionals sobre un cos fixat $k$, i "afegir" una arrel quadrada de $t$ (mitjançant el polinomi $x^2-t$). Els seus elements
+són de la forma $a(t)+b(t)\sqrt{t}$, on $a(t),b(t)\in k(t)$, i les operacions són les habituals.
 :::
 
-Sigui $K/F$ una extensió, i considerem un conjunt $S\subseteq K$. Aleshores podem considerar el "mínim" subcos $L\subseteq K$
+Una altra manera de crear nous cossos és definir-los com subextensions d'una extensió donada.
+Sigui $K/F$ una extensió, i fixem un conjunt $S\subseteq K$. Aleshores podem considerar el "mínim" subcos $L\subseteq K$
 que conté $F$ i tots els elements de $S$. S'anomena el *cos generat per $S$ sobre $F$*, i escriurem $F(S)$. Si $S$ és un
-conjunt finit format per $\alpha_1,\ldots,\alpha_n$ aleshores escriurem $F(\alpha_1,\ldots,\alpha_n)$ i direm que $F(S)$ és *finitament generada*. Un cas particular
+conjunt finit format per $\alpha_1,\ldots,\alpha_n$ aleshores escriurem $F(\alpha_1,\ldots,\alpha_n)$ i direm que
+$F(S)$ és *finitament generat*. Un cas particular es dona
 és quan $S$ conté un sol element: en aquest cas $F(\alpha)$ s'anomena una extensió *simple*, i l'element $\alpha$ s'anomena
 un *element primitiu* de l'extensió (que no és únic, en general!).
 
@@ -143,8 +168,14 @@ Donat un morfisme $\varphi$, és automàticament un isomorfisme, fet que comprov
 :::
 
 ::: {.example}
-Expliquem l'exemple de $\QQ(\sqrt{2})$ i la diferència amb $\QQ(\sqrt[3]{2})$. Aquest darrer cos és un subcòs de $\RR$, però hi ha
-un altre subcòs de $\CC$ que és isomorf a aquest.
+El cos $\QQ(\sqrt{2})\subset \RR$ és isomorf a $\QQ[x]/(x^2-2)$. Hi ha dos isomorfismes possibles, l'un identifica $[x]\leftrightarrow \sqrt{2}$
+i l'altre $[x]\leftrightarrow -\sqrt{2}$.
+
+Considerem ara $\QQ(\sqrt[3]{2}) \subset \RR$. Aquest cos també és isomorf a $\QQ[x]/(x^3-2)$, però aquesta vegada només hi ha un isomorfisme
+possible, el que assigna $[x]\leftrightarrow \sqrt[3]{2}$. Això és així perquè el polinomi $x^3-2$ només té una arrel real. També hi ha un
+subcòs de $\CC$ que és isomorf a $\QQ[x]/(x^3-2)$, que és el generat per $\zeta_3\sqrt[3]{2}$, on $\zeta_3=\frac{-1+i\sqrt{3}}{2}$ és una
+arrel cúbica de la unitat. Hi ha dos isomorfismes possibles, de fet, el que identifica $[x]\leftrightarrow \zeta_3\sqrt[3]{2}$ i el que
+identifica $[x]\leftrightarrow \zeta_3^{-1}\sqrt[3]{2}$.
 :::
 
 ::: {.remark}

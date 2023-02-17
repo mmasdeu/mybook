@@ -105,10 +105,27 @@ Els conjunts
 $$
 U_{\sigma, E} = \{\tau \in \Gal(K/F) ~|~ \tau|_E = \sigma|_E\},
 $$
-on $E$ es mou per les extensions finites Galois $K/E/F$ formen una base d'entorns de $\sigma$.
+on $E$ recorre les subextensions finites Galois $E/F$ formen una base d'entorns de $\sigma$.
 :::
 ::: {.proof}
-TODO
+Veiem primer que si $E_0/F$ és una subextensió finita Galois aleshores $U_{\sigma,E_0}$ és un obert. El conjunt
+$$
+V_{\sigma,E_0} = \{\sigma|_{E_0}\} \times \prod_{E\neq E_0} \Gal(K/E) \subseteq \prod \Gal(K/E)
+$$
+és un obert, i satisfà
+$$
+\iota(U_{\sigma,E_0}) = V_{\sigma,E_0} \cap \iota(\Gal(K/F)).
+$$
+
+Ara només ens cal veure que, donat un obert qualsevol $V$, podem trobar $\sigma$ i $E_0$ tal que $U_{\sigma,E_0}\subseteq V$. N'hi
+ha prou amb veure-ho per una base d'oberts del producte, és a dir, podem pensar que $\iota(V)$ és de la forma
+$$
+\iota(V) = V_{E_1}\times V_{E_2}\times\cdots V_{E_k} \times \prod_{E\neq E_i} \Gal(K/E).
+$$
+Prenem $\sigma\in V\subseteq \Gal(K/F)$ i considerem $E_0=E_1E_2\cdots E_k$. Aleshores
+$$
+\iota(\sigma) \in \iota(U_{\sigma, E_0}) \subseteq \{\sigma|_{E_1}\} \times \{\sigma|_{E_2}\}\times\cdots\times \{\sigma|_{E_1}\} \times \prod_{E\neq E_i} \Gal(E/F).
+$$
 :::
 
 ::: {.proposition}
@@ -165,7 +182,7 @@ En aquest cas, la restricció $H \to \Gal(E'/M)$ és exhaustiva. Per tant tenim 
 per tot $\sigma\in\Gal(K/M)$, hi ha $\tau\in H$ tal que $\sigma|_{E'} = \tau|_{E'}$. Per tant, $\tau\in U_{\sigma, E'}\cap H$.
 :::
 
-La correspondència de Galois gira els reticles, i a més satisfà les següents propietats:
+La correspondència de Galois gira els reticles (la demostració és igual que en el cas finit), i a més satisfà les següents propietats:
 
 ::: {.proposition}
 1. Un subgrup tancat $H\leq \Gal(K/F)$ és obert si i només si té índex finit, i aleshores
@@ -174,16 +191,58 @@ $$
 $$
 2. Un subgrup tancat $H\leq \Gal(K/F)$ és normal si i només si $K^H / F$ és Galois, i aleshores
 $$
-\Gal(K^H/ F) \cong \Gal(L/K) / H.
+\Gal(K^H/ F) \cong \Gal(K/F) / H.
 $$
 :::
 ::: {.proof}
-TODO
+1. Si $H$ és d'índex finit, llavors $\Gal(K/F) = \bigcup_\sigma \sigma(H)$, on $\sigma$ recorre un conjunt (finit)
+  de representants de les classes laterals d'$H$ (assumim que un dels representants és $1$). Per tant, el complementari d'$H$
+  està format per una unió finita de tancats ($\sigma$ és tancada, perquè és un automorfisme continu) i per tant és un tancat (i $H$ és un obert).
+
+  Recíprocament, si $H$ és obert llavors el complementari és tancat i per tant compacte (ja hem vist que $\Gal(K/F)$ és compacte). Tenim
+  un recobriment per oberts del complementari com a $\bigcup_{\sigma\neq 1} \sigma(H)$ i, per compacitat, hi ha un subrecobriment finit. Això
+  vol dir que $\Gal(K/F)$ és una unió finita de classes laterals d'$H$ i per tant $H$ té índex finit.
+2. Definim $E=K^H$. Donats automorfismes $\sigma,\tau\in\Gal(K/F)$, i donat $\alpha\in K$, tenim
+  $$
+  \tau\alpha=\alpha \iff \sigma\tau\sigma^{-1}(\sigma\alpha)=\sigma(\alpha).
+  $$
+  Per tant, $\Gal(K/\sigma(E)) =\sigma\Gal(K/E)\sigma^{-1} = \sigma H\sigma^{-1}$. D'aquí en traiem que $H$ és normal
+  si i només si $\sigma(E) = E$ per tot $\sigma\in \Gal(K/F)$, i això és equivalent a que $E/F$ sigui Galois. L'isomorfisme
+  es demostra igual que en el cas finit.
 :::
 
-::: {.example}
-Calculem el grups de Galois de
-$\Gal(\QQ(\zeta_{p^\infty})/\QQ)\cong \ZZ_p^\times$ i $\Gal(\Fpbar / \FF_p)\cong \hat{\ZZ}$.
-
-TODO.
+::: {.example name="grup de Galois de $\QQ(\zeta_{p^\infty}) / \QQ$"}
+Considerem la unió infinita $K=\bigcup_{n\geq 1} \QQ(\zeta_{p^n})$. Es té un morfisme injectiu
+$$
+\iota \colon \Gal(K/\QQ) \injects \prod_{n\geq 1} \Gal(\QQ(\zeta_{p^n}) / \QQ) \cong \prod_{n\geq 1} \left(\ZZ/p^n\ZZ\right)^\times,
+$$
+on la última identificació ve de fer correspondre $a_n \in \left(\ZZ/p^n\ZZ\right)^\times$ amb $\sigma_{a_n}\colon \zeta_{p^n} \mapsto \zeta_{p^n}^{a_n}$.
+La imatge de $\iota$ està formada per aquells elements $(\sigma_{a_n})_n$ del producte que són compatibles amb la restricció.
+$$
+\sigma_{a_{n+1}}(\zeta_{p^{n+1}}) = \zeta_{p^{n+1}}^{a_{n+1}} \implies \sigma_{a_{n+1}}(\zeta_{p^n}) = \zeta_{p^n}^{a_{n+1}},
+$$
+i per tant la condició de ser compatible amb la restricció és equivalent a la condició $a_{n+1} \equiv a_n \pmod{p^n}$. Concloem que
+$$
+\Gal(K/\QQ) \cong \{(a_n)_{n\geq 1} \in \prod_{n\geq 1} \left(\ZZ/p^n\ZZ\right)^\times ~|~ a_{n+1}\equiv a_n \pmod{p^n}\} = \ZZ_{p}^\times,
+$$
+on el grup $\ZZ_{p}^\times$ és el grup d'unitats de l'anell dels enters $p$-àdics. Fixem-nos que aquest grup és no-numerable, mentre
+que hi ha una quantitat numerable de subcossos de $K$.
 :::
+
+
+::: {.example name="grup de Galois de $\Fpbar / \FF_p$"}
+Considerem en aquest cas l'extensió $\Fpbar / \FF_p$, on $\Fpbar = \bigcup_{n\geq 1} \FF_{p^n}$. Tenim un morfisme injectiu
+$$
+\iota \colon \Gal(\Fpbar/\FF_p) \injects \prod_{n\geq 1} \Gal(\FF_{p^n}/\FF_p) \cong \prod_{n\geq 1} \ZZ/n\ZZ,
+$$
+fent correspondre $a\in\ZZ/n\ZZ$ amb la potència del Frobenius $\pi^a$. Si $n\mid m$, hi ha el morfisme de restricció
+$$
+\Gal(\FF_{p^m}/\FF_p) \to \Gal(\FF_{p^n}/\FF_p),
+$$
+que es correspon amb l'aplicació natural $\ZZ/m\ZZ\to \ZZ/n\ZZ$. Per tant,
+$$
+\Gal(\Fpbar/\FF_p) \cong \{(a_n)_{n} \in \prod_{n\geq 1}\ZZ/n\ZZ ~|~ \forall n\mid m, a_m \equiv a_n \pmod{n}\} = \hat{\ZZ},
+$$
+on $\hat{Z}\cong \prod_{p} \ZZ_p$ és la *completació finita* dels enters.
+:::
+

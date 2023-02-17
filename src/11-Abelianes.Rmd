@@ -43,10 +43,24 @@ $$
 $$
 :::
 ::: {.proof}
-TODO
+Tenim òbviament $\QQ(\zeta_n)\subseteq \QQ(\zeta_{nm})$ i $\QQ(\zeta_m)\subseteq \QQ(\zeta_{nm})$. Per tant el compositum també és un subcos.
+Però aquest compositum conté $\zeta_n\zeta_m$ i, per tant obtenim $\QQ(\zeta_n,\zeta_m)=\QQ(\zeta_{nm})$. El diagrama
+$$
+\xymatrix{
+  \phantom{a}&& \QQ(\zeta_{nm})\ar@{-}[dl]\ar@{-}[dr]\\
+  &\QQ(\zeta_n)&&\QQ(\zeta_m)\\
+  &&\QQ(\zeta_n)\cap \QQ(\zeta_m)\ar@{-}[d]\ar@{-}[ul]\ar@{-}[ur]\\
+  \phantom{a}\ar@/^/@{-}[uuu]^{\varphi(nm)}&&\QQ\ar@{-}[uul]^{\varphi(n)}\ar@{-}[uur]_{\varphi(m)}
+}
+$$
+i la fórmula de les torres ens permet deduir que $\QQ(\zeta_n)\cap\QQ(\zeta_m)=\QQ$. Per la Proposició \@ref(prp:reticle-galois), tenim
+$\Gal(\QQ(\zeta_{mn})/\QQ)\cong \Gal(\QQ(\zeta_m)/\QQ) \times \Gal(\QQ(\zeta_n)/\QQ)$.
 :::
 
-El següent lema ens permet trobar generadors dels subcossos de $\QQ(\zeta_p)$.
+El següent lema ens permet trobar generadors dels subcossos de $\QQ(\zeta_p)$ quan $p$ és un primer. En aquest cas,
+la base formada pels elements $\zeta_p,\zeta_p^2,\ldots, \zeta_p^{p-1}$ és molt convenient (s'anomena una *base normal*)
+ja que els seus elements són els conjugats d'un de sol, per exemple $\zeta_p$. Això és així perquè els elements
+d'aquesta base són tots ells arrels primitives, i els automorfismes de $\Gal(\QQ(\zeta_p)/\QQ)$ les permuten.
 
 ::: {.lemma}
 Sigui $p$ un primer, i sigui $H\leq \Gal(\QQ(\zeta_p)/\QQ)$ un subgrup. Aleshores
@@ -55,16 +69,64 @@ $$
 $$
 és un generador del cos fix d'$H$. L'element $\theta_H$ s'anomena un *període* de $\zeta_p$.
 :::
+::: {.proof}
+Sigui $G=\Gal(\QQ(\zeta_p)/\QQ)$. Primer de tot, observem que per tot $\tau\in H$, aleshores $\tau\theta_H=\theta_H$, ja que els
+summands simplement es permuten. Per tant, $\theta_H$ és un element del cos fix d'$H$. Pels comentaris
+del paràgraf anterior, $\tau(\theta_H)$ és una suma d'elements de la base normal, per qualsevol $\tau\in G$. Així,
+si $\tau\in G\smallsetminus H$ i es donés el cas que $\tau(\theta_H)=\theta_H$, tindríem $\tau(\zeta_p)=\sigma(\zeta_p)$
+per algun $\sigma\in H$. Però els automorfismes estan determinats per la seva acció a $\zeta_p$, i per tant $\tau=\sigma$. Concloem
+que $\theta_H$ no és fix per cap automorfisme fora d'$H$, i per tant genera el cos fix per $H$.
+:::
 
 ::: {.example}
-Calcularem el reticle de subcossos de $\QQ(\zeta_{13})$, fent servir el lema anterior.
-TODO
+Calcularem el reticle de subcossos de $\QQ(\zeta_{13})$, fent servir el lema anterior. Hem de calcular $G=\Gal(\QQ(\zeta_{13})/QQ)\cong (\ZZ/13\ZZ)^\times$,
+que és un grup cíclic de $12$ elements. Per exemple, un generador és el $2$, ja que $2^4\equiv 3 \pmod{13}$ i $2^6\equiv 12\pmod{13}$. Es correspon
+al generador de $G$ que anomenarem $\sigma$, amb $\sigma(\zeta_p)=\zeta_p^2$.
+
+Els subgrups no trivials de $G$ tenen ordres $2$, $3$, $4$ i $6$, i venen generats per $\sigma^6$, $\sigma^4$, $\sigma^3$ i $\sigma^2$, respectivament.
+Aleshores podem calcular els $\theta_H$ corresponents, que són:
+\begin{align*}
+\zeta+\sigma^6(\zeta)&=\zeta+\zeta^{2^6} = \zeta+\zeta^{-1}\\
+\zeta+\sigma^4(\zeta)+\sigma^8(\zeta) &=\zeta+\zeta^3+\zeta^9\\
+\zeta+\sigma^3(\zeta)+\sigma^6(\zeta)+\sigma^9(\zeta) = \zeta+\zeta^8+\zeta^{12}+\zeta^5\\
+\zeta+\sigma^2(\zeta)+\sigma^4(\zeta)+\sigma^6(\zeta)+\sigma^8(\zeta)+\sigma^{10}(\zeta)&=\zeta+\zeta^4+\zeta^3+\zeta^{12}+\zeta{9}+\zeta{10}.
+\end{align*}
+
+Obtenim, finalment, el següent reticle de subcossos:
+$$
+\xymatrix@C=1em{
+  &\QQ(\zeta)\\
+  &\QQ(\zeta+\zeta^{-1})\ar@{-}^{2}[u]\\
+\QQ(\zeta+\zeta^3+\zeta^9)\ar@{-}^{3}[uur]\\
+&&\QQ(\zeta+\zeta^8+\zeta^{12}+\zeta^5)\ar@{-}^{2}[uul]\\
+&\QQ(\zeta+\zeta^4+\zeta^3+\zeta^{12}+\zeta{9}+\zeta{10})\ar@{-}^{2}[uul]\ar@{-}^{3}[uuu]\\
+&&\QQ\ar@{-}^{2}[ul]\ar@{-}^{3}[uu]
+}
+$$
 :::
 
 
 ## Extensions abelianes
 
-Podem fer servir el què hem vist per demostrar el següent resultat.
+Podem fer servir el què hem vist per demostrar el següent resultat. Necessitarem un resultat d'aritmètica:
+
+::: {.proposition}
+Sigui $m\geq 1$ un enter positiu. Aleshores existeixen infinits primers $p$ tals que $p \equiv 1\pmod{m}$.
+:::
+::: {.proof}
+Ens caldà fer servir que $\Phi_m\in\ZZ[x]$ és mònic, i $\Phi_m(0) = 1$.
+
+Suposem, donats $p_1,\ldots,p_k$ congruents amb $1$ mòdul $m$. Trobarem un primer més gran que tots ells, que
+també serà $\equiv 1 \pmod{m}$. Considerem el
+producte $M = \ell mp_1p_2\cdots p_k$ on $\ell$ és suficientment gran com per què
+$$
+T = \Phi_m(M) > 0.
+$$
+Considerem un primer $p$ que divideixi aquesta quantitat $T$. Com que $T\equiv 1 \pmod M$, el primer $p$ no
+és cap dels $p_i$, i tampoc divideix $m$. Per definició, $\Phi_m(M)\equiv 0\pmod p$, i per tant $M^m \equiv 1 \pmod p$.
+De fet, si $n\mid m$ amb $n < m$ aleshores $M^n\neq 1 \pmod p$ (per què?). Pel petit teorema de Fermat, $p-1 \mid M$, és
+a dir, que $p\equiv 1\pmod{M}$. Acabem de construir un nou primer congruent amb $1$ mòdul $M$, com volíem.
+:::
 
 ::: {.theorem name="realització de grups abelians"}
 Sigui $G$ un grup finit abelià. Aleshores hi ha una extensió $K/\QQ$ continguda dins d'un cos ciclotòmic
@@ -75,9 +137,7 @@ Tot grup abelià és producte de cíclics:
 $$
 G \cong C_{n_1}\times C_{n_2}\times\cdots\times C_{n_k}.
 $$
-Existeixen primers diferents $p_1$, $p_2$, \ldots $p_k$ tals que $p_i\equiv 1\pmod{n_i}$. Aquest fet
-es dedueix del fet que hi ha infinits primers $\equiv 1\pmod{m}$ per qualsevol $m$ (TODO).
-
+Per la proposició anterior, existeixen primers diferents $p_1, p_2, \ldots,p_k$ tals que $p_i\equiv 1\pmod{n_i}$.
 Considerem $n=p_1p_2\cdots p_k$. Aleshores, tenim
 $$
 \Gal(\QQ(\zeta_n)/\QQ)\cong (\ZZ/(p_1-1))^\times \times (\ZZ/(p_2-1))^\times \times \cdots \times (\ZZ/(p_k-1))^\times.

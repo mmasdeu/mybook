@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="720px" height="400px" version="1.1" viewBox="45 0 180 100"
+	xmlns="http://www.w3.org/2000/svg" 
+	xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>Doubling the cube</title>
+<desc>Doubling the cube using a marked straight edge ruler, 
+compass and a unit scale.</desc>
+<g stroke="#000" fill="none" stroke-width="1">
+	<path d="M100,5 50,91.603 125,48.31z 
+		 M125,48.31 h-50 M100,48.31 h120
+		 M100,5 l104.37,43.31 M125,48.31 L180,16.562" />
+</g>
+<circle id="pt" cx="100" cy="5" r="2.5" fill="#000" />
+<use xlink:href="#pt" x="-50" y="86.603" />
+<use xlink:href="#pt" x="25" y="43.31" />
+<use xlink:href="#pt" x="-25" y="43.31" />
+<use xlink:href="#pt" x="104.37" y="43.31" />
+<use xlink:href="#pt" x="58.185" y="24.145" />
+<text font-size="8" fill="black">
+<tspan x="92" y="7">A</tspan><tspan x="75" y="57">B</tspan>
+<tspan x="52" y="99">D</tspan><tspan x="126" y="57">C</tspan>
+<tspan x="155" y="24">G</tspan><tspan x="200" y="57">H</tspan>
+<tspan x="182" y="18">F</tspan><tspan x="217" y="57">E</tspan>
+<tspan x="83" y="25">1</tspan><tspan x="58" y="70">1</tspan>
+<tspan x="98" y="55">1</tspan><tspan x="113" y="25">1</tspan>
+<tspan x="128" y="16">∛</tspan><tspan dy="-0.5">2̅</tspan>
+<tspan x="180" y="35">1</tspan>
+</text>
+</svg>

@@ -1,7 +1,7 @@
 Package: placeholder
 Type: Book
 Title: Teoria de Galois
-Version: 0.0.1
+Version: 1.0
 Imports: bookdown
 Needs: bookdown
 Remotes: rstudio/bookdown

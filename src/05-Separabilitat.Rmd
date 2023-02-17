@@ -4,7 +4,7 @@ Definim la noció de separabilitat d'un polinomi, i posem algun exemple. Introdu
 que ens permet definir cossos perfectes. Aprofitem per parlar del grau de separabilitat/inseparabilitat d'una
 extensió, i la factorització d'aquesta.
 
-Finalment, donem l'existència i unicitat dels cossos finits.
+Finalment, donem l'existència i unicitat dels cossos finits, i estudiem els polinomis ciclotòmics.
 
 ## Separabilitat de polinomis i extensions
 
@@ -23,14 +23,16 @@ Un polinomi $f(x)$ té una arrel múltiple $\alpha$ si i només si $\alpha$ és 
 és separable si i només si $\mcd(f(x), f'(x)) = 1$.
 :::
 ::: {.proof}
-TODO (fàcil, fet a fonaments).
+Si $f(x)=(x-\alpha) g(x)$, aleshores $f'(x) = g(x) + (x-\alpha)g'(x)$ i, per tant, $f'(\alpha)=0$ si i només si $g(\alpha)=0$,
+si i només si $f(x)=(x-\alpha)^2h(x)$.
 :::
 ::: {.corollary}
 Si $f(x)\in F[x]$ és irreductible i $F$ té característica $0$, aleshores $f$ és separable. En general,
 un polinomi $f(x)\in F[x]$ és separable si i només si és producte de diferents polinomis irreductibles.
 :::
 ::: {.proof}
-TODO (molt fàcil).
+Si $f(x)$ té una arrel múltiple $\alpha$, aleshores $h(x)=\mcd(f(x),f'(x))$ és un múltiple de $(x-\alpha)$ que divideix $f(x)$,
+i per tant $f(x)$ no pot ser irreductible.
 :::
 
 ::: {.example}
@@ -161,4 +163,96 @@ cos primer $\FF_p$, ha de tenir $p^n$ elements per algun $n\geq 1$. Fixem-nos qu
 d'ordre $p^n-1$ i, per tant $\alpha^{p^n-1} = 1$ per tot $\alpha\in \FF$. Per tant $\alpha$ és una arrel
 de $x^{p^n}-x$ i $\FF$ està contingut al cos de descomposició d'aquest polinomi. Mirant el nombre
 d'elements, veiem que és igual al cos de descomposició.
+:::
+
+Fixem-nos que encara no hem sabut demostrar que existeixen polinomis irreductibles a $\FF_p[x]$ de qualsevol grau. El que
+ens caldria és demostrar que l'extensió $\FF_{p^n}/\FF_p$ és *simple*, és a dir, que s'obté adjuntant l'arrel d'un polinomi
+irreductible. Això ho veurem més endavant, al Teorema \@ref(thm:existencia-polis-irred-Fp).
+
+## Polinomis Ciclotòmics {#ciclotomics}
+
+L'objectiu principal és demostrar que l'extensió ciclotòmica $\QQ(\zeta_n)$ té grau $\varphi(n)$ (la phi d'Euler). Per això,
+introduïrem els polinomis ciclotòmics, veurem que són irreductibles i mònics i tenen coeficients enters.
+
+Sigui $\mu_n$ el grup de les arrels $n$-èssimes de la unitat, que podem pensar dins de $\CC$.
+Com a grup abstracte, és isomorf a $\ZZ/n\ZZ$ (un cop fixem una arrel primitiva $\zeta_n$):
+$$
+\ZZ/n\ZZ \to \mu_n,\quad a \mapsto \zeta_n^a.
+$$
+Ja hem observat que les arrels primitives són exactament les de la forma $\zeta_n^a$ amb $a$ coprimer amb $n$
+i que, per tant, n'hi ha $\varphi(n)$. Fixem-nos també que si $d\mid n$ aleshores $\mu_d \subseteq \mu_n$.
+Però fixem-nos que si $\zeta\in \mu_n$, aleshores $\zeta$ és una arrel primitiva $d$-èssima per algun $d \mid n$.
+
+::: {.definition #polinomi-ciclotomic name="polinomi ciclotòmic"}
+El *polinomi ciclotòmic $n$-èssim* $\Phi_n(x)$ és el polinomi de grau $\varphi(n)$ que té per arrels
+les arrels primitives de la unitat:
+$$
+\Phi_n(x) = \prod_{\substack{1\leq a \leq n\\\mcd(a,n)=1}} (x-\zeta_n^a).
+$$
+:::
+
+Tenim la factorització
+$$
+x^n - 1= \prod_{\zeta \in \mu_n} (x-\zeta) = \prod_{d\mid n} \Phi_d(x).
+$$
+En particular, comparant graus tenim la identitat
+$$
+n = \sum_{d \mid n} \varphi(d).
+$$
+
+
+A més, fixem-nos que la fórmula anterior ens permet calcular els polinomis ciclotòmics de manera recursiva,
+dividint pels factors coneguts:
+\begin{equation}
+\Phi_n(x) = \frac{x^n - 1}{\displaystyle\prod_{\substack{d \mid n\\d < n}} \Phi_d(x)}.
+(\#eq:ciclotomics-recursius)
+\end{equation}
+
+
+Els primers valors són, per exemple:
+
+\begin{align*}
+\Phi_1(x) &= x-1&\Phi_2(x) &= x+1\\
+\Phi_{3}(x) &= x^{2} + x + 1 &\Phi_{4}(x) &= x^{2} + 1 \\
+\Phi_{5}(x) &= x^{4} + x^{3} + x^{2} + x + 1 &\Phi_{6}(x) &= x^{2} - x + 1 \\
+\Phi_{7}(x) &= x^{6} + x^{5} + x^{4} + x^{3} + x^{2} + x + 1 & \Phi_{8}(x) &= x^{4} + 1 \\
+\Phi_{9}(x) &= x^{6} + x^{3} + 1 & \Phi_{10}(x) &= x^{4} - x^{3} + x^{2} - x + 1
+\end{align*}
+
+::: {.lemma}
+Els polinomis $\Phi_n(x)$ són mònics de grau $\varphi(n)$ i tenen coeficients enters.
+:::
+::: {.proof}
+L'únic que ens cal veure és que $\Phi_n(x)$ té coeficients enters. Això es veu fàcilment per inducció en $n$
+i l'algoritme de divisió, fent servir la fórmula \@ref(eq:ciclotomics-recursius).
+:::
+
+Amb una mica més de feina podem veure que també són irreductibles.
+
+::: {.theorem #ciclotomics-irreductibles}
+Els polinomis $\Phi_n(x)$ són irreductibles.
+:::
+::: {.proof}
+Prenem $n\geq 3$, i escrivim una factorització $\Phi_n(x)=f(x)g(x)$ amb $f(x)$ i $g(x)$ mònics a $\ZZ[x]$, i amb $f(x)$
+irreductible de grau com a mínim $2$. L'objectiu és demostrar que $f(x)=\Phi_n(x)$, és a dir, que tota arrel primitiva $n$-èssima
+és arrel de $f(x)$. Sigui doncs $\zeta$ una arrel $n$-èssima primitiva que sigui arrel de $f(x)$, i veurem
+que $\zeta^a$ també és arrel de $f(x)$ per a tot $a$ coprimer amb $n$. N'hi ha prou amb veure-ho per $a=p$ un primer no dividint $n$,
+perquè aleshores podem iterar l'argument.
+
+Com que $\zeta^p$ és una arrel primitiva de la unitat, ha de ser una arrel de $f(x)$ o de $g(x)$. Si $g(\zeta^p)=0$, aleshores $\zeta$
+és una arrel de $g(x^p)$. Per tant, a $\ZZ[x]$ tenim
+$$
+g(x^p) = f(x)h(x).
+$$
+Reduïnt mòdul $p$ i fent servir el "Freshman's dream", tenim
+$$
+(\bar{g}(x))^p = \bar{f}(x)\bar{h}(x) \text{ a } \FF_p[x].
+$$
+D'aquí en deduïm que $\bar{f}(x)$ i $\bar{g}(x)$ tenen un factor comú a $\FF_p[x]$. Per tant, $\bar{\Phi}_n(x)=\bar{f}(x)\bar{g}(x)$ té un
+factor repetit, i com que $\Phi_n(x)$ divideix $x^n-1$, també $x^n-1$ té un factor repetit a $\FF_p[x]$. Però ja hem vist que aquest
+polinomi no té factors repetits, i per tant tenim una contradicció.
+:::
+
+::: {.corollary}
+El cos ciclotòmic $\QQ(\zeta_n)$ té grau $\varphi(n)$ sobre $\QQ$.
 :::

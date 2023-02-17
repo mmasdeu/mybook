@@ -34,8 +34,14 @@ Comencem veient que els nombres constructibles són un cos.
 Els nombres constructibles formen un subcos de $\cC\subseteq\RR$.
 :::
 ::: {.proof}
-TODO. Cal donar construcions de la suma, resta, producte i divisió
-de nombres ja construïts.
+Cal donar construcions de la suma, resta, producte i divisió
+de nombres ja construïts. Mentre que la suma i la resta són òbvies, la multiplicació i divisió es poden
+obtenir aplicant proporcionalitat, com aquí sota.
+
+```{r, echo=FALSE, out.width="60%", fig.align='center', fig.cap="Multiplicació i divisió."}
+knitr::include_graphics("images/mult_div_RiC.png")
+```
+
 :::
 
 És fàcil veure que també podem prendre arrels quadrades, com s'indica al següent exercici.
@@ -43,7 +49,7 @@ de nombres ja construïts.
 ::: {.exercise}
 Demostreu que si el diàmetre de la circumferència és $\alpha+1$, aleshores el segment vertical indicat mesura $\sqrt{\alpha}$.
 
-```{r, echo=FALSE, engine='tikz', out.width='50%', fig.ext='png'}
+```{tikz, echo=FALSE, out.width='50%', fig.ext='png', fig.align='center', engine.opts = list(background = 'transparent')}
 \begin{tikzpicture}[scale=0.2]
   \draw
     (12.8, 57.6) -- (38.4, 57.6);
@@ -60,7 +66,7 @@ Demostreu que si el diàmetre de la circumferència és $\alpha+1$, aleshores el
 
 Fent servir l'equació d'un cercle de radi $(x_0,y_0)$ i radi $r$
 $$
-(x-x_0)^2 + (y-y_0)^2 ¡ r^2,
+(x-x_0)^2 + (y-y_0)^2 = r^2,
 $$
 podem veure que les coordenades de la intersecció amb una recta (posem amb equació $ax+by=c$) pertanyen al cos
 $\QQ(x_0,y_0,r,a,b,c)$. També podem comprovar-ho pel cas de la intersecció de dos cercles. Resumint si $\alpha$ és
@@ -108,6 +114,28 @@ múltiple d'aquests i, per tant, podríem construir $20^\circ$, que ja sabem que
 
 ## Construccions amb regle marcat i compàs
 
+És important adonar-se que amb molt poc més aleshores algunes construccions clàssiques esdevenen molt senzilles.
 Aquí veurem que si el regle té dues marques a una distància qualsevol, aleshores podem trisecar l'angle i duplicar el cub.
 
-TODO.
+
+::: {.exercise #trisecció-angle name="Trisecció d'un angle"}
+En el dibuix d'aquí sota, s'ha començat amb un angle $a$ amb centre $B$. Suposem que el regle té dues marques a una certa distància,
+que serà la nostra unitat. Fem un cercle de radi aquesta unitat, i tracem una recta pel punt A de manera
+que les dues marques del regle estiguin una sobre el cercle (punt $C$) i l'altra sobre la recta donada (punt $D$).
+
+Demostreu que l'angle $b$ és igual a $\frac{a}{3}$.
+
+```{r, echo=FALSE, out.width="50%", fig.align='center'}
+knitr::include_graphics("images/triseccio_angle.png")
+```
+:::
+
+::: {.exercise #duplicacio-club name="Duplicació del cub"}
+
+Demostreu que el costat $AG$ del dibuix de sota mesura $\sqrt[3]{2}$.
+
+```{r, echo=FALSE, out.width="50%", fig.align='center'}
+knitr::include_graphics("images/duplicacio_cub.png")
+```
+
+:::

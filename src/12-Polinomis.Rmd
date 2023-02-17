@@ -1,6 +1,8 @@
 # Grups de Polinomis
 
-En aquest episodi estudiem els grups de Galois de polinomis separables.
+En aquest episodi estudiem els grups de Galois de polinomis separables, i veurem una demostració del Teorema Fonamental de l'Àlgebra.
+
+## Grup de Galois d'un polinomi
 
 ::: {.definition name="grup de Galois d'un polinomi"}
 Sigui $f(x)\in F[x]$ un polinomi separable amb coeficients a un cos $F$. El *grup de Galois d'$f(x)$*

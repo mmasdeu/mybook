@@ -114,7 +114,7 @@ per tant la igualtat no és certa si cap de les extensions inicials és de Galoi
 
 Estudiem ara el cas on les dues extensions inicials són de Galois.
 
-::: {.proposition}
+::: {.proposition #reticle-galois}
 Siguin $K_1/F$ i $K_2/F$ dues extensions de Galois amb grups $G_1$ i $G_2$.
 Aleshores $K_1K_2/F$ i $K_1\cap K_2 /F$ són Galois, i la restricció a $K_1$ i a $K_2$
 indueix un isomorfisme

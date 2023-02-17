@@ -105,8 +105,8 @@ Fixem-nos que, com que $\sigma$ fixa $\zeta$, tenim:
 \end{align*}
 i repetint el procés tenim $\sigma^i([\alpha,\zeta]) = \zeta^{-i} [\alpha,\zeta]$. També
 tenim que $\sigma([\alpha,\zeta]^n) = \zeta^{-n} [\alpha,\zeta]^n = [\alpha,\zeta]^n$. Per tant $[\alpha,\zeta]^n$
-és un element de $F$. Si fixem una arrel primitiva $\zeta$ i fem servir que els automorfismes $1,\sigma,\ldots,\sigma^{n-1}$
-són linealment independents (vegis el Corol·lari \@ref(automorfismes-li)), veiem que hi ha un element $\alpha\in K$ tal que
+és un element de $F$. Si fixem una arrel primitiva $\zeta$ el Corol·lari \@ref(cor:automorfismes-li) ens diu que els automorfismes $1,\sigma,\ldots,\sigma^{n-1}$
+són linealment independents, i per tant que hi ha un element $\alpha\in K$ tal que
 $[\alpha,\zeta]\neq 0$. Com que $\sigma^i([\alpha,\zeta]) = \zeta^{-i}[\alpha,\zeta]$, aquest element no pot viure
 en cap subcos propi de $K$. Per tant, $K = F([\alpha,\zeta])$. A més, $[\alpha,\zeta]^n \in F$, per tant $K=F(\sqrt[n]{a})$
 per algun $a\in F$, com volíem veure.
@@ -140,7 +140,17 @@ amb extensions cícliques.
 El compositum d'un nombre finit d'extensions radicals és una extensió radical.
 :::
 ::: {.proof}
-TODO (fàcil).
+N'hi ha prou amb considerar el compositum de dues extensions radicals
+\begin{align}
+F=K_0 & \subset K_1\subset\cdots \subset K_r=K\\
+F=L_0 & \subset L_1\subset\cdots \subset L_s=L\\
+\end{align}
+Fem inducció en $s\geq 0$, on el cas $s=0$ és trivial. Considerem aleshores la
+$$
+F=K_0 L_1 \subseteq K_1 L_1\subseteq\cdots \subseteq K L_1.
+$$
+Cadascuna de les extensions que hi apareixen és radical, per tant $K L_1$ és radical. Ara tenim
+l'extensió $K L_1 / F$ radical, i per hipòtesi d'inducció l'extensió $KL /KL_1$ és radical, per tant $KL / F$ també ho és.
 :::
 
 ::: {.lemma}
@@ -216,6 +226,5 @@ demostrar que un $p$-cicle i una transposició qualsevol generen $S_p$ quan $p$ 
 
 Podem aplicar el resultat anterior al polinomi $f(x)=x^5-4x-2$. Com que és $2$-Eisenstein, és irreductible. A més, la seva derivada
 és $5x^4-4$, que té zeros a $x=\pm\frac{\sqrt{2}}{\sqrt[4]{5}}$. Deduïm que $f(x)$ té exactament tres zeros reals,
-que de fet podem aproximar: $-1.24359639\ldots,-0.50849948\ldots,1.51851215\ldots$. Per tant, $\Gal(f)\cong S_5$.
-Per tant, no hi ha una fórmula per les arrels de $x^5-4x-2$ que només faci servir arrels $n$-èssimes.
+que de fet podem aproximar: $-1.24359639\ldots,-0.50849948\ldots,1.51851215\ldots$. Per tant, $\Gal(f)\cong S_5$, i concloem que no hi ha una fórmula per les arrels de $x^5-4x-2$ que només faci servir arrels $n$-èssimes.
 

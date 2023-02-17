@@ -1,0 +1,154 @@
+# La clausura algebraica
+
+En aquest episodi demostrem l'existència i unicitat de la clausura algebraica d'un cos. Aprofitarem també per estudiar
+els polinomis ciclotòmics.
+
+TODO: reorganitzar-ho.
+
+## La clausura algebraica
+
+::: {.definition #clausura-algebraica name="clausura algebraica"}
+Diem que $\bar{F}/F$ és una *clausura algebraica* d'$F$ si $\bar{F}/F$ és algebraica i tot polinomi $f(x)\in F[x]$
+descomposa completament a $\bar{F}$.
+:::
+
+::: {.definition #algebraicament-tancat name="algebraicament tancat"}
+Un cos $F$ és *algebraicament tancat* si és una clausura algebraica sobre si mateix. És a dir, si tot
+polinomi $f(x)\in F[x]$ té alguna arrel a $F$.
+:::
+
+Aviat veurem que tot cos té alguna clausura algebraica, i que hi ha cossos algebraicament tancats. Veurem
+primer que les clausures algebraiques són algebraicament tancades.
+
+::: {.proposition #clausura-tancada}
+Sigui $\bar{F}/F$ una clausura algebraica de $F$. Aleshores $\bar{F}$ és algebricament tancat.
+:::
+::: {.proof}
+Considerem un polinomi $f(x)\in \bar{F}[x]$, i considerem l'extensió $\bar{F}(\alpha)$ obtinguda adjuntant
+una arrel de $f(x)$ a $\bar{F}$. Aleshores $\bar{F}(\alpha)/\bar{F}/ F$ és una torre algebraica, i per tant
+l'extensió total és algebraica. En particular, $\alpha$ és algebraic sobre $F$ i, per tant, $\alpha \in \bar{F}$,
+com volíem demostrar.
+:::
+
+El següent resultat ens permet trobar una clausura algebraica de qualsevol subcos d'un cos algebraicament tancat.
+
+::: {.proposition #clausura-tecnica}
+Sigui $K/F$ una extensió, i suposem que $K$ és algebraicament tancada. Aleshores la subextensió $\bar{F}/F$
+formada pels elements de $K$ que són algebraics sobre $F$ és una clausura algebraica de $F$ .
+:::
+::: {.proof}
+L'extensió $\bar{F} / F$  és algebraica per definició. Donat un polinomi
+$f(x)\in F[x]$, aquest trencarà completament a $K$ en producte de polinomis de la forma $x-\alpha$. Però
+cadascun dels $\alpha$ és algebraic sobre $F$ i, per tant, és un element de $\bar{F}$. Per tant $f(x)$ ja trencava
+completament a $\bar{F}[x]$, i per tant $\bar{F}$ és una clausura algebraica de $F$.
+:::
+
+Cap al final del curs veurem una demostració del següent teorema, que també es pot demostrar amb mètodes analítics.
+
+::: {.theorem #fta name="Teorema Fonamental de l'Àlgebra"}
+El cos $\CC$ dels nombres complexos és algebraicament tancat
+:::
+
+Com a conseqüència, podrem clausures algebraiques de qualsevol extensió subextensió $\CC/F/\QQ$. En particular,
+el cos $\QQbar$ format pels complexos algebraics és una clausura algebraica de $\QQ$.
+
+Donat un cos qualsevol $F$, tenim ara l'objectiu de construir una clausura algebraica $\bar{F}/F$. Intuitivament almenys,
+la idea és de considerar, per cada polinomi $g(x)\in F[x]$, un cos $F_g$ que contingui totes les arrels de $g$.
+Aleshores hauríem de prendre el compositum de tots aquests cossos. El problema és que per fer el compositum
+hem de prendre una intersecció de molts cossos, i no està clar on viuen aquests cossos (la intersecció
+de conjunts només té sentit quan aquests conjunts són subconjunts d'un conjunt fixat). Fixem-nos que si
+només consideréssim un nombre finit de polinomis $g_1(x),\ldots, g_n(x)$ aleshores podríem prendre
+el cos de descomposició del producte $g_1(x)\cdots g_n(x)$.
+
+::: {.theorem #existencia-clausura-algebraica name="existència de clausura algebraica"}
+Sigui $F$ un cos. Aleshores existeix una clausura algebraica $\bar{F}/F$.
+:::
+::: {.proof}
+Considerem un conjunt $\mathcal{U} \supset F$ de cardinal estrictament superior a $\mathcal{N}=\max(\aleph_0, |K|)$.
+
+Sigui
+$$X = \{K\subseteq L \subseteq S ~|~ L/K \text{ és una extensió algebraica de $K$}\},$$
+amb la relació d'ordre
+$$
+K_2 > K_1 \iff \text{$K_2/K_1$ és una extensió algebraica}.
+$$
+Com que tota cadena té un element maximal (prenem la unió de totes les extensions), el lema de Zorn
+ens diu que hi ha un element maximal a $X$, que anomenarem $\bar{F}$. Només ens cal veure que $\bar{F}/F$ és
+una clausura algebraica. Sigui $f(x)\in F[x]$ un polinomi no constant, i suposem que no té cap zero a $\bar{F}$.
+Podem construir una extensió $L / \bar{F}$ on $f(x)$ tingui un zero. Aleshores $L/F$ és algebraica, i per tant
+$$
+|\bar{F}| \leq |L| \leq \mathcal{N}.
+$$
+Per tant, $|S\smallsetminus \bar{K}| = |S| > |L\smallsetminus \bar{K}|$. Això fa que existeixi
+una aplicació (de conjunts) injectiva $i \colon L \to S$ tal que $i(x)=x$ si $x\in \bar{F}$. Podem doncs
+transportar l'estructura de cos de $L$ a $i(L)$ i obtenim un nou element maximal $L > \bar{F}$, contradient
+la maximalitat de $\bar{F}$.
+:::
+
+Una demostració alternativa:
+::: {.proof}
+Presentem una demostració alternativa que amaga una mica més els problemes amb la teoria de conjunts. Gràcies
+a la Proposició \@ref(prp:clausura-tecnica), n'hi ha prou amb construir una extensió $K/F$ algebraicament tancada.
+
+Per
+cada polinomi mònic no constant $f=f(x)\in F[x]$, considerem una variable $x_f$. Tenim l'anell de polinomis
+en infinites variables $F[\{x_f\}]$, i hi podem considerar l'ideal $I$ generat pels polinomis $f(x_f)$.
+
+Veurem que $I$ no és el total i que, per tant, està contingut en un ideal maximal $\mathcal{M}$. El quocient
+l'anomenem $K_1$, que és una extensió de $F$ que conté **una arrel** de cada polinomi amb coeficients a $F$. Podem
+iterar el procés (començant amb $K_1$ en comptes de amb $F$) per obtenir $K_2/K_1$, una extensió on tot polinomi
+amb coeficients a $K_1$ té una arrel, i així construim una successió de cossos de la qual en podem
+prendre la seva "unió" $K$. Donat un polinomi $f(x)\in K[x]$, tots els seus coeficients viuen necessàriament
+a $K_n$ i, per tant, $f(x)$ té alguna arrel a $K_{n+1}$ i, per tant a $K$.
+
+Ens queda per veure que $I$ és un ideal propi. Suposem que no i arribarem a contradicció. Suposem que tenim una
+relació
+$$
+g_1 f_1(x_{f_1}) + g_2 f_2(x_{f_2}) + \cdots + g_k f_k(x_{f_k}) = 1,\quad g_i \in F[\{x_f\}].
+$$
+En total, aquesta relació només involucra un nombre finit de variables. Les hi posem nom: denotem $x_1=x_{f_1}$,
+i així successivament fins a $x_k = x_{f_k}$. Després anomenem $x_{k+1},\ldots, x_r$ la resta de variables
+que apareixen en els polinomis $g_i$, de manera que podem reescriure la relació anterior com
+$$
+g_1(x_1,\ldots, x_r) f_1(x_1) + g_2(x_1,\ldots,x_r) f_2(x_2)+\cdots+g_k(x_1,\ldots x_r) f_k(x_k)=1.
+$$
+Prenem ara una extensió finita $F'/F$ que contingui una arrel $\alpha_i$ de $f_i(x)$ per cada $i$. La relació
+anterior particularitza, si fem $x_i=\alpha_i$ per $i=1,\ldots,k$ i $x_i=0$ per $i>k$, a $0=1$, que és una
+contradicció. Això acaba la demostració.
+:::
+
+Veurem ara la unicitat de la clausura algebraica.
+
+::: {.theorem name=""}
+Sigui $K/F$ una extensió algebraica, i sigui $L/F$ una extensió algebraicament tancada. Aleshores existeix un
+$F$-morfisme $K\to L$.
+:::
+
+::: {.proof}
+Considerem el conjunt de tots els morfismes $\varphi\colon K' \to L$, on $F \subseteq K'\subseteq K$. Aquest
+conjunt té un ordre parcial: $\varphi\leq \psi$ si i només si $\psi$ extén $\varphi$. Podem aplicar fàcilment
+el lema de Zorn per obtenir un element maximal $\varphi \colon K' \to L$. Cal veure que $K'=K$. Però si no ho fos, podem prendre
+un element $\alpha\in K\smallsetminus K'$, i estendre el morfisme $\varphi$ a $K'(\alpha)$, ja que $L$ té una arrel del
+polinomi mínim d'$\alpha$, contradient la maximalitat de $K'$.
+:::
+
+::: {.corollary #unititat-clausura-algebraica name="unicitat de la clausura algebraica"}
+Siguin $K/F$ i $L/F$ clausures algebraiques de $F$. Aleshores $K\cong L$.
+:::
+
+::: {.proof}
+Apliquem el teorema anterior i obtenim un $F$-morfisme $\varphi\colon K \to L$, que és injectiu. Sigui $\beta\in L$ un
+element qualsevol, i sigui $f(x)$ el seu polinomi mínim sobre $F$. Com que $K$ és algebraicament tancat, conté totes les
+arrels de $f(x)$, i $\varphi$ indueix una aplicació injectiva (i per tant exhaustiva) entre elles. Així, hi ha alguna arrel
+$\alpha\in K$ tal que $\varphi(\alpha)=\beta$, i hem demostrat que $\varphi$ és exhaustiu.
+:::
+
+::: {.remark}
+L'existència i unicitat de clausures algebraiques fou demostrada per Steinitz el 1910, i la demostració era molt
+més llarga i complicada (unes 20 pàgines).
+
+També es pot demostrar (però ens cal teoria que veurem una mica més endavant) que el cos $K_1$
+que apareix a la demostració anterior ja és algebraicament tancat, així que no caldria fer tots
+els altres infinits passos. La demostració d'aquest fet no és senzilla, fa servir el teorema de l'element
+primitiu (vegeu \@ref(element-primitiu)), i separa els casos de característica $0$ i característica $p$.
+:::

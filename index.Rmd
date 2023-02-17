@@ -5,7 +5,7 @@ site: bookdown::bookdown_site
 documentclass: book
 bibliography: ["src/bibliografia.bib"]
 citation_package: biblatex
-bibtlatexoptions: [style=alphabetic,citestyle=numeric,sorting=nyt,sortcites=true,autopunct=true,autolang=hyphen,hyperref=true,abbreviate=false,backref=true,backend=biber,defernumbers=true]
+bibtlatexoptions: [style=alphabetic,citestyle=alpha,sorting=nyt,sortcites=true,autopunct=true,autolang=hyphen,hyperref=true,abbreviate=true,backref=true,backend=biblatex,defernumbers=true]
 link-citations: yes
 github-repo: mmasdeu/teoriadegalois
 description: "Apunts d'un curs de Teoria de Galois a la UAB"
@@ -54,7 +54,10 @@ L'assignatura de *Teoria de Galois* es cursa al primer semestre del tercer curs 
 - Una hora setmanal de problemes (15 setmanes).
 - Tres seminaris pràctics, de 2h cadascun.
 
-El curs es pot dividir de manera natural en 15 sessions de dues hores. El temps efectiu de cadascuna d'aquestes sessions és de 100 minuts, i es pot pensar com una sèrie de 15 capítols. Seguidament detallem cadascun d'aquests capítols i la seva sinopsi.
+El curs es pot dividir de manera natural en 15 sessions de dues hores. El temps efectiu de cadascuna d'aquestes sessions és de 100 minuts, i es pot pensar com una sèrie de 15 capítols.
+
+L'estructura que s'ha seguit és essencialment la de @dummitfoote, però la demostració del teorema fonamental s'ha fet completament diferent,
+seguint un punt de vista proposat per @geck. També s'ha canviat la presentació de l'existència de la clausura algebraica d'un cos arbitrari.
 
 
 `r if (knitr:::is_html_output())"

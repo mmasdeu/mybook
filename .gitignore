@@ -4,3 +4,8 @@
 _book
 _bookdown_files
 rsconnect
+*.log
+*.toc
+src/mathjaxheader.html
+.vscode/*
+*.aux

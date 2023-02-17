@@ -48,7 +48,9 @@ $F(\alpha)/F$.
 En aquest cas, $F(\alpha)\cong F[x]/(\Irr_{\alpha,F}(x))$ i per tant $[F(\alpha)\colon F] = \deg \alpha$.
 
 ::: {.example}
-Revisitem els exemples anteriors, calculant els seus polinomis mínims.
+El polinomi mínim de $\sqrt{2}\in \RR$ sobre $\QQ$ és $x^2-2$. Diem que $\sqrt{2}$ és un element *quadràtic* sobre $\QQ$. De manera
+semblant, el polinomi mínim de $\sqrt[3]{2}$ és $x^3-2$. Aquests dos polinomis són irreductibles sobre $\QQ$ per exemple per que són
+$2$-Eisenstein.
 :::
 
 ::: {.proposition}
@@ -125,7 +127,7 @@ tenim que $F(\alpha,\beta)\subseteq F(\alpha)(\beta)$.
 :::
 
 ::: {.exercise}
-Calculeu el grau de l'extensió $\QQ(\sqrt{2},\sqrt{3})/\QQ$, i doneu una base.
+Calculeu el grau de l'extensió $\QQ(\sqrt{2},\sqrt{3})/\QQ$, i doneu-ne una base.
 :::
 
 ::: {.theorem}
