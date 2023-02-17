@@ -24,8 +24,12 @@ fa en cap subextensió $K/K'/F$.
 Sigui $f(x)\in F[x]$. Aleshores existeix un cos de descomposició $K/F$ de $f(x)$.
 :::
 ::: {.proof}
-Fent inducció en el grau d'$f$, veiem primer que hi ha un cos $L/F$ on $f(x)$ descomposa completament. Després podem
-prendre per $K/F$ la intersecció de totes les subextensions $L/K'/F$ on $f(x)$ descomposa completament.
+Farem inducció en el grau d'$f$, essent el cas $n=1$ trivial. Suposem l'enunciat cert per tots els polinomis de grau $ < n$ definits
+sobre qualsevol cos, i ho demostrarem per $f(x)\in F[x]$ de grau $n$. Pel Teorema \@ref{thm:kronecker}, hi ha una extensió $L/F$
+que conté una arrel $\alpha\in L_0$ de $f(x)$. Dividint per $(x-\alpha)$ obtenim un polinomi $f_0(x)\in L_0[x]$ de grau $n-1$. Per hipòtesi
+d'inducció, existeix una extensió $L/L_0$ on $f_0(x)$ (i per tant també $f(x)$) descomposa completament. Aleshores podem
+prendre per $K/F$ la intersecció de totes les subextensions $L/K'/F$ on $f(x)$ descomposa completament. Per construcció, $K/F$ és un
+cos de descomposició de $f(x)$.
 :::
 
 Fixem-nos que cada vegada que adjuntem una arrel d'un polinomi de grau $n$, aquest polinomi tindrà un cofactor com a molt de grau $n-1$. Així,
@@ -74,8 +78,22 @@ hi trenca completament.
 :::
 
 ::: {.example }
-Calcularem els cossos de descomposició dels exemples que estem fent servir: $x^2-2$, $(x^2-2)(x^2-3)$, $x^3-2$ i de $x^4+4$, per exemple, ja
-que en aquest cas el cos de descomposició és simplement $\QQ(i)$.
+El cos de descomposició de $x^2-2$ és $\QQ(\sqrt{2})$. Considerem el polinomi $(x^2-2)(x^2-3)$. En aquest cas, el seu
+cos de descomposició ha de contenir $\QQ(\sqrt{2})$ i $\QQ(\sqrt{3})$ i, per tant, el seu grau ha de ser parell i més gran que $2$.
+Sigui $K=\QQ(\sqrt{2},\sqrt{3})$, que és un cos de grau $4$. El polinomi factoritza com $(x-\sqrt{2})(x+\sqrt{2})(x-\sqrt{3})(x+\sqrt{3})$
+i per tant $K$ és el cos de descomposició que busquem.
+
+Un cas una mica més interessant és el del polinomi $x^3-2$. El seu cos de descomposició ha de contenir $\alpha=\sqrt[3]{2}$, però quan
+fem la divisió obtenim:
+$$
+x^3-2 = (x-\alpha)(x^2 + \alpha x + \alpha^2).
+$$
+Fixem-nos que si $\alpha$ i $\beta$ són dues arrels diferents de $x^3-2$ en el cos de descomposició $L/\QQ$, aleshores $(\alpha/\beta)^3 =1$. Per tant,
+$\alpha/\beta$ satisfà el polinomi $(x^3-1)/(x-1) = x^2+x+1$, que ja sabem que és irreductible a $\QQ$. Per tant, $L$ ha de contenir
+també $\zeta_3$, i obtenim finalment que $L=\QQ(\alpha,\zeta_3)$, que és un cos de grau $6$ sobre $\QQ$.
+
+Finalment, observem que a vegades el cos de descomposició pot ser de grau més petit que el polinomi amb què comencem. Per exemple, el cos de
+descomposició de $x^4+4$ és simplement $\QQ(i)$, que té grau $2$.
 :::
 
 ::: {.example #cossos-ciclotomics name="cossos ciclotòmics"}
