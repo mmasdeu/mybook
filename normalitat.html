@@ -311,8 +311,12 @@ fa en cap subextensió <span class="math inline">\(K/K&#39;/F\)</span>.</p>
 <p><span id="thm:existencia-splittingfield" class="theorem"><strong>Teorema 4.1  (existència del cos de descomposició) </strong></span>Sigui <span class="math inline">\(f(x)\in F[x]\)</span>. Aleshores existeix un cos de descomposició <span class="math inline">\(K/F\)</span> de <span class="math inline">\(f(x)\)</span>.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-45" class="proof"><em>Prova</em>. </span>Fent inducció en el grau d’<span class="math inline">\(f\)</span>, veiem primer que hi ha un cos <span class="math inline">\(L/F\)</span> on <span class="math inline">\(f(x)\)</span> descomposa completament. Després podem
-prendre per <span class="math inline">\(K/F\)</span> la intersecció de totes les subextensions <span class="math inline">\(L/K&#39;/F\)</span> on <span class="math inline">\(f(x)\)</span> descomposa completament.</p>
+<p><span id="unlabeled-div-45" class="proof"><em>Prova</em>. </span>Farem inducció en el grau d’<span class="math inline">\(f\)</span>, essent el cas <span class="math inline">\(n=1\)</span> trivial. Suposem l’enunciat cert per tots els polinomis de grau $ &lt; n$ definits
+sobre qualsevol cos, i ho demostrarem per <span class="math inline">\(f(x)\in F[x]\)</span> de grau <span class="math inline">\(n\)</span>. Pel Teorema @ref{thm:kronecker}, hi ha una extensió <span class="math inline">\(L/F\)</span>
+que conté una arrel <span class="math inline">\(\alpha\in L_0\)</span> de <span class="math inline">\(f(x)\)</span>. Dividint per <span class="math inline">\((x-\alpha)\)</span> obtenim un polinomi <span class="math inline">\(f_0(x)\in L_0[x]\)</span> de grau <span class="math inline">\(n-1\)</span>. Per hipòtesi
+d’inducció, existeix una extensió <span class="math inline">\(L/L_0\)</span> on <span class="math inline">\(f_0(x)\)</span> (i per tant també <span class="math inline">\(f(x)\)</span>) descomposa completament. Aleshores podem
+prendre per <span class="math inline">\(K/F\)</span> la intersecció de totes les subextensions <span class="math inline">\(L/K&#39;/F\)</span> on <span class="math inline">\(f(x)\)</span> descomposa completament. Per construcció, <span class="math inline">\(K/F\)</span> és un
+cos de descomposició de <span class="math inline">\(f(x)\)</span>.</p>
 </div>
 <p>Fixem-nos que cada vegada que adjuntem una arrel d’un polinomi de grau <span class="math inline">\(n\)</span>, aquest polinomi tindrà un cofactor com a molt de grau <span class="math inline">\(n-1\)</span>. Així,
 per obtenir un cos de descomposició en el pitjor dels casos haurem de fer una extensió de grau <span class="math inline">\(n(n-1)(n-2)\cdots 2\cdot 1=n!\)</span>.</p>
@@ -350,8 +354,20 @@ podem prendre com a <span class="math inline">\(\alpha\)</span> una arrel de <sp
 hi trenca completament.</p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-48" class="example"><strong>Exemple 4.1  </strong></span>Calcularem els cossos de descomposició dels exemples que estem fent servir: <span class="math inline">\(x^2-2\)</span>, <span class="math inline">\((x^2-2)(x^2-3)\)</span>, <span class="math inline">\(x^3-2\)</span> i de <span class="math inline">\(x^4+4\)</span>, per exemple, ja
-que en aquest cas el cos de descomposició és simplement <span class="math inline">\(\QQ(i)\)</span>.</p>
+<p><span id="exm:unlabeled-div-48" class="example"><strong>Exemple 4.1  </strong></span>El cos de descomposició de <span class="math inline">\(x^2-2\)</span> és <span class="math inline">\(\QQ(\sqrt{2})\)</span>. Considerem el polinomi <span class="math inline">\((x^2-2)(x^2-3)\)</span>. En aquest cas, el seu
+cos de descomposició ha de contenir <span class="math inline">\(\QQ(\sqrt{2})\)</span> i <span class="math inline">\(\QQ(\sqrt{3})\)</span> i, per tant, el seu grau ha de ser parell i més gran que <span class="math inline">\(2\)</span>.
+Sigui <span class="math inline">\(K=\QQ(\sqrt{2},\sqrt{3})\)</span>, que és un cos de grau <span class="math inline">\(4\)</span>. El polinomi factoritza com <span class="math inline">\((x-\sqrt{2})(x+\sqrt{2})(x-\sqrt{3})(x+\sqrt{3})\)</span>
+i per tant <span class="math inline">\(K\)</span> és el cos de descomposició que busquem.</p>
+<p>Un cas una mica més interessant és el del polinomi <span class="math inline">\(x^3-2\)</span>. El seu cos de descomposició ha de contenir <span class="math inline">\(\alpha=\sqrt[3]{2}\)</span>, però quan
+fem la divisió obtenim:
+<span class="math display">\[
+x^3-2 = (x-\alpha)(x^2 + \alpha x + \alpha^2).
+\]</span>
+Fixem-nos que si <span class="math inline">\(\alpha\)</span> i <span class="math inline">\(\beta\)</span> són dues arrels diferents de <span class="math inline">\(x^3-2\)</span> en el cos de descomposició <span class="math inline">\(L/\QQ\)</span>, aleshores <span class="math inline">\((\alpha/\beta)^3 =1\)</span>. Per tant,
+<span class="math inline">\(\alpha/\beta\)</span> satisfà el polinomi <span class="math inline">\((x^3-1)/(x-1) = x^2+x+1\)</span>, que ja sabem que és irreductible a <span class="math inline">\(\QQ\)</span>. Per tant, <span class="math inline">\(L\)</span> ha de contenir
+també <span class="math inline">\(\zeta_3\)</span>, i obtenim finalment que <span class="math inline">\(L=\QQ(\alpha,\zeta_3)\)</span>, que és un cos de grau <span class="math inline">\(6\)</span> sobre <span class="math inline">\(\QQ\)</span>.</p>
+<p>Finalment, observem que a vegades el cos de descomposició pot ser de grau més petit que el polinomi amb què comencem. Per exemple, el cos de
+descomposició de <span class="math inline">\(x^4+4\)</span> és simplement <span class="math inline">\(\QQ(i)\)</span>, que té grau <span class="math inline">\(2\)</span>.</p>
 </div>
 <div class="example">
 <p><span id="exm:cossos-ciclotomics" class="example"><strong>Exemple 4.2  (cossos ciclotòmics) </strong></span>Calculem el cos de descomposició del polinomi <span class="math inline">\(x^n-1\)</span>.
