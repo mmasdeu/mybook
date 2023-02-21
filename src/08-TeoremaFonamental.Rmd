@@ -4,13 +4,14 @@ Enunciem i demostrem el teorema fonamental de la teoria de Galois. Acabarem
 amb diversos exemples concrets d'extensions, il·lustrant la correspondència de Galois.
 
 ## Preliminars
+Comencem amb un resultat que es segueix directament del Teorema \@ref(thm:caracteritzacio-galois).
 
 ::: {.proposition}
-Sigui $K$ una cos qualsevol. Sigui $G\leq\Aut(K)$ un subgrup finit, i sigui $F=K^G$. Aleshores $K$ és Galois sobre $F$,
+Sigui $K$ un cos qualsevol. Sigui $G\leq\Aut(K)$ un subgrup finit, i sigui $F=K^G$. Aleshores $K$ és Galois sobre $F$,
 i $\Gal(K/F) = G$.
 :::
 ::: {.proof}
-Per definició d'$F$, tenim $G \leq \Aut(K/F)$, i només ens cal veure la igualtat. El teorema
+Per definició d'$F$, tenim $G \leq \Aut(K/F)$, i només ens cal veure la igualtat. El Teorema \@ref(thm:caracteritzacio-galois)
 ens diu que $|G|=[K\colon F]$, i ja hem vist $|\Aut(K/F)|\leq [K\colon F]$. Per tant:
 $$
 [K\colon F] = |G| \leq |\Aut(K/F)| \leq [K\colon F].
@@ -114,13 +115,125 @@ donada per $M\mapsto H = \Gal(K/M)$ i $H\mapsto M = K^H$ que satisfà:
 4. (gira els reticles) $M_1M_2 \leftrightarrow H_1\cap H_2$ i $M_1\cap M_2 \leftrightarrow \langle H_1, H_2\rangle$.
 :::
 
-## Examples
+## Exemples
 
-Calculem alguns exemples, com $\QQ(\sqrt{2}, \sqrt{3})$, el cos de descomposició de $\sqrt[3]{2}$, $\QQ(\sqrt{2}+\sqrt{3})$,
-o el cos de descomposició de $\QQ(\sqrt[8]{2}, \zeta_8)$ de $\sqrt[8]{2}$.
+### Exemple d'una extensió biquadràtica
 
+Considerem primer el cos $K=\QQ(\sqrt{2}, \sqrt{3})$, de grau $4$ sobre $\QQ$. Els cossos $\QQ(\sqrt{2})$, $\QQ(\sqrt{3})$
+i $\QQ(\sqrt{6})$ en són subcossos. Qualsevol subcos no trivial ha de ser de grau $2$, per la
+fórmula de les torres. Podem intentar veure de manera elemental que els tres que hem esmentat
+són els únics, però això ens ho garanteix el teorema fonamental: el grup de Galois de $\QQ(\sqrt{2},\sqrt{3})$
+és $V_4\cong C_2\times C_2=\langle \sigma,\tau\rangle$,
+on $\sigma(\sqrt{2})=-\sqrt{2}$ i $\sigma(\sqrt{3})=\sqrt{3}$, i
+$\tau(\sqrt{2})=\sqrt{2}$ i $\tau(\sqrt{3})=-\sqrt{3}$, i té reticle de subgrups
+$$
+\xymatrix{
+  &\langle \sigma, \tau\rangle \ar@{-}[dl]^2\ar@{-}[d]_2\ar@{-}[dr]^2&\\
+\langle \sigma\rangle & \langle \sigma\tau\rangle  & \langle \tau\rangle\\
+&1\ar@{-}[ul]^2\ar@{-}[u]_2\ar@{-}[ur]_2&
+}
+$$
+Calculant els cossos fixos pels tres grups intermitjos obtenim:
+$$
+K^{\langle\sigma\rangle} = \QQ(\sqrt{3})\text{, } K^{\langle\sigma\tau\rangle} = \QQ(\sqrt{6}),\text{ i } K^{\langle\tau\rangle} = \QQ(\sqrt{2}).
+$$
+
+### Exemple d'una extensió de tipus $S_3$
+
+Considerem el cos de descomposició del polinomi $x^3-2$, que conté $\sqrt[3]{2}$ i $\zeta_3$. De fet,
+el cos de descomposició és precisament $\QQ(\sqrt[3]{2}, \zeta_3)$. Tenim els subcossos obvis
+$\QQ(\zeta_3)$ (de grau $2$) i els tres conjugats $\QQ(\sqrt[3]{2})$, $\QQ(\zeta_3\sqrt[3]{2})$
+i $\QQ(\zeta_3^{-1}\sqrt[3]{2})$. Calculem el grup de Galois d'aquesta extensió. Fixem-nos que
+un automorfisme ha de permutar les arrels de $x^3-2$ i també les de $x^2+x+1$. Considerarem
+el morfisme $\sigma$ que fixa les arrels de la unitat, i que envia $\sqrt[3]{2} = \zeta_3\sqrt[3]{2}$,
+i també el morfisme $\tau$ que fixa $\sqrt{3}[2]$ i que envia $\zeta_3\mapsto \zeta_3^{-1}$. Fixem-nos
+que $\tau$ té ordre $2$, i que $\sigma^2(\sqrt[3]{2}) = \sigma(\zeta_3\sqrt[3]{2}) = \zeta_3^2\sqrt[3]{2}$
+i $\sigma^3=\id$. Per tant, el grup de Galois té ordre $6$ i està generat per aquests dos elements. Observem
+també que $\sigma\tau(\sqrt[3]{2}) = \zeta_3\sqrt[3]{2}$, mentre que $\tau\sigma(\sqrt[3]{2}) = \tau(\zeta_3\sqrt[3]{2}) = \zeta_3^{-1}\sqrt[3]{2}$.
+Per tant, $\sigma$ i $\tau$ commuten i $G \cong S_3$.
+
+Ara podem calcular el reticle de subgrups de $S_3$, i obtenim
+$$
+\xymatrix{
+&\langle\sigma,\tau\rangle\ar@{-}[ddl]\ar@{-}[dr]\ar@{-}[drr]\ar@{-}[drrr]\\
+&&\langle\tau\rangle&\langle \tau\sigma\rangle & \langle \tau\sigma^2\rangle\\
+\langle\sigma\rangle&\\
+& 1\ar@{-}[ul]\ar@{-}[uur]\ar@{-}[uurr]\ar@{-}[uurrr]
+}
+$$
+
+El reticle de subcossos de $\QQ(\sqrt[3]{2}, \zeta_3)$ corresponent és:
+$$
+\xymatrix{
+&\QQ\ar@{-}[ddl]\ar@{-}[dr]\ar@{-}[drr]\ar@{-}[drrr]\\
+&&\QQ(\sqrt[3]{2})&\QQ(\zeta_3\sqrt[3]{2}) & \QQ(\zeta_3^{-1}\sqrt[3]{2})\\
+\QQ(\zeta_3)&\\
+& \QQ(\sqrt[3]{2}, \zeta_3)\ar@{-}[ul]\ar@{-}[uur]\ar@{-}[uurr]\ar@{-}[uurrr]
+}
+$$
+
+### Exemple d'una extensió de de grau 16
+
+Considerem el grup de Galois del polinomi irreductible $x^8-2$. Les arrels d'aquest polinomi són
+$$
+\zeta^i \sqrt[8]{2},\quad i=0,\ldots,7,
+$$
+on $\zeta=\zeta_8=e^{\frac{2\pi i}{8}}$ és una arrel primitiva de la unitat.
+Observem que tenim
+$$
+\QQ \subset \QQ(\sqrt{2}) \subset \QQ(\sqrt[4]{2})\subset \QQ(\alpha)\subset K=\QQ(\zeta,\alpha),
+$$
+i que cada extensió de les de sobre és de grau $2$ sobre l'anterior. Per justificar l'última
+extensió, podem trobar el polinomi mínim de $\zeta$ sobre $\QQ(\alpha)$. Sabem que
+$\zeta^2=i$, i per tant $\zeta=\frac{1}{\sqrt{2}}(1+i)$. Per tant, $\zeta$ satisfà el polinomi
+$$
+x^2 - \sqrt{2}x + 1 = 0.
+$$
+Fixem-nos que $\QQ(\alpha)$ és un subcos de $\RR$ i en canvi $\QQ(\alpha,\zeta)$ no. Per tant,
+en deduïm que $[K\colon \QQ] = 16$. De fet, com que $\zeta=\frac{1}{\sqrt{2}}(1+i)$,
+podem descriure $K$ de manera més senzilla com $K=\QQ(\alpha,i)$.
+Intentem descriure el seu grup de Galois. Tot automorfisme
+ve determinat per la imatge de $\alpha$ i de $i$. La imatge d'$\alpha$ ha de ser de la
+forma $\zeta^j\alpha$ per algun $0\leq j \leq 7$, mentre que la imatge de $i$ ja de ser $\pm i$.
+Com que només hi ha $16$ possibilitats en total i el grup de Galois ha de tenir ordre $16$,
+totes elles es donen. Per tant,
+$$
+\Gal(K/\QQ) = \{1,\sigma_1,\sigma_2,\ldots,\sigma_7,\tau,\tau\sigma_1,\ldots,\tau\sigma_7\},
+$$
+on $\sigma_j$ fixa $i$ i envia $\alpha$ a $\zeta^j\alpha$, i $\tau$ fixa $\alpha$ i envia $i$ a $-i$.
+
+Podem calcular també l'acció de $\sigma=\sigma_1$ i $\tau$ en l'arrel $\zeta$, fent servir
+$$
+\zeta = \frac{\sqrt{2}}{2} (1+i) = \frac{1}{2}\alpha^4(1+i).
+$$
+Per tant $\sigma(\zeta) = \frac{1}{2} (-1) \alpha^4 (1+i) = -\zeta$, i
+$\tau(\zeta) = \frac{1}{2}\alpha^4(1-i) = \bar{\zeta} = \zeta^{-1}$.
+
+Calculant els productes $\sigma^i$ i $\sigma^i\tau$ veiem també que $\Gal(K/\QQ)$ està generat per $\sigma$ i $\tau$,
+i de fet
+$$
+\Gal(K/\QQ)= \langle \sigma, \tau ~|~ \sigma^8=\tau^2=\sigma\tau\sigma^{-3}\tau=1\rangle.
+$$
+Aquest subgrup s'anomena \emph{quasidihedral}, i el seu reticle de subgrups és:
+
+```{tikz, echo=FALSE, out.width='100%', fig.ext='png', fig.align='center', cache=TRUE, engine.opts = list(background = 'transparent')}
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZANgBoAGAXVJADcBDAGwFcYkQBxEAX1PU1z5CKMgEZqdJq3YAdGY3pgA5oxhzsSgLb05AJ0Uq2vftjwEiZAEwSGLNohByFy1QAJ1WLfQB6lvQdUePhAMUyELUgBmGyl7R3kAmHcZDW1vABZ-FyNg0MFzEVJ0mLt2USCTfOFkAFYokukHJ0S5HHpmLMMKkIEzasj6mltG+OdDVvaPLwzOwOMesILkAHZSayHY2QTsiY6UzzTI2ZzKvqIADlJxDdKm7fH96ctSZLa91J8jmX1s7ryzlAATjWDTizR2MjeU20xz+vXCKHSIJuI3BDw+GVIu1h83+COQz2iKLB91U2MeaWIONy8KW5EGkluoxakMmFJ8fm+iThi2qomRjNRpLU7Mx5IxVK5v1xtP6V1BWzGZNFz3JPy63AkMCgSngRFAADNdBBNEgkSAcBAkAMQAALGD0KDsSBgE4gI0m600S1IZ52h1Ohwut0e02IP0+xD8-2O50EEPGsPRyP0mOB8Dx7qhpCrC1WxCXNNx11ZxNIYF5pCF+2xoOZ+bZxA2yO5mvp4Olz1N735itt4sJrt1SuIc39uslhtlxBkEdjgMDzth1OR6sLieDsOzyOiVPjjOT4KN4c7vfrg+bpCiCP50Q2-cdqdd0TJ2-38+Po-Tl89s00B-1l+z43n+RYbkuV7Nre861heEFRuaKb-h+gGGt+K7QchsGfmhz4YV6YFwU+SZQQRAGTpQ3BAA
+\usetikzlibrary{cd}
+\begin{tikzcd}
+                                                                        &                                                                                    &                                                                       &                                                                      &                                                                        &                                                            & G \arrow[rrd, no head]                                                               &                                                &                                        &                                              \\
+                                                                        &                                                                                    &                                                                       & {\langle\sigma^2,\tau\rangle} \arrow[rrru, no head]                  &                                                                        &                                                            & \langle\sigma\rangle \arrow[u, no head]                                              &                                                & {\langle\sigma^2, \tau\sigma^3\rangle} &                                              \\
+                                                                        & {\langle\sigma^4,\tau\sigma^6\rangle} \arrow[rru, no head] \arrow[rrrrrd, no head] &                                                                       &                                                                      & {\langle\sigma^4,\tau\rangle} \arrow[lu, no head] \arrow[rrd, no head] &                                                            & \langle \sigma^2\rangle \arrow[u, no head]                                           & \langle\tau\sigma^3\rangle \arrow[ru, no head] &                                        & \langle\tau\sigma\rangle \arrow[lu, no head] \\
+\langle\tau\sigma^2\rangle \arrow[ru, no head] \arrow[rrrrrrd, no head] &                                                                                    & \langle\tau\sigma^6\rangle \arrow[lu, no head] \arrow[rrrrd, no head] & \langle\tau\sigma^4\rangle \arrow[rrrd, no head] \arrow[ru, no head] &                                                                        & \langle\tau\rangle \arrow[rd, no head] \arrow[lu, no head] & \langle \sigma^4\rangle \arrow[u, no head] \arrow[ru, no head] \arrow[rrru, no head] &                                                &                                        &                                              \\
+                                                                        &                                                                                    &                                                                       &                                                                      &                                                                        &                                                            & 1 \arrow[u, no head]                                                                 &                                                &                                        &                                             
+\end{tikzcd}
+```
+
+TODO: calcular el reticle de subcossos corresponent.
+
+::: {.remark}
 És important adonar-se que no n'hi ha prou en assignar valors
 als generadors d'una extensió per definir un automorfisme, ja que hi pot haver relacions amagades entre els
 generadors. Per exemple, si $\theta=\sqrt[8]{2}$, tenim $\theta^4 = \zeta_8 + \zeta_8^{-1}$ i per tant no totes
 les tries
 $\theta\mapsto \theta\zeta_8^i$ i $\zeta_8\mapsto \theta_8^j$ amb $j$ senar donen lloc a automorfismes.
+:::

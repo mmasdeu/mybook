@@ -139,35 +139,6 @@ simplement que per tot $\alpha\in L$, el polinomi $\Irr_{\alpha,K}(x)$ és un di
 
 Més endavant veurem que el recíproc també és cert, però per ara no ens caldrà.
 
-## Applicació : cossos finits
-
-L'objectiu és demostrar l'existència de cossos finits d'ordre qualsevol potència d'un primer, i veure que són únics
-(llevat d'isomorfisme).
-
-::: {.theorem name="Existència i unicitat de cossos finits"}
-Per tot primer $p$ i tot $n\geq 1$, hi ha un únic (llevat d'isomorfisme) cos finit d'ordre $p^n$, que
-denotarem per $\FF_{p^n}$. A més, si $\FF$ és un cos finit de característica $p$,
-aleshores és isomorf a $\FF_{p^n}$ per alguna $n \geq 1$.
-:::
-
-::: {.proof}
-Sigui $n\geq 1$, i fixem-nos que el polinomi $f(x)=x^{p^n}-x \in \FF_p[x]$ té derivada $-1$ i, per tant, és separable.
-Si $\alpha$ i $\beta$ són dues arrels qualssevol, aleshores $\alpha\beta$ i $\alpha+\beta$
-també són arrels. Per tant, el conjunt $L$ format per les $p^n$ arrels forma un subcos del cos de
-descomposició de $f(x)$ i, per tant, com que $L$ conté totes les arrels, ha de ser el propi
-cos de descomposició. Com que $L$ té $p^n$ elements, té grau $n$ sobre $\FF_p$, i per tant hem
-vist que hi ha cossos finits de grau $n$ per qualsevol $n\geq 1$.
-
-Sigui ara $\FF$ un cos finit qualsevol de característica $p$. Com que és un espai vectorial sobre el seu
-cos primer $\FF_p$, ha de tenir $p^n$ elements per algun $n\geq 1$. Fixem-nos que $\FF^\times$ és un grup
-d'ordre $p^n-1$ i, per tant $\alpha^{p^n-1} = 1$ per tot $\alpha\in \FF$. Per tant $\alpha$ és una arrel
-de $x^{p^n}-x$ i $\FF$ està contingut al cos de descomposició d'aquest polinomi. Mirant el nombre
-d'elements, veiem que és igual al cos de descomposició.
-:::
-
-Fixem-nos que encara no hem sabut demostrar que existeixen polinomis irreductibles a $\FF_p[x]$ de qualsevol grau. El que
-ens caldria és demostrar que l'extensió $\FF_{p^n}/\FF_p$ és *simple*, és a dir, que s'obté adjuntant l'arrel d'un polinomi
-irreductible. Això ho veurem més endavant, al Teorema \@ref(thm:existencia-polis-irred-Fp).
 
 ## Polinomis Ciclotòmics {#ciclotomics}
 

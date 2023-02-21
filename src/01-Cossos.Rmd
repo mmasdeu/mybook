@@ -135,7 +135,7 @@ el resultat de les multiplicacions.
 Si considerem $\FF_p$ el cos finit de $p$ elements i un polinomi $f(x)\in \FF_p[x]$ irreductible de grau $n$
 (suposant que existeixi!), aleshores obtenim un cos $K/\FF_p$ de grau $n$. Té, per tant, $p^n$ elements. Més endavant
 veurem, d'una manera bastant indirecta, que per qualsevol primer $p$ i qualsevol enter $n\geq 1$ existeix un polinomi a $\FF_p[x]$
-irreductible de grau $n$ (Teorema \@ref(prp:existencia-polis-irred-Fp))
+irreductible de grau $n$ (Proposició \@ref(prp:existencia-polis-irred-Fp))
 :::
 
 ::: {.example}

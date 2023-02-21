@@ -1,11 +1,10 @@
-# La clausura algebraica
+# Clausures algebraiques
 
-En aquest episodi demostrem l'existència i unicitat de la clausura algebraica d'un cos. Aprofitarem també per estudiar
-els polinomis ciclotòmics.
+En aquest episodi demostrem l'existència i unicitat de la clausura algebraica d'un cos.
 
-TODO: reorganitzar-ho.
+## Conceptes bàsics
 
-## La clausura algebraica
+En aquesta secció definirem la noció de clausura algebraica d'un cos arbitrari.
 
 ::: {.definition #clausura-algebraica name="clausura algebraica"}
 Diem que $\bar{F}/F$ és una *clausura algebraica* d'$F$ si $\bar{F}/F$ és algebraica i tot polinomi $f(x)\in F[x]$
@@ -43,7 +42,8 @@ cadascun dels $\alpha$ és algebraic sobre $F$ i, per tant, és un element de $\
 completament a $\bar{F}[x]$, i per tant $\bar{F}$ és una clausura algebraica de $F$.
 :::
 
-Cap al final del curs veurem una demostració del següent teorema, que també es pot demostrar amb mètodes analítics.
+Cap al final del curs veurem una demostració del següent teorema com a aplicació de diversos resultats de Teoria de Galois. Hi ha
+altres demostracions (potser més naturals) fent servir mètodes analítics.
 
 ::: {.theorem #fta name="Teorema Fonamental de l'Àlgebra"}
 El cos $\CC$ dels nombres complexos és algebraicament tancat
@@ -51,6 +51,85 @@ El cos $\CC$ dels nombres complexos és algebraicament tancat
 
 Com a conseqüència, podrem clausures algebraiques de qualsevol extensió subextensió $\CC/F/\QQ$. En particular,
 el cos $\QQbar$ format pels complexos algebraics és una clausura algebraica de $\QQ$.
+
+## Cossos finits
+
+L'objectiu és demostrar l'existència de cossos finits d'ordre qualsevol potència d'un primer, i veure que són únics
+(llevat d'isomorfisme). També veurem que existeix la clausura algebraica de qualsevol cos finit.
+
+::: {.theorem name="Existència i unicitat de cossos finits"}
+Per tot primer $p$ i tot $n\geq 1$, hi ha un únic (llevat d'isomorfisme) cos finit d'ordre $p^n$, que
+denotarem per $\FF_{p^n}$. A més, tot cos finit de característica
+$p$ és isomorf a $\FF_{p^n}$ per alguna $n \geq 1$.
+:::
+
+::: {.proof}
+Sigui $n\geq 1$, i fixem-nos que el polinomi $f(x)=x^{p^n}-x \in \FF_p[x]$ té derivada $-1$ i, per tant, és separable.
+Si $\alpha$ i $\beta$ són dues arrels qualssevol, aleshores $\alpha\beta$ i $\alpha+\beta$
+també són arrels. Per tant, el conjunt $L$ format per les $p^n$ arrels forma un subcos del cos de
+descomposició de $f(x)$ i, per tant, com que $L$ conté totes les arrels, ha de ser el propi
+cos de descomposició. Com que $L$ té $p^n$ elements, té grau $n$ sobre $\FF_p$, i per tant hem
+vist que hi ha cossos finits de grau $n$ per qualsevol $n\geq 1$.
+
+Sigui ara $\FF$ un cos finit qualsevol de característica $p$. Com que és un espai vectorial sobre el seu
+cos primer $\FF_p$, ha de tenir $p^n$ elements per algun $n\geq 1$. Fixem-nos que $\FF^\times$ és un grup
+d'ordre $p^n-1$ i, per tant $\alpha^{p^n-1} = 1$ per tot $\alpha\in \FF$. Per tant $\alpha$ és una arrel
+de $x^{p^n}-x$ i $\FF$ està contingut al cos de descomposició d'aquest polinomi. Mirant el nombre
+d'elements, veiem que és igual al cos de descomposició.
+:::
+
+Fixem-nos que encara no hem sabut demostrar que existeixen polinomis irreductibles a $\FF_p[x]$ de qualsevol grau. El que
+ens caldria és demostrar que l'extensió $\FF_{p^n}/\FF_p$ és *simple*, és a dir, que s'obté adjuntant l'arrel d'un polinomi
+irreductible. Això ho veurem més endavant, a la Proposició \@ref(prp:existencia-polis-irred-Fp).
+
+Fixem-nos que tenim una cadena d'inclusions
+$$
+\FF_p\subset \FF_{p^2} \subset \FF_{p^{6}} \subset \FF_{p^{4!}} \subset \cdots \subset \FF_{p^{n!}} \subset\cdots,
+$$
+i podem considerar el cos $\Fpbar = \bigcup_{n\geq 1} \FF_{p^{n!}}$ (és fàcil veure que és un cos).
+
+::: {.proposition}
+El cos $\Fpbar$ és una clausura algebraica d'$\FF_p$.
+:::
+::: {.proof}
+Primer, observem que $\FF_{p^{n!}}$ conté $\FF_{p^n}$ per a tot $n$, i per tant també $\Fpbar$ conté tots els cossos finits. Donat
+un polinomi $f(x)\in \Fpbar[x]$, els seus coeficients viuen tots en un cert cos $\FF_{p^{n!}}$ i per tant el cos de descomposició
+d'aquest polinomi és una certa extensió finita d'aquest, i està contingut a $\Fpbar$. Ara bé, com que tots els $\FF_{p^{n!}}$ són
+cossos de descomposició i $\Fpbar$ és el mínim cos que els conté a tots ells, deduïm que $\Fpbar$ és una clausura algebraica.
+:::
+
+::: {.corollary}
+Si $\FF$ és un cos finit, aleshores $\bar{\FF}=\Fpbar$.
+:::
+::: {.proof}
+Ja hem vist que $\bar{\FF}$ és el conjunt de tots els elements de $\Fpbar$ que són algebraics sobre $\FF$, i això és tot $\Fpbar$.
+:::
+
+
+## El lema de Zorn
+
+El lema de Zorn és una conseqüència de l'Axioma de l'Elecció. De fet, els dos són equivalents en la teoria de conjunts de Zermelo-Fränkel.
+
+::: {.theorem #lema-zorn name="lema de Zorn"}
+Sigui $X$ un conjunt no buit amb un ordre parcial $\leq$. Suposem que tota cadena no buida $Y\subseteq X$ té una fita superior $x\in X$.
+Aleshores $X$ té algun element maximal.
+:::
+
+Una aplicació típica del Lema de Zorn és el següent resultat de teoria d'anells.
+
+::: {.proposition #ideal-maximal name="tot anell té maximal"}
+Sigui $A$ una anell unitari no trivial. Aleshores existeix un ideal maximal $I\subset A$.
+:::
+::: {.proof}
+Sigui $X$ el conjunt de tots els ideals propis d'$A$, que és no buit perquè $(0)\in X$. La inclusió ens dona un ordre parcial a $X$, i
+un ideal maximal d'$A$ és el mateix que un element maximal a $X$. Només ens cal, doncs, verificar les hipòtesis del lema de Zorn.
+
+Sigui $T\subseteq X$ una cadena no buida, i sigui $I$ l'ideal obtingut fent la unió de tots els elements de $T$. Fent servir
+que $T$ és totalment ordenat, és fàcil veure que $I$ és un ideal. Ens falta veure que és propi, és a dir, que $1\notin I$. Però si
+$1\in I$, aleshores hi ha algun membre de $T$ que conté $1$, i per tant no seria un ideal propi, contradicció.  
+:::
+
+## Existència i unicitat de la clausura algebraica
 
 Donat un cos qualsevol $F$, tenim ara l'objectiu de construir una clausura algebraica $\bar{F}/F$. Intuitivament almenys,
 la idea és de considerar, per cada polinomi $g(x)\in F[x]$, un cos $F_g$ que contingui totes les arrels de $g$.
@@ -64,23 +143,23 @@ el cos de descomposició del producte $g_1(x)\cdots g_n(x)$.
 Sigui $F$ un cos. Aleshores existeix una clausura algebraica $\bar{F}/F$.
 :::
 ::: {.proof}
-Considerem un conjunt $\mathcal{U} \supset F$ de cardinal estrictament superior a $\mathcal{N}=\max(\aleph_0, |K|)$.
+Considerem un conjunt $\mathcal{U} \supset F$ de cardinal estrictament superior a $\mathcal{N}=\max(\aleph_0, |F|)$.
 
 Sigui
-$$X = \{K\subseteq L \subseteq S ~|~ L/K \text{ és una extensió algebraica de $K$}\},$$
+$$X = \{K\subseteq L \subseteq \mathcal{U} ~|~ L/K \text{ és una extensió algebraica de $K$}\},$$
 amb la relació d'ordre
 $$
 K_2 > K_1 \iff \text{$K_2/K_1$ és una extensió algebraica}.
 $$
-Com que tota cadena té un element maximal (prenem la unió de totes les extensions), el lema de Zorn
+Com que tota cadena d'$X$ té un element maximal (prenem la unió de totes les extensions de la cadena), el lema de Zorn
 ens diu que hi ha un element maximal a $X$, que anomenarem $\bar{F}$. Només ens cal veure que $\bar{F}/F$ és
 una clausura algebraica. Sigui $f(x)\in F[x]$ un polinomi no constant, i suposem que no té cap zero a $\bar{F}$.
 Podem construir una extensió $L / \bar{F}$ on $f(x)$ tingui un zero. Aleshores $L/F$ és algebraica, i per tant
 $$
 |\bar{F}| \leq |L| \leq \mathcal{N}.
 $$
-Per tant, $|S\smallsetminus \bar{K}| = |S| > |L\smallsetminus \bar{K}|$. Això fa que existeixi
-una aplicació (de conjunts) injectiva $i \colon L \to S$ tal que $i(x)=x$ si $x\in \bar{F}$. Podem doncs
+Per tant, $|\mathcal{U}\smallsetminus \bar{K}| = |\mathcal{U}| > |L\smallsetminus \bar{K}|$. Això fa que existeixi
+una aplicació (de conjunts) injectiva $i \colon L \to \mathcal{U}$ tal que $i(x)=x$ si $x\in \bar{F}$. Podem doncs
 transportar l'estructura de cos de $L$ a $i(L)$ i obtenim un nou element maximal $L > \bar{F}$, contradient
 la maximalitat de $\bar{F}$.
 :::
@@ -94,12 +173,13 @@ Per
 cada polinomi mònic no constant $f=f(x)\in F[x]$, considerem una variable $x_f$. Tenim l'anell de polinomis
 en infinites variables $F[\{x_f\}]$, i hi podem considerar l'ideal $I$ generat pels polinomis $f(x_f)$.
 
-Veurem que $I$ no és el total i que, per tant, està contingut en un ideal maximal $\mathcal{M}$. El quocient
+Veurem que $I$ no és el total i, per la Proposició \@ref(prp:ideal-maximal), està contingut en un ideal maximal $\mathcal{M}$. El cos
+obtingut prenent el quocient per $\mathcal{M}$
 l'anomenem $K_1$, que és una extensió de $F$ que conté **una arrel** de cada polinomi amb coeficients a $F$. Podem
-iterar el procés (començant amb $K_1$ en comptes de amb $F$) per obtenir $K_2/K_1$, una extensió on tot polinomi
+iterar el procés (començant amb $K_1$ en comptes de $F$) per obtenir $K_2/K_1$, una extensió on tot polinomi
 amb coeficients a $K_1$ té una arrel, i així construim una successió de cossos de la qual en podem
 prendre la seva "unió" $K$. Donat un polinomi $f(x)\in K[x]$, tots els seus coeficients viuen necessàriament
-a $K_n$ i, per tant, $f(x)$ té alguna arrel a $K_{n+1}$ i, per tant a $K$.
+a $K_n$ per algun $n\geq 1$ i, per tant, $f(x)$ té alguna arrel a $K_{n+1}$ i, per tant a $K$.
 
 Ens queda per veure que $I$ és un ideal propi. Suposem que no i arribarem a contradicció. Suposem que tenim una
 relació

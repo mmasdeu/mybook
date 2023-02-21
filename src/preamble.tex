@@ -1,6 +1,6 @@
 \usepackage{textcomp}
-% \usepackage{palatino}
 \usepackage{booktabs}
+\usepackage{caption}
 \usepackage{tikz, tikz-cd}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
@@ -11,7 +11,7 @@
 \DeclareQuoteStyle{catalan}{``}{''}{``}{''}
 \usepackage{amsmath,amsthm,amssymb,amsfonts}
 \usepackage[all]{xy}
-\usepackage{mathsymbols}
+\usepackage{src/mathsymbols}
 
 \addto\captionscatalan{\renewcommand{\chaptername}{Episodi}}
 
@@ -220,16 +220,20 @@
 % Defines the theorem text style for each type of theorem to one of the three styles above
 \newcounter{dummy} 
 \numberwithin{dummy}{section}
+
 \theoremstyle{maincolornumbox}
 \newtheorem{theorem}[dummy]{TTTT}
 \newtheorem{theoremeT}[dummy]{Teorema}
-\newtheorem{problem}{Problema}[chapter]
-\newtheorem{exerciseT}{Exercici}[chapter]
+\newtheorem{problem}[dummy]{Problema}
+\newtheorem{exerciseT}[dummy]{Exercici}
+
 \theoremstyle{blacknumex}
-\newtheorem{exampleT}{Exemple}[chapter]
+\newtheorem{exampleT}[dummy]{Exemple}
+
 \theoremstyle{blacknumbox}
-\newtheorem{definitionT}{Definició}[section]
+\newtheorem{definitionT}[dummy]{Definició}
 \newtheorem{corollaryT}[dummy]{Corol·lari}
+
 \theoremstyle{maincolornum}
 \newtheorem{propositionT}[dummy]{Proposició}
 \newtheorem{lemmaT}[dummy]{Lema}

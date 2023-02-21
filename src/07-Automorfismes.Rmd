@@ -62,7 +62,12 @@ automorfisme quedarà únicament determinat per aquesta acció. En particular, q
 el nombre d'automorfismes també serà finit.
 
 ::: {.example}
-Calculem $\Aut(\QQ(\sqrt{2})/\QQ)=\{1,\sigma\}$ i $\Aut(\QQ(\sqrt[3]{2})/QQ) = 1$.
+Els automorfimes de $\QQ(\sqrt{2})/\QQ$ són $\Aut(\QQ(\sqrt{2})/\QQ)=\{1,\sigma\}$, on $\sigma(\sqrt{2}) = -\sqrt{2}$.
+Tot automorfisme ve determinat per on envia $\sqrt{2}$, i per tant aquests són tots.
+
+D'altra banda, si repetim el càlcul a $\QQ(\sqrt[3]{2})$, veiem que no té cap automorfisme
+no trivial. Com que $x^3-2$ només té una arrel real, qualsevol automorfisme l'haurà de fixar i, per tant
+$\Aut(\QQ(\sqrt[3]{2})/\QQ) = 1$.
 :::
 
 ## Cossos fixos
@@ -164,7 +169,7 @@ com volíem.
 Les dues propietats de les extensions de Galois de fet les caracteritzen. Vegem una quarta caracterització
 d'aquestes extensions:
 
-::: {.theorem name="Caracterització d'extensions de Galois"}
+::: {.theorem #caracteritzacio-galois name="Caracterització d'extensions de Galois"}
 Sigui $K/F$ una extensió finita i sigui $G=\Aut(K/F)$. Aleshores els següents enunciats són equivalents:
 1. $|G| = [K\colon F]$.
 2. $F = K^G$.

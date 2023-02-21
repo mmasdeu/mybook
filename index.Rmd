@@ -4,13 +4,11 @@ date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: ["src/bibliografia.bib"]
-citation_package: biblatex
-bibtlatexoptions: [style=alphabetic,citestyle=alpha,sorting=nyt,sortcites=true,autopunct=true,autolang=hyphen,hyperref=true,abbreviate=true,backref=true,backend=biblatex,defernumbers=true]
+csl: bib.csl
 link-citations: yes
 github-repo: mmasdeu/teoriadegalois
 description: "Apunts d'un curs de Teoria de Galois a la UAB"
-nocite: |
-  @geck, @rotman, @weintraub, @zbigniew, @dummitfoote, @artinalgebra
+nocite: '@*'
 output:
   bookdown::gitbook:
     split_by: chapter

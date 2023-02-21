@@ -26,17 +26,19 @@ tipus d'operacions següents:
 3. Dibuixar un cercle amb centre i radi donats.
 4. Trobar els punts d'intersecció d'una recta amb un cercle, o de dos cercles.
 
+Podeu jugar a fer construccions amb regle i compàs amb el joc online [Euclidea](https://www.euclidea.xyz/){target="_blank"}.
+
 ## La (no) solució
 
 Comencem veient que els nombres constructibles són un cos.
 
 ::: {.proposition}
-Els nombres constructibles formen un subcos de $\cC\subseteq\RR$.
+Els nombres constructibles formen un subcos de $\RR$.
 :::
 ::: {.proof}
 Cal donar construcions de la suma, resta, producte i divisió
 de nombres ja construïts. Mentre que la suma i la resta són òbvies, la multiplicació i divisió es poden
-obtenir aplicant proporcionalitat, com aquí sota.
+obtenir aplicant proporcionalitat, com veiem en els diagrames d'aquí sota.
 
 ```{r, echo=FALSE, out.width="60%", fig.align='center', fig.cap="Multiplicació i divisió."}
 knitr::include_graphics("images/mult_div_RiC.png")
@@ -49,8 +51,8 @@ knitr::include_graphics("images/mult_div_RiC.png")
 ::: {.exercise}
 Demostreu que si el diàmetre de la circumferència és $\alpha+1$, aleshores el segment vertical indicat mesura $\sqrt{\alpha}$.
 
-```{tikz, echo=FALSE, out.width='50%', fig.ext='png', fig.align='center', engine.opts = list(background = 'transparent')}
-\begin{tikzpicture}[scale=0.2]
+```{tikz, echo=FALSE, out.width='50%', fig.ext='png', fig.align='center', cache=TRUE, engine.opts = list(background = 'transparent')}
+\begin{tikzpicture}[scale=0.25]
   \draw
     (12.8, 57.6) -- (38.4, 57.6);
   \draw
@@ -68,8 +70,9 @@ Fent servir l'equació d'un cercle de radi $(x_0,y_0)$ i radi $r$
 $$
 (x-x_0)^2 + (y-y_0)^2 = r^2,
 $$
-podem veure que les coordenades de la intersecció amb una recta (posem amb equació $ax+by=c$) pertanyen al cos
-$\QQ(x_0,y_0,r,a,b,c)$. També podem comprovar-ho pel cas de la intersecció de dos cercles. Resumint si $\alpha$ és
+podem veure que les coordenades de la intersecció amb una recta (posem amb equació $ax+by=c$) pertanyen a una
+extensió quadràtica del cos
+$\QQ(x_0,y_0,r,a,b,c)$. També podem comprovar-ho pel cas de la intersecció de dos cercles. Resumint, si $\alpha$ és
 construcible en $n$ passos a partir de punts en un cos $F$, aleshores hi ha una successió de cossos
 $$
 F=F_0\subseteq F_1\subseteq F_2\subseteq F_n,
@@ -79,13 +82,19 @@ amb $[F_{i+1}\colon F_i] \leq 2$, tals que $\alpha\in F_n$. En particular, $\alp
 D'aquí en deduïm directament el següent teorema (on haurem d'assumir que $\pi$ és transcendent, cosa que no demostrem).
 
 ::: {.theorem}
-Els tres problemes clàssics no són resolubles.
+Cap dels tres problemes clàssics no és resoluble.
 :::
 ::: {.proof}
 Per la duplicació d'un cub de costat $1$ ens caldria construir $\sqrt[3]{2}$, que té grau $3$ i, per tant, no és constructible.
 
-Si un angle $\theta$ és constructible, aleshores fàcilment veiem que $\cos(\theta)$ i $\sin(\theta)$ també són constructibles.
-Veurem que $\alpha=2\cos(\pi/9)$ no és constructible. Com que $\cos(\pi/3)=1/2$, a partir de la fórmula de l'angle triple obtenim
+Si un angle $\theta$ és constructible, aleshores fàcilment veiem que $\cos(\theta)$ i $\sin(\theta)$ també són constructibles,
+simplement traçant la perpendicular a un dels dos raigs de l'angle. Veurem doncs que
+$\alpha=2\cos(\pi/9)$ no és constructible. Recordem la fórmula del cosinus de l'angle triple, que s'obté aplicant dues vegades
+la de l'angle doble:
+$$
+\cos(3\theta) = 4\cos^3(\theta)-3\cos(\theta).
+$$
+Com que $\cos(\pi/3)=1/2$, substituint $\theta=\pi/9$ a la fórmula anterior obtenim la relació
 $$
 \alpha^3 - 3\alpha -1 =0.
 $$
@@ -99,7 +108,7 @@ també podríem construir $\pi$, que és transcendent (com hem dit, no ho demost
 Més endavant estudiarem quins angles són constructibles. De fet, tenim el següent:
 
 ::: {.theorem}
-Sigui $t$ un enter. L'angle de $t$ graus (no radians!) és constructible si i només si $t$ és un múltiple de $3$.
+Sigui $t$ un enter. L'angle de $t$ **graus** és constructible si i només si $t$ és un múltiple de $3$.
 :::
 ::: {.proof}
 Hi ha construccions molt antigues del pentàgon regular ($72^\circ$), ja que
@@ -132,8 +141,10 @@ knitr::include_graphics("images/triseccio_angle.png")
 
 ::: {.exercise #duplicacio-club name="Duplicació del cub"}
 
-Demostreu que el costat $AG$ del dibuix de sota mesura $\sqrt[3]{2}$.
-
+Comencem amb un triangle equilàter $ABC$, de costat una unitat fixada per les marques del regle, que anomenarem $1$.
+Perllonguem el costat $AB$ en una unitat per construir $D$. Considerem els rajos $\vec{DC}$ i $\vec{BC}$.
+Ara fem servir el regle marcat per construir una recta pel punt $A$ de manera que la intersecció amb els dos rajos
+anteriors doni lloc a un segment $GH$ de longitud $1$. Demostreu que el segment $AG$ mesura $\sqrt[3]{2}$.
 ```{r, echo=FALSE, out.width="50%", fig.align='center'}
 knitr::include_graphics("images/duplicacio_cub.png")
 ```

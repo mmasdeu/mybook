@@ -85,17 +85,3 @@ p^n = \sum_{d\mid n} d \Psi(d).
 $$
 El resultat s'obté aplicant la fórmula d'inversió de Möbius.
 :::
-
-
-## La clausura algebraica d'$\FF_p$
-
-Ja hem vist que $\FF_{p^d}\subseteq \FF_{p^n}$ si i només si $d \mid n$. Per tant, donades dues extensions
-d'$\FF_p$ com ara $\FF_{p^{n}}$ i $\FF_{p^m}$, podem pensar-les dins de $\FF_{p^{nm}}$. Així, podem
-prendre la unió de totes elles i obtenir la clausura algebraica de manera explícita:
-
-::: {.proposition}
-Tenim
-$$
-\overline{\FF}_p = \bigcup_{n\geq 1} \FF_{p^n}.
-$$
-:::

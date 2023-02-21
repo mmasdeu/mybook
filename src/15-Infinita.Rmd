@@ -64,7 +64,7 @@ Donat un subgrup $H\leq \Gal(K/F)$, podem considerar el cos fix $K^H$. També do
 considerar el subgrup $\Gal(K/M)\leq \Gal(K/F)$.
 
 ::: {.example}
-Considerem l'extensió de Galois infinita $\Fpbar/\FF_p$, i l'automorfisme $\pi \colon\bar{\FF}_p\to\bar{\FF}_p$,
+Considerem l'extensió de Galois infinita $\Fpbar/\FF_p$, amb $\Fpbar = \bigcup_{n\geq 1} \FF_{p^n}$, i l'automorfisme $\pi \colon\bar{\FF}_p\to\bar{\FF}_p$,
 que envia $x\mapsto x^p$. El cos fix per $\pi$ és $\FF_p$. Veurem que $\FF_p$ no està generat per $\pi$ i per
 tant el teorema fonamental de la teoria de Galois no pot ser cert en aquest context.
 
@@ -231,7 +231,7 @@ que hi ha una quantitat numerable de subcossos de $K$.
 
 
 ::: {.example name="grup de Galois de $\Fpbar / \FF_p$"}
-Considerem en aquest cas l'extensió $\Fpbar / \FF_p$, on $\Fpbar = \bigcup_{n\geq 1} \FF_{p^n}$. Tenim un morfisme injectiu
+Considerem en aquest cas l'extensió $\Fpbar / \FF_p$. Tenim un morfisme injectiu
 $$
 \iota \colon \Gal(\Fpbar/\FF_p) \injects \prod_{n\geq 1} \Gal(\FF_{p^n}/\FF_p) \cong \prod_{n\geq 1} \ZZ/n\ZZ,
 $$

@@ -4,6 +4,8 @@ En aquest episodi estudiem els grups de Galois de polinomis separables, i veurem
 
 ## Grup de Galois d'un polinomi
 
+A cada polinomi separable li podem associar un grup de Galois.
+
 ::: {.definition name="grup de Galois d'un polinomi"}
 Sigui $f(x)\in F[x]$ un polinomi separable amb coeficients a un cos $F$. El *grup de Galois d'$f(x)$*
 és el grup de Galois del cos de descomposició de $f(x)$, que escriurem $\Gal(f)$.
@@ -26,14 +28,14 @@ $$
 $$
 ja que els elements de $\Gal(K/F)$ permuten les arrels de cadascun dels $f_i(x)$ per separat.
 
-::: {.remark name=""}
+::: {.remark}
 Suposem que $f(x)$ és irreductible. Aleshores el subgrup de $G\leq S_n$ que obtenim com a imatge de $\Gal(K/F)$ és *transitiu*: donats $i,j$,
 hi ha un element $g\in G$ tal que $g(i)=j$. Així, no tots els subgrups de $S_n$ són possibles grups de Galois.
 :::
 
 ::: {.example}
 Calculem els grups de Galois $\Gal(\QQ(\sqrt{2}, \sqrt{3}) / \QQ)$ i  $\Gal(\QQ(\sqrt[3]{2})/\QQ)$ com a
-subgrups de $S_4$ i $S_3$, respectivament.
+subgrups de $S_4$ i $S_3$, respectivament. TODO
 :::
 
 ## El grup de Galois del polinomi genèric
@@ -102,7 +104,9 @@ es demostra amb el teorema del valor mig:
 No hi ha cap extensió de $\RR$ finita de grau senar $>1$.
 :::
 ::: {.proof}
-És equivalent a veure que tot polinomi de grau senar amb coeficients reals té una arrel real.
+Si $K/\RR$ és una extensió finita de grau senar, aleshores ve generada per un polinomi irreductible $f(x)\in \RR[x]$ de grau senar, que
+podem suposar mònic. En aquest cas, $f(x)>0$ per $x$ suficientment gran, i $f(x)<0$ per $x<0$ suficientment gran en valor absolut.
+El teorema del valor mig ens diu que $f(x)$ té una arrel real, i per tant $f(x)$ no pot ser irreductible.
 :::
 
 ::: {.lemma #no-quadratic-complex}
@@ -110,20 +114,23 @@ No hi ha cap extensió de grau $2$ de $\CC$.
 :::
 ::: {.proof}
 Hem de veure que l'arrel quadrada d'un nombre complex també és complex. Això és un exercici senzill. Per
-exemple, si $\alpha=a+bi$, aleshores una arrel quadrada és de la forma
+exemple, si $\alpha=a+bi$, aleshores una arrel quadrada d'$\alpha$ és de la forma
 $$
-\sqrt{\frac{a + \sqrt{a^2+b^2}}{2}} \pm i\sqrt{\frac{-a+\sqrt{a^2+b^2}}{2}}.
+\sqrt{\frac{a + \sqrt{a^2+b^2}}{2}} \pm i\sqrt{\frac{-a+\sqrt{a^2+b^2}}{2}},
 $$
+on el signe s'ha de prendre de manera correcta.
 :::
 
 ::: {.theorem name="Teorema Fonamental de l'Àlgebra"}
 Sigui $K/\RR$ una extensió finita. Aleshores $[K \colon \RR] \leq 2$.
 :::
 ::: {.proof}
-Podem suposar (prenent la clausura de Galois) que $K/\RR$ és finita Galois.
-Sigui $G=\Gal(K/\RR)$, i sigui $H\leq G$ un subgrup
-de $2$-Sylow. Pel TFTG, el grau $[K^H\colon \RR]$ és senar. Per tant, $K^H=\RR$ i
-això vol dir que $H=G$, és a dir, que $G$ és un $2$-grup (té ordre una potència de $2$).
+Podem suposar (canviant $K$ per la seva clausura de Galois) que $K/\RR$ és finita i Galois, amb
+grup de Galois $G=\Gal(K/\RR)$,. Sigui $H\leq G$ un subgrup
+de $2$-Sylow. És a dir, $|H|$ és una potència de $2$, i $[G\colon H]$ és senar.
+Pel Teorema Fonamental de la Teoria de Galois, el grau $[K^H\colon \RR]=[G\colon H]$ és senar. La
+Proposició \@ref(prp:arrels-real-senar) implica que $K^H=\RR$ i
+això vol dir (un altre cop pel Teorema Fonamental) que $H=G$, és a dir, que $G$ és un $2$-grup (té ordre una potència de $2$).
 
 Suposem doncs que $|G|\geq 4$, i arribarem a una contradicció. En aquest cas, hi ha subgrups $H_2\leq H_1\leq G$
 amb $[G\colon H_i] = 2^i$. En termes de cossos fixos, hi ha una extensió de grau $2$ de $K^{H_1}=\CC$, que

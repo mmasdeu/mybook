@@ -1,4 +1,4 @@
-# Extensions Abelianes i ciclotòmiques
+# Extensions Abelianes
 
 En aquest apartat estudiem les extensions ciclotòmiques, i veiem que $\Gal(\QQ(\zeta_n)/\QQ)$
 és canònicament isomorf a $(\ZZ/n\ZZ)^\times$. Com a aplicació, veurem com construir
