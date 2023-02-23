@@ -1,9 +1,12 @@
 ---
+title: "Teoria de Galois"
 author: "Marc Masdeu"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: ["src/bibliografia.bib"]
+header-includes:
+  - \AtBeginDocument{\let\maketitle\relax}
 csl: bib.csl
 link-citations: yes
 github-repo: mmasdeu/teoriadegalois

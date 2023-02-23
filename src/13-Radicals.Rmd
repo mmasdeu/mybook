@@ -198,7 +198,7 @@ necessàries. Aleshores les noves extensions intermitges són radicals simples, 
 estan contingudes en una extensió radical $F'K$.
 :::
 
-::: {.corollary}
+::: {.corollary name="Abel-Ruffini"}
 El polinomi general de grau $n$ no és resoluble per radicals, per cap $n\geq 5$.
 :::
 ::: {.proof}

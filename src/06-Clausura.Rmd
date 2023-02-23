@@ -2,10 +2,6 @@
 
 En aquest episodi demostrem l'existència i unicitat de la clausura algebraica d'un cos.
 
-## Conceptes bàsics
-
-En aquesta secció definirem la noció de clausura algebraica d'un cos arbitrari.
-
 ::: {.definition #clausura-algebraica name="clausura algebraica"}
 Diem que $\bar{F}/F$ és una *clausura algebraica* d'$F$ si $\bar{F}/F$ és algebraica i tot polinomi $f(x)\in F[x]$
 descomposa completament a $\bar{F}$.
@@ -20,7 +16,7 @@ Aviat veurem que tot cos té alguna clausura algebraica, i que hi ha cossos alge
 primer que les clausures algebraiques són algebraicament tancades.
 
 ::: {.proposition #clausura-tancada}
-Sigui $\bar{F}/F$ una clausura algebraica de $F$. Aleshores $\bar{F}$ és algebricament tancat.
+Sigui $\bar{F}/F$ una clausura algebraica de $F$. Aleshores $\bar{F}$ és algebraicament tancat.
 :::
 ::: {.proof}
 Considerem un polinomi $f(x)\in \bar{F}[x]$, i considerem l'extensió $\bar{F}(\alpha)$ obtinguda adjuntant
@@ -42,17 +38,12 @@ cadascun dels $\alpha$ és algebraic sobre $F$ i, per tant, és un element de $\
 completament a $\bar{F}[x]$, i per tant $\bar{F}$ és una clausura algebraica de $F$.
 :::
 
-Cap al final del curs veurem una demostració del següent teorema com a aplicació de diversos resultats de Teoria de Galois. Hi ha
-altres demostracions (potser més naturals) fent servir mètodes analítics.
-
-::: {.theorem #fta name="Teorema Fonamental de l'Àlgebra"}
-El cos $\CC$ dels nombres complexos és algebraicament tancat
-:::
-
-Com a conseqüència, podrem clausures algebraiques de qualsevol extensió subextensió $\CC/F/\QQ$. En particular,
+Cap al final del curs veurem una demostració del *Teorema Fonamental de l'Àlgebra*, que diu que
+el cos $\CC$ dels nombres complexos és algebraicament tancat.
+Com a conseqüència, obtenim clausures algebraiques de qualsevol extensió subextensió $\CC/F/\QQ$. En particular,
 el cos $\QQbar$ format pels complexos algebraics és una clausura algebraica de $\QQ$.
 
-## Cossos finits
+## Clausura algebraica d'$\FF_q$
 
 L'objectiu és demostrar l'existència de cossos finits d'ordre qualsevol potència d'un primer, i veure que són únics
 (llevat d'isomorfisme). També veurem que existeix la clausura algebraica de qualsevol cos finit.
@@ -105,6 +96,15 @@ Si $\FF$ és un cos finit, aleshores $\bar{\FF}=\Fpbar$.
 Ja hem vist que $\bar{\FF}$ és el conjunt de tots els elements de $\Fpbar$ que són algebraics sobre $\FF$, i això és tot $\Fpbar$.
 :::
 
+## Clausura algebraica de $\QQ$
+
+Construirem una clausura algebraica de $\QQ$ de manera explícita. De fet, la mateixa construcció
+serveix per qualsevol cos de cardinalitat numerable, per exemple per $\FF_p(t)$. El conjunt
+de tots els polinomis de $\QQ[x]$ és numerable. Considerem doncs una enumeració $p_1(x), p_2(x),\ldots$,
+i definim $K_0=\QQ$ i $K_1/\QQ$ com el cos de descomposició de $p_1(x)$. Definim aleshores
+$K_2/K_1$ com el cos de descomposició de $p_2(x)$, i en general $K_{n+1}$ com el cos de descomposició
+de $p_{n+1}(x)$ sobre $K_n$. Podem prendre $\bar{\QQ}$ com la "unió" de tots aquests cossos. Evidentment,
+tot polinomi $p_i(x)\in\QQ[x]$ descomposa completament a $K_i$ i, per tant, també a $\bar{\QQ}$.
 
 ## El lema de Zorn
 
@@ -129,7 +129,35 @@ que $T$ és totalment ordenat, és fàcil veure que $I$ és un ideal. Ens falta 
 $1\in I$, aleshores hi ha algun membre de $T$ que conté $1$, i per tant no seria un ideal propi, contradicció.  
 :::
 
-## Existència i unicitat de la clausura algebraica
+## Unicitat de la clausura algebraica
+
+Veurem ara la unicitat de la clausura algebraica (si aquesta existeix).
+
+::: {.theorem}
+Sigui $K/F$ una extensió algebraica, i sigui $L/F$ una extensió algebraicament tancada. Aleshores existeix un
+$F$-morfisme $K\to L$.
+:::
+
+::: {.proof}
+Considerem el conjunt de tots els morfismes $\varphi\colon K' \to L$, on $F \subseteq K'\subseteq K$. Aquest
+conjunt té un ordre parcial: $\varphi\leq \psi$ si i només si $\psi$ extén $\varphi$. Podem aplicar fàcilment
+el lema de Zorn per obtenir un element maximal $\varphi \colon K' \to L$. Cal veure que $K'=K$. Però si no ho fos, podem prendre
+un element $\alpha\in K\smallsetminus K'$, i estendre el morfisme $\varphi$ a $K'(\alpha)$, ja que $L$ té una arrel del
+polinomi mínim d'$\alpha$, contradient la maximalitat de $K'$.
+:::
+
+::: {.corollary #unititat-clausura-algebraica name="unicitat de la clausura algebraica"}
+Siguin $K/F$ i $L/F$ clausures algebraiques de $F$. Aleshores $K\cong L$.
+:::
+
+::: {.proof}
+Apliquem el teorema anterior i obtenim un $F$-morfisme $\varphi\colon K \to L$, que és injectiu. Sigui $\beta\in L$ un
+element qualsevol, i sigui $f(x)$ el seu polinomi mínim sobre $F$. Com que $K$ és algebraicament tancat, conté totes les
+arrels de $f(x)$, i $\varphi$ indueix una aplicació injectiva (i per tant exhaustiva) entre elles. Així, hi ha alguna arrel
+$\alpha\in K$ tal que $\varphi(\alpha)=\beta$, i hem demostrat que $\varphi$ és exhaustiu.
+:::
+
+## Existència de la clausura algebraica
 
 Donat un cos qualsevol $F$, tenim ara l'objectiu de construir una clausura algebraica $\bar{F}/F$. Intuitivament almenys,
 la idea és de considerar, per cada polinomi $g(x)\in F[x]$, un cos $F_g$ que contingui totes les arrels de $g$.
@@ -197,31 +225,6 @@ anterior particularitza, si fem $x_i=\alpha_i$ per $i=1,\ldots,k$ i $x_i=0$ per 
 contradicció. Això acaba la demostració.
 :::
 
-Veurem ara la unicitat de la clausura algebraica.
-
-::: {.theorem name=""}
-Sigui $K/F$ una extensió algebraica, i sigui $L/F$ una extensió algebraicament tancada. Aleshores existeix un
-$F$-morfisme $K\to L$.
-:::
-
-::: {.proof}
-Considerem el conjunt de tots els morfismes $\varphi\colon K' \to L$, on $F \subseteq K'\subseteq K$. Aquest
-conjunt té un ordre parcial: $\varphi\leq \psi$ si i només si $\psi$ extén $\varphi$. Podem aplicar fàcilment
-el lema de Zorn per obtenir un element maximal $\varphi \colon K' \to L$. Cal veure que $K'=K$. Però si no ho fos, podem prendre
-un element $\alpha\in K\smallsetminus K'$, i estendre el morfisme $\varphi$ a $K'(\alpha)$, ja que $L$ té una arrel del
-polinomi mínim d'$\alpha$, contradient la maximalitat de $K'$.
-:::
-
-::: {.corollary #unititat-clausura-algebraica name="unicitat de la clausura algebraica"}
-Siguin $K/F$ i $L/F$ clausures algebraiques de $F$. Aleshores $K\cong L$.
-:::
-
-::: {.proof}
-Apliquem el teorema anterior i obtenim un $F$-morfisme $\varphi\colon K \to L$, que és injectiu. Sigui $\beta\in L$ un
-element qualsevol, i sigui $f(x)$ el seu polinomi mínim sobre $F$. Com que $K$ és algebraicament tancat, conté totes les
-arrels de $f(x)$, i $\varphi$ indueix una aplicació injectiva (i per tant exhaustiva) entre elles. Així, hi ha alguna arrel
-$\alpha\in K$ tal que $\varphi(\alpha)=\beta$, i hem demostrat que $\varphi$ és exhaustiu.
-:::
 
 ::: {.remark}
 L'existència i unicitat de clausures algebraiques fou demostrada per Steinitz el 1910, i la demostració era molt
@@ -229,6 +232,6 @@ més llarga i complicada (unes 20 pàgines).
 
 També es pot demostrar (però ens cal teoria que veurem una mica més endavant) que el cos $K_1$
 que apareix a la demostració anterior ja és algebraicament tancat, així que no caldria fer tots
-els altres infinits passos. La demostració d'aquest fet no és senzilla, fa servir el teorema de l'element
-primitiu (vegeu \@ref(element-primitiu)), i separa els casos de característica $0$ i característica $p$.
+els altres infinits passos. La demostració d'aquest fet no és senzilla i fa servir el teorema de l'element
+primitiu, que demostrarem més endavant (vegeu \@ref(element-primitiu)).
 :::

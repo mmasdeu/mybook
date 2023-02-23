@@ -149,9 +149,12 @@ Una extensió algebraica $K/F$ es diu *normal* si tot polinomi irreductible $f(x
 completament a $K$.
 :::
 
-Dit d'una altra manera $K/F$ és normal si per tot $\alpha\in K$ el seu polinomi mínim sobre $F$ descomposa completament a $K$. D'entrada,
-sembla difícil demostrar que una extensió donada $K/F$ és normal, ja que cal veure una propietat per possiblement infinits polinomis. Veurem
-ara que les extensions normals tenen una caracterització més senzilla. En particular, el cos de descomposició d'un polinomi
+Dit d'una altra manera $K/F$ és normal si per tot $\alpha\in K$ el seu polinomi mínim sobre $F$
+descomposa completament a $K$.
+D'entrada, sembla difícil demostrar que una extensió donada $K/F$ és normal,
+ja que cal veure una propietat per possiblement infinits polinomis. Veurem
+ara que les extensions normals tenen una caracterització més senzilla.
+En particular, el cos de descomposició d'un polinomi
 és sempre una extensió normal.
 
 ::: {.proposition }
