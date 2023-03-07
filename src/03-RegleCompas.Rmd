@@ -132,7 +132,7 @@ En el dibuix d'aquí sota, s'ha començat amb un angle $a$ amb centre $B$. Supos
 que serà la nostra unitat. Fem un cercle de radi aquesta unitat, i tracem una recta pel punt A de manera
 que les dues marques del regle estiguin una sobre el cercle (punt $C$) i l'altra sobre la recta donada (punt $D$).
 
-Demostreu que l'angle $b$ és igual a $\frac{a}{3}$.
+Demostreu que l'angle $b$ és igual a $\frac{a}{3}$ (aquesta construcció ja l'havia trobat Arquímedes!).
 
 ```{r, echo=FALSE, out.width="50%", fig.align='center'}
 knitr::include_graphics("images/triseccio_angle.png")
