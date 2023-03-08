@@ -75,7 +75,7 @@ Sigui $H = \Gal(K/M)$. Demostrarem $1 \implies 2 \implies 3 \implies 1$.
 
 $1 \implies 2$: Sigui $\sigma\in G$. Si $\alpha\in M$ té polinomi mínim $f(x)\in F[x]$, aleshores $\sigma$
 en permuta les seves arrels i, en particular, $\sigma(\alpha) \in M$. Per tant $\sigma$ restringeix a un
-morfisme de $M$, que ja hem vist que és un automorfisme. Hem construit doncs una aplicació $G\to H$,
+morfisme de $M$, que ja hem vist que és un automorfisme. Hem construït doncs una aplicació $G\to H$,
 i és fàcil comprovar que és un morfisme de grups. El seu nucli és doncs un subgrup normal, format
 per aquells automorfismes $\sigma\in G$ que fixen $M$, és a dir, és justament $\Gal(K/M)$.
 
@@ -179,7 +179,7 @@ $$
 }
 $$
 
-### Exemple d'una extensió de de grau 16
+### Exemple d'una extensió de grau 16
 
 Considerem el grup de Galois del polinomi irreductible $x^8-2$. Les arrels d'aquest polinomi són
 $$

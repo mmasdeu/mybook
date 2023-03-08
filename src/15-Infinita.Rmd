@@ -19,7 +19,7 @@ Podem donar els exemples de $\bar{\QQ} / \QQ$, de $\QQ(\zeta_{p^\infty})$ i de $
 :::
 
 ::: {.definition name="grup de Galois"}
-Si $K/F$ és de Galois, alhores el seu *grup de Galois* és el grup $\Gal(K/F)$ format
+Si $K/F$ és de Galois, aleshores el seu *grup de Galois* és el grup $\Gal(K/F)$ format
 pels automorfismes de $K$ que fixen $F$.
 :::
 
@@ -41,9 +41,9 @@ existeix $\sigma\in\Gal(K/F)$ tal que $\sigma|_M = \tilde\sigma$.
 :::
 
 ::: {.proof}
-Fem servir el Lema de Zorn. Donada una cadena d'extensions, podem prendre prendre com a element
+Fem servir el Lema de Zorn. Donada una cadena d'extensions, podem prendre com a element
 maximal la unió d'aquestes, i $\tilde\sigma$ hi extén. Si $\sigma'\colon L'\to L$ és l'element maximal donat per Zorn,
-volem veure que $L'=L$. Si no ho fos, prenem $\alpha\in L\smallsetminus L'$ i extenem (ho podem fer perquè estem en el
+volem veure que $L'=L$. Si no ho fos, prenem $\alpha\in L\smallsetminus L'$ i extenem el morfisme (ho podem fer perquè estem en el
 cas finit), cosa que és una contradicció.
 
 Veiem que l'extensió $\sigma$ és exhaustiva fent servir que permuta les arrels del polinomi mínim de qualsevol element.

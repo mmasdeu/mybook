@@ -30,7 +30,7 @@ Les seves tres arrels generen tres subcossos diferents de $\RR$.
 
 ::: {.remark}
 La condició que $f$ és irreductible és important! El polinomi $x^3-2x+1=(x-1)(x^2+x-1)$ té discriminant $5$ però grup de Galois $A_3$,
-mentre que el polinomi $x^3-7x-6=(x+1)(x+2)(x-3)$ té discrimiant $20^2$ i grup de Galois $S_3$.
+mentre que el polinomi $x^3-7x-6=(x+1)(x+2)(x-3)$ té discriminant $20^2$ i grup de Galois $S_3$.
 :::
 
 Podem fer el resultat del teorema anterior més explícit. Si $\Delta=\disc(f(x))$ és el quadrat d'un element d'$F$, aleshores el
@@ -71,7 +71,7 @@ arribem a les expressions
 \theta_-^3 &= \frac{-27q - 3\sqrt{-3\Delta}}{2}\\
 \end{align*}
 (hem triat els noms fent servir $\pm$ justament per això). Obtenim les solucions de la cúbica extraient les arrels cúbiques d'aquestes expressions. Fixem-nos que hi ha tres possibles arrels
-cúbiques en cada cas, i semblaria que obtindriem $9$ solucions, que no té sentit. Però $\theta_+$ i $\theta_-$ no són independents,
+cúbiques en cada cas, i semblaria que obtindríem $9$ solucions, que no té sentit. Però $\theta_+$ i $\theta_-$ no són independents,
 ja que ja sabem que quan n'adjuntem una ja obtenim l'extensió total de grau $6$. De fet, un càlcul semblant al què hem fet per trobar $\theta_{\pm}^3$
 ens dona l'equació $\theta_+\theta_-=-3p$, i per tant només hem de triar una de les arrels cúbiques.
 
@@ -127,12 +127,12 @@ El següent resultat ens classifica $G$ segons aquesta informació.
 :::
 
 ::: {.proof}
-Si $h(x)$ és irreductible i $D$ no és un quadrat, aleshores $G\not\leq A_4$ i $\Gal(h(x))=S_3$. Per tant, $|G|$ és divisible per $6$ i l'unica
+Si $h(x)$ és irreductible i $D$ no és un quadrat, aleshores $G\not\leq A_4$ i $\Gal(h(x))=S_3$. Per tant, $|G|$ és divisible per $6$ i l'única
 possibilitat és $S_4$.
 
 Si $h(x)$ és irreductible i $D$ és un quadrat, aleshores $G\leq A_4$, i a més $\Gal(h(x))=A_3$, per tant $3 \mid |G|$ i l'única possibilitat és $A_4$.
 
-Si $h(x)$ té tres arrels a $F$, aleshores $G$ fixa $\theta_i$ per $i=1,2,3$, i per tant $G\leq V$, d'on en treiem $G = V$
+Si $h(x)$ té tres arrels a $F$, aleshores $G$ fixa $\theta_i$ per $i=1,2,3$, i per tant $G\leq V$, d'on en traiem $G = V$
 
 Finalment, si $h(x)$ té exactament una arrel, posem $\theta_1\in F$, aleshores $G$ fixa $\theta_1$ però no intercanvia $\theta_2\leftrightarrow \theta_3$.
 Això vol dir que $G\leq D_{2\times 4}$ i $G \not\leq V$. Per tant, $G=D_{2\times 4}$ o $G=C_4$. Per distingir-los, podem observar que $D_{2\times 4}\cap A_4=V_4$

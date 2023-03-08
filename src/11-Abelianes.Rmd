@@ -114,7 +114,7 @@ Podem fer servir el què hem vist per demostrar el següent resultat. Necessitar
 Sigui $m\geq 1$ un enter positiu. Aleshores existeixen infinits primers $p$ tals que $p \equiv 1\pmod{m}$.
 :::
 ::: {.proof}
-Ens caldà fer servir que $\Phi_m\in\ZZ[x]$ és mònic, i $\Phi_m(0) = 1$.
+Ens caldrà fer servir que $\Phi_m\in\ZZ[x]$ és mònic, i $\Phi_m(0) = 1$.
 
 Suposem donats $p_1,\ldots,p_k$ congruents amb $1$ mòdul $m$. Trobarem un primer més gran que tots ells, que
 també serà $\equiv 1 \pmod{m}$. Considerem el
@@ -168,7 +168,7 @@ quals no s'ha demostrat encara que hi apareguin. Aquest problema s'anomena el **
 ## Constructibilitat de polígons regulars
 
 Com a aplicació dels cossos ciclotòmics, estudiarem quins polígons regulars es poden construir amb regle i compàs.
-Ja hem vist que un nombre real $\alpha$ és construible si i només si $\QQ(\alpha)$ està contingut en un cos $K$
+Ja hem vist que un nombre real $\alpha$ és constructible si i només si $\QQ(\alpha)$ està contingut en un cos $K$
 obtingut a partir de $\QQ$ a partir d'un nombre finit d'extensions quadràtiques.
 
 Construir un polígon de $n$ costats és equivalent a construir les arrels $n$-èssimes de la unitat $\zeta_n$, que al

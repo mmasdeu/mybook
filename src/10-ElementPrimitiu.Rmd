@@ -19,7 +19,7 @@ sobre $F$ pels coeficients de $g(x)$.  Com que $\Irr_{\alpha,M}(x)=\Irr_{\alpha,
 i per tant $M=M'$. En conclusió, els subcossos $M$ estan generats per coeficients dels factors irreductibles
 de $f(x)$ pensat com a polinomi a $K[x]$ i, per tant, n'hi ha un nombre finit.
 
-Recíprocament, suposem que $K/F$ té un nombre finit de subcossos. Gràcies a la Proposicó \@ref(prp:lema-algebra-lineal),
+Recíprocament, suposem que $K/F$ té un nombre finit de subcossos. Gràcies a la Proposició \@ref(prp:lema-algebra-lineal),
 hi ha algun $\alpha\in K$ que no pertany a cap dels subcossos de $K$. Per tant, $F(\alpha)=K$.
 :::
 

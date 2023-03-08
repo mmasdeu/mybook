@@ -128,7 +128,7 @@ Sigui $\alpha \in K$, i considerem $\Irr_{\alpha, F}(x)$. Com que el seu grau é
 no pot ser divisible per $p$ i, per tant, és separable.
 :::
 
-Més endavant ens serà útil saber que que la separabilitat es comporta bé en torres.
+Més endavant ens serà útil saber que la separabilitat es comporta bé en torres.
 
 ::: {.lemma}
 Sigui $L/K/F$ una torre. Si $L/F$ és separable, aleshores $L/K$ i $K/F$ també ho són.
@@ -217,7 +217,7 @@ Com que $\zeta^p$ és una arrel primitiva de la unitat, ha de ser una arrel de $
 $$
 g(x^p) = f(x)h(x).
 $$
-Reduïnt mòdul $p$ i fent servir el "Freshman's dream", tenim
+Reduint mòdul $p$ i fent servir el "Freshman's dream", tenim
 $$
 (\bar{g}(x))^p = \bar{f}(x)\bar{h}(x) \text{ a } \FF_p[x].
 $$

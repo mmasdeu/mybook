@@ -66,7 +66,7 @@ No és cert que tota extensió algebraica sigui finita (en veurem exemples més 
 El següent resultat ens caracteritza com són les extensions quadràtiques d'un cos $F$ de característica $\neq 2$.
 
 ::: {.proposition}
-Sigui $F$ un cos de característica $\neq 2$, i sigui $K/F$ una extensió de grau $2$. Aleshores existeix $\delta\in K\setminus F$
+Sigui $F$ un cos de característica $\neq 2$, i sigui $K/F$ una extensió de grau $2$. Aleshores existeix $\delta\in K\smallsetminus F$
 tal que $\delta^2=D\in F$ i $K=F(\delta)$. Escriurem que $K=F(\sqrt{D})$.
 :::
 ::: {.proof}
@@ -107,10 +107,10 @@ Es dedueix directament del lema anterior.
 Si $L/F$ és una extensió finita i $K/F$ és una subextensió (és a dir, $K\subseteq L$) aleshores $[K\colon F]$ divideix $[L\colon F]$.
 :::
 
-Per exemple, el corol·lari anterior ens permet deduïr que $\sqrt{2}$ no pertany a cap extensió de grau senar.
+Per exemple, el corol·lari anterior ens permet deduir que $\sqrt{2}$ no pertany a cap extensió de grau senar.
 
 ::: {.exercise}
-Demostreu que el polomi $x^3-\sqrt{2}$ és irreductible sobre $\QQ(\sqrt{2})$, fent servir la torre $\QQ(\sqrt[6]{2}) / \QQ(\sqrt{2}) / \QQ$.
+Demostreu que el polinomi $x^3-\sqrt{2}$ és irreductible sobre $\QQ(\sqrt{2})$, fent servir la torre $\QQ(\sqrt[6]{2}) / \QQ(\sqrt{2}) / \QQ$.
 :::
 
 El següent lema senzill ens permetrà construir qualsevol extensió finitament generada de manera iterativa:

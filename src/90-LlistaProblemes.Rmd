@@ -67,6 +67,8 @@
       Demostreu que l'extensió $E/`\FF_2$ no és simple, o sigui no existeix cap $\delta\in E$ tal que $E =\FF_2(\delta)$.
 <!-- ### Episodi 11 {-} -->
 <!-- ### Episodi 12 {-} -->
+1. Calculeu els grups de Galois $\Gal(\QQ(\sqrt{2}, \sqrt{3}) / \QQ)$ i  $\Gal(\QQ(\sqrt[3]{2})/\QQ)$ com a
+subgrups de $S_4$ i $S_3$, respectivament.
 <!-- ### Episodi 13 {-} -->
 1. Trobeu una torre d'extensions radicals que contingui el cos de descomposició del polinomi
   $f(x) = x^6 + ax^3 + b \in F[x]$, on $F$ és un cos de característica $0$ i $a,b\in F$.

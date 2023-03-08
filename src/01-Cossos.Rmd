@@ -5,13 +5,13 @@ En aquest curs, tots els anells seran commutatius, i assumirem sempre que tenen 
 Començarem recordant les definicions i resultats bàsics que ja s'han vist a altres
 assignatures, com Fonaments o Estructures algebraiques. Donarem les definicions de cos,
 característica, cos primer, i veurem que aquest és o bé $\FF_p$ per algun primer $p$, o bé $\QQ$.
-A continuació introduïrem les extensions de cossos i el grau. Construirem el cos $F[x]/(p(x))$ associat
+A continuació introduirem les extensions de cossos i el grau. Construirem el cos $F[x]/(p(x))$ associat
 a un polinomi irreductible $p(x)\in F[x]$, i veurem alguns exemples.
 
 
 ## Característica d'un cos
 
-Siguia $A$ un anell qualsevol. 
+Sigui $A$ un anell qualsevol. 
 Considerem el morfisme $\iota\colon \ZZ\to A$ definit com:
 $$
 \iota(n)=\begin{cases}
@@ -85,7 +85,7 @@ Sigui $f(x)\in F[x]$ un polinomi. Aleshores existeix una extensió $K/F$ tal que
 ::: {.proof}
 Considerem $K = F[x] / (g(x))$, on $g(x)$ és un factor irreductible qualsevol de $f(x)$. Sigui $\alpha$ la classe de $x$ a $K$. Aleshores $g(\alpha)=0$
 i per tant $f(\alpha)=0$. Els elements de $K$ venen representats per $h(\alpha)$ on $h(x)\in F[x]$ són polinomis, que sempre
-podem pensar de grau menor al grau de $g(x)$ (per la divisió euclídea). D'altra banda, el fet que $g(x)$ sigui irreductible
+podem pensar de grau menor al grau de $g(x)$ (per la divisió euclídia). D'altra banda, el fet que $g(x)$ sigui irreductible
 fa que $K$ sigui un cos. En efecte, si $h(\alpha)\neq 0$, tenim que $g(x) \nmid h(x)$ i per tant $g(x)$ i $h(x)$ són coprimers. Per la
 identitat de Bézout, existeixen polinomis $a(x)$ i $b(x)$ tals que
 $$
@@ -121,7 +121,7 @@ cos obtingut s'escriu $\CC$, i la classe de $x$ a $\RR[x]/(x^2+1)$ s'escriu $i$.
 habituals per treballar amb els nombres complexos.
 
 De manera semblant, podem definir $\QQ[x]/(x^2+1)$ (adjuntem una arrel de $-1$ als racionals),  $\QQ[x]/(x^2-2)$ (adjuntem un element $\alpha$ amb $\alpha^2=2$),
-o també $\QQ[x]/(x^3-2)$. Es poden fer les operacions habituals (suma, resta, multplicació, divisió) en algun d'aquests cossos de manera molt
+o també $\QQ[x]/(x^3-2)$. Es poden fer les operacions habituals (suma, resta, multiplicació, divisió) en algun d'aquests cossos de manera molt
 explícita. Per exemple, $\QQ[x]/(x^2-2)$ està format,
 com a conjunt, per tots els elements de la forma $a+b\alpha$, amb $a,b\in\QQ$. La multiplicació ve donada pel fet que $\alpha^2=2$.
 
@@ -171,13 +171,13 @@ i l'altre $[x]\leftrightarrow -\sqrt{2}$.
 
 Considerem ara $\QQ(\sqrt[3]{2}) \subset \RR$. Aquest cos també és isomorf a $\QQ[x]/(x^3-2)$, però aquesta vegada només hi ha un isomorfisme
 possible, el que assigna $[x]\leftrightarrow \sqrt[3]{2}$. Això és així perquè el polinomi $x^3-2$ només té una arrel real. També hi ha un
-subcòs de $\CC$ que és isomorf a $\QQ[x]/(x^3-2)$, que és el generat per $\zeta_3\sqrt[3]{2}$, on $\zeta_3=\frac{-1+i\sqrt{3}}{2}$ és una
+subcos de $\CC$ que és isomorf a $\QQ[x]/(x^3-2)$, que és el generat per $\zeta_3\sqrt[3]{2}$, on $\zeta_3=\frac{-1+i\sqrt{3}}{2}$ és una
 arrel cúbica de la unitat. Hi ha dos isomorfismes possibles, de fet, el que identifica $[x]\leftrightarrow \zeta_3\sqrt[3]{2}$ i el que
 identifica $[x]\leftrightarrow \zeta_3^{-1}\sqrt[3]{2}$.
 :::
 
 ::: {.remark}
-En els exemples, hem construit cossos que contenen una de les tres possibles arrels de $x^3-2$. Aquests són isomorfs, tal
+En els exemples, hem construït cossos que contenen una de les tres possibles arrels de $x^3-2$. Aquests són isomorfs, tal
 i com hem vist. El fet que un sigui subcos de $\RR$ i l'altre de $\CC$ té a veure amb anàlisi, no amb àlgebra. Algebraicament,
 no es poden distingir. 
 :::

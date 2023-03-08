@@ -43,7 +43,7 @@ completament a $\bar{F}[x]$, i per tant $\bar{F}$ és una clausura algebraica de
 Cap al final del curs veurem una demostració del *Teorema Fonamental de l'Àlgebra*, que diu que
 el cos $\CC$ dels nombres complexos és algebraicament tancat.
 Com a conseqüència, obtenim clausures algebraiques de qualsevol extensió subextensió $\CC/F/\QQ$. En particular,
-el cos $\QQbar$ format pels complexos algebraics és una clausura algebraica de $\QQ$.
+el cos $\bar{QQ}$ format pels complexos algebraics és una clausura algebraica de $\QQ$.
 
 ## Clausura algebraica d'$\FF_q$
 
@@ -128,7 +128,7 @@ un ideal maximal d'$A$ és el mateix que un element maximal a $X$. Només ens ca
 
 Sigui $T\subseteq X$ una cadena no buida, i sigui $I$ l'ideal obtingut fent la unió de tots els elements de $T$. Fent servir
 que $T$ és totalment ordenat, és fàcil veure que $I$ és un ideal. Ens falta veure que és propi, és a dir, que $1\notin I$. Però si
-$1\in I$, aleshores hi ha algun membre de $T$ que conté $1$, i per tant no seria un ideal propi, contradicció.  
+$1\in I$, aleshores hi ha algun membre de $T$ que conté $1$, i per tant no seria un ideal propi, contradicció.
 :::
 
 ## Unicitat de la clausura algebraica
@@ -161,7 +161,7 @@ $\alpha\in K$ tal que $\varphi(\alpha)=\beta$, i hem demostrat que $\varphi$ és
 
 ## Existència de la clausura algebraica
 
-Donat un cos qualsevol $F$, tenim ara l'objectiu de construir una clausura algebraica $\bar{F}/F$. Intuitivament almenys,
+Donat un cos qualsevol $F$, tenim ara l'objectiu de construir una clausura algebraica $\bar{F}/F$. Intuïtivament almenys,
 la idea és de considerar, per cada polinomi $g(x)\in F[x]$, un cos $F_g$ que contingui totes les arrels de $g$.
 Aleshores hauríem de prendre el compositum de tots aquests cossos. El problema és que per fer el compositum
 hem de prendre una intersecció de molts cossos, i no està clar on viuen aquests cossos (la intersecció
@@ -228,7 +228,7 @@ Veurem que $I$ no és el total i, per la Proposició \@ref(prp:ideal-maximal), e
 obtingut prenent el quocient per $\mathcal{M}$
 l'anomenem $K_1$, que és una extensió de $F$ que conté **una arrel** de cada polinomi amb coeficients a $F$. Podem
 iterar el procés (començant amb $K_1$ en comptes de $F$) per obtenir $K_2/K_1$, una extensió on tot polinomi
-amb coeficients a $K_1$ té una arrel, i així construim una successió de cossos de la qual en podem
+amb coeficients a $K_1$ té una arrel, i així construïm una successió de cossos de la qual en podem
 prendre la seva "unió" $K$. Donat un polinomi $f(x)\in K[x]$, tots els seus coeficients viuen necessàriament
 a $K_n$ per algun $n\geq 1$ i, per tant, $f(x)$ té alguna arrel a $K_{n+1}$ i, per tant a $K$.
 

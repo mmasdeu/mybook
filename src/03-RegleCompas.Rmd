@@ -36,7 +36,7 @@ Comencem veient que els nombres constructibles són un cos.
 Els nombres constructibles formen un subcos de $\RR$.
 :::
 ::: {.proof}
-Cal donar construcions de la suma, resta, producte i divisió
+Cal donar construccions de la suma, resta, producte i divisió
 de nombres ja construïts. Mentre que la suma i la resta són òbvies, la multiplicació i divisió es poden
 obtenir aplicant proporcionalitat, com veiem en els diagrames d'aquí sota.
 
@@ -73,7 +73,7 @@ $$
 podem veure que les coordenades de la intersecció amb una recta (posem amb equació $ax+by=c$) pertanyen a una
 extensió quadràtica del cos
 $\QQ(x_0,y_0,r,a,b,c)$. També podem comprovar-ho pel cas de la intersecció de dos cercles. Resumint, si $\alpha$ és
-construcible en $n$ passos a partir de punts en un cos $F$, aleshores hi ha una successió de cossos
+constructible en $n$ passos a partir de punts en un cos $F$, aleshores hi ha una successió de cossos
 $$
 F=F_0\subseteq F_1\subseteq F_2\subseteq F_n,
 $$
@@ -98,10 +98,10 @@ Com que $\cos(\pi/3)=1/2$, substituint $\theta=\pi/9$ a la fórmula anterior obt
 $$
 \alpha^3 - 3\alpha -1 =0.
 $$
-El polinomi $x^3-3x-1$ és irreductible (substituint $x-2$ obtenim un polinomi $3$-Eistenstein) i per tant $\alpha$ té grau $3$ i
+El polinomi $x^3-3x-1$ és irreductible (substituint $x-2$ obtenim un polinomi $3$-Eisenstein) i per tant $\alpha$ té grau $3$ i
 no és constructible.
 
-Finalment, per la quadratura del cercle de radi $1$ hauríem de construïr un quadrat de costat $\sqrt{\pi}$. Però aleshores
+Finalment, per la quadratura del cercle de radi $1$ hauríem de construir un quadrat de costat $\sqrt{\pi}$. Però aleshores
 també podríem construir $\pi$, que és transcendent (com hem dit, no ho demostrem).
 :::
 

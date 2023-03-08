@@ -33,11 +33,6 @@ Suposem que $f(x)$ és irreductible. Aleshores el subgrup de $G\leq S_n$ que obt
 hi ha un element $g\in G$ tal que $g(i)=j$. Així, no tots els subgrups de $S_n$ són possibles grups de Galois.
 :::
 
-::: {.example}
-Calculem els grups de Galois $\Gal(\QQ(\sqrt{2}, \sqrt{3}) / \QQ)$ i  $\Gal(\QQ(\sqrt[3]{2})/\QQ)$ com a
-subgrups de $S_4$ i $S_3$, respectivament. TODO
-:::
-
 ## El grup de Galois del polinomi genèric
 
 Fixem un cos $F$, i considerem el cos $F(s_1,\ldots,s_n)$, on $s_i$ són indeterminades. Els elements
@@ -80,7 +75,7 @@ $$
 $$
 :::
 Com que el discriminant és un polinomi simètric en les arrels de $f(x)$, es pot expressar
-en termes dels seus coeficients. En particular, el discrimiant del polinomi general és un
+en termes dels seus coeficients. En particular, el discriminant del polinomi general és un
 element $D\in F(s_1,\ldots,s_n)$.
 
 ::: {.theorem}

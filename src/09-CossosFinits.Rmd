@@ -58,7 +58,7 @@ existeix un polinomi $f(x)\in \FF_p[x]$ irreductible de grau $n$.
 :::
 
 Podem trobar una fórmula explícita pel nombre de polinomis irreductibles de grau $n$. Ens
-caldrar primer demostrar un resultat útil sobre la factorització de $x^{p^n} -x\in\FF_p[x]$.
+caldrà primer demostrar un resultat útil sobre la factorització de $x^{p^n} -x\in\FF_p[x]$.
 
 ::: {.proposition}
 El polinomi $x^{p^n}-x$ és el producte de tots els polinomis irreductibles

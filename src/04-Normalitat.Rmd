@@ -47,7 +47,7 @@ $$
 ::: {.proof}
 Farem inducció en el grau $n=[K\colon F]$. Quan $n=1$, el resultat és trivial. En general, prenem un element $\alpha\in K\setminus F$
 i fem servir la fórmula de les torres i \@ref(thm:extensio-morfismes). El cardinal de $\Hom_F(F(\alpha), L)$
-és igual al nombre d'arrels d'$\Irr_{\alpha, F}(x)$ a $L$, que com a molt és $[F(\alpha) \colon F]$. 
+és igual al nombre d'arrels d'$\Irr_{\alpha, F}(x)$ a $L$, que com a molt és $[F(\alpha) \colon F]$.
 
 En tot cas, si $\tilde\sigma$ és un d'aquests morfismes, com que $[K \colon F(\alpha)]< [K\colon F]$ podem aplicar la hipòtesi
 d'inducció i $\tilde\sigma$ es pot aixecar a com a molt $[K\colon F(\alpha)]$ morfismes a $L$.
@@ -130,7 +130,7 @@ que el cos de descomposició és $L = \QQ(\sqrt[p]{2}, \zeta_p)$.
 Tenim la torre $L / \QQ(\zeta_p) / \QQ$ i $L/\QQ(\zeta_p)$ té grau com a molt $p$,
 ja que està generada per $\sqrt[p]{2}$. Per tant, es té la desigualtat $[L\colon\QQ]\leq p(p-1)$.
 Com que $L$ té subcossos de grau $p$ i de grau $p-1$, aquests dos nombres divideixen el grau de l'extensió total i,
-com que són coprimers, en deduim que el grau és exactament $p(p-1)$. Ho podem il·lustrar amb el diagrama següent:
+com que són coprimers, en deduïm que el grau és exactament $p(p-1)$. Ho podem il·lustrar amb el diagrama següent:
 $$
 \xymatrix{
   & \QQ(\sqrt[p]{2},\zeta_p) \\

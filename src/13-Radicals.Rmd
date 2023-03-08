@@ -62,14 +62,14 @@ Si $\sigma_1,\ldots,\sigma_n$ són morfismes diferents de $K$ a $L$, aleshores s
 ## Extensions cícliques
 
 ::: {.definition #ext-ciclica name="extensió cíclica"}
-Una extensió $K/F$ és *cíclica* si és Galois amb grup de galois cíclic.
+Una extensió $K/F$ és *cíclica* si és Galois amb grup de Galois cíclic.
 :::
 
 Escriurem $\mu_n$ pel grup de les arrels $n$-èssimes de la unitat (en una clausura algebraica),
 i també escriurem $\sqrt[n]{a}$ per una arrel del polinomi $x^n-a$.
 
 ::: {.proposition}
-Sigui $F$ és un cos de característica no divisora de $n$ que conté $\mu_n$. Aleshores si $a\in F$ l'extensió $F(\sqrt[n]{a})$
+Sigui $F$ és un cos on $n$ és invertible i que conté $\mu_n$. Aleshores si $a\in F$ l'extensió $F(\sqrt[n]{a})$
 és cíclica de grau un divisor de $n$.
 :::
 ::: {.proof}
@@ -90,7 +90,7 @@ $\Gal(K/F)$ és isomorf a un subgrup del grup cíclic $\mu_n$, com volíem veure
 El recíproc resulta ser cert.
 
 ::: {.proposition}
-Sigui $F$ és un cos de característica no divisora de $n$ que conté $\mu_n$, i sigui $K/F$ una extensió cíclica de
+Sigui $F$ és un cos on $n$ és invertiblede i que conté $\mu_n$, i sigui $K/F$ una extensió cíclica de
 grau $n$. Aleshores $K=F(\sqrt[n]{a})$ per algun $a\in F$.
 :::
 ::: {.proof}
