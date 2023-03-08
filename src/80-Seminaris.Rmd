@@ -108,7 +108,7 @@ $$
 Q_8 = \langle x, y \mid x^2y^{-2}=x^4=xyx^{-1}y=1\rangle,\quad \operatorname{Dic}_{12} = \langle x, y \mid x^4=y^3=xyx^{-1}y^{-2}\rangle.
 $$
 
-1. Dibuixeu el reticle del grup cíclic $C_{4}$, $C_8$ i $C_{12}$.
+1. Dibuixeu el reticle dels grup cíclics $C_{4}$, $C_8$ i $C_{12}$.
 2. Dibuixeu el reticle dels grups $C_2\times C_2$ i $C_3\times C_9$.
 3. Doneu el reticle (amb generadors) dels grups $(\ZZ/n\ZZ)^\times$ amb $n=7,8,12$.
 4. Trobeu el reticle de subgrups de $S_3$ i indiqueu quins dels subgrups són normals.

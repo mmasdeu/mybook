@@ -4,7 +4,7 @@ author: "Marc Masdeu"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
-fontsize: 12pt
+fontsize: 11pt
 bibliography: ["src/bibliografia.bib"]
 header-includes:
   - \AtBeginDocument{\let\maketitle\relax}
@@ -58,10 +58,15 @@ L'assignatura de *Teoria de Galois* es cursa al primer semestre del tercer curs 
 - Una hora setmanal de problemes (15 setmanes).
 - Tres seminaris pràctics, de 2h cadascun.
 
-El curs es pot dividir de manera natural en 15 sessions de dues hores. El temps efectiu de cadascuna d'aquestes sessions és de 100 minuts, i es pot pensar com una sèrie de 15 capítols.
+El curs es pot dividir de manera natural en 15 sessions de dues hores.
+El temps efectiu de cadascuna d'aquestes sessions és de 100 minuts, i s'ha decidit organitzar-lo com una sèrie de 15 episodis.
 
-L'estructura que s'ha seguit és essencialment la de @dummitfoote, però la demostració del teorema fonamental s'ha fet completament diferent,
-seguint un punt de vista proposat per @geck. També s'ha canviat la presentació de l'existència de la clausura algebraica d'un cos arbitrari.
+L'estructura que s'ha seguit és essencialment la de la Part IV de @dummitfoote, però s'hi han introduït alguns canvis.
+La caracterització de les extensions de Galois i la presentació del teorema fonamental s'ha fet diferent,
+seguint el punt de vista proposat per @geck. A partir d'un resultat senzill d'àlgebra lineal, ens permet demostrar
+alguns dels resultats de manera bastant directa.
+També s'ha canviat la presentació de l'existència de la clausura algebraica d'un cos arbitrari, oferint una demostració
+més directa que fa servir el lema de Zorn en comptes d'altres resultats equivalents.
 
 
 `r if (knitr:::is_html_output())"
