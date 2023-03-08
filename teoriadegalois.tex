@@ -328,22 +328,43 @@
 
 
 % Defines the theorem text style for each type of theorem to one of the three styles above
+
+%% The version below will make it compatible with bookdown
+
+% \newcounter{dummy} 
+% \numberwithin{dummy}{section}
+
+% \theoremstyle{maincolornumbox}
+% \newtheorem{theorem}{TTTT}[chapter]
+% \newtheorem{theoremeT}{Teorema}[chapter]
+% \newtheorem{problem}{Problema}[chapter]
+% \newtheorem{exerciseT}{Exercici}[chapter]
+
+% \theoremstyle{blacknumex}
+% \newtheorem{exampleT}{Exemple}[chapter]
+
+% \theoremstyle{blacknumbox}
+% \newtheorem{definitionT}{Definició}[chapter]
+% \newtheorem{corollaryT}{Corol·lari}[chapter]
+
+% \theoremstyle{maincolornum}
+% \newtheorem{propositionT}{Proposició}[chapter]
+% \newtheorem{lemmaT}{Lema}[chapter]
+
+%% The version below will make it nice for the PDF, but breaks sync with bookdown
+
 \newcounter{dummy} 
 \numberwithin{dummy}{section}
-
 \theoremstyle{maincolornumbox}
 \newtheorem{theorem}[dummy]{TTTT}
 \newtheorem{theoremeT}[dummy]{Teorema}
 \newtheorem{problem}[dummy]{Problema}
 \newtheorem{exerciseT}[dummy]{Exercici}
-
 \theoremstyle{blacknumex}
 \newtheorem{exampleT}[dummy]{Exemple}
-
 \theoremstyle{blacknumbox}
 \newtheorem{definitionT}[dummy]{Definició}
 \newtheorem{corollaryT}[dummy]{Corol·lari}
-
 \theoremstyle{maincolornum}
 \newtheorem{propositionT}[dummy]{Proposició}
 \newtheorem{lemmaT}[dummy]{Lema}
@@ -1373,7 +1394,7 @@ fa en cap subextensió \(K/K'/F\).
 
 \begin{proof}
 Farem inducció en el grau d'\(f\), essent el cas \(n=1\) trivial. Suposem l'enunciat cert per tots els polinomis de grau \$ \textless{} n\$ definits
-sobre qualsevol cos, i ho demostrarem per \(f(x)\in F[x]\) de grau \(n\). Pel Teorema @ref\{thm:kronecker\}, hi ha una extensió \(L/F\)
+sobre qualsevol cos, i ho demostrarem per \(f(x)\in F[x]\) de grau \(n\). Pel Teorema \ref{thm:kronecker}, hi ha una extensió \(L/F\)
 que conté una arrel \(\alpha\in L_0\) de \(f(x)\). Dividint per \((x-\alpha)\) obtenim un polinomi \(f_0(x)\in L_0[x]\) de grau \(n-1\). Per hipòtesi
 d'inducció, existeix una extensió \(L/L_0\) on \(f_0(x)\) (i per tant també \(f(x)\)) descomposa completament. Aleshores podem
 prendre per \(K/F\) la intersecció de totes les subextensions \(L/K'/F\) on \(f(x)\) descomposa completament. Per construcció, \(K/F\) és un
@@ -1454,8 +1475,8 @@ formen un grup amb la multiplicació que, de fet, és cíclic. Diem que una arre
 \(\zeta_n\) és \emph{primitiva} si és un generador d'aquest grup. Si en fixem una, les altres primitives
 són de la forma \(\zeta_n^a\), amb \(a\) coprimer amb \(n\). Hi ha, doncs, \(\varphi(n)\) arrels primitives.
 
-Anomenem *cos ciclotòmic \(n\)-èssim\$ al cos \(\QQ(\zeta_n)\), que és el cos de descomposició de \(x^n-1\):
-si adjuntem \(\zeta_n\), automàticament totes les seves potències pertanyen a aquest cos. A l'episodi
+Anomenem \emph{cos ciclotòmic \(n\)-èssim\$} al cos \(\QQ(\zeta_n)\), que és el cos de descomposició de \(x^n-1\):
+si adjuntem \(\zeta_n\), automàticament totes les seves potències pertanyen a aquest cos. A la Secció
 \ref{ciclotomics} aprendrem com calcular el grau d'aquest cos, però --a tall d'espòiler-- podem
 veure fàcilment que quan \(n=p\) és primer, aleshores
 \[
@@ -1773,6 +1794,9 @@ El cos ciclotòmic \(\QQ(\zeta_n)\) té grau \(\varphi(n)\) sobre \(\QQ\).
 \chapter{Clausures algebraiques}\label{clausures-algebraiques}}
 
 En aquest episodi demostrem l'existència i unicitat de la clausura algebraica d'un cos.
+
+\hypertarget{preliminars}{%
+\section{Preliminars}\label{preliminars}}
 
 \begin{definition}[clausura algebraica]
 \protect\hypertarget{def:clausura-algebraica}{}\label{def:clausura-algebraica}Diem que \(\bar{F}/F\) és una \emph{clausura algebraica} d'\(F\) si \(\bar{F}/F\) és algebraica i tot polinomi \(f(x)\in F[x]\)
@@ -2247,8 +2271,8 @@ el cos \(\sigma(M)\) s'anomena el conjugat de \(M\) per \(\sigma\).
 Enunciem i demostrem el teorema fonamental de la teoria de Galois. Acabarem
 amb diversos exemples concrets d'extensions, il·lustrant la correspondència de Galois.
 
-\hypertarget{preliminars}{%
-\section{Preliminars}\label{preliminars}}
+\hypertarget{preliminars-1}{%
+\section{Preliminars}\label{preliminars-1}}
 
 Comencem amb un resultat que es segueix directament del Teorema \ref{thm:caracteritzacio-galois}.
 
@@ -2602,7 +2626,13 @@ El resultat s'obté aplicant la fórmula d'inversió de Möbius.
 \hypertarget{element-primitiu}{%
 \chapter{Element Primitiu}\label{element-primitiu}}
 
-El primer objectiu és demostrar el teorema de l'element primitiu. Recordem que una
+En aquest episodi demostrem el teorema de l'element primitiu, i ho apliquem a estudiar com es comporta
+la propietat de ser Galois en reticles.
+
+\hypertarget{el-teorema-de-lelement-primitiu}{%
+\section{El teorema de l'element primitiu}\label{el-teorema-de-lelement-primitiu}}
+
+Recordem que una
 extensió \(K/F\) és simple si hi ha algun \(\alpha\in K\) tal que \(K=F(\alpha)\).
 
 \begin{theorem}[caracterització d'extensions simples]
@@ -2619,9 +2649,6 @@ de \(f(x)\) pensat com a polinomi a \(K[x]\) i, per tant, n'hi ha un nombre fini
 Recíprocament, suposem que \(K/F\) té un nombre finit de subcossos. Gràcies a la Proposicó \ref{prp:lema-algebra-lineal},
 hi ha algun \(\alpha\in K\) que no pertany a cap dels subcossos de \(K\). Per tant, \(F(\alpha)=K\).
 \end{proof}
-
-\hypertarget{el-teorema-de-lelement-primitiu}{%
-\section{El teorema de l'element primitiu}\label{el-teorema-de-lelement-primitiu}}
 
 Amb aquesta caracterització i tot el què sabem fins ara podem demostrar fàcilment el teorema de l'element primitiu.
 
@@ -4074,7 +4101,8 @@ i definim \(\Delta=a^2-4b\). Suposem que \(f(x)\) és irreductible, i definim \(
 \chapter{Llista de Problemes}\label{llista-de-problemes}}
 
 \hypertarget{episodi-1}{%
-\subsection{Episodi 1}\label{episodi-1}}
+\subsection*{Episodi 1}\label{episodi-1}}
+\addcontentsline{toc}{subsection}{Episodi 1}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -4090,7 +4118,8 @@ i definim \(\Delta=a^2-4b\). Suposem que \(f(x)\) és irreductible, i definim \(
 \end{enumerate}
 
 \hypertarget{episodi-2}{%
-\subsection{Episodi 2}\label{episodi-2}}
+\subsection*{Episodi 2}\label{episodi-2}}
+\addcontentsline{toc}{subsection}{Episodi 2}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -4119,7 +4148,8 @@ i definim \(\Delta=a^2-4b\). Suposem que \(f(x)\) és irreductible, i definim \(
 \end{enumerate}
 
 \hypertarget{episodi-3}{%
-\subsection{Episodi 3}\label{episodi-3}}
+\subsection*{Episodi 3}\label{episodi-3}}
+\addcontentsline{toc}{subsection}{Episodi 3}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -4131,7 +4161,8 @@ i definim \(\Delta=a^2-4b\). Suposem que \(f(x)\) és irreductible, i definim \(
 \end{enumerate}
 
 \hypertarget{episodi-4}{%
-\subsection{Episodi 4}\label{episodi-4}}
+\subsection*{Episodi 4}\label{episodi-4}}
+\addcontentsline{toc}{subsection}{Episodi 4}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -4143,7 +4174,8 @@ i definim \(\Delta=a^2-4b\). Suposem que \(f(x)\) és irreductible, i definim \(
 \end{enumerate}
 
 \hypertarget{episodi-5}{%
-\subsection{Episodi 5}\label{episodi-5}}
+\subsection*{Episodi 5}\label{episodi-5}}
+\addcontentsline{toc}{subsection}{Episodi 5}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -4168,52 +4200,71 @@ i definim \(\Delta=a^2-4b\). Suposem que \(f(x)\) és irreductible, i definim \(
 \end{enumerate}
 
 \hypertarget{episodi-6}{%
-\subsection{Episodi 6}\label{episodi-6}}
+\subsection*{Episodi 6}\label{episodi-6}}
+\addcontentsline{toc}{subsection}{Episodi 6}
 
-TODO
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Sigui \(A=\CC[[t]]\) l'anell de sèries de potències formals, i sigui \(F\) el seu cos de fraccions. Demostreu que el conjunt
+  \[
+  K = \{\sum_{k=0}^\infty c_k t^{k/n} ~|~ n \geq 1\}
+  \]
+  és un cos, i de fet és una clausura algebraica d'\(F\).
+\item
+\end{enumerate}
 
 \hypertarget{episodi-7}{%
-\subsection{Episodi 7}\label{episodi-7}}
+\subsection*{Episodi 7}\label{episodi-7}}
+\addcontentsline{toc}{subsection}{Episodi 7}
 
 TODO
 
 \hypertarget{episodi-8}{%
-\subsection{Episodi 8}\label{episodi-8}}
+\subsection*{Episodi 8}\label{episodi-8}}
+\addcontentsline{toc}{subsection}{Episodi 8}
 
 TODO
 
 \hypertarget{episodi-9}{%
-\subsection{Episodi 9}\label{episodi-9}}
+\subsection*{Episodi 9}\label{episodi-9}}
+\addcontentsline{toc}{subsection}{Episodi 9}
 
 TODO
 
 \hypertarget{episodi-10}{%
-\subsection{Episodi 10}\label{episodi-10}}
+\subsection*{Episodi 10}\label{episodi-10}}
+\addcontentsline{toc}{subsection}{Episodi 10}
 
 TODO
 
 \hypertarget{episodi-11}{%
-\subsection{Episodi 11}\label{episodi-11}}
+\subsection*{Episodi 11}\label{episodi-11}}
+\addcontentsline{toc}{subsection}{Episodi 11}
 
 TODO
 
 \hypertarget{episodi-12}{%
-\subsection{Episodi 12}\label{episodi-12}}
+\subsection*{Episodi 12}\label{episodi-12}}
+\addcontentsline{toc}{subsection}{Episodi 12}
 
 TODO
 
 \hypertarget{episodi-13}{%
-\subsection{Episodi 13}\label{episodi-13}}
+\subsection*{Episodi 13}\label{episodi-13}}
+\addcontentsline{toc}{subsection}{Episodi 13}
 
 TODO
 
 \hypertarget{episodi-14}{%
-\subsection{Episodi 14}\label{episodi-14}}
+\subsection*{Episodi 14}\label{episodi-14}}
+\addcontentsline{toc}{subsection}{Episodi 14}
 
 TODO
 
 \hypertarget{episodi-15}{%
-\subsection{Episodi 15}\label{episodi-15}}
+\subsection*{Episodi 15}\label{episodi-15}}
+\addcontentsline{toc}{subsection}{Episodi 15}
 
 TODO
 
