@@ -1,4 +1,4 @@
-# Element Primitiu
+# Elements Primitiu
 
 En aquest episodi demostrem el teorema de l'element primitiu, i ho apliquem a estudiar com es comporta
 la propietat de ser Galois en reticles.

@@ -41,7 +41,9 @@ A més el grau $[M \colon F]$  es correspon amb l'ordre d'$H$.
 :::
 ::: {.proof}
 Hem de veure:
+
 1. $K^{\Gal(K/M)}= M$. Això és automàtic a partir de la proposició i del Corol·lari \@ref(cor:fix-gal-eq).
+
 2. $\Gal(K / K^H) = H$. Escrivim $M=K^H$. Ja sabem que $K/M$ és de Galois, i $|\Gal(K/M)|= [K\colon M]$.
 A més, per definició tenim $H\leq \Gal(K/M)$. Hem de demostrar la igualtat: donat $\tau\in \Gal(K/M)$, veurem
 que $K=\bigcup_{\sigma\in H} \Eq(\sigma,\tau)$. Pel Lema \@ref(prp:lema-algebra-lineal), algun dels $\Eq(\sigma,\tau)$
@@ -55,7 +57,8 @@ tenim que $\tau(f)=f$. Però aleshores $\tau(\alpha)$ ha de ser una arrel de $f$
 per algun $\sigma\in H$, com volíem.
 :::
 
-Hem vist que si $K/M/F$ és Galois aleshores $K/M$ també ho és. Què podem dir de l'extensió $M/F$?
+Hem vist que si $K/F$ és Galois i $M$ és una subextensió, aleshores $K/M$ també ho és.
+La proposició següent ens diu què podem dir de l'extensió $M/F$.
 
 ::: {.proposition}
 Sigui $K/M/F$ una torre amb $K/F$ Galois, posem $G=\Gal(K/F)$. Aleshores són equivalents:
@@ -68,7 +71,8 @@ En aquest cas, $\Gal(M/F) \cong G / H$.
 :::
 
 ::: {.proof}
-Sigui $H = \Gal(K/M)$.
+Sigui $H = \Gal(K/M)$. Demostrarem $1 \implies 2 \implies 3 \implies 1$.
+
 $1 \implies 2$: Sigui $\sigma\in G$. Si $\alpha\in M$ té polinomi mínim $f(x)\in F[x]$, aleshores $\sigma$
 en permuta les seves arrels i, en particular, $\sigma(\alpha) \in M$. Per tant $\sigma$ restringeix a un
 morfisme de $M$, que ja hem vist que és un automorfisme. Hem construit doncs una aplicació $G\to H$,
@@ -89,12 +93,14 @@ a $F$. La hipòtesi és que $B\subseteq M$ i, per tant, $M$ és el cos de descom
 ## Operacions de reticle
 
 Per acabar d'entendre bé la correspondència de Galois, relacionem operacions conegudes entre cossos i entre grups.
-::: {.proposition name=""}
+
+::: {.proposition}
 Sigui $K/F$ Galois amb $G = \Gal(K/F)$. Sigui $M_1$ i $M_2$ dues subextensions, amb $H_i=\Gal(K/M_i)$. Aleshores:
 
 1. $\Gal(K/M_1M_2) = H_1 \cap H_2$, i
 2. $\Gal(K/(M_1\cap M_2)) = \langle H_1, H_2\rangle$.
 :::
+
 ::: {.proof}
 Directa, per definició.
 :::
@@ -109,10 +115,11 @@ $$
 $$
 donada per $M\mapsto H = \Gal(K/M)$ i $H\mapsto M = K^H$ que satisfà:
 
-1. (gira les inclusions) $M_1 \subseteq M_2$ si i només si $H_2\leq H_1$.
-2. (preserva els graus) $[K\colon M] = |H|$ i $[M \colon F] = [G \colon H]$.
-3. (preserva normalitat) $M/F$ és Galois si i només si $H$ és normal en $G$.
-4. (gira els reticles) $M_1M_2 \leftrightarrow H_1\cap H_2$ i $M_1\cap M_2 \leftrightarrow \langle H_1, H_2\rangle$.
+1. (capgira les inclusions) $M_1 \subseteq M_2$ si i només si $H_2\leq H_1$.
+2. (capgira els reticles) $M_1M_2 \leftrightarrow H_1\cap H_2$ i $M_1\cap M_2 \leftrightarrow \langle H_1, H_2\rangle$.
+3. (preserva els graus) $[K\colon M] = |H|$ i $[M \colon F] = [G \colon H]$.
+4. (preserva normalitat) $M/F$ és Galois si i només si $H$ és normal en $G$.
+
 :::
 
 ## Exemples
@@ -227,8 +234,6 @@ Aquest subgrup s'anomena \emph{quasidihedral}, i el seu reticle de subgrups és:
                                                                         &                                                                                    &                                                                       &                                                                      &                                                                        &                                                            & 1 \arrow[u, no head]                                                                 &                                                &                                        &                                             
 \end{tikzcd}
 ```
-
-TODO: calcular el reticle de subcossos corresponent.
 
 ::: {.remark}
 És important adonar-se que no n'hi ha prou en assignar valors

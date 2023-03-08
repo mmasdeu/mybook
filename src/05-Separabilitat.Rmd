@@ -129,9 +129,11 @@ no pot ser divisible per $p$ i, per tant, és separable.
 :::
 
 Més endavant ens serà útil saber que que la separabilitat es comporta bé en torres.
+
 ::: {.lemma}
 Sigui $L/K/F$ una torre. Si $L/F$ és separable, aleshores $L/K$ i $K/F$ també ho són.
 :::
+
 ::: {.proof}
 Si $L/F$ aleshores $K/F$ és separable, trivialment. Per veure que $L/K$ també ho és, observem
 simplement que per tot $\alpha\in L$, el polinomi $\Irr_{\alpha,K}(x)$ és un divisor (a $K[x]$) del polinomi $\Irr_{\alpha,F}(x)$.

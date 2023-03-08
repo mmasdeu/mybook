@@ -34,10 +34,12 @@ Sigui $\alpha \in L$. Aleshores $\Irr_{\alpha,E}(x)$ és un divisor de $\Irr_{\a
 :::
 
 Necessitem el següent resultat tècnic.
+
 ::: {.proposition}
 Sigui $K/M/F$ una subextensió, i sigui $\tilde\sigma\colon M\to K$ un $F$-morfisme. Aleshores
 existeix $\sigma\in\Gal(K/F)$ tal que $\sigma|_M = \tilde\sigma$.
 :::
+
 ::: {.proof}
 Fem servir el Lema de Zorn. Donada una cadena d'extensions, podem prendre prendre com a element
 maximal la unió d'aquestes, i $\tilde\sigma$ hi extén. Si $\sigma'\colon L'\to L$ és l'element maximal donat per Zorn,
@@ -149,7 +151,7 @@ Pel teorema de Tychonoff, el producte infinit és compacte, i un subespai tancat
 Això ens permet donar una condició necessària per ser grup de Galois d'una subextensió:
 
 ::: {.proposition}
-Sigui $M/F$ una subextensió de $L/K$. Aleshores $\Gal(K/M)$ és tancat a $\Gal(K/F)$.
+Sigui $M/F$ una subextensió de $K/F$. Aleshores $\Gal(K/M)$ és tancat a $\Gal(K/F)$.
 :::
 ::: {.proof}
 Veurem que el complementari és obert. Sigui $\sigma\in \Gal(K/F)\smallsetminus \Gal(K/M)$.
@@ -161,9 +163,12 @@ $$
 En efecte, si $\tau\in U_{\sigma, E}$, vol dir que $\tau(\alpha)\neq \alpha$, i per tant $\tau\not\in\Gal(K/M)$.
 :::
 
-A l'apartat següent veurem que aquesta condició també és suficient.
+A l'apartat següent veurem que aquesta condició també és suficient. És a dir,
+que els subgrups tancats de $\Gal(K/F)$ es corresponen amb les subextensions
 
 ## El teorema
+
+Podem ja enunciar i demostrar el teorema fonamental.
 
 ::: {.theorem name="teorema fonamental de la teoria de Galois infinita"}
 Sigui $K/F$ una extensió de Galois. La correspondència de Galois estableix una bijecció entre els subcossos
@@ -218,10 +223,9 @@ $$
 $$
 on la última identificació ve de fer correspondre $a_n \in \left(\ZZ/p^n\ZZ\right)^\times$ amb $\sigma_{a_n}\colon \zeta_{p^n} \mapsto \zeta_{p^n}^{a_n}$.
 La imatge de $\iota$ està formada per aquells elements $(\sigma_{a_n})_n$ del producte que són compatibles amb la restricció.
-$$
-\sigma_{a_{n+1}}(\zeta_{p^{n+1}}) = \zeta_{p^{n+1}}^{a_{n+1}} \implies \sigma_{a_{n+1}}(\zeta_{p^n}) = \zeta_{p^n}^{a_{n+1}},
-$$
-i per tant la condició de ser compatible amb la restricció és equivalent a la condició $a_{n+1} \equiv a_n \pmod{p^n}$. Concloem que
+Com que si $\sigma_{a_{n+1}}(\zeta_{p^{n+1}}) = \zeta_{p^{n+1}}^{a_{n+1}}$ aleshores
+$\sigma_{a_{n+1}}(\zeta_{p^n}) = \zeta_{p^n}^{a_{n+1}}$,
+la condició de ser compatible amb la restricció és equivalent a la condició $a_{n+1} \equiv a_n \pmod{p^n}$. Concloem que
 $$
 \Gal(K/\QQ) \cong \{(a_n)_{n\geq 1} \in \prod_{n\geq 1} \left(\ZZ/p^n\ZZ\right)^\times ~|~ a_{n+1}\equiv a_n \pmod{p^n}\} = \ZZ_{p}^\times,
 $$

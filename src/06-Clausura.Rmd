@@ -172,6 +172,25 @@ el cos de descomposició del producte $g_1(x)\cdots g_n(x)$.
 ::: {.theorem #existencia-clausura-algebraica name="existència de clausura algebraica"}
 Sigui $F$ un cos. Aleshores existeix una clausura algebraica $\bar{F}/F$.
 :::
+
+::: {.proof name="Intent de demostració"}
+Sigui
+$$X = \{ L/K \text{extensions algebraiques de $K$}\},$$
+amb la relació d'ordre
+$$
+K_2 > K_1 \iff \text{$K_2/K_1$ és una extensió algebraica}.
+$$
+Com que tota cadena d'$X$ té un element maximal (prenem la unió de totes les extensions de la cadena), el lema de Zorn
+ens diu que hi ha un element maximal a $X$, que anomenarem $\bar{F}$. Només ens cal veure que $\bar{F}/F$ és
+una clausura algebraica. Sigui $f(x)\in F[x]$ un polinomi no constant.
+Podem construir una extensió $L / \bar{F}$ on $f(x)$ tingui un zero. Aleshores $L/F$ és algebraica, i per tant $L/F$ també
+ho és. De la maximalitat de $\bar{F}$ en deduïm que $L=\bar{F}$ i per tant $f(x)$ té un zero a $\bar{F}$, com volíem demostrar.
+:::
+
+El problema amb la "demostració" anterior és que l'objecte que hem denotat amb $X$ no és un conjunt (és una classe). És a dir, no hi ha
+un conjunt que contingui totes les extensions algebraiques d'un cos fixat $K$. Hem de restringir on prenem aquestes extensions (quins
+elements permetem que tinguin). La següent demostració és perfectament correcta, i fa justament això.
+
 ::: {.proof}
 Considerem un conjunt $\mathcal{U} \supset F$ de cardinal estrictament superior a $\mathcal{N}=\max(\aleph_0, |F|)$.
 
@@ -194,9 +213,11 @@ transportar l'estructura de cos de $L$ a $i(L)$ i obtenim un nou element maximal
 la maximalitat de $\bar{F}$.
 :::
 
-Una demostració alternativa:
+Una alternativa, si no ens sentim còmodes amb la teoria de conjunts, consisteix a servir una idea d'Artin. La demostració
+és una mica més enrevessada, però no ens fa embrutar tant les mans.
+
 ::: {.proof}
-Presentem una demostració alternativa que amaga una mica més els problemes amb la teoria de conjunts. Gràcies
+Gràcies
 a la Proposició \@ref(prp:clausura-tecnica), n'hi ha prou amb construir una extensió $K/F$ algebraicament tancada.
 
 Per

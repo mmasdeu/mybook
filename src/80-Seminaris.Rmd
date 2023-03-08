@@ -14,7 +14,6 @@ i $\sigma\cdot f=X_2^2X_3-X_1$.
 
 **Definició:**. Un polinomi $f\in A[X_1,\dotsc,X_n]$ s'anomena
 **simètric** si $\sigma\cdot f=f$ per a tota $\sigma\in\Sigma_n$.
-:::
 
 És fàcil veure que el conjunt dels polinomis simètrics és un subanell
 $S\subseteq A[X_1,\dotsc,X_n]$ que conté $A$. Sigui $Y$ una altra
@@ -147,6 +146,6 @@ i definim $\Delta=a^2-4b$. Suposem que $f(x)$ és irreductible, i definim $K$ co
 3. Demostreu que si $b\Delta$ és un quadrat a $F$, llavors $\Gal(K/F)\cong \ZZ/4\ZZ$. Calculeu el reticle de subcossos.
 4. Demostreu que si ni $b$ ni $b\Delta$ són quadrats a $F$, llavors $\Gal(K/F) \cong D_{2\times 4}$.
 5. Calculeu, de cadascun dels polinomis següents, el cos de descomposició, el grup de Galois i el reticle de subcossos:
-  a. $x^4 - 6x^2 + 2$,
-  b. $x^4 + 2x^2 + 4$,
-  c. $x^4 - 5x^2 + 5$
+    a. $x^4 - 6x^2 + 2$,
+    b. $x^4 + 2x^2 + 4$,
+    c. $x^4 - 5x^2 + 5$

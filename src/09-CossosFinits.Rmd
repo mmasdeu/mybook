@@ -35,9 +35,11 @@ $\FF\subseteq\FF_{p^n}$ és un subcos, és de Galois, i  $\FF\cong \FF_{p^d}$ am
 :::
 
 Vegem una aplicació fàcil d'aquest resultat:
+
 ::: {.corollary}
 El polinomi irreductible $\Phi_8(x)=x^4+1\in\ZZ[x]$ és reductible mòdul qualsevol primer $p$.
 :::
+
 ::: {.proof}
 Per $p=2$, tenim $x^4+1 = (x+1)^4$. Suposem ara $p$ senar. Com que $8\mid p^2-1$ (mirem els quadrats senars
 mòdul $8$), tenim que $x^8-1=(x^4-1)(x^4+1)$ divideix a $x^{p^2-1}-1$ a $\ZZ[x]$. Per tant, $x^4+1$ divideix

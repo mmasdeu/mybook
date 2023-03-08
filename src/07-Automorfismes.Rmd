@@ -2,21 +2,24 @@
 
 Començarem definint els automorfismes d'una extensió. Veurem que formen
 un grup, i que cada subgrup té associat el cos dels elements fixos per aquest. Veurem també
-que els automorfismes envien cada element $\alpha$ a una arrel de $\Irr(\alpha,x)$,
+que els automorfismes envien cada element $\alpha$ a una arrel del seu polinomi mínim,
 i demostrarem que en una extensió normal el cardinal del grup d'automorfismes està
 fitat pel grau de l'extensió. Així, podrem definir una extensió de Galois com aquella
-on la fita s'assoleix.
+on aquesta fita s'assoleix.
 
 ## Definició
 
-Sigui $K$ un cos. Un *automorfisme* de $K$ és simplement un isomorfisme de $K$ a $K$, i el grup d'automorfismes de $K$ (amb la
+
+::: {.definition]
+Sigui $K$ un cos. Un *automorfisme* de $K$ és un isomorfisme de $K$ a $K$. El grup d'automorfismes de $K$ (amb la
 composició) s'escriu $\Aut(K)$.
+:::
 
 Si $\alpha\in K$, diem que $\sigma\in \Aut(K)$ *fixa* $\alpha$ si $\sigma(\alpha)=\alpha$. Més en general,
 si $S$ és un subconjunt de $K$, diem que $\sigma\in\Aut(K)$ *fixa* $S$ si
 $\sigma(x)=x$ per a tot $x\in S$.
 
-Fixem-nos també que tot automorfisme fixa el cos primer de $K$ (exercici). En particular, $\Aut(\QQ)=\Aut(\FF_p)=1$.
+Observem que tot automorfisme fixa el cos primer de $K$ (exercici). En particular, $\Aut(\QQ)=\Aut(\FF_p)=1$.
 
 Un cas important de subconjunt $S$ es dona quan tenim una extensió de cossos $K/F$. En aquest cas,
 escrivim $\Aut(K/F)$ com el grup d'automorfismes que fixen $F$ (que és un subgrup d'$\Aut(K)$):
@@ -85,6 +88,7 @@ tant, normalment considerarem només cossos fixos per subgrups d'$\Aut(K)$ i no 
 
 ::: {.lemma #inc-reversing}
 Sigui $K$ un cos.
+
 - Si $F1\subseteq F_2\subseteq K$, aleshores $\Aut(K/F_2)\leq \Aut(K/F_1)$.
 - Si $H_1\leq H_2 \leq \Aut(K)$, aleshores $K^{H_2} \subseteq K^{H_1}$.
 :::
@@ -93,7 +97,7 @@ Trivial.
 :::
 
 ::: {.lemma}
-Sigui $F$ un cos infinit, i sigui $V$ un $F$-espai vectorial, i siguin $V_1,\ldots,V_r$ subespais propis.
+Sigui $F$ un cos infinit, i sigui $V$ un $F$-espai vectorial de dimensió finita. Siguin $V_1,\ldots,V_r$ subespais propis.
 Aleshores $V\neq \bigcup V_i$.
 :::
 ::: {.proof}
@@ -171,6 +175,7 @@ d'aquestes extensions:
 
 ::: {.theorem #caracteritzacio-galois name="Caracterització d'extensions de Galois"}
 Sigui $K/F$ una extensió finita i sigui $G=\Aut(K/F)$. Aleshores els següents enunciats són equivalents:
+
 1. $|G| = [K\colon F]$.
 2. $F = K^G$.
 3. $K/F$ és normal i separable.
