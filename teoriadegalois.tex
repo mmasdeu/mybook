@@ -1323,9 +1323,23 @@ Hi ha construccions molt antigues del pentàgon regular (\(72^\circ\)), ja que
 \cos(72^\circ) = \frac{1}{4} \, \sqrt{5} - \frac{1}{4}.
 \]
 
-Aquí en tenim un exemple:
+Aquí en tenim un exemple.
+
+\begin{exercise}
+
+En aquest dibuix, comencem amb els punts \(A\) i \(B\). Podem dibuixar
+els cercles \(1\) i \(2\), dibuixar el cercle \(3\), obtenint els punts \(C\) i \(D\).
+La mediatriu del segment \(AB\) talla el cercle \(3\) en el punt \(F\),
+i podem construir les rectes \(CF\) i \(DF\), que donen lloc als punts \(M\) i \(N\).
+
+Si volem construir el cinquè vèrtex del pentàgon, només hem de traçar els
+cercles \(4\) i \(5\).
+
+Demostreu que aquesta construcció resulta en un pentàgon regular.
 
 \begin{center}\includegraphics[width=0.5\linewidth]{images/pentagon} \end{center}
+
+\end{exercise}
 
 Encara és més fàcil construir el triangle equilàter (\(30^\circ\)), ja que \(\cos(30^\circ)=\sqrt{2}/2\). Com que
 podem bisectar qualsevol angle, també podem construir \(18^\circ\) i \(15^\circ\). Finalment, com que \(3=18-15\) també podem construir
@@ -1691,13 +1705,15 @@ no pot ser divisible per \(p\) i, per tant, és separable.
 \end{proof}
 
 Més endavant ens serà útil saber que que la separabilitat es comporta bé en torres.
-::: \{.lemma\}
+
+\begin{lemma}
 Sigui \(L/K/F\) una torre. Si \(L/F\) és separable, aleshores \(L/K\) i \(K/F\) també ho són.
-:::
-::: \{.proof\}
+\end{lemma}
+
+\begin{proof}
 Si \(L/F\) aleshores \(K/F\) és separable, trivialment. Per veure que \(L/K\) també ho és, observem
 simplement que per tot \(\alpha\in L\), el polinomi \(\Irr_{\alpha,K}(x)\) és un divisor (a \(K[x]\)) del polinomi \(\Irr_{\alpha,F}(x)\).
-:::
+\end{proof}
 
 Més endavant veurem que el recíproc també és cert, però per ara no ens caldrà.
 
@@ -1977,6 +1993,24 @@ el cos de descomposició del producte \(g_1(x)\cdots g_n(x)\).
 \protect\hypertarget{thm:existencia-clausura-algebraica}{}\label{thm:existencia-clausura-algebraica}Sigui \(F\) un cos. Aleshores existeix una clausura algebraica \(\bar{F}/F\).
 \end{theorem}
 
+\begin{proof}[Intent de demostració]
+Sigui
+\[X = \{ L/K \text{extensions algebraiques de $K$}\},\]
+amb la relació d'ordre
+\[
+K_2 > K_1 \iff \text{$K_2/K_1$ és una extensió algebraica}.
+\]
+Com que tota cadena d'\(X\) té un element maximal (prenem la unió de totes les extensions de la cadena), el lema de Zorn
+ens diu que hi ha un element maximal a \(X\), que anomenarem \(\bar{F}\). Només ens cal veure que \(\bar{F}/F\) és
+una clausura algebraica. Sigui \(f(x)\in F[x]\) un polinomi no constant.
+Podem construir una extensió \(L / \bar{F}\) on \(f(x)\) tingui un zero. Aleshores \(L/F\) és algebraica, i per tant \(L/F\) també
+ho és. De la maximalitat de \(\bar{F}\) en deduïm que \(L=\bar{F}\) i per tant \(f(x)\) té un zero a \(\bar{F}\), com volíem demostrar.
+\end{proof}
+
+El problema amb la ``demostració'' anterior és que l'objecte que hem denotat amb \(X\) no és un conjunt (és una classe). És a dir, no hi ha
+un conjunt que contingui totes les extensions algebraiques d'un cos fixat \(K\). Hem de restringir on prenem aquestes extensions (quins
+elements permetem que tinguin). La següent demostració és perfectament correcta, i fa justament això.
+
 \begin{proof}
 Considerem un conjunt \(\mathcal{U} \supset F\) de cardinal estrictament superior a \(\mathcal{N}=\max(\aleph_0, |F|)\).
 
@@ -1999,9 +2033,11 @@ transportar l'estructura de cos de \(L\) a \(i(L)\) i obtenim un nou element max
 la maximalitat de \(\bar{F}\).
 \end{proof}
 
-Una demostració alternativa:
-::: \{.proof\}
-Presentem una demostració alternativa que amaga una mica més els problemes amb la teoria de conjunts. Gràcies
+Una alternativa, si no ens sentim còmodes amb la teoria de conjunts, consisteix a servir una idea d'Artin. La demostració
+és una mica més enrevessada, però no ens fa embrutar tant les mans.
+
+\begin{proof}
+Gràcies
 a la Proposició \ref{prp:clausura-tecnica}, n'hi ha prou amb construir una extensió \(K/F\) algebraicament tancada.
 
 Per
@@ -2030,7 +2066,7 @@ g_1(x_1,\ldots, x_r) f_1(x_1) + g_2(x_1,\ldots,x_r) f_2(x_2)+\cdots+g_k(x_1,\ldo
 Prenem ara una extensió finita \(F'/F\) que contingui una arrel \(\alpha_i\) de \(f_i(x)\) per cada \(i\). La relació
 anterior particularitza, si fem \(x_i=\alpha_i\) per \(i=1,\ldots,k\) i \(x_i=0\) per \(i>k\), a \(0=1\), que és una
 contradicció. Això acaba la demostració.
-:::
+\end{proof}
 
 \begin{remark}
 L'existència i unicitat de clausures algebraiques fou demostrada per Steinitz el 1910, i la demostració era molt
@@ -2047,22 +2083,22 @@ primitiu, que demostrarem més endavant (vegeu \ref{element-primitiu}).
 
 Començarem definint els automorfismes d'una extensió. Veurem que formen
 un grup, i que cada subgrup té associat el cos dels elements fixos per aquest. Veurem també
-que els automorfismes envien cada element \(\alpha\) a una arrel de \(\Irr(\alpha,x)\),
+que els automorfismes envien cada element \(\alpha\) a una arrel del seu polinomi mínim,
 i demostrarem que en una extensió normal el cardinal del grup d'automorfismes està
 fitat pel grau de l'extensió. Així, podrem definir una extensió de Galois com aquella
-on la fita s'assoleix.
+on aquesta fita s'assoleix.
 
 \hypertarget{definiciuxf3}{%
 \section{Definició}\label{definiciuxf3}}
 
-Sigui \(K\) un cos. Un \emph{automorfisme} de \(K\) és simplement un isomorfisme de \(K\) a \(K\), i el grup d'automorfismes de \(K\) (amb la
+Sigui \(K\) un cos. Un \emph{automorfisme} de \(K\) és un isomorfisme de \(K\) a \(K\). El grup d'automorfismes de \(K\) (amb la
 composició) s'escriu \(\Aut(K)\).
 
 Si \(\alpha\in K\), diem que \(\sigma\in \Aut(K)\) \emph{fixa} \(\alpha\) si \(\sigma(\alpha)=\alpha\). Més en general,
 si \(S\) és un subconjunt de \(K\), diem que \(\sigma\in\Aut(K)\) \emph{fixa} \(S\) si
 \(\sigma(x)=x\) per a tot \(x\in S\).
 
-Fixem-nos també que tot automorfisme fixa el cos primer de \(K\) (exercici). En particular, \(\Aut(\QQ)=\Aut(\FF_p)=1\).
+Observem que tot automorfisme fixa el cos primer de \(K\) (exercici). En particular, \(\Aut(\QQ)=\Aut(\FF_p)=1\).
 
 Un cas important de subconjunt \(S\) es dona quan tenim una extensió de cossos \(K/F\). En aquest cas,
 escrivim \(\Aut(K/F)\) com el grup d'automorfismes que fixen \(F\) (que és un subgrup d'\(\Aut(K)\)):
@@ -2132,9 +2168,18 @@ on \(\langle S \rangle\) és el subgrup d'\(\Aut(K)\) generat per \(S\) (el subg
 tant, normalment considerarem només cossos fixos per subgrups d'\(\Aut(K)\) i no perdrem generalitat.
 
 \begin{lemma}
-\protect\hypertarget{lem:inc-reversing}{}\label{lem:inc-reversing}Sigui \(K\) un cos.
-- Si \(F1\subseteq F_2\subseteq K\), aleshores \(\Aut(K/F_2)\leq \Aut(K/F_1)\).
-- Si \(H_1\leq H_2 \leq \Aut(K)\), aleshores \(K^{H_2} \subseteq K^{H_1}\).
+\protect\hypertarget{lem:inc-reversing}{}\label{lem:inc-reversing}
+
+Sigui \(K\) un cos.
+
+\begin{itemize}
+\tightlist
+\item
+  Si \(F1\subseteq F_2\subseteq K\), aleshores \(\Aut(K/F_2)\leq \Aut(K/F_1)\).
+\item
+  Si \(H_1\leq H_2 \leq \Aut(K)\), aleshores \(K^{H_2} \subseteq K^{H_1}\).
+\end{itemize}
+
 \end{lemma}
 
 \begin{proof}
@@ -2142,7 +2187,7 @@ Trivial.
 \end{proof}
 
 \begin{lemma}
-Sigui \(F\) un cos infinit, i sigui \(V\) un \(F\)-espai vectorial, i siguin \(V_1,\ldots,V_r\) subespais propis.
+Sigui \(F\) un cos infinit, i sigui \(V\) un \(F\)-espai vectorial de dimensió finita. Siguin \(V_1,\ldots,V_r\) subespais propis.
 Aleshores \(V\neq \bigcup V_i\).
 \end{lemma}
 
@@ -2224,11 +2269,23 @@ Les dues propietats de les extensions de Galois de fet les caracteritzen. Vegem 
 d'aquestes extensions:
 
 \begin{theorem}[Caracterització d'extensions de Galois]
-\protect\hypertarget{thm:caracteritzacio-galois}{}\label{thm:caracteritzacio-galois}Sigui \(K/F\) una extensió finita i sigui \(G=\Aut(K/F)\). Aleshores els següents enunciats són equivalents:
-1. \(|G| = [K\colon F]\).
-2. \(F = K^G\).
-3. \(K/F\) és normal i separable.
-4. Hi ha un polinomi \(f(x)\in F[x]\) irreductible i separable de grau \([K\colon F]\) que descomposa completament a \(K\).
+\protect\hypertarget{thm:caracteritzacio-galois}{}\label{thm:caracteritzacio-galois}
+
+Sigui \(K/F\) una extensió finita i sigui \(G=\Aut(K/F)\). Aleshores els següents enunciats són equivalents:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \(|G| = [K\colon F]\).
+\item
+  \(F = K^G\).
+\item
+  \(K/F\) és normal i separable.
+\item
+  Hi ha un polinomi \(f(x)\in F[x]\) irreductible i separable de grau \([K\colon F]\) que descomposa completament a \(K\).
+\end{enumerate}
+
 \end{theorem}
 
 \begin{proof}
@@ -2314,22 +2371,31 @@ A més el grau \([M \colon F]\) es correspon amb l'ordre d'\(H\).
 \end{theorem}
 
 \begin{proof}
+
 Hem de veure:
-1. \(K^{\Gal(K/M)}= M\). Això és automàtic a partir de la proposició i del Corol·lari \ref{cor:fix-gal-eq}.
-2. \(\Gal(K / K^H) = H\). Escrivim \(M=K^H\). Ja sabem que \(K/M\) és de Galois, i \(|\Gal(K/M)|= [K\colon M]\).
-A més, per definició tenim \(H\leq \Gal(K/M)\). Hem de demostrar la igualtat: donat \(\tau\in \Gal(K/M)\), veurem
-que \(K=\bigcup_{\sigma\in H} \Eq(\sigma,\tau)\). Pel Lema \ref{prp:lema-algebra-lineal}, algun dels \(\Eq(\sigma,\tau)\)
-ha de ser tot \(K\), i això ens diu que \(\tau\in H\). Per tant, només ens cal comprovar que per tot \(\alpha\in K\),
-hi ha algun \(\sigma\in H\) tal que \(\sigma(\alpha)=\tau(\alpha)\). Considerem el polinomi
-\[
-f(x) = \prod_{\sigma \in H} (x - \sigma(\alpha)) \in K[x].
-\]
-Fixem-nos que \(\sigma(f)=f\) per tot \(\sigma\in H\) i per tant \(f(x)\in K^H[x] = M[x]\). Com que \(\tau\) fixa \(M\),
-tenim que \(\tau(f)=f\). Però aleshores \(\tau(\alpha)\) ha de ser una arrel de \(f\), és a dir, \(\tau(\alpha)=\sigma(\alpha)\)
-per algun \(\sigma\in H\), com volíem.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \(K^{\Gal(K/M)}= M\). Això és automàtic a partir de la proposició i del Corol·lari \ref{cor:fix-gal-eq}.
+\item
+  \(\Gal(K / K^H) = H\). Escrivim \(M=K^H\). Ja sabem que \(K/M\) és de Galois, i \(|\Gal(K/M)|= [K\colon M]\).
+  A més, per definició tenim \(H\leq \Gal(K/M)\). Hem de demostrar la igualtat: donat \(\tau\in \Gal(K/M)\), veurem
+  que \(K=\bigcup_{\sigma\in H} \Eq(\sigma,\tau)\). Pel Lema \ref{prp:lema-algebra-lineal}, algun dels \(\Eq(\sigma,\tau)\)
+  ha de ser tot \(K\), i això ens diu que \(\tau\in H\). Per tant, només ens cal comprovar que per tot \(\alpha\in K\),
+  hi ha algun \(\sigma\in H\) tal que \(\sigma(\alpha)=\tau(\alpha)\). Considerem el polinomi
+  \[
+  f(x) = \prod_{\sigma \in H} (x - \sigma(\alpha)) \in K[x].
+  \]
+  Fixem-nos que \(\sigma(f)=f\) per tot \(\sigma\in H\) i per tant \(f(x)\in K^H[x] = M[x]\). Com que \(\tau\) fixa \(M\),
+  tenim que \(\tau(f)=f\). Però aleshores \(\tau(\alpha)\) ha de ser una arrel de \(f\), és a dir, \(\tau(\alpha)=\sigma(\alpha)\)
+  per algun \(\sigma\in H\), com volíem.
+\end{enumerate}
+
 \end{proof}
 
-Hem vist que si \(K/M/F\) és Galois aleshores \(K/M\) també ho és. Què podem dir de l'extensió \(M/F\)?
+Hem vist que si \(K/F\) és Galois i \(M\) és una subextensió, aleshores \(K/M\) també ho és.
+La proposició següent ens diu què podem dir de l'extensió \(M/F\).
 
 \begin{proposition}
 Sigui \(K/M/F\) una torre amb \(K/F\) Galois, posem \(G=\Gal(K/F)\). Aleshores són equivalents:
@@ -2349,7 +2415,8 @@ En aquest cas, \(\Gal(M/F) \cong G / H\).
 \end{proposition}
 
 \begin{proof}
-Sigui \(H = \Gal(K/M)\).
+Sigui \(H = \Gal(K/M)\). Demostrarem \(1 \implies 2 \implies 3 \implies 1\).
+
 \(1 \implies 2\): Sigui \(\sigma\in G\). Si \(\alpha\in M\) té polinomi mínim \(f(x)\in F[x]\), aleshores \(\sigma\)
 en permuta les seves arrels i, en particular, \(\sigma(\alpha) \in M\). Per tant \(\sigma\) restringeix a un
 morfisme de \(M\), que ja hem vist que és un automorfisme. Hem construit doncs una aplicació \(G\to H\),
@@ -2371,7 +2438,9 @@ a \(F\). La hipòtesi és que \(B\subseteq M\) i, per tant, \(M\) és el cos de 
 \section{Operacions de reticle}\label{operacions-de-reticle}}
 
 Per acabar d'entendre bé la correspondència de Galois, relacionem operacions conegudes entre cossos i entre grups.
-::: \{.proposition name=``\,``\}
+
+\begin{proposition}
+
 Sigui \(K/F\) Galois amb \(G = \Gal(K/F)\). Sigui \(M_1\) i \(M_2\) dues subextensions, amb \(H_i=\Gal(K/M_i)\). Aleshores:
 
 \begin{enumerate}
@@ -2381,11 +2450,13 @@ Sigui \(K/F\) Galois amb \(G = \Gal(K/F)\). Sigui \(M_1\) i \(M_2\) dues subexte
   \(\Gal(K/M_1M_2) = H_1 \cap H_2\), i
 \item
   \(\Gal(K/(M_1\cap M_2)) = \langle H_1, H_2\rangle\).
-  :::
-  ::: \{.proof\}
-  Directa, per definició.
-  :::
 \end{enumerate}
+
+\end{proposition}
+
+\begin{proof}
+Directa, per definició.
+\end{proof}
 
 Podem resumir tot l'episodi en un sol resultat:
 
@@ -2401,13 +2472,13 @@ donada per \(M\mapsto H = \Gal(K/M)\) i \(H\mapsto M = K^H\) que satisfà:
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  (gira les inclusions) \(M_1 \subseteq M_2\) si i només si \(H_2\leq H_1\).
+  (capgira les inclusions) \(M_1 \subseteq M_2\) si i només si \(H_2\leq H_1\).
+\item
+  (capgira els reticles) \(M_1M_2 \leftrightarrow H_1\cap H_2\) i \(M_1\cap M_2 \leftrightarrow \langle H_1, H_2\rangle\).
 \item
   (preserva els graus) \([K\colon M] = |H|\) i \([M \colon F] = [G \colon H]\).
 \item
   (preserva normalitat) \(M/F\) és Galois si i només si \(H\) és normal en \(G\).
-\item
-  (gira els reticles) \(M_1M_2 \leftrightarrow H_1\cap H_2\) i \(M_1\cap M_2 \leftrightarrow \langle H_1, H_2\rangle\).
 \end{enumerate}
 
 \end{theorem}
@@ -2519,8 +2590,6 @@ Aquest subgrup s'anomena \emph{quasidihedral}, i el seu reticle de subgrups és:
 
 \begin{center}\includegraphics[width=1\linewidth]{teoriadegalois_files/figure-latex/unnamed-chunk-6-1} \end{center}
 
-TODO: calcular el reticle de subcossos corresponent.
-
 \begin{remark}
 És important adonar-se que no n'hi ha prou en assignar valors
 als generadors d'una extensió per definir un automorfisme, ja que hi pot haver relacions amagades entre els
@@ -2569,15 +2638,17 @@ Si \(d\mid n\), aleshores \(\FF_{p^d}\) és un subcos de \(\FF_{p^n}\). Recípro
 \end{proposition}
 
 Vegem una aplicació fàcil d'aquest resultat:
-::: \{.corollary\}
+
+\begin{corollary}
 El polinomi irreductible \(\Phi_8(x)=x^4+1\in\ZZ[x]\) és reductible mòdul qualsevol primer \(p\).
-:::
-::: \{.proof\}
+\end{corollary}
+
+\begin{proof}
 Per \(p=2\), tenim \(x^4+1 = (x+1)^4\). Suposem ara \(p\) senar. Com que \(8\mid p^2-1\) (mirem els quadrats senars
 mòdul \(8\)), tenim que \(x^8-1=(x^4-1)(x^4+1)\) divideix a \(x^{p^2-1}-1\) a \(\ZZ[x]\). Per tant, \(x^4+1\) divideix
 també a \(x^{p^2}-x\). Això vol dir que les arrels de \(x^4+1\) viuen totes a \(\FF_{p^2}\). Però si fos irreductible,
 generaria una extensió de grau \(4\), contradicció.
-:::
+\end{proof}
 
 \hypertarget{polinomis-irreductibles}{%
 \section{Polinomis irreductibles}\label{polinomis-irreductibles}}
@@ -2623,8 +2694,8 @@ p^n = \sum_{d\mid n} d \Psi(d).
 El resultat s'obté aplicant la fórmula d'inversió de Möbius.
 \end{proof}
 
-\hypertarget{element-primitiu}{%
-\chapter{Element Primitiu}\label{element-primitiu}}
+\hypertarget{elements-primitiu}{%
+\chapter{Elements Primitiu}\label{elements-primitiu}}
 
 En aquest episodi demostrem el teorema de l'element primitiu, i ho apliquem a estudiar com es comporta
 la propietat de ser Galois en reticles.
@@ -3635,18 +3706,20 @@ Sigui \(\alpha \in L\). Aleshores \(\Irr_{\alpha,E}(x)\) és un divisor de \(\Ir
 \end{proof}
 
 Necessitem el següent resultat tècnic.
-::: \{.proposition\}
+
+\begin{proposition}
 Sigui \(K/M/F\) una subextensió, i sigui \(\tilde\sigma\colon M\to K\) un \(F\)-morfisme. Aleshores
 existeix \(\sigma\in\Gal(K/F)\) tal que \(\sigma|_M = \tilde\sigma\).
-:::
-::: \{.proof\}
+\end{proposition}
+
+\begin{proof}
 Fem servir el Lema de Zorn. Donada una cadena d'extensions, podem prendre prendre com a element
 maximal la unió d'aquestes, i \(\tilde\sigma\) hi extén. Si \(\sigma'\colon L'\to L\) és l'element maximal donat per Zorn,
 volem veure que \(L'=L\). Si no ho fos, prenem \(\alpha\in L\smallsetminus L'\) i extenem (ho podem fer perquè estem en el
 cas finit), cosa que és una contradicció.
 
 Veiem que l'extensió \(\sigma\) és exhaustiva fent servir que permuta les arrels del polinomi mínim de qualsevol element.
-:::
+\end{proof}
 
 \begin{lemma}
 Sigui \(E/F\) una subextensió finita i Galois de \(K\). Aleshores la restricció indueix un morfisme de grups
@@ -3756,7 +3829,7 @@ Pel teorema de Tychonoff, el producte infinit és compacte, i un subespai tancat
 Això ens permet donar una condició necessària per ser grup de Galois d'una subextensió:
 
 \begin{proposition}
-Sigui \(M/F\) una subextensió de \(L/K\). Aleshores \(\Gal(K/M)\) és tancat a \(\Gal(K/F)\).
+Sigui \(M/F\) una subextensió de \(K/F\). Aleshores \(\Gal(K/M)\) és tancat a \(\Gal(K/F)\).
 \end{proposition}
 
 \begin{proof}
@@ -3769,10 +3842,13 @@ U_{\sigma, E} \subseteq \Gal(K/F)\smallsetminus \Gal(K/M).
 En efecte, si \(\tau\in U_{\sigma, E}\), vol dir que \(\tau(\alpha)\neq \alpha\), i per tant \(\tau\not\in\Gal(K/M)\).
 \end{proof}
 
-A l'apartat següent veurem que aquesta condició també és suficient.
+A l'apartat següent veurem que aquesta condició també és suficient. És a dir,
+que els subgrups tancats de \(\Gal(K/F)\) es corresponen amb les subextensions
 
 \hypertarget{el-teorema}{%
 \section{El teorema}\label{el-teorema}}
+
+Podem ja enunciar i demostrar el teorema fonamental.
 
 \begin{theorem}[teorema fonamental de la teoria de Galois infinita]
 Sigui \(K/F\) una extensió de Galois. La correspondència de Galois estableix una bijecció entre els subcossos
@@ -3846,10 +3922,9 @@ Considerem la unió infinita \(K=\bigcup_{n\geq 1} \QQ(\zeta_{p^n})\). Es té un
 \]
 on la última identificació ve de fer correspondre \(a_n \in \left(\ZZ/p^n\ZZ\right)^\times\) amb \(\sigma_{a_n}\colon \zeta_{p^n} \mapsto \zeta_{p^n}^{a_n}\).
 La imatge de \(\iota\) està formada per aquells elements \((\sigma_{a_n})_n\) del producte que són compatibles amb la restricció.
-\[
-\sigma_{a_{n+1}}(\zeta_{p^{n+1}}) = \zeta_{p^{n+1}}^{a_{n+1}} \implies \sigma_{a_{n+1}}(\zeta_{p^n}) = \zeta_{p^n}^{a_{n+1}},
-\]
-i per tant la condició de ser compatible amb la restricció és equivalent a la condició \(a_{n+1} \equiv a_n \pmod{p^n}\). Concloem que
+Com que si \(\sigma_{a_{n+1}}(\zeta_{p^{n+1}}) = \zeta_{p^{n+1}}^{a_{n+1}}\) aleshores
+\(\sigma_{a_{n+1}}(\zeta_{p^n}) = \zeta_{p^n}^{a_{n+1}}\),
+la condició de ser compatible amb la restricció és equivalent a la condició \(a_{n+1} \equiv a_n \pmod{p^n}\). Concloem que
 \[
 \Gal(K/\QQ) \cong \{(a_n)_{n\geq 1} \in \prod_{n\geq 1} \left(\ZZ/p^n\ZZ\right)^\times ~|~ a_{n+1}\equiv a_n \pmod{p^n}\} = \ZZ_{p}^\times,
 \]
@@ -3893,7 +3968,6 @@ i \(\sigma\cdot f=X_2^2X_3-X_1\).
 
 \textbf{Definició:}. Un polinomi \(f\in A[X_1,\dotsc,X_n]\) s'anomena
 \textbf{simètric} si \(\sigma\cdot f=f\) per a tota \(\sigma\in\Sigma_n\).
-:::
 
 És fàcil veure que el conjunt dels polinomis simètrics és un subanell
 \(S\subseteq A[X_1,\dotsc,X_n]\) que conté \(A\). Sigui \(Y\) una altra
@@ -4084,25 +4158,21 @@ i definim \(\Delta=a^2-4b\). Suposem que \(f(x)\) és irreductible, i definim \(
   Demostreu que si ni \(b\) ni \(b\Delta\) són quadrats a \(F\), llavors \(\Gal(K/F) \cong D_{2\times 4}\).
 \item
   Calculeu, de cadascun dels polinomis següents, el cos de descomposició, el grup de Galois i el reticle de subcossos:
-\end{enumerate}
 
-\begin{enumerate}
-\def\labelenumi{\alph{enumi}.}
-\tightlist
-\item
-  \(x^4 - 6x^2 + 2\),
-\item
-  \(x^4 + 2x^2 + 4\),
-\item
-  \(x^4 - 5x^2 + 5\)
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii}.}
+  \tightlist
+  \item
+    \(x^4 - 6x^2 + 2\),
+  \item
+    \(x^4 + 2x^2 + 4\),
+  \item
+    \(x^4 - 5x^2 + 5\)
+  \end{enumerate}
 \end{enumerate}
 
 \hypertarget{llista-de-problemes}{%
 \chapter{Llista de Problemes}\label{llista-de-problemes}}
-
-\hypertarget{episodi-1}{%
-\subsection*{Episodi 1}\label{episodi-1}}
-\addcontentsline{toc}{subsection}{Episodi 1}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -4116,10 +4186,6 @@ i definim \(\Delta=a^2-4b\). Suposem que \(f(x)\) és irreductible, i definim \(
 \item
   Trobeu per quins valors de \(t\in \ZZ\) el polinomi \(x^5+tx-1\in \ZZ[x]\) és irreductible.
 \end{enumerate}
-
-\hypertarget{episodi-2}{%
-\subsection*{Episodi 2}\label{episodi-2}}
-\addcontentsline{toc}{subsection}{Episodi 2}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -4147,10 +4213,6 @@ i definim \(\Delta=a^2-4b\). Suposem que \(f(x)\) és irreductible, i definim \(
   aquest resultat per trobar el polinomi mínim de \(1+\sqrt[3]{2}+\sqrt[3]{4}\).
 \end{enumerate}
 
-\hypertarget{episodi-3}{%
-\subsection*{Episodi 3}\label{episodi-3}}
-\addcontentsline{toc}{subsection}{Episodi 3}
-
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
@@ -4160,10 +4222,6 @@ i definim \(\Delta=a^2-4b\). Suposem que \(f(x)\) és irreductible, i definim \(
   Demostreu que \(2\cos(2\pi/7)\) és arrel del polinomi \(x^3+x^2-2x-1\), i deduiu que l'heptàgon regular no és constructible amb regle i compàs.
 \end{enumerate}
 
-\hypertarget{episodi-4}{%
-\subsection*{Episodi 4}\label{episodi-4}}
-\addcontentsline{toc}{subsection}{Episodi 4}
-
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
@@ -4172,10 +4230,6 @@ i definim \(\Delta=a^2-4b\). Suposem que \(f(x)\) és irreductible, i definim \(
 \item
   Demostreu que si \(K_1/F\) i \(K_2/F\) són extensions normals, aleshores \(K_1K_2/F\) i \(K_1\cap K_2 / F\) també ho són.
 \end{enumerate}
-
-\hypertarget{episodi-5}{%
-\subsection*{Episodi 5}\label{episodi-5}}
-\addcontentsline{toc}{subsection}{Episodi 5}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -4199,72 +4253,70 @@ i definim \(\Delta=a^2-4b\). Suposem que \(f(x)\) és irreductible, i definim \(
   pensat com una aplicació \(\FF_p\)-lineal.
 \end{enumerate}
 
-\hypertarget{episodi-6}{%
-\subsection*{Episodi 6}\label{episodi-6}}
-\addcontentsline{toc}{subsection}{Episodi 6}
-
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
+\tightlist
 \item
   Sigui \(A=\CC[[t]]\) l'anell de sèries de potències formals, i sigui \(F\) el seu cos de fraccions. Demostreu que el conjunt
   \[
-  K = \{\sum_{k=0}^\infty c_k t^{k/n} ~|~ n \geq 1\}
-  \]
+    K = \{\sum_{k=0}^\infty c_k t^{k/n} ~|~ n \geq 1\}
+    \]
   és un cos, i de fet és una clausura algebraica d'\(F\).
-\item
 \end{enumerate}
 
-\hypertarget{episodi-7}{%
-\subsection*{Episodi 7}\label{episodi-7}}
-\addcontentsline{toc}{subsection}{Episodi 7}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Demostreu que si \(\sigma\colon K\to K\) és un automorfisme i \(F\subseteq K\) és el cos primer de \(K\), aleshores la
+  restricció de \(\sigma\) \(F\) és la identitat.
+\item
+  Sigui \(F\) un cos infinit, i sigui \(V\) un \(F\)-espai vectorial de dimensió infinita. Demostreu que si \(V_1, \ldots, V_r\) són
+  subespais propis, aleshores existeix \(v \in V\) que no pertany a cap dels \(V_i\).
+\item
+  Demosteu que si \(K/F\) és una extensió de cossos de grau infinit, i \(K_1,\ldots,K_r\) són subextensions pròpies de \(K\), aleshores
+  hi ha algun element de \(K\) que no pertany a cap dels \(K_i\).
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Calculeu el reticle de subcossos del cos de descomposició de \(x^8-2\) sobre \(\QQ\).
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Sigui \(L/\FF_p\) una extensió de cossos i \(\alpha \in L\) un element algebraic sobre \(\FF_p\) . Demostreu que
+  \(\alpha^p\) és una arrel de \(\Irr_{\alpha,\FF_p}(x)\).
+\item
+  Trobeu els irreductibles sobre \(\FF_2\) de tots els elements del cos \(\FF_2[x]/(x^3 + x + 1)\).
+\item
+  Trobeu tots els irreductibles de grau \(\leq 6\) de \(\FF_2[x]\).
+\end{enumerate}
 
 TODO
 
-\hypertarget{episodi-8}{%
-\subsection*{Episodi 8}\label{episodi-8}}
-\addcontentsline{toc}{subsection}{Episodi 8}
+TODO
 
 TODO
 
-\hypertarget{episodi-9}{%
-\subsection*{Episodi 9}\label{episodi-9}}
-\addcontentsline{toc}{subsection}{Episodi 9}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Trobeu una torre d'extensions radicals que contingui el cos de descomposició del polinomi
+  \(f(x) = x^6 + ax^3 + b \in F[x]\), on \(F\) és un cos de característica \(0\) i \(a,b\in F\).
+\end{enumerate}
 
-TODO
-
-\hypertarget{episodi-10}{%
-\subsection*{Episodi 10}\label{episodi-10}}
-\addcontentsline{toc}{subsection}{Episodi 10}
-
-TODO
-
-\hypertarget{episodi-11}{%
-\subsection*{Episodi 11}\label{episodi-11}}
-\addcontentsline{toc}{subsection}{Episodi 11}
-
-TODO
-
-\hypertarget{episodi-12}{%
-\subsection*{Episodi 12}\label{episodi-12}}
-\addcontentsline{toc}{subsection}{Episodi 12}
-
-TODO
-
-\hypertarget{episodi-13}{%
-\subsection*{Episodi 13}\label{episodi-13}}
-\addcontentsline{toc}{subsection}{Episodi 13}
-
-TODO
-
-\hypertarget{episodi-14}{%
-\subsection*{Episodi 14}\label{episodi-14}}
-\addcontentsline{toc}{subsection}{Episodi 14}
-
-TODO
-
-\hypertarget{episodi-15}{%
-\subsection*{Episodi 15}\label{episodi-15}}
-\addcontentsline{toc}{subsection}{Episodi 15}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Donat \(G\) un grup finit, proveu que existeix una extensió \(K/F\) Galois amb grup de Galois \(G\).
+\end{enumerate}
 
 TODO
 
