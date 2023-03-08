@@ -765,13 +765,13 @@ En aquest curs, tots els anells seran commutatius, i assumirem sempre que tenen 
 Començarem recordant les definicions i resultats bàsics que ja s'han vist a altres
 assignatures, com Fonaments o Estructures algebraiques. Donarem les definicions de cos,
 característica, cos primer, i veurem que aquest és o bé \(\FF_p\) per algun primer \(p\), o bé \(\QQ\).
-A continuació introduïrem les extensions de cossos i el grau. Construirem el cos \(F[x]/(p(x))\) associat
+A continuació introduirem les extensions de cossos i el grau. Construirem el cos \(F[x]/(p(x))\) associat
 a un polinomi irreductible \(p(x)\in F[x]\), i veurem alguns exemples.
 
 \hypertarget{caracteruxedstica-dun-cos}{%
 \section{Característica d'un cos}\label{caracteruxedstica-dun-cos}}
 
-Siguia \(A\) un anell qualsevol.
+Sigui \(A\) un anell qualsevol.
 Considerem el morfisme \(\iota\colon \ZZ\to A\) definit com:
 \[
 \iota(n)=\begin{cases}
@@ -848,7 +848,7 @@ En un diagrama de cossos, sovint indicarem que l'extensió té grau \(n\) així:
 \begin{proof}
 Considerem \(K = F[x] / (g(x))\), on \(g(x)\) és un factor irreductible qualsevol de \(f(x)\). Sigui \(\alpha\) la classe de \(x\) a \(K\). Aleshores \(g(\alpha)=0\)
 i per tant \(f(\alpha)=0\). Els elements de \(K\) venen representats per \(h(\alpha)\) on \(h(x)\in F[x]\) són polinomis, que sempre
-podem pensar de grau menor al grau de \(g(x)\) (per la divisió euclídea). D'altra banda, el fet que \(g(x)\) sigui irreductible
+podem pensar de grau menor al grau de \(g(x)\) (per la divisió euclídia). D'altra banda, el fet que \(g(x)\) sigui irreductible
 fa que \(K\) sigui un cos. En efecte, si \(h(\alpha)\neq 0\), tenim que \(g(x) \nmid h(x)\) i per tant \(g(x)\) i \(h(x)\) són coprimers. Per la
 identitat de Bézout, existeixen polinomis \(a(x)\) i \(b(x)\) tals que
 \[
@@ -885,7 +885,7 @@ cos obtingut s'escriu \(\CC\), i la classe de \(x\) a \(\RR[x]/(x^2+1)\) s'escri
 habituals per treballar amb els nombres complexos.
 
 De manera semblant, podem definir \(\QQ[x]/(x^2+1)\) (adjuntem una arrel de \(-1\) als racionals), \(\QQ[x]/(x^2-2)\) (adjuntem un element \(\alpha\) amb \(\alpha^2=2\)),
-o també \(\QQ[x]/(x^3-2)\). Es poden fer les operacions habituals (suma, resta, multplicació, divisió) en algun d'aquests cossos de manera molt
+o també \(\QQ[x]/(x^3-2)\). Es poden fer les operacions habituals (suma, resta, multiplicació, divisió) en algun d'aquests cossos de manera molt
 explícita. Per exemple, \(\QQ[x]/(x^2-2)\) està format,
 com a conjunt, per tots els elements de la forma \(a+b\alpha\), amb \(a,b\in\QQ\). La multiplicació ve donada pel fet que \(\alpha^2=2\).
 
@@ -936,13 +936,13 @@ i l'altre \([x]\leftrightarrow -\sqrt{2}\).
 
 Considerem ara \(\QQ(\sqrt[3]{2}) \subset \RR\). Aquest cos també és isomorf a \(\QQ[x]/(x^3-2)\), però aquesta vegada només hi ha un isomorfisme
 possible, el que assigna \([x]\leftrightarrow \sqrt[3]{2}\). Això és així perquè el polinomi \(x^3-2\) només té una arrel real. També hi ha un
-subcòs de \(\CC\) que és isomorf a \(\QQ[x]/(x^3-2)\), que és el generat per \(\zeta_3\sqrt[3]{2}\), on \(\zeta_3=\frac{-1+i\sqrt{3}}{2}\) és una
+subcos de \(\CC\) que és isomorf a \(\QQ[x]/(x^3-2)\), que és el generat per \(\zeta_3\sqrt[3]{2}\), on \(\zeta_3=\frac{-1+i\sqrt{3}}{2}\) és una
 arrel cúbica de la unitat. Hi ha dos isomorfismes possibles, de fet, el que identifica \([x]\leftrightarrow \zeta_3\sqrt[3]{2}\) i el que
 identifica \([x]\leftrightarrow \zeta_3^{-1}\sqrt[3]{2}\).
 \end{example}
 
 \begin{remark}
-En els exemples, hem construit cossos que contenen una de les tres possibles arrels de \(x^3-2\). Aquests són isomorfs, tal
+En els exemples, hem construït cossos que contenen una de les tres possibles arrels de \(x^3-2\). Aquests són isomorfs, tal
 i com hem vist. El fet que un sigui subcos de \(\RR\) i l'altre de \(\CC\) té a veure amb anàlisi, no amb àlgebra. Algebraicament,
 no es poden distingir.
 \end{remark}
@@ -1045,7 +1045,7 @@ No és cert que tota extensió algebraica sigui finita (en veurem exemples més 
 El següent resultat ens caracteritza com són les extensions quadràtiques d'un cos \(F\) de característica \(\neq 2\).
 
 \begin{proposition}
-Sigui \(F\) un cos de característica \(\neq 2\), i sigui \(K/F\) una extensió de grau \(2\). Aleshores existeix \(\delta\in K\setminus F\)
+Sigui \(F\) un cos de característica \(\neq 2\), i sigui \(K/F\) una extensió de grau \(2\). Aleshores existeix \(\delta\in K\smallsetminus F\)
 tal que \(\delta^2=D\in F\) i \(K=F(\delta)\). Escriurem que \(K=F(\sqrt{D})\).
 \end{proposition}
 
@@ -1090,10 +1090,10 @@ Es dedueix directament del lema anterior.
 Si \(L/F\) és una extensió finita i \(K/F\) és una subextensió (és a dir, \(K\subseteq L\)) aleshores \([K\colon F]\) divideix \([L\colon F]\).
 \end{corollary}
 
-Per exemple, el corol·lari anterior ens permet deduïr que \(\sqrt{2}\) no pertany a cap extensió de grau senar.
+Per exemple, el corol·lari anterior ens permet deduir que \(\sqrt{2}\) no pertany a cap extensió de grau senar.
 
 \begin{exercise}
-Demostreu que el polomi \(x^3-\sqrt{2}\) és irreductible sobre \(\QQ(\sqrt{2})\), fent servir la torre \(\QQ(\sqrt[6]{2}) / \QQ(\sqrt{2}) / \QQ\).
+Demostreu que el polinomi \(x^3-\sqrt{2}\) és irreductible sobre \(\QQ(\sqrt{2})\), fent servir la torre \(\QQ(\sqrt[6]{2}) / \QQ(\sqrt{2}) / \QQ\).
 \end{exercise}
 
 El següent lema senzill ens permetrà construir qualsevol extensió finitament generada de manera iterativa:
@@ -1246,7 +1246,7 @@ Els nombres constructibles formen un subcos de \(\RR\).
 
 \begin{proof}
 
-Cal donar construcions de la suma, resta, producte i divisió
+Cal donar construccions de la suma, resta, producte i divisió
 de nombres ja construïts. Mentre que la suma i la resta són òbvies, la multiplicació i divisió es poden
 obtenir aplicant proporcionalitat, com veiem en els diagrames d'aquí sota.
 
@@ -1278,7 +1278,7 @@ Fent servir l'equació d'un cercle de radi \((x_0,y_0)\) i radi \(r\)
 podem veure que les coordenades de la intersecció amb una recta (posem amb equació \(ax+by=c\)) pertanyen a una
 extensió quadràtica del cos
 \(\QQ(x_0,y_0,r,a,b,c)\). També podem comprovar-ho pel cas de la intersecció de dos cercles. Resumint, si \(\alpha\) és
-construcible en \(n\) passos a partir de punts en un cos \(F\), aleshores hi ha una successió de cossos
+constructible en \(n\) passos a partir de punts en un cos \(F\), aleshores hi ha una successió de cossos
 \[
 F=F_0\subseteq F_1\subseteq F_2\subseteq F_n,
 \]
@@ -1304,10 +1304,10 @@ Com que \(\cos(\pi/3)=1/2\), substituint \(\theta=\pi/9\) a la fórmula anterior
 \[
 \alpha^3 - 3\alpha -1 =0.
 \]
-El polinomi \(x^3-3x-1\) és irreductible (substituint \(x-2\) obtenim un polinomi \(3\)-Eistenstein) i per tant \(\alpha\) té grau \(3\) i
+El polinomi \(x^3-3x-1\) és irreductible (substituint \(x-2\) obtenim un polinomi \(3\)-Eisenstein) i per tant \(\alpha\) té grau \(3\) i
 no és constructible.
 
-Finalment, per la quadratura del cercle de radi \(1\) hauríem de construïr un quadrat de costat \(\sqrt{\pi}\). Però aleshores
+Finalment, per la quadratura del cercle de radi \(1\) hauríem de construir un quadrat de costat \(\sqrt{\pi}\). Però aleshores
 també podríem construir \(\pi\), que és transcendent (com hem dit, no ho demostrem).
 \end{proof}
 
@@ -1512,7 +1512,7 @@ que el cos de descomposició és \(L = \QQ(\sqrt[p]{2}, \zeta_p)\).
 Tenim la torre \(L / \QQ(\zeta_p) / \QQ\) i \(L/\QQ(\zeta_p)\) té grau com a molt \(p\),
 ja que està generada per \(\sqrt[p]{2}\). Per tant, es té la desigualtat \([L\colon\QQ]\leq p(p-1)\).
 Com que \(L\) té subcossos de grau \(p\) i de grau \(p-1\), aquests dos nombres divideixen el grau de l'extensió total i,
-com que són coprimers, en deduim que el grau és exactament \(p(p-1)\). Ho podem il·lustrar amb el diagrama següent:
+com que són coprimers, en deduïm que el grau és exactament \(p(p-1)\). Ho podem il·lustrar amb el diagrama següent:
 \[
 \xymatrix{
   & \QQ(\sqrt[p]{2},\zeta_p) \\
@@ -1704,7 +1704,7 @@ Sigui \(\alpha \in K\), i considerem \(\Irr_{\alpha, F}(x)\). Com que el seu gra
 no pot ser divisible per \(p\) i, per tant, és separable.
 \end{proof}
 
-Més endavant ens serà útil saber que que la separabilitat es comporta bé en torres.
+Més endavant ens serà útil saber que la separabilitat es comporta bé en torres.
 
 \begin{lemma}
 Sigui \(L/K/F\) una torre. Si \(L/F\) és separable, aleshores \(L/K\) i \(K/F\) també ho són.
@@ -1793,7 +1793,7 @@ Com que \(\zeta^p\) és una arrel primitiva de la unitat, ha de ser una arrel de
 \[
 g(x^p) = f(x)h(x).
 \]
-Reduïnt mòdul \(p\) i fent servir el ``Freshman's dream'', tenim
+Reduint mòdul \(p\) i fent servir el ``Freshman's dream'', tenim
 \[
 (\bar{g}(x))^p = \bar{f}(x)\bar{h}(x) \text{ a } \FF_p[x].
 \]
@@ -1855,7 +1855,7 @@ completament a \(\bar{F}[x]\), i per tant \(\bar{F}\) és una clausura algebraic
 Cap al final del curs veurem una demostració del \emph{Teorema Fonamental de l'Àlgebra}, que diu que
 el cos \(\CC\) dels nombres complexos és algebraicament tancat.
 Com a conseqüència, obtenim clausures algebraiques de qualsevol extensió subextensió \(\CC/F/\QQ\). En particular,
-el cos \(\QQbar\) format pels complexos algebraics és una clausura algebraica de \(\QQ\).
+el cos \(\bar{QQ}\) format pels complexos algebraics és una clausura algebraica de \(\QQ\).
 
 \hypertarget{clausura-algebraica-dff_q}{%
 \section{\texorpdfstring{Clausura algebraica d'\(\FF_q\)}{Clausura algebraica d'\textbackslash FF\_q}}\label{clausura-algebraica-dff_q}}
@@ -1981,7 +1981,7 @@ arrels de \(f(x)\), i \(\varphi\) indueix una aplicació injectiva (i per tant e
 \hypertarget{existuxe8ncia-de-la-clausura-algebraica}{%
 \section{Existència de la clausura algebraica}\label{existuxe8ncia-de-la-clausura-algebraica}}
 
-Donat un cos qualsevol \(F\), tenim ara l'objectiu de construir una clausura algebraica \(\bar{F}/F\). Intuitivament almenys,
+Donat un cos qualsevol \(F\), tenim ara l'objectiu de construir una clausura algebraica \(\bar{F}/F\). Intuïtivament almenys,
 la idea és de considerar, per cada polinomi \(g(x)\in F[x]\), un cos \(F_g\) que contingui totes les arrels de \(g\).
 Aleshores hauríem de prendre el compositum de tots aquests cossos. El problema és que per fer el compositum
 hem de prendre una intersecció de molts cossos, i no està clar on viuen aquests cossos (la intersecció
@@ -2048,7 +2048,7 @@ Veurem que \(I\) no és el total i, per la Proposició \ref{prp:ideal-maximal}, 
 obtingut prenent el quocient per \(\mathcal{M}\)
 l'anomenem \(K_1\), que és una extensió de \(F\) que conté \textbf{una arrel} de cada polinomi amb coeficients a \(F\). Podem
 iterar el procés (començant amb \(K_1\) en comptes de \(F\)) per obtenir \(K_2/K_1\), una extensió on tot polinomi
-amb coeficients a \(K_1\) té una arrel, i així construim una successió de cossos de la qual en podem
+amb coeficients a \(K_1\) té una arrel, i així construïm una successió de cossos de la qual en podem
 prendre la seva ``unió'' \(K\). Donat un polinomi \(f(x)\in K[x]\), tots els seus coeficients viuen necessàriament
 a \(K_n\) per algun \(n\geq 1\) i, per tant, \(f(x)\) té alguna arrel a \(K_{n+1}\) i, per tant a \(K\).
 
@@ -2419,7 +2419,7 @@ Sigui \(H = \Gal(K/M)\). Demostrarem \(1 \implies 2 \implies 3 \implies 1\).
 
 \(1 \implies 2\): Sigui \(\sigma\in G\). Si \(\alpha\in M\) té polinomi mínim \(f(x)\in F[x]\), aleshores \(\sigma\)
 en permuta les seves arrels i, en particular, \(\sigma(\alpha) \in M\). Per tant \(\sigma\) restringeix a un
-morfisme de \(M\), que ja hem vist que és un automorfisme. Hem construit doncs una aplicació \(G\to H\),
+morfisme de \(M\), que ja hem vist que és un automorfisme. Hem construït doncs una aplicació \(G\to H\),
 i és fàcil comprovar que és un morfisme de grups. El seu nucli és doncs un subgrup normal, format
 per aquells automorfismes \(\sigma\in G\) que fixen \(M\), és a dir, és justament \(\Gal(K/M)\).
 
@@ -2543,8 +2543,8 @@ El reticle de subcossos de \(\QQ(\sqrt[3]{2}, \zeta_3)\) corresponent és:
 }
 \]
 
-\hypertarget{exemple-duna-extensiuxf3-de-de-grau-16}{%
-\subsection{Exemple d'una extensió de de grau 16}\label{exemple-duna-extensiuxf3-de-de-grau-16}}
+\hypertarget{exemple-duna-extensiuxf3-de-grau-16}{%
+\subsection{Exemple d'una extensió de grau 16}\label{exemple-duna-extensiuxf3-de-grau-16}}
 
 Considerem el grup de Galois del polinomi irreductible \(x^8-2\). Les arrels d'aquest polinomi són
 \[
@@ -2662,7 +2662,7 @@ existeix un polinomi \(f(x)\in \FF_p[x]\) irreductible de grau \(n\).
 \end{proposition}
 
 Podem trobar una fórmula explícita pel nombre de polinomis irreductibles de grau \(n\). Ens
-caldrar primer demostrar un resultat útil sobre la factorització de \(x^{p^n} -x\in\FF_p[x]\).
+caldrà primer demostrar un resultat útil sobre la factorització de \(x^{p^n} -x\in\FF_p[x]\).
 
 \begin{proposition}
 El polinomi \(x^{p^n}-x\) és el producte de tots els polinomis irreductibles
@@ -2717,7 +2717,7 @@ sobre \(F\) pels coeficients de \(g(x)\). Com que \(\Irr_{\alpha,M}(x)=\Irr_{\al
 i per tant \(M=M'\). En conclusió, els subcossos \(M\) estan generats per coeficients dels factors irreductibles
 de \(f(x)\) pensat com a polinomi a \(K[x]\) i, per tant, n'hi ha un nombre finit.
 
-Recíprocament, suposem que \(K/F\) té un nombre finit de subcossos. Gràcies a la Proposicó \ref{prp:lema-algebra-lineal},
+Recíprocament, suposem que \(K/F\) té un nombre finit de subcossos. Gràcies a la Proposició \ref{prp:lema-algebra-lineal},
 hi ha algun \(\alpha\in K\) que no pertany a cap dels subcossos de \(K\). Per tant, \(F(\alpha)=K\).
 \end{proof}
 
@@ -3003,7 +3003,7 @@ Sigui \(m\geq 1\) un enter positiu. Aleshores existeixen infinits primers \(p\) 
 \end{proposition}
 
 \begin{proof}
-Ens caldà fer servir que \(\Phi_m\in\ZZ[x]\) és mònic, i \(\Phi_m(0) = 1\).
+Ens caldrà fer servir que \(\Phi_m\in\ZZ[x]\) és mònic, i \(\Phi_m(0) = 1\).
 
 Suposem donats \(p_1,\ldots,p_k\) congruents amb \(1\) mòdul \(m\). Trobarem un primer més gran que tots ells, que
 també serà \(\equiv 1 \pmod{m}\). Considerem el
@@ -3059,7 +3059,7 @@ quals no s'ha demostrat encara que hi apareguin. Aquest problema s'anomena el \t
 \section{Constructibilitat de polígons regulars}\label{constructibilitat-de-poluxedgons-regulars}}
 
 Com a aplicació dels cossos ciclotòmics, estudiarem quins polígons regulars es poden construir amb regle i compàs.
-Ja hem vist que un nombre real \(\alpha\) és construible si i només si \(\QQ(\alpha)\) està contingut en un cos \(K\)
+Ja hem vist que un nombre real \(\alpha\) és constructible si i només si \(\QQ(\alpha)\) està contingut en un cos \(K\)
 obtingut a partir de \(\QQ\) a partir d'un nombre finit d'extensions quadràtiques.
 
 Construir un polígon de \(n\) costats és equivalent a construir les arrels \(n\)-èssimes de la unitat \(\zeta_n\), que al
@@ -3144,11 +3144,6 @@ Suposem que \(f(x)\) és irreductible. Aleshores el subgrup de \(G\leq S_n\) que
 hi ha un element \(g\in G\) tal que \(g(i)=j\). Així, no tots els subgrups de \(S_n\) són possibles grups de Galois.
 \end{remark}
 
-\begin{example}
-Calculem els grups de Galois \(\Gal(\QQ(\sqrt{2}, \sqrt{3}) / \QQ)\) i \(\Gal(\QQ(\sqrt[3]{2})/\QQ)\) com a
-subgrups de \(S_4\) i \(S_3\), respectivament. TODO
-\end{example}
-
 \hypertarget{el-grup-de-galois-del-polinomi-genuxe8ric}{%
 \section{El grup de Galois del polinomi genèric}\label{el-grup-de-galois-del-polinomi-genuxe8ric}}
 
@@ -3194,7 +3189,7 @@ cert però que la ``majoria'' de polinomis sobre \(\QQ\) tenen grup de Galois \(
 \end{definition}
 
 Com que el discriminant és un polinomi simètric en les arrels de \(f(x)\), es pot expressar
-en termes dels seus coeficients. En particular, el discrimiant del polinomi general és un
+en termes dels seus coeficients. En particular, el discriminant del polinomi general és un
 element \(D\in F(s_1,\ldots,s_n)\).
 
 \begin{theorem}
@@ -3321,14 +3316,14 @@ del grup \(G=K^\times\), i per tant tenim el següent:
 \section{Extensions cícliques}\label{extensions-cuxedcliques}}
 
 \begin{definition}[extensió cíclica]
-\protect\hypertarget{def:ext-ciclica}{}\label{def:ext-ciclica}Una extensió \(K/F\) és \emph{cíclica} si és Galois amb grup de galois cíclic.
+\protect\hypertarget{def:ext-ciclica}{}\label{def:ext-ciclica}Una extensió \(K/F\) és \emph{cíclica} si és Galois amb grup de Galois cíclic.
 \end{definition}
 
 Escriurem \(\mu_n\) pel grup de les arrels \(n\)-èssimes de la unitat (en una clausura algebraica),
 i també escriurem \(\sqrt[n]{a}\) per una arrel del polinomi \(x^n-a\).
 
 \begin{proposition}
-Sigui \(F\) és un cos de característica no divisora de \(n\) que conté \(\mu_n\). Aleshores si \(a\in F\) l'extensió \(F(\sqrt[n]{a})\)
+Sigui \(F\) és un cos on \(n\) és invertible i que conté \(\mu_n\). Aleshores si \(a\in F\) l'extensió \(F(\sqrt[n]{a})\)
 és cíclica de grau un divisor de \(n\).
 \end{proposition}
 
@@ -3350,7 +3345,7 @@ i el seu nucli està format per aquelles \(\sigma\) que fixen \(\sqrt[n]{a}\), �
 El recíproc resulta ser cert.
 
 \begin{proposition}
-Sigui \(F\) és un cos de característica no divisora de \(n\) que conté \(\mu_n\), i sigui \(K/F\) una extensió cíclica de
+Sigui \(F\) és un cos on \(n\) és invertiblede i que conté \(\mu_n\), i sigui \(K/F\) una extensió cíclica de
 grau \(n\). Aleshores \(K=F(\sqrt[n]{a})\) per algun \(a\in F\).
 \end{proposition}
 
@@ -3529,7 +3524,7 @@ Les seves tres arrels generen tres subcossos diferents de \(\RR\).
 
 \begin{remark}
 La condició que \(f\) és irreductible és important! El polinomi \(x^3-2x+1=(x-1)(x^2+x-1)\) té discriminant \(5\) però grup de Galois \(A_3\),
-mentre que el polinomi \(x^3-7x-6=(x+1)(x+2)(x-3)\) té discrimiant \(20^2\) i grup de Galois \(S_3\).
+mentre que el polinomi \(x^3-7x-6=(x+1)(x+2)(x-3)\) té discriminant \(20^2\) i grup de Galois \(S_3\).
 \end{remark}
 
 Podem fer el resultat del teorema anterior més explícit. Si \(\Delta=\disc(f(x))\) és el quadrat d'un element d'\(F\), aleshores el
@@ -3570,7 +3565,7 @@ arribem a les expressions
 \theta_-^3 &= \frac{-27q - 3\sqrt{-3\Delta}}{2}\\
 \end{align*}
 (hem triat els noms fent servir \(\pm\) justament per això). Obtenim les solucions de la cúbica extraient les arrels cúbiques d'aquestes expressions. Fixem-nos que hi ha tres possibles arrels
-cúbiques en cada cas, i semblaria que obtindriem \(9\) solucions, que no té sentit. Però \(\theta_+\) i \(\theta_-\) no són independents,
+cúbiques en cada cas, i semblaria que obtindríem \(9\) solucions, que no té sentit. Però \(\theta_+\) i \(\theta_-\) no són independents,
 ja que ja sabem que quan n'adjuntem una ja obtenim l'extensió total de grau \(6\). De fet, un càlcul semblant al què hem fet per trobar \(\theta_{\pm}^3\)
 ens dona l'equació \(\theta_+\theta_-=-3p\), i per tant només hem de triar una de les arrels cúbiques.
 
@@ -3641,12 +3636,12 @@ El següent resultat ens classifica \(G\) segons aquesta informació.
 \end{theorem}
 
 \begin{proof}
-Si \(h(x)\) és irreductible i \(D\) no és un quadrat, aleshores \(G\not\leq A_4\) i \(\Gal(h(x))=S_3\). Per tant, \(|G|\) és divisible per \(6\) i l'unica
+Si \(h(x)\) és irreductible i \(D\) no és un quadrat, aleshores \(G\not\leq A_4\) i \(\Gal(h(x))=S_3\). Per tant, \(|G|\) és divisible per \(6\) i l'única
 possibilitat és \(S_4\).
 
 Si \(h(x)\) és irreductible i \(D\) és un quadrat, aleshores \(G\leq A_4\), i a més \(\Gal(h(x))=A_3\), per tant \(3 \mid |G|\) i l'única possibilitat és \(A_4\).
 
-Si \(h(x)\) té tres arrels a \(F\), aleshores \(G\) fixa \(\theta_i\) per \(i=1,2,3\), i per tant \(G\leq V\), d'on en treiem \(G = V\)
+Si \(h(x)\) té tres arrels a \(F\), aleshores \(G\) fixa \(\theta_i\) per \(i=1,2,3\), i per tant \(G\leq V\), d'on en traiem \(G = V\)
 
 Finalment, si \(h(x)\) té exactament una arrel, posem \(\theta_1\in F\), aleshores \(G\) fixa \(\theta_1\) però no intercanvia \(\theta_2\leftrightarrow \theta_3\).
 Això vol dir que \(G\leq D_{2\times 4}\) i \(G \not\leq V\). Per tant, \(G=D_{2\times 4}\) o \(G=C_4\). Per distingir-los, podem observar que \(D_{2\times 4}\cap A_4=V_4\)
@@ -3690,7 +3685,7 @@ Podem donar els exemples de \(\bar{\QQ} / \QQ\), de \(\QQ(\zeta_{p^\infty})\) i 
 \end{example}
 
 \begin{definition}[grup de Galois]
-Si \(K/F\) és de Galois, alhores el seu \emph{grup de Galois} és el grup \(\Gal(K/F)\) format
+Si \(K/F\) és de Galois, aleshores el seu \emph{grup de Galois} és el grup \(\Gal(K/F)\) format
 pels automorfismes de \(K\) que fixen \(F\).
 \end{definition}
 
@@ -3713,9 +3708,9 @@ existeix \(\sigma\in\Gal(K/F)\) tal que \(\sigma|_M = \tilde\sigma\).
 \end{proposition}
 
 \begin{proof}
-Fem servir el Lema de Zorn. Donada una cadena d'extensions, podem prendre prendre com a element
+Fem servir el Lema de Zorn. Donada una cadena d'extensions, podem prendre com a element
 maximal la unió d'aquestes, i \(\tilde\sigma\) hi extén. Si \(\sigma'\colon L'\to L\) és l'element maximal donat per Zorn,
-volem veure que \(L'=L\). Si no ho fos, prenem \(\alpha\in L\smallsetminus L'\) i extenem (ho podem fer perquè estem en el
+volem veure que \(L'=L\). Si no ho fos, prenem \(\alpha\in L\smallsetminus L'\) i extenem el morfisme (ho podem fer perquè estem en el
 cas finit), cosa que és una contradicció.
 
 Veiem que l'extensió \(\sigma\) és exhaustiva fent servir que permuta les arrels del polinomi mínim de qualsevol element.
@@ -4273,6 +4268,9 @@ i definim \(\Delta=a^2-4b\). Suposem que \(f(x)\) és irreductible, i definim \(
     Siguin \(\alpha\) i \(\beta\) dues arrels diferents de \(f(x)\) a \(E\). Proveu que \(\alpha\beta\) és algebraic sobre \(\FF_2\).
     Demostreu que l'extensió \(E/`\FF_2\) no és simple, o sigui no existeix cap \(\delta\in E\) tal que \(E =\FF_2(\delta)\).
   \end{enumerate}
+\item
+  Calculeu els grups de Galois \(\Gal(\QQ(\sqrt{2}, \sqrt{3}) / \QQ)\) i \(\Gal(\QQ(\sqrt[3]{2})/\QQ)\) com a
+  subgrups de \(S_4\) i \(S_3\), respectivament.
 \item
   Trobeu una torre d'extensions radicals que contingui el cos de descomposició del polinomi
   \(f(x) = x^6 + ax^3 + b \in F[x]\), on \(F\) és un cos de característica \(0\) i \(a,b\in F\).

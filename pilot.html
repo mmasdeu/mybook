@@ -233,7 +233,7 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="8.4.1" data-path="el-teorema-fonamental.html"><a href="el-teorema-fonamental.html#exemple-duna-extensió-biquadràtica"><i class="fa fa-check"></i><b>8.4.1</b> Exemple d’una extensió biquadràtica</a></li>
 <li class="chapter" data-level="8.4.2" data-path="el-teorema-fonamental.html"><a href="el-teorema-fonamental.html#exemple-duna-extensió-de-tipus-s_3"><i class="fa fa-check"></i><b>8.4.2</b> Exemple d’una extensió de tipus <span class="math inline">\(S_3\)</span></a></li>
-<li class="chapter" data-level="8.4.3" data-path="el-teorema-fonamental.html"><a href="el-teorema-fonamental.html#exemple-duna-extensió-de-de-grau-16"><i class="fa fa-check"></i><b>8.4.3</b> Exemple d’una extensió de de grau 16</a></li>
+<li class="chapter" data-level="8.4.3" data-path="el-teorema-fonamental.html"><a href="el-teorema-fonamental.html#exemple-duna-extensió-de-grau-16"><i class="fa fa-check"></i><b>8.4.3</b> Exemple d’una extensió de grau 16</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="cossos-finits.html"><a href="cossos-finits.html"><i class="fa fa-check"></i><b>9</b> Cossos Finits</a>
@@ -311,11 +311,11 @@ div.csl-indent {
 <p>Començarem recordant les definicions i resultats bàsics que ja s’han vist a altres
 assignatures, com Fonaments o Estructures algebraiques. Donarem les definicions de cos,
 característica, cos primer, i veurem que aquest és o bé <span class="math inline">\(\FF_p\)</span> per algun primer <span class="math inline">\(p\)</span>, o bé <span class="math inline">\(\QQ\)</span>.
-A continuació introduïrem les extensions de cossos i el grau. Construirem el cos <span class="math inline">\(F[x]/(p(x))\)</span> associat
+A continuació introduirem les extensions de cossos i el grau. Construirem el cos <span class="math inline">\(F[x]/(p(x))\)</span> associat
 a un polinomi irreductible <span class="math inline">\(p(x)\in F[x]\)</span>, i veurem alguns exemples.</p>
 <div id="característica-dun-cos" class="section level2 hasAnchor" number="1.1">
 <h2><span class="header-section-number">1.1</span> Característica d’un cos<a href="pilot.html#característica-dun-cos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Siguia <span class="math inline">\(A\)</span> un anell qualsevol.
+<p>Sigui <span class="math inline">\(A\)</span> un anell qualsevol.
 Considerem el morfisme <span class="math inline">\(\iota\colon \ZZ\to A\)</span> definit com:
 <span class="math display">\[
 \iota(n)=\begin{cases}
@@ -379,7 +379,7 @@ i infinita si no.</p>
 <div class="proof">
 <p><span id="unlabeled-div-3" class="proof"><em>Prova</em>. </span>Considerem <span class="math inline">\(K = F[x] / (g(x))\)</span>, on <span class="math inline">\(g(x)\)</span> és un factor irreductible qualsevol de <span class="math inline">\(f(x)\)</span>. Sigui <span class="math inline">\(\alpha\)</span> la classe de <span class="math inline">\(x\)</span> a <span class="math inline">\(K\)</span>. Aleshores <span class="math inline">\(g(\alpha)=0\)</span>
 i per tant <span class="math inline">\(f(\alpha)=0\)</span>. Els elements de <span class="math inline">\(K\)</span> venen representats per <span class="math inline">\(h(\alpha)\)</span> on <span class="math inline">\(h(x)\in F[x]\)</span> són polinomis, que sempre
-podem pensar de grau menor al grau de <span class="math inline">\(g(x)\)</span> (per la divisió euclídea). D’altra banda, el fet que <span class="math inline">\(g(x)\)</span> sigui irreductible
+podem pensar de grau menor al grau de <span class="math inline">\(g(x)\)</span> (per la divisió euclídia). D’altra banda, el fet que <span class="math inline">\(g(x)\)</span> sigui irreductible
 fa que <span class="math inline">\(K\)</span> sigui un cos. En efecte, si <span class="math inline">\(h(\alpha)\neq 0\)</span>, tenim que <span class="math inline">\(g(x) \nmid h(x)\)</span> i per tant <span class="math inline">\(g(x)\)</span> i <span class="math inline">\(h(x)\)</span> són coprimers. Per la
 identitat de Bézout, existeixen polinomis <span class="math inline">\(a(x)\)</span> i <span class="math inline">\(b(x)\)</span> tals que
 <span class="math display">\[
@@ -410,7 +410,7 @@ Per divir ens cal utilitzar la identitat de Bézout (exercici).</p>
 cos obtingut s’escriu <span class="math inline">\(\CC\)</span>, i la classe de <span class="math inline">\(x\)</span> a <span class="math inline">\(\RR[x]/(x^2+1)\)</span> s’escriu <span class="math inline">\(i\)</span>. Com que <span class="math inline">\(i^2+1=0\)</span>, tenim <span class="math inline">\(i^2=-1\)</span> i recuperem les fórmules
 habituals per treballar amb els nombres complexos.</p>
 <p>De manera semblant, podem definir <span class="math inline">\(\QQ[x]/(x^2+1)\)</span> (adjuntem una arrel de <span class="math inline">\(-1\)</span> als racionals), <span class="math inline">\(\QQ[x]/(x^2-2)\)</span> (adjuntem un element <span class="math inline">\(\alpha\)</span> amb <span class="math inline">\(\alpha^2=2\)</span>),
-o també <span class="math inline">\(\QQ[x]/(x^3-2)\)</span>. Es poden fer les operacions habituals (suma, resta, multplicació, divisió) en algun d’aquests cossos de manera molt
+o també <span class="math inline">\(\QQ[x]/(x^3-2)\)</span>. Es poden fer les operacions habituals (suma, resta, multiplicació, divisió) en algun d’aquests cossos de manera molt
 explícita. Per exemple, <span class="math inline">\(\QQ[x]/(x^2-2)\)</span> està format,
 com a conjunt, per tots els elements de la forma <span class="math inline">\(a+b\alpha\)</span>, amb <span class="math inline">\(a,b\in\QQ\)</span>. La multiplicació ve donada pel fet que <span class="math inline">\(\alpha^2=2\)</span>.</p>
 <p>De manera semblant, <span class="math inline">\(\QQ[x]/(x^3-2) = \{a + b\beta + c\beta^2 ~|~ a,b,c\in\QQ \}\)</span>, i hem de recordar que <span class="math inline">\(\beta^3=2\)</span> per simplificar
@@ -453,12 +453,12 @@ Donat un morfisme <span class="math inline">\(\varphi\)</span>, és automàticam
 i l’altre <span class="math inline">\([x]\leftrightarrow -\sqrt{2}\)</span>.</p>
 <p>Considerem ara <span class="math inline">\(\QQ(\sqrt[3]{2}) \subset \RR\)</span>. Aquest cos també és isomorf a <span class="math inline">\(\QQ[x]/(x^3-2)\)</span>, però aquesta vegada només hi ha un isomorfisme
 possible, el que assigna <span class="math inline">\([x]\leftrightarrow \sqrt[3]{2}\)</span>. Això és així perquè el polinomi <span class="math inline">\(x^3-2\)</span> només té una arrel real. També hi ha un
-subcòs de <span class="math inline">\(\CC\)</span> que és isomorf a <span class="math inline">\(\QQ[x]/(x^3-2)\)</span>, que és el generat per <span class="math inline">\(\zeta_3\sqrt[3]{2}\)</span>, on <span class="math inline">\(\zeta_3=\frac{-1+i\sqrt{3}}{2}\)</span> és una
+subcos de <span class="math inline">\(\CC\)</span> que és isomorf a <span class="math inline">\(\QQ[x]/(x^3-2)\)</span>, que és el generat per <span class="math inline">\(\zeta_3\sqrt[3]{2}\)</span>, on <span class="math inline">\(\zeta_3=\frac{-1+i\sqrt{3}}{2}\)</span> és una
 arrel cúbica de la unitat. Hi ha dos isomorfismes possibles, de fet, el que identifica <span class="math inline">\([x]\leftrightarrow \zeta_3\sqrt[3]{2}\)</span> i el que
 identifica <span class="math inline">\([x]\leftrightarrow \zeta_3^{-1}\sqrt[3]{2}\)</span>.</p>
 </div>
 <div class="remark">
-<p><span id="unlabeled-div-10" class="remark"><em>Remarca</em>. </span>En els exemples, hem construit cossos que contenen una de les tres possibles arrels de <span class="math inline">\(x^3-2\)</span>. Aquests són isomorfs, tal
+<p><span id="unlabeled-div-10" class="remark"><em>Remarca</em>. </span>En els exemples, hem construït cossos que contenen una de les tres possibles arrels de <span class="math inline">\(x^3-2\)</span>. Aquests són isomorfs, tal
 i com hem vist. El fet que un sigui subcos de <span class="math inline">\(\RR\)</span> i l’altre de <span class="math inline">\(\CC\)</span> té a veure amb anàlisi, no amb àlgebra. Algebraicament,
 no es poden distingir.</p>
 </div>
