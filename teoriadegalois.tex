@@ -3,7 +3,7 @@
 \PassOptionsToPackage{hyphens}{url}
 %
 \documentclass[
-  12pt,
+  11pt,
 ]{book}
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
@@ -752,10 +752,15 @@ L'assignatura de \emph{Teoria de Galois} es cursa al primer semestre del tercer 
   Tres seminaris pràctics, de 2h cadascun.
 \end{itemize}
 
-El curs es pot dividir de manera natural en 15 sessions de dues hores. El temps efectiu de cadascuna d'aquestes sessions és de 100 minuts, i es pot pensar com una sèrie de 15 capítols.
+El curs es pot dividir de manera natural en 15 sessions de dues hores.
+El temps efectiu de cadascuna d'aquestes sessions és de 100 minuts, i s'ha decidit organitzar-lo com una sèrie de 15 episodis.
 
-L'estructura que s'ha seguit és essencialment la de {[}\protect\hyperlink{ref-dummitfoote}{2}{]}, però la demostració del teorema fonamental s'ha fet completament diferent,
-seguint un punt de vista proposat per {[}\protect\hyperlink{ref-geck}{3}{]}. També s'ha canviat la presentació de l'existència de la clausura algebraica d'un cos arbitrari.
+L'estructura que s'ha seguit és essencialment la de la Part IV de {[}\protect\hyperlink{ref-dummitfoote}{2}{]}, però s'hi han introduït alguns canvis.
+La caracterització de les extensions de Galois i la presentació del teorema fonamental s'ha fet diferent,
+seguint el punt de vista proposat per {[}\protect\hyperlink{ref-geck}{3}{]}. A partir d'un resultat senzill d'àlgebra lineal, ens permet demostrar
+alguns dels resultats de manera bastant directa.
+També s'ha canviat la presentació de l'existència de la clausura algebraica d'un cos arbitrari, oferint una demostració
+més directa que fa servir el lema de Zorn en comptes d'altres resultats equivalents.
 
 \hypertarget{pilot}{%
 \chapter{Vells coneguts}\label{pilot}}
@@ -1813,6 +1818,8 @@ En aquest episodi demostrem l'existència i unicitat de la clausura algebraica d
 
 \hypertarget{preliminars}{%
 \section{Preliminars}\label{preliminars}}
+
+Comencem definint la noció de clausura algebraica i la de cos algebraicament tancat.
 
 \begin{definition}[clausura algebraica]
 \protect\hypertarget{def:clausura-algebraica}{}\label{def:clausura-algebraica}Diem que \(\bar{F}/F\) és una \emph{clausura algebraica} d'\(F\) si \(\bar{F}/F\) és algebraica i tot polinomi \(f(x)\in F[x]\)
@@ -4072,7 +4079,7 @@ Q_8 = \langle x, y \mid x^2y^{-2}=x^4=xyx^{-1}y=1\rangle,\quad \operatorname{Dic
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Dibuixeu el reticle del grup cíclic \(C_{4}\), \(C_8\) i \(C_{12}\).
+  Dibuixeu el reticle dels grup cíclics \(C_{4}\), \(C_8\) i \(C_{12}\).
 \item
   Dibuixeu el reticle dels grups \(C_2\times C_2\) i \(C_3\times C_9\).
 \item
