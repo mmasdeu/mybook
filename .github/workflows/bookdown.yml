@@ -40,7 +40,9 @@ jobs:
              pdftools
           
       - name: Install latex mk
-        run: sudo apt-get udpate & sudo apt-get install -y -q latexmk texlive-lang-spanish  texlive-lang-cyrillic texlive-latex-extra texlive-xetex fonts-freefont-ttf texlive-fonts-recommended texlive-fonts-extra texlive-bibtex-extra biber imagemagick poppler-utils ttf-bitstream-vera
+        run: |
+          sudo apt-get udpate & sudo apt-get install -y -q latexmk texlive-lang-spanish  texlive-lang-cyrillic texlive-latex-extra texlive-xetex fonts-freefont-ttf texlive-fonts-recommended texlive-fonts-extra texlive-bibtex-extra biber imagemagick poppler-utils ttf-bitstream-vera
+          sudo initexmf --mkmaps
 
       - name: Build site
         run: |
