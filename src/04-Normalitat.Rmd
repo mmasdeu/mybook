@@ -25,7 +25,7 @@ Sigui $f(x)\in F[x]$. Aleshores existeix un cos de descomposició $K/F$ de $f(x)
 :::
 ::: {.proof}
 Farem inducció en el grau d'$f$, essent el cas $n=1$ trivial. Suposem l'enunciat cert per tots els polinomis de grau $ < n$ definits
-sobre qualsevol cos, i ho demostrarem per $f(x)\in F[x]$ de grau $n$. Pel Teorema \@ref{thm:kronecker}, hi ha una extensió $L/F$
+sobre qualsevol cos, i ho demostrarem per $f(x)\in F[x]$ de grau $n$. Pel Teorema \@ref(thm:kronecker), hi ha una extensió $L/F$
 que conté una arrel $\alpha\in L_0$ de $f(x)$. Dividint per $(x-\alpha)$ obtenim un polinomi $f_0(x)\in L_0[x]$ de grau $n-1$. Per hipòtesi
 d'inducció, existeix una extensió $L/L_0$ on $f_0(x)$ (i per tant també $f(x)$) descomposa completament. Aleshores podem
 prendre per $K/F$ la intersecció de totes les subextensions $L/K'/F$ on $f(x)$ descomposa completament. Per construcció, $K/F$ és un
@@ -106,8 +106,8 @@ formen un grup amb la multiplicació que, de fet, és cíclic. Diem que una arre
 $\zeta_n$ és *primitiva* si és un generador d'aquest grup. Si en fixem una, les altres primitives
 són de la forma $\zeta_n^a$, amb $a$ coprimer amb $n$. Hi ha, doncs, $\varphi(n)$ arrels primitives.
 
-Anomenem *cos ciclotòmic $n$-èssim$ al cos $\QQ(\zeta_n)$, que és el cos de descomposició de $x^n-1$:
-si adjuntem $\zeta_n$, automàticament totes les seves potències pertanyen a aquest cos. A l'episodi
+Anomenem *cos ciclotòmic $n$-èssim$* al cos $\QQ(\zeta_n)$, que és el cos de descomposició de $x^n-1$:
+si adjuntem $\zeta_n$, automàticament totes les seves potències pertanyen a aquest cos. A la Secció
 \@ref(ciclotomics) aprendrem com calcular el grau d'aquest cos, però --a tall d'espòiler-- podem
 veure fàcilment que quan $n=p$ és primer, aleshores
 $$

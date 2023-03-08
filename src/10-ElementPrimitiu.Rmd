@@ -1,6 +1,12 @@
 # Element Primitiu
 
-El primer objectiu és demostrar el teorema de l'element primitiu. Recordem que una
+En aquest episodi demostrem el teorema de l'element primitiu, i ho apliquem a estudiar com es comporta
+la propietat de ser Galois en reticles.
+
+
+## El teorema de l'element primitiu
+
+Recordem que una
 extensió $K/F$ és simple si hi ha algun $\alpha\in K$ tal que $K=F(\alpha)$.
 
 ::: {.theorem #simple-caracteritzacio name="caracterització d'extensions simples"}
@@ -16,8 +22,6 @@ de $f(x)$ pensat com a polinomi a $K[x]$ i, per tant, n'hi ha un nombre finit.
 Recíprocament, suposem que $K/F$ té un nombre finit de subcossos. Gràcies a la Proposicó \@ref(prp:lema-algebra-lineal),
 hi ha algun $\alpha\in K$ que no pertany a cap dels subcossos de $K$. Per tant, $F(\alpha)=K$.
 :::
-
-## El teorema de l'element primitiu
 
 Amb aquesta caracterització i tot el què sabem fins ara podem demostrar fàcilment el teorema de l'element primitiu.
 

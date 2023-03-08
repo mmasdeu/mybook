@@ -242,22 +242,43 @@
 
 
 % Defines the theorem text style for each type of theorem to one of the three styles above
+
+%% The version below will make it compatible with bookdown
+
+% \newcounter{dummy} 
+% \numberwithin{dummy}{section}
+
+% \theoremstyle{maincolornumbox}
+% \newtheorem{theorem}{TTTT}[chapter]
+% \newtheorem{theoremeT}{Teorema}[chapter]
+% \newtheorem{problem}{Problema}[chapter]
+% \newtheorem{exerciseT}{Exercici}[chapter]
+
+% \theoremstyle{blacknumex}
+% \newtheorem{exampleT}{Exemple}[chapter]
+
+% \theoremstyle{blacknumbox}
+% \newtheorem{definitionT}{Definició}[chapter]
+% \newtheorem{corollaryT}{Corol·lari}[chapter]
+
+% \theoremstyle{maincolornum}
+% \newtheorem{propositionT}{Proposició}[chapter]
+% \newtheorem{lemmaT}{Lema}[chapter]
+
+%% The version below will make it nice for the PDF, but breaks sync with bookdown
+
 \newcounter{dummy} 
 \numberwithin{dummy}{section}
-
 \theoremstyle{maincolornumbox}
 \newtheorem{theorem}[dummy]{TTTT}
 \newtheorem{theoremeT}[dummy]{Teorema}
 \newtheorem{problem}[dummy]{Problema}
 \newtheorem{exerciseT}[dummy]{Exercici}
-
 \theoremstyle{blacknumex}
 \newtheorem{exampleT}[dummy]{Exemple}
-
 \theoremstyle{blacknumbox}
 \newtheorem{definitionT}[dummy]{Definició}
 \newtheorem{corollaryT}[dummy]{Corol·lari}
-
 \theoremstyle{maincolornum}
 \newtheorem{propositionT}[dummy]{Proposició}
 \newtheorem{lemmaT}[dummy]{Lema}

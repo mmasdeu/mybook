@@ -1,13 +1,13 @@
 # Llista de Problemes
 
-### Episodi 1
+### Episodi 1 {-}
 
 1. Demostreu que $f(x)=x^3-10x^2+5$ és irreductible a $\QQ[x]$. Sigui $F=\QQ(\alpha)$, on $\alpha$ és una arrel de $f(x)$. Calculeu $1/(1+\alpha^2)$.
 2. Demostreu que $x^3+x^2+1$ és irreductible a $\FF_2$. Sigui $F=\FF_2(\alpha)$, on $\alpha$ és una arrel de $f(x)$. Calculeu les potències d'$\alpha$ a $F$.
 3. Demostreu que $x^3-nx+2$ és irreductible si $n\neq -1, 3, 5$.
 4. Trobeu per quins valors de $t\in \ZZ$ el polinomi $x^5+tx-1\in \ZZ[x]$ és irreductible.
 
-### Episodi 2
+### Episodi 2 {-}
 
 1. Trobeu el polinomi mínim de $2+3i$ sobre $\QQ$, on $i=\sqrt{-1}$.
 2. Trobeu el grau de $1+\sqrt[3]{2}+\sqrt[3]{4}$ sobr $\QQ$.
@@ -23,17 +23,17 @@
 8. Amb la notació de l'apartat anterior, demostreu que $\alpha$ és una arrel del polinomi característic de $m_\alpha$. Aprofiteu
   aquest resultat per trobar el polinomi mínim de $1+\sqrt[3]{2}+\sqrt[3]{4}$.
 
-### Episodi 3
+### Episodi 3 {-}
 
 1. Demostreu que no es pot construir el polígon regular de $9$ costats amb regle i compàs.
 2. Demostreu que $2\cos(2\pi/7)$ és arrel del polinomi $x^3+x^2-2x-1$, i deduiu que l'heptàgon regular no és constructible amb regle i compàs.
 
-### Episodi 4
+### Episodi 4 {-}
 
 1. Trobeu els cossos de descomposició de $x^4-2$, $x^4+2$, $x^4+x^2+1$, $x^6-4$.
 2. Demostreu que si $K_1/F$ i $K_2/F$ són extensions normals, aleshores $K_1K_2/F$ i $K_1\cap K_2 / F$ també ho són.
 
-### Episodi 5
+### Episodi 5 {-}
 
 1. Demostreu que $\mcd(x^a-1, x^b-1) = x^{\mcd{a,b}}-1$.
 2. Descomposeu $x^16-x \in \FF_2[x]$ en producte d'irreductibles.
@@ -45,43 +45,49 @@
 8. Sigui $\varphi(x)=x^p$ el morfisme de Frobenius en un cos finit $\FF_{p^n}$. Calculeu la forma de Jordan de $\varphi$
   pensat com una aplicació $\FF_p$-lineal.
 
-### Episodi 6
+### Episodi 6 {-}
+
+1. Sigui $A=\CC[[t]]$ l'anell de sèries de potències formals, i sigui $F$ el seu cos de fraccions. Demostreu que el conjunt
+$$
+K = \{\sum_{k=0}^\infty c_k t^{k/n} ~|~ n \geq 1\}
+$$
+és un cos, i de fet és una clausura algebraica d'$F$.
+
+2. 
+
+### Episodi 7 {-}
 
 TODO
 
-### Episodi 7
+### Episodi 8 {-}
 
 TODO
 
-### Episodi 8
+### Episodi 9 {-}
 
 TODO
 
-### Episodi 9
+### Episodi 10 {-}
 
 TODO
 
-### Episodi 10
+### Episodi 11 {-}
 
 TODO
 
-### Episodi 11
+### Episodi 12 {-}
 
 TODO
 
-### Episodi 12
+### Episodi 13 {-}
 
 TODO
 
-### Episodi 13
+### Episodi 14 {-}
 
 TODO
 
-### Episodi 14
-
-TODO
-
-### Episodi 15
+### Episodi 15 {-}
 
 TODO
 

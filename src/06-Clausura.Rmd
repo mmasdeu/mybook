@@ -2,6 +2,8 @@
 
 En aquest episodi demostrem l'existència i unicitat de la clausura algebraica d'un cos.
 
+## Preliminars
+
 ::: {.definition #clausura-algebraica name="clausura algebraica"}
 Diem que $\bar{F}/F$ és una *clausura algebraica* d'$F$ si $\bar{F}/F$ és algebraica i tot polinomi $f(x)\in F[x]$
 descomposa completament a $\bar{F}$.
