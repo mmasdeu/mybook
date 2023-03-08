@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Episodi 10. Element Primitiu | teoriadegalois.knit</title>
+  <title>Episodi 10. Element Primitiu | Teoria de Galois</title>
   <meta name="description" content="Apunts d’un curs de Teoria de Galois a la UAB" />
-  <meta name="generator" content="bookdown 0.32.1 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.33.1 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Episodi 10. Element Primitiu | teoriadegalois.knit" />
+  <meta property="og:title" content="Episodi 10. Element Primitiu | Teoria de Galois" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Apunts d’un curs de Teoria de Galois a la UAB" />
   <meta name="github-repo" content="mmasdeu/teoriadegalois" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Episodi 10. Element Primitiu | teoriadegalois.knit" />
+  <meta name="twitter:title" content="Episodi 10. Element Primitiu | Teoria de Galois" />
   
   <meta name="twitter:description" content="Apunts d’un curs de Teoria de Galois a la UAB" />
   
@@ -23,7 +23,7 @@
 <meta name="author" content="Marc Masdeu" />
 
 
-<meta name="date" content="2023-02-17" />
+<meta name="date" content="2023-03-08" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="cossos-finits.html"/>
-<link rel="next" href="extensions-abelianes-i-ciclotòmiques.html"/>
+<link rel="next" href="extensions-abelianes.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -185,15 +185,14 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introducció</a></li>
 <li class="chapter" data-level="1" data-path="pilot.html"><a href="pilot.html"><i class="fa fa-check"></i><b>1</b> Vells coneguts</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="pilot.html"><a href="pilot.html#convencions"><i class="fa fa-check"></i><b>1.1</b> Convencions</a></li>
-<li class="chapter" data-level="1.2" data-path="pilot.html"><a href="pilot.html#característica-dun-cos"><i class="fa fa-check"></i><b>1.2</b> Característica d’un cos</a></li>
-<li class="chapter" data-level="1.3" data-path="pilot.html"><a href="pilot.html#extensions"><i class="fa fa-check"></i><b>1.3</b> Extensions</a></li>
+<li class="chapter" data-level="1.1" data-path="pilot.html"><a href="pilot.html#característica-dun-cos"><i class="fa fa-check"></i><b>1.1</b> Característica d’un cos</a></li>
+<li class="chapter" data-level="1.2" data-path="pilot.html"><a href="pilot.html#extensions"><i class="fa fa-check"></i><b>1.2</b> Extensions</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="les-torres.html"><a href="les-torres.html"><i class="fa fa-check"></i><b>2</b> Les Torres</a>
+<li class="chapter" data-level="2" data-path="torres.html"><a href="torres.html"><i class="fa fa-check"></i><b>2</b> Torres</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="les-torres.html"><a href="les-torres.html#extensions-algebraiquestranscendents"><i class="fa fa-check"></i><b>2.1</b> Extensions algebraiques/transcendents</a></li>
-<li class="chapter" data-level="2.2" data-path="les-torres.html"><a href="les-torres.html#torres-de-cossos"><i class="fa fa-check"></i><b>2.2</b> Torres de cossos</a></li>
-<li class="chapter" data-level="2.3" data-path="les-torres.html"><a href="les-torres.html#compositum-de-cossos"><i class="fa fa-check"></i><b>2.3</b> Compositum de cossos</a></li>
+<li class="chapter" data-level="2.1" data-path="torres.html"><a href="torres.html#extensions-algebraiquestranscendents"><i class="fa fa-check"></i><b>2.1</b> Extensions algebraiques/transcendents</a></li>
+<li class="chapter" data-level="2.2" data-path="torres.html"><a href="torres.html#torres-de-cossos"><i class="fa fa-check"></i><b>2.2</b> Torres de cossos</a></li>
+<li class="chapter" data-level="2.3" data-path="torres.html"><a href="torres.html#compositum-de-cossos"><i class="fa fa-check"></i><b>2.3</b> Compositum de cossos</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="regle-i-compàs.html"><a href="regle-i-compàs.html"><i class="fa fa-check"></i><b>3</b> Regle i Compàs</a>
 <ul>
@@ -209,12 +208,15 @@ div.csl-indent {
 <li class="chapter" data-level="5" data-path="polinomis-inseparables.html"><a href="polinomis-inseparables.html"><i class="fa fa-check"></i><b>5</b> Polinomis (In)separables</a>
 <ul>
 <li class="chapter" data-level="5.1" data-path="polinomis-inseparables.html"><a href="polinomis-inseparables.html#separabilitat-de-polinomis-i-extensions"><i class="fa fa-check"></i><b>5.1</b> Separabilitat de polinomis i extensions</a></li>
-<li class="chapter" data-level="5.2" data-path="polinomis-inseparables.html"><a href="polinomis-inseparables.html#applicació-cossos-finits"><i class="fa fa-check"></i><b>5.2</b> Applicació : cossos finits</a></li>
-<li class="chapter" data-level="5.3" data-path="polinomis-inseparables.html"><a href="polinomis-inseparables.html#ciclotomics"><i class="fa fa-check"></i><b>5.3</b> Polinomis Ciclotòmics</a></li>
+<li class="chapter" data-level="5.2" data-path="polinomis-inseparables.html"><a href="polinomis-inseparables.html#ciclotomics"><i class="fa fa-check"></i><b>5.2</b> Polinomis Ciclotòmics</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="la-clausura-algebraica.html"><a href="la-clausura-algebraica.html"><i class="fa fa-check"></i><b>6</b> La clausura algebraica</a>
+<li class="chapter" data-level="6" data-path="clausures-algebraiques.html"><a href="clausures-algebraiques.html"><i class="fa fa-check"></i><b>6</b> Clausures algebraiques</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="la-clausura-algebraica.html"><a href="la-clausura-algebraica.html#la-clausura-algebraica-1"><i class="fa fa-check"></i><b>6.1</b> La clausura algebraica</a></li>
+<li class="chapter" data-level="6.1" data-path="clausures-algebraiques.html"><a href="clausures-algebraiques.html#clausura-algebraica-dff_q"><i class="fa fa-check"></i><b>6.1</b> Clausura algebraica d’<span class="math inline">\(\FF_q\)</span></a></li>
+<li class="chapter" data-level="6.2" data-path="clausures-algebraiques.html"><a href="clausures-algebraiques.html#clausura-algebraica-de-qq"><i class="fa fa-check"></i><b>6.2</b> Clausura algebraica de <span class="math inline">\(\QQ\)</span></a></li>
+<li class="chapter" data-level="6.3" data-path="clausures-algebraiques.html"><a href="clausures-algebraiques.html#el-lema-de-zorn"><i class="fa fa-check"></i><b>6.3</b> El lema de Zorn</a></li>
+<li class="chapter" data-level="6.4" data-path="clausures-algebraiques.html"><a href="clausures-algebraiques.html#unicitat-de-la-clausura-algebraica"><i class="fa fa-check"></i><b>6.4</b> Unicitat de la clausura algebraica</a></li>
+<li class="chapter" data-level="6.5" data-path="clausures-algebraiques.html"><a href="clausures-algebraiques.html#existència-de-la-clausura-algebraica"><i class="fa fa-check"></i><b>6.5</b> Existència de la clausura algebraica</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="automorfismes.html"><a href="automorfismes.html"><i class="fa fa-check"></i><b>7</b> Automorfismes</a>
 <ul>
@@ -226,25 +228,29 @@ div.csl-indent {
 <li class="chapter" data-level="8.1" data-path="el-teorema-fonamental.html"><a href="el-teorema-fonamental.html#preliminars"><i class="fa fa-check"></i><b>8.1</b> Preliminars</a></li>
 <li class="chapter" data-level="8.2" data-path="el-teorema-fonamental.html"><a href="el-teorema-fonamental.html#la-correspondència-de-galois"><i class="fa fa-check"></i><b>8.2</b> La correspondència de Galois</a></li>
 <li class="chapter" data-level="8.3" data-path="el-teorema-fonamental.html"><a href="el-teorema-fonamental.html#operacions-de-reticle"><i class="fa fa-check"></i><b>8.3</b> Operacions de reticle</a></li>
-<li class="chapter" data-level="8.4" data-path="el-teorema-fonamental.html"><a href="el-teorema-fonamental.html#examples"><i class="fa fa-check"></i><b>8.4</b> Examples</a></li>
+<li class="chapter" data-level="8.4" data-path="el-teorema-fonamental.html"><a href="el-teorema-fonamental.html#exemples"><i class="fa fa-check"></i><b>8.4</b> Exemples</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="el-teorema-fonamental.html"><a href="el-teorema-fonamental.html#exemple-duna-extensió-biquadràtica"><i class="fa fa-check"></i><b>8.4.1</b> Exemple d’una extensió biquadràtica</a></li>
+<li class="chapter" data-level="8.4.2" data-path="el-teorema-fonamental.html"><a href="el-teorema-fonamental.html#exemple-duna-extensió-de-tipus-s_3"><i class="fa fa-check"></i><b>8.4.2</b> Exemple d’una extensió de tipus <span class="math inline">\(S_3\)</span></a></li>
+<li class="chapter" data-level="8.4.3" data-path="el-teorema-fonamental.html"><a href="el-teorema-fonamental.html#exemple-duna-extensió-de-de-grau-16"><i class="fa fa-check"></i><b>8.4.3</b> Exemple d’una extensió de de grau 16</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="cossos-finits.html"><a href="cossos-finits.html"><i class="fa fa-check"></i><b>9</b> Cossos Finits</a>
 <ul>
 <li class="chapter" data-level="9.1" data-path="cossos-finits.html"><a href="cossos-finits.html#grup-de-galois"><i class="fa fa-check"></i><b>9.1</b> Grup de Galois</a></li>
 <li class="chapter" data-level="9.2" data-path="cossos-finits.html"><a href="cossos-finits.html#subcossos"><i class="fa fa-check"></i><b>9.2</b> Subcossos</a></li>
 <li class="chapter" data-level="9.3" data-path="cossos-finits.html"><a href="cossos-finits.html#polinomis-irreductibles"><i class="fa fa-check"></i><b>9.3</b> Polinomis irreductibles</a></li>
-<li class="chapter" data-level="9.4" data-path="cossos-finits.html"><a href="cossos-finits.html#la-clausura-algebraica-dff_p"><i class="fa fa-check"></i><b>9.4</b> La clausura algebraica d’<span class="math inline">\(\FF_p\)</span></a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="element-primitiu.html"><a href="element-primitiu.html"><i class="fa fa-check"></i><b>10</b> Element Primitiu</a>
 <ul>
 <li class="chapter" data-level="10.1" data-path="element-primitiu.html"><a href="element-primitiu.html#el-teorema-de-lelement-primitiu"><i class="fa fa-check"></i><b>10.1</b> El teorema de l’element primitiu</a></li>
 <li class="chapter" data-level="10.2" data-path="element-primitiu.html"><a href="element-primitiu.html#galois-i-compositum-dextensions"><i class="fa fa-check"></i><b>10.2</b> Galois i compositum d’extensions</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="extensions-abelianes-i-ciclotòmiques.html"><a href="extensions-abelianes-i-ciclotòmiques.html"><i class="fa fa-check"></i><b>11</b> Extensions Abelianes i ciclotòmiques</a>
+<li class="chapter" data-level="11" data-path="extensions-abelianes.html"><a href="extensions-abelianes.html"><i class="fa fa-check"></i><b>11</b> Extensions Abelianes</a>
 <ul>
-<li class="chapter" data-level="11.1" data-path="extensions-abelianes-i-ciclotòmiques.html"><a href="extensions-abelianes-i-ciclotòmiques.html#grup-de-galois-dels-cossos-ciclotòmics"><i class="fa fa-check"></i><b>11.1</b> Grup de Galois dels cossos ciclotòmics</a></li>
-<li class="chapter" data-level="11.2" data-path="extensions-abelianes-i-ciclotòmiques.html"><a href="extensions-abelianes-i-ciclotòmiques.html#extensions-abelianes"><i class="fa fa-check"></i><b>11.2</b> Extensions abelianes</a></li>
-<li class="chapter" data-level="11.3" data-path="extensions-abelianes-i-ciclotòmiques.html"><a href="extensions-abelianes-i-ciclotòmiques.html#constructibilitat-de-polígons-regulars"><i class="fa fa-check"></i><b>11.3</b> Constructibilitat de polígons regulars</a></li>
+<li class="chapter" data-level="11.1" data-path="extensions-abelianes.html"><a href="extensions-abelianes.html#grup-de-galois-dels-cossos-ciclotòmics"><i class="fa fa-check"></i><b>11.1</b> Grup de Galois dels cossos ciclotòmics</a></li>
+<li class="chapter" data-level="11.2" data-path="extensions-abelianes.html"><a href="extensions-abelianes.html#extensions-abelianes-1"><i class="fa fa-check"></i><b>11.2</b> Extensions abelianes</a></li>
+<li class="chapter" data-level="11.3" data-path="extensions-abelianes.html"><a href="extensions-abelianes.html#constructibilitat-de-polígons-regulars"><i class="fa fa-check"></i><b>11.3</b> Constructibilitat de polígons regulars</a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="grups-de-polinomis.html"><a href="grups-de-polinomis.html"><i class="fa fa-check"></i><b>12</b> Grups de Polinomis</a>
 <ul>
@@ -269,6 +275,31 @@ div.csl-indent {
 <li class="chapter" data-level="15.2" data-path="teoria-de-galois-infinita.html"><a href="teoria-de-galois-infinita.html#la-topologia-de-krull"><i class="fa fa-check"></i><b>15.2</b> La topologia de Krull</a></li>
 <li class="chapter" data-level="15.3" data-path="teoria-de-galois-infinita.html"><a href="teoria-de-galois-infinita.html#el-teorema"><i class="fa fa-check"></i><b>15.3</b> El teorema</a></li>
 </ul></li>
+<li class="appendix"><span><b>Apèndix</b></span></li>
+<li class="chapter" data-level="A" data-path="seminaris.html"><a href="seminaris.html"><i class="fa fa-check"></i><b>A</b> Seminaris</a>
+<ul>
+<li class="chapter" data-level="A.1" data-path="seminaris.html"><a href="seminaris.html#seminari-1-polinomis-simètrics"><i class="fa fa-check"></i><b>A.1</b> Seminari 1: Polinomis simètrics</a></li>
+<li class="chapter" data-level="A.2" data-path="seminaris.html"><a href="seminaris.html#seminari-2-grups-dordre-petit"><i class="fa fa-check"></i><b>A.2</b> Seminari 2: Grups d’ordre petit</a></li>
+<li class="chapter" data-level="A.3" data-path="seminaris.html"><a href="seminaris.html#seminari-3-càlcul-de-grups-de-galois"><i class="fa fa-check"></i><b>A.3</b> Seminari 3: Càlcul de grups de Galois</a></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="llista-de-problemes.html"><a href="llista-de-problemes.html"><i class="fa fa-check"></i><b>B</b> Llista de Problemes</a>
+<ul>
+<li class="chapter" data-level="B.0.1" data-path="llista-de-problemes.html"><a href="llista-de-problemes.html#episodi-1"><i class="fa fa-check"></i><b>B.0.1</b> Episodi 1</a></li>
+<li class="chapter" data-level="B.0.2" data-path="llista-de-problemes.html"><a href="llista-de-problemes.html#episodi-2"><i class="fa fa-check"></i><b>B.0.2</b> Episodi 2</a></li>
+<li class="chapter" data-level="B.0.3" data-path="llista-de-problemes.html"><a href="llista-de-problemes.html#episodi-3"><i class="fa fa-check"></i><b>B.0.3</b> Episodi 3</a></li>
+<li class="chapter" data-level="B.0.4" data-path="llista-de-problemes.html"><a href="llista-de-problemes.html#episodi-4"><i class="fa fa-check"></i><b>B.0.4</b> Episodi 4</a></li>
+<li class="chapter" data-level="B.0.5" data-path="llista-de-problemes.html"><a href="llista-de-problemes.html#episodi-5"><i class="fa fa-check"></i><b>B.0.5</b> Episodi 5</a></li>
+<li class="chapter" data-level="B.0.6" data-path="llista-de-problemes.html"><a href="llista-de-problemes.html#episodi-6"><i class="fa fa-check"></i><b>B.0.6</b> Episodi 6</a></li>
+<li class="chapter" data-level="B.0.7" data-path="llista-de-problemes.html"><a href="llista-de-problemes.html#episodi-7"><i class="fa fa-check"></i><b>B.0.7</b> Episodi 7</a></li>
+<li class="chapter" data-level="B.0.8" data-path="llista-de-problemes.html"><a href="llista-de-problemes.html#episodi-8"><i class="fa fa-check"></i><b>B.0.8</b> Episodi 8</a></li>
+<li class="chapter" data-level="B.0.9" data-path="llista-de-problemes.html"><a href="llista-de-problemes.html#episodi-9"><i class="fa fa-check"></i><b>B.0.9</b> Episodi 9</a></li>
+<li class="chapter" data-level="B.0.10" data-path="llista-de-problemes.html"><a href="llista-de-problemes.html#episodi-10"><i class="fa fa-check"></i><b>B.0.10</b> Episodi 10</a></li>
+<li class="chapter" data-level="B.0.11" data-path="llista-de-problemes.html"><a href="llista-de-problemes.html#episodi-11"><i class="fa fa-check"></i><b>B.0.11</b> Episodi 11</a></li>
+<li class="chapter" data-level="B.0.12" data-path="llista-de-problemes.html"><a href="llista-de-problemes.html#episodi-12"><i class="fa fa-check"></i><b>B.0.12</b> Episodi 12</a></li>
+<li class="chapter" data-level="B.0.13" data-path="llista-de-problemes.html"><a href="llista-de-problemes.html#episodi-13"><i class="fa fa-check"></i><b>B.0.13</b> Episodi 13</a></li>
+<li class="chapter" data-level="B.0.14" data-path="llista-de-problemes.html"><a href="llista-de-problemes.html#episodi-14"><i class="fa fa-check"></i><b>B.0.14</b> Episodi 14</a></li>
+<li class="chapter" data-level="B.0.15" data-path="llista-de-problemes.html"><a href="llista-de-problemes.html#episodi-15"><i class="fa fa-check"></i><b>B.0.15</b> Episodi 15</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="bibliografia.html"><a href="bibliografia.html"><i class="fa fa-check"></i>Bibliografia</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/mmasdeu/teoriadegalois" target="blank">Publicat amb bookdown</a></li>
@@ -282,7 +313,7 @@ div.csl-indent {
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Teoria de Galois</a>
           </h1>
         </div>
 
@@ -298,7 +329,7 @@ extensió <span class="math inline">\(K/F\)</span> és simple si hi ha algun <sp
 <p><span id="thm:simple-caracteritzacio" class="theorem"><strong>Teorema 10.1  (caracterització d'extensions simples) </strong></span>Una extensió <span class="math inline">\(K/F\)</span> és simple si i només si hi ha finites subextensions <span class="math inline">\(K/M/F\)</span>.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-116" class="proof"><em>Prova</em>. </span>Suposem que <span class="math inline">\(K=F(\alpha)F\)</span> és simple, i sigui <span class="math inline">\(f(x)=\Irr_{\alpha,F}(x)\)</span>. Considerem una subextensió <span class="math inline">\(K/M/F\)</span>.
+<p><span id="unlabeled-div-120" class="proof"><em>Prova</em>. </span>Suposem que <span class="math inline">\(K=F(\alpha)F\)</span> és simple, i sigui <span class="math inline">\(f(x)=\Irr_{\alpha,F}(x)\)</span>. Considerem una subextensió <span class="math inline">\(K/M/F\)</span>.
 Aleshores <span class="math inline">\(g(x)=\Irr_{\alpha,M}(x)\)</span> és un divisor de <span class="math inline">\(f(x)\)</span> pensats a <span class="math inline">\(K[x]\)</span>. Sigui <span class="math inline">\(M&#39;\subseteq M\)</span> l’extensió generada
 sobre <span class="math inline">\(F\)</span> pels coeficients de <span class="math inline">\(g(x)\)</span>. Com que <span class="math inline">\(\Irr_{\alpha,M}(x)=\Irr_{\alpha,M&#39;}(x)\)</span>, tenim <span class="math inline">\([K\colon M]=[K \colon M&#39;]\)</span>
 i per tant <span class="math inline">\(M=M&#39;\)</span>. En conclusió, els subcossos <span class="math inline">\(M\)</span> estan generats per coeficients dels factors irreductibles
@@ -313,18 +344,18 @@ hi ha algun <span class="math inline">\(\alpha\in K\)</span> que no pertany a ca
 <p><span id="thm:element-primitiu" class="theorem"><strong>Teorema 10.2  (Element Primitiu) </strong></span>Si una extensió <span class="math inline">\(K/F\)</span> és finita i separable, aleshores existeix <span class="math inline">\(\gamma\in K\)</span> tal que <span class="math inline">\(K=F(\gamma)\)</span>.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-117" class="proof"><em>Prova</em>. </span>Sigui <span class="math inline">\(L/K\)</span> una extensió tal que <span class="math inline">\(L/F\)</span> sigui Galois. Per exemple, podem prendre el compositum de tots els
+<p><span id="unlabeled-div-121" class="proof"><em>Prova</em>. </span>Sigui <span class="math inline">\(L/K\)</span> una extensió tal que <span class="math inline">\(L/F\)</span> sigui Galois. Per exemple, podem prendre el compositum de tots els
 cossos de descomposició dels polinomis mínims d’un conjunt de generadors de <span class="math inline">\(K/F\)</span>. Aleshores <span class="math inline">\(L/F\)</span> és
 primitiva i, pel criteri anterior, hi ha un nombre finit de subcossos de <span class="math inline">\(L\)</span>. En particular, hi ha un
 nombre finit de subcossos de <span class="math inline">\(K\)</span> i, un altre cop pel criteri anterior, l’extensió <span class="math inline">\(K/F\)</span> és primitiva.</p>
 </div>
 <p>Podem generalitzar una mica aquest teorema:</p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-118" class="theorem"><strong>Teorema 10.3  </strong></span>Suposem que <span class="math inline">\(K=F(\alpha,\beta)\)</span> i <span class="math inline">\(\beta\)</span> és separable sobre <span class="math inline">\(F\)</span>.
+<p><span id="thm:unlabeled-div-122" class="theorem"><strong>Teorema 10.3  </strong></span>Suposem que <span class="math inline">\(K=F(\alpha,\beta)\)</span> i <span class="math inline">\(\beta\)</span> és separable sobre <span class="math inline">\(F\)</span>.
 Aleshores existeix <span class="math inline">\(\gamma\in K\)</span> tal que <span class="math inline">\(K=F(\gamma)\)</span>.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-119" class="proof"><em>Prova</em>. </span>Si <span class="math inline">\(F\)</span> és un cos finit, aleshores <span class="math inline">\(F(\alpha,\beta)\)</span> també és un cos finit i per tant sabem que és simple. Suposem
+<p><span id="unlabeled-div-123" class="proof"><em>Prova</em>. </span>Si <span class="math inline">\(F\)</span> és un cos finit, aleshores <span class="math inline">\(F(\alpha,\beta)\)</span> també és un cos finit i per tant sabem que és simple. Suposem
 doncs que <span class="math inline">\(F\)</span> és infinit, i escrivim <span class="math inline">\(f(x)\)</span> i <span class="math inline">\(g(x)\)</span> pels polinomis mínims d’<span class="math inline">\(\alpha\)</span> i <span class="math inline">\(\beta\)</span>, respectivament.
 Sigui <span class="math inline">\(L/F(\alpha,\beta)\)</span> un cos de descomposició per <span class="math inline">\(f(x)g(x)\)</span>, i escrivim <span class="math inline">\(\alpha=\alpha_1, \alpha_2,\ldots \alpha_r\)</span>
 per les arrels de <span class="math inline">\(f(x)\)</span> a <span class="math inline">\(L\)</span> i <span class="math inline">\(\beta=\beta_1,\beta_2,\ldots,\beta_s\)</span> per les arrels de <span class="math inline">\(g(x)\)</span> a <span class="math inline">\(L\)</span>. Per cada <span class="math inline">\(i\)</span>
@@ -346,7 +377,7 @@ i en deduim que <span class="math inline">\(\beta\in F(\gamma)\)</span>, com vol
 <p>Estudiem ara com es comporta la propietat de ser Galois quan prenem compositums.</p>
 <p>Suposem que tenim extensions <span class="math inline">\(K/F\)</span> i <span class="math inline">\(F&#39;/F\)</span>.</p>
 <div class="proposition">
-<p><span id="prp:unlabeled-div-120" class="proposition"><strong>Proposició 10.1  </strong></span>Si <span class="math inline">\(K/F\)</span> és de Galois, aleshores <span class="math inline">\(KF&#39;\)</span> és de Galois sobre <span class="math inline">\(F&#39;\)</span> i la restricció indueix
+<p><span id="prp:unlabeled-div-124" class="proposition"><strong>Proposició 10.1  </strong></span>Si <span class="math inline">\(K/F\)</span> és de Galois, aleshores <span class="math inline">\(KF&#39;\)</span> és de Galois sobre <span class="math inline">\(F&#39;\)</span> i la restricció indueix
 un isomorfisme <span class="math inline">\(\Gal(KF&#39;/F&#39;) \cong \Gal(K/K\cap F&#39;)\)</span>:
 <span class="math display">\[
 \xymatrix{
@@ -362,7 +393,7 @@ En particular, si <span class="math inline">\(F&#39;/F\)</span> és finita, ales
 \]</span></p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-121" class="proof"><em>Prova</em>. </span>Sabem que <span class="math inline">\(K\)</span> és el cos de descomposició d’un polinomi separable <span class="math inline">\(f(x)\in F[x]\)</span>.
+<p><span id="unlabeled-div-125" class="proof"><em>Prova</em>. </span>Sabem que <span class="math inline">\(K\)</span> és el cos de descomposició d’un polinomi separable <span class="math inline">\(f(x)\in F[x]\)</span>.
 Aleshores, <span class="math inline">\(KF&#39;\)</span> és el cos de descomposició del mateix polinomi <span class="math inline">\(f(x)\)</span> ara
 pensat com a polinomi a <span class="math inline">\(F&#39;[x]\)</span>.
 Considerem ara el morfisme restricció
@@ -386,7 +417,7 @@ teorema fonamental, <span class="math inline">\(MF&#39;= F&#39;\)</span> i, per 
 <p>La fórmula final s’obté comptant graus d’extensions.</p>
 </div>
 <div class="remark">
-<p><span id="unlabeled-div-122" class="remark"><em>Remarca</em>. </span>Considerem <span class="math inline">\(F=\QQ\)</span>, <span class="math inline">\(K=\QQ(\sqrt[3]{2})\)</span> (el nostre prototipus d’extensió no normal)
+<p><span id="unlabeled-div-126" class="remark"><em>Remarca</em>. </span>Considerem <span class="math inline">\(F=\QQ\)</span>, <span class="math inline">\(K=\QQ(\sqrt[3]{2})\)</span> (el nostre prototipus d’extensió no normal)
 i <span class="math inline">\(F&#39;=\QQ(\zeta_3\sqrt[3]{2})\)</span>, on <span class="math inline">\(\zeta_3\)</span> és una arrel
 cúbica primitiva de la unitat. Tenim <span class="math inline">\([K\colon F]=[F&#39;\colon F]=3\)</span>, i <span class="math inline">\(KF&#39;=\QQ(\zeta_3,\sqrt[3]{2})\)</span> té grau <span class="math inline">\(6\)</span>,
 per tant la igualtat no és certa si cap de les extensions inicials és de Galois.</p>
@@ -405,7 +436,7 @@ indueix un isomorfisme
 \]</span></p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-123" class="proof"><em>Prova</em>. </span>Suposem que <span class="math inline">\(K_i\)</span> és el cos de descomposició del polinomi separable <span class="math inline">\(f_i(x)\in F[x]\)</span>. Aleshores <span class="math inline">\(K_1K_2\)</span>
+<p><span id="unlabeled-div-127" class="proof"><em>Prova</em>. </span>Suposem que <span class="math inline">\(K_i\)</span> és el cos de descomposició del polinomi separable <span class="math inline">\(f_i(x)\in F[x]\)</span>. Aleshores <span class="math inline">\(K_1K_2\)</span>
 és el cos de descomposició de la part lliure de quadrats de <span class="math inline">\(f_1(x)f_2(x)\)</span> i per tant <span class="math inline">\(K_1K_2\)</span> és Galois
 sobre <span class="math inline">\(F\)</span>. Sigui ara <span class="math inline">\(f(x)\)</span> un polinomi irreductible a <span class="math inline">\(F[x]\)</span> amb una arrel a <span class="math inline">\(K_1\cap K_2\)</span>. Aleshores totes
 les arrels de <span class="math inline">\(f(x)\)</span> són a <span class="math inline">\(K_1\)</span> i també a <span class="math inline">\(K_2\)</span> i, per tant, a <span class="math inline">\(K_1\cap K_2\)</span>. Per tant, <span class="math inline">\(K_1\cap K_2\)</span> és Galois.</p>
@@ -427,20 +458,20 @@ i la fórmula de la proposició anterior ens demostra <span class="math inline">
 </div>
 <p>Podem demostrar un cert recíproc:</p>
 <div class="proposition">
-<p><span id="prp:unlabeled-div-124" class="proposition"><strong>Proposició 10.3  </strong></span>Suposem que <span class="math inline">\(K/F\)</span> és una extensió de Galois, i <span class="math inline">\(G=\Gal(K/F) = G_1\times G_2\)</span>. Aleshores <span class="math inline">\(K\)</span> és el
+<p><span id="prp:unlabeled-div-128" class="proposition"><strong>Proposició 10.3  </strong></span>Suposem que <span class="math inline">\(K/F\)</span> és una extensió de Galois, i <span class="math inline">\(G=\Gal(K/F) = G_1\times G_2\)</span>. Aleshores <span class="math inline">\(K\)</span> és el
 compositum de dues extensions de Galois <span class="math inline">\(K_1/F\)</span> i <span class="math inline">\(K_2/F\)</span> amb <span class="math inline">\(K_1\cap K_2=F\)</span> i grups de Galois <span class="math inline">\(G_1\)</span> i <span class="math inline">\(G_2\)</span>, respectivament.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-125" class="proof"><em>Prova</em>. </span>Definim <span class="math inline">\(K_1=K^{G_1}\)</span> i <span class="math inline">\(K_2=K^{G_2}\)</span>. Aleshores <span class="math inline">\(K_1\cap K_2\)</span> correspon a <span class="math inline">\(\langle G_1,G_2\rangle=G\)</span>, per tant
+<p><span id="unlabeled-div-129" class="proof"><em>Prova</em>. </span>Definim <span class="math inline">\(K_1=K^{G_1}\)</span> i <span class="math inline">\(K_2=K^{G_2}\)</span>. Aleshores <span class="math inline">\(K_1\cap K_2\)</span> correspon a <span class="math inline">\(\langle G_1,G_2\rangle=G\)</span>, per tant
 <span class="math inline">\(K_1\cap K_2=F\)</span>. El compositum correspon amb <span class="math inline">\(G_1\cap G_2=1\)</span>, i per tant <span class="math inline">\(K_1K_2=K\)</span>.</p>
 </div>
 <div class="corollary">
-<p><span id="cor:unlabeled-div-126" class="corollary"><strong>Corol·lary 10.1  (clausura de Galois) </strong></span>Sigui <span class="math inline">\(K/F\)</span> una extensió finita separable. Aleshores hi ha una extensió <span class="math inline">\(E/K/F\)</span> tal que <span class="math inline">\(E/F\)</span> és Galois$,
+<p><span id="cor:unlabeled-div-130" class="corollary"><strong>Corol·lary 10.1  (clausura de Galois) </strong></span>Sigui <span class="math inline">\(K/F\)</span> una extensió finita separable. Aleshores hi ha una extensió <span class="math inline">\(E/K/F\)</span> tal que <span class="math inline">\(E/F\)</span> és Galois$,
 i és mínima en el sentit que si <span class="math inline">\(E&#39;/K\)</span> és una extensió amb <span class="math inline">\(E&#39;/F\)</span> Galois, tenim <span class="math inline">\(E \subseteq E&#39;\)</span>. Aquesta
 extensió s’anomena la <em>clausura de Galois</em> de <span class="math inline">\(K/F\)</span>.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-127" class="proof"><em>Prova</em>. </span>Ja sabem que hi ha extensions de <span class="math inline">\(K\)</span> que són Galois (prenem el cos de descomposició dels polinomis mínims
+<p><span id="unlabeled-div-131" class="proof"><em>Prova</em>. </span>Ja sabem que hi ha extensions de <span class="math inline">\(K\)</span> que són Galois (prenem el cos de descomposició dels polinomis mínims
 d’un conjunt de generadors de <span class="math inline">\(K\)</span>). El cos <span class="math inline">\(E\)</span> buscat és llavors la intersecció de totes les extensions <span class="math inline">\(E&#39;/K\)</span> tals
 que <span class="math inline">\(E&#39;/F\)</span> és Galois. Hem vist que aquesta intersecció serà Galois.</p>
 </div>
@@ -453,7 +484,7 @@ que <span class="math inline">\(E&#39;/F\)</span> és Galois. Hem vist que aques
         </div>
       </div>
 <a href="cossos-finits.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="extensions-abelianes-i-ciclotòmiques.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="extensions-abelianes.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Episodi 13. Arrels i radicals | Teoria de Galois</title>
+  <title>A Seminaris | Teoria de Galois</title>
   <meta name="description" content="Apunts d’un curs de Teoria de Galois a la UAB" />
   <meta name="generator" content="bookdown 0.33.1 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Episodi 13. Arrels i radicals | Teoria de Galois" />
+  <meta property="og:title" content="A Seminaris | Teoria de Galois" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Apunts d’un curs de Teoria de Galois a la UAB" />
   <meta name="github-repo" content="mmasdeu/teoriadegalois" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Episodi 13. Arrels i radicals | Teoria de Galois" />
+  <meta name="twitter:title" content="A Seminaris | Teoria de Galois" />
   
   <meta name="twitter:description" content="Apunts d’un curs de Teoria de Galois a la UAB" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="grups-de-polinomis.html"/>
-<link rel="next" href="càlcul-explícit-de-grups-de-galois.html"/>
+<link rel="prev" href="teoria-de-galois-infinita.html"/>
+<link rel="next" href="llista-de-problemes.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -321,207 +321,222 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="arrels-i-radicals" class="section level1 hasAnchor" number="13">
-<h1><span class="header-section-number">Episodi 13. </span> Arrels i radicals<a href="arrels-i-radicals.html#arrels-i-radicals" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Definirem què vol dir que un polinomi sigui resoluble per radicals, i veurem
-que és equivalent a què el seu grup de Galois sigui resoluble. D’aquí en podrem
-deduir que els polinomis generals de grau <span class="math inline">\(\geq 5\)</span> no són resolubles per radicals i,
-per tant, no existeix una fórmula que expressi les arrels d’un polinomi en termes
-dels seus coeficients. També es mostrarà un exemple concret d’un polinomi de grau <span class="math inline">\(5\)</span> sobre <span class="math inline">\(\QQ\)</span>
-amb grup de Galois <span class="math inline">\(S_5\)</span>.</p>
-<div id="caràcters" class="section level2 hasAnchor" number="13.1">
-<h2><span class="header-section-number">13.1</span> Caràcters<a href="arrels-i-radicals.html#caràcters" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>En aquesta secció demostrarem un resultat d’àlgebra lineal que ens caldrà més endavant.</p>
-<div class="definition">
-<p><span id="def:caracter" class="definition"><strong>Definició 13.1  </strong></span>Un <em>caràcter</em> <span class="math inline">\(\chi\)</span> d’un grup <span class="math inline">\(G\)</span> amb valors en un cos <span class="math inline">\(L\)</span> és un morfisme de grups
+<div id="seminaris" class="section level1 hasAnchor" number="16">
+<h1><span class="header-section-number">A</span> Seminaris<a href="seminaris.html#seminaris" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="seminari-1-polinomis-simètrics" class="section level2 hasAnchor" number="16.1">
+<h2><span class="header-section-number">A.1</span> Seminari 1: Polinomis simètrics<a href="seminaris.html#seminari-1-polinomis-simètrics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Sigui <span class="math inline">\(A\)</span> un anell domini i siguin <span class="math inline">\(X_1,\dotsc,X_n\)</span> indeterminades.
+Sigui <span class="math inline">\(\Sigma_n\)</span> el grup simètric en <span class="math inline">\(\{1,\dotsc,n\}\)</span>. Donada una
+permutació <span class="math inline">\(\sigma\in \Sigma_n\)</span> definim
+<span class="math inline">\(\sigma\cdot f(X_1,\dotsc,X_n)=f(X_{\sigma(1)},\dotsc,X_{\sigma(n)})\)</span>.
+Per exemple, si <span class="math inline">\(f=X_1^2X_2-X_3\)</span> i considerem les permutacions
+<span class="math inline">\(\rho=(1\,3)\)</span>, <span class="math inline">\(\sigma=(1\,2\,3)\)</span>, aleshores <span class="math inline">\(\rho\cdot f=X_3^2X_2-X_1\)</span>
+i <span class="math inline">\(\sigma\cdot f=X_2^2X_3-X_1\)</span>.</p>
+<p><strong>Definició:</strong>. Un polinomi <span class="math inline">\(f\in A[X_1,\dotsc,X_n]\)</span> s’anomena
+<strong>simètric</strong> si <span class="math inline">\(\sigma\cdot f=f\)</span> per a tota <span class="math inline">\(\sigma\in\Sigma_n\)</span>.
+:::</p>
+<p>És fàcil veure que el conjunt dels polinomis simètrics és un subanell
+<span class="math inline">\(S\subseteq A[X_1,\dotsc,X_n]\)</span> que conté <span class="math inline">\(A\)</span>. Sigui <span class="math inline">\(Y\)</span> una altra
+indeterminada. Podem considerar el polinomi en <span class="math inline">\(Y\)</span>
+<span class="math display">\[F(Y,X_1,\dotsc,X_n)=(Y-X_1)\dotsb(Y-X_n)=Y^n-s_1Y^{n-1}+\dotsb+(-1)^ns_n\]</span>
+amb coeficients a <span class="math inline">\(A[X_1,\dotsc,X_n]\)</span>. Els polinomis que apareixen com a
+coeficients <span class="math inline">\(s_1=X_1+\dotsb+X_n,\dotsc,s_n=X_1\dotsb X_n\)</span> són polinomis
+simètrics, i s’anomenen <strong>polinomis simètrics elementals</strong>. Fixeu-vos
+que el polinomi <span class="math inline">\(s_i\)</span> és homogeni de grau <span class="math inline">\(i\)</span>, per a tot <span class="math inline">\(i\geq 1\)</span>.
+Considerarem el morfisme d’anells
+<span class="math display">\[\iota\colon A[S_1,\ldots,S_n]\to S\subseteq A[X_1,\ldots,X_n], \quad f(S_1,\ldots,S_n)\mapsto f(s_1,\ldots,s_n).\]</span></p>
+<p>Sigui <span class="math inline">\(g(S_1,\ldots,S_n)=CS_1^{e_1}\dotsb S_n^{e_n}\)</span> un monomi no nul.
+El polinomi simètric <span class="math inline">\(\iota(g)\)</span> té grau total <span class="math inline">\(e_1+2e_2+\cdots+ne_n\)</span>, és
+el que s’anomena el <strong>pes</strong> del monomi. Si <span class="math inline">\(g\in A[S_1,\dotsc,S_n]\)</span>, el
+<strong>pes de <span class="math inline">\(g\)</span></strong> és el màxim dels pesos dels monomis no nuls de <span class="math inline">\(g\)</span>.
+L’objectiu del exercicis és demostrar el següent resultat, que diu que
+<span class="math inline">\(\iota\)</span> és injectiva i té com a imatge exactament el subanell dels
+polinomis simètrics.</p>
+<p><strong>Teorema fonamental dels polinomis simètrics:</strong>. Sigui
+<span class="math inline">\(f\in S\subseteq A[X_1,\dotsc,X_n]\)</span> un polinomi simètric de grau <span class="math inline">\(d\)</span>.
+Aleshores existeix un únic polinomi <span class="math inline">\(g\in A[S_1,\dotsc,S_n]\)</span> de pes
+menor o igual que <span class="math inline">\(d\)</span> tal que <span class="math display">\[f(X_1,\dotsc,X_n)=g(s_1,\dotsc,s_n).\]</span></p>
+<ol style="list-style-type: decimal">
+<li><p>Demostreu que tot polinomi <span class="math inline">\(f(X_1,\ldots,X_n)\)</span> es pot escriure com a
+suma de polinomis homogenis, i que si <span class="math inline">\(f(X_1,\ldots, X_n)\)</span> és
+simètric aleshores cadascun dels termes homogenis també és simètric.</p></li>
+<li><p>Demostreu que <span class="math inline">\(\iota(S_1^{e_1}S_2^{e_2}\cdots S_n^{e_n})\)</span> és un
+polinomi homogeni de grau <span class="math inline">\(e_1+2e_2+\cdots +ne_n\)</span>.</p></li>
+<li><p>Demostreu que donat un polinomi homogeni simètric
+<span class="math inline">\(f(X_1,\ldots,X_n)\)</span>, si
+<span class="math inline">\(\operatorname{LT}(f)=aX_1^{e_1}\cdots X_n^{e_n}\)</span> aleshores
+<span class="math inline">\(\operatorname{LT}(f) = \operatorname{LT}(\iota(aS_1^{e1-e2}S_2^{e2-e3}\cdots S_n^{e_n}))\)</span>.[^1]</p></li>
+<li><p>Demostreu per inducció que <span class="math inline">\(\iota\)</span> és una bijecció entre
+<span class="math inline">\(A[X_1,\ldots,X_n]\)</span> i <span class="math inline">\(S\)</span>.</p></li>
+<li><p>Expresseu els següents polinomis en termes de polinomis simètrics
+elementals: <span class="math inline">\((X_1-X_2)^2\)</span>, <span class="math inline">\(X_1^2 + X_2^2 + X_3^2\)</span>,
+<span class="math inline">\(X_1^2X_2^2 + X_1^2X_3^2 + X_2^2X_3^2\)</span>,
+<span class="math inline">\(\sum_{i\neq j} X_i^2X_j\)</span>,<span class="math inline">\(\sum_{i\neq j} (X_i-X_j)^2\)</span>.</p></li>
+</ol>
+<p>Hi ha un altre procediment possible per expressar un polinomi simètric
+donat en termes de simètrics elementals, que s’anomena el <em>mètode dels
+coeficients indeterminats</em>. Suposem que <span class="math inline">\(f\)</span> és simètric homogeni de grau
+<span class="math inline">\(d\)</span>, i sigui <span class="math inline">\(N\)</span> el màxim grau en què apareix cap de les variables.</p>
+<ol style="list-style-type: decimal">
+<li><p>Feu una estimació de quants monomis
+<span class="math inline">\(a_iS_1^{e_1}S_2^{e_2}\dots S_n^{e_n}\)</span> poden aparèixer a <span class="math inline">\(g\)</span> si
+<span class="math inline">\(\iota(g)=f\)</span>, a partir de les restriccions
+<span class="math display">\[e_1+2e_2+\cdots +ne_n = d,\quad e_1+e_2+\cdots+e_n \leq N.\]</span></p></li>
+<li><p>Expressant el polinomi <span class="math inline">\(f\)</span> com una combinació lineal de totes les
+possibilitats de l’apartat anterior (<span class="math inline">\(d=3\)</span> i <span class="math inline">\(N=3\)</span>) i substituïnt
+les variables a suficients valors, trobeu l’expressió de
+<span class="math inline">\(f(X_1,X_2,X_3,X_4) = (X_1+X_2+X_3+X_4)(X_1+X_3-X_2-X_4)(X_1+X_4-X_2-X_3)\)</span>
+com a polinomi en els simètrics elementals (demostreu primer que <span class="math inline">\(f\)</span>
+és simètric).</p></li>
+</ol>
+</div>
+<div id="seminari-2-grups-dordre-petit" class="section level2 hasAnchor" number="16.2">
+<h2><span class="header-section-number">A.2</span> Seminari 2: Grups d’ordre petit<a href="seminaris.html#seminari-2-grups-dordre-petit" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>L’objectiu del seminari és estudiar tots els grups d’ordre fins a <span class="math inline">\(15\)</span>. Cal recordar com és el reticle de subgrups
+dels grups cíclics finits, que es correspon amb el reticle de divisors del seu cardinal. També cal recordar els
+teoremes de Sylow, que ens serviran per estudiar els grups amb cardinal una mica més gran. Aquí tenim la taula amb tots ells.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Ordre</th>
+<th align="center">Classes isomorf</th>
+<th align="right">Grups</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><span class="math inline">\(1\)</span></td>
+<td align="center"><span class="math inline">\(1\)</span></td>
+<td align="right"><span class="math inline">\(C_1\)</span></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(2\)</span></td>
+<td align="center"><span class="math inline">\(1\)</span></td>
+<td align="right"><span class="math inline">\(C_2\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(3\)</span></td>
+<td align="center"><span class="math inline">\(1\)</span></td>
+<td align="right"><span class="math inline">\(C_3\)</span></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(4\)</span></td>
+<td align="center"><span class="math inline">\(2\)</span></td>
+<td align="right"><span class="math inline">\(C_4\)</span>, <span class="math inline">\(C_2\times C_2\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(5\)</span></td>
+<td align="center"><span class="math inline">\(1\)</span></td>
+<td align="right"><span class="math inline">\(C_5\)</span></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(6\)</span></td>
+<td align="center"><span class="math inline">\(2\)</span></td>
+<td align="right"><span class="math inline">\(C_6\)</span>, <span class="math inline">\(S_3\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(7\)</span></td>
+<td align="center"><span class="math inline">\(1\)</span></td>
+<td align="right"><span class="math inline">\(C_7\)</span></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(8\)</span></td>
+<td align="center"><span class="math inline">\(5\)</span></td>
+<td align="right"><span class="math inline">\(C_8\)</span>, <span class="math inline">\(C_4 \times C_2\)</span>, <span class="math inline">\(D_{2\times 4}\)</span>, <span class="math inline">\(Q_8\)</span>, <span class="math inline">\(C_2 \times C_2 \times C_2\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(9\)</span></td>
+<td align="center"><span class="math inline">\(2\)</span></td>
+<td align="right"><span class="math inline">\(C_9\)</span>, <span class="math inline">\(C_3 \times C_3\)</span></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(10\)</span></td>
+<td align="center"><span class="math inline">\(2\)</span></td>
+<td align="right"><span class="math inline">\(C_{10}\)</span>, <span class="math inline">\(D_{2\times 5}\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(11\)</span></td>
+<td align="center"><span class="math inline">\(1\)</span></td>
+<td align="right"><span class="math inline">\(C_{11}\)</span></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(12\)</span></td>
+<td align="center"><span class="math inline">\(5\)</span></td>
+<td align="right"><span class="math inline">\(C_{12}\)</span>, <span class="math inline">\(C_6 \times C_2\)</span>, <span class="math inline">\(A_4\)</span>, <span class="math inline">\(D_{2\times 6}\)</span>, <span class="math inline">\(\operatorname{Dic}_{12}\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(13\)</span></td>
+<td align="center"><span class="math inline">\(1\)</span></td>
+<td align="right"><span class="math inline">\(C_{13}\)</span></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(14\)</span></td>
+<td align="center"><span class="math inline">\(2\)</span></td>
+<td align="right"><span class="math inline">\(C_{14}\)</span>, <span class="math inline">\(D_{2\times 7}\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(15\)</span></td>
+<td align="center"><span class="math inline">\(2\)</span></td>
+<td align="right"><span class="math inline">\(C_{15}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>D’aquesta taula, els grups <span class="math inline">\(Q_8\)</span> (grup quaterniònic) i <span class="math inline">\(\operatorname{Dic}_{12}\)</span> (dicíclic d’ordre <span class="math inline">\(12\)</span>) tenen les següents presentacions:
 <span class="math display">\[
-\chi \colon G \to L^\times.
+Q_8 = \langle x, y \mid x^2y^{-2}=x^4=xyx^{-1}y=1\rangle,\quad \operatorname{Dic}_{12} = \langle x, y \mid x^4=y^3=xyx^{-1}y^{-2}\rangle.
 \]</span></p>
-</div>
-<p>Podem pensar un caràcter <span class="math inline">\(\chi\)</span> com una funció <span class="math inline">\(G\to L\)</span>.
-Les funcions de <span class="math inline">\(G\)</span> a <span class="math inline">\(L\)</span> formen un <span class="math inline">\(L\)</span>-espai vectorial, de manera òbvia.
-El següent resultat és degut a Dedekind.</p>
-<div class="theorem">
-<p><span id="thm:caracters-li" class="theorem"><strong>Teorema 13.1  (Independència lineal dels caràcters) </strong></span>Siguin <span class="math inline">\(\chi_1,\ldots,\chi_n\)</span> caràcters de <span class="math inline">\(G\)</span> diferents. Aleshores són linealment independents, és a dir, no hi ha
-cap combinació lineal no trivial <span class="math inline">\(a_1\chi_1+\cdots+a_n\chi_n\)</span> que doni lloc a la funció idènticament zero.</p>
-</div>
-<div class="proof">
-<p><span id="unlabeled-div-158" class="proof"><em>Prova</em>. </span>Suposem (reordenant, si cal) que podem escriure
+<ol style="list-style-type: decimal">
+<li>Dibuixeu el reticle del grup cíclic <span class="math inline">\(C_{4}\)</span>, <span class="math inline">\(C_8\)</span> i <span class="math inline">\(C_{12}\)</span>.</li>
+<li>Dibuixeu el reticle dels grups <span class="math inline">\(C_2\times C_2\)</span> i <span class="math inline">\(C_3\times C_9\)</span>.</li>
+<li>Doneu el reticle (amb generadors) dels grups <span class="math inline">\((\ZZ/n\ZZ)^\times\)</span> amb <span class="math inline">\(n=7,8,12\)</span>.</li>
+<li>Trobeu el reticle de subgrups de <span class="math inline">\(S_3\)</span> i indiqueu quins dels subgrups són normals.</li>
+<li>En els següents exercicis estudiem els grups diedrals:
+<ol style="list-style-type: lower-alpha">
+<li>Trobeu una immersió del grup diedral <span class="math inline">\(D_{2\times n}\)</span> a <span class="math inline">\(S_n\)</span>.</li>
+<li>Doneu el reticle de subgrups de <span class="math inline">\(D_{2\times 4}\)</span>, indicant quins subgrups són normals.</li>
+<li>Trobeu un subgrup d’<span class="math inline">\(S_4\)</span> que sigui isomorf a <span class="math inline">\(D_{2\times 4}\)</span>. És normal a <span class="math inline">\(S_4\)</span>, aquest subgrup?</li>
+<li>Demostreu que si <span class="math inline">\(H\leq S_4\)</span> és un subgrup amb <span class="math inline">\(8\)</span> elements, aleshores <span class="math inline">\(H\cong D_{2\times 4}\)</span>.</li>
+</ol></li>
+<li>Trobeu els <span class="math inline">\(2-\)</span> i <span class="math inline">\(3-\)</span> subgrups de Sylow del grup alternat <span class="math inline">\(A_4\)</span>, i digueu quins d’ells són normals.</li>
+<li>Els següents exercicis estudien els subgrups <em>transitius</em> de <span class="math inline">\(S_n\)</span>.
+<ol style="list-style-type: lower-alpha">
+<li>Demostreu que el conjugat d’un subgrup transitiu també ho és.</li>
+<li>Demostreu que si <span class="math inline">\(H\leq S_n\)</span> és un subgrup transitiu, aleshores <span class="math inline">\(|H|\)</span> és múltiple de <span class="math inline">\(n\)</span>.</li>
+<li>Demostreu que si <span class="math inline">\(H\leq S_n\)</span> és un subgrup transitiu i abelià, aleshores <span class="math inline">\(|H|=n\)</span>.</li>
+<li>Demostreu que els únics subgrups transitius de <span class="math inline">\(S_4\)</span> són <span class="math inline">\(S_4\)</span>, <span class="math inline">\(A_4\)</span>, els que són isomorfs a <span class="math inline">\(D_{2\times 4}\)</span>, els que són
+isomorfs a <span class="math inline">\(C_4\)</span>, i <span class="math inline">\(V=\{\id, (12)(34), (13)(24), (14)(23)\}\)</span>.</li>
+</ol></li>
+<li>Aquest exercici ens ajudarà a decidir quan un subgrup d’<span class="math inline">\(S_n\)</span> és tot <span class="math inline">\(S_n\)</span>.
+<ol style="list-style-type: lower-alpha">
+<li>Demostreu que si <span class="math inline">\((a_1,\ldots,a_k)\)</span> és un cicle, aleshores per a tot <span class="math inline">\(\sigma\in S_n\)</span> tenim
 <span class="math display">\[
-a_1\chi_1 + \cdots a_m\chi_m = 0,
-\]</span>
-amb tots els <span class="math inline">\(a_i\neq 0\)</span> (observem <span class="math inline">\(m\leq n\)</span>) i amb <span class="math inline">\(m\)</span> mínim. Obtindrem una relació de dependència amb menys termes, arribant així a contradicció.</p>
-<p>Prenem <span class="math inline">\(g_0\in G\)</span> tal que <span class="math inline">\(\chi_1(g_0)\neq \chi_m(g_0)\)</span>. Aleshores tenim
+\sigma (a_1,\ldots,a_k) \sigma^{-1} = (\sigma(a_1),\ldots,\sigma(a_k)).
+\]</span></li>
+<li>Demostreu que el grup generat per <span class="math inline">\((1,2)\)</span> i <span class="math inline">\((1,2,\ldots, n)\)</span> és tot <span class="math inline">\(S_n\)</span>.</li>
+<li>Demostreu que si <span class="math inline">\(p\)</span> és primer i <span class="math inline">\(H\leq S_p\)</span> és un subgrup transitiu que conté una transposició, aleshores <span class="math inline">\(H=S_n\)</span>.</li>
+</ol></li>
+</ol>
+</div>
+<div id="seminari-3-càlcul-de-grups-de-galois" class="section level2 hasAnchor" number="16.3">
+<h2><span class="header-section-number">A.3</span> Seminari 3: Càlcul de grups de Galois<a href="seminaris.html#seminari-3-càlcul-de-grups-de-galois" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>L’objectiu del seminari és calcular el grup de Galois de polinomis
+biquadràtics. Considerem un polinomi
 <span class="math display">\[
-a_1\chi_1(g) + \cdots a_m\chi_m(g) = 0,
+f(x)=x^4+ax^2+b \in F[x],
 \]</span>
-i
-<span class="math display">\[
-a_1\chi_1(g_0g) + \cdots a_m\chi_m(g_0g) = 0.
-\]</span>
-Multiplicant la primera equació per <span class="math inline">\(\chi_m(g_0)\)</span> i restant-li la segona obtenim, per a tot <span class="math inline">\(g\)</span>,
-<span class="math display">\[
-a_1(\chi_m(g_0)-\chi_1(g_0)) \chi_1(g) + \cdots a_{m-1}(\chi_m(g_0)- \chi_{m-1}(g_0)) \chi_{m-1}(g) = 0.
-\]</span>
-Com que el primer coeficient és diferent de zero, tenim una relació no trivial amb <span class="math inline">\(m-1\)</span> termes, contradicció.</p>
-</div>
-<p>Un cas particular que ens interessa aquí prové de considerar un morfisme no trivial de cossos <span class="math inline">\(\sigma\colon K\to L\)</span>,
-que indueix un morfisme de grups entre les unitats <span class="math inline">\(\sigma\colon K^\times \to L^\times\)</span> (aquesta restricció ja conté
-tota la informació que ens cal de <span class="math inline">\(\sigma\)</span>, perquè ja sabem que <span class="math inline">\(\sigma(0)=0\)</span>). Aleshores <span class="math inline">\(\sigma\)</span> esdevé un caràcter
-del grup <span class="math inline">\(G=K^\times\)</span>, i per tant tenim el següent:</p>
-<div class="corollary">
-<p><span id="cor:automorfismes-li" class="corollary"><strong>Corol·lary 13.1  </strong></span>Si <span class="math inline">\(\sigma_1,\ldots,\sigma_n\)</span> són morfismes diferents de <span class="math inline">\(K\)</span> a <span class="math inline">\(L\)</span>, aleshores són linealment independents com a funcions de <span class="math inline">\(K\)</span>.</p>
-</div>
-</div>
-<div id="extensions-cícliques" class="section level2 hasAnchor" number="13.2">
-<h2><span class="header-section-number">13.2</span> Extensions cícliques<a href="arrels-i-radicals.html#extensions-cícliques" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="definition">
-<p><span id="def:ext-ciclica" class="definition"><strong>Definició 13.2  (extensió cíclica) </strong></span>Una extensió <span class="math inline">\(K/F\)</span> és <em>cíclica</em> si és Galois amb grup de galois cíclic.</p>
-</div>
-<p>Escriurem <span class="math inline">\(\mu_n\)</span> pel grup de les arrels <span class="math inline">\(n\)</span>-èssimes de la unitat (en una clausura algebraica),
-i també escriurem <span class="math inline">\(\sqrt[n]{a}\)</span> per una arrel del polinomi <span class="math inline">\(x^n-a\)</span>.</p>
-<div class="proposition">
-<p><span id="prp:unlabeled-div-159" class="proposition"><strong>Proposició 13.1  </strong></span>Sigui <span class="math inline">\(F\)</span> és un cos de característica no divisora de <span class="math inline">\(n\)</span> que conté <span class="math inline">\(\mu_n\)</span>. Aleshores si <span class="math inline">\(a\in F\)</span> l’extensió <span class="math inline">\(F(\sqrt[n]{a})\)</span>
-és cíclica de grau un divisor de <span class="math inline">\(n\)</span>.</p>
-</div>
-<div class="proof">
-<p><span id="unlabeled-div-160" class="proof"><em>Prova</em>. </span>Escrivim <span class="math inline">\(K=F(\sqrt[n]{a})\)</span>. Com que <span class="math inline">\(\mu_n\subseteq F\)</span>, <span class="math inline">\(K\)</span> és el cos de descomposició de <span class="math inline">\(x^n-a\)</span> i per tant
-és Galois. Sigui <span class="math inline">\(\alpha=\sqrt[n]{a}\)</span> una arrel fixada. Aleshores tot <span class="math inline">\(\sigma\in\Gal(K/F)\)</span> porta <span class="math inline">\(\alpha\)</span> a <span class="math inline">\(\alpha\zeta_\sigma\)</span>,
-on <span class="math inline">\(\zeta_\sigma\in\mu_n\)</span> és una arrel <span class="math inline">\(n\)</span>-èssima de la unitat que depèn de <span class="math inline">\(\sigma\)</span>. Obtenim així una aplicació
-<span class="math display">\[
-\chi_a\colon \Gal(K/F)\to \mu_n,\quad \sigma\mapsto \zeta_\sigma=\frac{\sigma(\alpha)}{\alpha}.
-\]</span>
-Fixem-nos que <span class="math inline">\(\chi_a\)</span> no depèn de quina arrel <span class="math inline">\(\alpha\)</span> hem triat de <span class="math inline">\(x^n-a\)</span>. Qualsevol altra arrel seria de la
-forma <span class="math inline">\(\alpha\zeta\)</span>, i <span class="math inline">\(\sigma(\alpha\zeta)/(\alpha\zeta) = \sigma(\alpha)/\alpha\)</span> perquè <span class="math inline">\(\sigma\)</span> fixa
-les arrels de la unitat. Fent servir això, és fàcil veure que aquesta aplicació és un morfisme de grups
-(és a dir, que <span class="math inline">\(\zeta_{\sigma\tau} = \zeta_\sigma\zeta_\tau\)</span>),
-i el seu nucli està format per aquelles <span class="math inline">\(\sigma\)</span> que fixen <span class="math inline">\(\sqrt[n]{a}\)</span>, és a dir per la identitat. Per tant,
-<span class="math inline">\(\Gal(K/F)\)</span> és isomorf a un subgrup del grup cíclic <span class="math inline">\(\mu_n\)</span>, com volíem veure.</p>
-</div>
-<p>El recíproc resulta ser cert.</p>
-<div class="proposition">
-<p><span id="prp:unlabeled-div-161" class="proposition"><strong>Proposició 13.2  </strong></span>Sigui <span class="math inline">\(F\)</span> és un cos de característica no divisora de <span class="math inline">\(n\)</span> que conté <span class="math inline">\(\mu_n\)</span>, i sigui <span class="math inline">\(K/F\)</span> una extensió cíclica de
-grau <span class="math inline">\(n\)</span>. Aleshores <span class="math inline">\(K=F(\sqrt[n]{a})\)</span> per algun <span class="math inline">\(a\in F\)</span>.</p>
-</div>
-<div class="proof">
-<p><span id="unlabeled-div-162" class="proof"><em>Prova</em>. </span>Escrivim <span class="math inline">\(G=\langle\sigma\rangle\)</span>. Donat <span class="math inline">\(\alpha\in K\)</span> i <span class="math inline">\(\zeta\in\mu_n\)</span>, definim la <em>resolvent de Lagrange</em> com
-<span class="math display">\[
-[\alpha,\zeta] = \sum_{i=0}^{n-1} \zeta^i \sigma^i(\alpha).
-\]</span>
-Fixem-nos que, com que <span class="math inline">\(\sigma\)</span> fixa <span class="math inline">\(\zeta\)</span>, tenim:
-<span class="math display">\[\begin{align*}
-\sigma([\alpha,\zeta]) &amp;= \sum_{i=0}^{n-1} \zeta^i \sigma^{i+1}(\alpha)\\
-&amp;= \zeta^{-1} [\alpha,\zeta],
-\end{align*}\]</span>
-i repetint el procés tenim <span class="math inline">\(\sigma^i([\alpha,\zeta]) = \zeta^{-i} [\alpha,\zeta]\)</span>. També
-tenim que <span class="math inline">\(\sigma([\alpha,\zeta]^n) = \zeta^{-n} [\alpha,\zeta]^n = [\alpha,\zeta]^n\)</span>. Per tant <span class="math inline">\([\alpha,\zeta]^n\)</span>
-és un element de <span class="math inline">\(F\)</span>. Si fixem una arrel primitiva <span class="math inline">\(\zeta\)</span> el Corol·lari <a href="arrels-i-radicals.html#cor:automorfismes-li">13.1</a> ens diu que els automorfismes <span class="math inline">\(1,\sigma,\ldots,\sigma^{n-1}\)</span>
-són linealment independents, i per tant que hi ha un element <span class="math inline">\(\alpha\in K\)</span> tal que
-<span class="math inline">\([\alpha,\zeta]\neq 0\)</span>. Com que <span class="math inline">\(\sigma^i([\alpha,\zeta]) = \zeta^{-i}[\alpha,\zeta]\)</span>, aquest element no pot viure
-en cap subcos propi de <span class="math inline">\(K\)</span>. Per tant, <span class="math inline">\(K = F([\alpha,\zeta])\)</span>. A més, <span class="math inline">\([\alpha,\zeta]^n \in F\)</span>, per tant <span class="math inline">\(K=F(\sqrt[n]{a})\)</span>
-per algun <span class="math inline">\(a\in F\)</span>, com volíem veure.</p>
-</div>
-</div>
-<div id="solubilitat-per-radicals" class="section level2 hasAnchor" number="13.3">
-<h2><span class="header-section-number">13.3</span> Solubilitat per radicals<a href="arrels-i-radicals.html#solubilitat-per-radicals" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Considerarem només cossos de característica zero, encara que n’hi hauria prou amb evitar les característiques
-que divideixin el grau de les extensions que prendrem.</p>
-<div class="definition">
-<p><span id="def:element-per-radicals" class="definition"><strong>Definició 13.3  (element resoluble per radicals) </strong></span>Un element <span class="math inline">\(\alpha\)</span> algebraic sobre <span class="math inline">\(F\)</span> es diu que <em>es pot expressar amb radicals</em>, o <em>resoluble per radicals</em>,
-si <span class="math inline">\(\alpha \in K\)</span> on <span class="math inline">\(K\)</span> es pot obtenir mitjançant una cadena d’extensions
-<span class="math display">\[
-F=K_0\subset K_1\subset\cdots\subset K_r = K, \quad K_{i+1} = K_i(\sqrt[n_i]{a_i}).
-\]</span>
-Direm que <span class="math inline">\(K\)</span> és una <em>extensió radical</em> d’<span class="math inline">\(F\)</span>.</p>
-</div>
-<div class="definition">
-<p><span id="def:polinomi-resoluble-radicals" class="definition"><strong>Definició 13.4  (polinomi resoluble per radicals) </strong></span>Diem que un polinomi <span class="math inline">\(f(x)\in F[x]\)</span> és <em>resoluble per radicals</em> si totes les seves arrels són
-resolubles per radicals.</p>
-</div>
-<p>Com que afegir les arrels de la unitat dona lloc a una extensió radical, podem assumir sempre
-que <span class="math inline">\(F\)</span> té les arrels de la unitat que vulguem. Per tant, podrem identificar extensions radicals
-amb extensions cícliques.</p>
-<div class="lemma">
-<p><span id="lem:unlabeled-div-163" class="lemma"><strong>Lema 13.1  </strong></span>El compositum d’un nombre finit d’extensions radicals és una extensió radical.</p>
-</div>
-<div class="proof">
-<p><span id="unlabeled-div-164" class="proof"><em>Prova</em>. </span>N’hi ha prou amb considerar el compositum de dues extensions radicals
-<span class="math display">\[\begin{align}
-F=K_0 &amp; \subset K_1\subset\cdots \subset K_r=K\\
-F=L_0 &amp; \subset L_1\subset\cdots \subset L_s=L\\
-\end{align}\]</span>
-Fem inducció en <span class="math inline">\(s\geq 0\)</span>, on el cas <span class="math inline">\(s=0\)</span> és trivial. Considerem aleshores la
-<span class="math display">\[
-F=K_0 L_1 \subseteq K_1 L_1\subseteq\cdots \subseteq K L_1.
-\]</span>
-Cadascuna de les extensions que hi apareixen és radical, per tant <span class="math inline">\(K L_1\)</span> és radical. Ara tenim
-l’extensió <span class="math inline">\(K L_1 / F\)</span> radical, i per hipòtesi d’inducció l’extensió <span class="math inline">\(KL /KL_1\)</span> és radical, per tant <span class="math inline">\(KL / F\)</span> també ho és.</p>
-</div>
-<div class="lemma">
-<p><span id="lem:unlabeled-div-165" class="lemma"><strong>Lema 13.2  </strong></span>Si <span class="math inline">\(\alpha\)</span> pertany a una extensió radical <span class="math inline">\(K/F\)</span>, aleshores <span class="math inline">\(\alpha\)</span> pertany a una extensió radical <span class="math inline">\(K&#39;/F\)</span>
-on les extensions successives són cícliques.</p>
-</div>
-<div class="proof">
-<p><span id="unlabeled-div-166" class="proof"><em>Prova</em>. </span>Prenem la clausura de Galois <span class="math inline">\(L/K/F\)</span> i considerem, per cada <span class="math inline">\(\sigma\in \Gal(L/F)\)</span>, la cadena
-<span class="math display">\[
-F=\sigma(K_0)\subset \sigma(K_1)\subset\cdots\subset \sigma(K_r)=\sigma(K).
-\]</span>
-Les extensions intermitges també són simples radicals, generades per <span class="math inline">\(\sigma(\sqrt[n_i]{a_i})\)</span>, que és una arrel
-polinomi <span class="math inline">\(x^{n_i} - \sigma(a_i)\)</span> amb coeficients a <span class="math inline">\(\sigma(K_i)\)</span>. El compositum dels <span class="math inline">\(\sigma(K)\)</span> és <span class="math inline">\(L\)</span>, i pel lema
-anterior <span class="math inline">\(L/F\)</span> és radical.</p>
-<p>Finalment, hem d’adjuntar totes les arrels <span class="math inline">\(n_i\)</span>-èssimes que apareguin a la cadena radical per <span class="math inline">\(L/F\)</span>, obtenint
-un nou cos <span class="math inline">\(F&#39;\)</span>. Composant amb la cadena per <span class="math inline">\(L/F\)</span> obtenim:
-<span class="math display">\[
-F \subseteq F&#39;=F&#39;L_0 \subseteq F&#39;L_1\subseteq\cdots\subseteq F&#39;L_r = F&#39;L.
-\]</span>
-El primer sant és abelià i per tant es pot trencar en una cadena cíclica. Els altres salts són radicals simples
-però ara tenim les arrels del a unitat disponibles, i per tant sabem que són cícliques, i hem acabat.</p>
-</div>
-<p>Recordem que un grup finit <span class="math inline">\(G\)</span> és <em>resoluble</em> si hi ha una cadena de subgrups
-<span class="math display">\[
-1 = G_r \leq G_{r-1} \leq\cdots \leq G_0=G,\quad G_i/G_{i-1} \text{ cíclic.}
-\]</span>
-(es pot canviar cíclic per abelià, ja que donat un grup abelià sempre es pot trobar una cadena cíclica). També
-cal recordar que si <span class="math inline">\(N \normaleq G\)</span> aleshores <span class="math inline">\(G\)</span> és resoluble si i només si <span class="math inline">\(N\)</span> i <span class="math inline">\(G/N\)</span> ho són.</p>
-<div class="theorem">
-<p><span id="thm:unlabeled-div-167" class="theorem"><strong>Teorema 13.2  (Galois) </strong></span>El polinomi <span class="math inline">\(f(x)\)</span> és resoluble per radicals si i només si <span class="math inline">\(\Gal(f)\)</span> és un grup resoluble.</p>
-</div>
-<div class="proof">
-<p><span id="unlabeled-div-168" class="proof"><em>Prova</em>. </span>Suposem que <span class="math inline">\(f(x)\)</span> és resoluble per radicals. Cada arrel és resoluble i per tant està continguda en una
-extensió radical. El compositum de totes aquestes extensions, posem <span class="math inline">\(K/F\)</span>, també és radical. Si prenem els subgrups
-de Galois <span class="math inline">\(G_i=\Gal(K_i/F)\)</span> de cadascun dels cossos de la cadena, com que <span class="math inline">\(\Gal(K_{i+1}/K_i) = G_i/G_{i+1}\)</span>
-és cíclic per tot <span class="math inline">\(i\)</span>, en deduïm que <span class="math inline">\(\Gal(K/F)\)</span> és resoluble.</p>
-<p>Recíprocament, suposem que <span class="math inline">\(f(x)\)</span> té cos de descomposició <span class="math inline">\(K/F\)</span>, i que <span class="math inline">\(G = \Gal(f)=\Gal(K/F)\)</span> és resoluble. Els
-cossos fixos d’una cadena demostrant la resolubilitat de <span class="math inline">\(G\)</span> donen lloc a una cadena d’extensions cícliques. Podem
-obtenir una nova cadena de cossos composant-la amb una extensió <span class="math inline">\(F&#39;/F\)</span> on s’adjuntin totes les arrels de la unitat
-necessàries. Aleshores les noves extensions intermitges són radicals simples, i per tant les arrels d’<span class="math inline">\(f(x)\)</span>
-estan contingudes en una extensió radical <span class="math inline">\(F&#39;K\)</span>.</p>
-</div>
-<div class="corollary">
-<p><span id="cor:unlabeled-div-169" class="corollary"><strong>Corol·lary 13.2  (Abel-Ruffini) </strong></span>El polinomi general de grau <span class="math inline">\(n\)</span> no és resoluble per radicals, per cap <span class="math inline">\(n\geq 5\)</span>.</p>
-</div>
-<div class="proof">
-<p><span id="unlabeled-div-170" class="proof"><em>Prova</em>. </span>Cal saber que <span class="math inline">\(S_n\)</span> no és resoluble per <span class="math inline">\(n\geq 5\)</span>.</p>
-</div>
-<p>Aquest teorema diu que no podem trobar una fórmula general només fent servir radicals per les arrels
-d’una equació de grau <span class="math inline">\(n\geq 5\)</span>. Però això no vol dir que no hi hagi polinomis pels quals no es pugui fer!
-Per exemple, <span class="math inline">\(x^n-a\)</span> és resoluble per radicals per qualsevol <span class="math inline">\(a\)</span>, trivialment. Veurem ara com podem
-trobar polinomis de grau primer amb grup de Galois <span class="math inline">\(S_p\)</span>.</p>
-<div class="proposition">
-<p><span id="prp:unlabeled-div-171" class="proposition"><strong>Proposició 13.3  </strong></span>Sigui <span class="math inline">\(f(x)\in \QQ[x]\)</span> un polinomi irreductible de grau <span class="math inline">\(p\)</span> amb exactament <span class="math inline">\(p-2\)</span> arrels reals.
-Aleshores <span class="math inline">\(\Gal(f)\cong S_p\)</span>.</p>
-</div>
-<div class="proof">
-<p><span id="unlabeled-div-172" class="proof"><em>Prova</em>. </span>Sigui <span class="math inline">\(G = \Gal(f)\)</span>, que el pensem com a subgrup de <span class="math inline">\(S_p\)</span>. Siguin <span class="math inline">\(\alpha\)</span> i <span class="math inline">\(\bar{\alpha}\)</span> les dues arrels complexes de <span class="math inline">\(f\)</span>. Com que <span class="math inline">\(f\)</span> és
-irreductible de grau <span class="math inline">\(p\)</span>, el cos de descomposició <span class="math inline">\(K\)</span> té grau múltiple de <span class="math inline">\(p\)</span>. Per tant, <span class="math inline">\(|G|\)</span> és divisible
-per <span class="math inline">\(p\)</span>. Els únics elements de <span class="math inline">\(S_p\)</span> d’ordre <span class="math inline">\(p\)</span> són els <span class="math inline">\(p\)</span>-cicles, així que <span class="math inline">\(G\)</span> conté un <span class="math inline">\(p\)</span>-cicle.</p>
-<p>D’altra banda, la conjugació complexa restringeix a un element de <span class="math inline">\(G\)</span> que fixa les arrels reals i intercanvia
-les dues arrels complexes. Per tant <span class="math inline">\(G\)</span> conté una transposició. És un senzill exercici de permutacions
-demostrar que un <span class="math inline">\(p\)</span>-cicle i una transposició qualsevol generen <span class="math inline">\(S_p\)</span> quan <span class="math inline">\(p\)</span> és primer.</p>
-</div>
-<p>Podem aplicar el resultat anterior al polinomi <span class="math inline">\(f(x)=x^5-4x-2\)</span>. Com que és <span class="math inline">\(2\)</span>-Eisenstein, és irreductible. A més, la seva derivada
-és <span class="math inline">\(5x^4-4\)</span>, que té zeros a <span class="math inline">\(x=\pm\frac{\sqrt{2}}{\sqrt[4]{5}}\)</span>. Deduïm que <span class="math inline">\(f(x)\)</span> té exactament tres zeros reals,
-que de fet podem aproximar: <span class="math inline">\(-1.24359639\ldots,-0.50849948\ldots,1.51851215\ldots\)</span>. Per tant, <span class="math inline">\(\Gal(f)\cong S_5\)</span>, i concloem que no hi ha una fórmula per les arrels de <span class="math inline">\(x^5-4x-2\)</span> que només faci servir arrels <span class="math inline">\(n\)</span>-èssimes.</p>
+i definim <span class="math inline">\(\Delta=a^2-4b\)</span>. Suposem que <span class="math inline">\(f(x)\)</span> és irreductible, i definim <span class="math inline">\(K\)</span> com el cos de descomposició de <span class="math inline">\(f(x)\)</span>.</p>
+<ol style="list-style-type: decimal">
+<li>Demostreu que <span class="math inline">\(\Delta\)</span> no és un quadrat a <span class="math inline">\(F\)</span>.</li>
+<li>Demostreu que si <span class="math inline">\(b\)</span> és un quadrat a <span class="math inline">\(F\)</span>, llavors <span class="math inline">\(\Gal(K/F)\cong \ZZ/2\ZZ \times \ZZ/2\ZZ\)</span>. Calculeu el reticle de subcossos.</li>
+<li>Demostreu que si <span class="math inline">\(b\Delta\)</span> és un quadrat a <span class="math inline">\(F\)</span>, llavors <span class="math inline">\(\Gal(K/F)\cong \ZZ/4\ZZ\)</span>. Calculeu el reticle de subcossos.</li>
+<li>Demostreu que si ni <span class="math inline">\(b\)</span> ni <span class="math inline">\(b\Delta\)</span> són quadrats a <span class="math inline">\(F\)</span>, llavors <span class="math inline">\(\Gal(K/F) \cong D_{2\times 4}\)</span>.</li>
+<li>Calculeu, de cadascun dels polinomis següents, el cos de descomposició, el grup de Galois i el reticle de subcossos:</li>
+</ol>
+<ol style="list-style-type: lower-alpha">
+<li><span class="math inline">\(x^4 - 6x^2 + 2\)</span>,</li>
+<li><span class="math inline">\(x^4 + 2x^2 + 4\)</span>,</li>
+<li><span class="math inline">\(x^4 - 5x^2 + 5\)</span></li>
+</ol>
 
 </div>
 </div>
@@ -530,8 +545,8 @@ que de fet podem aproximar: <span class="math inline">\(-1.24359639\ldots,-0.508
           </div>
         </div>
       </div>
-<a href="grups-de-polinomis.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="càlcul-explícit-de-grups-de-galois.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="teoria-de-galois-infinita.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="llista-de-problemes.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -562,7 +577,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/mmasdeu/teoriadegalois/edit/main/src//13-Radicals.Rmd",
+"link": "https://github.com/mmasdeu/teoriadegalois/edit/main/src//80-Seminaris.Rmd",
 "text": "Edit"
 },
 "history": {

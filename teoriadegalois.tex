@@ -3,6 +3,7 @@
 \PassOptionsToPackage{hyphens}{url}
 %
 \documentclass[
+  12pt,
 ]{book}
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
@@ -84,8 +85,8 @@
 \newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 \usepackage{textcomp}
-% \usepackage{palatino}
 \usepackage{booktabs}
+\usepackage{caption}
 \usepackage{tikz, tikz-cd}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
@@ -96,7 +97,9 @@
 \DeclareQuoteStyle{catalan}{``}{''}{``}{''}
 \usepackage{amsmath,amsthm,amssymb,amsfonts}
 \usepackage[all]{xy}
-\usepackage{mathsymbols}
+\usepackage{src/mathsymbols}
+
+% Select font
 
 \addto\captionscatalan{\renewcommand{\chaptername}{Episodi}}
 
@@ -110,6 +113,26 @@
 \titleformat{\chapter}[hang] 
 {\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter:}{.5em}{} 
 
+\usepackage{ifluatex}
+
+% % Option 1
+% \usepackage{mathpazo}
+% \usepackage{domitian}
+% \usepackage[T1]{fontenc}
+% \let\oldstylenums\oldstyle
+
+
+% Option 2
+\usepackage[OT2, TS1, T1]{fontenc}
+\usepackage{cmbright}
+
+
+\ifluatex
+  \usepackage{luacode}
+  \usepackage[utf8]{luainputenc}
+\else
+  \usepackage[utf8]{inputenc}
+\fi
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -140,7 +163,7 @@
 %----------------------------------------------------------------------------------------
 
 \usepackage{titletoc} % Required for manipulating the table of contents
-
+\setcounter{tocdepth}{1}
 \contentsmargin{0cm} % Removes the default margin
 
 % Part text styling
@@ -172,6 +195,8 @@
 {}
 {\ \titlerule*[.5pc]{.}\;\thecontentspage} % Page number
 []
+
+
 
 % List of figures
 \titlecontents{figure}[0em]
@@ -305,16 +330,20 @@
 % Defines the theorem text style for each type of theorem to one of the three styles above
 \newcounter{dummy} 
 \numberwithin{dummy}{section}
+
 \theoremstyle{maincolornumbox}
 \newtheorem{theorem}[dummy]{TTTT}
 \newtheorem{theoremeT}[dummy]{Teorema}
-\newtheorem{problem}{Problema}[chapter]
-\newtheorem{exerciseT}{Exercici}[chapter]
+\newtheorem{problem}[dummy]{Problema}
+\newtheorem{exerciseT}[dummy]{Exercici}
+
 \theoremstyle{blacknumex}
-\newtheorem{exampleT}{Exemple}[chapter]
+\newtheorem{exampleT}[dummy]{Exemple}
+
 \theoremstyle{blacknumbox}
-\newtheorem{definitionT}{Definició}[section]
+\newtheorem{definitionT}[dummy]{Definició}
 \newtheorem{corollaryT}[dummy]{Corol·lari}
+
 \theoremstyle{maincolornum}
 \newtheorem{propositionT}[dummy]{Proposició}
 \newtheorem{lemmaT}[dummy]{Lema}
@@ -577,6 +606,7 @@ addtohook={%
 }
 }
 
+\AtBeginDocument{\let\maketitle\relax}
 \usepackage{textcomp}
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
@@ -585,14 +615,17 @@ addtohook={%
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same} % disable monospaced font for URLs
 \hypersetup{
+  pdftitle={Teoria de Galois},
   pdfauthor={Marc Masdeu},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 
+\title{Teoria de Galois}
 \author{Marc Masdeu}
-\date{2023-02-17}
+\date{2023-03-08}
 
 \begin{document}
+\maketitle
 
 %----------------------------------------------------------------------------------------
 %	TITLE PAGE
@@ -603,7 +636,7 @@ addtohook={%
 
 	\begin{tikzpicture}[remember picture, overlay]
 		\node [inner sep=0pt] at (current page.center) {#1}; % Background image
-		\node [anchor=center, inner sep=1.25cm, rectangle, fill=maincolor!20!white, fill opacity=0.3, text opacity=1, minimum height=\paperheight, minimum width=\paperwidth, text width=0.8\paperwidth] at (current page.center) {#2}; % Title highlight box with title(s) and author(s)
+		\node [anchor=center, inner sep=1.25cm, rectangle, text opacity=1, minimum height=\paperheight, minimum width=\paperwidth, text width=0.8\paperwidth] at (current page.center) {#2}; % Title highlight box with title(s) and author(s)
 	\end{tikzpicture}
 	
 	\newpage
@@ -700,23 +733,19 @@ L'assignatura de \emph{Teoria de Galois} es cursa al primer semestre del tercer 
 
 El curs es pot dividir de manera natural en 15 sessions de dues hores. El temps efectiu de cadascuna d'aquestes sessions és de 100 minuts, i es pot pensar com una sèrie de 15 capítols.
 
-L'estructura que s'ha seguit és essencialment la de Dummit and Foote (\protect\hyperlink{ref-dummitfoote}{2004}), però la demostració del teorema fonamental s'ha fet completament diferent,
-seguint un punt de vista proposat per Geck (\protect\hyperlink{ref-geck}{2014}). També s'ha canviat la presentació de l'existència de la clausura algebraica d'un cos arbitrari.
+L'estructura que s'ha seguit és essencialment la de {[}\protect\hyperlink{ref-dummitfoote}{2}{]}, però la demostració del teorema fonamental s'ha fet completament diferent,
+seguint un punt de vista proposat per {[}\protect\hyperlink{ref-geck}{3}{]}. També s'ha canviat la presentació de l'existència de la clausura algebraica d'un cos arbitrari.
 
 \hypertarget{pilot}{%
 \chapter{Vells coneguts}\label{pilot}}
+
+En aquest curs, tots els anells seran commutatius, i assumirem sempre que tenen unitat. A més, demanarem que un morfisme d'anells enviï l'\(1\) a l'\(1\). Amb \(\ZZ, \QQ, \RR, \CC\) denotarem respectivament els enters, els racionals, els reals i els complexos. Donat un anell \(A\), denotarem per \(A[x]\) l'anell de polinomis amb coeficients a \(A\). En particular, els seus elements \(f(x)\in A[x]\) es poden escriure com \(f(x)=a_0+a_1x+\cdots+a_nx^n\), per algun \(n\in\ZZ_{\geq 0}\).
 
 Començarem recordant les definicions i resultats bàsics que ja s'han vist a altres
 assignatures, com Fonaments o Estructures algebraiques. Donarem les definicions de cos,
 característica, cos primer, i veurem que aquest és o bé \(\FF_p\) per algun primer \(p\), o bé \(\QQ\).
 A continuació introduïrem les extensions de cossos i el grau. Construirem el cos \(F[x]/(p(x))\) associat
 a un polinomi irreductible \(p(x)\in F[x]\), i veurem alguns exemples.
-
-\hypertarget{convencions}{%
-\section{Convencions}\label{convencions}}
-
-En aquest curs, tots els anells seran commutatius, i assumirem sempre que tenen unitat. A més, demanarem
-que un morfisme d'anells enviï l'\(1\) a l'\(1\).
 
 \hypertarget{caracteruxedstica-dun-cos}{%
 \section{Característica d'un cos}\label{caracteruxedstica-dun-cos}}
@@ -847,7 +876,7 @@ el resultat de les multiplicacions.
 Si considerem \(\FF_p\) el cos finit de \(p\) elements i un polinomi \(f(x)\in \FF_p[x]\) irreductible de grau \(n\)
 (suposant que existeixi!), aleshores obtenim un cos \(K/\FF_p\) de grau \(n\). Té, per tant, \(p^n\) elements. Més endavant
 veurem, d'una manera bastant indirecta, que per qualsevol primer \(p\) i qualsevol enter \(n\geq 1\) existeix un polinomi a \(\FF_p[x]\)
-irreductible de grau \(n\) (Teorema \ref{prp:existencia-polis-irred-Fp})
+irreductible de grau \(n\) (Proposició \ref{prp:existencia-polis-irred-Fp})
 \end{example}
 
 \begin{example}
@@ -923,8 +952,8 @@ Sigui \(f(x)\in F[x]\) un polinomi irreductible. Aleshores l'aplicació \(\varph
 i aquest últim conjunt és precisament \(\{\beta \in L ~|~ \sigma(f)(\beta) = 0\}\).
 \end{proof}
 
-\hypertarget{les-torres}{%
-\chapter{Les Torres}\label{les-torres}}
+\hypertarget{torres}{%
+\chapter{Torres}\label{torres}}
 
 Definirem elements algebraics i transcendents i el polinomi mínim d'un element algebraic, amb exemples.
 Enunciarem i demostrarem la fórmula de les torres, i com es comporta el grau en composicions de cossos.
@@ -1183,20 +1212,22 @@ tipus d'operacions següents:
   Trobar els punts d'intersecció d'una recta amb un cercle, o de dos cercles.
 \end{enumerate}
 
+Podeu jugar a fer construccions amb regle i compàs amb el joc online \href{https://www.euclidea.xyz/}{Euclidea}.
+
 \hypertarget{la-no-soluciuxf3}{%
 \section{La (no) solució}\label{la-no-soluciuxf3}}
 
 Comencem veient que els nombres constructibles són un cos.
 
 \begin{proposition}
-Els nombres constructibles formen un subcos de \(\cC\subseteq\RR\).
+Els nombres constructibles formen un subcos de \(\RR\).
 \end{proposition}
 
 \begin{proof}
 
 Cal donar construcions de la suma, resta, producte i divisió
 de nombres ja construïts. Mentre que la suma i la resta són òbvies, la multiplicació i divisió es poden
-obtenir aplicant proporcionalitat, com aquí sota.
+obtenir aplicant proporcionalitat, com veiem en els diagrames d'aquí sota.
 
 \begin{figure}
 
@@ -1223,8 +1254,9 @@ Fent servir l'equació d'un cercle de radi \((x_0,y_0)\) i radi \(r\)
 \[
 (x-x_0)^2 + (y-y_0)^2 = r^2,
 \]
-podem veure que les coordenades de la intersecció amb una recta (posem amb equació \(ax+by=c\)) pertanyen al cos
-\(\QQ(x_0,y_0,r,a,b,c)\). També podem comprovar-ho pel cas de la intersecció de dos cercles. Resumint si \(\alpha\) és
+podem veure que les coordenades de la intersecció amb una recta (posem amb equació \(ax+by=c\)) pertanyen a una
+extensió quadràtica del cos
+\(\QQ(x_0,y_0,r,a,b,c)\). També podem comprovar-ho pel cas de la intersecció de dos cercles. Resumint, si \(\alpha\) és
 construcible en \(n\) passos a partir de punts en un cos \(F\), aleshores hi ha una successió de cossos
 \[
 F=F_0\subseteq F_1\subseteq F_2\subseteq F_n,
@@ -1234,14 +1266,20 @@ amb \([F_{i+1}\colon F_i] \leq 2\), tals que \(\alpha\in F_n\). En particular, \
 D'aquí en deduïm directament el següent teorema (on haurem d'assumir que \(\pi\) és transcendent, cosa que no demostrem).
 
 \begin{theorem}
-Els tres problemes clàssics no són resolubles.
+Cap dels tres problemes clàssics no és resoluble.
 \end{theorem}
 
 \begin{proof}
 Per la duplicació d'un cub de costat \(1\) ens caldria construir \(\sqrt[3]{2}\), que té grau \(3\) i, per tant, no és constructible.
 
-Si un angle \(\theta\) és constructible, aleshores fàcilment veiem que \(\cos(\theta)\) i \(\sin(\theta)\) també són constructibles.
-Veurem que \(\alpha=2\cos(\pi/9)\) no és constructible. Com que \(\cos(\pi/3)=1/2\), a partir de la fórmula de l'angle triple obtenim
+Si un angle \(\theta\) és constructible, aleshores fàcilment veiem que \(\cos(\theta)\) i \(\sin(\theta)\) també són constructibles,
+simplement traçant la perpendicular a un dels dos raigs de l'angle. Veurem doncs que
+\(\alpha=2\cos(\pi/9)\) no és constructible. Recordem la fórmula del cosinus de l'angle triple, que s'obté aplicant dues vegades
+la de l'angle doble:
+\[
+\cos(3\theta) = 4\cos^3(\theta)-3\cos(\theta).
+\]
+Com que \(\cos(\pi/3)=1/2\), substituint \(\theta=\pi/9\) a la fórmula anterior obtenim la relació
 \[
 \alpha^3 - 3\alpha -1 =0.
 \]
@@ -1252,18 +1290,23 @@ Finalment, per la quadratura del cercle de radi \(1\) hauríem de construïr un 
 també podríem construir \(\pi\), que és transcendent (com hem dit, no ho demostrem).
 \end{proof}
 
-Més endavant estudiarem quins angles són constructibles. De fet, tenim el següent:
+Més endavant estudiarem quins angles són constructibles, en general. Per ara, podem demostrar el següent:
 
 \begin{theorem}
-Sigui \(t\) un enter. L'angle de \(t\) graus (no radians!) és constructible si i només si \(t\) és un múltiple de \(3\).
+Sigui \(t\) un enter. L'angle de \(t\) \textbf{graus} és constructible si i només si \(t\) és un múltiple de \(3\).
 \end{theorem}
 
 \begin{proof}
 Hi ha construccions molt antigues del pentàgon regular (\(72^\circ\)), ja que
 \[
-\cos(72^\circ) = \frac{1}{4} \, \sqrt{5} - \frac{1}{4},
+\cos(72^\circ) = \frac{1}{4} \, \sqrt{5} - \frac{1}{4}.
 \]
-i encara més del triangle equilàter (\(30^\circ\)), ja que \(\cos(30^\circ)=\sqrt{2}/2\). Com que
+
+Aquí en tenim un exemple:
+
+\begin{center}\includegraphics[width=0.5\linewidth]{images/pentagon} \end{center}
+
+Encara és més fàcil construir el triangle equilàter (\(30^\circ\)), ja que \(\cos(30^\circ)=\sqrt{2}/2\). Com que
 podem bisectar qualsevol angle, també podem construir \(18^\circ\) i \(15^\circ\). Finalment, com que \(3=18-15\) també podem construir
 l'angle de \(3^\circ\). És clar que no podem construir ni \(2^\circ\) ni \(1^\circ\), perquè aleshores podríem construir també qualsevol
 múltiple d'aquests i, per tant, podríem construir \(20^\circ\), que ja sabem que no és possible.
@@ -1282,7 +1325,7 @@ En el dibuix d'aquí sota, s'ha començat amb un angle \(a\) amb centre \(B\). S
 que serà la nostra unitat. Fem un cercle de radi aquesta unitat, i tracem una recta pel punt A de manera
 que les dues marques del regle estiguin una sobre el cercle (punt \(C\)) i l'altra sobre la recta donada (punt \(D\)).
 
-Demostreu que l'angle \(b\) és igual a \(\frac{a}{3}\).
+Demostreu que l'angle \(b\) és igual a \(\frac{a}{3}\) (aquesta construcció ja l'havia trobat Arquímedes!).
 
 \begin{center}\includegraphics[width=0.5\linewidth]{images/triseccio_angle} \end{center}
 
@@ -1291,7 +1334,10 @@ Demostreu que l'angle \(b\) és igual a \(\frac{a}{3}\).
 \begin{exercise}[Duplicació del cub]
 \protect\hypertarget{exr:duplicacio-club}{}\label{exr:duplicacio-club}
 
-Demostreu que el costat \(AG\) del dibuix de sota mesura \(\sqrt[3]{2}\).
+Comencem amb un triangle equilàter \(ABC\), de costat una unitat fixada per les marques del regle, que anomenarem \(1\).
+Perllonguem el costat \(AB\) en una unitat per construir \(D\). Considerem els rajos \(\vec{DC}\) i \(\vec{BC}\).
+Ara fem servir el regle marcat per construir una recta pel punt \(A\) de manera que la intersecció amb els dos rajos
+anteriors doni lloc a un segment \(GH\) de longitud \(1\). Demostreu que el segment \(AG\) mesura \(\sqrt[3]{2}\).
 
 \begin{center}\includegraphics[width=0.5\linewidth]{images/duplicacio_cub} \end{center}
 
@@ -1307,7 +1353,7 @@ Aprofitarem per definir extensions normals (aquelles que són cos de descomposic
 Com a aplicació, s'introduiran els polinomis i cossos ciclotòmics, i ho lligarem amb la
 demostració de l'existència i unicitat de cossos finits de cardinal potència d'un primer.
 
-També veurem les clausures algebraiques, i una construcció (seguint Artin (\protect\hyperlink{ref-artinalgebra}{2014}) i Jelonek (\protect\hyperlink{ref-zbigniew}{1993})). Això ens permetrà (assumint el teorema fonamental
+També veurem les clausures algebraiques, i una construcció (seguint {[}\protect\hyperlink{ref-artinalgebra}{1}{]} i {[}\protect\hyperlink{ref-zbigniew}{4}{]}). Això ens permetrà (assumint el teorema fonamental
 de l'àlgebra, que demostrarem més endavant) pensar els elements algebraics sobre \(\QQ\) dins dels complexos.
 
 \hypertarget{cossos-de-descomposiciuxf3}{%
@@ -1451,9 +1497,12 @@ Acabem explicant el concepte d'extensió normal, i les seves propietats bàsique
 completament a \(K\).
 \end{definition}
 
-Dit d'una altra manera \(K/F\) és normal si per tot \(\alpha\in K\) el seu polinomi mínim sobre \(F\) descomposa completament a \(K\). D'entrada,
-sembla difícil demostrar que una extensió donada \(K/F\) és normal, ja que cal veure una propietat per possiblement infinits polinomis. Veurem
-ara que les extensions normals tenen una caracterització més senzilla. En particular, el cos de descomposició d'un polinomi
+Dit d'una altra manera \(K/F\) és normal si per tot \(\alpha\in K\) el seu polinomi mínim sobre \(F\)
+descomposa completament a \(K\).
+D'entrada, sembla difícil demostrar que una extensió donada \(K/F\) és normal,
+ja que cal veure una propietat per possiblement infinits polinomis. Veurem
+ara que les extensions normals tenen una caracterització més senzilla.
+En particular, el cos de descomposició d'un polinomi
 és sempre una extensió normal.
 
 \begin{proposition}
@@ -1631,37 +1680,6 @@ simplement que per tot \(\alpha\in L\), el polinomi \(\Irr_{\alpha,K}(x)\) és u
 
 Més endavant veurem que el recíproc també és cert, però per ara no ens caldrà.
 
-\hypertarget{applicaciuxf3-cossos-finits}{%
-\section{Applicació : cossos finits}\label{applicaciuxf3-cossos-finits}}
-
-L'objectiu és demostrar l'existència de cossos finits d'ordre qualsevol potència d'un primer, i veure que són únics
-(llevat d'isomorfisme).
-
-\begin{theorem}[Existència i unicitat de cossos finits]
-Per tot primer \(p\) i tot \(n\geq 1\), hi ha un únic (llevat d'isomorfisme) cos finit d'ordre \(p^n\), que
-denotarem per \(\FF_{p^n}\). A més, si \(\FF\) és un cos finit de característica \(p\),
-aleshores és isomorf a \(\FF_{p^n}\) per alguna \(n \geq 1\).
-\end{theorem}
-
-\begin{proof}
-Sigui \(n\geq 1\), i fixem-nos que el polinomi \(f(x)=x^{p^n}-x \in \FF_p[x]\) té derivada \(-1\) i, per tant, és separable.
-Si \(\alpha\) i \(\beta\) són dues arrels qualssevol, aleshores \(\alpha\beta\) i \(\alpha+\beta\)
-també són arrels. Per tant, el conjunt \(L\) format per les \(p^n\) arrels forma un subcos del cos de
-descomposició de \(f(x)\) i, per tant, com que \(L\) conté totes les arrels, ha de ser el propi
-cos de descomposició. Com que \(L\) té \(p^n\) elements, té grau \(n\) sobre \(\FF_p\), i per tant hem
-vist que hi ha cossos finits de grau \(n\) per qualsevol \(n\geq 1\).
-
-Sigui ara \(\FF\) un cos finit qualsevol de característica \(p\). Com que és un espai vectorial sobre el seu
-cos primer \(\FF_p\), ha de tenir \(p^n\) elements per algun \(n\geq 1\). Fixem-nos que \(\FF^\times\) és un grup
-d'ordre \(p^n-1\) i, per tant \(\alpha^{p^n-1} = 1\) per tot \(\alpha\in \FF\). Per tant \(\alpha\) és una arrel
-de \(x^{p^n}-x\) i \(\FF\) està contingut al cos de descomposició d'aquest polinomi. Mirant el nombre
-d'elements, veiem que és igual al cos de descomposició.
-\end{proof}
-
-Fixem-nos que encara no hem sabut demostrar que existeixen polinomis irreductibles a \(\FF_p[x]\) de qualsevol grau. El que
-ens caldria és demostrar que l'extensió \(\FF_{p^n}/\FF_p\) és \emph{simple}, és a dir, que s'obté adjuntant l'arrel d'un polinomi
-irreductible. Això ho veurem més endavant, al Teorema \ref{thm:existencia-polis-irred-Fp}.
-
 \hypertarget{ciclotomics}{%
 \section{Polinomis Ciclotòmics}\label{ciclotomics}}
 
@@ -1751,16 +1769,10 @@ polinomi no té factors repetits, i per tant tenim una contradicció.
 El cos ciclotòmic \(\QQ(\zeta_n)\) té grau \(\varphi(n)\) sobre \(\QQ\).
 \end{corollary}
 
-\hypertarget{la-clausura-algebraica}{%
-\chapter{La clausura algebraica}\label{la-clausura-algebraica}}
+\hypertarget{clausures-algebraiques}{%
+\chapter{Clausures algebraiques}\label{clausures-algebraiques}}
 
-En aquest episodi demostrem l'existència i unicitat de la clausura algebraica d'un cos. Aprofitarem també per estudiar
-els polinomis ciclotòmics.
-
-TODO: reorganitzar-ho.
-
-\hypertarget{la-clausura-algebraica-1}{%
-\section{La clausura algebraica}\label{la-clausura-algebraica-1}}
+En aquest episodi demostrem l'existència i unicitat de la clausura algebraica d'un cos.
 
 \begin{definition}[clausura algebraica]
 \protect\hypertarget{def:clausura-algebraica}{}\label{def:clausura-algebraica}Diem que \(\bar{F}/F\) és una \emph{clausura algebraica} d'\(F\) si \(\bar{F}/F\) és algebraica i tot polinomi \(f(x)\in F[x]\)
@@ -1776,7 +1788,7 @@ Aviat veurem que tot cos té alguna clausura algebraica, i que hi ha cossos alge
 primer que les clausures algebraiques són algebraicament tancades.
 
 \begin{proposition}
-\protect\hypertarget{prp:clausura-tancada}{}\label{prp:clausura-tancada}Sigui \(\bar{F}/F\) una clausura algebraica de \(F\). Aleshores \(\bar{F}\) és algebricament tancat.
+\protect\hypertarget{prp:clausura-tancada}{}\label{prp:clausura-tancada}Sigui \(\bar{F}/F\) una clausura algebraica de \(F\). Aleshores \(\bar{F}\) és algebraicament tancat.
 \end{proposition}
 
 \begin{proof}
@@ -1800,84 +1812,109 @@ cadascun dels \(\alpha\) és algebraic sobre \(F\) i, per tant, és un element d
 completament a \(\bar{F}[x]\), i per tant \(\bar{F}\) és una clausura algebraica de \(F\).
 \end{proof}
 
-Cap al final del curs veurem una demostració del següent teorema, que també es pot demostrar amb mètodes analítics.
-
-\begin{theorem}[Teorema Fonamental de l'Àlgebra]
-\protect\hypertarget{thm:fta}{}\label{thm:fta}El cos \(\CC\) dels nombres complexos és algebraicament tancat
-\end{theorem}
-
-Com a conseqüència, podrem clausures algebraiques de qualsevol extensió subextensió \(\CC/F/\QQ\). En particular,
+Cap al final del curs veurem una demostració del \emph{Teorema Fonamental de l'Àlgebra}, que diu que
+el cos \(\CC\) dels nombres complexos és algebraicament tancat.
+Com a conseqüència, obtenim clausures algebraiques de qualsevol extensió subextensió \(\CC/F/\QQ\). En particular,
 el cos \(\QQbar\) format pels complexos algebraics és una clausura algebraica de \(\QQ\).
 
-Donat un cos qualsevol \(F\), tenim ara l'objectiu de construir una clausura algebraica \(\bar{F}/F\). Intuitivament almenys,
-la idea és de considerar, per cada polinomi \(g(x)\in F[x]\), un cos \(F_g\) que contingui totes les arrels de \(g\).
-Aleshores hauríem de prendre el compositum de tots aquests cossos. El problema és que per fer el compositum
-hem de prendre una intersecció de molts cossos, i no està clar on viuen aquests cossos (la intersecció
-de conjunts només té sentit quan aquests conjunts són subconjunts d'un conjunt fixat). Fixem-nos que si
-només consideréssim un nombre finit de polinomis \(g_1(x),\ldots, g_n(x)\) aleshores podríem prendre
-el cos de descomposició del producte \(g_1(x)\cdots g_n(x)\).
+\hypertarget{clausura-algebraica-dff_q}{%
+\section{\texorpdfstring{Clausura algebraica d'\(\FF_q\)}{Clausura algebraica d'\textbackslash FF\_q}}\label{clausura-algebraica-dff_q}}
 
-\begin{theorem}[existència de clausura algebraica]
-\protect\hypertarget{thm:existencia-clausura-algebraica}{}\label{thm:existencia-clausura-algebraica}Sigui \(F\) un cos. Aleshores existeix una clausura algebraica \(\bar{F}/F\).
+L'objectiu és demostrar l'existència de cossos finits d'ordre qualsevol potència d'un primer, i veure que són únics
+(llevat d'isomorfisme). També veurem que existeix la clausura algebraica de qualsevol cos finit.
+
+\begin{theorem}[Existència i unicitat de cossos finits]
+Per tot primer \(p\) i tot \(n\geq 1\), hi ha un únic (llevat d'isomorfisme) cos finit d'ordre \(p^n\), que
+denotarem per \(\FF_{p^n}\). A més, tot cos finit de característica
+\(p\) és isomorf a \(\FF_{p^n}\) per alguna \(n \geq 1\).
 \end{theorem}
 
 \begin{proof}
-Considerem un conjunt \(\mathcal{U} \supset F\) de cardinal estrictament superior a \(\mathcal{N}=\max(\aleph_0, |K|)\).
+Sigui \(n\geq 1\), i fixem-nos que el polinomi \(f(x)=x^{p^n}-x \in \FF_p[x]\) té derivada \(-1\) i, per tant, és separable.
+Si \(\alpha\) i \(\beta\) són dues arrels qualssevol, aleshores \(\alpha\beta\) i \(\alpha+\beta\)
+també són arrels. Per tant, el conjunt \(L\) format per les \(p^n\) arrels forma un subcos del cos de
+descomposició de \(f(x)\) i, per tant, com que \(L\) conté totes les arrels, ha de ser el propi
+cos de descomposició. Com que \(L\) té \(p^n\) elements, té grau \(n\) sobre \(\FF_p\), i per tant hem
+vist que hi ha cossos finits de grau \(n\) per qualsevol \(n\geq 1\).
 
-Sigui
-\[X = \{K\subseteq L \subseteq S ~|~ L/K \text{ és una extensió algebraica de $K$}\},\]
-amb la relació d'ordre
-\[
-K_2 > K_1 \iff \text{$K_2/K_1$ és una extensió algebraica}.
-\]
-Com que tota cadena té un element maximal (prenem la unió de totes les extensions), el lema de Zorn
-ens diu que hi ha un element maximal a \(X\), que anomenarem \(\bar{F}\). Només ens cal veure que \(\bar{F}/F\) és
-una clausura algebraica. Sigui \(f(x)\in F[x]\) un polinomi no constant, i suposem que no té cap zero a \(\bar{F}\).
-Podem construir una extensió \(L / \bar{F}\) on \(f(x)\) tingui un zero. Aleshores \(L/F\) és algebraica, i per tant
-\[
-|\bar{F}| \leq |L| \leq \mathcal{N}.
-\]
-Per tant, \(|S\smallsetminus \bar{K}| = |S| > |L\smallsetminus \bar{K}|\). Això fa que existeixi
-una aplicació (de conjunts) injectiva \(i \colon L \to S\) tal que \(i(x)=x\) si \(x\in \bar{F}\). Podem doncs
-transportar l'estructura de cos de \(L\) a \(i(L)\) i obtenim un nou element maximal \(L > \bar{F}\), contradient
-la maximalitat de \(\bar{F}\).
+Sigui ara \(\FF\) un cos finit qualsevol de característica \(p\). Com que és un espai vectorial sobre el seu
+cos primer \(\FF_p\), ha de tenir \(p^n\) elements per algun \(n\geq 1\). Fixem-nos que \(\FF^\times\) és un grup
+d'ordre \(p^n-1\) i, per tant \(\alpha^{p^n-1} = 1\) per tot \(\alpha\in \FF\). Per tant \(\alpha\) és una arrel
+de \(x^{p^n}-x\) i \(\FF\) està contingut al cos de descomposició d'aquest polinomi. Mirant el nombre
+d'elements, veiem que és igual al cos de descomposició.
 \end{proof}
 
-Una demostració alternativa:
-::: \{.proof\}
-Presentem una demostració alternativa que amaga una mica més els problemes amb la teoria de conjunts. Gràcies
-a la Proposició \ref{prp:clausura-tecnica}, n'hi ha prou amb construir una extensió \(K/F\) algebraicament tancada.
+Fixem-nos que encara no hem sabut demostrar que existeixen polinomis irreductibles a \(\FF_p[x]\) de qualsevol grau. El que
+ens caldria és demostrar que l'extensió \(\FF_{p^n}/\FF_p\) és \emph{simple}, és a dir, que s'obté adjuntant l'arrel d'un polinomi
+irreductible. Això ho veurem més endavant, a la Proposició \ref{prp:existencia-polis-irred-Fp}.
 
-Per
-cada polinomi mònic no constant \(f=f(x)\in F[x]\), considerem una variable \(x_f\). Tenim l'anell de polinomis
-en infinites variables \(F[\{x_f\}]\), i hi podem considerar l'ideal \(I\) generat pels polinomis \(f(x_f)\).
-
-Veurem que \(I\) no és el total i que, per tant, està contingut en un ideal maximal \(\mathcal{M}\). El quocient
-l'anomenem \(K_1\), que és una extensió de \(F\) que conté \textbf{una arrel} de cada polinomi amb coeficients a \(F\). Podem
-iterar el procés (començant amb \(K_1\) en comptes de amb \(F\)) per obtenir \(K_2/K_1\), una extensió on tot polinomi
-amb coeficients a \(K_1\) té una arrel, i així construim una successió de cossos de la qual en podem
-prendre la seva ``unió'' \(K\). Donat un polinomi \(f(x)\in K[x]\), tots els seus coeficients viuen necessàriament
-a \(K_n\) i, per tant, \(f(x)\) té alguna arrel a \(K_{n+1}\) i, per tant a \(K\).
-
-Ens queda per veure que \(I\) és un ideal propi. Suposem que no i arribarem a contradicció. Suposem que tenim una
-relació
+Fixem-nos que tenim una cadena d'inclusions
 \[
-g_1 f_1(x_{f_1}) + g_2 f_2(x_{f_2}) + \cdots + g_k f_k(x_{f_k}) = 1,\quad g_i \in F[\{x_f\}].
+\FF_p\subset \FF_{p^2} \subset \FF_{p^{6}} \subset \FF_{p^{4!}} \subset \cdots \subset \FF_{p^{n!}} \subset\cdots,
 \]
-En total, aquesta relació només involucra un nombre finit de variables. Les hi posem nom: denotem \(x_1=x_{f_1}\),
-i així successivament fins a \(x_k = x_{f_k}\). Després anomenem \(x_{k+1},\ldots, x_r\) la resta de variables
-que apareixen en els polinomis \(g_i\), de manera que podem reescriure la relació anterior com
-\[
-g_1(x_1,\ldots, x_r) f_1(x_1) + g_2(x_1,\ldots,x_r) f_2(x_2)+\cdots+g_k(x_1,\ldots x_r) f_k(x_k)=1.
-\]
-Prenem ara una extensió finita \(F'/F\) que contingui una arrel \(\alpha_i\) de \(f_i(x)\) per cada \(i\). La relació
-anterior particularitza, si fem \(x_i=\alpha_i\) per \(i=1,\ldots,k\) i \(x_i=0\) per \(i>k\), a \(0=1\), que és una
-contradicció. Això acaba la demostració.
-:::
+i podem considerar el cos \(\Fpbar = \bigcup_{n\geq 1} \FF_{p^{n!}}\) (és fàcil veure que és un cos).
 
-Veurem ara la unicitat de la clausura algebraica.
+\begin{proposition}
+El cos \(\Fpbar\) és una clausura algebraica d'\(\FF_p\).
+\end{proposition}
 
-\begin{theorem}[]
+\begin{proof}
+Primer, observem que \(\FF_{p^{n!}}\) conté \(\FF_{p^n}\) per a tot \(n\), i per tant també \(\Fpbar\) conté tots els cossos finits. Donat
+un polinomi \(f(x)\in \Fpbar[x]\), els seus coeficients viuen tots en un cert cos \(\FF_{p^{n!}}\) i per tant el cos de descomposició
+d'aquest polinomi és una certa extensió finita d'aquest, i està contingut a \(\Fpbar\). Ara bé, com que tots els \(\FF_{p^{n!}}\) són
+cossos de descomposició i \(\Fpbar\) és el mínim cos que els conté a tots ells, deduïm que \(\Fpbar\) és una clausura algebraica.
+\end{proof}
+
+\begin{corollary}
+Si \(\FF\) és un cos finit, aleshores \(\bar{\FF}=\Fpbar\).
+\end{corollary}
+
+\begin{proof}
+Ja hem vist que \(\bar{\FF}\) és el conjunt de tots els elements de \(\Fpbar\) que són algebraics sobre \(\FF\), i això és tot \(\Fpbar\).
+\end{proof}
+
+\hypertarget{clausura-algebraica-de-qq}{%
+\section{\texorpdfstring{Clausura algebraica de \(\QQ\)}{Clausura algebraica de \textbackslash QQ}}\label{clausura-algebraica-de-qq}}
+
+Construirem una clausura algebraica de \(\QQ\) de manera explícita. De fet, la mateixa construcció
+serveix per qualsevol cos de cardinalitat numerable, per exemple per \(\FF_p(t)\). El conjunt
+de tots els polinomis de \(\QQ[x]\) és numerable. Considerem doncs una enumeració \(p_1(x), p_2(x),\ldots\),
+i definim \(K_0=\QQ\) i \(K_1/\QQ\) com el cos de descomposició de \(p_1(x)\). Definim aleshores
+\(K_2/K_1\) com el cos de descomposició de \(p_2(x)\), i en general \(K_{n+1}\) com el cos de descomposició
+de \(p_{n+1}(x)\) sobre \(K_n\). Podem prendre \(\bar{\QQ}\) com la ``unió'' de tots aquests cossos. Evidentment,
+tot polinomi \(p_i(x)\in\QQ[x]\) descomposa completament a \(K_i\) i, per tant, també a \(\bar{\QQ}\).
+
+\hypertarget{el-lema-de-zorn}{%
+\section{El lema de Zorn}\label{el-lema-de-zorn}}
+
+El lema de Zorn és una conseqüència de l'Axioma de l'Elecció. De fet, els dos són equivalents en la teoria de conjunts de Zermelo-Fränkel.
+
+\begin{theorem}[lema de Zorn]
+\protect\hypertarget{thm:lema-zorn}{}\label{thm:lema-zorn}Sigui \(X\) un conjunt no buit amb un ordre parcial \(\leq\). Suposem que tota cadena no buida \(Y\subseteq X\) té una fita superior \(x\in X\).
+Aleshores \(X\) té algun element maximal.
+\end{theorem}
+
+Una aplicació típica del Lema de Zorn és el següent resultat de teoria d'anells.
+
+\begin{proposition}[tot anell té maximal]
+\protect\hypertarget{prp:ideal-maximal}{}\label{prp:ideal-maximal}Sigui \(A\) una anell unitari no trivial. Aleshores existeix un ideal maximal \(I\subset A\).
+\end{proposition}
+
+\begin{proof}
+Sigui \(X\) el conjunt de tots els ideals propis d'\(A\), que és no buit perquè \((0)\in X\). La inclusió ens dona un ordre parcial a \(X\), i
+un ideal maximal d'\(A\) és el mateix que un element maximal a \(X\). Només ens cal, doncs, verificar les hipòtesis del lema de Zorn.
+
+Sigui \(T\subseteq X\) una cadena no buida, i sigui \(I\) l'ideal obtingut fent la unió de tots els elements de \(T\). Fent servir
+que \(T\) és totalment ordenat, és fàcil veure que \(I\) és un ideal. Ens falta veure que és propi, és a dir, que \(1\notin I\). Però si
+\(1\in I\), aleshores hi ha algun membre de \(T\) que conté \(1\), i per tant no seria un ideal propi, contradicció.
+\end{proof}
+
+\hypertarget{unicitat-de-la-clausura-algebraica}{%
+\section{Unicitat de la clausura algebraica}\label{unicitat-de-la-clausura-algebraica}}
+
+Veurem ara la unicitat de la clausura algebraica (si aquesta existeix).
+
+\begin{theorem}
 Sigui \(K/F\) una extensió algebraica, i sigui \(L/F\) una extensió algebraicament tancada. Aleshores existeix un
 \(F\)-morfisme \(K\to L\).
 \end{theorem}
@@ -1901,14 +1938,84 @@ arrels de \(f(x)\), i \(\varphi\) indueix una aplicació injectiva (i per tant e
 \(\alpha\in K\) tal que \(\varphi(\alpha)=\beta\), i hem demostrat que \(\varphi\) és exhaustiu.
 \end{proof}
 
+\hypertarget{existuxe8ncia-de-la-clausura-algebraica}{%
+\section{Existència de la clausura algebraica}\label{existuxe8ncia-de-la-clausura-algebraica}}
+
+Donat un cos qualsevol \(F\), tenim ara l'objectiu de construir una clausura algebraica \(\bar{F}/F\). Intuitivament almenys,
+la idea és de considerar, per cada polinomi \(g(x)\in F[x]\), un cos \(F_g\) que contingui totes les arrels de \(g\).
+Aleshores hauríem de prendre el compositum de tots aquests cossos. El problema és que per fer el compositum
+hem de prendre una intersecció de molts cossos, i no està clar on viuen aquests cossos (la intersecció
+de conjunts només té sentit quan aquests conjunts són subconjunts d'un conjunt fixat). Fixem-nos que si
+només consideréssim un nombre finit de polinomis \(g_1(x),\ldots, g_n(x)\) aleshores podríem prendre
+el cos de descomposició del producte \(g_1(x)\cdots g_n(x)\).
+
+\begin{theorem}[existència de clausura algebraica]
+\protect\hypertarget{thm:existencia-clausura-algebraica}{}\label{thm:existencia-clausura-algebraica}Sigui \(F\) un cos. Aleshores existeix una clausura algebraica \(\bar{F}/F\).
+\end{theorem}
+
+\begin{proof}
+Considerem un conjunt \(\mathcal{U} \supset F\) de cardinal estrictament superior a \(\mathcal{N}=\max(\aleph_0, |F|)\).
+
+Sigui
+\[X = \{K\subseteq L \subseteq \mathcal{U} ~|~ L/K \text{ és una extensió algebraica de $K$}\},\]
+amb la relació d'ordre
+\[
+K_2 > K_1 \iff \text{$K_2/K_1$ és una extensió algebraica}.
+\]
+Com que tota cadena d'\(X\) té un element maximal (prenem la unió de totes les extensions de la cadena), el lema de Zorn
+ens diu que hi ha un element maximal a \(X\), que anomenarem \(\bar{F}\). Només ens cal veure que \(\bar{F}/F\) és
+una clausura algebraica. Sigui \(f(x)\in F[x]\) un polinomi no constant, i suposem que no té cap zero a \(\bar{F}\).
+Podem construir una extensió \(L / \bar{F}\) on \(f(x)\) tingui un zero. Aleshores \(L/F\) és algebraica, i per tant
+\[
+|\bar{F}| \leq |L| \leq \mathcal{N}.
+\]
+Per tant, \(|\mathcal{U}\smallsetminus \bar{K}| = |\mathcal{U}| > |L\smallsetminus \bar{K}|\). Això fa que existeixi
+una aplicació (de conjunts) injectiva \(i \colon L \to \mathcal{U}\) tal que \(i(x)=x\) si \(x\in \bar{F}\). Podem doncs
+transportar l'estructura de cos de \(L\) a \(i(L)\) i obtenim un nou element maximal \(L > \bar{F}\), contradient
+la maximalitat de \(\bar{F}\).
+\end{proof}
+
+Una demostració alternativa:
+::: \{.proof\}
+Presentem una demostració alternativa que amaga una mica més els problemes amb la teoria de conjunts. Gràcies
+a la Proposició \ref{prp:clausura-tecnica}, n'hi ha prou amb construir una extensió \(K/F\) algebraicament tancada.
+
+Per
+cada polinomi mònic no constant \(f=f(x)\in F[x]\), considerem una variable \(x_f\). Tenim l'anell de polinomis
+en infinites variables \(F[\{x_f\}]\), i hi podem considerar l'ideal \(I\) generat pels polinomis \(f(x_f)\).
+
+Veurem que \(I\) no és el total i, per la Proposició \ref{prp:ideal-maximal}, està contingut en un ideal maximal \(\mathcal{M}\). El cos
+obtingut prenent el quocient per \(\mathcal{M}\)
+l'anomenem \(K_1\), que és una extensió de \(F\) que conté \textbf{una arrel} de cada polinomi amb coeficients a \(F\). Podem
+iterar el procés (començant amb \(K_1\) en comptes de \(F\)) per obtenir \(K_2/K_1\), una extensió on tot polinomi
+amb coeficients a \(K_1\) té una arrel, i així construim una successió de cossos de la qual en podem
+prendre la seva ``unió'' \(K\). Donat un polinomi \(f(x)\in K[x]\), tots els seus coeficients viuen necessàriament
+a \(K_n\) per algun \(n\geq 1\) i, per tant, \(f(x)\) té alguna arrel a \(K_{n+1}\) i, per tant a \(K\).
+
+Ens queda per veure que \(I\) és un ideal propi. Suposem que no i arribarem a contradicció. Suposem que tenim una
+relació
+\[
+g_1 f_1(x_{f_1}) + g_2 f_2(x_{f_2}) + \cdots + g_k f_k(x_{f_k}) = 1,\quad g_i \in F[\{x_f\}].
+\]
+En total, aquesta relació només involucra un nombre finit de variables. Les hi posem nom: denotem \(x_1=x_{f_1}\),
+i així successivament fins a \(x_k = x_{f_k}\). Després anomenem \(x_{k+1},\ldots, x_r\) la resta de variables
+que apareixen en els polinomis \(g_i\), de manera que podem reescriure la relació anterior com
+\[
+g_1(x_1,\ldots, x_r) f_1(x_1) + g_2(x_1,\ldots,x_r) f_2(x_2)+\cdots+g_k(x_1,\ldots x_r) f_k(x_k)=1.
+\]
+Prenem ara una extensió finita \(F'/F\) que contingui una arrel \(\alpha_i\) de \(f_i(x)\) per cada \(i\). La relació
+anterior particularitza, si fem \(x_i=\alpha_i\) per \(i=1,\ldots,k\) i \(x_i=0\) per \(i>k\), a \(0=1\), que és una
+contradicció. Això acaba la demostració.
+:::
+
 \begin{remark}
 L'existència i unicitat de clausures algebraiques fou demostrada per Steinitz el 1910, i la demostració era molt
 més llarga i complicada (unes 20 pàgines).
 
 També es pot demostrar (però ens cal teoria que veurem una mica més endavant) que el cos \(K_1\)
 que apareix a la demostració anterior ja és algebraicament tancat, així que no caldria fer tots
-els altres infinits passos. La demostració d'aquest fet no és senzilla, fa servir el teorema de l'element
-primitiu (vegeu \ref{element-primitiu}), i separa els casos de característica \(0\) i característica \(p\).
+els altres infinits passos. La demostració d'aquest fet no és senzilla i fa servir el teorema de l'element
+primitiu, que demostrarem més endavant (vegeu \ref{element-primitiu}).
 \end{remark}
 
 \hypertarget{automorfismes}{%
@@ -1978,7 +2085,12 @@ automorfisme quedarà únicament determinat per aquesta acció. En particular, q
 el nombre d'automorfismes també serà finit.
 
 \begin{example}
-Calculem \(\Aut(\QQ(\sqrt{2})/\QQ)=\{1,\sigma\}\) i \(\Aut(\QQ(\sqrt[3]{2})/QQ) = 1\).
+Els automorfimes de \(\QQ(\sqrt{2})/\QQ\) són \(\Aut(\QQ(\sqrt{2})/\QQ)=\{1,\sigma\}\), on \(\sigma(\sqrt{2}) = -\sqrt{2}\).
+Tot automorfisme ve determinat per on envia \(\sqrt{2}\), i per tant aquests són tots.
+
+D'altra banda, si repetim el càlcul a \(\QQ(\sqrt[3]{2})\), veiem que no té cap automorfisme
+no trivial. Com que \(x^3-2\) només té una arrel real, qualsevol automorfisme l'haurà de fixar i, per tant
+\(\Aut(\QQ(\sqrt[3]{2})/\QQ) = 1\).
 \end{example}
 
 \hypertarget{cossos-fixos}{%
@@ -2088,7 +2200,7 @@ Les dues propietats de les extensions de Galois de fet les caracteritzen. Vegem 
 d'aquestes extensions:
 
 \begin{theorem}[Caracterització d'extensions de Galois]
-Sigui \(K/F\) una extensió finita i sigui \(G=\Aut(K/F)\). Aleshores els següents enunciats són equivalents:
+\protect\hypertarget{thm:caracteritzacio-galois}{}\label{thm:caracteritzacio-galois}Sigui \(K/F\) una extensió finita i sigui \(G=\Aut(K/F)\). Aleshores els següents enunciats són equivalents:
 1. \(|G| = [K\colon F]\).
 2. \(F = K^G\).
 3. \(K/F\) és normal i separable.
@@ -2138,13 +2250,15 @@ amb diversos exemples concrets d'extensions, il·lustrant la correspondència de
 \hypertarget{preliminars}{%
 \section{Preliminars}\label{preliminars}}
 
+Comencem amb un resultat que es segueix directament del Teorema \ref{thm:caracteritzacio-galois}.
+
 \begin{proposition}
-Sigui \(K\) una cos qualsevol. Sigui \(G\leq\Aut(K)\) un subgrup finit, i sigui \(F=K^G\). Aleshores \(K\) és Galois sobre \(F\),
+Sigui \(K\) un cos qualsevol. Sigui \(G\leq\Aut(K)\) un subgrup finit, i sigui \(F=K^G\). Aleshores \(K\) és Galois sobre \(F\),
 i \(\Gal(K/F) = G\).
 \end{proposition}
 
 \begin{proof}
-Per definició d'\(F\), tenim \(G \leq \Aut(K/F)\), i només ens cal veure la igualtat. El teorema
+Per definició d'\(F\), tenim \(G \leq \Aut(K/F)\), i només ens cal veure la igualtat. El Teorema \ref{thm:caracteritzacio-galois}
 ens diu que \(|G|=[K\colon F]\), i ja hem vist \(|\Aut(K/F)|\leq [K\colon F]\). Per tant:
 \[
 [K\colon F] = |G| \leq |\Aut(K/F)| \leq [K\colon F].
@@ -2274,17 +2388,122 @@ donada per \(M\mapsto H = \Gal(K/M)\) i \(H\mapsto M = K^H\) que satisfà:
 
 \end{theorem}
 
-\hypertarget{examples}{%
-\section{Examples}\label{examples}}
+\hypertarget{exemples}{%
+\section{Exemples}\label{exemples}}
 
-Calculem alguns exemples, com \(\QQ(\sqrt{2}, \sqrt{3})\), el cos de descomposició de \(\sqrt[3]{2}\), \(\QQ(\sqrt{2}+\sqrt{3})\),
-o el cos de descomposició de \(\QQ(\sqrt[8]{2}, \zeta_8)\) de \(\sqrt[8]{2}\).
+\hypertarget{exemple-duna-extensiuxf3-biquadruxe0tica}{%
+\subsection{Exemple d'una extensió biquadràtica}\label{exemple-duna-extensiuxf3-biquadruxe0tica}}
 
+Considerem primer el cos \(K=\QQ(\sqrt{2}, \sqrt{3})\), de grau \(4\) sobre \(\QQ\). Els cossos \(\QQ(\sqrt{2})\), \(\QQ(\sqrt{3})\)
+i \(\QQ(\sqrt{6})\) en són subcossos. Qualsevol subcos no trivial ha de ser de grau \(2\), per la
+fórmula de les torres. Podem intentar veure de manera elemental que els tres que hem esmentat
+són els únics, però això ens ho garanteix el teorema fonamental: el grup de Galois de \(\QQ(\sqrt{2},\sqrt{3})\)
+és \(V_4\cong C_2\times C_2=\langle \sigma,\tau\rangle\),
+on \(\sigma(\sqrt{2})=-\sqrt{2}\) i \(\sigma(\sqrt{3})=\sqrt{3}\), i
+\(\tau(\sqrt{2})=\sqrt{2}\) i \(\tau(\sqrt{3})=-\sqrt{3}\), i té reticle de subgrups
+\[
+\xymatrix{
+  &\langle \sigma, \tau\rangle \ar@{-}[dl]^2\ar@{-}[d]_2\ar@{-}[dr]^2&\\
+\langle \sigma\rangle & \langle \sigma\tau\rangle  & \langle \tau\rangle\\
+&1\ar@{-}[ul]^2\ar@{-}[u]_2\ar@{-}[ur]_2&
+}
+\]
+Calculant els cossos fixos pels tres grups intermitjos obtenim:
+\[
+K^{\langle\sigma\rangle} = \QQ(\sqrt{3})\text{, } K^{\langle\sigma\tau\rangle} = \QQ(\sqrt{6}),\text{ i } K^{\langle\tau\rangle} = \QQ(\sqrt{2}).
+\]
+
+\hypertarget{exemple-duna-extensiuxf3-de-tipus-s_3}{%
+\subsection{\texorpdfstring{Exemple d'una extensió de tipus \(S_3\)}{Exemple d'una extensió de tipus S\_3}}\label{exemple-duna-extensiuxf3-de-tipus-s_3}}
+
+Considerem el cos de descomposició del polinomi \(x^3-2\), que conté \(\sqrt[3]{2}\) i \(\zeta_3\). De fet,
+el cos de descomposició és precisament \(\QQ(\sqrt[3]{2}, \zeta_3)\). Tenim els subcossos obvis
+\(\QQ(\zeta_3)\) (de grau \(2\)) i els tres conjugats \(\QQ(\sqrt[3]{2})\), \(\QQ(\zeta_3\sqrt[3]{2})\)
+i \(\QQ(\zeta_3^{-1}\sqrt[3]{2})\). Calculem el grup de Galois d'aquesta extensió. Fixem-nos que
+un automorfisme ha de permutar les arrels de \(x^3-2\) i també les de \(x^2+x+1\). Considerarem
+el morfisme \(\sigma\) que fixa les arrels de la unitat, i que envia \(\sqrt[3]{2} = \zeta_3\sqrt[3]{2}\),
+i també el morfisme \(\tau\) que fixa \(\sqrt{3}[2]\) i que envia \(\zeta_3\mapsto \zeta_3^{-1}\). Fixem-nos
+que \(\tau\) té ordre \(2\), i que \(\sigma^2(\sqrt[3]{2}) = \sigma(\zeta_3\sqrt[3]{2}) = \zeta_3^2\sqrt[3]{2}\)
+i \(\sigma^3=\id\). Per tant, el grup de Galois té ordre \(6\) i està generat per aquests dos elements. Observem
+també que \(\sigma\tau(\sqrt[3]{2}) = \zeta_3\sqrt[3]{2}\), mentre que \(\tau\sigma(\sqrt[3]{2}) = \tau(\zeta_3\sqrt[3]{2}) = \zeta_3^{-1}\sqrt[3]{2}\).
+Per tant, \(\sigma\) i \(\tau\) commuten i \(G \cong S_3\).
+
+Ara podem calcular el reticle de subgrups de \(S_3\), i obtenim
+\[
+\xymatrix{
+&\langle\sigma,\tau\rangle\ar@{-}[ddl]\ar@{-}[dr]\ar@{-}[drr]\ar@{-}[drrr]\\
+&&\langle\tau\rangle&\langle \tau\sigma\rangle & \langle \tau\sigma^2\rangle\\
+\langle\sigma\rangle&\\
+& 1\ar@{-}[ul]\ar@{-}[uur]\ar@{-}[uurr]\ar@{-}[uurrr]
+}
+\]
+
+El reticle de subcossos de \(\QQ(\sqrt[3]{2}, \zeta_3)\) corresponent és:
+\[
+\xymatrix{
+&\QQ\ar@{-}[ddl]\ar@{-}[dr]\ar@{-}[drr]\ar@{-}[drrr]\\
+&&\QQ(\sqrt[3]{2})&\QQ(\zeta_3\sqrt[3]{2}) & \QQ(\zeta_3^{-1}\sqrt[3]{2})\\
+\QQ(\zeta_3)&\\
+& \QQ(\sqrt[3]{2}, \zeta_3)\ar@{-}[ul]\ar@{-}[uur]\ar@{-}[uurr]\ar@{-}[uurrr]
+}
+\]
+
+\hypertarget{exemple-duna-extensiuxf3-de-de-grau-16}{%
+\subsection{Exemple d'una extensió de de grau 16}\label{exemple-duna-extensiuxf3-de-de-grau-16}}
+
+Considerem el grup de Galois del polinomi irreductible \(x^8-2\). Les arrels d'aquest polinomi són
+\[
+\zeta^i \sqrt[8]{2},\quad i=0,\ldots,7,
+\]
+on \(\zeta=\zeta_8=e^{\frac{2\pi i}{8}}\) és una arrel primitiva de la unitat.
+Observem que tenim
+\[
+\QQ \subset \QQ(\sqrt{2}) \subset \QQ(\sqrt[4]{2})\subset \QQ(\alpha)\subset K=\QQ(\zeta,\alpha),
+\]
+i que cada extensió de les de sobre és de grau \(2\) sobre l'anterior. Per justificar l'última
+extensió, podem trobar el polinomi mínim de \(\zeta\) sobre \(\QQ(\alpha)\). Sabem que
+\(\zeta^2=i\), i per tant \(\zeta=\frac{1}{\sqrt{2}}(1+i)\). Per tant, \(\zeta\) satisfà el polinomi
+\[
+x^2 - \sqrt{2}x + 1 = 0.
+\]
+Fixem-nos que \(\QQ(\alpha)\) és un subcos de \(\RR\) i en canvi \(\QQ(\alpha,\zeta)\) no. Per tant,
+en deduïm que \([K\colon \QQ] = 16\). De fet, com que \(\zeta=\frac{1}{\sqrt{2}}(1+i)\),
+podem descriure \(K\) de manera més senzilla com \(K=\QQ(\alpha,i)\).
+Intentem descriure el seu grup de Galois. Tot automorfisme
+ve determinat per la imatge de \(\alpha\) i de \(i\). La imatge d'\(\alpha\) ha de ser de la
+forma \(\zeta^j\alpha\) per algun \(0\leq j \leq 7\), mentre que la imatge de \(i\) ja de ser \(\pm i\).
+Com que només hi ha \(16\) possibilitats en total i el grup de Galois ha de tenir ordre \(16\),
+totes elles es donen. Per tant,
+\[
+\Gal(K/\QQ) = \{1,\sigma_1,\sigma_2,\ldots,\sigma_7,\tau,\tau\sigma_1,\ldots,\tau\sigma_7\},
+\]
+on \(\sigma_j\) fixa \(i\) i envia \(\alpha\) a \(\zeta^j\alpha\), i \(\tau\) fixa \(\alpha\) i envia \(i\) a \(-i\).
+
+Podem calcular també l'acció de \(\sigma=\sigma_1\) i \(\tau\) en l'arrel \(\zeta\), fent servir
+\[
+\zeta = \frac{\sqrt{2}}{2} (1+i) = \frac{1}{2}\alpha^4(1+i).
+\]
+Per tant \(\sigma(\zeta) = \frac{1}{2} (-1) \alpha^4 (1+i) = -\zeta\), i
+\(\tau(\zeta) = \frac{1}{2}\alpha^4(1-i) = \bar{\zeta} = \zeta^{-1}\).
+
+Calculant els productes \(\sigma^i\) i \(\sigma^i\tau\) veiem també que \(\Gal(K/\QQ)\) està generat per \(\sigma\) i \(\tau\),
+i de fet
+\[
+\Gal(K/\QQ)= \langle \sigma, \tau ~|~ \sigma^8=\tau^2=\sigma\tau\sigma^{-3}\tau=1\rangle.
+\]
+Aquest subgrup s'anomena \emph{quasidihedral}, i el seu reticle de subgrups és:
+
+\begin{center}\includegraphics[width=1\linewidth]{teoriadegalois_files/figure-latex/unnamed-chunk-6-1} \end{center}
+
+TODO: calcular el reticle de subcossos corresponent.
+
+\begin{remark}
 És important adonar-se que no n'hi ha prou en assignar valors
 als generadors d'una extensió per definir un automorfisme, ja que hi pot haver relacions amagades entre els
 generadors. Per exemple, si \(\theta=\sqrt[8]{2}\), tenim \(\theta^4 = \zeta_8 + \zeta_8^{-1}\) i per tant no totes
 les tries
 \(\theta\mapsto \theta\zeta_8^i\) i \(\zeta_8\mapsto \theta_8^j\) amb \(j\) senar donen lloc a automorfismes.
+\end{remark}
 
 \hypertarget{cossos-finits}{%
 \chapter{Cossos Finits}\label{cossos-finits}}
@@ -2379,20 +2598,6 @@ p^n = \sum_{d\mid n} d \Psi(d).
 \]
 El resultat s'obté aplicant la fórmula d'inversió de Möbius.
 \end{proof}
-
-\hypertarget{la-clausura-algebraica-dff_p}{%
-\section{\texorpdfstring{La clausura algebraica d'\(\FF_p\)}{La clausura algebraica d'\textbackslash FF\_p}}\label{la-clausura-algebraica-dff_p}}
-
-Ja hem vist que \(\FF_{p^d}\subseteq \FF_{p^n}\) si i només si \(d \mid n\). Per tant, donades dues extensions
-d'\(\FF_p\) com ara \(\FF_{p^{n}}\) i \(\FF_{p^m}\), podem pensar-les dins de \(\FF_{p^{nm}}\). Així, podem
-prendre la unió de totes elles i obtenir la clausura algebraica de manera explícita:
-
-\begin{proposition}
-Tenim
-\[
-\overline{\FF}_p = \bigcup_{n\geq 1} \FF_{p^n}.
-\]
-\end{proposition}
 
 \hypertarget{element-primitiu}{%
 \chapter{Element Primitiu}\label{element-primitiu}}
@@ -2578,8 +2783,8 @@ d'un conjunt de generadors de \(K\)). El cos \(E\) buscat és llavors la interse
 que \(E'/F\) és Galois. Hem vist que aquesta intersecció serà Galois.
 \end{proof}
 
-\hypertarget{extensions-abelianes-i-ciclotuxf2miques}{%
-\chapter{Extensions Abelianes i ciclotòmiques}\label{extensions-abelianes-i-ciclotuxf2miques}}
+\hypertarget{extensions-abelianes}{%
+\chapter{Extensions Abelianes}\label{extensions-abelianes}}
 
 En aquest apartat estudiem les extensions ciclotòmiques, i veiem que \(\Gal(\QQ(\zeta_n)/\QQ)\)
 és canònicament isomorf a \((\ZZ/n\ZZ)^\times\). Com a aplicació, veurem com construir
@@ -2690,8 +2895,8 @@ Obtenim, finalment, el següent reticle de subcossos:
 \]
 \end{example}
 
-\hypertarget{extensions-abelianes}{%
-\section{Extensions abelianes}\label{extensions-abelianes}}
+\hypertarget{extensions-abelianes-1}{%
+\section{Extensions abelianes}\label{extensions-abelianes-1}}
 
 Podem fer servir el què hem vist per demostrar el següent resultat. Necessitarem un resultat d'aritmètica:
 
@@ -2702,7 +2907,7 @@ Sigui \(m\geq 1\) un enter positiu. Aleshores existeixen infinits primers \(p\) 
 \begin{proof}
 Ens caldà fer servir que \(\Phi_m\in\ZZ[x]\) és mònic, i \(\Phi_m(0) = 1\).
 
-Suposem, donats \(p_1,\ldots,p_k\) congruents amb \(1\) mòdul \(m\). Trobarem un primer més gran que tots ells, que
+Suposem donats \(p_1,\ldots,p_k\) congruents amb \(1\) mòdul \(m\). Trobarem un primer més gran que tots ells, que
 també serà \(\equiv 1 \pmod{m}\). Considerem el
 producte \(M = \ell mp_1p_2\cdots p_k\) on \(\ell\) és suficientment gran com per què
 \[
@@ -2812,6 +3017,8 @@ En aquest episodi estudiem els grups de Galois de polinomis separables, i veurem
 \hypertarget{grup-de-galois-dun-polinomi}{%
 \section{Grup de Galois d'un polinomi}\label{grup-de-galois-dun-polinomi}}
 
+A cada polinomi separable li podem associar un grup de Galois.
+
 \begin{definition}[grup de Galois d'un polinomi]
 Sigui \(f(x)\in F[x]\) un polinomi separable amb coeficients a un cos \(F\). El \emph{grup de Galois d'\(f(x)\)}
 és el grup de Galois del cos de descomposició de \(f(x)\), que escriurem \(\Gal(f)\).
@@ -2834,14 +3041,14 @@ possiblement amb repetició, i \(\deg(f_i(x)) = n_i\), aleshores
 \]
 ja que els elements de \(\Gal(K/F)\) permuten les arrels de cadascun dels \(f_i(x)\) per separat.
 
-\begin{remark}[]
+\begin{remark}
 Suposem que \(f(x)\) és irreductible. Aleshores el subgrup de \(G\leq S_n\) que obtenim com a imatge de \(\Gal(K/F)\) és \emph{transitiu}: donats \(i,j\),
 hi ha un element \(g\in G\) tal que \(g(i)=j\). Així, no tots els subgrups de \(S_n\) són possibles grups de Galois.
 \end{remark}
 
 \begin{example}
 Calculem els grups de Galois \(\Gal(\QQ(\sqrt{2}, \sqrt{3}) / \QQ)\) i \(\Gal(\QQ(\sqrt[3]{2})/\QQ)\) com a
-subgrups de \(S_4\) i \(S_3\), respectivament.
+subgrups de \(S_4\) i \(S_3\), respectivament. TODO
 \end{example}
 
 \hypertarget{el-grup-de-galois-del-polinomi-genuxe8ric}{%
@@ -2915,7 +3122,9 @@ es demostra amb el teorema del valor mig:
 \end{proposition}
 
 \begin{proof}
-És equivalent a veure que tot polinomi de grau senar amb coeficients reals té una arrel real.
+Si \(K/\RR\) és una extensió finita de grau senar, aleshores ve generada per un polinomi irreductible \(f(x)\in \RR[x]\) de grau senar, que
+podem suposar mònic. En aquest cas, \(f(x)>0\) per \(x\) suficientment gran, i \(f(x)<0\) per \(x<0\) suficientment gran en valor absolut.
+El teorema del valor mig ens diu que \(f(x)\) té una arrel real, i per tant \(f(x)\) no pot ser irreductible.
 \end{proof}
 
 \begin{lemma}
@@ -2924,10 +3133,11 @@ es demostra amb el teorema del valor mig:
 
 \begin{proof}
 Hem de veure que l'arrel quadrada d'un nombre complex també és complex. Això és un exercici senzill. Per
-exemple, si \(\alpha=a+bi\), aleshores una arrel quadrada és de la forma
+exemple, si \(\alpha=a+bi\), aleshores una arrel quadrada d'\(\alpha\) és de la forma
 \[
-\sqrt{\frac{a + \sqrt{a^2+b^2}}{2}} \pm i\sqrt{\frac{-a+\sqrt{a^2+b^2}}{2}}.
+\sqrt{\frac{a + \sqrt{a^2+b^2}}{2}} \pm i\sqrt{\frac{-a+\sqrt{a^2+b^2}}{2}},
 \]
+on el signe s'ha de prendre de manera correcta.
 \end{proof}
 
 \begin{theorem}[Teorema Fonamental de l'Àlgebra]
@@ -2935,10 +3145,12 @@ Sigui \(K/\RR\) una extensió finita. Aleshores \([K \colon \RR] \leq 2\).
 \end{theorem}
 
 \begin{proof}
-Podem suposar (prenent la clausura de Galois) que \(K/\RR\) és finita Galois.
-Sigui \(G=\Gal(K/\RR)\), i sigui \(H\leq G\) un subgrup
-de \(2\)-Sylow. Pel TFTG, el grau \([K^H\colon \RR]\) és senar. Per tant, \(K^H=\RR\) i
-això vol dir que \(H=G\), és a dir, que \(G\) és un \(2\)-grup (té ordre una potència de \(2\)).
+Podem suposar (canviant \(K\) per la seva clausura de Galois) que \(K/\RR\) és finita i Galois, amb
+grup de Galois \(G=\Gal(K/\RR)\),. Sigui \(H\leq G\) un subgrup
+de \(2\)-Sylow. És a dir, \(|H|\) és una potència de \(2\), i \([G\colon H]\) és senar.
+Pel Teorema Fonamental de la Teoria de Galois, el grau \([K^H\colon \RR]=[G\colon H]\) és senar. La
+Proposició \ref{prp:arrels-real-senar} implica que \(K^H=\RR\) i
+això vol dir (un altre cop pel Teorema Fonamental) que \(H=G\), és a dir, que \(G\) és un \(2\)-grup (té ordre una potència de \(2\)).
 
 Suposem doncs que \(|G|\geq 4\), i arribarem a una contradicció. En aquest cas, hi ha subgrups \(H_2\leq H_1\leq G\)
 amb \([G\colon H_i] = 2^i\). En termes de cossos fixos, hi ha una extensió de grau \(2\) de \(K^{H_1}=\CC\), que
@@ -3152,7 +3364,7 @@ necessàries. Aleshores les noves extensions intermitges són radicals simples, 
 estan contingudes en una extensió radical \(F'K\).
 \end{proof}
 
-\begin{corollary}
+\begin{corollary}[Abel-Ruffini]
 El polinomi general de grau \(n\) no és resoluble per radicals, per cap \(n\geq 5\).
 \end{corollary}
 
@@ -3427,7 +3639,7 @@ Donat un subgrup \(H\leq \Gal(K/F)\), podem considerar el cos fix \(K^H\). Tamb�
 considerar el subgrup \(\Gal(K/M)\leq \Gal(K/F)\).
 
 \begin{example}
-Considerem l'extensió de Galois infinita \(\Fpbar/\FF_p\), i l'automorfisme \(\pi \colon\bar{\FF}_p\to\bar{\FF}_p\),
+Considerem l'extensió de Galois infinita \(\Fpbar/\FF_p\), amb \(\Fpbar = \bigcup_{n\geq 1} \FF_{p^n}\), i l'automorfisme \(\pi \colon\bar{\FF}_p\to\bar{\FF}_p\),
 que envia \(x\mapsto x^p\). El cos fix per \(\pi\) és \(\FF_p\). Veurem que \(\FF_p\) no està generat per \(\pi\) i per
 tant el teorema fonamental de la teoria de Galois no pot ser cert en aquest context.
 
@@ -3619,7 +3831,7 @@ que hi ha una quantitat numerable de subcossos de \(K\).
 \end{example}
 
 \begin{example}[grup de Galois de $\Fpbar / \FF_p$]
-Considerem en aquest cas l'extensió \(\Fpbar / \FF_p\), on \(\Fpbar = \bigcup_{n\geq 1} \FF_{p^n}\). Tenim un morfisme injectiu
+Considerem en aquest cas l'extensió \(\Fpbar / \FF_p\). Tenim un morfisme injectiu
 \[
 \iota \colon \Gal(\Fpbar/\FF_p) \injects \prod_{n\geq 1} \Gal(\FF_{p^n}/\FF_p) \cong \prod_{n\geq 1} \ZZ/n\ZZ,
 \]
@@ -3634,6 +3846,377 @@ que es correspon amb l'aplicació natural \(\ZZ/m\ZZ\to \ZZ/n\ZZ\). Per tant,
 on \(\hat{Z}\cong \prod_{p} \ZZ_p\) és la \emph{completació finita} dels enters.
 \end{example}
 
+\hypertarget{appendix-apuxe8ndix}{%
+\appendix}
+
+
+\hypertarget{seminaris}{%
+\chapter{Seminaris}\label{seminaris}}
+
+\hypertarget{seminari-1-polinomis-simuxe8trics}{%
+\section{Seminari 1: Polinomis simètrics}\label{seminari-1-polinomis-simuxe8trics}}
+
+Sigui \(A\) un anell domini i siguin \(X_1,\dotsc,X_n\) indeterminades.
+Sigui \(\Sigma_n\) el grup simètric en \(\{1,\dotsc,n\}\). Donada una
+permutació \(\sigma\in \Sigma_n\) definim
+\(\sigma\cdot f(X_1,\dotsc,X_n)=f(X_{\sigma(1)},\dotsc,X_{\sigma(n)})\).
+Per exemple, si \(f=X_1^2X_2-X_3\) i considerem les permutacions
+\(\rho=(1\,3)\), \(\sigma=(1\,2\,3)\), aleshores \(\rho\cdot f=X_3^2X_2-X_1\)
+i \(\sigma\cdot f=X_2^2X_3-X_1\).
+
+\textbf{Definició:}. Un polinomi \(f\in A[X_1,\dotsc,X_n]\) s'anomena
+\textbf{simètric} si \(\sigma\cdot f=f\) per a tota \(\sigma\in\Sigma_n\).
+:::
+
+És fàcil veure que el conjunt dels polinomis simètrics és un subanell
+\(S\subseteq A[X_1,\dotsc,X_n]\) que conté \(A\). Sigui \(Y\) una altra
+indeterminada. Podem considerar el polinomi en \(Y\)
+\[F(Y,X_1,\dotsc,X_n)=(Y-X_1)\dotsb(Y-X_n)=Y^n-s_1Y^{n-1}+\dotsb+(-1)^ns_n\]
+amb coeficients a \(A[X_1,\dotsc,X_n]\). Els polinomis que apareixen com a
+coeficients \(s_1=X_1+\dotsb+X_n,\dotsc,s_n=X_1\dotsb X_n\) són polinomis
+simètrics, i s'anomenen \textbf{polinomis simètrics elementals}. Fixeu-vos
+que el polinomi \(s_i\) és homogeni de grau \(i\), per a tot \(i\geq 1\).
+Considerarem el morfisme d'anells
+\[\iota\colon A[S_1,\ldots,S_n]\to S\subseteq A[X_1,\ldots,X_n], \quad f(S_1,\ldots,S_n)\mapsto f(s_1,\ldots,s_n).\]
+
+Sigui \(g(S_1,\ldots,S_n)=CS_1^{e_1}\dotsb S_n^{e_n}\) un monomi no nul.
+El polinomi simètric \(\iota(g)\) té grau total \(e_1+2e_2+\cdots+ne_n\), és
+el que s'anomena el \textbf{pes} del monomi. Si \(g\in A[S_1,\dotsc,S_n]\), el
+\textbf{pes de \(g\)} és el màxim dels pesos dels monomis no nuls de \(g\).
+L'objectiu del exercicis és demostrar el següent resultat, que diu que
+\(\iota\) és injectiva i té com a imatge exactament el subanell dels
+polinomis simètrics.
+
+\textbf{Teorema fonamental dels polinomis simètrics:}. Sigui
+\(f\in S\subseteq A[X_1,\dotsc,X_n]\) un polinomi simètric de grau \(d\).
+Aleshores existeix un únic polinomi \(g\in A[S_1,\dotsc,S_n]\) de pes
+menor o igual que \(d\) tal que \[f(X_1,\dotsc,X_n)=g(s_1,\dotsc,s_n).\]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Demostreu que tot polinomi \(f(X_1,\ldots,X_n)\) es pot escriure com a
+  suma de polinomis homogenis, i que si \(f(X_1,\ldots, X_n)\) és
+  simètric aleshores cadascun dels termes homogenis també és simètric.
+\item
+  Demostreu que \(\iota(S_1^{e_1}S_2^{e_2}\cdots S_n^{e_n})\) és un
+  polinomi homogeni de grau \(e_1+2e_2+\cdots +ne_n\).
+\item
+  Demostreu que donat un polinomi homogeni simètric
+  \(f(X_1,\ldots,X_n)\), si
+  \(\operatorname{LT}(f)=aX_1^{e_1}\cdots X_n^{e_n}\) aleshores
+  \(\operatorname{LT}(f) = \operatorname{LT}(\iota(aS_1^{e1-e2}S_2^{e2-e3}\cdots S_n^{e_n}))\).{[}\^{}1{]}
+\item
+  Demostreu per inducció que \(\iota\) és una bijecció entre
+  \(A[X_1,\ldots,X_n]\) i \(S\).
+\item
+  Expresseu els següents polinomis en termes de polinomis simètrics
+  elementals: \((X_1-X_2)^2\), \(X_1^2 + X_2^2 + X_3^2\),
+  \(X_1^2X_2^2 + X_1^2X_3^2 + X_2^2X_3^2\),
+  \(\sum_{i\neq j} X_i^2X_j\),\(\sum_{i\neq j} (X_i-X_j)^2\).
+\end{enumerate}
+
+Hi ha un altre procediment possible per expressar un polinomi simètric
+donat en termes de simètrics elementals, que s'anomena el \emph{mètode dels
+coeficients indeterminats}. Suposem que \(f\) és simètric homogeni de grau
+\(d\), i sigui \(N\) el màxim grau en què apareix cap de les variables.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Feu una estimació de quants monomis
+  \(a_iS_1^{e_1}S_2^{e_2}\dots S_n^{e_n}\) poden aparèixer a \(g\) si
+  \(\iota(g)=f\), a partir de les restriccions
+  \[e_1+2e_2+\cdots +ne_n = d,\quad e_1+e_2+\cdots+e_n \leq N.\]
+\item
+  Expressant el polinomi \(f\) com una combinació lineal de totes les
+  possibilitats de l'apartat anterior (\(d=3\) i \(N=3\)) i substituïnt
+  les variables a suficients valors, trobeu l'expressió de
+  \(f(X_1,X_2,X_3,X_4) = (X_1+X_2+X_3+X_4)(X_1+X_3-X_2-X_4)(X_1+X_4-X_2-X_3)\)
+  com a polinomi en els simètrics elementals (demostreu primer que \(f\)
+  és simètric).
+\end{enumerate}
+
+\hypertarget{seminari-2-grups-dordre-petit}{%
+\section{Seminari 2: Grups d'ordre petit}\label{seminari-2-grups-dordre-petit}}
+
+L'objectiu del seminari és estudiar tots els grups d'ordre fins a \(15\). Cal recordar com és el reticle de subgrups
+dels grups cíclics finits, que es correspon amb el reticle de divisors del seu cardinal. També cal recordar els
+teoremes de Sylow, que ens serviran per estudiar els grups amb cardinal una mica més gran. Aquí tenim la taula amb tots ells.
+
+\begin{longtable}[]{@{}lcr@{}}
+\toprule()
+Ordre & Classes isomorf & Grups \\
+\midrule()
+\endhead
+\(1\) & \(1\) & \(C_1\) \\
+\(2\) & \(1\) & \(C_2\) \\
+\(3\) & \(1\) & \(C_3\) \\
+\(4\) & \(2\) & \(C_4\), \(C_2\times C_2\) \\
+\(5\) & \(1\) & \(C_5\) \\
+\(6\) & \(2\) & \(C_6\), \(S_3\) \\
+\(7\) & \(1\) & \(C_7\) \\
+\(8\) & \(5\) & \(C_8\), \(C_4 \times C_2\), \(D_{2\times 4}\), \(Q_8\), \(C_2 \times C_2 \times C_2\) \\
+\(9\) & \(2\) & \(C_9\), \(C_3 \times C_3\) \\
+\(10\) & \(2\) & \(C_{10}\), \(D_{2\times 5}\) \\
+\(11\) & \(1\) & \(C_{11}\) \\
+\(12\) & \(5\) & \(C_{12}\), \(C_6 \times C_2\), \(A_4\), \(D_{2\times 6}\), \(\operatorname{Dic}_{12}\) \\
+\(13\) & \(1\) & \(C_{13}\) \\
+\(14\) & \(2\) & \(C_{14}\), \(D_{2\times 7}\) \\
+\(15\) & \(2\) & \(C_{15}\) \\
+\bottomrule()
+\end{longtable}
+
+D'aquesta taula, els grups \(Q_8\) (grup quaterniònic) i \(\operatorname{Dic}_{12}\) (dicíclic d'ordre \(12\)) tenen les següents presentacions:
+\[
+Q_8 = \langle x, y \mid x^2y^{-2}=x^4=xyx^{-1}y=1\rangle,\quad \operatorname{Dic}_{12} = \langle x, y \mid x^4=y^3=xyx^{-1}y^{-2}\rangle.
+\]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Dibuixeu el reticle del grup cíclic \(C_{4}\), \(C_8\) i \(C_{12}\).
+\item
+  Dibuixeu el reticle dels grups \(C_2\times C_2\) i \(C_3\times C_9\).
+\item
+  Doneu el reticle (amb generadors) dels grups \((\ZZ/n\ZZ)^\times\) amb \(n=7,8,12\).
+\item
+  Trobeu el reticle de subgrups de \(S_3\) i indiqueu quins dels subgrups són normals.
+\item
+  En els següents exercicis estudiem els grups diedrals:
+
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii}.}
+  \tightlist
+  \item
+    Trobeu una immersió del grup diedral \(D_{2\times n}\) a \(S_n\).
+  \item
+    Doneu el reticle de subgrups de \(D_{2\times 4}\), indicant quins subgrups són normals.
+  \item
+    Trobeu un subgrup d'\(S_4\) que sigui isomorf a \(D_{2\times 4}\). És normal a \(S_4\), aquest subgrup?
+  \item
+    Demostreu que si \(H\leq S_4\) és un subgrup amb \(8\) elements, aleshores \(H\cong D_{2\times 4}\).
+  \end{enumerate}
+\item
+  Trobeu els \(2-\) i \(3-\) subgrups de Sylow del grup alternat \(A_4\), i digueu quins d'ells són normals.
+\item
+  Els següents exercicis estudien els subgrups \emph{transitius} de \(S_n\).
+
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii}.}
+  \tightlist
+  \item
+    Demostreu que el conjugat d'un subgrup transitiu també ho és.
+  \item
+    Demostreu que si \(H\leq S_n\) és un subgrup transitiu, aleshores \(|H|\) és múltiple de \(n\).
+  \item
+    Demostreu que si \(H\leq S_n\) és un subgrup transitiu i abelià, aleshores \(|H|=n\).
+  \item
+    Demostreu que els únics subgrups transitius de \(S_4\) són \(S_4\), \(A_4\), els que són isomorfs a \(D_{2\times 4}\), els que són
+    isomorfs a \(C_4\), i \(V=\{\id, (12)(34), (13)(24), (14)(23)\}\).
+  \end{enumerate}
+\item
+  Aquest exercici ens ajudarà a decidir quan un subgrup d'\(S_n\) és tot \(S_n\).
+
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii}.}
+  \tightlist
+  \item
+    Demostreu que si \((a_1,\ldots,a_k)\) és un cicle, aleshores per a tot \(\sigma\in S_n\) tenim
+    \[
+     \sigma (a_1,\ldots,a_k) \sigma^{-1} = (\sigma(a_1),\ldots,\sigma(a_k)).
+     \]
+  \item
+    Demostreu que el grup generat per \((1,2)\) i \((1,2,\ldots, n)\) és tot \(S_n\).
+  \item
+    Demostreu que si \(p\) és primer i \(H\leq S_p\) és un subgrup transitiu que conté una transposició, aleshores \(H=S_n\).
+  \end{enumerate}
+\end{enumerate}
+
+\hypertarget{seminari-3-cuxe0lcul-de-grups-de-galois}{%
+\section{Seminari 3: Càlcul de grups de Galois}\label{seminari-3-cuxe0lcul-de-grups-de-galois}}
+
+L'objectiu del seminari és calcular el grup de Galois de polinomis
+biquadràtics. Considerem un polinomi
+\[
+f(x)=x^4+ax^2+b \in F[x],
+\]
+i definim \(\Delta=a^2-4b\). Suposem que \(f(x)\) és irreductible, i definim \(K\) com el cos de descomposició de \(f(x)\).
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Demostreu que \(\Delta\) no és un quadrat a \(F\).
+\item
+  Demostreu que si \(b\) és un quadrat a \(F\), llavors \(\Gal(K/F)\cong \ZZ/2\ZZ \times \ZZ/2\ZZ\). Calculeu el reticle de subcossos.
+\item
+  Demostreu que si \(b\Delta\) és un quadrat a \(F\), llavors \(\Gal(K/F)\cong \ZZ/4\ZZ\). Calculeu el reticle de subcossos.
+\item
+  Demostreu que si ni \(b\) ni \(b\Delta\) són quadrats a \(F\), llavors \(\Gal(K/F) \cong D_{2\times 4}\).
+\item
+  Calculeu, de cadascun dels polinomis següents, el cos de descomposició, el grup de Galois i el reticle de subcossos:
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  \(x^4 - 6x^2 + 2\),
+\item
+  \(x^4 + 2x^2 + 4\),
+\item
+  \(x^4 - 5x^2 + 5\)
+\end{enumerate}
+
+\hypertarget{llista-de-problemes}{%
+\chapter{Llista de Problemes}\label{llista-de-problemes}}
+
+\hypertarget{episodi-1}{%
+\subsection{Episodi 1}\label{episodi-1}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Demostreu que \(f(x)=x^3-10x^2+5\) és irreductible a \(\QQ[x]\). Sigui \(F=\QQ(\alpha)\), on \(\alpha\) és una arrel de \(f(x)\). Calculeu \(1/(1+\alpha^2)\).
+\item
+  Demostreu que \(x^3+x^2+1\) és irreductible a \(\FF_2\). Sigui \(F=\FF_2(\alpha)\), on \(\alpha\) és una arrel de \(f(x)\). Calculeu les potències d'\(\alpha\) a \(F\).
+\item
+  Demostreu que \(x^3-nx+2\) és irreductible si \(n\neq -1, 3, 5\).
+\item
+  Trobeu per quins valors de \(t\in \ZZ\) el polinomi \(x^5+tx-1\in \ZZ[x]\) és irreductible.
+\end{enumerate}
+
+\hypertarget{episodi-2}{%
+\subsection{Episodi 2}\label{episodi-2}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Trobeu el polinomi mínim de \(2+3i\) sobre \(\QQ\), on \(i=\sqrt{-1}\).
+\item
+  Trobeu el grau de \(1+\sqrt[3]{2}+\sqrt[3]{4}\) sobr \(\QQ\).
+\item
+  Sigui \(F\) un cos de característica diferent de \(2\). Sigui \(a,b\in F\) elements amb \(b\) no-quadrat a \(F\).
+  Demostreu que \(\sqrt{a+\sqrt{b}}\) és suma de dues arrels quadrades si i només si \(a^2-b\) és un quadrat. Determineu
+  quan \(\QQ(\sqrt{a+\sqrt{b}})\) és una extensió biquadràtica de \(\QQ\).
+\item
+  Calculeu el grau de \(\sqrt{1+\sqrt{-3}} + \sqrt{1-\sqrt{-3}}\) sobre \(\QQ\).
+\item
+  Demostreu que si \([F(\alpha)\colon F]\) és senar, llavors \(\alpha \in F(\alpha^2)\).
+\item
+  Demostreu que si \(K/F\) és una extensió algebraica i \(M\) és un subanell de \(K\) que conté a \(F\), aleshores \(M\) és un cos.
+\item
+  Sigui \(K/F\) una extensió de grau \(n\), i sigui \(\alpha\in K\). Demostreu que l'aplicació \(m_\alpha\colon K \to K\)
+  que envia \(x\mapsto m_\alpha(x)=\alpha x\) és \(F\)-lineal. Demostreu que si \([K\colon F]\leq n\) aleshores
+  l'anell \(M_n(F)\) conté un cos isomorf a \(K\).
+\item
+  Amb la notació de l'apartat anterior, demostreu que \(\alpha\) és una arrel del polinomi característic de \(m_\alpha\). Aprofiteu
+  aquest resultat per trobar el polinomi mínim de \(1+\sqrt[3]{2}+\sqrt[3]{4}\).
+\end{enumerate}
+
+\hypertarget{episodi-3}{%
+\subsection{Episodi 3}\label{episodi-3}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Demostreu que no es pot construir el polígon regular de \(9\) costats amb regle i compàs.
+\item
+  Demostreu que \(2\cos(2\pi/7)\) és arrel del polinomi \(x^3+x^2-2x-1\), i deduiu que l'heptàgon regular no és constructible amb regle i compàs.
+\end{enumerate}
+
+\hypertarget{episodi-4}{%
+\subsection{Episodi 4}\label{episodi-4}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Trobeu els cossos de descomposició de \(x^4-2\), \(x^4+2\), \(x^4+x^2+1\), \(x^6-4\).
+\item
+  Demostreu que si \(K_1/F\) i \(K_2/F\) són extensions normals, aleshores \(K_1K_2/F\) i \(K_1\cap K_2 / F\) també ho són.
+\end{enumerate}
+
+\hypertarget{episodi-5}{%
+\subsection{Episodi 5}\label{episodi-5}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Demostreu que \(\mcd(x^a-1, x^b-1) = x^{\mcd{a,b}}-1\).
+\item
+  Descomposeu \(x^16-x \in \FF_2[x]\) en producte d'irreductibles.
+\item
+  Sigui \(p\) un primer. Demostreu que \(x^p-x+a\in \FF_p[x]\) és irreductible i separable per tot \(a\in\FF_p\).
+\item
+  Demostreu que \(\prod_{x\in \FF_{p^n}^\times} x = (-1)^{p^n}\).
+\item
+  Sigui \(p\) un primer\$. Demostreu que \(\binom{pn}{pi} \equiv \binom{n}{i}\pmod{p}\).
+\item
+  Sigui \(K/\QQ\) una extensió finita. Demostreu que \(K\) conté un nombre finit d'arrels de la unitat.
+\item
+  Demostreu que si \(n\geq 3\) és senar, llavors \(\Phi_{2n}(x)=\Phi_n(-x)\).
+\item
+  Sigui \(\varphi(x)=x^p\) el morfisme de Frobenius en un cos finit \(\FF_{p^n}\). Calculeu la forma de Jordan de \(\varphi\)
+  pensat com una aplicació \(\FF_p\)-lineal.
+\end{enumerate}
+
+\hypertarget{episodi-6}{%
+\subsection{Episodi 6}\label{episodi-6}}
+
+TODO
+
+\hypertarget{episodi-7}{%
+\subsection{Episodi 7}\label{episodi-7}}
+
+TODO
+
+\hypertarget{episodi-8}{%
+\subsection{Episodi 8}\label{episodi-8}}
+
+TODO
+
+\hypertarget{episodi-9}{%
+\subsection{Episodi 9}\label{episodi-9}}
+
+TODO
+
+\hypertarget{episodi-10}{%
+\subsection{Episodi 10}\label{episodi-10}}
+
+TODO
+
+\hypertarget{episodi-11}{%
+\subsection{Episodi 11}\label{episodi-11}}
+
+TODO
+
+\hypertarget{episodi-12}{%
+\subsection{Episodi 12}\label{episodi-12}}
+
+TODO
+
+\hypertarget{episodi-13}{%
+\subsection{Episodi 13}\label{episodi-13}}
+
+TODO
+
+\hypertarget{episodi-14}{%
+\subsection{Episodi 14}\label{episodi-14}}
+
+TODO
+
+\hypertarget{episodi-15}{%
+\subsection{Episodi 15}\label{episodi-15}}
+
+TODO
+
 \nocite{*}
 
 \hypertarget{bibliografia}{%
@@ -3641,24 +4224,30 @@ on \(\hat{Z}\cong \prod_{p} \ZZ_p\) és la \emph{completació finita} dels enter
 \addcontentsline{toc}{chapter}{Bibliografia}
 
 \hypertarget{refs}{}
-\begin{CSLReferences}{1}{0}
+\begin{CSLReferences}{0}{0}
 \leavevmode\vadjust pre{\hypertarget{ref-artinalgebra}{}}%
-Artin, Michael. 2014. \emph{Algebra / Michael Artin.} 2nd ed., new international ed. Edinbourgh Gate, Harlow, Essex: Pearson.
+\CSLLeftMargin{1. }%
+\CSLRightInline{Artin Michael (2014) Algebra / michael artin., 2nd ed., new international ed. Pearson, Edinbourgh Gate, Harlow, Essex}
 
 \leavevmode\vadjust pre{\hypertarget{ref-dummitfoote}{}}%
-Dummit, David S., and Richard M. Foote. 2004. \emph{Abstract Algebra}. 3rd ed. New York: Wiley.
+\CSLLeftMargin{2. }%
+\CSLRightInline{Dummit DS, Foote RM (2004) Abstract algebra, 3rd ed. Wiley, New York}
 
 \leavevmode\vadjust pre{\hypertarget{ref-geck}{}}%
-Geck, Meinolf. 2014. {``On the Characterization of {G}alois Extensions.''} \emph{Amer. Math. Monthly} 121 (7): 637--39. \url{https://doi.org/10.4169/amer.math.monthly.121.07.637}.
+\CSLLeftMargin{3. }%
+\CSLRightInline{Geck M (2014) On the characterization of {G}alois extensions. Amer Math Monthly 121:637--639. doi: \href{https://doi.org/10.4169/amer.math.monthly.121.07.637}{10.4169/amer.math.monthly.121.07.637}}
 
 \leavevmode\vadjust pre{\hypertarget{ref-zbigniew}{}}%
-Jelonek, Zbigniew. 1993. {``A Simple Proof of the Existence of the Algebraic Closure of a Field.''} \emph{Univ. Iagel. Acta Math.}, no. 30: 131--32.
+\CSLLeftMargin{4. }%
+\CSLRightInline{Jelonek Z (1993) A simple proof of the existence of the algebraic closure of a field. Univ Iagel Acta Math 131--132}
 
 \leavevmode\vadjust pre{\hypertarget{ref-rotman}{}}%
-Rotman, Joseph J. 2015. \emph{Advanced Modern Algebra. {P}art 1}. Third. Vol. 165. Graduate Studies in Mathematics. American Mathematical Society, Providence, RI. \url{https://doi.org/10.1090/gsm/165}.
+\CSLLeftMargin{5. }%
+\CSLRightInline{Rotman JJ (2015) \href{https://doi.org/10.1090/gsm/165}{Advanced modern algebra. {P}art 1}, Third. American Mathematical Society, Providence, RI}
 
 \leavevmode\vadjust pre{\hypertarget{ref-weintraub}{}}%
-Weintraub, Steven H. 2021. {``The Theorem of the Primitive Element.''} \emph{Amer. Math. Monthly} 128 (8): 753--54. \url{https://doi.org/10.1080/00029890.2021.1944757}.
+\CSLLeftMargin{6. }%
+\CSLRightInline{Weintraub SH (2021) The theorem of the primitive element. Amer Math Monthly 128:753--754. doi: \href{https://doi.org/10.1080/00029890.2021.1944757}{10.1080/00029890.2021.1944757}}
 
 \end{CSLReferences}
 
