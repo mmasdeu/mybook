@@ -105,7 +105,7 @@ Finalment, per la quadratura del cercle de radi $1$ hauríem de construïr un qu
 també podríem construir $\pi$, que és transcendent (com hem dit, no ho demostrem).
 :::
 
-Més endavant estudiarem quins angles són constructibles. De fet, tenim el següent:
+Més endavant estudiarem quins angles són constructibles, en general. Per ara, podem demostrar el següent:
 
 ::: {.theorem}
 Sigui $t$ un enter. L'angle de $t$ **graus** és constructible si i només si $t$ és un múltiple de $3$.
@@ -113,9 +113,16 @@ Sigui $t$ un enter. L'angle de $t$ **graus** és constructible si i només si $t
 ::: {.proof}
 Hi ha construccions molt antigues del pentàgon regular ($72^\circ$), ja que
 $$
-\cos(72^\circ) = \frac{1}{4} \, \sqrt{5} - \frac{1}{4},
+\cos(72^\circ) = \frac{1}{4} \, \sqrt{5} - \frac{1}{4}.
 $$
-i encara més del triangle equilàter ($30^\circ$), ja que $\cos(30^\circ)=\sqrt{2}/2$. Com que
+
+Aquí en tenim un exemple:
+```{r, echo=FALSE, out.width="50%", fig.align='center'}
+knitr::include_graphics("images/pentagon.png")
+```
+
+
+Encara és més fàcil construir el triangle equilàter ($30^\circ$), ja que $\cos(30^\circ)=\sqrt{2}/2$. Com que
 podem bisectar qualsevol angle, també podem construir $18^\circ$ i $15^\circ$. Finalment, com que $3=18-15$ també podem construir
 l'angle de $3^\circ$. És clar que no podem construir ni $2^\circ$ ni $1^\circ$, perquè aleshores podríem construir també qualsevol
 múltiple d'aquests i, per tant, podríem construir $20^\circ$, que ja sabem que no és possible.

@@ -4,6 +4,7 @@ author: "Marc Masdeu"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
+fontsize: 12pt
 bibliography: ["src/bibliografia.bib"]
 header-includes:
   - \AtBeginDocument{\let\maketitle\relax}

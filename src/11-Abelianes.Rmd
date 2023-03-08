@@ -116,7 +116,7 @@ Sigui $m\geq 1$ un enter positiu. Aleshores existeixen infinits primers $p$ tals
 ::: {.proof}
 Ens caldà fer servir que $\Phi_m\in\ZZ[x]$ és mònic, i $\Phi_m(0) = 1$.
 
-Suposem, donats $p_1,\ldots,p_k$ congruents amb $1$ mòdul $m$. Trobarem un primer més gran que tots ells, que
+Suposem donats $p_1,\ldots,p_k$ congruents amb $1$ mòdul $m$. Trobarem un primer més gran que tots ells, que
 també serà $\equiv 1 \pmod{m}$. Considerem el
 producte $M = \ell mp_1p_2\cdots p_k$ on $\ell$ és suficientment gran com per què
 $$

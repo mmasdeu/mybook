@@ -1,0 +1,87 @@
+# Llista de Problemes
+
+### Episodi 1
+
+1. Demostreu que $f(x)=x^3-10x^2+5$ és irreductible a $\QQ[x]$. Sigui $F=\QQ(\alpha)$, on $\alpha$ és una arrel de $f(x)$. Calculeu $1/(1+\alpha^2)$.
+2. Demostreu que $x^3+x^2+1$ és irreductible a $\FF_2$. Sigui $F=\FF_2(\alpha)$, on $\alpha$ és una arrel de $f(x)$. Calculeu les potències d'$\alpha$ a $F$.
+3. Demostreu que $x^3-nx+2$ és irreductible si $n\neq -1, 3, 5$.
+4. Trobeu per quins valors de $t\in \ZZ$ el polinomi $x^5+tx-1\in \ZZ[x]$ és irreductible.
+
+### Episodi 2
+
+1. Trobeu el polinomi mínim de $2+3i$ sobre $\QQ$, on $i=\sqrt{-1}$.
+2. Trobeu el grau de $1+\sqrt[3]{2}+\sqrt[3]{4}$ sobr $\QQ$.
+3. Sigui $F$ un cos de característica diferent de $2$. Sigui $a,b\in F$ elements amb $b$ no-quadrat a $F$.
+  Demostreu que $\sqrt{a+\sqrt{b}}$ és suma de dues arrels quadrades si i només si $a^2-b$ és un quadrat. Determineu
+  quan $\QQ(\sqrt{a+\sqrt{b}})$ és una extensió biquadràtica de $\QQ$.
+4. Calculeu el grau de $\sqrt{1+\sqrt{-3}} + \sqrt{1-\sqrt{-3}}$ sobre $\QQ$.
+5. Demostreu que si $[F(\alpha)\colon F]$ és senar, llavors $\alpha \in F(\alpha^2)$.
+6. Demostreu que si $K/F$ és una extensió algebraica i $M$ és un subanell de $K$ que conté a $F$, aleshores $M$ és un cos.
+7. Sigui $K/F$ una extensió de grau $n$, i sigui $\alpha\in K$. Demostreu que l'aplicació $m_\alpha\colon K \to K$
+  que envia $x\mapsto m_\alpha(x)=\alpha x$ és $F$-lineal. Demostreu que si $[K\colon F]\leq n$ aleshores
+  l'anell $M_n(F)$ conté un cos isomorf a $K$.
+8. Amb la notació de l'apartat anterior, demostreu que $\alpha$ és una arrel del polinomi característic de $m_\alpha$. Aprofiteu
+  aquest resultat per trobar el polinomi mínim de $1+\sqrt[3]{2}+\sqrt[3]{4}$.
+
+### Episodi 3
+
+1. Demostreu que no es pot construir el polígon regular de $9$ costats amb regle i compàs.
+2. Demostreu que $2\cos(2\pi/7)$ és arrel del polinomi $x^3+x^2-2x-1$, i deduiu que l'heptàgon regular no és constructible amb regle i compàs.
+
+### Episodi 4
+
+1. Trobeu els cossos de descomposició de $x^4-2$, $x^4+2$, $x^4+x^2+1$, $x^6-4$.
+2. Demostreu que si $K_1/F$ i $K_2/F$ són extensions normals, aleshores $K_1K_2/F$ i $K_1\cap K_2 / F$ també ho són.
+
+### Episodi 5
+
+1. Demostreu que $\mcd(x^a-1, x^b-1) = x^{\mcd{a,b}}-1$.
+2. Descomposeu $x^16-x \in \FF_2[x]$ en producte d'irreductibles.
+3. Sigui $p$ un primer. Demostreu que $x^p-x+a\in \FF_p[x]$ és irreductible i separable per tot $a\in\FF_p$.
+4. Demostreu que $\prod_{x\in \FF_{p^n}^\times} x = (-1)^{p^n}$.
+5. Sigui $p$ un primer$. Demostreu que $\binom{pn}{pi} \equiv \binom{n}{i}\pmod{p}$.
+6. Sigui $K/\QQ$ una extensió finita. Demostreu que $K$ conté un nombre finit d'arrels de la unitat.
+7. Demostreu que si $n\geq 3$ és senar, llavors $\Phi_{2n}(x)=\Phi_n(-x)$.
+8. Sigui $\varphi(x)=x^p$ el morfisme de Frobenius en un cos finit $\FF_{p^n}$. Calculeu la forma de Jordan de $\varphi$
+  pensat com una aplicació $\FF_p$-lineal.
+
+### Episodi 6
+
+TODO
+
+### Episodi 7
+
+TODO
+
+### Episodi 8
+
+TODO
+
+### Episodi 9
+
+TODO
+
+### Episodi 10
+
+TODO
+
+### Episodi 11
+
+TODO
+
+### Episodi 12
+
+TODO
+
+### Episodi 13
+
+TODO
+
+### Episodi 14
+
+TODO
+
+### Episodi 15
+
+TODO
+

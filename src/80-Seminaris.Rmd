@@ -1,0 +1,152 @@
+# (APPENDIX) Apèndix {-}
+
+# Seminaris
+
+## Seminari 1: Polinomis simètrics
+
+Sigui $A$ un anell domini i siguin $X_1,\dotsc,X_n$ indeterminades.
+Sigui $\Sigma_n$ el grup simètric en $\{1,\dotsc,n\}$. Donada una
+permutació $\sigma\in \Sigma_n$ definim
+$\sigma\cdot f(X_1,\dotsc,X_n)=f(X_{\sigma(1)},\dotsc,X_{\sigma(n)})$.
+Per exemple, si $f=X_1^2X_2-X_3$ i considerem les permutacions
+$\rho=(1\,3)$, $\sigma=(1\,2\,3)$, aleshores $\rho\cdot f=X_3^2X_2-X_1$
+i $\sigma\cdot f=X_2^2X_3-X_1$.
+
+**Definició:**. Un polinomi $f\in A[X_1,\dotsc,X_n]$ s'anomena
+**simètric** si $\sigma\cdot f=f$ per a tota $\sigma\in\Sigma_n$.
+:::
+
+És fàcil veure que el conjunt dels polinomis simètrics és un subanell
+$S\subseteq A[X_1,\dotsc,X_n]$ que conté $A$. Sigui $Y$ una altra
+indeterminada. Podem considerar el polinomi en $Y$
+$$F(Y,X_1,\dotsc,X_n)=(Y-X_1)\dotsb(Y-X_n)=Y^n-s_1Y^{n-1}+\dotsb+(-1)^ns_n$$
+amb coeficients a $A[X_1,\dotsc,X_n]$. Els polinomis que apareixen com a
+coeficients $s_1=X_1+\dotsb+X_n,\dotsc,s_n=X_1\dotsb X_n$ són polinomis
+simètrics, i s'anomenen **polinomis simètrics elementals**. Fixeu-vos
+que el polinomi $s_i$ és homogeni de grau $i$, per a tot $i\geq 1$.
+Considerarem el morfisme d'anells
+$$\iota\colon A[S_1,\ldots,S_n]\to S\subseteq A[X_1,\ldots,X_n], \quad f(S_1,\ldots,S_n)\mapsto f(s_1,\ldots,s_n).$$
+
+Sigui $g(S_1,\ldots,S_n)=CS_1^{e_1}\dotsb S_n^{e_n}$ un monomi no nul.
+El polinomi simètric $\iota(g)$ té grau total $e_1+2e_2+\cdots+ne_n$, és
+el que s'anomena el **pes** del monomi. Si $g\in A[S_1,\dotsc,S_n]$, el
+**pes de $g$** és el màxim dels pesos dels monomis no nuls de $g$.
+L'objectiu del exercicis és demostrar el següent resultat, que diu que
+$\iota$ és injectiva i té com a imatge exactament el subanell dels
+polinomis simètrics.
+
+**Teorema fonamental dels polinomis simètrics:**. Sigui
+$f\in S\subseteq A[X_1,\dotsc,X_n]$ un polinomi simètric de grau $d$.
+Aleshores existeix un únic polinomi $g\in A[S_1,\dotsc,S_n]$ de pes
+menor o igual que $d$ tal que $$f(X_1,\dotsc,X_n)=g(s_1,\dotsc,s_n).$$
+
+
+1.  Demostreu que tot polinomi $f(X_1,\ldots,X_n)$ es pot escriure com a
+    suma de polinomis homogenis, i que si $f(X_1,\ldots, X_n)$ és
+    simètric aleshores cadascun dels termes homogenis també és simètric.
+
+2.  Demostreu que $\iota(S_1^{e_1}S_2^{e_2}\cdots S_n^{e_n})$ és un
+    polinomi homogeni de grau $e_1+2e_2+\cdots +ne_n$.
+
+3.  Demostreu que donat un polinomi homogeni simètric
+    $f(X_1,\ldots,X_n)$, si
+    $\operatorname{LT}(f)=aX_1^{e_1}\cdots X_n^{e_n}$ aleshores
+    $\operatorname{LT}(f) = \operatorname{LT}(\iota(aS_1^{e1-e2}S_2^{e2-e3}\cdots S_n^{e_n}))$.[^1]
+
+4.  Demostreu per inducció que $\iota$ és una bijecció entre
+    $A[X_1,\ldots,X_n]$ i $S$.
+
+5.  Expresseu els següents polinomis en termes de polinomis simètrics
+    elementals: $(X_1-X_2)^2$, $X_1^2 + X_2^2 + X_3^2$,
+    $X_1^2X_2^2 + X_1^2X_3^2 + X_2^2X_3^2$,
+    $\sum_{i\neq j} X_i^2X_j$,$\sum_{i\neq j} (X_i-X_j)^2$.
+
+
+Hi ha un altre procediment possible per expressar un polinomi simètric
+donat en termes de simètrics elementals, que s'anomena el *mètode dels
+coeficients indeterminats*. Suposem que $f$ és simètric homogeni de grau
+$d$, i sigui $N$ el màxim grau en què apareix cap de les variables.
+
+1.  Feu una estimació de quants monomis
+    $a_iS_1^{e_1}S_2^{e_2}\dots S_n^{e_n}$ poden aparèixer a $g$ si
+    $\iota(g)=f$, a partir de les restriccions
+    $$e_1+2e_2+\cdots +ne_n = d,\quad e_1+e_2+\cdots+e_n \leq N.$$
+
+2.  Expressant el polinomi $f$ com una combinació lineal de totes les
+    possibilitats de l'apartat anterior ($d=3$ i $N=3$) i substituïnt
+    les variables a suficients valors, trobeu l'expressió de
+    $f(X_1,X_2,X_3,X_4) = (X_1+X_2+X_3+X_4)(X_1+X_3-X_2-X_4)(X_1+X_4-X_2-X_3)$
+    com a polinomi en els simètrics elementals (demostreu primer que $f$
+    és simètric).
+
+## Seminari 2: Grups d'ordre petit
+
+L'objectiu del seminari és estudiar tots els grups d'ordre fins a $15$. Cal recordar com és el reticle de subgrups
+dels grups cíclics finits, que es correspon amb el reticle de divisors del seu cardinal. També cal recordar els
+teoremes de Sylow, que ens serviran per estudiar els grups amb cardinal una mica més gran. Aquí tenim la taula amb tots ells.
+
+Ordre	   Classes isomorf                 	   Grups
+------   ----------------------------------  ------
+$1$	      $1$	                                $C_1$
+$2$	      $1$	                                $C_2$
+$3$	      $1$	                                $C_3$
+$4$	      $2$	                                $C_4$, $C_2\times C_2$
+$5$	      $1$	                                $C_5$
+$6$	      $2$	                                $C_6$, $S_3$
+$7$	      $1$	                                $C_7$
+$8$	      $5$	                                $C_8$, $C_4 \times C_2$, $D_{2\times 4}$, $Q_8$, $C_2 \times C_2 \times C_2$
+$9$	      $2$	                                $C_9$, $C_3 \times C_3$
+$10$      $2$	                                $C_{10}$, $D_{2\times 5}$
+$11$	    $1$	                                $C_{11}$
+$12$	    $5$	                                $C_{12}$, $C_6 \times C_2$, $A_4$, $D_{2\times 6}$, $\operatorname{Dic}_{12}$
+$13$	    $1$	                                $C_{13}$
+$14$	    $2$	                                $C_{14}$, $D_{2\times 7}$
+$15$	    $2$	                                $C_{15}$
+
+
+D'aquesta taula, els grups $Q_8$ (grup quaterniònic) i $\operatorname{Dic}_{12}$ (dicíclic d'ordre $12$) tenen les següents presentacions:
+$$
+Q_8 = \langle x, y \mid x^2y^{-2}=x^4=xyx^{-1}y=1\rangle,\quad \operatorname{Dic}_{12} = \langle x, y \mid x^4=y^3=xyx^{-1}y^{-2}\rangle.
+$$
+
+1. Dibuixeu el reticle del grup cíclic $C_{4}$, $C_8$ i $C_{12}$.
+2. Dibuixeu el reticle dels grups $C_2\times C_2$ i $C_3\times C_9$.
+3. Doneu el reticle (amb generadors) dels grups $(\ZZ/n\ZZ)^\times$ amb $n=7,8,12$.
+4. Trobeu el reticle de subgrups de $S_3$ i indiqueu quins dels subgrups són normals.
+5. En els següents exercicis estudiem els grups diedrals:
+    a. Trobeu una immersió del grup diedral $D_{2\times n}$ a $S_n$.
+    b. Doneu el reticle de subgrups de $D_{2\times 4}$, indicant quins subgrups són normals.
+    c. Trobeu un subgrup d'$S_4$ que sigui isomorf a $D_{2\times 4}$. És normal a $S_4$, aquest subgrup?
+    d. Demostreu que si $H\leq S_4$ és un subgrup amb $8$ elements, aleshores $H\cong D_{2\times 4}$.
+6. Trobeu els $2-$ i $3-$ subgrups de Sylow del grup alternat $A_4$, i digueu quins d'ells són normals.
+7. Els següents exercicis estudien els subgrups *transitius* de $S_n$.
+    a. Demostreu que el conjugat d'un subgrup transitiu també ho és.
+    b. Demostreu que si $H\leq S_n$ és un subgrup transitiu, aleshores $|H|$ és múltiple de $n$.
+    c. Demostreu que si $H\leq S_n$ és un subgrup transitiu i abelià, aleshores $|H|=n$.
+    d. Demostreu que els únics subgrups transitius de $S_4$ són $S_4$, $A_4$, els que són isomorfs a $D_{2\times 4}$, els que són
+    isomorfs a $C_4$, i $V=\{\id, (12)(34), (13)(24), (14)(23)\}$.
+8. Aquest exercici ens ajudarà a decidir quan un subgrup d'$S_n$ és tot $S_n$.
+    a. Demostreu que si $(a_1,\ldots,a_k)$ és un cicle, aleshores per a tot $\sigma\in S_n$ tenim
+    $$
+    \sigma (a_1,\ldots,a_k) \sigma^{-1} = (\sigma(a_1),\ldots,\sigma(a_k)).
+    $$
+    b. Demostreu que el grup generat per $(1,2)$ i $(1,2,\ldots, n)$ és tot $S_n$.
+    c. Demostreu que si $p$ és primer i $H\leq S_p$ és un subgrup transitiu que conté una transposició, aleshores $H=S_n$.
+
+## Seminari 3: Càlcul de grups de Galois
+
+L'objectiu del seminari és calcular el grup de Galois de polinomis
+biquadràtics. Considerem un polinomi
+$$
+f(x)=x^4+ax^2+b \in F[x],
+$$
+i definim $\Delta=a^2-4b$. Suposem que $f(x)$ és irreductible, i definim $K$ com el cos de descomposició de $f(x)$.
+
+1. Demostreu que $\Delta$ no és un quadrat a $F$.
+2. Demostreu que si $b$ és un quadrat a $F$, llavors $\Gal(K/F)\cong \ZZ/2\ZZ \times \ZZ/2\ZZ$. Calculeu el reticle de subcossos.
+3. Demostreu que si $b\Delta$ és un quadrat a $F$, llavors $\Gal(K/F)\cong \ZZ/4\ZZ$. Calculeu el reticle de subcossos.
+4. Demostreu que si ni $b$ ni $b\Delta$ són quadrats a $F$, llavors $\Gal(K/F) \cong D_{2\times 4}$.
+5. Calculeu, de cadascun dels polinomis següents, el cos de descomposició, el grup de Galois i el reticle de subcossos:
+  a. $x^4 - 6x^2 + 2$,
+  b. $x^4 + 2x^2 + 4$,
+  c. $x^4 - 5x^2 + 5$

@@ -13,6 +13,8 @@
 \usepackage[all]{xy}
 \usepackage{src/mathsymbols}
 
+% Select font
+
 \addto\captionscatalan{\renewcommand{\chaptername}{Episodi}}
 
 \definecolor{VerbatimBorderColor}{rgb}{0.7,0.7,0.7}
@@ -25,6 +27,26 @@
 \titleformat{\chapter}[hang] 
 {\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter:}{.5em}{} 
 
+\usepackage{ifluatex}
+
+% % Option 1
+% \usepackage{mathpazo}
+% \usepackage{domitian}
+% \usepackage[T1]{fontenc}
+% \let\oldstylenums\oldstyle
+
+
+% Option 2
+\usepackage[OT2, TS1, T1]{fontenc}
+\usepackage{cmbright}
+
+
+\ifluatex
+  \usepackage{luacode}
+  \usepackage[utf8]{luainputenc}
+\else
+  \usepackage[utf8]{inputenc}
+\fi
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -55,7 +77,7 @@
 %----------------------------------------------------------------------------------------
 
 \usepackage{titletoc} % Required for manipulating the table of contents
-
+\setcounter{tocdepth}{1}
 \contentsmargin{0cm} % Removes the default margin
 
 % Part text styling
@@ -87,6 +109,8 @@
 {}
 {\ \titlerule*[.5pc]{.}\;\thecontentspage} % Page number
 []
+
+
 
 % List of figures
 \titlecontents{figure}[0em]

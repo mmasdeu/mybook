@@ -1,15 +1,13 @@
 # Vells coneguts {#pilot}
 
+En aquest curs, tots els anells seran commutatius, i assumirem sempre que tenen unitat. A més, demanarem que un morfisme d'anells enviï l'$1$ a l'$1$. Amb $\ZZ, \QQ, \RR, \CC$ denotarem respectivament els enters, els racionals, els reals i els complexos. Donat un anell $A$, denotarem per $A[x]$ l'anell de polinomis amb coeficients a $A$. En particular, els seus elements $f(x)\in A[x]$ es poden escriure com $f(x)=a_0+a_1x+\cdots+a_nx^n$, per algun $n\in\ZZ_{\geq 0}$.
+
 Començarem recordant les definicions i resultats bàsics que ja s'han vist a altres
 assignatures, com Fonaments o Estructures algebraiques. Donarem les definicions de cos,
 característica, cos primer, i veurem que aquest és o bé $\FF_p$ per algun primer $p$, o bé $\QQ$.
 A continuació introduïrem les extensions de cossos i el grau. Construirem el cos $F[x]/(p(x))$ associat
 a un polinomi irreductible $p(x)\in F[x]$, i veurem alguns exemples.
 
-## Convencions
-
-En aquest curs, tots els anells seran commutatius, i assumirem sempre que tenen unitat. A més, demanarem
-que un morfisme d'anells enviï l'$1$ a l'$1$.
 
 ## Característica d'un cos
 
