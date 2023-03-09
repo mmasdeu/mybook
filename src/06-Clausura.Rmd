@@ -209,7 +209,7 @@ Podem construir una extensió $L / \bar{F}$ on $f(x)$ tingui un zero. Aleshores 
 $$
 |\bar{F}| \leq |L| \leq \mathcal{N}.
 $$
-Per tant, $|\mathcal{U}\smallsetminus \bar{K}| = |\mathcal{U}| > |L\smallsetminus \bar{K}|$. Això fa que existeixi
+Per tant, $|\mathcal{U}\smallsetminus \bar{F}| = |\mathcal{U}| > |L\smallsetminus \bar{F}|$. Això fa que existeixi
 una aplicació (de conjunts) injectiva $i \colon L \to \mathcal{U}$ tal que $i(x)=x$ si $x\in \bar{F}$. Podem doncs
 transportar l'estructura de cos de $L$ a $i(L)$ i obtenim un nou element maximal $L > \bar{F}$, contradient
 la maximalitat de $\bar{F}$.

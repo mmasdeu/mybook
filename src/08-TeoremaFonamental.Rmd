@@ -6,7 +6,7 @@ amb diversos exemples concrets d'extensions, il·lustrant la correspondència de
 ## Preliminars
 Comencem amb un resultat que es segueix directament del Teorema \@ref(thm:caracteritzacio-galois).
 
-::: {.proposition}
+::: {.proposition #preliminar}
 Sigui $K$ un cos qualsevol. Sigui $G\leq\Aut(K)$ un subgrup finit, i sigui $F=K^G$. Aleshores $K$ és Galois sobre $F$,
 i $\Gal(K/F) = G$.
 :::
@@ -42,11 +42,11 @@ A més el grau $[M \colon F]$  es correspon amb l'ordre d'$H$.
 ::: {.proof}
 Hem de veure:
 
-1. $K^{\Gal(K/M)}= M$. Això és automàtic a partir de la proposició i del Corol·lari \@ref(cor:fix-gal-eq).
+1. $K^{\Gal(K/M)}= M$. Això és automàtic a partir de la Proposició \@ref(prp:preliminar) i del Corol·lari \@ref(cor:fix-gal-eq).
 
 2. $\Gal(K / K^H) = H$. Escrivim $M=K^H$. Ja sabem que $K/M$ és de Galois, i $|\Gal(K/M)|= [K\colon M]$.
 A més, per definició tenim $H\leq \Gal(K/M)$. Hem de demostrar la igualtat: donat $\tau\in \Gal(K/M)$, veurem
-que $K=\bigcup_{\sigma\in H} \Eq(\sigma,\tau)$. Pel Lema \@ref(prp:lema-algebra-lineal), algun dels $\Eq(\sigma,\tau)$
+que $K=\bigcup_{\sigma\in H} \Eq_{\sigma,\tau}$. Pel Lema \@ref(prp:lema-algebra-lineal), algun dels $\Eq_{\sigma,\tau}$
 ha de ser tot $K$, i això ens diu que $\tau\in H$. Per tant, només ens cal comprovar que per tot $\alpha\in K$,
 hi ha algun $\sigma\in H$ tal que $\sigma(\alpha)=\tau(\alpha)$. Considerem el polinomi
 $$

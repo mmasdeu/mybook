@@ -13,7 +13,7 @@ extensió $K/F$ és simple si hi ha algun $\alpha\in K$ tal que $K=F(\alpha)$.
 Una extensió $K/F$ és simple si i només si hi ha finites subextensions $K/M/F$.
 :::
 ::: {.proof}
-Suposem que $K=F(\alpha)F$ és simple, i sigui $f(x)=\Irr_{\alpha,F}(x)$. Considerem una subextensió $K/M/F$.
+Suposem que $K=F(\alpha)/F$ és simple, i sigui $f(x)=\Irr_{\alpha,F}(x)$. Considerem una subextensió $K/M/F$.
 Aleshores $g(x)=\Irr_{\alpha,M}(x)$ és un divisor de $f(x)$ pensats a $K[x]$. Sigui $M'\subseteq M$ l'extensió generada
 sobre $F$ pels coeficients de $g(x)$.  Com que $\Irr_{\alpha,M}(x)=\Irr_{\alpha,M'}(x)$, tenim $[K\colon M]=[K \colon M']$
 i per tant $M=M'$. En conclusió, els subcossos $M$ estan generats per coeficients dels factors irreductibles

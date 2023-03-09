@@ -165,7 +165,7 @@ $f(x)\in F[x]$ de grau $[K\colon F]$ que descomposa completament a $K$.
 :::
 ::: {.proof}
 Sigui $n=[K\colon F]=|\Gal(K/F)|$. A la demostració del teorema, prenem tots els $n$ automorfismes,
-obtenint $\alpha\in K$ tal que $F(\alpha) = F$. El seu polinomi mínim $f(x)\in F[x]$ és irreductible,
+obtenint $\alpha\in K$ tal que $F(\alpha) = K$. El seu polinomi mínim $f(x)\in F[x]$ és irreductible,
 de grau $n$ i té per arrels $\{\sigma(\alpha) ~|~\sigma\in \Aut(K/F)\}$. Per tant té $n$ arrels totes diferents,
 com volíem.
 :::
