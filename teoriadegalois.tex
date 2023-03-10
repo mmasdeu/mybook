@@ -643,7 +643,7 @@ addtohook={%
 
 \title{Teoria de Galois}
 \author{Marc Masdeu}
-\date{2023-03-09}
+\date{2023-03-10}
 
 \begin{document}
 \maketitle
@@ -1390,12 +1390,6 @@ El cos de descomposició d'un polinomi juga un paper destacat al llarg del curs.
 Aquí el definirem, i en demostrarem l'existència i unicitat (llevat d'isomorfisme).
 Aprofitarem per definir extensions normals (aquelles que són cos de descomposició d'un conjunt de polinomis).
 
-Com a aplicació, s'introduiran els polinomis i cossos ciclotòmics, i ho lligarem amb la
-demostració de l'existència i unicitat de cossos finits de cardinal potència d'un primer.
-
-També veurem les clausures algebraiques, i una construcció (seguint {[}\protect\hyperlink{ref-artinalgebra}{1}{]} i {[}\protect\hyperlink{ref-zbigniew}{4}{]}). Això ens permetrà (assumint el teorema fonamental
-de l'àlgebra, que demostrarem més endavant) pensar els elements algebraics sobre \(\QQ\) dins dels complexos.
-
 \hypertarget{cossos-de-descomposiciuxf3}{%
 \section{Cossos de descomposició}\label{cossos-de-descomposiciuxf3}}
 
@@ -1441,11 +1435,15 @@ En tot cas, si \(\tilde\sigma\) és un d'aquests morfismes, com que \([K \colon 
 d'inducció i \(\tilde\sigma\) es pot aixecar a com a molt \([K\colon F(\alpha)]\) morfismes a \(L\).
 \end{proof}
 
-Revisant la demostració anterior, obtenim els dos següent corol·laris.
+Revisant la demostració anterior, obtenim els següents corol·laris.
 
 \begin{corollary}
 \protect\hypertarget{cor:variacio-aixecament-1}{}\label{cor:variacio-aixecament-1}Siguin \(K/F\) i \(L/F\) extensions d'un cos \(F\). Si existeix \(\alpha\in K\) tal que \(\Irr_{\alpha,F}(x)\)
 no té cap arrel a \(L\), aleshores no existeix cap \(F\)-morfisme \(K\to L\).
+\end{corollary}
+
+\begin{corollary}
+\protect\hypertarget{cor:variacio-aixecament-3}{}\label{cor:variacio-aixecament-3}Sigui \(\sigma\colon F\to L\) un morfisme donat, suposem que \(K=F(\gamma_1,\ldots,\gamma_n)\) amb polinomis mínims \(g_i(x)\). Suposem que \(\sigma(g_i)(x)\) té una arrel a \(L\) per a tot \(i\). Aleshores existeix \(\psi\colon K\to L\) tal que \(\psi|_{F} = \sigma\).
 \end{corollary}
 
 \begin{corollary}
@@ -1494,7 +1492,7 @@ formen un grup amb la multiplicació que, de fet, és cíclic. Diem que una arre
 \(\zeta_n\) és \emph{primitiva} si és un generador d'aquest grup. Si en fixem una, les altres primitives
 són de la forma \(\zeta_n^a\), amb \(a\) coprimer amb \(n\). Hi ha, doncs, \(\varphi(n)\) arrels primitives.
 
-Anomenem \emph{cos ciclotòmic \(n\)-èssim\$} al cos \(\QQ(\zeta_n)\), que és el cos de descomposició de \(x^n-1\):
+Anomenem \emph{cos ciclotòmic \(n\)-èssim} al cos \(\QQ(\zeta_n)\), que és el cos de descomposició de \(x^n-1\):
 si adjuntem \(\zeta_n\), automàticament totes les seves potències pertanyen a aquest cos. A la Secció
 \ref{ciclotomics} aprendrem com calcular el grau d'aquest cos, però --a tall d'espòiler-- podem
 veure fàcilment que quan \(n=p\) és primer, aleshores
@@ -1545,6 +1543,27 @@ ara que les extensions normals tenen una caracterització més senzilla.
 En particular, el cos de descomposició d'un polinomi
 és sempre una extensió normal.
 
+\begin{lemma}
+Suposem que \(K/F\) és el cos de descomposició d'un conjunt finit de polinomis \(f(x)\in F[x]\). Aleshores \(K/F\) és normal.
+\end{lemma}
+
+\begin{proof}
+Sense perdre generalitat podem assumir, prenent el producte de tots els polinomis en el conjunt finit de l'enunciat, que \(K/F\) és el cos de descomposició d'un polinomi \(g(x)\in F[x]\) amb arrels \(\gamma_1,\ldots,\gamma_n\). Sigui ara \(\alpha\in K\) una arrel d'un polinomi \(f(x)\), que podem suposar irreductible. Volem veure que si \(\beta\) és una arrel de \(f(x)\), aleshores \(\beta\in K\).
+
+Sigui \(L\) el cos de descomposició de \(f(x)g(x)\), i considerem els subcossos \(F(\alpha)\) i \(F(\beta)\). Hi ha un isomorfisme \(\sigma \in \Hom_F(F(\alpha), F(\beta))\) i podem composar-lo amb la inclusió \(F(\beta) \subset K(\beta)\). Considerem aleshores el diagrama
+\[
+\xymatrix{
+K\ar@{-->}^{\psi}[r]\ar@{-}[d] & K(\beta)\\
+F(\alpha)\ar[ur]^{\sigma}.
+}
+\]
+Pel Corol·lari \ref{cor:variacio-aixecament-3}, obtenim \(\psi\colon K\to K(\beta)\) estenent \(\sigma\). Observem que, com que \(f(x)\in F[x]\), tenim \(\psi(f)=f\). Per tant,
+\[
+0 = \psi(g(\gamma_i)) = g(\psi(\gamma_i)) \implies \psi(\gamma_i)\in K.
+\]
+D'aquí en traiem que \(\psi(K)\subseteq K\). En particular, \(\beta=\psi(\alpha)\in K\), com volíem demostrar.
+\end{proof}
+
 \begin{proposition}
 Una extensió \(K/F\) és normal si i només si \(K\) és el cos de descomposició d'un conjunt \(S\subset F[x]\) de polinomis de \(F\).
 \end{proposition}
@@ -1558,7 +1577,7 @@ aleshores sense perdre generalitat podem suposar que \(f(x)\) és irreductible. 
 d'elements de \(K\) que són arrels de polinomis a \(S\). Podem trobar un subconjunt finit \(S_0\) i el seu corresponent
 conjunt d'arrels \(\Sigma_0\) tals que \(\alpha\in F(\Sigma_0)\). Però aleshores \(F(\Sigma_0)\) és un
 cos de descomposició d'un polinomi (el que s'obté multiplicant tots els polinomis de \(S_0\) i extraient-ne la part lliure
-de quadrats). Per tant, \(f(x)\) descomposa completament a \(F(\Sigma_0)\) i per tant també a \(K\).
+de quadrats). El lema anterior ens garanteix que \(f(x)\) descomposa completament a \(F(\Sigma_0)\) i per tant també a \(K\).
 \end{proof}
 
 \begin{proposition}
@@ -2034,7 +2053,7 @@ Podem construir una extensió \(L / \bar{F}\) on \(f(x)\) tingui un zero. Alesho
 \[
 |\bar{F}| \leq |L| \leq \mathcal{N}.
 \]
-Per tant, \(|\mathcal{U}\smallsetminus \bar{K}| = |\mathcal{U}| > |L\smallsetminus \bar{K}|\). Això fa que existeixi
+Per tant, \(|\mathcal{U}\smallsetminus \bar{F}| = |\mathcal{U}| > |L\smallsetminus \bar{F}|\). Això fa que existeixi
 una aplicació (de conjunts) injectiva \(i \colon L \to \mathcal{U}\) tal que \(i(x)=x\) si \(x\in \bar{F}\). Podem doncs
 transportar l'estructura de cos de \(L\) a \(i(L)\) i obtenim un nou element maximal \(L > \bar{F}\), contradient
 la maximalitat de \(\bar{F}\).
@@ -2267,7 +2286,7 @@ Sigui \(K/F\) una extensió finita i Galois. Aleshores hi ha un polinomi irreduc
 
 \begin{proof}
 Sigui \(n=[K\colon F]=|\Gal(K/F)|\). A la demostració del teorema, prenem tots els \(n\) automorfismes,
-obtenint \(\alpha\in K\) tal que \(F(\alpha) = F\). El seu polinomi mínim \(f(x)\in F[x]\) és irreductible,
+obtenint \(\alpha\in K\) tal que \(F(\alpha) = K\). El seu polinomi mínim \(f(x)\in F[x]\) és irreductible,
 de grau \(n\) i té per arrels \(\{\sigma(\alpha) ~|~\sigma\in \Aut(K/F)\}\). Per tant té \(n\) arrels totes diferents,
 com volíem.
 \end{proof}
@@ -2341,7 +2360,7 @@ amb diversos exemples concrets d'extensions, il·lustrant la correspondència de
 Comencem amb un resultat que es segueix directament del Teorema \ref{thm:caracteritzacio-galois}.
 
 \begin{proposition}
-Sigui \(K\) un cos qualsevol. Sigui \(G\leq\Aut(K)\) un subgrup finit, i sigui \(F=K^G\). Aleshores \(K\) és Galois sobre \(F\),
+\protect\hypertarget{prp:preliminar}{}\label{prp:preliminar}Sigui \(K\) un cos qualsevol. Sigui \(G\leq\Aut(K)\) un subgrup finit, i sigui \(F=K^G\). Aleshores \(K\) és Galois sobre \(F\),
 i \(\Gal(K/F) = G\).
 \end{proposition}
 
@@ -2384,11 +2403,11 @@ Hem de veure:
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
-  \(K^{\Gal(K/M)}= M\). Això és automàtic a partir de la proposició i del Corol·lari \ref{cor:fix-gal-eq}.
+  \(K^{\Gal(K/M)}= M\). Això és automàtic a partir de la Proposició \ref{prp:preliminar} i del Corol·lari \ref{cor:fix-gal-eq}.
 \item
   \(\Gal(K / K^H) = H\). Escrivim \(M=K^H\). Ja sabem que \(K/M\) és de Galois, i \(|\Gal(K/M)|= [K\colon M]\).
   A més, per definició tenim \(H\leq \Gal(K/M)\). Hem de demostrar la igualtat: donat \(\tau\in \Gal(K/M)\), veurem
-  que \(K=\bigcup_{\sigma\in H} \Eq(\sigma,\tau)\). Pel Lema \ref{prp:lema-algebra-lineal}, algun dels \(\Eq(\sigma,\tau)\)
+  que \(K=\bigcup_{\sigma\in H} \Eq_{\sigma,\tau}\). Pel Lema \ref{prp:lema-algebra-lineal}, algun dels \(\Eq_{\sigma,\tau}\)
   ha de ser tot \(K\), i això ens diu que \(\tau\in H\). Per tant, només ens cal comprovar que per tot \(\alpha\in K\),
   hi ha algun \(\sigma\in H\) tal que \(\sigma(\alpha)=\tau(\alpha)\). Considerem el polinomi
   \[
@@ -2718,7 +2737,7 @@ extensió \(K/F\) és simple si hi ha algun \(\alpha\in K\) tal que \(K=F(\alpha
 \end{theorem}
 
 \begin{proof}
-Suposem que \(K=F(\alpha)F\) és simple, i sigui \(f(x)=\Irr_{\alpha,F}(x)\). Considerem una subextensió \(K/M/F\).
+Suposem que \(K=F(\alpha)/F\) és simple, i sigui \(f(x)=\Irr_{\alpha,F}(x)\). Considerem una subextensió \(K/M/F\).
 Aleshores \(g(x)=\Irr_{\alpha,M}(x)\) és un divisor de \(f(x)\) pensats a \(K[x]\). Sigui \(M'\subseteq M\) l'extensió generada
 sobre \(F\) pels coeficients de \(g(x)\). Com que \(\Irr_{\alpha,M}(x)=\Irr_{\alpha,M'}(x)\), tenim \([K\colon M]=[K \colon M']\)
 i per tant \(M=M'\). En conclusió, els subcossos \(M\) estan generats per coeficients dels factors irreductibles

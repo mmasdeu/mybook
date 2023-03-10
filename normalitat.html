@@ -23,7 +23,7 @@
 <meta name="author" content="Marc Masdeu" />
 
 
-<meta name="date" content="2023-03-09" />
+<meta name="date" content="2023-03-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -310,10 +310,6 @@ div.csl-indent {
 <p>El cos de descomposició d’un polinomi juga un paper destacat al llarg del curs.
 Aquí el definirem, i en demostrarem l’existència i unicitat (llevat d’isomorfisme).
 Aprofitarem per definir extensions normals (aquelles que són cos de descomposició d’un conjunt de polinomis).</p>
-<p>Com a aplicació, s’introduiran els polinomis i cossos ciclotòmics, i ho lligarem amb la
-demostració de l’existència i unicitat de cossos finits de cardinal potència d’un primer.</p>
-<p>També veurem les clausures algebraiques, i una construcció (seguint <span class="citation">[<a href="#ref-artinalgebra" role="doc-biblioref">1</a>]</span> i <span class="citation">[<a href="#ref-zbigniew" role="doc-biblioref">4</a>]</span>). Això ens permetrà (assumint el teorema fonamental
-de l’àlgebra, que demostrarem més endavant) pensar els elements algebraics sobre <span class="math inline">\(\QQ\)</span> dins dels complexos.</p>
 <div id="cossos-de-descomposició" class="section level2 hasAnchor" number="4.1">
 <h2><span class="header-section-number">4.1</span> Cossos de descomposició<a href="normalitat.html#cossos-de-descomposició" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Diem que un polinomi <span class="math inline">\(f(x)\in F[x]\)</span> <em>descomposa completament</em> en una extensió <span class="math inline">\(K/F\)</span> si es pot escriure com a producte
@@ -349,13 +345,16 @@ i fem servir la fórmula de les torres i <a href="pilot.html#thm:extensio-morfis
 <p>En tot cas, si <span class="math inline">\(\tilde\sigma\)</span> és un d’aquests morfismes, com que <span class="math inline">\([K \colon F(\alpha)]&lt; [K\colon F]\)</span> podem aplicar la hipòtesi
 d’inducció i <span class="math inline">\(\tilde\sigma\)</span> es pot aixecar a com a molt <span class="math inline">\([K\colon F(\alpha)]\)</span> morfismes a <span class="math inline">\(L\)</span>.</p>
 </div>
-<p>Revisant la demostració anterior, obtenim els dos següent corol·laris.</p>
+<p>Revisant la demostració anterior, obtenim els següents corol·laris.</p>
 <div class="corollary">
 <p><span id="cor:variacio-aixecament-1" class="corollary"><strong>Corol·lary 4.1  </strong></span>Siguin <span class="math inline">\(K/F\)</span> i <span class="math inline">\(L/F\)</span> extensions d’un cos <span class="math inline">\(F\)</span>. Si existeix <span class="math inline">\(\alpha\in K\)</span> tal que <span class="math inline">\(\Irr_{\alpha,F}(x)\)</span>
 no té cap arrel a <span class="math inline">\(L\)</span>, aleshores no existeix cap <span class="math inline">\(F\)</span>-morfisme <span class="math inline">\(K\to L\)</span>.</p>
 </div>
 <div class="corollary">
-<p><span id="cor:variacio-aixecament-2" class="corollary"><strong>Corol·lary 4.2  </strong></span>Suposem que tot polinomi irreductible a <span class="math inline">\(F\)</span> amb una arrel a <span class="math inline">\(K\)</span> descomposa completament a <span class="math inline">\(L\)</span>. Aleshores
+<p><span id="cor:variacio-aixecament-3" class="corollary"><strong>Corol·lary 4.2  </strong></span>Sigui <span class="math inline">\(\sigma\colon F\to L\)</span> un morfisme donat, suposem que <span class="math inline">\(K=F(\gamma_1,\ldots,\gamma_n)\)</span> amb polinomis mínims <span class="math inline">\(g_i(x)\)</span>. Suposem que <span class="math inline">\(\sigma(g_i)(x)\)</span> té una arrel a <span class="math inline">\(L\)</span> per a tot <span class="math inline">\(i\)</span>. Aleshores existeix <span class="math inline">\(\psi\colon K\to L\)</span> tal que <span class="math inline">\(\psi|_{F} = \sigma\)</span>.</p>
+</div>
+<div class="corollary">
+<p><span id="cor:variacio-aixecament-2" class="corollary"><strong>Corol·lary 4.3  </strong></span>Suposem que tot polinomi irreductible a <span class="math inline">\(F\)</span> amb una arrel a <span class="math inline">\(K\)</span> descomposa completament a <span class="math inline">\(L\)</span>. Aleshores
 <span class="math display">\[
 |\Hom_{F} (K, L)| = [K\colon F].
 \]</span></p>
@@ -393,7 +392,7 @@ si <span class="math inline">\(K/\QQ\)</span> és un cos de descomposició de <s
 formen un grup amb la multiplicació que, de fet, és cíclic. Diem que una arrel de la unitat
 <span class="math inline">\(\zeta_n\)</span> és <em>primitiva</em> si és un generador d’aquest grup. Si en fixem una, les altres primitives
 són de la forma <span class="math inline">\(\zeta_n^a\)</span>, amb <span class="math inline">\(a\)</span> coprimer amb <span class="math inline">\(n\)</span>. Hi ha, doncs, <span class="math inline">\(\varphi(n)\)</span> arrels primitives.</p>
-<p>Anomenem <em>cos ciclotòmic <span class="math inline">\(n\)</span>-èssim$</em> al cos <span class="math inline">\(\QQ(\zeta_n)\)</span>, que és el cos de descomposició de <span class="math inline">\(x^n-1\)</span>:
+<p>Anomenem <em>cos ciclotòmic <span class="math inline">\(n\)</span>-èssim</em> al cos <span class="math inline">\(\QQ(\zeta_n)\)</span>, que és el cos de descomposició de <span class="math inline">\(x^n-1\)</span>:
 si adjuntem <span class="math inline">\(\zeta_n\)</span>, automàticament totes les seves potències pertanyen a aquest cos. A la Secció
 <a href="polinomis-inseparables.html#ciclotomics">5.2</a> aprendrem com calcular el grau d’aquest cos, però –a tall d’espòiler– podem
 veure fàcilment que quan <span class="math inline">\(n=p\)</span> és primer, aleshores
@@ -438,36 +437,45 @@ ja que cal veure una propietat per possiblement infinits polinomis. Veurem
 ara que les extensions normals tenen una caracterització més senzilla.
 En particular, el cos de descomposició d’un polinomi
 és sempre una extensió normal.</p>
-<div class="proposition">
-<p><span id="prp:unlabeled-div-51" class="proposition"><strong>Proposició 4.2  </strong></span>Una extensió <span class="math inline">\(K/F\)</span> és normal si i només si <span class="math inline">\(K\)</span> és el cos de descomposició d’un conjunt <span class="math inline">\(S\subset F[x]\)</span> de polinomis de <span class="math inline">\(F\)</span>.</p>
+<div class="lemma">
+<p><span id="lem:unlabeled-div-51" class="lemma"><strong>Lema 4.1  </strong></span>Suposem que <span class="math inline">\(K/F\)</span> és el cos de descomposició d’un conjunt finit de polinomis <span class="math inline">\(f(x)\in F[x]\)</span>. Aleshores <span class="math inline">\(K/F\)</span> és normal.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-52" class="proof"><em>Prova</em>. </span>Suposem que <span class="math inline">\(K/F\)</span> és normal. Per cada element <span class="math inline">\(\alpha\in K\)</span>, denotem per <span class="math inline">\(f_\alpha(x)=\Irr_{\alpha,F}(x)\)</span>.
+<p><span id="unlabeled-div-52" class="proof"><em>Prova</em>. </span>Sense perdre generalitat podem assumir, prenent el producte de tots els polinomis en el conjunt finit de l’enunciat, que <span class="math inline">\(K/F\)</span> és el cos de descomposició d’un polinomi <span class="math inline">\(g(x)\in F[x]\)</span> amb arrels <span class="math inline">\(\gamma_1,\ldots,\gamma_n\)</span>. Sigui ara <span class="math inline">\(\alpha\in K\)</span> una arrel d’un polinomi <span class="math inline">\(f(x)\)</span>, que podem suposar irreductible. Volem veure que si <span class="math inline">\(\beta\)</span> és una arrel de <span class="math inline">\(f(x)\)</span>, aleshores <span class="math inline">\(\beta\in K\)</span>.</p>
+<p>Sigui <span class="math inline">\(L\)</span> el cos de descomposició de <span class="math inline">\(f(x)g(x)\)</span>, i considerem els subcossos <span class="math inline">\(F(\alpha)\)</span> i <span class="math inline">\(F(\beta)\)</span>. Hi ha un isomorfisme <span class="math inline">\(\sigma \in \Hom_F(F(\alpha), F(\beta))\)</span> i podem composar-lo amb la inclusió <span class="math inline">\(F(\beta) \subset K(\beta)\)</span>. Considerem aleshores el diagrama
+<span class="math display">\[
+\xymatrix{
+K\ar@{--&gt;}^{\psi}[r]\ar@{-}[d] &amp; K(\beta)\\
+F(\alpha)\ar[ur]^{\sigma}.
+}
+\]</span>
+Pel Corol·lari <a href="normalitat.html#cor:variacio-aixecament-3">4.2</a>, obtenim <span class="math inline">\(\psi\colon K\to K(\beta)\)</span> estenent <span class="math inline">\(\sigma\)</span>. Observem que, com que <span class="math inline">\(f(x)\in F[x]\)</span>, tenim <span class="math inline">\(\psi(f)=f\)</span>. Per tant,
+<span class="math display">\[
+0 = \psi(g(\gamma_i)) = g(\psi(\gamma_i)) \implies \psi(\gamma_i)\in K.
+\]</span>
+D’aquí en traiem que <span class="math inline">\(\psi(K)\subseteq K\)</span>. En particular, <span class="math inline">\(\beta=\psi(\alpha)\in K\)</span>, com volíem demostrar.</p>
+</div>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-53" class="proposition"><strong>Proposició 4.2  </strong></span>Una extensió <span class="math inline">\(K/F\)</span> és normal si i només si <span class="math inline">\(K\)</span> és el cos de descomposició d’un conjunt <span class="math inline">\(S\subset F[x]\)</span> de polinomis de <span class="math inline">\(F\)</span>.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-54" class="proof"><em>Prova</em>. </span>Suposem que <span class="math inline">\(K/F\)</span> és normal. Per cada element <span class="math inline">\(\alpha\in K\)</span>, denotem per <span class="math inline">\(f_\alpha(x)=\Irr_{\alpha,F}(x)\)</span>.
 Aleshores <span class="math inline">\(K\)</span> és el cos de descomposició del conjunt <span class="math inline">\(S=\{f_\alpha(x)~|~ \alpha\in K\}\)</span>.</p>
 <p>Recíprocament, si <span class="math inline">\(K\)</span> és el cos de descomposició d’un conjunt <span class="math inline">\(S\)</span> i <span class="math inline">\(f(x)\in F[x]\)</span> té una arrel <span class="math inline">\(\alpha\in K\)</span>,
 aleshores sense perdre generalitat podem suposar que <span class="math inline">\(f(x)\)</span> és irreductible. Considerem el conjunt <span class="math inline">\(\Sigma\subset K\)</span>
 d’elements de <span class="math inline">\(K\)</span> que són arrels de polinomis a <span class="math inline">\(S\)</span>. Podem trobar un subconjunt finit <span class="math inline">\(S_0\)</span> i el seu corresponent
 conjunt d’arrels <span class="math inline">\(\Sigma_0\)</span> tals que <span class="math inline">\(\alpha\in F(\Sigma_0)\)</span>. Però aleshores <span class="math inline">\(F(\Sigma_0)\)</span> és un
 cos de descomposició d’un polinomi (el que s’obté multiplicant tots els polinomis de <span class="math inline">\(S_0\)</span> i extraient-ne la part lliure
-de quadrats). Per tant, <span class="math inline">\(f(x)\)</span> descomposa completament a <span class="math inline">\(F(\Sigma_0)\)</span> i per tant també a <span class="math inline">\(K\)</span>.</p>
+de quadrats). El lema anterior ens garanteix que <span class="math inline">\(f(x)\)</span> descomposa completament a <span class="math inline">\(F(\Sigma_0)\)</span> i per tant també a <span class="math inline">\(K\)</span>.</p>
 </div>
 <div class="proposition">
-<p><span id="prp:unlabeled-div-53" class="proposition"><strong>Proposició 4.3  </strong></span>Sigui <span class="math inline">\(L/K/F\)</span> una torre. Si <span class="math inline">\(L/F\)</span> és normal, aleshores <span class="math inline">\(L/K\)</span> també ho és.</p>
+<p><span id="prp:unlabeled-div-55" class="proposition"><strong>Proposició 4.3  </strong></span>Sigui <span class="math inline">\(L/K/F\)</span> una torre. Si <span class="math inline">\(L/F\)</span> és normal, aleshores <span class="math inline">\(L/K\)</span> també ho és.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-54" class="proof"><em>Prova</em>. </span>Trivial: si <span class="math inline">\(L/F\)</span> és el cos de descomposició d’un conjunt de polinomis <span class="math inline">\(S\)</span>, també ho és del mateix conjunt pensat
+<p><span id="unlabeled-div-56" class="proof"><em>Prova</em>. </span>Trivial: si <span class="math inline">\(L/F\)</span> és el cos de descomposició d’un conjunt de polinomis <span class="math inline">\(S\)</span>, també ho és del mateix conjunt pensat
 com a conjunt de polinomis amb coeficients a <span class="math inline">\(K\)</span>.</p>
 </div>
 
-</div>
-</div>
-<h3>References</h3>
-<div id="refs" class="references csl-bib-body">
-<div id="ref-artinalgebra" class="csl-entry">
-<div class="csl-left-margin">1. </div><div class="csl-right-inline">Artin Michael (2014) Algebra / michael artin., 2nd ed., new international ed. Pearson, Edinbourgh Gate, Harlow, Essex</div>
-</div>
-<div id="ref-zbigniew" class="csl-entry">
-<div class="csl-left-margin">4. </div><div class="csl-right-inline">Jelonek Z (1993) A simple proof of the existence of the algebraic closure of a field. Univ Iagel Acta Math 131–132</div>
 </div>
 </div>
             </section>
@@ -491,15 +499,15 @@ com a conjunt de polinomis amb coeficients a <span class="math inline">\(K\)</sp
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
-"github": false,
-"facebook": true,
+"github": true,
+"facebook": false,
 "twitter": true,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
 "vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+"whatsapp": true,
+"all": {}
 },
 "fontsettings": {
 "theme": "white",
