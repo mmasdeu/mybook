@@ -7,23 +7,35 @@ amb diversos exemples concrets d'extensions, il·lustrant la correspondència de
 Comencem amb un resultat que es segueix directament del Teorema \@ref(thm:caracteritzacio-galois).
 
 ::: {.proposition #preliminar}
-Sigui $K$ un cos qualsevol. Sigui $G\leq\Aut(K)$ un subgrup finit, i sigui $F=K^G$. Aleshores $K$ és Galois sobre $F$,
-i $\Gal(K/F) = G$.
+Sigui $K$ un cos qualsevol. Sigui $H\leq\Aut(K)$ un subgrup finit, i sigui $F=K^H$. Aleshores $K$ és Galois sobre $F$,
+i $\Gal(K/F) = H$.
 :::
 ::: {.proof}
-Per definició d'$F$, tenim $G \leq \Aut(K/F)$, i només ens cal veure la igualtat. El Teorema \@ref(thm:caracteritzacio-galois)
-ens diu que $|G|=[K\colon F]$, i ja hem vist $|\Aut(K/F)|\leq [K\colon F]$. Per tant:
+Per definició d'$F$, tenim $H \leq \Aut(K/F)$, i només ens cal veure la igualtat. Prenem $\tau\in\Aut(K/F)$,
+i veurem que $K=\bigcup_{\sigma\in H} \Eq_{\sigma,\tau}$. Pel Lema \@ref(prp:lema-algebra-lineal), algun dels $\Eq_{\sigma,\tau}$
+ha de ser tot $K$, i això ens diu que $\tau\in H$. Per tant, només ens cal comprovar que per tot $\alpha\in K$,
+hi ha algun $\sigma\in H$ tal que $\sigma(\alpha)=\tau(\alpha)$. Fixat $\alpha\in K$, considerem el polinomi
 $$
-[K\colon F] = |G| \leq |\Aut(K/F)| \leq [K\colon F].
+f(x) = \prod_{\sigma \in H} (x - \sigma(\alpha)) \in K[x].
 $$
-Per tant, totes les desigualtats són igualtats i, en particular $|G| = |\Aut(K/F)|$.
+Fixem-nos que $\sigma(f)=f$ per tot $\sigma\in H$ i per tant $f(x)\in K^H[x] = F[x]$. Com que $\tau$ fixa $F$,
+tenim que $\tau(f)=f$. Però aleshores $\tau(\alpha)$ ha de ser una arrel de $f$, és a dir, $\tau(\alpha)=\sigma(\alpha)$
+per algun $\sigma\in H$, com volíem.
 :::
 
 ::: {.corollary}
-Si $G_1$ i $G_2$ són subgrups diferents d'$\Aut(K)$, aleshores $K^{G_1} \neq K^{G_2}$.
+Si $G_1$ i $G_2$ són subgrups finits diferents d'$\Aut(K)$, aleshores $K^{G_1} \neq K^{G_2}$.
 :::
 ::: {.proof}
 Trivial.
+:::
+
+::: {.proposition #galois-subext}
+Sigui $K/F$ finita Galois, i sigui $M$ una subextensió. Aleshores $K/M$ és Galois.
+:::
+::: {.proof}
+És immediata, si recordem que $K/F$ Galois és equivalent a que $K$ sigui el cos de descomposició d'un conjunt de polinomis separables de $F$.
+Podem prendre els mateixos polinomis pensats a $M$.
 :::
 
 ## La correspondència de Galois
@@ -41,23 +53,17 @@ A més el grau $[M \colon F]$  es correspon amb l'ordre d'$H$.
 :::
 ::: {.proof}
 Hem de veure:
+1. $\Gal(K / K^H) \stackrel{?}{=} H$. Això és exactament la conclusió de la Proposició \@ref(prp:preliminar).
 
-1. $K^{\Gal(K/M)}= M$. Això és automàtic a partir de la Proposició \@ref(prp:preliminar) i del Corol·lari \@ref(cor:fix-gal-eq).
-
-2. $\Gal(K / K^H) = H$. Escrivim $M=K^H$. Ja sabem que $K/M$ és de Galois, i $|\Gal(K/M)|= [K\colon M]$.
-A més, per definició tenim $H\leq \Gal(K/M)$. Hem de demostrar la igualtat: donat $\tau\in \Gal(K/M)$, veurem
-que $K=\bigcup_{\sigma\in H} \Eq_{\sigma,\tau}$. Pel Lema \@ref(prp:lema-algebra-lineal), algun dels $\Eq_{\sigma,\tau}$
-ha de ser tot $K$, i això ens diu que $\tau\in H$. Per tant, només ens cal comprovar que per tot $\alpha\in K$,
-hi ha algun $\sigma\in H$ tal que $\sigma(\alpha)=\tau(\alpha)$. Considerem el polinomi
-$$
-f(x) = \prod_{\sigma \in H} (x - \sigma(\alpha)) \in K[x].
-$$
-Fixem-nos que $\sigma(f)=f$ per tot $\sigma\in H$ i per tant $f(x)\in K^H[x] = M[x]$. Com que $\tau$ fixa $M$,
-tenim que $\tau(f)=f$. Però aleshores $\tau(\alpha)$ ha de ser una arrel de $f$, és a dir, $\tau(\alpha)=\sigma(\alpha)$
-per algun $\sigma\in H$, com volíem.
+2. $K^{\Gal(K/M)} \stackrel{?}{=} M$. Sigui $H=\Gal(K/M)$. És obvi que $M \subseteq K^H$. D'altra banda, la Proposició 
+  \@ref(prp:preliminar) ens diu que $K/K^H$ és Galois, amb grup $H$. Com que $K/M$ tambés Galois, aleshores  tenim
+  $$
+  [K\colon M] = |\Gal(K/M)| = |H| = |\Gal(K/K^H)| = [K \colon K^H].
+  $$
+  Per tant, $M=K^H$, com volíem.
 :::
 
-Hem vist que si $K/F$ és Galois i $M$ és una subextensió, aleshores $K/M$ també ho és.
+Recordem que la Proposició \@ref(prp:galois-subext) ens diu que si $K/F$ és Galois i $M$ és una subextensió, aleshores $K/M$ també ho és.
 La proposició següent ens diu què podem dir de l'extensió $M/F$.
 
 ::: {.proposition}

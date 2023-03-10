@@ -91,7 +91,7 @@ $\Gal(K/F)$ és isomorf a un subgrup del grup cíclic $\mu_n$, com volíem veure
 El recíproc resulta ser cert.
 
 ::: {.proposition}
-Sigui $F$ és un cos on $n$ és invertiblede i que conté $\mu_n$, i sigui $K/F$ una extensió cíclica de
+Sigui $F$ és un cos on $n$ és invertible i que conté $\mu_n$, i sigui $K/F$ una extensió cíclica de
 grau $n$. Aleshores $K=F(\sqrt[n]{a})$ per algun $a\in F$.
 :::
 ::: {.proof}

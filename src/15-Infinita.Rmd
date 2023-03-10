@@ -6,7 +6,7 @@ a extensions infinites.
 ## Definicions
 
 Sigui $K/F$ una extensió algebraica arbitraria. Per definir què vol dir *Galois*, no ens anirà
-bé mirar el cardinal d'$\Aut(K/F)$, perquè en general serà un grup infinita. En canvi,
+bé mirar el cardinal d'$\Aut(K/F)$, perquè en general serà un grup infinit. En canvi,
 una de les caracteritzacions que hem trobat sí que generalitza bé.
 
 ::: {.definition}
