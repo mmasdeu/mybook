@@ -60,6 +60,7 @@ Si $\sigma_1,\ldots,\sigma_n$ són morfismes diferents de $K$ a $L$, aleshores s
 
 
 ## Extensions cícliques
+Comencem definint les extensions cícliques, que són senzilles però que ens permetran després construir-ne de més complicades.
 
 ::: {.definition #ext-ciclica name="extensió cíclica"}
 Una extensió $K/F$ és *cíclica* si és Galois amb grup de Galois cíclic.
