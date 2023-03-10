@@ -30,6 +30,16 @@ output:
         collapse: section
       edit: https://github.com/mmasdeu/teoriadegalois/edit/main/%s
       download: ["pdf"]
+      sharing:
+        facebook: false
+        github: true
+        twitter: true
+        linkedin: false
+        weibo: false
+        instapaper: false
+        vk: false
+        whatsapp: true
+        all: []
 
   bookdown::pdf_book:
     toc: no
