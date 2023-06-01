@@ -227,9 +227,9 @@ i de fet
 $$
 \Gal(K/\QQ)= \langle \sigma, \tau ~|~ \sigma^8=\tau^2=\sigma\tau\sigma^{-3}\tau=1\rangle.
 $$
-Aquest subgrup s'anomena \emph{quasidihedral}, i el seu reticle de subgrups és:
+Aquest subgrup s'anomena \emph{quasidiedral}, i el seu reticle de subgrups és:
 
-```{tikz, echo=FALSE, out.width='100%', fig.ext='png', fig.align='center', cache=TRUE, engine.opts = list(background = 'transparent')}
+```{tikz, echo=FALSE, out.width='100%', fig.ext='png', fig.align='center', fig.cap="Reticle de subgrups del grup quasidiedral.", cache=TRUE, engine.opts = list(background = 'transparent')}
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZANgBoAGAXVJADcBDAGwFcYkQBxEAX1PU1z5CKMgEZqdJq3YAdGY3pgA5oxhzsSgLb05AJ0Uq2vftjwEiZAEwSGLNohByFy1QAJ1WLfQB6lvQdUePhAMUyELUgBmGyl7R3kAmHcZDW1vABZ-FyNg0MFzEVJ0mLt2USCTfOFkAFYokukHJ0S5HHpmLMMKkIEzasj6mltG+OdDVvaPLwzOwOMesILkAHZSayHY2QTsiY6UzzTI2ZzKvqIADlJxDdKm7fH96ctSZLa91J8jmX1s7ryzlAATjWDTizR2MjeU20xz+vXCKHSIJuI3BDw+GVIu1h83+COQz2iKLB91U2MeaWIONy8KW5EGkluoxakMmFJ8fm+iThi2qomRjNRpLU7Mx5IxVK5v1xtP6V1BWzGZNFz3JPy63AkMCgSngRFAADNdBBNEgkSAcBAkAMQAALGD0KDsSBgE4gI0m600S1IZ52h1Ohwut0e02IP0+xD8-2O50EEPGsPRyP0mOB8Dx7qhpCrC1WxCXNNx11ZxNIYF5pCF+2xoOZ+bZxA2yO5mvp4Olz1N735itt4sJrt1SuIc39uslhtlxBkEdjgMDzth1OR6sLieDsOzyOiVPjjOT4KN4c7vfrg+bpCiCP50Q2-cdqdd0TJ2-38+Po-Tl89s00B-1l+z43n+RYbkuV7Nre861heEFRuaKb-h+gGGt+K7QchsGfmhz4YV6YFwU+SZQQRAGTpQ3BAA
 \usetikzlibrary{cd}
 \begin{tikzcd}
