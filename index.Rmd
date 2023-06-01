@@ -2,6 +2,7 @@
 title: "Teoria de Galois"
 author: "Marc Masdeu"
 date: "`r Sys.Date()`"
+lang: ca-ES
 site: bookdown::bookdown_site
 documentclass: book
 fontsize: 11pt

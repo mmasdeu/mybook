@@ -164,6 +164,7 @@ Comencem amb un triangle equilàter $ABC$, de costat una unitat fixada per les m
 Perllonguem el costat $AB$ en una unitat per construir $D$. Considerem els rajos $\vec{DC}$ i $\vec{BC}$.
 Ara fem servir el regle marcat per construir una recta pel punt $A$ de manera que la intersecció amb els dos rajos
 anteriors doni lloc a un segment $GH$ de longitud $1$. Demostreu que el segment $AG$ mesura $\sqrt[3]{2}$.
+
 ```{r, echo=FALSE, out.width="50%", fig.align='center', fig.cap="Duplicació del cub amb regle marcat i compàs."}
 knitr::include_graphics("images/duplicacio_cub.png")
 ```
