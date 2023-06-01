@@ -40,7 +40,7 @@ Cal donar construccions de la suma, resta, producte i divisió
 de nombres ja construïts. Mentre que la suma i la resta són òbvies, la multiplicació i divisió es poden
 obtenir aplicant proporcionalitat, com veiem en els diagrames d'aquí sota.
 
-```{r, echo=FALSE, out.width="60%", fig.align='center', fig.cap="Multiplicació i divisió."}
+```{r, echo=FALSE, out.width="60%", fig.align='center', fig.cap="Multiplicació i divisió amb regle i compàs."}
 knitr::include_graphics("images/mult_div_RiC.png")
 ```
 
@@ -129,7 +129,7 @@ cercles $4$ i $5$.
 
 Demostreu que aquesta construcció resulta en un pentàgon regular.
 
-```{r, echo=FALSE, out.width="50%", fig.align='center'}
+```{r, echo=FALSE, out.width="50%", fig.align='center', fig.cap="Construcció d'un pentàgon regular amb regle i compàs."}
 knitr::include_graphics("images/pentagon.png")
 ```
 :::
@@ -153,7 +153,7 @@ que les dues marques del regle estiguin una sobre el cercle (punt $C$) i l'altra
 
 Demostreu que l'angle $b$ és igual a $\frac{a}{3}$ (aquesta construcció ja l'havia trobat Arquímedes!).
 
-```{r, echo=FALSE, out.width="50%", fig.align='center'}
+```{r, echo=FALSE, out.width="50%", fig.align='center', fig.cap="Trissecció d'un angle amb regle marcat i compàs."}
 knitr::include_graphics("images/triseccio_angle.png")
 ```
 :::
@@ -164,7 +164,7 @@ Comencem amb un triangle equilàter $ABC$, de costat una unitat fixada per les m
 Perllonguem el costat $AB$ en una unitat per construir $D$. Considerem els rajos $\vec{DC}$ i $\vec{BC}$.
 Ara fem servir el regle marcat per construir una recta pel punt $A$ de manera que la intersecció amb els dos rajos
 anteriors doni lloc a un segment $GH$ de longitud $1$. Demostreu que el segment $AG$ mesura $\sqrt[3]{2}$.
-```{r, echo=FALSE, out.width="50%", fig.align='center'}
+```{r, echo=FALSE, out.width="50%", fig.align='center', fig.cap="Duplicació del cub amb regle marcat i compàs."}
 knitr::include_graphics("images/duplicacio_cub.png")
 ```
 
