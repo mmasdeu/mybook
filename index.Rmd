@@ -79,6 +79,7 @@ alguns dels resultats de manera bastant directa.
 També s'ha canviat la presentació de l'existència de la clausura algebraica d'un cos arbitrari, oferint una demostració
 més directa que fa servir el lema de Zorn en comptes d'altres resultats equivalents.
 
+`r knitr::opts_chunk$set(fig.pos = "H", out.extra = "")`
 
 `r if (knitr:::is_html_output())"
 **Important:** Si aquí sota no hi veieu un $O-K$, heu d'activar l'opció HTML-CSS de *MathJax* al vostre navegador:
