@@ -84,14 +84,24 @@
 \newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
 \newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+\ifLuaTeX
+\usepackage[bidi=basic]{babel}
+\else
+\usepackage[bidi=default]{babel}
+\fi
+\babelprovide[main,import]{catalan}
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
 \usepackage{textcomp}
 \usepackage{booktabs}
+\usepackage{float}
 \usepackage{caption}
 \usepackage{tikz, tikz-cd}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
 \usetikzlibrary{positioning}
-\usepackage[catalan]{babel}
+% \usepackage[catalan]{babel}
 \usepackage[left=3.5cm, right=3.5cm, top=3.5cm, bottom=3.5cm]{geometry}
 \usepackage{csquotes}
 \DeclareQuoteStyle{catalan}{``}{''}{``}{''}
@@ -638,12 +648,13 @@ addtohook={%
 \hypersetup{
   pdftitle={Teoria de Galois},
   pdfauthor={Marc Masdeu},
+  pdflang={ca-ES},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 
 \title{Teoria de Galois}
 \author{Marc Masdeu}
-\date{2023-03-13}
+\date{2023-06-01}
 
 \begin{document}
 \maketitle
@@ -1255,13 +1266,13 @@ Cal donar construccions de la suma, resta, producte i divisió
 de nombres ja construïts. Mentre que la suma i la resta són òbvies, la multiplicació i divisió es poden
 obtenir aplicant proporcionalitat, com veiem en els diagrames d'aquí sota.
 
-\begin{figure}
+\begin{figure}[H]
 
-{\centering \includegraphics[width=0.6\linewidth]{images/mult_div_RiC} 
+{\centering \includegraphics[width=0.6\linewidth,]{images/mult_div_RiC} 
 
 }
 
-\caption{Multiplicació i divisió.}\label{fig:unnamed-chunk-1}
+\caption{Multiplicació i divisió amb regle i compàs.}\label{fig:unnamed-chunk-1}
 \end{figure}
 
 \end{proof}
@@ -1272,7 +1283,7 @@ obtenir aplicant proporcionalitat, com veiem en els diagrames d'aquí sota.
 
 Demostreu que si el diàmetre de la circumferència és \(\alpha+1\), aleshores el segment vertical indicat mesura \(\sqrt{\alpha}\).
 
-\begin{center}\includegraphics[width=0.5\linewidth]{teoriadegalois_files/figure-latex/unnamed-chunk-2-1} \end{center}
+\begin{center}\includegraphics[width=0.5\linewidth,]{teoriadegalois_files/figure-latex/unnamed-chunk-2-1} \end{center}
 
 \end{exercise}
 
@@ -1342,7 +1353,14 @@ cercles \(4\) i \(5\).
 
 Demostreu que aquesta construcció resulta en un pentàgon regular.
 
-\begin{center}\includegraphics[width=0.5\linewidth]{images/pentagon} \end{center}
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.5\linewidth,]{images/pentagon} 
+
+}
+
+\caption{Construcció d'un pentàgon regular amb regle i compàs.}\label{fig:unnamed-chunk-3}
+\end{figure}
 
 \end{exercise}
 
@@ -1367,7 +1385,14 @@ que les dues marques del regle estiguin una sobre el cercle (punt \(C\)) i l'alt
 
 Demostreu que l'angle \(b\) és igual a \(\frac{a}{3}\) (aquesta construcció ja l'havia trobat Arquímedes!).
 
-\begin{center}\includegraphics[width=0.5\linewidth]{images/triseccio_angle} \end{center}
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.5\linewidth,]{images/triseccio_angle} 
+
+}
+
+\caption{Trissecció d'un angle amb regle marcat i compàs.}\label{fig:unnamed-chunk-4}
+\end{figure}
 
 \end{exercise}
 
@@ -1379,7 +1404,14 @@ Perllonguem el costat \(AB\) en una unitat per construir \(D\). Considerem els r
 Ara fem servir el regle marcat per construir una recta pel punt \(A\) de manera que la intersecció amb els dos rajos
 anteriors doni lloc a un segment \(GH\) de longitud \(1\). Demostreu que el segment \(AG\) mesura \(\sqrt[3]{2}\).
 
-\begin{center}\includegraphics[width=0.5\linewidth]{images/duplicacio_cub} \end{center}
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.5\linewidth,]{images/duplicacio_cub} 
+
+}
+
+\caption{Duplicació del cub amb regle marcat i compàs.}\label{fig:unnamed-chunk-5}
+\end{figure}
 
 \end{exercise}
 
@@ -2623,7 +2655,7 @@ i de fet
 \]
 Aquest subgrup s'anomena \emph{quasidihedral}, i el seu reticle de subgrups és:
 
-\begin{center}\includegraphics[width=1\linewidth]{teoriadegalois_files/figure-latex/unnamed-chunk-6-1} \end{center}
+\begin{center}\includegraphics[width=1\linewidth,]{teoriadegalois_files/figure-latex/unnamed-chunk-6-1} \end{center}
 
 \begin{remark}
 És important adonar-se que no n'hi ha prou en assignar valors
@@ -4325,7 +4357,7 @@ i definim \(\Delta=a^2-4b\). Suposem que \(f(x)\) és irreductible, i definim \(
 \begin{CSLReferences}{0}{0}
 \leavevmode\vadjust pre{\hypertarget{ref-artinalgebra}{}}%
 \CSLLeftMargin{1. }%
-\CSLRightInline{Artin Michael (2014) Algebra / michael artin., 2nd ed., new international ed. Pearson, Edinbourgh Gate, Harlow, Essex}
+\CSLRightInline{Artin Michael (2014) Algebra / Michael Artin., 2nd ed., new international ed. Pearson, Edinbourgh Gate, Harlow, Essex}
 
 \leavevmode\vadjust pre{\hypertarget{ref-dummitfoote}{}}%
 \CSLLeftMargin{2. }%
@@ -4333,11 +4365,11 @@ i definim \(\Delta=a^2-4b\). Suposem que \(f(x)\) és irreductible, i definim \(
 
 \leavevmode\vadjust pre{\hypertarget{ref-geck}{}}%
 \CSLLeftMargin{3. }%
-\CSLRightInline{Geck M (2014) On the characterization of {G}alois extensions. Amer Math Monthly 121:637--639. doi: \href{https://doi.org/10.4169/amer.math.monthly.121.07.637}{10.4169/amer.math.monthly.121.07.637}}
+\CSLRightInline{Geck M (2014) On the characterization of {G}alois extensions. Amer Math Monthly 121:637-639. doi: \href{https://doi.org/10.4169/amer.math.monthly.121.07.637}{10.4169/amer.math.monthly.121.07.637}}
 
 \leavevmode\vadjust pre{\hypertarget{ref-zbigniew}{}}%
 \CSLLeftMargin{4. }%
-\CSLRightInline{Jelonek Z (1993) A simple proof of the existence of the algebraic closure of a field. Univ Iagel Acta Math 131--132}
+\CSLRightInline{Jelonek Z (1993) A simple proof of the existence of the algebraic closure of a field. Univ Iagel Acta Math 131-132}
 
 \leavevmode\vadjust pre{\hypertarget{ref-rotman}{}}%
 \CSLLeftMargin{5. }%
@@ -4345,7 +4377,7 @@ i definim \(\Delta=a^2-4b\). Suposem que \(f(x)\) és irreductible, i definim \(
 
 \leavevmode\vadjust pre{\hypertarget{ref-weintraub}{}}%
 \CSLLeftMargin{6. }%
-\CSLRightInline{Weintraub SH (2021) The theorem of the primitive element. Amer Math Monthly 128:753--754. doi: \href{https://doi.org/10.1080/00029890.2021.1944757}{10.1080/00029890.2021.1944757}}
+\CSLRightInline{Weintraub SH (2021) The theorem of the primitive element. Amer Math Monthly 128:753-754. doi: \href{https://doi.org/10.1080/00029890.2021.1944757}{10.1080/00029890.2021.1944757}}
 
 \end{CSLReferences}
 

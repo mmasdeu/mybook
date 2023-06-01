@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="" xml:lang="">
+<html lang="ca-ES" xml:lang="ca-ES">
 <head>
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Episodi 3. Regle i Compàs | Teoria de Galois</title>
   <meta name="description" content="Apunts d’un curs de Teoria de Galois a la UAB" />
-  <meta name="generator" content="bookdown 0.33.1 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.34.2 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Episodi 3. Regle i Compàs | Teoria de Galois" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Marc Masdeu" />
 
 
-<meta name="date" content="2023-03-13" />
+<meta name="date" content="2023-06-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -143,6 +143,10 @@ src="https://cdn.jsdelivr.net/npm/mathjax/MathJax.js?config=TeX-AMS_HTML">
 
 
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 <style type="text/css">
 /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
 div.csl-bib-body { }
@@ -344,16 +348,16 @@ tipus d’operacions següents:</p>
 de nombres ja construïts. Mentre que la suma i la resta són òbvies, la multiplicació i divisió es poden
 obtenir aplicant proporcionalitat, com veiem en els diagrames d’aquí sota.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-1"></span>
-<img src="images/mult_div_RiC.png" alt="Multiplicació i divisió." width="60%" />
+<img src="images/mult_div_RiC.png" alt="Multiplicació i divisió amb regle i compàs." width="60%"  />
 <p class="caption">
-Figura 3.1: Multiplicació i divisió.
+Figura 3.1: Multiplicació i divisió amb regle i compàs.
 </p>
 </div>
 </div>
 <p>És fàcil veure que també podem prendre arrels quadrades, com s’indica al següent exercici.</p>
 <div class="exercise">
 <p><span id="exr:unlabeled-div-39" class="exercise"><strong>Exercici 3.1  </strong></span>Demostreu que si el diàmetre de la circumferència és <span class="math inline">\(\alpha+1\)</span>, aleshores el segment vertical indicat mesura <span class="math inline">\(\sqrt{\alpha}\)</span>.</p>
-<p><img src="teoriadegalois_files/figure-html/unnamed-chunk-2-1.png" width="50%" style="display: block; margin: auto;" /></p>
+<p><img src="teoriadegalois_files/figure-html/unnamed-chunk-2-1.png" width="50%"  style="display: block; margin: auto;" /></p>
 </div>
 <p>Fent servir l’equació d’un cercle de radi <span class="math inline">\((x_0,y_0)\)</span> i radi <span class="math inline">\(r\)</span>
 <span class="math display">\[
@@ -407,7 +411,12 @@ i podem construir les rectes <span class="math inline">\(CF\)</span> i <span cla
 <p>Si volem construir el cinquè vèrtex del pentàgon, només hem de traçar els
 cercles <span class="math inline">\(4\)</span> i <span class="math inline">\(5\)</span>.</p>
 <p>Demostreu que aquesta construcció resulta en un pentàgon regular.</p>
-<p><img src="images/pentagon.png" width="50%" style="display: block; margin: auto;" /></p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-3"></span>
+<img src="images/pentagon.png" alt="Construcció d'un pentàgon regular amb regle i compàs." width="50%"  />
+<p class="caption">
+Figura 3.2: Construcció d’un pentàgon regular amb regle i compàs.
+</p>
+</div>
 </div>
 <p>Encara és més fàcil construir el triangle equilàter (<span class="math inline">\(30^\circ\)</span>), ja que <span class="math inline">\(\cos(30^\circ)=\sqrt{2}/2\)</span>. Com que
 podem bisectar qualsevol angle, també podem construir <span class="math inline">\(18^\circ\)</span> i <span class="math inline">\(15^\circ\)</span>. Finalment, com que <span class="math inline">\(3=18-15\)</span> també podem construir
@@ -424,14 +433,24 @@ Aquí veurem que si el regle té dues marques a una distància qualsevol, alesho
 que serà la nostra unitat. Fem un cercle de radi aquesta unitat, i tracem una recta pel punt A de manera
 que les dues marques del regle estiguin una sobre el cercle (punt <span class="math inline">\(C\)</span>) i l’altra sobre la recta donada (punt <span class="math inline">\(D\)</span>).</p>
 <p>Demostreu que l’angle <span class="math inline">\(b\)</span> és igual a <span class="math inline">\(\frac{a}{3}\)</span> (aquesta construcció ja l’havia trobat Arquímedes!).</p>
-<p><img src="images/triseccio_angle.png" width="50%" style="display: block; margin: auto;" /></p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-4"></span>
+<img src="images/triseccio_angle.png" alt="Trissecció d'un angle amb regle marcat i compàs." width="50%"  />
+<p class="caption">
+Figura 3.3: Trissecció d’un angle amb regle marcat i compàs.
+</p>
+</div>
 </div>
 <div class="exercise">
 <p><span id="exr:duplicacio-club" class="exercise"><strong>Exercici 3.4  (Duplicació del cub) </strong></span>Comencem amb un triangle equilàter <span class="math inline">\(ABC\)</span>, de costat una unitat fixada per les marques del regle, que anomenarem <span class="math inline">\(1\)</span>.
 Perllonguem el costat <span class="math inline">\(AB\)</span> en una unitat per construir <span class="math inline">\(D\)</span>. Considerem els rajos <span class="math inline">\(\vec{DC}\)</span> i <span class="math inline">\(\vec{BC}\)</span>.
 Ara fem servir el regle marcat per construir una recta pel punt <span class="math inline">\(A\)</span> de manera que la intersecció amb els dos rajos
-anteriors doni lloc a un segment <span class="math inline">\(GH\)</span> de longitud <span class="math inline">\(1\)</span>. Demostreu que el segment <span class="math inline">\(AG\)</span> mesura <span class="math inline">\(\sqrt[3]{2}\)</span>.
-<img src="images/duplicacio_cub.png" width="50%" style="display: block; margin: auto;" /></p>
+anteriors doni lloc a un segment <span class="math inline">\(GH\)</span> de longitud <span class="math inline">\(1\)</span>. Demostreu que el segment <span class="math inline">\(AG\)</span> mesura <span class="math inline">\(\sqrt[3]{2}\)</span>.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-5"></span>
+<img src="images/duplicacio_cub.png" alt="Duplicació del cub amb regle marcat i compàs." width="50%"  />
+<p class="caption">
+Figura 3.4: Duplicació del cub amb regle marcat i compàs.
+</p>
+</div>
 </div>
 
 </div>
