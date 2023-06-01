@@ -51,7 +51,7 @@ knitr::include_graphics("images/mult_div_RiC.png")
 ::: {.exercise}
 Demostreu que si el diàmetre de la circumferència és $\alpha+1$, aleshores el segment vertical indicat mesura $\sqrt{\alpha}$.
 
-```{tikz, echo=FALSE, out.width='50%', fig.ext='png', fig.align='center', fig.cap="Construcció de l'arrel quadrada amb regle i compàs"., cache=TRUE, engine.opts = list(background = 'transparent')}
+```{tikz, echo=FALSE, out.width='50%', fig.ext='png', fig.align='center', fig.cap="Construcció de l'arrel quadrada amb regle i compàs", cache=TRUE, engine.opts = list(background = 'transparent')}
 \begin{tikzpicture}[scale=0.25]
   \draw
     (12.8, 57.6) -- (38.4, 57.6);
