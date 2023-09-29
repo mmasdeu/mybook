@@ -12,5 +12,5 @@ cat src/mathjaxheader_src.html >> src/mathjaxheader.html
 # Rscript -e "bookdown::render_book('src/index.Rmd', 'bookdown::html_book')"
 Rscript -e "bookdown::render_book('index.Rmd','bookdown::gitbook')"
 Rscript -e "bookdown::render_book('index.Rmd','bookdown::pdf_book')"
-# Rscript -e "bookdown::render_book('src/index.Rmd', 'bookdown::epub_book')"
+# Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::epub_book')"
 cp xypic.js src/style.css _book/

@@ -15,6 +15,7 @@ github-repo: mmasdeu/teoriadegalois
 description: "Apunts d'un curs de Teoria de Galois a la UAB"
 nocite: '@*'
 output:
+
   bookdown::gitbook:
     split_by: chapter
     css: style.css
@@ -41,6 +42,8 @@ output:
         vk: false
         whatsapp: true
         all: []
+
+  bookdown::epub_book: default
 
   bookdown::pdf_book:
     toc: no
